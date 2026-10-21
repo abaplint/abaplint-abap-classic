@@ -34,18 +34,14 @@ CLASS zcl_lnt_itable_options IMPLEMENTATION.
       me->zlnt_view_source_36f3bf68b9b8 = view_source.
       RETURN.
     ENDIF.
-    DATA(t1) = i_with_header.
     DATA(t2) = i_key_type.
     DATA(t3) = i_primary_key.
     DATA(t4) = i_secondary.
-    DATA(t5) = t1.
+    DATA(t5) = i_with_header.
     me->zlnt_view_write_s_44614e0bf300( p0 = t5 ).
-    DATA(t6) = t2.
-    me->zlnt_view_write_s_96b996414e76( p0 = t6 ).
-    DATA(t7) = t3.
-    me->zlnt_view_write_s_d45d7a8c8e19( p0 = t7 ).
-    DATA(t8) = t4.
-    me->zlnt_view_write_s_d02ea76e203d( p0 = t8 ).
+    me->zlnt_view_write_s_96b996414e76( p0 = t2 ).
+    me->zlnt_view_write_s_d45d7a8c8e19( p0 = t3 ).
+    me->zlnt_view_write_s_d02ea76e203d( p0 = t4 ).
   ENDMETHOD.
 
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
@@ -68,8 +64,7 @@ CLASS zcl_lnt_itable_options IMPLEMENTATION.
 
   METHOD zlnt_view_read_sr_ec4602663c93.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `withHeader` ) ).
-      result = t1->as_boolean( ).
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `withHeader` ) )->as_boolean( ).
     ELSE.
       result = me->with_header.
     ENDIF.
@@ -78,8 +73,6 @@ CLASS zcl_lnt_itable_options IMPLEMENTATION.
   METHOD zlnt_view_write_s_44614e0bf300.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t1.
-      CLEAR t1.
       CREATE OBJECT t1.
       t1->tag = zlnt_runtime_dyna_a429568d5be8=>tag_boolean.
       t1->bval = p0.
@@ -87,7 +80,6 @@ CLASS zcl_lnt_itable_options IMPLEMENTATION.
     ELSE.
       me->with_header = p0.
       DATA t2 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t2.
       IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
         me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `withHeader` p1 = t2 ).
       ENDIF.
@@ -97,8 +89,7 @@ CLASS zcl_lnt_itable_options IMPLEMENTATION.
 
   METHOD zlnt_view_read_sr_79d5aa355dd3.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `keyType` ) ).
-      result = t1->as_string( ).
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `keyType` ) )->as_string( ).
     ELSE.
       result = me->key_type.
     ENDIF.
@@ -107,8 +98,6 @@ CLASS zcl_lnt_itable_options IMPLEMENTATION.
   METHOD zlnt_view_write_s_96b996414e76.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t1.
-      CLEAR t1.
       CREATE OBJECT t1.
       t1->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
       t1->sval = p0.
@@ -116,7 +105,6 @@ CLASS zcl_lnt_itable_options IMPLEMENTATION.
     ELSE.
       me->key_type = p0.
       DATA t2 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t2.
       IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
         me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `keyType` p1 = t2 ).
       ENDIF.
@@ -140,7 +128,6 @@ CLASS zcl_lnt_itable_options IMPLEMENTATION.
           IF result IS NOT BOUND.
             IF t1->tag <> zlnt_runtime_dyna_a429568d5be8=>tag_object.
               DATA t2 TYPE REF TO zlnt_view_storage_74017ca272ac.
-              CLEAR t2.
               IF t1->tag <> zlnt_runtime_dyna_a429568d5be8=>tag_ref.
                 RAISE EXCEPTION TYPE zlnt_view_refusal_6fcecbe45fbf EXPORTING reason = `live_class_view.go: liveView: source is neither object graph nor reference`.
               ENDIF.
@@ -153,12 +140,8 @@ CLASS zcl_lnt_itable_options IMPLEMENTATION.
                 RAISE EXCEPTION TYPE zlnt_view_refusal_6fcecbe45fbf EXPORTING reason = `live_class_view.go: liveView: reference storage is not structural`.
               ENDIF.
             ENDIF.
-            DATA(t3) = VALUE string( ).
-            DATA(t4) = VALUE string( ).
             DATA t5 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-            CLEAR t5.
-            DATA(t6) = VALUE abap_bool( ).
-            result = NEW zcl_lnt_itable_key( view_source = t1 i_name = t3 i_type_9913 = t4 i_key_fields = t5 i_is_unique = t6 ).
+            result = NEW zcl_lnt_itable_key( view_source = t1 i_name = VALUE string( ) i_type_9913 = VALUE string( ) i_key_fields = t5 i_is_unique = VALUE abap_bool( ) ).
           ENDIF.
         ENDIF.
       ENDIF.
@@ -170,16 +153,10 @@ CLASS zcl_lnt_itable_options IMPLEMENTATION.
   METHOD zlnt_view_write_s_d45d7a8c8e19.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t1.
-      CLEAR t1.
       IF p0 IS BOUND.
-        CLEAR t1.
         IF p0 IS BOUND.
           DATA t2 TYPE REF TO zlnt_view_storage_74017ca272ac.
-          CLEAR t2.
           DATA t3 TYPE REF TO object.
-          CLEAR t3.
-          CLEAR t2.
           t3 = p0.
           TRY.
               t1 ?= t3.
@@ -205,7 +182,6 @@ CLASS zcl_lnt_itable_options IMPLEMENTATION.
     ELSE.
       me->primary_key = p0.
       DATA t4 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t4.
       IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
         me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `primaryKey` p1 = t4 ).
       ENDIF.
@@ -234,9 +210,7 @@ CLASS zcl_lnt_itable_options IMPLEMENTATION.
           ENDIF.
           result->load( ).
           DATA t2 TYPE REF TO object.
-          CLEAR t2.
           DATA t3 TYPE REF TO zcl_lnt_itable_key.
-          CLEAR t3.
           LOOP AT result->items INTO t2.
             DATA t4 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
             CLEAR t4.
@@ -271,8 +245,7 @@ CLASS zcl_lnt_itable_options IMPLEMENTATION.
                   DATA(t7) = VALUE string( ).
                   DATA t8 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
                   CLEAR t8.
-                  DATA(t9) = VALUE abap_bool( ).
-                  t3 = NEW zcl_lnt_itable_key( view_source = t4 i_name = t6 i_type_9913 = t7 i_key_fields = t8 i_is_unique = t9 ).
+                  t3 = NEW zcl_lnt_itable_key( view_source = t4 i_name = t6 i_type_9913 = t7 i_key_fields = t8 i_is_unique = VALUE abap_bool( ) ).
                 ENDIF.
               ENDIF.
             ELSE.
@@ -289,16 +262,10 @@ CLASS zcl_lnt_itable_options IMPLEMENTATION.
   METHOD zlnt_view_write_s_d02ea76e203d.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t1.
-      CLEAR t1.
       IF p0 IS BOUND.
-        CLEAR t1.
         IF p0 IS BOUND.
           DATA t2 TYPE REF TO zlnt_view_storage_74017ca272ac.
-          CLEAR t2.
           DATA t3 TYPE REF TO object.
-          CLEAR t3.
-          CLEAR t2.
           t3 = p0.
           TRY.
               t1 ?= t3.
@@ -324,7 +291,6 @@ CLASS zcl_lnt_itable_options IMPLEMENTATION.
     ELSE.
       me->secondary = p0.
       DATA t4 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t4.
       IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
         me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `secondary` p1 = t4 ).
       ENDIF.
@@ -385,7 +351,6 @@ CLASS zcl_lnt_itable_options IMPLEMENTATION.
 
   METHOD zlnt_own_storage_4c72afe8366e~keys.
     DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t1.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       result = zlnt_runtime_ownk_4497b85e405d=>keys( me->zlnt_view_source_36f3bf68b9b8 ).
       RETURN.
@@ -447,10 +412,7 @@ CLASS zcl_lnt_itable_options IMPLEMENTATION.
           CLEAR result.
           IF me->primary_key IS BOUND.
             DATA t1 TYPE REF TO zlnt_view_storage_74017ca272ac.
-            CLEAR t1.
             DATA t2 TYPE REF TO object.
-            CLEAR t2.
-            CLEAR t1.
             t2 = me->primary_key.
             TRY.
                 result ?= t2.
@@ -478,10 +440,7 @@ CLASS zcl_lnt_itable_options IMPLEMENTATION.
           CLEAR result.
           IF me->secondary IS BOUND.
             DATA t3 TYPE REF TO zlnt_view_storage_74017ca272ac.
-            CLEAR t3.
             DATA t4 TYPE REF TO object.
-            CLEAR t4.
-            CLEAR t3.
             t4 = me->secondary.
             TRY.
                 result ?= t4.
@@ -539,7 +498,6 @@ CLASS zcl_lnt_itable_options IMPLEMENTATION.
             IF me->primary_key IS NOT BOUND.
               IF p1->tag <> zlnt_runtime_dyna_a429568d5be8=>tag_object.
                 DATA t1 TYPE REF TO zlnt_view_storage_74017ca272ac.
-                CLEAR t1.
                 IF p1->tag <> zlnt_runtime_dyna_a429568d5be8=>tag_ref.
                   RAISE EXCEPTION TYPE zlnt_view_refusal_6fcecbe45fbf EXPORTING reason = `live_class_view.go: liveView: source is neither object graph nor reference`.
                 ENDIF.
@@ -555,7 +513,6 @@ CLASS zcl_lnt_itable_options IMPLEMENTATION.
               DATA(t2) = VALUE string( ).
               DATA(t3) = VALUE string( ).
               DATA t4 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-              CLEAR t4.
               DATA(t5) = VALUE abap_bool( ).
               me->primary_key = NEW zcl_lnt_itable_key( view_source = p1 i_name = t2 i_type_9913 = t3 i_key_fields = t4 i_is_unique = t5 ).
             ENDIF.
@@ -581,9 +538,7 @@ CLASS zcl_lnt_itable_options IMPLEMENTATION.
             ENDIF.
             me->secondary->load( ).
             DATA t6 TYPE REF TO object.
-            CLEAR t6.
             DATA t7 TYPE REF TO zcl_lnt_itable_key.
-            CLEAR t7.
             LOOP AT me->secondary->items INTO t6.
               DATA t8 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
               CLEAR t8.
@@ -618,8 +573,7 @@ CLASS zcl_lnt_itable_options IMPLEMENTATION.
                     DATA(t11) = VALUE string( ).
                     DATA t12 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
                     CLEAR t12.
-                    DATA(t13) = VALUE abap_bool( ).
-                    t7 = NEW zcl_lnt_itable_key( view_source = t8 i_name = t10 i_type_9913 = t11 i_key_fields = t12 i_is_unique = t13 ).
+                    t7 = NEW zcl_lnt_itable_key( view_source = t8 i_name = t10 i_type_9913 = t11 i_key_fields = t12 i_is_unique = VALUE abap_bool( ) ).
                   ENDIF.
                 ENDIF.
               ELSE.
@@ -643,7 +597,6 @@ CLASS zcl_lnt_itable_options IMPLEMENTATION.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = p0 p1 = VALUE #( ) ).
     ENDIF.
     DATA t14 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t14.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       me->zlnt_json_ownkeys_70e5fd461788->put( p0 = p0 p1 = t14 ).
     ENDIF.

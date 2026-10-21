@@ -12,10 +12,8 @@ CLASS zcx_lnt_skip_to_next_file IMPLEMENTATION.
   METHOD constructor.
     DATA(t1) = i_issue.
     DATA t2 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    CLEAR t2.
     super->constructor( i_message_26cb = t2 ).
-    DATA(t3) = t1.
-    me->issue = t3.
+    me->issue = t1.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `issue`.
   ENDMETHOD.
 

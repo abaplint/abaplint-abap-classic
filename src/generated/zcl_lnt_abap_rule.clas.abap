@@ -20,51 +20,26 @@ CLASS zcl_lnt_abap_rule DEFINITION PUBLIC ABSTRACT CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_abap_rule IMPLEMENTATION.
   METHOD in_in_src_rls_abp_rl_ts_abp_rl.
-    DATA(t1) = i_reg_f149.
-    DATA(t2) = t1.
-    me->reg = t2.
+    me->reg = i_reg_f149.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `reg`.
-    DATA(t3) = me.
-    result = t3.
+    result = me.
 
   ENDMETHOD.
 
   METHOD run.
     DATA(t1) = i_obj_1ed0.
-    DATA t2 TYPE abap_bool.
-    DATA t3 TYPE abap_bool.
-    DATA(t4) = t1.
-    t3 = xsdbool( t4 IS BOUND AND t4 IS INSTANCE OF zcl_lnt_abap_object ).
-    t2 = xsdbool( t3 = abap_false ).
-    IF t2 = abap_true.
-      DATA t5 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      CREATE OBJECT t5.
-      result = t5.
+    IF xsdbool( xsdbool( t1 IS BOUND AND t1 IS INSTANCE OF zcl_lnt_abap_object ) = abap_false ) = abap_true.
+      CREATE OBJECT result.
       RETURN.
     ENDIF.
-    DATA t6 TYPE REF TO zcl_lnt_abap_object.
     DATA t7 TYPE REF TO zcl_lnt_abap_object.
-    DATA(t8) = t1.
-    DATA t9 TYPE REF TO object.
-    t9 = t8.
-    t7 ?= t9.
-    t6 = t7.
+    t7 ?= t1.
     DATA t10 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t11 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t11.
-    t10 = t11.
+    CREATE OBJECT t10.
     DATA t12 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t13 TYPE REF TO zcl_lnt_abap_object.
-    DATA(t14) = t6.
-    t13 = t14.
-    DATA t15 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t16) = t13.
-    t15 = t16->parsed.
-    t12 = t15.
+    t12 = t7->parsed.
     DATA t17 TYPE REF TO zcl_lnt_abap_file.
-    CLEAR t17.
     DATA t18 TYPE REF TO object.
-    CLEAR t18.
     DATA(t19) = VALUE i( ).
     DO.
       t12->load( ).
@@ -87,13 +62,9 @@ CLASS zcl_lnt_abap_rule IMPLEMENTATION.
       ENDIF.
       DATA(t22) = VALUE i( ).
       DATA t23 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA(t24) = t17.
       DATA t25 TYPE REF TO zcl_lnt_abap_object.
-      DATA(t26) = t1.
-      DATA t27 TYPE REF TO object.
-      t27 = t26.
-      t25 ?= t27.
-      t23 = me->run_parsed( i_file = t24 i_obj_1ed0 = t25 ).
+      t25 ?= t1.
+      t23 = me->run_parsed( i_file = t17 i_obj_1ed0 = t25 ).
       DATA t28 TYPE REF TO zcl_lnt_issue.
       CLEAR t28.
       DATA t29 TYPE REF TO object.
@@ -118,29 +89,20 @@ CLASS zcl_lnt_abap_rule IMPLEMENTATION.
         ELSE.
           t28 ?= t29.
         ENDIF.
-        DATA(t33) = t10.
-        DATA(t34) = t28.
-        t33->load( ).
-        APPEND t34 TO t33->items.
-        t33->save( ).
+        t10->load( ).
+        APPEND t28 TO t10->items.
+        t10->save( ).
       ENDDO.
-      DATA t35 TYPE i.
-      DATA(t36) = t10.
-      t36->load( ).
-      t35 = lines( t36->items ).
-      t22 = t35.
+      t10->load( ).
+      t22 = lines( t10->items ).
     ENDDO.
-    DATA(t37) = t10.
-    result = t37.
+    result = t10.
 
   ENDMETHOD.
 
   METHOD initialize.
-    DATA(t1) = i_reg_f149.
-    DATA t2 TYPE REF TO zcl_lnt_abap_rule.
-    DATA(t3) = t1.
-    t2 = me->in_in_src_rls_abp_rl_ts_abp_rl( i_reg_f149 = t3 ).
-    result = t2.
+    DATA(t3) = i_reg_f149.
+    result = me->in_in_src_rls_abp_rl_ts_abp_rl( i_reg_f149 = t3 ).
 
   ENDMETHOD.
 

@@ -14,19 +14,10 @@ CLASS zcl_lnt_method_param_name IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD get_runnable.
-    DATA t1 TYPE REF TO zif_lnt_statement_runnable.
-    DATA t2 TYPE REF TO zif_lnt_statement_runnable.
     DATA t3 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-    CLEAR t3.
-    DATA(t4) = `^!?\w*(\/\w+\/)?\w+$`.
-    DATA(t5) = `^!?[A-Za-z0-9_]*(\/[A-Za-z0-9_]+\/)?[A-Za-z0-9_]+$`.
-    DATA(t6) = ||.
-    CREATE OBJECT t3 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = t5 flags = t6.
-    t3->source = t4.
-    t2 = zcl_lnt_st_combi_module=>regex( i_r_f634 = t3 ).
-    t1 = t2.
-    DATA(t7) = t1.
-    result = t7.
+    CREATE OBJECT t3 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = `^!?[A-Za-z0-9_]*(\/[A-Za-z0-9_]+\/)?[A-Za-z0-9_]+$` flags = ||.
+    t3->source = `^!?\w*(\/\w+\/)?\w+$`.
+    result = zcl_lnt_st_combi_module=>regex( i_r_f634 = t3 ).
 
   ENDMETHOD.
 

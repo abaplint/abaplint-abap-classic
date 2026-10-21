@@ -14,36 +14,18 @@ CLASS zcl_lnt_sql_extended_result IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD get_runnable.
-    DATA t1 TYPE REF TO zif_lnt_statement_runnable.
-    CLEAR t1.
-    DATA t2 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t2.
     DATA t3 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t3.
-    DATA(t4) = |EXTENDED RESULT|.
-    CLEAR t3.
     CREATE OBJECT t3.
     t3->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t3->sval = t4.
-    t2 = t3.
-    DATA t5 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t5.
+    t3->sval = |EXTENDED RESULT|.
     DATA t6 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t6.
     DATA t7 TYPE REF TO zif_lnt_statement_runnable.
-    CLEAR t7.
     DATA(t8) = zlnt_runtime_desc_78196487750d=>zlnt_member_d42_9f93cd02a8cf40.
     t7 = zcl_lnt_st_combi_module=>tok( i_t = t8 ).
-    CLEAR t6.
     IF t7 IS BOUND.
       DATA t9 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      CLEAR t9.
-      DATA t10 TYPE REF TO object.
-      CLEAR t10.
-      CLEAR t9.
-      t10 = t7.
       TRY.
-          t6 ?= t10.
+          t6 ?= t7.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t6 IS NOT BOUND.
@@ -61,36 +43,18 @@ CLASS zcl_lnt_sql_extended_result IMPLEMENTATION.
         ENDIF.
       ENDIF.
     ENDIF.
-    t5 = t6.
     DATA t11 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CLEAR t11.
-    DATA t12 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CLEAR t12.
-    CREATE OBJECT t12.
-    t11 = t12.
-    DATA(t13) = t11.
+    CREATE OBJECT t11.
     DATA t14 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t14.
     DATA t15 TYPE REF TO zif_lnt_statement_runnable.
-    CLEAR t15.
     DATA t16 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-    CLEAR t16.
-    DATA(t17) = `^\w+$`.
-    DATA(t18) = |^[A-Za-z0-9_]+$|.
-    DATA(t19) = ||.
-    CREATE OBJECT t16 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = t18 flags = t19.
-    t16->source = t17.
+    CREATE OBJECT t16 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = |^[A-Za-z0-9_]+$| flags = ||.
+    t16->source = `^\w+$`.
     t15 = zcl_lnt_st_combi_module=>regex( i_r_f634 = t16 ).
-    CLEAR t14.
     IF t15 IS BOUND.
       DATA t20 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      CLEAR t20.
-      DATA t21 TYPE REF TO object.
-      CLEAR t21.
-      CLEAR t20.
-      t21 = t15.
       TRY.
-          t14 ?= t21.
+          t14 ?= t15.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t14 IS NOT BOUND.
@@ -108,17 +72,10 @@ CLASS zcl_lnt_sql_extended_result IMPLEMENTATION.
         ENDIF.
       ENDIF.
     ENDIF.
-    t13->load( ).
-    APPEND t14 TO t13->items.
-    t13->save( ).
-    DATA t22 TYPE REF TO zif_lnt_statement_runnable.
-    CLEAR t22.
-    DATA(t23) = t2.
-    DATA(t24) = t5.
-    DATA(t25) = t11.
-    t22 = zcl_lnt_st_combi_module=>seq( i_first = t23 i_second = t24 i_rest = t25 ).
-    t1 = t22.
-    result = t1.
+    t11->load( ).
+    APPEND t14 TO t11->items.
+    t11->save( ).
+    result = zcl_lnt_st_combi_module=>seq( i_first = t3 i_second = t6 i_rest = t11 ).
 
   ENDMETHOD.
 

@@ -14,10 +14,7 @@ CLASS zcl_lnt_and_return IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD get_runnable.
-    DATA t1 TYPE REF TO zif_lnt_statement_runnable.
-    DATA(t2) = |AND RETURN|.
-    t1 = zcl_lnt_st_combi_module=>str( i_s = t2 ).
-    result = t1.
+    result = zcl_lnt_st_combi_module=>str( i_s = |AND RETURN| ).
 
   ENDMETHOD.
 

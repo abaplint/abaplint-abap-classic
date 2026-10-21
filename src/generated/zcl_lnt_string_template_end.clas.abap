@@ -10,11 +10,9 @@ CLASS zcl_lnt_string_template_end DEFINITION PUBLIC INHERITING FROM zcl_lnt_abst
 ENDCLASS.
 CLASS zcl_lnt_string_template_end IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = i_start.
     DATA(t2) = i_str.
-    DATA(t3) = t1.
-    DATA(t4) = t2.
-    super->constructor( i_start = t3 i_str = t4 ).
+    DATA(t3) = i_start.
+    super->constructor( i_start = t3 i_str = t2 ).
   ENDMETHOD.
 
   METHOD zlnt_builtin_nati_72359f490bf2.

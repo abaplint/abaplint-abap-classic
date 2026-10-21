@@ -12,16 +12,12 @@ CLASS zcl_lnt_sy_else_if DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_sy_else_if IMPLEMENTATION.
   METHOD run_syntax.
-    DATA(t1) = i_node.
     DATA(t2) = i_input_967e.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t4) = t1.
     DATA(t5) = zlnt_runtime_desc_78196487750d=>zlnt_member_d136_17544e6d0837.
-    t3 = t4->find_direct_expressions( i_type_9913 = t5 ).
+    t3 = i_node->find_direct_expressions( i_type_9913 = t5 ).
     DATA t6 TYPE REF TO zcl_lnt_expression_node.
-    CLEAR t6.
     DATA t7 TYPE REF TO object.
-    CLEAR t7.
     DATA(t8) = VALUE i( ).
     DO.
       t3->load( ).
@@ -42,9 +38,7 @@ CLASS zcl_lnt_sy_else_if IMPLEMENTATION.
       ELSE.
         t6 ?= t7.
       ENDIF.
-      DATA(t11) = t6.
-      DATA(t12) = t2.
-      zcl_lnt_sy_cond=>run_syntax( i_node = t11 i_input_967e = t12 ).
+      zcl_lnt_sy_cond=>run_syntax( i_node = t6 i_input_967e = t2 ).
     ENDDO.
   ENDMETHOD.
 

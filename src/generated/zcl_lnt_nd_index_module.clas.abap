@@ -20,63 +20,47 @@ CLASS zcl_lnt_nd_index_module IMPLEMENTATION.
     IF zcl_lnt_nd_index_module=>zlnt_builtin_init_e112e0586acf = abap_false.
       zcl_lnt_nd_index_module=>zlnt_builtin_init_82aca7d2eec4( ).
     ENDIF.
-    DATA(t1) = NEW zlnt_runtime_map__a5ffc3d163a5( ).
-    zcl_lnt_nd_index_module=>ns = t1.
+    zcl_lnt_nd_index_module=>ns = NEW zlnt_runtime_map__a5ffc3d163a5( ).
     DATA t2 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
-    CLEAR t2.
     DATA t3 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
-    CLEAR t3.
     IF zcl_lnt_nd_index_module=>zlnt_builtin_init_e112e0586acf = abap_false.
       zcl_lnt_nd_index_module=>zlnt_builtin_init_82aca7d2eec4( ).
     ENDIF.
     t3 = zcl_lnt_nd_index_module=>ns.
-    DATA(t4) = |ExpressionNode|.
     DATA(t5) = zlnt_runtime_desc_78196487750d=>zlnt_member_d1007_3086b49acaf2.
-    t2 = t3->set( p0 = t4 p1 = t5 ).
+    t2 = t3->set( p0 = |ExpressionNode| p1 = t5 ).
     DATA t6 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
-    CLEAR t6.
     DATA t7 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
-    CLEAR t7.
     IF zcl_lnt_nd_index_module=>zlnt_builtin_init_e112e0586acf = abap_false.
       zcl_lnt_nd_index_module=>zlnt_builtin_init_82aca7d2eec4( ).
     ENDIF.
     t7 = zcl_lnt_nd_index_module=>ns.
-    DATA(t8) = |StatementNode|.
     DATA(t9) = zlnt_runtime_desc_78196487750d=>zlnt_member_d1008_5e4f79d1ad51.
-    t6 = t7->set( p0 = t8 p1 = t9 ).
+    t6 = t7->set( p0 = |StatementNode| p1 = t9 ).
     DATA t10 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
-    CLEAR t10.
     DATA t11 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
-    CLEAR t11.
     IF zcl_lnt_nd_index_module=>zlnt_builtin_init_e112e0586acf = abap_false.
       zcl_lnt_nd_index_module=>zlnt_builtin_init_82aca7d2eec4( ).
     ENDIF.
     t11 = zcl_lnt_nd_index_module=>ns.
-    DATA(t12) = |StructureNode|.
     DATA(t13) = zlnt_runtime_desc_78196487750d=>zlnt_member_d1009_5c49db3a1727.
-    t10 = t11->set( p0 = t12 p1 = t13 ).
+    t10 = t11->set( p0 = |StructureNode| p1 = t13 ).
     DATA t14 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
-    CLEAR t14.
     DATA t15 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
-    CLEAR t15.
     IF zcl_lnt_nd_index_module=>zlnt_builtin_init_e112e0586acf = abap_false.
       zcl_lnt_nd_index_module=>zlnt_builtin_init_82aca7d2eec4( ).
     ENDIF.
     t15 = zcl_lnt_nd_index_module=>ns.
-    DATA(t16) = |TokenNode|.
     DATA(t17) = zlnt_runtime_desc_78196487750d=>zlnt_member_d1010_e2855e6725fd.
-    t14 = t15->set( p0 = t16 p1 = t17 ).
+    t14 = t15->set( p0 = |TokenNode| p1 = t17 ).
     DATA t18 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
-    CLEAR t18.
     DATA t19 TYPE REF TO zlnt_runtime_map__a5ffc3d163a5.
-    CLEAR t19.
     IF zcl_lnt_nd_index_module=>zlnt_builtin_init_e112e0586acf = abap_false.
       zcl_lnt_nd_index_module=>zlnt_builtin_init_82aca7d2eec4( ).
     ENDIF.
     t19 = zcl_lnt_nd_index_module=>ns.
-    DATA(t20) = |TokenNodeRegex|.
     DATA(t21) = zlnt_runtime_desc_78196487750d=>zlnt_member_d1011_68eeca660bc3.
-    t18 = t19->set( p0 = t20 p1 = t21 ).
+    t18 = t19->set( p0 = |TokenNodeRegex| p1 = t21 ).
   ENDMETHOD.
 
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.

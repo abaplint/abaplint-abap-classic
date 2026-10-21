@@ -394,9 +394,7 @@ CLASS zlnt_runtime_arra_b72089862d0f IMPLEMENTATION.
     missing = source->missing.
     DATA(t1) = VALUE i( ).
     DATA t2 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t2.
     DATA t3 TYPE REF TO zif_lnt_union_c74a232f.
-    CLEAR t3.
     LOOP AT source->items INTO t2.
       t1 = sy-tabix.
       CLEAR t3.
@@ -406,7 +404,6 @@ CLASS zlnt_runtime_arra_b72089862d0f IMPLEMENTATION.
           CLEAR t3.
           IF t2 IS BOUND.
             DATA t4 TYPE REF TO object.
-            CLEAR t4.
             t4 = t2->as_ref( ).
             t3 ?= t4.
           ENDIF.
@@ -424,9 +421,7 @@ CLASS zlnt_runtime_arra_b72089862d0f IMPLEMENTATION.
     CLEAR source->items.
     source->missing = missing.
     DATA t1 TYPE REF TO zif_lnt_union_c74a232f.
-    CLEAR t1.
     DATA t2 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t2.
     LOOP AT items INTO t1.
       CLEAR t2.
       CLEAR t2.
@@ -435,12 +430,9 @@ CLASS zlnt_runtime_arra_b72089862d0f IMPLEMENTATION.
         IF t1 IS BOUND.
           DATA t3 TYPE REF TO zlnt_view_storage_74017ca272ac.
           CLEAR t3.
-          DATA t4 TYPE REF TO object.
-          CLEAR t4.
           CLEAR t3.
-          t4 = t1.
           TRY.
-              t2 ?= t4.
+              t2 ?= t1.
             CATCH cx_sy_move_cast_error.
           ENDTRY.
           IF t2 IS NOT BOUND.
@@ -481,9 +473,7 @@ CLASS zlnt_runtime_arra_b72089862d0f IMPLEMENTATION.
   METHOD zlnt_view_storage_74017ca272ac~get.
     DATA(t1) = VALUE i( ).
     DATA t2 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t2.
     DATA t3 TYPE REF TO zif_lnt_union_c74a232f.
-    CLEAR t3.
     load( ).
     IF p0 = `length`.
       CREATE OBJECT result.
@@ -502,13 +492,8 @@ CLASS zlnt_runtime_arra_b72089862d0f IMPLEMENTATION.
       CLEAR result.
       IF t3 IS BOUND.
         DATA t4 TYPE REF TO zlnt_view_storage_74017ca272ac.
-        CLEAR t4.
-        DATA t5 TYPE REF TO object.
-        CLEAR t5.
-        CLEAR t4.
-        t5 = t3.
         TRY.
-            result ?= t5.
+            result ?= t3.
           CATCH cx_sy_move_cast_error.
         ENDTRY.
         IF result IS NOT BOUND.
@@ -532,16 +517,12 @@ CLASS zlnt_runtime_arra_b72089862d0f IMPLEMENTATION.
   METHOD zlnt_view_storage_74017ca272ac~put.
     DATA(t1) = VALUE i( ).
     DATA t2 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t2.
     DATA t3 TYPE REF TO zif_lnt_union_c74a232f.
-    CLEAR t3.
     CREATE OBJECT t2.
     t1 = t2->array_index( p0 ).
     IF p1 IS BOUND.
-      CLEAR t3.
       IF p1 IS BOUND.
         DATA t4 TYPE REF TO object.
-        CLEAR t4.
         t4 = p1->as_ref( ).
         t3 ?= t4.
       ENDIF.

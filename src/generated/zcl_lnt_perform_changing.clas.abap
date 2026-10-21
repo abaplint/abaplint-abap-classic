@@ -14,46 +14,24 @@ CLASS zcl_lnt_perform_changing IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD get_runnable.
-    DATA t1 TYPE REF TO zif_lnt_statement_runnable.
-    CLEAR t1.
-    DATA t2 TYPE REF TO zif_lnt_statement_runnable.
-    CLEAR t2.
-    DATA t3 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t3.
     DATA t4 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t4.
-    DATA(t5) = |CHANGING|.
-    CLEAR t4.
     CREATE OBJECT t4.
     t4->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t4->sval = t5.
-    t3 = t4.
-    DATA t6 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t6.
+    t4->sval = |CHANGING|.
     DATA t7 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t7.
     DATA t8 TYPE REF TO zif_lnt_statement_runnable.
-    CLEAR t8.
     DATA t9 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t9.
     DATA(t10) = zlnt_runtime_desc_78196487750d=>zlnt_member_d210_764baa705494.
-    CLEAR t9.
     IF t10 IS BOUND.
       CREATE OBJECT t9.
       t9->tag = zlnt_runtime_dyna_a429568d5be8=>tag_class.
       t9->cval = t10.
     ENDIF.
     t8 = zcl_lnt_st_combi_module=>plus( i_first = t9 ).
-    CLEAR t7.
     IF t8 IS BOUND.
       DATA t11 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      CLEAR t11.
-      DATA t12 TYPE REF TO object.
-      CLEAR t12.
-      CLEAR t11.
-      t12 = t8.
       TRY.
-          t7 ?= t12.
+          t7 ?= t8.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t7 IS NOT BOUND.
@@ -71,23 +49,9 @@ CLASS zcl_lnt_perform_changing IMPLEMENTATION.
         ENDIF.
       ENDIF.
     ENDIF.
-    t6 = t7.
-    DATA t13 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CLEAR t13.
     DATA t14 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CLEAR t14.
     CREATE OBJECT t14.
-    t13 = t14.
-    DATA t15 TYPE REF TO zif_lnt_statement_runnable.
-    CLEAR t15.
-    DATA(t16) = t3.
-    DATA(t17) = t6.
-    DATA(t18) = t13.
-    t15 = zcl_lnt_st_combi_module=>seq( i_first = t16 i_second = t17 i_rest = t18 ).
-    t2 = t15.
-    t1 = t2.
-    DATA(t19) = t1.
-    result = t19.
+    result = zcl_lnt_st_combi_module=>seq( i_first = t4 i_second = t7 i_rest = t14 ).
 
   ENDMETHOD.
 

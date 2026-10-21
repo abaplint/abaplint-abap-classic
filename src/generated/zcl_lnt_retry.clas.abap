@@ -13,30 +13,15 @@ CLASS zcl_lnt_retry DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_retry IMPLEMENTATION.
   METHOD get_matcher.
-    DATA t1 TYPE REF TO zif_lnt_statement_runnable.
-    CLEAR t1.
     DATA t2 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t2.
     DATA t3 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t3.
-    DATA t4 TYPE REF TO zcl_lnt_abap_release.
-    CLEAR t4.
-    DATA t5 TYPE REF TO zlnt_runtime_map__201f3699a39e.
-    CLEAR t5.
     IF zcl_lnt_version_module=>zlnt_builtin_init_e6a1a7a56c5d = abap_false.
       zcl_lnt_version_module=>zlnt_builtin_init_839fc4c13920( ).
     ENDIF.
-    t5 = zcl_lnt_version_module=>release_b8cd.
-    DATA(t6) = |v702|.
-    t4 = t5->get( p0 = t6 ).
-    t3 = t4.
-    CLEAR t2.
+    t3 = zcl_lnt_version_module=>release_b8cd->get( p0 = |v702| ).
     IF t3 IS BOUND.
       DATA t7 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      CLEAR t7.
       DATA t8 TYPE REF TO object.
-      CLEAR t8.
-      CLEAR t7.
       t8 = t3.
       TRY.
           t2 ?= t8.
@@ -58,16 +43,11 @@ CLASS zcl_lnt_retry IMPLEMENTATION.
       ENDIF.
     ENDIF.
     DATA t9 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t9.
-    DATA(t10) = |RETRY|.
-    CLEAR t9.
     CREATE OBJECT t9.
     t9->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t9->sval = t10.
+    t9->sval = |RETRY|.
     DATA t11 TYPE REF TO zcl_lnt_iver_options.
-    CLEAR t11.
-    t1 = zcl_lnt_st_combi_module=>ver( i_version_or_release = t2 i_first = t9 i_opts = t11 ).
-    result = t1.
+    result = zcl_lnt_st_combi_module=>ver( i_version_or_release = t2 i_first = t9 i_opts = t11 ).
 
   ENDMETHOD.
 

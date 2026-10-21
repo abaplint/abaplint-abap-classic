@@ -61,9 +61,7 @@ CLASS zcl_lnt_constant_classes_conf IMPLEMENTATION.
         ENDIF.
         result->load( ).
         DATA t2 TYPE REF TO object.
-        CLEAR t2.
         DATA t3 TYPE REF TO zcl_lnt_domain_class_mapping.
-        CLEAR t3.
         LOOP AT result->items INTO t2.
           DATA t4 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t4.
@@ -116,14 +114,9 @@ CLASS zcl_lnt_constant_classes_conf IMPLEMENTATION.
   METHOD zlnt_view_write_s_7de7cbdd93f6.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t1.
-      CLEAR t1.
       IF p0 IS BOUND.
         DATA t2 TYPE REF TO zlnt_view_storage_74017ca272ac.
-        CLEAR t2.
         DATA t3 TYPE REF TO object.
-        CLEAR t3.
-        CLEAR t2.
         t3 = p0.
         TRY.
             t1 ?= t3.
@@ -180,7 +173,6 @@ CLASS zcl_lnt_constant_classes_conf IMPLEMENTATION.
 
   METHOD zlnt_own_storage_4c72afe8366e~keys.
     DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t1.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       result = zlnt_runtime_ownk_4497b85e405d=>keys( me->zlnt_view_source_36f3bf68b9b8 ).
       RETURN.
@@ -229,10 +221,7 @@ CLASS zcl_lnt_constant_classes_conf IMPLEMENTATION.
           CLEAR result.
           IF me->exclude IS BOUND.
             DATA t1 TYPE REF TO zlnt_view_storage_74017ca272ac.
-            CLEAR t1.
             DATA t2 TYPE REF TO object.
-            CLEAR t2.
-            CLEAR t1.
             t2 = me->exclude.
             TRY.
                 result ?= t2.
@@ -266,10 +255,7 @@ CLASS zcl_lnt_constant_classes_conf IMPLEMENTATION.
         CLEAR result.
         IF me->mapping IS BOUND.
           DATA t3 TYPE REF TO zlnt_view_storage_74017ca272ac.
-          CLEAR t3.
           DATA t4 TYPE REF TO object.
-          CLEAR t4.
-          CLEAR t3.
           t4 = me->mapping.
           TRY.
               result ?= t4.

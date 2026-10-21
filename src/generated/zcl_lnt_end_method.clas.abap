@@ -13,10 +13,7 @@ CLASS zcl_lnt_end_method DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_end_method IMPLEMENTATION.
   METHOD get_matcher.
-    DATA t1 TYPE REF TO zif_lnt_statement_runnable.
-    DATA(t2) = |ENDMETHOD|.
-    t1 = zcl_lnt_st_combi_module=>str( i_s = t2 ).
-    result = t1.
+    result = zcl_lnt_st_combi_module=>str( i_s = |ENDMETHOD| ).
 
   ENDMETHOD.
 

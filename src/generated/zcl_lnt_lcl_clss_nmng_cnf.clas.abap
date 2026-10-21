@@ -30,12 +30,9 @@ CLASS zcl_lnt_lcl_clss_nmng_cnf IMPLEMENTATION.
       me->zlnt_view_source_36f3bf68b9b8 = view_source.
       RETURN.
     ENDIF.
-    DATA(t1) = |^LCL_.+$|.
-    me->zlnt_view_write_s_2d981cb41b90( p0 = t1 ).
-    DATA(t2) = |^LCX_.+$|.
-    me->zlnt_view_write_s_021ca7f7110b( p0 = t2 ).
-    DATA(t3) = |^LTCL_.+$|.
-    me->zlnt_view_write_s_f59a1f3869fa( p0 = t3 ).
+    me->zlnt_view_write_s_2d981cb41b90( p0 = |^LCL_.+$| ).
+    me->zlnt_view_write_s_021ca7f7110b( p0 = |^LCX_.+$| ).
+    me->zlnt_view_write_s_f59a1f3869fa( p0 = |^LTCL_.+$| ).
   ENDMETHOD.
 
   METHOD zlnt_builtin_nati_72359f490bf2.
@@ -53,8 +50,7 @@ CLASS zcl_lnt_lcl_clss_nmng_cnf IMPLEMENTATION.
 
   METHOD zlnt_view_read_sr_eaedc4fec3fa.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `local` ) ).
-      result = t1->as_string( ).
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `local` ) )->as_string( ).
     ELSE.
       result = me->local_2d1d.
     ENDIF.
@@ -63,8 +59,6 @@ CLASS zcl_lnt_lcl_clss_nmng_cnf IMPLEMENTATION.
   METHOD zlnt_view_write_s_2d981cb41b90.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t1.
-      CLEAR t1.
       CREATE OBJECT t1.
       t1->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
       t1->sval = p0.
@@ -77,8 +71,7 @@ CLASS zcl_lnt_lcl_clss_nmng_cnf IMPLEMENTATION.
 
   METHOD zlnt_view_read_sr_90291641a6c3.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `exception` ) ).
-      result = t1->as_string( ).
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `exception` ) )->as_string( ).
     ELSE.
       result = me->exception.
     ENDIF.
@@ -87,8 +80,6 @@ CLASS zcl_lnt_lcl_clss_nmng_cnf IMPLEMENTATION.
   METHOD zlnt_view_write_s_021ca7f7110b.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t1.
-      CLEAR t1.
       CREATE OBJECT t1.
       t1->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
       t1->sval = p0.
@@ -101,8 +92,7 @@ CLASS zcl_lnt_lcl_clss_nmng_cnf IMPLEMENTATION.
 
   METHOD zlnt_view_read_sr_36836f083356.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `test` ) ).
-      result = t1->as_string( ).
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `test` ) )->as_string( ).
     ELSE.
       result = me->test.
     ENDIF.
@@ -111,8 +101,6 @@ CLASS zcl_lnt_lcl_clss_nmng_cnf IMPLEMENTATION.
   METHOD zlnt_view_write_s_f59a1f3869fa.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t1.
-      CLEAR t1.
       CREATE OBJECT t1.
       t1->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
       t1->sval = p0.
@@ -162,7 +150,6 @@ CLASS zcl_lnt_lcl_clss_nmng_cnf IMPLEMENTATION.
 
   METHOD zlnt_own_storage_4c72afe8366e~keys.
     DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t1.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       result = zlnt_runtime_ownk_4497b85e405d=>keys( me->zlnt_view_source_36f3bf68b9b8 ).
       RETURN.
@@ -231,10 +218,7 @@ CLASS zcl_lnt_lcl_clss_nmng_cnf IMPLEMENTATION.
           CLEAR result.
           IF me->exclude IS BOUND.
             DATA t1 TYPE REF TO zlnt_view_storage_74017ca272ac.
-            CLEAR t1.
             DATA t2 TYPE REF TO object.
-            CLEAR t2.
-            CLEAR t1.
             t2 = me->exclude.
             TRY.
                 result ?= t2.
@@ -278,10 +262,7 @@ CLASS zcl_lnt_lcl_clss_nmng_cnf IMPLEMENTATION.
           CLEAR result.
           IF me->ignore_names IS BOUND.
             DATA t3 TYPE REF TO zlnt_view_storage_74017ca272ac.
-            CLEAR t3.
             DATA t4 TYPE REF TO object.
-            CLEAR t4.
-            CLEAR t3.
             t4 = me->ignore_names.
             TRY.
                 result ?= t4.
@@ -309,10 +290,7 @@ CLASS zcl_lnt_lcl_clss_nmng_cnf IMPLEMENTATION.
           CLEAR result.
           IF me->ignore_patterns IS BOUND.
             DATA t5 TYPE REF TO zlnt_view_storage_74017ca272ac.
-            CLEAR t5.
             DATA t6 TYPE REF TO object.
-            CLEAR t6.
-            CLEAR t5.
             t6 = me->ignore_patterns.
             TRY.
                 result ?= t6.

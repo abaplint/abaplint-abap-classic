@@ -21,13 +21,10 @@ CLASS zcl_lnt_abstract_node DEFINITION PUBLIC ABSTRACT CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_abstract_node IMPLEMENTATION.
   METHOD constructor.
-    DATA t1 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CLEAR t1.
     IF zcl_lnt_abstract_node_module=>zlnt_builtin_init_9d4dd55c09e0 = abap_false.
       zcl_lnt_abstract_node_module=>zlnt_builtin_init_5b5d85f40577( ).
     ENDIF.
-    t1 = zcl_lnt_abstract_node_module=>empty_57e4.
-    me->children = t1.
+    me->children = zcl_lnt_abstract_node_module=>empty_57e4.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `children`.
   ENDMETHOD.
 
@@ -36,22 +33,15 @@ CLASS zcl_lnt_abstract_node IMPLEMENTATION.
     DATA(t2) = VALUE abap_bool( ).
     DATA(t3) = me->children.
     DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CLEAR t4.
     IF zcl_lnt_abstract_node_module=>zlnt_builtin_init_9d4dd55c09e0 = abap_false.
       zcl_lnt_abstract_node_module=>zlnt_builtin_init_5b5d85f40577( ).
     ENDIF.
     t4 = zcl_lnt_abstract_node_module=>empty_57e4.
     DATA t5 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t5.
     DATA t6 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t6.
-    CLEAR t5.
     IF t3 IS BOUND.
       DATA t7 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      CLEAR t7.
       DATA t8 TYPE REF TO object.
-      CLEAR t8.
-      CLEAR t7.
       t8 = t3.
       TRY.
           t5 ?= t8.
@@ -72,13 +62,9 @@ CLASS zcl_lnt_abstract_node IMPLEMENTATION.
         ENDIF.
       ENDIF.
     ENDIF.
-    CLEAR t6.
     IF t4 IS BOUND.
       DATA t9 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      CLEAR t9.
       DATA t10 TYPE REF TO object.
-      CLEAR t10.
-      CLEAR t9.
       t10 = t4.
       TRY.
           t6 ?= t10.
@@ -106,106 +92,69 @@ CLASS zcl_lnt_abstract_node IMPLEMENTATION.
     ENDIF.
     IF t2 = abap_true.
       DATA t11 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      CLEAR t11.
       CREATE OBJECT t11.
       me->children = t11.
       DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `children`.
     ENDIF.
     DATA(t12) = me->children.
-    DATA(t13) = t1.
     t12->load( ).
-    APPEND t13 TO t12->items.
+    APPEND t1 TO t12->items.
     t12->save( ).
   ENDMETHOD.
 
   METHOD set_children.
-    DATA(t1) = i_children_9020.
-    DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t3) = t1.
-    t2 = t3->slice0( ).
-    me->children = t2.
+    me->children = i_children_9020->slice0( ).
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `children`.
   ENDMETHOD.
 
   METHOD get_children.
-    DATA(t1) = me->children.
-    result = t1.
+    result = me->children.
 
   ENDMETHOD.
 
   METHOD get_first_child.
-    DATA t1 TYPE REF TO zif_lnt_node.
-    CLEAR t1.
-    DATA(t2) = abap_true.
-    IF t2 = abap_true.
-      DATA t3 TYPE REF TO zif_lnt_node.
-      CLEAR t3.
-      DATA(t4) = me->children.
-      DATA t5 TYPE REF TO object.
-      CLEAR t5.
-      t4->load( ).
-      CLEAR t5.
-      READ TABLE t4->items INDEX 1 INTO t5.
-      DATA t6 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t6.
-      CLEAR t3.
-      IF t5 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
-        t6 ?= t5.
-        DATA t7 TYPE REF TO object.
-        t7 = t6->as_ref( ).
-        t3 ?= t7.
-      ELSE.
-        t3 ?= t5.
-      ENDIF.
-      t1 = t3.
+    DATA t3 TYPE REF TO zif_lnt_node.
+    DATA(t4) = me->children.
+    DATA t5 TYPE REF TO object.
+    t4->load( ).
+    READ TABLE t4->items INDEX 1 INTO t5.
+    DATA t6 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    IF t5 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
+      t6 ?= t5.
+      DATA t7 TYPE REF TO object.
+      t7 = t6->as_ref( ).
+      t3 ?= t7.
     ELSE.
-      DATA t8 TYPE REF TO zif_lnt_node.
-      CLEAR t8.
-      t1 = t8.
+      t3 ?= t5.
     ENDIF.
-    result = t1.
+    result = t3.
 
   ENDMETHOD.
 
   METHOD get_last_child.
-    DATA t1 TYPE REF TO zif_lnt_node.
-    CLEAR t1.
-    DATA(t2) = abap_true.
-    IF t2 = abap_true.
-      DATA t3 TYPE REF TO zif_lnt_node.
-      CLEAR t3.
-      DATA(t4) = me->children.
-      DATA t5 TYPE i.
-      DATA t6 TYPE i.
-      DATA(t7) = me->children.
-      t7->load( ).
-      t6 = lines( t7->items ).
-      DATA(t8) = 1.
-      t5 = t6 - t8.
-      t5 = t5 + 1.
-      DATA t9 TYPE REF TO object.
-      CLEAR t9.
-      t4->load( ).
-      CLEAR t9.
-      READ TABLE t4->items INDEX t5 INTO t9.
-      DATA t10 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t10.
-      CLEAR t3.
-      IF t9 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
-        t10 ?= t9.
-        DATA t11 TYPE REF TO object.
-        t11 = t10->as_ref( ).
-        t3 ?= t11.
-      ELSE.
-        t3 ?= t9.
-      ENDIF.
-      t1 = t3.
+    DATA t3 TYPE REF TO zif_lnt_node.
+    DATA(t4) = me->children.
+    DATA t5 TYPE i.
+    DATA t6 TYPE i.
+    DATA(t7) = me->children.
+    t7->load( ).
+    t6 = lines( t7->items ).
+    DATA(t8) = 1.
+    t5 = t6 - t8.
+    t5 = t5 + 1.
+    DATA t9 TYPE REF TO object.
+    t4->load( ).
+    READ TABLE t4->items INDEX t5 INTO t9.
+    DATA t10 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    IF t9 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
+      t10 ?= t9.
+      DATA t11 TYPE REF TO object.
+      t11 = t10->as_ref( ).
+      t3 ?= t11.
     ELSE.
-      DATA t12 TYPE REF TO zif_lnt_node.
-      CLEAR t12.
-      t1 = t12.
+      t3 ?= t9.
     ENDIF.
-    result = t1.
+    result = t3.
 
   ENDMETHOD.
 

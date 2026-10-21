@@ -18,35 +18,26 @@ CLASS zcl_lnt_itext_edit DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_itext_edit IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = i_range.
     DATA(t2) = i_new_text.
-    DATA(t3) = t1.
-    me->range = t3.
+    me->range = i_range.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `range`.
     DATA t4 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t4.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `range` p1 = t4 ).
     ENDIF.
-    DATA(t5) = |range|.
     DATA t6 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t6.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t5 p1 = t6 ).
+      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = |range| p1 = t6 ).
     ENDIF.
-    DATA(t7) = t2.
-    me->new_text = t7.
+    me->new_text = t2.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `newText`.
     DATA t8 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t8.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `newText` p1 = t8 ).
     ENDIF.
-    DATA(t9) = |newText|.
     DATA t10 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t10.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t9 p1 = t10 ).
+      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = |newText| p1 = t10 ).
     ENDIF.
   ENDMETHOD.
 
@@ -133,10 +124,7 @@ CLASS zcl_lnt_itext_edit IMPLEMENTATION.
         CLEAR result.
         IF me->range IS BOUND.
           DATA t1 TYPE REF TO zlnt_view_storage_74017ca272ac.
-          CLEAR t1.
           DATA t2 TYPE REF TO object.
-          CLEAR t2.
-          CLEAR t1.
           t2 = me->range.
           TRY.
               result ?= t2.
@@ -196,7 +184,6 @@ CLASS zcl_lnt_itext_edit IMPLEMENTATION.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = p0 p1 = VALUE #( ) ).
     ENDIF.
     DATA t2 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t2.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       me->zlnt_json_ownkeys_70e5fd461788->put( p0 = p0 p1 = t2 ).
     ENDIF.

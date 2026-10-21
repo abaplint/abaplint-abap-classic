@@ -18,35 +18,26 @@ CLASS zcl_lnt_irun_input DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_irun_input IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = i_progress.
     DATA(t2) = i_output_performance.
-    DATA(t3) = t1.
-    me->progress = t3.
+    me->progress = i_progress.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `progress`.
     DATA t4 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t4.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `progress` p1 = t4 ).
     ENDIF.
-    DATA(t5) = |progress|.
     DATA t6 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t6.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t5 p1 = t6 ).
+      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = |progress| p1 = t6 ).
     ENDIF.
-    DATA(t7) = t2.
-    me->output_performance = t7.
+    me->output_performance = t2.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `outputPerformance`.
     DATA t8 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t8.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `outputPerformance` p1 = t8 ).
     ENDIF.
-    DATA(t9) = |outputPerformance|.
     DATA t10 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t10.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t9 p1 = t10 ).
+      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = |outputPerformance| p1 = t10 ).
     ENDIF.
   ENDMETHOD.
 
@@ -137,13 +128,8 @@ CLASS zcl_lnt_irun_input IMPLEMENTATION.
           CLEAR result.
           IF me->progress IS BOUND.
             DATA t1 TYPE REF TO zlnt_view_storage_74017ca272ac.
-            CLEAR t1.
-            DATA t2 TYPE REF TO object.
-            CLEAR t2.
-            CLEAR t1.
-            t2 = me->progress.
             TRY.
-                result ?= t2.
+                result ?= me->progress.
               CATCH cx_sy_move_cast_error.
             ENDTRY.
             IF result IS NOT BOUND.
@@ -212,7 +198,6 @@ CLASS zcl_lnt_irun_input IMPLEMENTATION.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = p0 p1 = VALUE #( ) ).
     ENDIF.
     DATA t2 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t2.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       me->zlnt_json_ownkeys_70e5fd461788->put( p0 = p0 p1 = t2 ).
     ENDIF.

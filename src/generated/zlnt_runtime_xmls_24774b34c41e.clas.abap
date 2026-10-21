@@ -100,7 +100,6 @@ CLASS zlnt_runtime_xmls_24774b34c41e IMPLEMENTATION.
     DATA count TYPE i.
     DATA name_end TYPE i.
     DATA last TYPE i.
-    DATA self_closing TYPE abap_bool.
     DATA closed TYPE abap_bool.
     DATA child TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
     CREATE OBJECT result.
@@ -178,8 +177,7 @@ CLASS zlnt_runtime_xmls_24774b34c41e IMPLEMENTATION.
         RAISE EXCEPTION TYPE zlnt_exception_re_bb8cb5bb6246.
       ENDIF.
       last = strlen( tag_header ) - 1.
-      self_closing = xsdbool( tag_header+last(1) = '/' ).
-      IF self_closing = abap_true.
+      IF xsdbool( tag_header+last(1) = '/' ) = abap_true.
         CREATE OBJECT child.
         child->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
       ELSE.

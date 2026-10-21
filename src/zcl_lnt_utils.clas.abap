@@ -131,13 +131,11 @@ CLASS zcl_lnt_utils IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD display_documentation.
-    DATA lv_url TYPE string.
 
-    lv_url = |https://rules.abaplint.org/{ iv_rule }/|.
 
     cl_gui_frontend_services=>execute(
       EXPORTING
-        document               = lv_url
+        document               = |https://rules.abaplint.org/{ iv_rule }/|
       EXCEPTIONS
         cntl_error             = 1
         error_no_gui           = 2

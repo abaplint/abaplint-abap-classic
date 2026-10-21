@@ -80,10 +80,7 @@ CLASS zlnt_runtime_map__36824941f28a IMPLEMENTATION.
         CLEAR result.
         IF row-v IS BOUND.
           DATA t1 TYPE REF TO zlnt_view_storage_74017ca272ac.
-          CLEAR t1.
           DATA t2 TYPE REF TO object.
-          CLEAR t2.
-          CLEAR t1.
           t2 = row-v.
           TRY.
               result ?= t2.
@@ -114,7 +111,6 @@ CLASS zlnt_runtime_map__36824941f28a IMPLEMENTATION.
     ENDIF.
     RAISE EXCEPTION TYPE zlnt_view_refusal_6fcecbe45fbf EXPORTING reason = `live_record_map.go: put: map value has no exact unbox ABI`.
     DATA t1 TYPE REF TO zcl_lnt_abap_file.
-    CLEAR t1.
     DATA(t2) = CAST zlnt_runtime_map__36824941f28a( set( p0 = p0 p1 = t1 ) ).
   ENDMETHOD.
 ENDCLASS.

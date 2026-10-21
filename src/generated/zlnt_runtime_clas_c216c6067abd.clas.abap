@@ -4169,16 +4169,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
       WHEN `ZCL_LNT_ABAP_FILE_INFORMATION`.
         DATA t557 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t557.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t558 TYPE REF TO object.
-        CLEAR t558.
         READ TABLE p1->items INDEX 1 INTO t558.
         t557 ?= t558.
         DATA t559 TYPE REF TO zcl_lnt_prsd_fl_infrmtn.
-        CLEAR t559.
         IF t557 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -4192,28 +4189,22 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
       WHEN `ZCL_LNT_ABAP_QUERY_QUERY`.
         DATA t1240 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1240.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1241 TYPE REF TO object.
-        CLEAR t1241.
         READ TABLE p1->items INDEX 1 INTO t1241.
         t1240 ?= t1241.
-        DATA(t1242) = VALUE string( ).
         IF t1240 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1242 = t1240->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_abap_query_query EXPORTING i_name = t1242.
+        CREATE OBJECT result TYPE zcl_lnt_abap_query_query EXPORTING i_name = t1240->as_string( ).
       WHEN `ZCL_LNT_ABAP_RELEASE`.
         DATA t1989 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1989.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1990 TYPE REF TO object.
-        CLEAR t1990.
         READ TABLE p1->items INDEX 1 INTO t1990.
         t1989 ?= t1990.
         DATA(t1991) = VALUE string( ).
@@ -4222,70 +4213,51 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t1991 = t1989->as_string( ).
         DATA t1992 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1992.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1993 TYPE REF TO object.
-        CLEAR t1993.
         READ TABLE p1->items INDEX 2 INTO t1993.
         t1992 ?= t1993.
-        DATA(t1994) = t1992.
         DATA t1995 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1995.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1996 TYPE REF TO object.
-        CLEAR t1996.
         READ TABLE p1->items INDEX 3 INTO t1996.
         t1995 ?= t1996.
-        DATA(t1997) = t1995.
         DATA t1998 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1998.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1999 TYPE REF TO object.
-        CLEAR t1999.
         READ TABLE p1->items INDEX 4 INTO t1999.
         t1998 ?= t1999.
-        DATA(t2000) = t1998.
         DATA t2001 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2001.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2002 TYPE REF TO object.
-        CLEAR t2002.
         READ TABLE p1->items INDEX 5 INTO t2002.
         t2001 ?= t2002.
-        DATA(t2003) = t2001.
         DATA t2004 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2004.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2005 TYPE REF TO object.
-        CLEAR t2005.
         READ TABLE p1->items INDEX 6 INTO t2005.
         t2004 ?= t2005.
-        DATA(t2006) = t2004.
         DATA t2007 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2007.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2008 TYPE REF TO object.
-        CLEAR t2008.
         READ TABLE p1->items INDEX 7 INTO t2008.
         t2007 ?= t2008.
-        DATA(t2009) = VALUE f( ).
         IF t2007 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t2009 = t2007->as_number( ).
-        CREATE OBJECT result TYPE zcl_lnt_abap_release EXPORTING i_name = t1991 i_abap = t1994 i_kernel = t1997 i_op = t2000 i_cloud_47cd = t2003 i_ce = t2006 i_ordinal = t2009.
+        CREATE OBJECT result TYPE zcl_lnt_abap_release EXPORTING i_name = t1991 i_abap = t1992 i_kernel = t1995 i_op = t1998 i_cloud_47cd = t2001 i_ce = t2004 i_ordinal = t2007->as_number( ).
       WHEN `ZCL_LNT_ABAP_RULE`.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
       WHEN `ZCL_LNT_ABP_FL_INFRMTN_MDL`.
@@ -4295,36 +4267,28 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_abp_fl_infrmtn_mdl.
       WHEN `ZCL_LNT_ABP_FL_INFRMTN_PRSR`.
         DATA t561 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t561.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t562 TYPE REF TO object.
-        CLEAR t562.
         READ TABLE p1->items INDEX 1 INTO t562.
         t561 ?= t562.
-        DATA(t563) = VALUE string( ).
         IF t561 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t563 = t561->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_abp_fl_infrmtn_prsr EXPORTING i_filename = t563.
+        CREATE OBJECT result TYPE zcl_lnt_abp_fl_infrmtn_prsr EXPORTING i_filename = t561->as_string( ).
       WHEN `ZCL_LNT_ABP_QRY_FNCTNL_AR`.
         DATA t1237 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1237.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1238 TYPE REF TO object.
-        CLEAR t1238.
         READ TABLE p1->items INDEX 1 INTO t1238.
         t1237 ?= t1238.
-        DATA(t1239) = VALUE string( ).
         IF t1237 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1239 = t1237->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_abp_qry_fnctnl_ar EXPORTING i_name = t1239.
+        CREATE OBJECT result TYPE zcl_lnt_abp_qry_fnctnl_ar EXPORTING i_name = t1237->as_string( ).
       WHEN `ZCL_LNT_ABSTRACT`.
         CREATE OBJECT result TYPE zcl_lnt_abstract.
       WHEN `ZCL_LNT_ABSTRACT_FILE`.
@@ -4346,16 +4310,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
       WHEN `ZCL_LNT_ABSTRACT_TYPE_DATA`.
         DATA t2351 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2351.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2352 TYPE REF TO object.
-        CLEAR t2352.
         READ TABLE p1->items INDEX 1 INTO t2352.
         t2351 ?= t2352.
         DATA t2353 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t2353.
         IF t2351 IS BOUND.
           t2353 = NEW #( ).
           t2353->has = abap_true.
@@ -4365,16 +4326,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2353->value = t2351->as_string( ).
         ENDIF.
         DATA t2354 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2354.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2355 TYPE REF TO object.
-        CLEAR t2355.
         READ TABLE p1->items INDEX 2 INTO t2355.
         t2354 ?= t2355.
         DATA t2356 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t2356.
         IF t2354 IS BOUND.
           t2356 = NEW #( ).
           t2356->has = abap_true.
@@ -4384,16 +4342,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2356->value = t2354->as_string( ).
         ENDIF.
         DATA t2357 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2357.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2358 TYPE REF TO object.
-        CLEAR t2358.
         READ TABLE p1->items INDEX 3 INTO t2358.
         t2357 ?= t2358.
         DATA t2359 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-        CLEAR t2359.
         IF t2357 IS BOUND.
           t2359 = NEW #( ).
           t2359->has = abap_true.
@@ -4403,16 +4358,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2359->value = t2357->as_boolean( ).
         ENDIF.
         DATA t2360 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2360.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2361 TYPE REF TO object.
-        CLEAR t2361.
         READ TABLE p1->items INDEX 4 INTO t2361.
         t2360 ?= t2361.
         DATA t2362 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t2362.
         IF t2360 IS BOUND.
           t2362 = NEW #( ).
           t2362->has = abap_true.
@@ -4422,16 +4374,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2362->value = t2360->as_string( ).
         ENDIF.
         DATA t2363 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2363.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2364 TYPE REF TO object.
-        CLEAR t2364.
         READ TABLE p1->items INDEX 5 INTO t2364.
         t2363 ?= t2364.
         DATA t2365 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t2365.
         IF t2363 IS BOUND.
           t2365 = NEW #( ).
           t2365->has = abap_true.
@@ -4441,16 +4390,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2365->value = t2363->as_string( ).
         ENDIF.
         DATA t2366 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2366.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2367 TYPE REF TO object.
-        CLEAR t2367.
         READ TABLE p1->items INDEX 6 INTO t2367.
         t2366 ?= t2367.
         DATA t2368 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t2368.
         IF t2366 IS BOUND.
           t2368 = NEW #( ).
           t2368->has = abap_true.
@@ -4462,20 +4408,16 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_abstract_type_data EXPORTING i_qualified_name = t2353 i_conversion_exit = t2356 i_derived_from_constant = t2359 i_ddic_name = t2362 i_rtti_name = t2365 i_description = t2368.
       WHEN `ZCL_LNT_ACTIVATION_VARIANT`.
         DATA t1243 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1243.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1244 TYPE REF TO object.
-        CLEAR t1244.
         READ TABLE p1->items INDEX 1 INTO t1244.
         t1243 ?= t1244.
-        DATA(t1245) = VALUE string( ).
         IF t1243 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1245 = t1243->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_activation_variant EXPORTING i_name = t1245.
+        CREATE OBJECT result TYPE zcl_lnt_activation_variant EXPORTING i_name = t1243->as_string( ).
       WHEN `ZCL_LNT_ADD_TEST_ATTRIBUTES`.
         CREATE OBJECT result TYPE zcl_lnt_add_test_attributes.
       WHEN `ZCL_LNT_ADD_TST_ATTRBTS_CNF`.
@@ -4490,16 +4432,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_algn_typ_exprssns_cnf.
       WHEN `ZCL_LNT_ALIAS`.
         DATA t729 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t729.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t730 TYPE REF TO object.
-        CLEAR t730.
         READ TABLE p1->items INDEX 1 INTO t730.
         t729 ?= t730.
         DATA t731 TYPE REF TO zcl_lnt_abstract_token.
-        CLEAR t731.
         IF t729 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -4507,12 +4446,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t732 = t729->as_ref( ).
         t731 ?= t732.
         DATA t733 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t733.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t734 TYPE REF TO object.
-        CLEAR t734.
         READ TABLE p1->items INDEX 2 INTO t734.
         t733 ?= t734.
         DATA(t735) = VALUE f( ).
@@ -4521,12 +4458,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t735 = t733->as_number( ).
         DATA t736 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t736.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t737 TYPE REF TO object.
-        CLEAR t737.
         READ TABLE p1->items INDEX 3 INTO t737.
         t736 ?= t737.
         DATA(t738) = VALUE string( ).
@@ -4535,20 +4470,16 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t738 = t736->as_string( ).
         DATA t739 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t739.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t740 TYPE REF TO object.
-        CLEAR t740.
         READ TABLE p1->items INDEX 4 INTO t740.
         t739 ?= t740.
-        DATA(t741) = VALUE string( ).
         IF t739 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t741 = t739->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_alias EXPORTING i_token = t731 i_visibility_5c1f = t735 i_component = t738 i_filename = t741.
+        CREATE OBJECT result TYPE zcl_lnt_alias EXPORTING i_token = t731 i_visibility_5c1f = t735 i_component = t738 i_filename = t739->as_string( ).
       WHEN `ZCL_LNT_ALIASES`.
         CREATE OBJECT result TYPE zcl_lnt_aliases.
       WHEN `ZCL_LNT_ALIGN_PARAMETERS`.
@@ -4584,16 +4515,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_any.
       WHEN `ZCL_LNT_ANY_TYPE`.
         DATA t742 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t742.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t743 TYPE REF TO object.
-        CLEAR t743.
         READ TABLE p1->items INDEX 1 INTO t743.
         t742 ?= t743.
         DATA t744 TYPE REF TO zcl_lnt_abstract_type_data.
-        CLEAR t744.
         IF t742 IS BOUND.
           IF t742 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -4608,84 +4536,64 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_any_type EXPORTING i_input_967e = t744.
       WHEN `ZCL_LNT_API_RELEASE_STATE`.
         DATA t1246 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1246.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1247 TYPE REF TO object.
-        CLEAR t1247.
         READ TABLE p1->items INDEX 1 INTO t1247.
         t1246 ?= t1247.
-        DATA(t1248) = VALUE string( ).
         IF t1246 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1248 = t1246->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_api_release_state EXPORTING i_name = t1248.
+        CREATE OBJECT result TYPE zcl_lnt_api_release_state EXPORTING i_name = t1246->as_string( ).
       WHEN `ZCL_LNT_APPLCTN_DSCRPTRS_FR`.
         DATA t1249 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1249.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1250 TYPE REF TO object.
-        CLEAR t1250.
         READ TABLE p1->items INDEX 1 INTO t1250.
         t1249 ?= t1250.
-        DATA(t1251) = VALUE string( ).
         IF t1249 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1251 = t1249->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_applctn_dscrptrs_fr EXPORTING i_name = t1251.
+        CREATE OBJECT result TYPE zcl_lnt_applctn_dscrptrs_fr EXPORTING i_name = t1249->as_string( ).
       WHEN `ZCL_LNT_APPLCTN_JB_CTLG_ENTRY`.
         DATA t1252 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1252.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1253 TYPE REF TO object.
-        CLEAR t1253.
         READ TABLE p1->items INDEX 1 INTO t1253.
         t1252 ?= t1253.
-        DATA(t1254) = VALUE string( ).
         IF t1252 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1254 = t1252->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_applctn_jb_ctlg_entry EXPORTING i_name = t1254.
+        CREATE OBJECT result TYPE zcl_lnt_applctn_jb_ctlg_entry EXPORTING i_name = t1252->as_string( ).
       WHEN `ZCL_LNT_APPLCTN_JB_TMPLT`.
         DATA t1255 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1255.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1256 TYPE REF TO object.
-        CLEAR t1256.
         READ TABLE p1->items INDEX 1 INTO t1256.
         t1255 ?= t1256.
-        DATA(t1257) = VALUE string( ).
         IF t1255 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1257 = t1255->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_applctn_jb_tmplt EXPORTING i_name = t1257.
+        CREATE OBJECT result TYPE zcl_lnt_applctn_jb_tmplt EXPORTING i_name = t1255->as_string( ).
       WHEN `ZCL_LNT_APPLICATION_LOG_OBJECT`.
         DATA t1258 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1258.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1259 TYPE REF TO object.
-        CLEAR t1259.
         READ TABLE p1->items INDEX 1 INTO t1259.
         t1258 ?= t1259.
-        DATA(t1260) = VALUE string( ).
         IF t1258 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1260 = t1258->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_application_log_object EXPORTING i_name = t1260.
+        CREATE OBJECT result TYPE zcl_lnt_application_log_object EXPORTING i_name = t1258->as_string( ).
       WHEN `ZCL_LNT_ARITH_OPERATOR`.
         CREATE OBJECT result TYPE zcl_lnt_arith_operator.
       WHEN `ZCL_LNT_ARROW`.
@@ -4702,36 +4610,29 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_artifacts_rules.
       WHEN `ZCL_LNT_ASSGN_SRVC_T_ATHRZ_GRP`.
         DATA t1261 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1261.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1262 TYPE REF TO object.
-        CLEAR t1262.
         READ TABLE p1->items INDEX 1 INTO t1262.
         t1261 ?= t1262.
-        DATA(t1263) = VALUE string( ).
         IF t1261 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1263 = t1261->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_assgn_srvc_t_athrz_grp EXPORTING i_name = t1263.
+        CREATE OBJECT result TYPE zcl_lnt_assgn_srvc_t_athrz_grp EXPORTING i_name = t1261->as_string( ).
       WHEN `ZCL_LNT_ASSIGN_LOCAL_COPY`.
         CREATE OBJECT result TYPE zcl_lnt_assign_local_copy.
       WHEN `ZCL_LNT_ASSIGN_SOURCE`.
         CREATE OBJECT result TYPE zcl_lnt_assign_source.
       WHEN `ZCL_LNT_ASSOCIATION_NAME`.
         DATA t54 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t54.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t55 TYPE REF TO object.
-        CLEAR t55.
         READ TABLE p1->items INDEX 1 INTO t55.
         t54 ?= t55.
         DATA t56 TYPE REF TO zcl_lnt_position.
-        CLEAR t56.
         IF t54 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -4739,68 +4640,52 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t57 = t54->as_ref( ).
         t56 ?= t57.
         DATA t58 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t58.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t59 TYPE REF TO object.
-        CLEAR t59.
         READ TABLE p1->items INDEX 2 INTO t59.
         t58 ?= t59.
-        DATA(t60) = VALUE string( ).
         IF t58 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t60 = t58->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_association_name EXPORTING i_start = t56 i_str = t60.
+        CREATE OBJECT result TYPE zcl_lnt_association_name EXPORTING i_start = t56 i_str = t58->as_string( ).
       WHEN `ZCL_LNT_ATC_CHECK_CATEGORY`.
         DATA t1264 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1264.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1265 TYPE REF TO object.
-        CLEAR t1265.
         READ TABLE p1->items INDEX 1 INTO t1265.
         t1264 ?= t1265.
-        DATA(t1266) = VALUE string( ).
         IF t1264 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1266 = t1264->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_atc_check_category EXPORTING i_name = t1266.
+        CREATE OBJECT result TYPE zcl_lnt_atc_check_category EXPORTING i_name = t1264->as_string( ).
       WHEN `ZCL_LNT_ATC_CHECK_OBJECT`.
         DATA t1267 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1267.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1268 TYPE REF TO object.
-        CLEAR t1268.
         READ TABLE p1->items INDEX 1 INTO t1268.
         t1267 ?= t1268.
-        DATA(t1269) = VALUE string( ).
         IF t1267 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1269 = t1267->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_atc_check_object EXPORTING i_name = t1269.
+        CREATE OBJECT result TYPE zcl_lnt_atc_check_object EXPORTING i_name = t1267->as_string( ).
       WHEN `ZCL_LNT_ATC_CHECK_VARIANT`.
         DATA t1270 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1270.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1271 TYPE REF TO object.
-        CLEAR t1271.
         READ TABLE p1->items INDEX 1 INTO t1271.
         t1270 ?= t1271.
-        DATA(t1272) = VALUE string( ).
         IF t1270 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1272 = t1270->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_atc_check_variant EXPORTING i_name = t1272.
+        CREATE OBJECT result TYPE zcl_lnt_atc_check_variant EXPORTING i_name = t1270->as_string( ).
       WHEN OTHERS.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDCASE.
@@ -4810,64 +4695,49 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
     CASE class_name.
       WHEN `ZCL_LNT_ATHRZTN_CHCK_FLD`.
         DATA t1273 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1273.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1274 TYPE REF TO object.
-        CLEAR t1274.
         READ TABLE p1->items INDEX 1 INTO t1274.
         t1273 ?= t1274.
-        DATA(t1275) = VALUE string( ).
         IF t1273 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1275 = t1273->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_athrztn_chck_fld EXPORTING i_name = t1275.
+        CREATE OBJECT result TYPE zcl_lnt_athrztn_chck_fld EXPORTING i_name = t1273->as_string( ).
       WHEN `ZCL_LNT_ATHRZTN_OBJCT_CLSS`.
         DATA t1282 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1282.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1283 TYPE REF TO object.
-        CLEAR t1283.
         READ TABLE p1->items INDEX 1 INTO t1283.
         t1282 ?= t1283.
-        DATA(t1284) = VALUE string( ).
         IF t1282 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1284 = t1282->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_athrztn_objct_clss EXPORTING i_name = t1284.
+        CREATE OBJECT result TYPE zcl_lnt_athrztn_objct_clss EXPORTING i_name = t1282->as_string( ).
       WHEN `ZCL_LNT_ATHRZTN_OBJCT_EXTNSN`.
         DATA t1285 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1285.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1286 TYPE REF TO object.
-        CLEAR t1286.
         READ TABLE p1->items INDEX 1 INTO t1286.
         t1285 ?= t1286.
-        DATA(t1287) = VALUE string( ).
         IF t1285 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1287 = t1285->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_athrztn_objct_extnsn EXPORTING i_name = t1287.
+        CREATE OBJECT result TYPE zcl_lnt_athrztn_objct_extnsn EXPORTING i_name = t1285->as_string( ).
       WHEN `ZCL_LNT_ATTRIBUTES`.
         DATA t903 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t903.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t904 TYPE REF TO object.
-        CLEAR t904.
         READ TABLE p1->items INDEX 1 INTO t904.
         t903 ?= t904.
         DATA t905 TYPE REF TO zcl_lnt_structure_node.
-        CLEAR t905.
         IF t903 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -4875,16 +4745,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t906 = t903->as_ref( ).
         t905 ?= t906.
         DATA t907 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t907.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t908 TYPE REF TO object.
-        CLEAR t908.
         READ TABLE p1->items INDEX 2 INTO t908.
         t907 ?= t908.
         DATA t909 TYPE REF TO zcl_lnt_syntax_input.
-        CLEAR t909.
         IF t907 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -4900,16 +4767,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_at_user_command.
       WHEN `ZCL_LNT_AT_W`.
         DATA t68 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t68.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t69 TYPE REF TO object.
-        CLEAR t69.
         READ TABLE p1->items INDEX 1 INTO t69.
         t68 ?= t69.
         DATA t70 TYPE REF TO zcl_lnt_position.
-        CLEAR t70.
         IF t68 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -4917,52 +4781,40 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t71 = t68->as_ref( ).
         t70 ?= t71.
         DATA t72 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t72.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t73 TYPE REF TO object.
-        CLEAR t73.
         READ TABLE p1->items INDEX 2 INTO t73.
         t72 ?= t73.
-        DATA(t74) = VALUE string( ).
         IF t72 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t74 = t72->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_at_w EXPORTING i_start = t70 i_str = t74.
+        CREATE OBJECT result TYPE zcl_lnt_at_w EXPORTING i_start = t70 i_str = t72->as_string( ).
       WHEN `ZCL_LNT_AUTHORIZATION_GROUP`.
         DATA t1276 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1276.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1277 TYPE REF TO object.
-        CLEAR t1277.
         READ TABLE p1->items INDEX 1 INTO t1277.
         t1276 ?= t1277.
-        DATA(t1278) = VALUE string( ).
         IF t1276 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1278 = t1276->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_authorization_group EXPORTING i_name = t1278.
+        CREATE OBJECT result TYPE zcl_lnt_authorization_group EXPORTING i_name = t1276->as_string( ).
       WHEN `ZCL_LNT_AUTHORIZATION_OBJECT`.
         DATA t1279 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1279.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1280 TYPE REF TO object.
-        CLEAR t1280.
         READ TABLE p1->items INDEX 1 INTO t1280.
         t1279 ?= t1280.
-        DATA(t1281) = VALUE string( ).
         IF t1279 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1281 = t1279->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_authorization_object EXPORTING i_name = t1281.
+        CREATE OBJECT result TYPE zcl_lnt_authorization_object EXPORTING i_name = t1279->as_string( ).
       WHEN `ZCL_LNT_AVOID_USE`.
         CREATE OBJECT result TYPE zcl_lnt_avoid_use.
       WHEN `ZCL_LNT_AVOID_USE_CONF`.
@@ -4971,34 +4823,27 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_back.
       WHEN `ZCL_LNT_BADI_DEFINITION`.
         DATA t1288 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1288.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1289 TYPE REF TO object.
-        CLEAR t1289.
         READ TABLE p1->items INDEX 1 INTO t1289.
         t1288 ?= t1289.
-        DATA(t1290) = VALUE string( ).
         IF t1288 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1290 = t1288->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_badi_definition EXPORTING i_name = t1290.
+        CREATE OBJECT result TYPE zcl_lnt_badi_definition EXPORTING i_name = t1288->as_string( ).
       WHEN `ZCL_LNT_BASIC_RULE_CONFIG`.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
       WHEN `ZCL_LNT_BASIC_TYPES`.
         DATA t653 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t653.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t654 TYPE REF TO object.
-        CLEAR t654.
         READ TABLE p1->items INDEX 1 INTO t654.
         t653 ?= t654.
         DATA t655 TYPE REF TO zcl_lnt_syntax_input.
-        CLEAR t655.
         IF t653 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -5014,20 +4859,16 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_begin_single_include.
       WHEN `ZCL_LNT_BEHAVIOR_DEFINITION`.
         DATA t1291 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1291.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1292 TYPE REF TO object.
-        CLEAR t1292.
         READ TABLE p1->items INDEX 1 INTO t1292.
         t1291 ?= t1292.
-        DATA(t1293) = VALUE string( ).
         IF t1291 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1293 = t1291->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_behavior_definition EXPORTING i_name = t1293.
+        CREATE OBJECT result TYPE zcl_lnt_behavior_definition EXPORTING i_name = t1291->as_string( ).
       WHEN `ZCL_LNT_BGN_SNGL_INCLD_CNF`.
         CREATE OBJECT result TYPE zcl_lnt_bgn_sngl_incld_cnf.
       WHEN `ZCL_LNT_BHVR_DFNTN_NM`.
@@ -5038,16 +4879,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_body.
       WHEN `ZCL_LNT_BRACKET_LEFT`.
         DATA t75 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t75.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t76 TYPE REF TO object.
-        CLEAR t76.
         READ TABLE p1->items INDEX 1 INTO t76.
         t75 ?= t76.
         DATA t77 TYPE REF TO zcl_lnt_position.
-        CLEAR t77.
         IF t75 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -5055,32 +4893,25 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t78 = t75->as_ref( ).
         t77 ?= t78.
         DATA t79 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t79.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t80 TYPE REF TO object.
-        CLEAR t80.
         READ TABLE p1->items INDEX 2 INTO t80.
         t79 ?= t80.
-        DATA(t81) = VALUE string( ).
         IF t79 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t81 = t79->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_bracket_left EXPORTING i_start = t77 i_str = t81.
+        CREATE OBJECT result TYPE zcl_lnt_bracket_left EXPORTING i_start = t77 i_str = t79->as_string( ).
       WHEN `ZCL_LNT_BRACKET_LEFT_W`.
         DATA t82 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t82.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t83 TYPE REF TO object.
-        CLEAR t83.
         READ TABLE p1->items INDEX 1 INTO t83.
         t82 ?= t83.
         DATA t84 TYPE REF TO zcl_lnt_position.
-        CLEAR t84.
         IF t82 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -5088,32 +4919,25 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t85 = t82->as_ref( ).
         t84 ?= t85.
         DATA t86 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t86.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t87 TYPE REF TO object.
-        CLEAR t87.
         READ TABLE p1->items INDEX 2 INTO t87.
         t86 ?= t87.
-        DATA(t88) = VALUE string( ).
         IF t86 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t88 = t86->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_bracket_left_w EXPORTING i_start = t84 i_str = t88.
+        CREATE OBJECT result TYPE zcl_lnt_bracket_left_w EXPORTING i_start = t84 i_str = t86->as_string( ).
       WHEN `ZCL_LNT_BRACKET_RIGHT`.
         DATA t89 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t89.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t90 TYPE REF TO object.
-        CLEAR t90.
         READ TABLE p1->items INDEX 1 INTO t90.
         t89 ?= t90.
         DATA t91 TYPE REF TO zcl_lnt_position.
-        CLEAR t91.
         IF t89 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -5121,32 +4945,25 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t92 = t89->as_ref( ).
         t91 ?= t92.
         DATA t93 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t93.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t94 TYPE REF TO object.
-        CLEAR t94.
         READ TABLE p1->items INDEX 2 INTO t94.
         t93 ?= t94.
-        DATA(t95) = VALUE string( ).
         IF t93 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t95 = t93->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_bracket_right EXPORTING i_start = t91 i_str = t95.
+        CREATE OBJECT result TYPE zcl_lnt_bracket_right EXPORTING i_start = t91 i_str = t93->as_string( ).
       WHEN `ZCL_LNT_BRACKET_RIGHT_W`.
         DATA t96 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t96.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t97 TYPE REF TO object.
-        CLEAR t97.
         READ TABLE p1->items INDEX 1 INTO t97.
         t96 ?= t97.
         DATA t98 TYPE REF TO zcl_lnt_position.
-        CLEAR t98.
         IF t96 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -5154,164 +4971,125 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t99 = t96->as_ref( ).
         t98 ?= t99.
         DATA t100 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t100.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t101 TYPE REF TO object.
-        CLEAR t101.
         READ TABLE p1->items INDEX 2 INTO t101.
         t100 ?= t101.
-        DATA(t102) = VALUE string( ).
         IF t100 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t102 = t100->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_bracket_right_w EXPORTING i_start = t98 i_str = t102.
+        CREATE OBJECT result TYPE zcl_lnt_bracket_right_w EXPORTING i_start = t98 i_str = t100->as_string( ).
       WHEN `ZCL_LNT_BREAK`.
         CREATE OBJECT result TYPE zcl_lnt_break.
       WHEN `ZCL_LNT_BREAK_ID`.
         CREATE OBJECT result TYPE zcl_lnt_break_id.
       WHEN `ZCL_LNT_BRF_PLS_SYSTM_APPLCTN`.
         DATA t1294 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1294.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1295 TYPE REF TO object.
-        CLEAR t1295.
         READ TABLE p1->items INDEX 1 INTO t1295.
         t1294 ?= t1295.
-        DATA(t1296) = VALUE string( ).
         IF t1294 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1296 = t1294->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_brf_pls_systm_applctn EXPORTING i_name = t1296.
+        CREATE OBJECT result TYPE zcl_lnt_brf_pls_systm_applctn EXPORTING i_name = t1294->as_string( ).
       WHEN `ZCL_LNT_BSNSS_ADD_IN_IMPLMNTTN`.
         DATA t1300 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1300.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1301 TYPE REF TO object.
-        CLEAR t1301.
         READ TABLE p1->items INDEX 1 INTO t1301.
         t1300 ?= t1301.
-        DATA(t1302) = VALUE string( ).
         IF t1300 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1302 = t1300->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_bsnss_add_in_implmnttn EXPORTING i_name = t1302.
+        CREATE OBJECT result TYPE zcl_lnt_bsnss_add_in_implmnttn EXPORTING i_name = t1300->as_string( ).
       WHEN `ZCL_LNT_BSNSS_CNFGRTN_ST`.
         DATA t1312 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1312.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1313 TYPE REF TO object.
-        CLEAR t1313.
         READ TABLE p1->items INDEX 1 INTO t1313.
         t1312 ?= t1313.
-        DATA(t1314) = VALUE string( ).
         IF t1312 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1314 = t1312->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_bsnss_cnfgrtn_st EXPORTING i_name = t1314.
+        CREATE OBJECT result TYPE zcl_lnt_bsnss_cnfgrtn_st EXPORTING i_name = t1312->as_string( ).
       WHEN `ZCL_LNT_BSNSS_CTLG_APP_ASSGNMN`.
         DATA t1306 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1306.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1307 TYPE REF TO object.
-        CLEAR t1307.
         READ TABLE p1->items INDEX 1 INTO t1307.
         t1306 ?= t1307.
-        DATA(t1308) = VALUE string( ).
         IF t1306 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1308 = t1306->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_bsnss_ctlg_app_assgnmn EXPORTING i_name = t1308.
+        CREATE OBJECT result TYPE zcl_lnt_bsnss_ctlg_app_assgnmn EXPORTING i_name = t1306->as_string( ).
       WHEN `ZCL_LNT_BSNSS_FNCTN_ASSGNMNT`.
         DATA t1315 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1315.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1316 TYPE REF TO object.
-        CLEAR t1316.
         READ TABLE p1->items INDEX 1 INTO t1316.
         t1315 ?= t1316.
-        DATA(t1317) = VALUE string( ).
         IF t1315 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1317 = t1315->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_bsnss_fnctn_assgnmnt EXPORTING i_name = t1317.
+        CREATE OBJECT result TYPE zcl_lnt_bsnss_fnctn_assgnmnt EXPORTING i_name = t1315->as_string( ).
       WHEN `ZCL_LNT_BSNSS_FNCTN_ST_ASSGNMN`.
         DATA t1318 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1318.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1319 TYPE REF TO object.
-        CLEAR t1319.
         READ TABLE p1->items INDEX 1 INTO t1319.
         t1318 ?= t1319.
-        DATA(t1320) = VALUE string( ).
         IF t1318 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1320 = t1318->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_bsnss_fnctn_st_assgnmn EXPORTING i_name = t1320.
+        CREATE OBJECT result TYPE zcl_lnt_bsnss_fnctn_st_assgnmn EXPORTING i_name = t1318->as_string( ).
       WHEN `ZCL_LNT_BSNS_CNFGR_MNTNN_OBJCT`.
         DATA t1309 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1309.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1310 TYPE REF TO object.
-        CLEAR t1310.
         READ TABLE p1->items INDEX 1 INTO t1310.
         t1309 ?= t1310.
-        DATA(t1311) = VALUE string( ).
         IF t1309 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1311 = t1309->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_bsns_cnfgr_mntnn_objct EXPORTING i_name = t1311.
+        CREATE OBJECT result TYPE zcl_lnt_bsns_cnfgr_mntnn_objct EXPORTING i_name = t1309->as_string( ).
       WHEN `ZCL_LNT_BSP_APPLICATION`.
         DATA t1297 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1297.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1298 TYPE REF TO object.
-        CLEAR t1298.
         READ TABLE p1->items INDEX 1 INTO t1298.
         t1297 ?= t1298.
-        DATA(t1299) = VALUE string( ).
         IF t1297 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1299 = t1297->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_bsp_application EXPORTING i_name = t1299.
+        CREATE OBJECT result TYPE zcl_lnt_bsp_application EXPORTING i_name = t1297->as_string( ).
       WHEN `ZCL_LNT_BUILTIN_E8B3BD7E`.
         DATA t2269 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2269.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2270 TYPE REF TO object.
-        CLEAR t2270.
         READ TABLE p1->items INDEX 1 INTO t2270.
         t2269 ?= t2270.
         DATA t2271 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t2271.
         IF t2269 IS BOUND.
           t2271 = NEW #( ).
           t2271->has = abap_true.
@@ -5328,16 +5106,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_built_in.
       WHEN `ZCL_LNT_BUILT_IN_METHOD`.
         DATA t564 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t564.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t565 TYPE REF TO object.
-        CLEAR t565.
         READ TABLE p1->items INDEX 1 INTO t565.
         t564 ?= t565.
         DATA t566 TYPE REF TO zcl_lnt_abstract_token.
-        CLEAR t566.
         IF t564 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -5345,12 +5120,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t567 = t564->as_ref( ).
         t566 ?= t567.
         DATA t568 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t568.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t569 TYPE REF TO object.
-        CLEAR t569.
         READ TABLE p1->items INDEX 2 INTO t569.
         t568 ?= t569.
         DATA(t570) = VALUE string( ).
@@ -5359,16 +5132,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t570 = t568->as_string( ).
         DATA t571 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t571.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t572 TYPE REF TO object.
-        CLEAR t572.
         READ TABLE p1->items INDEX 3 INTO t572.
         t571 ?= t572.
         DATA t573 TYPE REF TO zcl_lnt_ibuiltin_method.
-        CLEAR t573.
         IF t571 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -5376,68 +5146,52 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t574 = t571->as_ref( ).
         t573 ?= t574.
         DATA t575 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t575.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t576 TYPE REF TO object.
-        CLEAR t576.
         READ TABLE p1->items INDEX 4 INTO t576.
         t575 ?= t576.
-        DATA(t577) = VALUE f( ).
         IF t575 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t577 = t575->as_number( ).
-        CREATE OBJECT result TYPE zcl_lnt_built_in_method EXPORTING i_token = t566 i_filename = t570 i_method = t573 i_row = t577.
+        CREATE OBJECT result TYPE zcl_lnt_built_in_method EXPORTING i_token = t566 i_filename = t570 i_method = t573 i_row = t575->as_number( ).
       WHEN `ZCL_LNT_BUSINESS_CATALOG`.
         DATA t1303 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1303.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1304 TYPE REF TO object.
-        CLEAR t1304.
         READ TABLE p1->items INDEX 1 INTO t1304.
         t1303 ?= t1304.
-        DATA(t1305) = VALUE string( ).
         IF t1303 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1305 = t1303->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_business_catalog EXPORTING i_name = t1305.
+        CREATE OBJECT result TYPE zcl_lnt_business_catalog EXPORTING i_name = t1303->as_string( ).
       WHEN `ZCL_LNT_BUSINESS_OBJECT_MODEL`.
         DATA t1321 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1321.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1322 TYPE REF TO object.
-        CLEAR t1322.
         READ TABLE p1->items INDEX 1 INTO t1322.
         t1321 ?= t1322.
-        DATA(t1323) = VALUE string( ).
         IF t1321 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1323 = t1321->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_business_object_model EXPORTING i_name = t1323.
+        CREATE OBJECT result TYPE zcl_lnt_business_object_model EXPORTING i_name = t1321->as_string( ).
       WHEN `ZCL_LNT_BUSINESS_OBJECT_TYPE`.
         DATA t1324 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1324.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1325 TYPE REF TO object.
-        CLEAR t1325.
         READ TABLE p1->items INDEX 1 INTO t1325.
         t1324 ?= t1325.
-        DATA(t1326) = VALUE string( ).
         IF t1324 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1326 = t1324->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_business_object_type EXPORTING i_name = t1326.
+        CREATE OBJECT result TYPE zcl_lnt_business_object_type EXPORTING i_name = t1324->as_string( ).
       WHEN `ZCL_LNT_CALL_DATABASE`.
         CREATE OBJECT result TYPE zcl_lnt_call_database.
       WHEN `ZCL_LNT_CALL_DIALOG`.
@@ -5538,20 +5292,16 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_cds_element.
       WHEN `ZCL_LNT_CDS_ENTITY_BUFFER`.
         DATA t1327 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1327.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1328 TYPE REF TO object.
-        CLEAR t1328.
         READ TABLE p1->items INDEX 1 INTO t1328.
         t1327 ?= t1328.
-        DATA(t1329) = VALUE string( ).
         IF t1327 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1329 = t1327->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_cds_entity_buffer EXPORTING i_name = t1329.
+        CREATE OBJECT result TYPE zcl_lnt_cds_entity_buffer EXPORTING i_name = t1327->as_string( ).
       WHEN `ZCL_LNT_CDS_EXTEND_VIEW`.
         CREATE OBJECT result TYPE zcl_lnt_cds_extend_view.
       WHEN `ZCL_LNT_CDS_FIELD_ORDER`.
@@ -5583,20 +5333,16 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_cds_lexer_module.
       WHEN `ZCL_LNT_CDS_METADATA_EXTENSION`.
         DATA t1330 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1330.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1331 TYPE REF TO object.
-        CLEAR t1331.
         READ TABLE p1->items INDEX 1 INTO t1331.
         t1330 ?= t1331.
-        DATA(t1332) = VALUE string( ).
         IF t1330 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1332 = t1330->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_cds_metadata_extension EXPORTING i_name = t1332.
+        CREATE OBJECT result TYPE zcl_lnt_cds_metadata_extension EXPORTING i_name = t1330->as_string( ).
       WHEN `ZCL_LNT_CDS_NAME`.
         CREATE OBJECT result TYPE zcl_lnt_cds_name.
       WHEN `ZCL_LNT_CDS_NAME_MODULE`.
@@ -5654,32 +5400,26 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_cd_result.
       WHEN `ZCL_LNT_CHANGE_DOCUMENT`.
         DATA t1336 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1336.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1337 TYPE REF TO object.
-        CLEAR t1337.
         READ TABLE p1->items INDEX 1 INTO t1337.
         t1336 ?= t1337.
-        DATA(t1338) = VALUE string( ).
         IF t1336 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1338 = t1336->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_change_document EXPORTING i_name = t1338.
+        CREATE OBJECT result TYPE zcl_lnt_change_document EXPORTING i_name = t1336->as_string( ).
       WHEN `ZCL_LNT_CHANGE_IF_TO_CASE`.
         CREATE OBJECT result TYPE zcl_lnt_change_if_to_case.
       WHEN `ZCL_LNT_CHANGE_IF_TO_CASE_CONF`.
         CREATE OBJECT result TYPE zcl_lnt_change_if_to_case_conf.
       WHEN `ZCL_LNT_CHARACTER_TYPE`.
         DATA t746 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t746.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t747 TYPE REF TO object.
-        CLEAR t747.
         READ TABLE p1->items INDEX 1 INTO t747.
         t746 ?= t747.
         DATA(t748) = VALUE f( ).
@@ -5688,16 +5428,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t748 = t746->as_number( ).
         DATA t749 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t749.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t750 TYPE REF TO object.
-        CLEAR t750.
         READ TABLE p1->items INDEX 2 INTO t750.
         t749 ?= t750.
         DATA t751 TYPE REF TO zcl_lnt_abstract_type_data.
-        CLEAR t751.
         IF t749 IS BOUND.
           IF t749 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -5726,20 +5463,16 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_chck_txt_elmnts_cnf.
       WHEN `ZCL_LNT_CHECKPOINT_GROUP`.
         DATA t1342 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1342.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1343 TYPE REF TO object.
-        CLEAR t1343.
         READ TABLE p1->items INDEX 1 INTO t1343.
         t1342 ?= t1343.
-        DATA(t1344) = VALUE string( ).
         IF t1342 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1344 = t1342->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_checkpoint_group EXPORTING i_name = t1344.
+        CREATE OBJECT result TYPE zcl_lnt_checkpoint_group EXPORTING i_name = t1342->as_string( ).
       WHEN `ZCL_LNT_CHECK_ABSTRACT`.
         CREATE OBJECT result TYPE zcl_lnt_check_abstract.
       WHEN `ZCL_LNT_CHECK_ABSTRACT_CONF`.
@@ -5784,68 +5517,53 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_chn_mnly_dclrtns_cnf.
       WHEN `ZCL_LNT_CHPTR_OF_BK_STRCTR`.
         DATA t1339 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1339.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1340 TYPE REF TO object.
-        CLEAR t1340.
         READ TABLE p1->items INDEX 1 INTO t1340.
         t1339 ?= t1340.
-        DATA(t1341) = VALUE string( ).
         IF t1339 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1341 = t1339->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_chptr_of_bk_strctr EXPORTING i_name = t1341.
+        CREATE OBJECT result TYPE zcl_lnt_chptr_of_bk_strctr EXPORTING i_name = t1339->as_string( ).
       WHEN `ZCL_LNT_CLASS`.
         DATA t1345 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1345.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1346 TYPE REF TO object.
-        CLEAR t1346.
         READ TABLE p1->items INDEX 1 INTO t1346.
         t1345 ?= t1346.
-        DATA(t1347) = VALUE string( ).
         IF t1345 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1347 = t1345->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_class EXPORTING i_name = t1347.
+        CREATE OBJECT result TYPE zcl_lnt_class EXPORTING i_name = t1345->as_string( ).
       WHEN `ZCL_LNT_CLASSIFICATION`.
         DATA t1348 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1348.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1349 TYPE REF TO object.
-        CLEAR t1349.
         READ TABLE p1->items INDEX 1 INTO t1349.
         t1348 ?= t1349.
-        DATA(t1350) = VALUE string( ).
         IF t1348 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1350 = t1348->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_classification EXPORTING i_name = t1350.
+        CREATE OBJECT result TYPE zcl_lnt_classification EXPORTING i_name = t1348->as_string( ).
       WHEN `ZCL_LNT_CLASS_ATTRIBUTE`.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
       WHEN `ZCL_LNT_CLASS_ATTRIBUTE_NAMES`.
         CREATE OBJECT result TYPE zcl_lnt_class_attribute_names.
       WHEN `ZCL_LNT_CLASS_CONSTANT`.
         DATA t911 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t911.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t912 TYPE REF TO object.
-        CLEAR t912.
         READ TABLE p1->items INDEX 1 INTO t912.
         t911 ?= t912.
         DATA t913 TYPE REF TO zcl_lnt_typed_identifier.
-        CLEAR t913.
         IF t911 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -5853,12 +5571,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t914 = t911->as_ref( ).
         t913 ?= t914.
         DATA t915 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t915.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t916 TYPE REF TO object.
-        CLEAR t916.
         READ TABLE p1->items INDEX 2 INTO t916.
         t915 ?= t916.
         DATA(t917) = VALUE f( ).
@@ -5867,16 +5583,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t917 = t915->as_number( ).
         DATA t918 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t918.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t919 TYPE REF TO object.
-        CLEAR t919.
         READ TABLE p1->items INDEX 3 INTO t919.
         t918 ?= t919.
-        DATA(t920) = t918.
-        CREATE OBJECT result TYPE zcl_lnt_class_constant EXPORTING i_id = t913 i_visibility_5c1f = t917 i_value = t920.
+        CREATE OBJECT result TYPE zcl_lnt_class_constant EXPORTING i_id = t913 i_visibility_5c1f = t917 i_value = t918.
       WHEN `ZCL_LNT_CLASS_DATA_BEGIN`.
         CREATE OBJECT result TYPE zcl_lnt_class_data_begin.
       WHEN `ZCL_LNT_CLASS_DATA_END`.
@@ -5910,20 +5623,16 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
       WHEN `ZCL_LNT_CLOSURE_BA6C457F`.
         DATA t3297 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t3297.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t3298 TYPE REF TO object.
-        CLEAR t3298.
         READ TABLE p1->items INDEX 1 INTO t3298.
         t3297 ?= t3298.
-        DATA(t3299) = VALUE string( ).
         IF t3297 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t3299 = t3297->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_closure_ba6c457f EXPORTING i_value = t3299.
+        CREATE OBJECT result TYPE zcl_lnt_closure_ba6c457f EXPORTING i_value = t3297->as_string( ).
       WHEN `ZCL_LNT_CLOUD_TYPES`.
         CREATE OBJECT result TYPE zcl_lnt_cloud_types.
       WHEN `ZCL_LNT_CLOUD_TYPES_CONF`.
@@ -5942,52 +5651,41 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_cmpnnt_cmpr_sngl.
       WHEN `ZCL_LNT_CMPST_ENHNCMNT_SPT`.
         DATA t1357 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1357.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1358 TYPE REF TO object.
-        CLEAR t1358.
         READ TABLE p1->items INDEX 1 INTO t1358.
         t1357 ?= t1358.
-        DATA(t1359) = VALUE string( ).
         IF t1357 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1359 = t1357->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_cmpst_enhncmnt_spt EXPORTING i_name = t1359.
+        CREATE OBJECT result TYPE zcl_lnt_cmpst_enhncmnt_spt EXPORTING i_name = t1357->as_string( ).
       WHEN `ZCL_LNT_CMPST_ENHNCMN_IMPLMNTT`.
         DATA t1354 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1354.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1355 TYPE REF TO object.
-        CLEAR t1355.
         READ TABLE p1->items INDEX 1 INTO t1355.
         t1354 ?= t1355.
-        DATA(t1356) = VALUE string( ).
         IF t1354 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1356 = t1354->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_cmpst_enhncmn_implmntt EXPORTING i_name = t1356.
+        CREATE OBJECT result TYPE zcl_lnt_cmpst_enhncmn_implmntt EXPORTING i_name = t1354->as_string( ).
       WHEN `ZCL_LNT_CNSTRCTR_VSBLTY_PBLC`.
         CREATE OBJECT result TYPE zcl_lnt_cnstrctr_vsblty_pblc.
       WHEN `ZCL_LNT_CNSTRC_VSBLTY_PBLC_CNF`.
         CREATE OBJECT result TYPE zcl_lnt_cnstrc_vsblty_pblc_cnf.
       WHEN `ZCL_LNT_CODE_ACTIONS`.
         DATA t1155 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1155.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1156 TYPE REF TO object.
-        CLEAR t1156.
         READ TABLE p1->items INDEX 1 INTO t1156.
         t1155 ?= t1156.
         DATA t1157 TYPE REF TO zif_lnt_registry.
-        CLEAR t1157.
         IF t1155 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -5997,32 +5695,25 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_code_actions EXPORTING i_reg_f149 = t1157.
       WHEN `ZCL_LNT_CODE_ACTION_DISABLED`.
         DATA t3267 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t3267.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t3268 TYPE REF TO object.
-        CLEAR t3268.
         READ TABLE p1->items INDEX 1 INTO t3268.
         t3267 ?= t3268.
-        DATA(t3269) = VALUE string( ).
         IF t3267 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t3269 = t3267->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_code_action_disabled EXPORTING i_reason = t3269.
+        CREATE OBJECT result TYPE zcl_lnt_code_action_disabled EXPORTING i_reason = t3267->as_string( ).
       WHEN `ZCL_LNT_CODE_LENS`.
         DATA t1159 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1159.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1160 TYPE REF TO object.
-        CLEAR t1160.
         READ TABLE p1->items INDEX 1 INTO t1160.
         t1159 ?= t1160.
         DATA t1161 TYPE REF TO zif_lnt_registry.
-        CLEAR t1161.
         IF t1159 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -6032,12 +5723,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_code_lens EXPORTING i_reg_f149 = t1161.
       WHEN `ZCL_LNT_CODE_LENS_SETTINGS`.
         DATA t2399 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2399.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2400 TYPE REF TO object.
-        CLEAR t2400.
         READ TABLE p1->items INDEX 1 INTO t2400.
         t2399 ?= t2400.
         DATA(t2401) = VALUE abap_bool( ).
@@ -6046,32 +5735,25 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t2401 = t2399->as_boolean( ).
         DATA t2402 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2402.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2403 TYPE REF TO object.
-        CLEAR t2403.
         READ TABLE p1->items INDEX 2 INTO t2403.
         t2402 ?= t2403.
-        DATA(t2404) = VALUE abap_bool( ).
         IF t2402 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t2404 = t2402->as_boolean( ).
-        CREATE OBJECT result TYPE zcl_lnt_code_lens_settings EXPORTING i_message_text = t2401 i_dynamic_exceptions = t2404.
+        CREATE OBJECT result TYPE zcl_lnt_code_lens_settings EXPORTING i_message_text = t2401 i_dynamic_exceptions = t2402->as_boolean( ).
       WHEN `ZCL_LNT_COLON`.
         DATA t103 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t103.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t104 TYPE REF TO object.
-        CLEAR t104.
         READ TABLE p1->items INDEX 1 INTO t104.
         t103 ?= t104.
         DATA t105 TYPE REF TO zcl_lnt_position.
-        CLEAR t105.
         IF t103 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -6079,20 +5761,16 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t106 = t103->as_ref( ).
         t105 ?= t106.
         DATA t107 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t107.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t108 TYPE REF TO object.
-        CLEAR t108.
         READ TABLE p1->items INDEX 2 INTO t108.
         t107 ?= t108.
-        DATA(t109) = VALUE string( ).
         IF t107 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t109 = t107->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_colon EXPORTING i_start = t105 i_str = t109.
+        CREATE OBJECT result TYPE zcl_lnt_colon EXPORTING i_start = t105 i_str = t107->as_string( ).
       WHEN `ZCL_LNT_COLON_MISSING_SPACE`.
         CREATE OBJECT result TYPE zcl_lnt_colon_missing_space.
       WHEN `ZCL_LNT_COLOR`.
@@ -6137,20 +5815,16 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_communication.
       WHEN `ZCL_LNT_COMMUNICATION_SCENARIO`.
         DATA t1351 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1351.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1352 TYPE REF TO object.
-        CLEAR t1352.
         READ TABLE p1->items INDEX 1 INTO t1352.
         t1351 ?= t1352.
-        DATA(t1353) = VALUE string( ).
         IF t1351 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1353 = t1351->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_communication_scenario EXPORTING i_name = t1353.
+        CREATE OBJECT result TYPE zcl_lnt_communication_scenario EXPORTING i_name = t1351->as_string( ).
       WHEN `ZCL_LNT_COMPARE_OPERATOR`.
         CREATE OBJECT result TYPE zcl_lnt_compare_operator.
       WHEN `ZCL_LNT_COMPONENT_CHAIN_SIMPLE`.
@@ -6163,40 +5837,32 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_concatenated_constant.
       WHEN `ZCL_LNT_CONCEPTS_OF_PACKAGE`.
         DATA t1360 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1360.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1361 TYPE REF TO object.
-        CLEAR t1361.
         READ TABLE p1->items INDEX 1 INTO t1361.
         t1360 ?= t1361.
-        DATA(t1362) = VALUE string( ).
         IF t1360 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1362 = t1360->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_concepts_of_package EXPORTING i_name = t1362.
+        CREATE OBJECT result TYPE zcl_lnt_concepts_of_package EXPORTING i_name = t1360->as_string( ).
       WHEN `ZCL_LNT_CONDITIONS`.
         CREATE OBJECT result TYPE zcl_lnt_conditions.
       WHEN `ZCL_LNT_COND_SUB`.
         CREATE OBJECT result TYPE zcl_lnt_cond_sub.
       WHEN `ZCL_LNT_CONFIG`.
         DATA t1033 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1033.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1034 TYPE REF TO object.
-        CLEAR t1034.
         READ TABLE p1->items INDEX 1 INTO t1034.
         t1033 ?= t1034.
-        DATA(t1035) = VALUE string( ).
         IF t1033 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1035 = t1033->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_config EXPORTING i_json = t1035.
+        CREATE OBJECT result TYPE zcl_lnt_config EXPORTING i_json = t1033->as_string( ).
       WHEN `ZCL_LNT_CONSTANT_BEGIN`.
         CREATE OBJECT result TYPE zcl_lnt_constant_begin.
       WHEN `ZCL_LNT_CONSTANT_CLASSES`.
@@ -6223,16 +5889,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_create_ole.
       WHEN `ZCL_LNT_CROSS_INCLUDE_MACROS`.
         DATA t703 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t703.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t704 TYPE REF TO object.
-        CLEAR t704.
         READ TABLE p1->items INDEX 1 INTO t704.
         t703 ?= t704.
         DATA t705 TYPE REF TO zif_lnt_registry.
-        CLEAR t705.
         IF t703 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -6246,80 +5909,61 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_crrspndng_bdy_mppng.
       WHEN `ZCL_LNT_CSTMR_ENHNCMNT_PRJCT`.
         DATA t1366 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1366.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1367 TYPE REF TO object.
-        CLEAR t1367.
         READ TABLE p1->items INDEX 1 INTO t1367.
         t1366 ?= t1367.
-        DATA(t1368) = VALUE string( ).
         IF t1366 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1368 = t1366->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_cstmr_enhncmnt_prjct EXPORTING i_name = t1368.
+        CREATE OBJECT result TYPE zcl_lnt_cstmr_enhncmnt_prjct EXPORTING i_name = t1366->as_string( ).
       WHEN `ZCL_LNT_CSTMZNG_IMG_ACTVTY`.
         DATA t1372 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1372.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1373 TYPE REF TO object.
-        CLEAR t1373.
         READ TABLE p1->items INDEX 1 INTO t1373.
         t1372 ?= t1373.
-        DATA(t1374) = VALUE string( ).
         IF t1372 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1374 = t1372->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_cstmzng_img_actvty EXPORTING i_name = t1374.
+        CREATE OBJECT result TYPE zcl_lnt_cstmzng_img_actvty EXPORTING i_name = t1372->as_string( ).
       WHEN `ZCL_LNT_CSTMZNG_TRNSCTN`.
         DATA t1375 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1375.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1376 TYPE REF TO object.
-        CLEAR t1376.
         READ TABLE p1->items INDEX 1 INTO t1376.
         t1375 ?= t1376.
-        DATA(t1377) = VALUE string( ).
         IF t1375 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1377 = t1375->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_cstmzng_trnsctn EXPORTING i_name = t1377.
+        CREATE OBJECT result TYPE zcl_lnt_cstmzng_trnsctn EXPORTING i_name = t1375->as_string( ).
       WHEN `ZCL_LNT_CSTM_DT_BRWSR_OBJCT`.
         DATA t1363 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1363.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1364 TYPE REF TO object.
-        CLEAR t1364.
         READ TABLE p1->items INDEX 1 INTO t1364.
         t1363 ?= t1364.
-        DATA(t1365) = VALUE string( ).
         IF t1363 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1365 = t1363->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_cstm_dt_brwsr_objct EXPORTING i_name = t1365.
+        CREATE OBJECT result TYPE zcl_lnt_cstm_dt_brwsr_objct EXPORTING i_name = t1363->as_string( ).
       WHEN `ZCL_LNT_CURRENT_SCOPE`.
         DATA t578 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t578.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t579 TYPE REF TO object.
-        CLEAR t579.
         READ TABLE p1->items INDEX 1 INTO t579.
         t578 ?= t579.
         DATA t580 TYPE REF TO zif_lnt_registry.
-        CLEAR t580.
         IF t578 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -6327,16 +5971,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t581 = t578->as_ref( ).
         t580 ?= t581.
         DATA t582 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t582.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t583 TYPE REF TO object.
-        CLEAR t583.
         READ TABLE p1->items INDEX 2 INTO t583.
         t582 ?= t583.
         DATA t584 TYPE REF TO zif_lnt_object.
-        CLEAR t584.
         IF t582 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -6346,20 +5987,16 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_current_scope EXPORTING i_reg_f149 = t580 i_obj_1ed0 = t584.
       WHEN `ZCL_LNT_CUSTOMIZING_ATTRIBUTES`.
         DATA t1369 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1369.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1370 TYPE REF TO object.
-        CLEAR t1370.
         READ TABLE p1->items INDEX 1 INTO t1370.
         t1369 ?= t1370.
-        DATA(t1371) = VALUE string( ).
         IF t1369 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1371 = t1369->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_customizing_attributes EXPORTING i_name = t1371.
+        CREATE OBJECT result TYPE zcl_lnt_customizing_attributes EXPORTING i_name = t1369->as_string( ).
       WHEN `ZCL_LNT_CYCLIC_OO`.
         CREATE OBJECT result TYPE zcl_lnt_cyclic_oo.
       WHEN `ZCL_LNT_CYCLIC_OO_CONF`.
@@ -6382,16 +6019,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_c_like_type.
       WHEN `ZCL_LNT_C_SEQUENCE_TYPE`.
         DATA t753 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t753.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t754 TYPE REF TO object.
-        CLEAR t754.
         READ TABLE p1->items INDEX 1 INTO t754.
         t753 ?= t754.
         DATA t755 TYPE REF TO zcl_lnt_abstract_type_data.
-        CLEAR t755.
         IF t753 IS BOUND.
           IF t753 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -6405,16 +6039,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_dangerous_statement.
       WHEN `ZCL_LNT_DASH`.
         DATA t117 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t117.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t118 TYPE REF TO object.
-        CLEAR t118.
         READ TABLE p1->items INDEX 1 INTO t118.
         t117 ?= t118.
         DATA t119 TYPE REF TO zcl_lnt_position.
-        CLEAR t119.
         IF t117 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -6422,32 +6053,25 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t120 = t117->as_ref( ).
         t119 ?= t120.
         DATA t121 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t121.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t122 TYPE REF TO object.
-        CLEAR t122.
         READ TABLE p1->items INDEX 2 INTO t122.
         t121 ?= t122.
-        DATA(t123) = VALUE string( ).
         IF t121 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t123 = t121->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_dash EXPORTING i_start = t119 i_str = t123.
+        CREATE OBJECT result TYPE zcl_lnt_dash EXPORTING i_start = t119 i_str = t121->as_string( ).
       WHEN `ZCL_LNT_DASH_W`.
         DATA t124 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t124.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t125 TYPE REF TO object.
-        CLEAR t125.
         READ TABLE p1->items INDEX 1 INTO t125.
         t124 ?= t125.
         DATA t126 TYPE REF TO zcl_lnt_position.
-        CLEAR t126.
         IF t124 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -6455,34 +6079,27 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t127 = t124->as_ref( ).
         t126 ?= t127.
         DATA t128 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t128.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t129 TYPE REF TO object.
-        CLEAR t129.
         READ TABLE p1->items INDEX 2 INTO t129.
         t128 ?= t129.
-        DATA(t130) = VALUE string( ).
         IF t128 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t130 = t128->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_dash_w EXPORTING i_start = t126 i_str = t130.
+        CREATE OBJECT result TYPE zcl_lnt_dash_w EXPORTING i_start = t126 i_str = t128->as_string( ).
       WHEN `ZCL_LNT_DATABASE_CONNECTION`.
         CREATE OBJECT result TYPE zcl_lnt_database_connection.
       WHEN `ZCL_LNT_DATABASE_SOURCE_INFO`.
         DATA t2319 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2319.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2320 TYPE REF TO object.
-        CLEAR t2320.
         READ TABLE p1->items INDEX 1 INTO t2320.
         t2319 ?= t2320.
         DATA t2321 TYPE REF TO zif_lnt_union_c74a232f.
-        CLEAR t2321.
         IF t2319 IS BOUND.
           IF t2319 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -6492,12 +6109,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2321 ?= t2322.
         ENDIF.
         DATA t2323 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2323.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2324 TYPE REF TO object.
-        CLEAR t2324.
         READ TABLE p1->items INDEX 2 INTO t2324.
         t2323 ?= t2324.
         DATA(t2325) = VALUE string( ).
@@ -6506,84 +6121,65 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t2325 = t2323->as_string( ).
         DATA t2326 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2326.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2327 TYPE REF TO object.
-        CLEAR t2327.
         READ TABLE p1->items INDEX 3 INTO t2327.
         t2326 ?= t2327.
-        DATA(t2328) = VALUE string( ).
         IF t2326 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t2328 = t2326->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_database_source_info EXPORTING i_source_75cf = t2321 i_name = t2325 i_alias = t2328.
+        CREATE OBJECT result TYPE zcl_lnt_database_source_info EXPORTING i_source_75cf = t2321 i_name = t2325 i_alias = t2326->as_string( ).
       WHEN `ZCL_LNT_DATASTORE_OBJECT`.
         DATA t1387 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1387.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1388 TYPE REF TO object.
-        CLEAR t1388.
         READ TABLE p1->items INDEX 1 INTO t1388.
         t1387 ?= t1388.
-        DATA(t1389) = VALUE string( ).
         IF t1387 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1389 = t1387->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_datastore_object EXPORTING i_name = t1389.
+        CREATE OBJECT result TYPE zcl_lnt_datastore_object EXPORTING i_name = t1387->as_string( ).
       WHEN `ZCL_LNT_DATA_BEGIN`.
         CREATE OBJECT result TYPE zcl_lnt_data_begin.
       WHEN `ZCL_LNT_DATA_CONTROL`.
         DATA t1378 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1378.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1379 TYPE REF TO object.
-        CLEAR t1379.
         READ TABLE p1->items INDEX 1 INTO t1379.
         t1378 ?= t1379.
-        DATA(t1380) = VALUE string( ).
         IF t1378 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1380 = t1378->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_data_control EXPORTING i_name = t1380.
+        CREATE OBJECT result TYPE zcl_lnt_data_control EXPORTING i_name = t1378->as_string( ).
       WHEN `ZCL_LNT_DATA_ELEMENT`.
         DATA t1384 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1384.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1385 TYPE REF TO object.
-        CLEAR t1385.
         READ TABLE p1->items INDEX 1 INTO t1385.
         t1384 ?= t1385.
-        DATA(t1386) = VALUE string( ).
         IF t1384 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1386 = t1384->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_data_element EXPORTING i_name = t1386.
+        CREATE OBJECT result TYPE zcl_lnt_data_element EXPORTING i_name = t1384->as_string( ).
       WHEN `ZCL_LNT_DATA_END`.
         CREATE OBJECT result TYPE zcl_lnt_data_end.
       WHEN `ZCL_LNT_DATA_REFERENCE`.
         DATA t757 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t757.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t758 TYPE REF TO object.
-        CLEAR t758.
         READ TABLE p1->items INDEX 1 INTO t758.
         t757 ?= t758.
         DATA t759 TYPE REF TO zcl_lnt_abstract_type.
-        CLEAR t759.
         IF t757 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -6591,16 +6187,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t760 = t757->as_ref( ).
         t759 ?= t760.
         DATA t761 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t761.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t762 TYPE REF TO object.
-        CLEAR t762.
         READ TABLE p1->items INDEX 2 INTO t762.
         t761 ?= t762.
         DATA t763 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t763.
         IF t761 IS BOUND.
           t763 = NEW #( ).
           t763->has = abap_true.
@@ -6612,16 +6205,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_data_reference EXPORTING i_type_9913 = t759 i_qualified_name = t763.
       WHEN `ZCL_LNT_DATA_TYPE`.
         DATA t764 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t764.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t765 TYPE REF TO object.
-        CLEAR t765.
         READ TABLE p1->items INDEX 1 INTO t765.
         t764 ?= t765.
         DATA t766 TYPE REF TO zcl_lnt_abstract_type_data.
-        CLEAR t766.
         IF t764 IS BOUND.
           IF t764 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -6633,16 +6223,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_data_type EXPORTING i_input_967e = t766.
       WHEN `ZCL_LNT_DATE_TYPE`.
         DATA t768 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t768.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t769 TYPE REF TO object.
-        CLEAR t769.
         READ TABLE p1->items INDEX 1 INTO t769.
         t768 ?= t769.
         DATA t770 TYPE REF TO zcl_lnt_abstract_type_data.
-        CLEAR t770.
         IF t768 IS BOUND.
           IF t768 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -6658,16 +6245,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_db_oprtn_in_lp_cnf.
       WHEN `ZCL_LNT_DDIC`.
         DATA t1044 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1044.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1045 TYPE REF TO object.
-        CLEAR t1045.
         READ TABLE p1->items INDEX 1 INTO t1045.
         t1044 ?= t1045.
         DATA t1046 TYPE REF TO zif_lnt_registry.
-        CLEAR t1046.
         IF t1044 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -6733,16 +6317,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_decimals.
       WHEN `ZCL_LNT_DEC_FLOAT16_TYPE`.
         DATA t772 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t772.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t773 TYPE REF TO object.
-        CLEAR t773.
         READ TABLE p1->items INDEX 1 INTO t773.
         t772 ?= t773.
         DATA t774 TYPE REF TO zcl_lnt_abstract_type_data.
-        CLEAR t774.
         IF t772 IS BOUND.
           IF t772 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -6754,16 +6335,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_dec_float16_type EXPORTING i_input_967e = t774.
       WHEN `ZCL_LNT_DEC_FLOAT34_TYPE`.
         DATA t776 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t776.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t777 TYPE REF TO object.
-        CLEAR t777.
         READ TABLE p1->items INDEX 1 INTO t777.
         t776 ?= t777.
         DATA t778 TYPE REF TO zcl_lnt_abstract_type_data.
-        CLEAR t778.
         IF t776 IS BOUND.
           IF t776 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -6775,16 +6353,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_dec_float34_type EXPORTING i_input_967e = t778.
       WHEN `ZCL_LNT_DEC_FLOAT_TYPE`.
         DATA t780 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t780.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t781 TYPE REF TO object.
-        CLEAR t781.
         READ TABLE p1->items INDEX 1 INTO t781.
         t780 ?= t781.
         DATA t782 TYPE REF TO zcl_lnt_abstract_type_data.
-        CLEAR t782.
         IF t780 IS BOUND.
           IF t780 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -6796,16 +6371,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_dec_float_type EXPORTING i_input_967e = t782.
       WHEN `ZCL_LNT_DEFERRED_INFORMATION`.
         DATA t2035 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2035.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2036 TYPE REF TO object.
-        CLEAR t2036.
         READ TABLE p1->items INDEX 1 INTO t2036.
         t2035 ?= t2036.
         DATA t2037 TYPE REF TO zcl_lnt_abstract_token.
-        CLEAR t2037.
         IF t2035 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -6813,32 +6385,25 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t2038 = t2035->as_ref( ).
         t2037 ?= t2038.
         DATA t2039 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2039.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2040 TYPE REF TO object.
-        CLEAR t2040.
         READ TABLE p1->items INDEX 2 INTO t2040.
         t2039 ?= t2040.
-        DATA(t2041) = VALUE string( ).
         IF t2039 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t2041 = t2039->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_deferred_information EXPORTING i_token = t2037 i_oo_type = t2041.
+        CREATE OBJECT result TYPE zcl_lnt_deferred_information EXPORTING i_token = t2037 i_oo_type = t2039->as_string( ).
       WHEN `ZCL_LNT_DEFINITION`.
         DATA t1163 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1163.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1164 TYPE REF TO object.
-        CLEAR t1164.
         READ TABLE p1->items INDEX 1 INTO t1164.
         t1163 ?= t1164.
         DATA t1165 TYPE REF TO zif_lnt_registry.
-        CLEAR t1165.
         IF t1163 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -6874,16 +6439,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_detail.
       WHEN `ZCL_LNT_DIAGNOSTICS`.
         DATA t1167 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1167.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1168 TYPE REF TO object.
-        CLEAR t1168.
         READ TABLE p1->items INDEX 1 INTO t1168.
         t1167 ?= t1168.
         DATA t1169 TYPE REF TO zif_lnt_registry.
-        CLEAR t1169.
         IF t1167 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -6893,32 +6455,25 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_diagnostics EXPORTING i_reg_f149 = t1169.
       WHEN `ZCL_LNT_DIALOG_MODULE`.
         DATA t1390 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1390.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1391 TYPE REF TO object.
-        CLEAR t1391.
         READ TABLE p1->items INDEX 1 INTO t1391.
         t1390 ?= t1391.
-        DATA(t1392) = VALUE string( ).
         IF t1390 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1392 = t1390->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_dialog_module EXPORTING i_name = t1392.
+        CREATE OBJECT result TYPE zcl_lnt_dialog_module EXPORTING i_name = t1390->as_string( ).
       WHEN `ZCL_LNT_DMN_VL_TRNSLTN`.
         DATA t1408 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1408.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1409 TYPE REF TO object.
-        CLEAR t1409.
         READ TABLE p1->items INDEX 1 INTO t1409.
         t1408 ?= t1409.
         DATA t1410 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t1410.
         IF t1408 IS BOUND.
           t1410 = NEW #( ).
           t1410->has = abap_true.
@@ -6928,16 +6483,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t1410->value = t1408->as_string( ).
         ENDIF.
         DATA t1411 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1411.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1412 TYPE REF TO object.
-        CLEAR t1412.
         READ TABLE p1->items INDEX 2 INTO t1412.
         t1411 ?= t1412.
         DATA t1413 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t1413.
         IF t1411 IS BOUND.
           t1413 = NEW #( ).
           t1413->has = abap_true.
@@ -6951,46 +6503,36 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_dngrs_sttmnt_cnf.
       WHEN `ZCL_LNT_DOCUMENTATION`.
         DATA t1393 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1393.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1394 TYPE REF TO object.
-        CLEAR t1394.
         READ TABLE p1->items INDEX 1 INTO t1394.
         t1393 ?= t1394.
-        DATA(t1395) = VALUE string( ).
         IF t1393 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1395 = t1393->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_documentation EXPORTING i_name = t1395.
+        CREATE OBJECT result TYPE zcl_lnt_documentation EXPORTING i_name = t1393->as_string( ).
       WHEN `ZCL_LNT_DOCUMENT_SYMBOL`.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
       WHEN `ZCL_LNT_DOMAIN`.
         DATA t1414 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1414.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1415 TYPE REF TO object.
-        CLEAR t1415.
         READ TABLE p1->items INDEX 1 INTO t1415.
         t1414 ?= t1415.
-        DATA(t1416) = VALUE string( ).
         IF t1414 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1416 = t1414->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_domain EXPORTING i_name = t1416.
+        CREATE OBJECT result TYPE zcl_lnt_domain EXPORTING i_name = t1414->as_string( ).
       WHEN `ZCL_LNT_DOMAIN_CLASS_MAPPING`.
         DATA t1892 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1892.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1893 TYPE REF TO object.
-        CLEAR t1893.
         READ TABLE p1->items INDEX 1 INTO t1893.
         t1892 ?= t1893.
         DATA(t1894) = VALUE string( ).
@@ -6999,12 +6541,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t1894 = t1892->as_string( ).
         DATA t1895 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1895.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1896 TYPE REF TO object.
-        CLEAR t1896.
         READ TABLE p1->items INDEX 2 INTO t1896.
         t1895 ?= t1896.
         DATA(t1897) = VALUE string( ).
@@ -7013,16 +6553,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t1897 = t1895->as_string( ).
         DATA t1898 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1898.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1899 TYPE REF TO object.
-        CLEAR t1899.
         READ TABLE p1->items INDEX 3 INTO t1899.
         t1898 ?= t1899.
         DATA t1900 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-        CLEAR t1900.
         IF t1898 IS BOUND.
           t1900 = NEW #( ).
           t1900->has = abap_true.
@@ -7032,16 +6569,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t1900->value = t1898->as_boolean( ).
         ENDIF.
         DATA t1901 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1901.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1902 TYPE REF TO object.
-        CLEAR t1902.
         READ TABLE p1->items INDEX 4 INTO t1902.
         t1901 ?= t1902.
         DATA t1903 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t1903.
         IF t1901 IS BOUND.
           t1903 = NEW #( ).
           t1903->has = abap_true.
@@ -7053,16 +6587,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_domain_class_mapping EXPORTING i_domain = t1894 i_class_631c = t1897 i_use_exact_type = t1900 i_constant_for_domain_name = t1903.
       WHEN `ZCL_LNT_DOMAIN_VALUE`.
         DATA t1396 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1396.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1397 TYPE REF TO object.
-        CLEAR t1397.
         READ TABLE p1->items INDEX 1 INTO t1397.
         t1396 ?= t1397.
         DATA t1398 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t1398.
         IF t1396 IS BOUND.
           t1398 = NEW #( ).
           t1398->has = abap_true.
@@ -7072,16 +6603,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t1398->value = t1396->as_string( ).
         ENDIF.
         DATA t1399 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1399.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1400 TYPE REF TO object.
-        CLEAR t1400.
         READ TABLE p1->items INDEX 2 INTO t1400.
         t1399 ?= t1400.
         DATA t1401 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t1401.
         IF t1399 IS BOUND.
           t1401 = NEW #( ).
           t1401->has = abap_true.
@@ -7091,16 +6619,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t1401->value = t1399->as_string( ).
         ENDIF.
         DATA t1402 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1402.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1403 TYPE REF TO object.
-        CLEAR t1403.
         READ TABLE p1->items INDEX 3 INTO t1403.
         t1402 ?= t1403.
         DATA t1404 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t1404.
         IF t1402 IS BOUND.
           t1404 = NEW #( ).
           t1404->has = abap_true.
@@ -7110,16 +6635,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t1404->value = t1402->as_string( ).
         ENDIF.
         DATA t1405 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1405.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1406 TYPE REF TO object.
-        CLEAR t1406.
         READ TABLE p1->items INDEX 4 INTO t1406.
         t1405 ?= t1406.
         DATA t1407 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t1407.
         IF t1405 IS BOUND.
           t1407 = NEW #( ).
           t1407->has = abap_true.
@@ -7152,16 +6674,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_dynpro_checks_conf.
       WHEN `ZCL_LNT_DYNPRO_FIELD`.
         DATA t2542 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2542.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2543 TYPE REF TO object.
-        CLEAR t2543.
         READ TABLE p1->items INDEX 1 INTO t2543.
         t2542 ?= t2543.
         DATA t2544 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t2544.
         IF t2542 IS BOUND.
           t2544 = NEW #( ).
           t2544->has = abap_true.
@@ -7171,16 +6690,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2544->value = t2542->as_string( ).
         ENDIF.
         DATA t2545 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2545.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2546 TYPE REF TO object.
-        CLEAR t2546.
         READ TABLE p1->items INDEX 2 INTO t2546.
         t2545 ?= t2546.
         DATA t2547 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t2547.
         IF t2545 IS BOUND.
           t2547 = NEW #( ).
           t2547->has = abap_true.
@@ -7190,16 +6706,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2547->value = t2545->as_string( ).
         ENDIF.
         DATA t2548 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2548.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2549 TYPE REF TO object.
-        CLEAR t2549.
         READ TABLE p1->items INDEX 3 INTO t2549.
         t2548 ?= t2549.
         DATA t2550 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t2550.
         IF t2548 IS BOUND.
           t2550 = NEW #( ).
           t2550->has = abap_true.
@@ -7209,12 +6722,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2550->value = t2548->as_string( ).
         ENDIF.
         DATA t2551 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2551.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2552 TYPE REF TO object.
-        CLEAR t2552.
         READ TABLE p1->items INDEX 4 INTO t2552.
         t2551 ?= t2552.
         DATA(t2553) = VALUE f( ).
@@ -7223,12 +6734,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t2553 = t2551->as_number( ).
         DATA t2554 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2554.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2555 TYPE REF TO object.
-        CLEAR t2555.
         READ TABLE p1->items INDEX 5 INTO t2555.
         t2554 ?= t2555.
         DATA(t2556) = VALUE f( ).
@@ -7237,12 +6746,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t2556 = t2554->as_number( ).
         DATA t2557 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2557.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2558 TYPE REF TO object.
-        CLEAR t2558.
         READ TABLE p1->items INDEX 6 INTO t2558.
         t2557 ?= t2558.
         DATA(t2559) = VALUE f( ).
@@ -7251,12 +6758,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t2559 = t2557->as_number( ).
         DATA t2560 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2560.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2561 TYPE REF TO object.
-        CLEAR t2561.
         READ TABLE p1->items INDEX 7 INTO t2561.
         t2560 ?= t2561.
         DATA(t2562) = VALUE f( ).
@@ -7265,20 +6770,16 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t2562 = t2560->as_number( ).
         DATA t2563 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2563.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2564 TYPE REF TO object.
-        CLEAR t2564.
         READ TABLE p1->items INDEX 8 INTO t2564.
         t2563 ?= t2564.
-        DATA(t2565) = VALUE f( ).
         IF t2563 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t2565 = t2563->as_number( ).
-        CREATE OBJECT result TYPE zcl_lnt_dynpro_field EXPORTING i_name = t2544 i_type_9913 = t2547 i_cont_type = t2550 i_length = t2553 i_vislength = t2556 i_line = t2559 i_column = t2562 i_height = t2565.
+        CREATE OBJECT result TYPE zcl_lnt_dynpro_field EXPORTING i_name = t2544 i_type_9913 = t2547 i_cont_type = t2550 i_length = t2553 i_vislength = t2556 i_line = t2559 i_column = t2562 i_height = t2563->as_number( ).
       WHEN `ZCL_LNT_DYNPRO_HEADER`.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
       WHEN `ZCL_LNT_DYNPRO_LOGIC`.
@@ -7287,64 +6788,49 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_easy_to_find_messages.
       WHEN `ZCL_LNT_ECATT_TEST_SCRIPT`.
         DATA t1423 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1423.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1424 TYPE REF TO object.
-        CLEAR t1424.
         READ TABLE p1->items INDEX 1 INTO t1424.
         t1423 ?= t1424.
-        DATA(t1425) = VALUE string( ).
         IF t1423 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1425 = t1423->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_ecatt_test_script EXPORTING i_name = t1425.
+        CREATE OBJECT result TYPE zcl_lnt_ecatt_test_script EXPORTING i_name = t1423->as_string( ).
       WHEN `ZCL_LNT_ECTT_TST_CNFGRTN`.
         DATA t1417 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1417.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1418 TYPE REF TO object.
-        CLEAR t1418.
         READ TABLE p1->items INDEX 1 INTO t1418.
         t1417 ?= t1418.
-        DATA(t1419) = VALUE string( ).
         IF t1417 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1419 = t1417->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_ectt_tst_cnfgrtn EXPORTING i_name = t1419.
+        CREATE OBJECT result TYPE zcl_lnt_ectt_tst_cnfgrtn EXPORTING i_name = t1417->as_string( ).
       WHEN `ZCL_LNT_ECTT_TST_DT_CNTNR`.
         DATA t1420 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1420.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1421 TYPE REF TO object.
-        CLEAR t1421.
         READ TABLE p1->items INDEX 1 INTO t1421.
         t1420 ?= t1421.
-        DATA(t1422) = VALUE string( ).
         IF t1420 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1422 = t1420->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_ectt_tst_dt_cntnr EXPORTING i_name = t1422.
+        CREATE OBJECT result TYPE zcl_lnt_ectt_tst_dt_cntnr EXPORTING i_name = t1420->as_string( ).
       WHEN `ZCL_LNT_EDIT_DRAFT`.
         DATA t1075 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1075.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1076 TYPE REF TO object.
-        CLEAR t1076.
         READ TABLE p1->items INDEX 1 INTO t1076.
         t1075 ?= t1076.
         DATA t1077 TYPE REF TO zif_lnt_file.
-        CLEAR t1077.
         IF t1075 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -7373,20 +6859,16 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
     CASE class_name.
       WHEN `ZCL_LNT_EMAIL_TEMPLATE`.
         DATA t1426 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1426.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1427 TYPE REF TO object.
-        CLEAR t1427.
         READ TABLE p1->items INDEX 1 INTO t1427.
         t1426 ?= t1427.
-        DATA(t1428) = VALUE string( ).
         IF t1426 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1428 = t1426->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_email_template EXPORTING i_name = t1428.
+        CREATE OBJECT result TYPE zcl_lnt_email_template EXPORTING i_name = t1426->as_string( ).
       WHEN `ZCL_LNT_EML_ENTITY_PATH`.
         CREATE OBJECT result TYPE zcl_lnt_eml_entity_path.
       WHEN `ZCL_LNT_EMPTY`.
@@ -7465,66 +6947,51 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_enhancement_point.
       WHEN `ZCL_LNT_ENHANCEMENT_SPOT`.
         DATA t1438 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1438.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1439 TYPE REF TO object.
-        CLEAR t1439.
         READ TABLE p1->items INDEX 1 INTO t1439.
         t1438 ?= t1439.
-        DATA(t1440) = VALUE string( ).
         IF t1438 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1440 = t1438->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_enhancement_spot EXPORTING i_name = t1440.
+        CREATE OBJECT result TYPE zcl_lnt_enhancement_spot EXPORTING i_name = t1438->as_string( ).
       WHEN `ZCL_LNT_ENHNCMNT_IMPLMNTTN`.
         DATA t1429 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1429.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1430 TYPE REF TO object.
-        CLEAR t1430.
         READ TABLE p1->items INDEX 1 INTO t1430.
         t1429 ?= t1430.
-        DATA(t1431) = VALUE string( ).
         IF t1429 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1431 = t1429->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_enhncmnt_implmnttn EXPORTING i_name = t1431.
+        CREATE OBJECT result TYPE zcl_lnt_enhncmnt_implmnttn EXPORTING i_name = t1429->as_string( ).
       WHEN `ZCL_LNT_ENTITY_ASSOCIATION`.
         CREATE OBJECT result TYPE zcl_lnt_entity_association.
       WHEN `ZCL_LNT_ENTITY_TYPE`.
         DATA t1441 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1441.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1442 TYPE REF TO object.
-        CLEAR t1442.
         READ TABLE p1->items INDEX 1 INTO t1442.
         t1441 ?= t1442.
-        DATA(t1443) = VALUE string( ).
         IF t1441 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1443 = t1441->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_entity_type EXPORTING i_name = t1443.
+        CREATE OBJECT result TYPE zcl_lnt_entity_type EXPORTING i_name = t1441->as_string( ).
       WHEN `ZCL_LNT_ENUM_TYPE`.
         DATA t784 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t784.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t785 TYPE REF TO object.
-        CLEAR t785.
         READ TABLE p1->items INDEX 1 INTO t785.
         t784 ?= t785.
         DATA t786 TYPE REF TO zcl_lnt_abstract_type_data.
-        CLEAR t786.
         IF t784 IS BOUND.
           IF t784 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -7540,48 +7007,37 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_events.
       WHEN `ZCL_LNT_EVENT_BINDING`.
         DATA t1444 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1444.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1445 TYPE REF TO object.
-        CLEAR t1445.
         READ TABLE p1->items INDEX 1 INTO t1445.
         t1444 ?= t1445.
-        DATA(t1446) = VALUE string( ).
         IF t1444 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1446 = t1444->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_event_binding EXPORTING i_name = t1446.
+        CREATE OBJECT result TYPE zcl_lnt_event_binding EXPORTING i_name = t1444->as_string( ).
       WHEN `ZCL_LNT_EVENT_CONSUMER`.
         DATA t1447 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1447.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1448 TYPE REF TO object.
-        CLEAR t1448.
         READ TABLE p1->items INDEX 1 INTO t1448.
         t1447 ?= t1448.
-        DATA(t1449) = VALUE string( ).
         IF t1447 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1449 = t1447->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_event_consumer EXPORTING i_name = t1449.
+        CREATE OBJECT result TYPE zcl_lnt_event_consumer EXPORTING i_name = t1447->as_string( ).
       WHEN `ZCL_LNT_EVENT_DEFINITION`.
         DATA t936 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t936.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t937 TYPE REF TO object.
-        CLEAR t937.
         READ TABLE p1->items INDEX 1 INTO t937.
         t936 ?= t937.
         DATA t938 TYPE REF TO zcl_lnt_statement_node.
-        CLEAR t938.
         IF t936 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -7589,12 +7045,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t939 = t936->as_ref( ).
         t938 ?= t939.
         DATA t940 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t940.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t941 TYPE REF TO object.
-        CLEAR t941.
         READ TABLE p1->items INDEX 2 INTO t941.
         t940 ?= t941.
         DATA(t942) = VALUE f( ).
@@ -7603,16 +7057,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t942 = t940->as_number( ).
         DATA t943 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t943.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t944 TYPE REF TO object.
-        CLEAR t944.
         READ TABLE p1->items INDEX 3 INTO t944.
         t943 ?= t944.
         DATA t945 TYPE REF TO zcl_lnt_syntax_input.
-        CLEAR t945.
         IF t943 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -7646,16 +7097,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
       WHEN `ZCL_LNT_EXPRESSION_NODE`.
         DATA t707 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t707.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t708 TYPE REF TO object.
-        CLEAR t708.
         READ TABLE p1->items INDEX 1 INTO t708.
         t707 ?= t708.
         DATA t709 TYPE REF TO zif_lnt_statement_runnable.
-        CLEAR t709.
         IF t707 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -7665,20 +7113,16 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_expression_node EXPORTING i_expression = t709.
       WHEN `ZCL_LNT_EXTENSION_INDEX`.
         DATA t1450 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1450.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1451 TYPE REF TO object.
-        CLEAR t1451.
         READ TABLE p1->items INDEX 1 INTO t1451.
         t1450 ?= t1451.
-        DATA(t1452) = VALUE string( ).
         IF t1450 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1452 = t1450->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_extension_index EXPORTING i_name = t1452.
+        CREATE OBJECT result TYPE zcl_lnt_extension_index EXPORTING i_name = t1450->as_string( ).
       WHEN `ZCL_LNT_EXTRACT`.
         CREATE OBJECT result TYPE zcl_lnt_extract.
       WHEN OTHERS.
@@ -7698,20 +7142,16 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_field_all.
       WHEN `ZCL_LNT_FIELD_CATALOG`.
         DATA t1453 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1453.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1454 TYPE REF TO object.
-        CLEAR t1454.
         READ TABLE p1->items INDEX 1 INTO t1454.
         t1453 ?= t1454.
-        DATA(t1455) = VALUE string( ).
         IF t1453 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1455 = t1453->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_field_catalog EXPORTING i_name = t1455.
+        CREATE OBJECT result TYPE zcl_lnt_field_catalog EXPORTING i_name = t1453->as_string( ).
       WHEN `ZCL_LNT_FIELD_SUB`.
         CREATE OBJECT result TYPE zcl_lnt_field_sub.
       WHEN `ZCL_LNT_FINAL_METHODS`.
@@ -7722,12 +7162,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
       WHEN `ZCL_LNT_FIX_CASE`.
         DATA t1848 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1848.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1849 TYPE REF TO object.
-        CLEAR t1849.
         READ TABLE p1->items INDEX 1 INTO t1849.
         t1848 ?= t1849.
         DATA(t1850) = VALUE string( ).
@@ -7736,16 +7174,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t1850 = t1848->as_string( ).
         DATA t1851 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1851.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1852 TYPE REF TO object.
-        CLEAR t1852.
         READ TABLE p1->items INDEX 2 INTO t1852.
         t1851 ?= t1852.
         DATA t1853 TYPE REF TO zif_lnt_configuration.
-        CLEAR t1853.
         IF t1851 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -7755,16 +7190,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_fix_case EXPORTING i_file_contents = t1850 i_config = t1853.
       WHEN `ZCL_LNT_FI_IDENTIFIER`.
         DATA t550 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t550.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t551 TYPE REF TO object.
-        CLEAR t551.
         READ TABLE p1->items INDEX 1 INTO t551.
         t550 ?= t551.
         DATA t552 TYPE REF TO zcl_lnt_abstract_token.
-        CLEAR t552.
         IF t550 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -7772,30 +7204,24 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t553 = t550->as_ref( ).
         t552 ?= t553.
         DATA t554 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t554.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t555 TYPE REF TO object.
-        CLEAR t555.
         READ TABLE p1->items INDEX 2 INTO t555.
         t554 ?= t555.
-        DATA(t556) = VALUE string( ).
         IF t554 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t556 = t554->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_fi_identifier EXPORTING i_token = t552 i_filename = t556.
+        CREATE OBJECT result TYPE zcl_lnt_fi_identifier EXPORTING i_token = t552 i_filename = t554->as_string( ).
       WHEN `ZCL_LNT_FLLY_TYP_CNSNTS_CNF`.
         CREATE OBJECT result TYPE zcl_lnt_flly_typ_cnsnts_cnf.
       WHEN `ZCL_LNT_FLOATING_POINT_TYPE`.
         DATA t792 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t792.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t793 TYPE REF TO object.
-        CLEAR t793.
         READ TABLE p1->items INDEX 1 INTO t793.
         t792 ?= t793.
         DATA(t794) = VALUE f( ).
@@ -7804,16 +7230,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t794 = t792->as_number( ).
         DATA t795 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t795.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t796 TYPE REF TO object.
-        CLEAR t796.
         READ TABLE p1->items INDEX 2 INTO t796.
         t795 ?= t796.
         DATA t797 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t797.
         IF t795 IS BOUND.
           t797 = NEW #( ).
           t797->has = abap_true.
@@ -7825,16 +7248,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_floating_point_type EXPORTING i_length = t794 i_qualified_name = t797.
       WHEN `ZCL_LNT_FLOAT_TYPE`.
         DATA t788 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t788.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t789 TYPE REF TO object.
-        CLEAR t789.
         READ TABLE p1->items INDEX 1 INTO t789.
         t788 ?= t789.
         DATA t790 TYPE REF TO zcl_lnt_abstract_type_data.
-        CLEAR t790.
         IF t788 IS BOUND.
           IF t788 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -7854,16 +7274,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_fnctn_exprtng_prmtr.
       WHEN `ZCL_LNT_FNCTN_MDL_DFNTN`.
         DATA t973 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t973.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t974 TYPE REF TO object.
-        CLEAR t974.
         READ TABLE p1->items INDEX 1 INTO t974.
         t973 ?= t974.
-        DATA(t975) = t973.
-        CREATE OBJECT result TYPE zcl_lnt_fnctn_mdl_dfntn EXPORTING i_data_dc02 = t975.
+        CREATE OBJECT result TYPE zcl_lnt_fnctn_mdl_dfntn EXPORTING i_data_dc02 = t973.
       WHEN `ZCL_LNT_FNCTN_MDL_DFNTN_MDL`.
         IF zcl_lnt_fnctn_mdl_dfntn_mdl=>zlnt_builtin_init_d34828376408 = abap_false.
           zcl_lnt_fnctn_mdl_dfntn_mdl=>zlnt_builtin_init_f2cef3ac1911( ).
@@ -7877,16 +7294,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_fnctn_mdl_rcmmndtn_mdl.
       WHEN `ZCL_LNT_FND_GLBL_DFNTNS`.
         DATA t679 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t679.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t680 TYPE REF TO object.
-        CLEAR t680.
         READ TABLE p1->items INDEX 1 INTO t680.
         t679 ?= t680.
         DATA t681 TYPE REF TO zif_lnt_registry.
-        CLEAR t681.
         IF t679 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -7900,20 +7314,16 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_forbidden_void_type.
       WHEN `ZCL_LNT_FORMAT_TYPE`.
         DATA t1462 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1462.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1463 TYPE REF TO object.
-        CLEAR t1463.
         READ TABLE p1->items INDEX 1 INTO t1463.
         t1462 ?= t1463.
-        DATA(t1464) = VALUE string( ).
         IF t1462 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1464 = t1462->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_format_type EXPORTING i_name = t1464.
+        CREATE OBJECT result TYPE zcl_lnt_format_type EXPORTING i_name = t1462->as_string( ).
       WHEN `ZCL_LNT_FORM_CHANGING`.
         CREATE OBJECT result TYPE zcl_lnt_form_changing.
       WHEN `ZCL_LNT_FORM_LENGTH_STATS`.
@@ -7922,36 +7332,28 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_form_name.
       WHEN `ZCL_LNT_FORM_OBJECT_FORM`.
         DATA t1456 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1456.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1457 TYPE REF TO object.
-        CLEAR t1457.
         READ TABLE p1->items INDEX 1 INTO t1457.
         t1456 ?= t1457.
-        DATA(t1458) = VALUE string( ).
         IF t1456 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1458 = t1456->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_form_object_form EXPORTING i_name = t1458.
+        CREATE OBJECT result TYPE zcl_lnt_form_object_form EXPORTING i_name = t1456->as_string( ).
       WHEN `ZCL_LNT_FORM_OBJECT_INTERFACE`.
         DATA t1459 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1459.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1460 TYPE REF TO object.
-        CLEAR t1460.
         READ TABLE p1->items INDEX 1 INTO t1460.
         t1459 ?= t1460.
-        DATA(t1461) = VALUE string( ).
         IF t1459 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1461 = t1459->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_form_object_interface EXPORTING i_name = t1461.
+        CREATE OBJECT result TYPE zcl_lnt_form_object_interface EXPORTING i_name = t1459->as_string( ).
       WHEN OTHERS.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDCASE.
@@ -7997,20 +7399,16 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_function_exporting.
       WHEN `ZCL_LNT_FUNCTION_GROUP`.
         DATA t1465 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1465.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1466 TYPE REF TO object.
-        CLEAR t1466.
         READ TABLE p1->items INDEX 1 INTO t1466.
         t1465 ?= t1466.
-        DATA(t1467) = VALUE string( ).
         IF t1465 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1467 = t1465->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_function_group EXPORTING i_name = t1467.
+        CREATE OBJECT result TYPE zcl_lnt_function_group EXPORTING i_name = t1465->as_string( ).
       WHEN `ZCL_LNT_FUNCTION_LENGTH_STATS`.
         CREATE OBJECT result TYPE zcl_lnt_function_length_stats.
       WHEN `ZCL_LNT_FUNCTION_NAME`.
@@ -8019,84 +7417,64 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_function_pool.
       WHEN `ZCL_LNT_GATEWAY_MODEL`.
         DATA t1468 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1468.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1469 TYPE REF TO object.
-        CLEAR t1469.
         READ TABLE p1->items INDEX 1 INTO t1469.
         t1468 ?= t1469.
-        DATA(t1470) = VALUE string( ).
         IF t1468 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1470 = t1468->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_gateway_model EXPORTING i_name = t1470.
+        CREATE OBJECT result TYPE zcl_lnt_gateway_model EXPORTING i_name = t1468->as_string( ).
       WHEN `ZCL_LNT_GATEWAY_MODEL_METADATA`.
         DATA t1471 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1471.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1472 TYPE REF TO object.
-        CLEAR t1472.
         READ TABLE p1->items INDEX 1 INTO t1472.
         t1471 ?= t1472.
-        DATA(t1473) = VALUE string( ).
         IF t1471 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1473 = t1471->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_gateway_model_metadata EXPORTING i_name = t1473.
+        CREATE OBJECT result TYPE zcl_lnt_gateway_model_metadata EXPORTING i_name = t1471->as_string( ).
       WHEN `ZCL_LNT_GATEWAY_PROJECT`.
         DATA t1477 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1477.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1478 TYPE REF TO object.
-        CLEAR t1478.
         READ TABLE p1->items INDEX 1 INTO t1478.
         t1477 ?= t1478.
-        DATA(t1479) = VALUE string( ).
         IF t1477 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1479 = t1477->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_gateway_project EXPORTING i_name = t1479.
+        CREATE OBJECT result TYPE zcl_lnt_gateway_project EXPORTING i_name = t1477->as_string( ).
       WHEN `ZCL_LNT_GATEWAY_SERVICE`.
         DATA t1480 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1480.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1481 TYPE REF TO object.
-        CLEAR t1481.
         READ TABLE p1->items INDEX 1 INTO t1481.
         t1480 ?= t1481.
-        DATA(t1482) = VALUE string( ).
         IF t1480 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1482 = t1480->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_gateway_service EXPORTING i_name = t1482.
+        CREATE OBJECT result TYPE zcl_lnt_gateway_service EXPORTING i_name = t1480->as_string( ).
       WHEN `ZCL_LNT_GENERAL_TEXT`.
         DATA t1495 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1495.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1496 TYPE REF TO object.
-        CLEAR t1496.
         READ TABLE p1->items INDEX 1 INTO t1496.
         t1495 ?= t1496.
-        DATA(t1497) = VALUE string( ).
         IF t1495 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1497 = t1495->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_general_text EXPORTING i_name = t1497.
+        CREATE OBJECT result TYPE zcl_lnt_general_text EXPORTING i_name = t1495->as_string( ).
       WHEN `ZCL_LNT_GENERATE_DYNPRO`.
         CREATE OBJECT result TYPE zcl_lnt_generate_dynpro.
       WHEN `ZCL_LNT_GENERATE_REPORT`.
@@ -8105,12 +7483,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_generate_subroutine.
       WHEN `ZCL_LNT_GENERATOR_09F740E3`.
         DATA t2139 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2139.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2140 TYPE REF TO object.
-        CLEAR t2140.
         READ TABLE p1->items INDEX 1 INTO t2140.
         t2139 ?= t2140.
         DATA(t2141) = VALUE abap_bool( ).
@@ -8119,16 +7495,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t2141 = t2139->as_boolean( ).
         DATA t2142 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2142.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2143 TYPE REF TO object.
-        CLEAR t2143.
         READ TABLE p1->items INDEX 2 INTO t2143.
         t2142 ?= t2143.
         DATA t2144 TYPE REF TO zif_lnt_file.
-        CLEAR t2144.
         IF t2142 IS BOUND.
           IF t2142 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -8140,12 +7513,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_generator_09f740e3 EXPORTING i_done = t2141 i_value = t2144.
       WHEN `ZCL_LNT_GENERATOR_0F216880`.
         DATA t2146 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2146.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2147 TYPE REF TO object.
-        CLEAR t2147.
         READ TABLE p1->items INDEX 1 INTO t2147.
         t2146 ?= t2147.
         DATA(t2148) = VALUE abap_bool( ).
@@ -8154,16 +7525,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t2148 = t2146->as_boolean( ).
         DATA t2149 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2149.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2150 TYPE REF TO object.
-        CLEAR t2150.
         READ TABLE p1->items INDEX 2 INTO t2150.
         t2149 ?= t2150.
         DATA t2151 TYPE REF TO zif_lnt_method_definition.
-        CLEAR t2151.
         IF t2149 IS BOUND.
           IF t2149 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -8175,12 +7543,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_generator_0f216880 EXPORTING i_done = t2148 i_value = t2151.
       WHEN `ZCL_LNT_GENERATOR_17955B8B`.
         DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2 TYPE REF TO object.
-        CLEAR t2.
         READ TABLE p1->items INDEX 1 INTO t2.
         t1 ?= t2.
         DATA(t3) = VALUE abap_bool( ).
@@ -8189,16 +7555,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t3 = t1->as_boolean( ).
         DATA t4 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t4.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t5 TYPE REF TO object.
-        CLEAR t5.
         READ TABLE p1->items INDEX 2 INTO t5.
         t4 ?= t5.
         DATA t6 TYPE REF TO zif_lnt_object.
-        CLEAR t6.
         IF t4 IS BOUND.
           IF t4 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -8251,16 +7614,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
       WHEN `ZCL_LNT_GENERATOR_98C19D71`.
         DATA t3259 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t3259.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t3260 TYPE REF TO object.
-        CLEAR t3260.
         READ TABLE p1->items INDEX 1 INTO t3260.
         t3259 ?= t3260.
         DATA t3261 TYPE REF TO zcl_lnt_method_definitions.
-        CLEAR t3261.
         IF t3259 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -8270,16 +7630,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_generator_98c19d71 EXPORTING i_outer = t3261.
       WHEN `ZCL_LNT_GENERATOR_A3E30675`.
         DATA t3287 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t3287.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t3288 TYPE REF TO object.
-        CLEAR t3288.
         READ TABLE p1->items INDEX 1 INTO t3288.
         t3287 ?= t3288.
         DATA t3289 TYPE REF TO zcl_lnt_registry.
-        CLEAR t3289.
         IF t3287 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -8289,16 +7646,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_generator_a3e30675 EXPORTING i_outer = t3289.
       WHEN `ZCL_LNT_GENERATOR_A921479B`.
         DATA t3276 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t3276.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t3277 TYPE REF TO object.
-        CLEAR t3277.
         READ TABLE p1->items INDEX 1 INTO t3277.
         t3276 ?= t3277.
         DATA t3278 TYPE REF TO zcl_lnt_registry.
-        CLEAR t3278.
         IF t3276 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -8308,12 +7662,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_generator_a921479b EXPORTING i_outer = t3278.
       WHEN `ZCL_LNT_GENERATOR_B69D4F9F`.
         DATA t3280 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t3280.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t3281 TYPE REF TO object.
-        CLEAR t3281.
         READ TABLE p1->items INDEX 1 INTO t3281.
         t3280 ?= t3281.
         DATA(t3282) = VALUE string( ).
@@ -8322,16 +7674,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t3282 = t3280->as_string( ).
         DATA t3283 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t3283.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t3284 TYPE REF TO object.
-        CLEAR t3284.
         READ TABLE p1->items INDEX 2 INTO t3284.
         t3283 ?= t3284.
         DATA t3285 TYPE REF TO zcl_lnt_registry.
-        CLEAR t3285.
         IF t3283 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -8351,16 +7700,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_global_class_conf.
       WHEN `ZCL_LNT_GNRC_OBJCT_RFRNC_TYP`.
         DATA t798 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t798.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t799 TYPE REF TO object.
-        CLEAR t799.
         READ TABLE p1->items INDEX 1 INTO t799.
         t798 ?= t799.
         DATA t800 TYPE REF TO zcl_lnt_abstract_type_data.
-        CLEAR t800.
         IF t798 IS BOUND.
           IF t798 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -8372,96 +7718,74 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_gnrc_objct_rfrnc_typ EXPORTING i_input_967e = t800.
       WHEN `ZCL_LNT_GNRL_HRRC_STRG_EXTR_NM`.
         DATA t1489 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1489.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1490 TYPE REF TO object.
-        CLEAR t1490.
         READ TABLE p1->items INDEX 1 INTO t1490.
         t1489 ?= t1490.
-        DATA(t1491) = VALUE string( ).
         IF t1489 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1491 = t1489->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_gnrl_hrrc_strg_extr_nm EXPORTING i_name = t1491.
+        CREATE OBJECT result TYPE zcl_lnt_gnrl_hrrc_strg_extr_nm EXPORTING i_name = t1489->as_string( ).
       WHEN `ZCL_LNT_GNRL_STRG_STRCTR`.
         DATA t1492 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1492.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1493 TYPE REF TO object.
-        CLEAR t1493.
         READ TABLE p1->items INDEX 1 INTO t1493.
         t1492 ?= t1493.
-        DATA(t1494) = VALUE string( ).
         IF t1492 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1494 = t1492->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_gnrl_strg_strctr EXPORTING i_name = t1494.
+        CREATE OBJECT result TYPE zcl_lnt_gnrl_strg_strctr EXPORTING i_name = t1492->as_string( ).
       WHEN `ZCL_LNT_GRAPH`.
         CREATE OBJECT result TYPE zcl_lnt_graph.
       WHEN `ZCL_LNT_GTWY_O_DT_GRP_AND_ASSG`.
         DATA t1474 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1474.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1475 TYPE REF TO object.
-        CLEAR t1475.
         READ TABLE p1->items INDEX 1 INTO t1475.
         t1474 ?= t1475.
-        DATA(t1476) = VALUE string( ).
         IF t1474 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1476 = t1474->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_gtwy_o_dt_grp_and_assg EXPORTING i_name = t1476.
+        CREATE OBJECT result TYPE zcl_lnt_gtwy_o_dt_grp_and_assg EXPORTING i_name = t1474->as_string( ).
       WHEN `ZCL_LNT_GTWY_SRVC_GRPS_MTDT`.
         DATA t1483 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1483.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1484 TYPE REF TO object.
-        CLEAR t1484.
         READ TABLE p1->items INDEX 1 INTO t1484.
         t1483 ?= t1484.
-        DATA(t1485) = VALUE string( ).
         IF t1483 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1485 = t1483->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_gtwy_srvc_grps_mtdt EXPORTING i_name = t1485.
+        CREATE OBJECT result TYPE zcl_lnt_gtwy_srvc_grps_mtdt EXPORTING i_name = t1483->as_string( ).
       WHEN `ZCL_LNT_GTWY_VCBLRY_ANNTTN`.
         DATA t1486 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1486.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1487 TYPE REF TO object.
-        CLEAR t1487.
         READ TABLE p1->items INDEX 1 INTO t1487.
         t1486 ?= t1487.
-        DATA(t1488) = VALUE string( ).
         IF t1486 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1488 = t1486->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_gtwy_vcblry_annttn EXPORTING i_name = t1488.
+        CREATE OBJECT result TYPE zcl_lnt_gtwy_vcblry_annttn EXPORTING i_name = t1486->as_string( ).
       WHEN `ZCL_LNT_HELP`.
         CREATE OBJECT result TYPE zcl_lnt_help.
       WHEN `ZCL_LNT_HEX_TYPE`.
         DATA t802 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t802.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t803 TYPE REF TO object.
-        CLEAR t803.
         READ TABLE p1->items INDEX 1 INTO t803.
         t802 ?= t803.
         DATA(t804) = VALUE f( ).
@@ -8470,16 +7794,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t804 = t802->as_number( ).
         DATA t805 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t805.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t806 TYPE REF TO object.
-        CLEAR t806.
         READ TABLE p1->items INDEX 2 INTO t806.
         t805 ?= t806.
         DATA t807 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t807.
         IF t805 IS BOUND.
           t807 = NEW #( ).
           t807->has = abap_true.
@@ -8493,16 +7814,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_hide.
       WHEN `ZCL_LNT_HIGHLIGHT`.
         DATA t1171 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1171.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1172 TYPE REF TO object.
-        CLEAR t1172.
         READ TABLE p1->items INDEX 1 INTO t1172.
         t1171 ?= t1172.
         DATA t1173 TYPE REF TO zif_lnt_registry.
-        CLEAR t1173.
         IF t1171 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -8512,16 +7830,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_highlight EXPORTING i_reg_f149 = t1173.
       WHEN `ZCL_LNT_HOVER`.
         DATA t1175 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1175.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1176 TYPE REF TO object.
-        CLEAR t1176.
         READ TABLE p1->items INDEX 1 INTO t1176.
         t1175 ?= t1176.
         DATA t1177 TYPE REF TO zif_lnt_registry.
-        CLEAR t1177.
         IF t1175 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -8531,34 +7846,27 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_hover EXPORTING i_reg_f149 = t1177.
       WHEN `ZCL_LNT_HTTP_SERVICE`.
         DATA t1498 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1498.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1499 TYPE REF TO object.
-        CLEAR t1499.
         READ TABLE p1->items INDEX 1 INTO t1499.
         t1498 ?= t1499.
-        DATA(t1500) = VALUE string( ).
         IF t1498 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1500 = t1498->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_http_service EXPORTING i_name = t1500.
+        CREATE OBJECT result TYPE zcl_lnt_http_service EXPORTING i_name = t1498->as_string( ).
       WHEN `ZCL_LNT_IABAPLEXER_RESULT`.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
       WHEN `ZCL_LNT_IABAPLINT_APP_SETTINGS`.
         DATA t20 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t20.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t21 TYPE REF TO object.
-        CLEAR t21.
         READ TABLE p1->items INDEX 1 INTO t21.
         t20 ?= t21.
         DATA t22 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-        CLEAR t22.
         IF t20 IS BOUND.
           t22 = NEW #( ).
           t22->has = abap_true.
@@ -8574,68 +7882,52 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
       WHEN `ZCL_LNT_IACBINARY_DATA`.
         DATA t1501 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1501.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1502 TYPE REF TO object.
-        CLEAR t1502.
         READ TABLE p1->items INDEX 1 INTO t1502.
         t1501 ?= t1502.
-        DATA(t1503) = VALUE string( ).
         IF t1501 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1503 = t1501->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_iacbinary_data EXPORTING i_name = t1503.
+        CREATE OBJECT result TYPE zcl_lnt_iacbinary_data EXPORTING i_name = t1501->as_string( ).
       WHEN `ZCL_LNT_IACLANGUAGE_RESOURCE`.
         DATA t1504 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1504.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1505 TYPE REF TO object.
-        CLEAR t1505.
         READ TABLE p1->items INDEX 1 INTO t1505.
         t1504 ?= t1505.
-        DATA(t1506) = VALUE string( ).
         IF t1504 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1506 = t1504->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_iaclanguage_resource EXPORTING i_name = t1506.
+        CREATE OBJECT result TYPE zcl_lnt_iaclanguage_resource EXPORTING i_name = t1504->as_string( ).
       WHEN `ZCL_LNT_IACSERVICE`.
         DATA t1507 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1507.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1508 TYPE REF TO object.
-        CLEAR t1508.
         READ TABLE p1->items INDEX 1 INTO t1508.
         t1507 ?= t1508.
-        DATA(t1509) = VALUE string( ).
         IF t1507 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1509 = t1507->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_iacservice EXPORTING i_name = t1509.
+        CREATE OBJECT result TYPE zcl_lnt_iacservice EXPORTING i_name = t1507->as_string( ).
       WHEN `ZCL_LNT_IACTEMPLATE`.
         DATA t1510 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1510.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1511 TYPE REF TO object.
-        CLEAR t1511.
         READ TABLE p1->items INDEX 1 INTO t1511.
         t1510 ?= t1511.
-        DATA(t1512) = VALUE string( ).
         IF t1510 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1512 = t1510->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_iactemplate EXPORTING i_name = t1512.
+        CREATE OBJECT result TYPE zcl_lnt_iactemplate EXPORTING i_name = t1510->as_string( ).
       WHEN `ZCL_LNT_IALLOWED_NAMING`.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
       WHEN OTHERS.
@@ -8647,32 +7939,25 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
     CASE class_name.
       WHEN `ZCL_LNT_IAMAPP`.
         DATA t1513 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1513.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1514 TYPE REF TO object.
-        CLEAR t1514.
         READ TABLE p1->items INDEX 1 INTO t1514.
         t1513 ?= t1514.
-        DATA(t1515) = VALUE string( ).
         IF t1513 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1515 = t1513->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_iamapp EXPORTING i_name = t1515.
+        CREATE OBJECT result TYPE zcl_lnt_iamapp EXPORTING i_name = t1513->as_string( ).
       WHEN `ZCL_LNT_IBADI_DEFINITION`.
         DATA t1432 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1432.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1433 TYPE REF TO object.
-        CLEAR t1433.
         READ TABLE p1->items INDEX 1 INTO t1433.
         t1432 ?= t1433.
         DATA t1434 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t1434.
         IF t1432 IS BOUND.
           t1434 = NEW #( ).
           t1434->has = abap_true.
@@ -8682,16 +7967,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t1434->value = t1432->as_string( ).
         ENDIF.
         DATA t1435 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1435.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1436 TYPE REF TO object.
-        CLEAR t1436.
         READ TABLE p1->items INDEX 2 INTO t1436.
         t1435 ?= t1436.
         DATA t1437 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t1437.
         IF t1435 IS BOUND.
           t1437 = NEW #( ).
           t1437->has = abap_true.
@@ -8707,32 +7989,25 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
       WHEN `ZCL_LNT_ICFSERVICE`.
         DATA t1516 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1516.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1517 TYPE REF TO object.
-        CLEAR t1517.
         READ TABLE p1->items INDEX 1 INTO t1517.
         t1516 ?= t1517.
-        DATA(t1518) = VALUE string( ).
         IF t1516 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1518 = t1516->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_icfservice EXPORTING i_name = t1518.
+        CREATE OBJECT result TYPE zcl_lnt_icfservice EXPORTING i_name = t1516->as_string( ).
       WHEN `ZCL_LNT_ICODE_ACTION_PARAMS`.
         DATA t1108 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1108.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1109 TYPE REF TO object.
-        CLEAR t1109.
         READ TABLE p1->items INDEX 1 INTO t1109.
         t1108 ?= t1109.
         DATA t1110 TYPE REF TO zcl_lnt_txt_dcmnt_idntfr.
-        CLEAR t1110.
         IF t1108 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -8740,16 +8015,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t1111 = t1108->as_ref( ).
         t1110 ?= t1111.
         DATA t1112 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1112.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1113 TYPE REF TO object.
-        CLEAR t1113.
         READ TABLE p1->items INDEX 2 INTO t1113.
         t1112 ?= t1113.
         DATA t1114 TYPE REF TO zcl_lnt_range.
-        CLEAR t1114.
         IF t1112 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -8757,16 +8029,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t1115 = t1112->as_ref( ).
         t1114 ?= t1115.
         DATA t1116 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1116.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1117 TYPE REF TO object.
-        CLEAR t1117.
         READ TABLE p1->items INDEX 3 INTO t1117.
         t1116 ?= t1117.
         DATA t1118 TYPE REF TO zcl_lnt_shape_7fbaec50.
-        CLEAR t1118.
         IF t1116 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -8780,16 +8049,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
       WHEN `ZCL_LNT_ICYCLMTC_CMPLXTY_RSLT`.
         DATA t1939 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1939.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1940 TYPE REF TO object.
-        CLEAR t1940.
         READ TABLE p1->items INDEX 1 INTO t1940.
         t1939 ?= t1940.
         DATA t1941 TYPE REF TO zif_lnt_file.
-        CLEAR t1941.
         IF t1939 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -8797,16 +8063,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t1942 = t1939->as_ref( ).
         t1941 ?= t1942.
         DATA t1943 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1943.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1944 TYPE REF TO object.
-        CLEAR t1944.
         READ TABLE p1->items INDEX 2 INTO t1944.
         t1943 ?= t1944.
         DATA t1945 TYPE REF TO zcl_lnt_position.
-        CLEAR t1945.
         IF t1943 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -8814,12 +8077,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t1946 = t1943->as_ref( ).
         t1945 ?= t1946.
         DATA t1947 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1947.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1948 TYPE REF TO object.
-        CLEAR t1948.
         READ TABLE p1->items INDEX 3 INTO t1948.
         t1947 ?= t1948.
         DATA(t1949) = VALUE string( ).
@@ -8828,32 +8089,25 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t1949 = t1947->as_string( ).
         DATA t1950 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1950.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1951 TYPE REF TO object.
-        CLEAR t1951.
         READ TABLE p1->items INDEX 4 INTO t1951.
         t1950 ?= t1951.
-        DATA(t1952) = VALUE f( ).
         IF t1950 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1952 = t1950->as_number( ).
-        CREATE OBJECT result TYPE zcl_lnt_icyclmtc_cmplxty_rslt EXPORTING i_file = t1941 i_pos = t1945 i_name = t1949 i_count = t1952.
+        CREATE OBJECT result TYPE zcl_lnt_icyclmtc_cmplxty_rslt EXPORTING i_file = t1941 i_pos = t1945 i_name = t1949 i_count = t1950->as_number( ).
       WHEN `ZCL_LNT_IDCMNT_SYMBL_PRMS`.
         DATA t1120 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1120.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1121 TYPE REF TO object.
-        CLEAR t1121.
         READ TABLE p1->items INDEX 1 INTO t1121.
         t1120 ?= t1121.
         DATA t1122 TYPE REF TO zcl_lnt_txt_dcmnt_idntfr.
-        CLEAR t1122.
         IF t1120 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -8865,12 +8119,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
       WHEN `ZCL_LNT_IDDLPRSR_RSLT_FLD`.
         DATA t1048 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1048.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1049 TYPE REF TO object.
-        CLEAR t1049.
         READ TABLE p1->items INDEX 1 INTO t1049.
         t1048 ?= t1049.
         DATA(t1050) = VALUE abap_bool( ).
@@ -8879,12 +8131,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t1050 = t1048->as_boolean( ).
         DATA t1051 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1051.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1052 TYPE REF TO object.
-        CLEAR t1052.
         READ TABLE p1->items INDEX 2 INTO t1052.
         t1051 ?= t1052.
         DATA(t1053) = VALUE string( ).
@@ -8893,12 +8143,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t1053 = t1051->as_string( ).
         DATA t1054 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1054.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1055 TYPE REF TO object.
-        CLEAR t1055.
         READ TABLE p1->items INDEX 3 INTO t1055.
         t1054 ?= t1055.
         DATA(t1056) = VALUE string( ).
@@ -8907,20 +8155,16 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t1056 = t1054->as_string( ).
         DATA t1057 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1057.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1058 TYPE REF TO object.
-        CLEAR t1058.
         READ TABLE p1->items INDEX 4 INTO t1058.
         t1057 ?= t1058.
-        DATA(t1059) = VALUE abap_bool( ).
         IF t1057 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1059 = t1057->as_boolean( ).
-        CREATE OBJECT result TYPE zcl_lnt_iddlprsr_rslt_fld EXPORTING i_key = t1050 i_name = t1053 i_type_9913 = t1056 i_not_null = t1059.
+        CREATE OBJECT result TYPE zcl_lnt_iddlprsr_rslt_fld EXPORTING i_key = t1050 i_name = t1053 i_type_9913 = t1056 i_not_null = t1057->as_boolean( ).
       WHEN `ZCL_LNT_IDENTICAL_CONDITIONS`.
         CREATE OBJECT result TYPE zcl_lnt_identical_conditions.
       WHEN `ZCL_LNT_IDENTICAL_CONTENTS`.
@@ -8935,16 +8179,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_identical_move_conf.
       WHEN `ZCL_LNT_IDEPENDENCY`.
         DATA t8 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t8.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t9 TYPE REF TO object.
-        CLEAR t9.
         READ TABLE p1->items INDEX 1 INTO t9.
         t8 ?= t9.
         DATA t10 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t10.
         IF t8 IS BOUND.
           t10 = NEW #( ).
           t10->has = abap_true.
@@ -8954,16 +8195,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t10->value = t8->as_string( ).
         ENDIF.
         DATA t11 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t11.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t12 TYPE REF TO object.
-        CLEAR t12.
         READ TABLE p1->items INDEX 2 INTO t12.
         t11 ?= t12.
         DATA t13 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t13.
         IF t11 IS BOUND.
           t13 = NEW #( ).
           t13->has = abap_true.
@@ -8973,16 +8211,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t13->value = t11->as_string( ).
         ENDIF.
         DATA t14 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t14.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t15 TYPE REF TO object.
-        CLEAR t15.
         READ TABLE p1->items INDEX 3 INTO t15.
         t14 ?= t15.
         DATA t16 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t16.
         IF t14 IS BOUND.
           t16 = NEW #( ).
           t16->has = abap_true.
@@ -8992,20 +8227,16 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t16->value = t14->as_string( ).
         ENDIF.
         DATA t17 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t17.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t18 TYPE REF TO object.
-        CLEAR t18.
         READ TABLE p1->items INDEX 4 INTO t18.
         t17 ?= t18.
-        DATA(t19) = VALUE string( ).
         IF t17 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t19 = t17->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_idependency EXPORTING i_url_8ce1 = t10 i_branch = t13 i_folder_5c67 = t16 i_files = t19.
+        CREATE OBJECT result TYPE zcl_lnt_idependency EXPORTING i_url_8ce1 = t10 i_branch = t13 i_folder_5c67 = t16 i_files = t17->as_string( ).
       WHEN `ZCL_LNT_IDNTCL_CNDTNS_CNF`.
         CREATE OBJECT result TYPE zcl_lnt_idntcl_cndtns_cnf.
       WHEN `ZCL_LNT_IDNTCL_CNTNTS_CNF`.
@@ -9016,44 +8247,34 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_idntcl_frm_nms_cnf.
       WHEN `ZCL_LNT_IDOC`.
         DATA t1519 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1519.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1520 TYPE REF TO object.
-        CLEAR t1520.
         READ TABLE p1->items INDEX 1 INTO t1520.
         t1519 ?= t1520.
-        DATA(t1521) = VALUE string( ).
         IF t1519 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1521 = t1519->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_idoc EXPORTING i_name = t1521.
+        CREATE OBJECT result TYPE zcl_lnt_idoc EXPORTING i_name = t1519->as_string( ).
       WHEN `ZCL_LNT_IDOC_EXTENSION`.
         DATA t1522 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1522.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1523 TYPE REF TO object.
-        CLEAR t1523.
         READ TABLE p1->items INDEX 1 INTO t1523.
         t1522 ?= t1523.
-        DATA(t1524) = VALUE string( ).
         IF t1522 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1524 = t1522->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_idoc_extension EXPORTING i_name = t1524.
+        CREATE OBJECT result TYPE zcl_lnt_idoc_extension EXPORTING i_name = t1522->as_string( ).
       WHEN `ZCL_LNT_IFILENAME_AND_TOKEN`.
         DATA t34 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t34.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t35 TYPE REF TO object.
-        CLEAR t35.
         READ TABLE p1->items INDEX 1 INTO t35.
         t34 ?= t35.
         DATA(t36) = VALUE string( ).
@@ -9062,16 +8283,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t36 = t34->as_string( ).
         DATA t37 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t37.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t38 TYPE REF TO object.
-        CLEAR t38.
         READ TABLE p1->items INDEX 2 INTO t38.
         t37 ?= t38.
         DATA t39 TYPE REF TO zcl_lnt_abstract_token.
-        CLEAR t39.
         IF t37 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -9081,16 +8299,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_ifilename_and_token EXPORTING i_filename = t36 i_token = t39.
       WHEN `ZCL_LNT_IFNCTN_MDL_PRMTR`.
         DATA t955 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t955.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t956 TYPE REF TO object.
-        CLEAR t956.
         READ TABLE p1->items INDEX 1 INTO t956.
         t955 ?= t956.
         DATA t957 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t957.
         IF t955 IS BOUND.
           t957 = NEW #( ).
           t957->has = abap_true.
@@ -9100,12 +8315,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t957->value = t955->as_string( ).
         ENDIF.
         DATA t958 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t958.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t959 TYPE REF TO object.
-        CLEAR t959.
         READ TABLE p1->items INDEX 2 INTO t959.
         t958 ?= t959.
         DATA(t960) = VALUE string( ).
@@ -9114,16 +8327,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t960 = t958->as_string( ).
         DATA t961 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t961.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t962 TYPE REF TO object.
-        CLEAR t962.
         READ TABLE p1->items INDEX 3 INTO t962.
         t961 ?= t962.
         DATA t963 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t963.
         IF t961 IS BOUND.
           t963 = NEW #( ).
           t963->has = abap_true.
@@ -9133,12 +8343,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t963->value = t961->as_string( ).
         ENDIF.
         DATA t964 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t964.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t965 TYPE REF TO object.
-        CLEAR t965.
         READ TABLE p1->items INDEX 4 INTO t965.
         t964 ?= t965.
         DATA(t966) = VALUE abap_bool( ).
@@ -9147,16 +8355,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t966 = t964->as_boolean( ).
         DATA t967 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t967.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t968 TYPE REF TO object.
-        CLEAR t968.
         READ TABLE p1->items INDEX 5 INTO t968.
         t967 ?= t968.
         DATA t969 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t969.
         IF t967 IS BOUND.
           t969 = NEW #( ).
           t969->has = abap_true.
@@ -9166,16 +8371,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t969->value = t967->as_string( ).
         ENDIF.
         DATA t970 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t970.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t971 TYPE REF TO object.
-        CLEAR t971.
         READ TABLE p1->items INDEX 6 INTO t971.
         t970 ?= t971.
         DATA t972 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-        CLEAR t972.
         IF t970 IS BOUND.
           t972 = NEW #( ).
           t972->has = abap_true.
@@ -9193,12 +8395,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
       WHEN `ZCL_LNT_IIMPLEMENTING`.
         DATA t723 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t723.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t724 TYPE REF TO object.
-        CLEAR t724.
         READ TABLE p1->items INDEX 1 INTO t724.
         t723 ?= t724.
         DATA(t725) = VALUE string( ).
@@ -9207,32 +8407,25 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t725 = t723->as_string( ).
         DATA t726 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t726.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t727 TYPE REF TO object.
-        CLEAR t727.
         READ TABLE p1->items INDEX 2 INTO t727.
         t726 ?= t727.
-        DATA(t728) = VALUE abap_bool( ).
         IF t726 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t728 = t726->as_boolean( ).
-        CREATE OBJECT result TYPE zcl_lnt_iimplementing EXPORTING i_name = t725 i_partial = t728.
+        CREATE OBJECT result TYPE zcl_lnt_iimplementing EXPORTING i_name = t725 i_partial = t726->as_boolean( ).
       WHEN `ZCL_LNT_IINDENTATION_OPTIONS`.
         DATA t1859 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1859.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1860 TYPE REF TO object.
-        CLEAR t1860.
         READ TABLE p1->items INDEX 1 INTO t1860.
         t1859 ?= t1860.
         DATA t1861 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-        CLEAR t1861.
         IF t1859 IS BOUND.
           t1861 = NEW #( ).
           t1861->has = abap_true.
@@ -9242,16 +8435,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t1861->value = t1859->as_boolean( ).
         ENDIF.
         DATA t1862 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1862.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1863 TYPE REF TO object.
-        CLEAR t1863.
         READ TABLE p1->items INDEX 2 INTO t1863.
         t1862 ?= t1863.
         DATA t1864 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-        CLEAR t1864.
         IF t1862 IS BOUND.
           t1864 = NEW #( ).
           t1864->has = abap_true.
@@ -9261,16 +8451,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t1864->value = t1862->as_boolean( ).
         ENDIF.
         DATA t1865 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1865.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1866 TYPE REF TO object.
-        CLEAR t1866.
         READ TABLE p1->items INDEX 3 INTO t1866.
         t1865 ?= t1866.
         DATA t1867 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-        CLEAR t1867.
         IF t1865 IS BOUND.
           t1867 = NEW #( ).
           t1867->has = abap_true.
@@ -9301,12 +8488,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
       WHEN `ZCL_LNT_ILIST_ITEM_S`.
         DATA t668 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t668.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t669 TYPE REF TO object.
-        CLEAR t669.
         READ TABLE p1->items INDEX 1 INTO t669.
         t668 ?= t669.
         DATA(t670) = VALUE string( ).
@@ -9315,16 +8500,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t670 = t668->as_string( ).
         DATA t671 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t671.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t672 TYPE REF TO object.
-        CLEAR t672.
         READ TABLE p1->items INDEX 2 INTO t672.
         t671 ?= t672.
         DATA t673 TYPE REF TO zcl_lnt_expression_node.
-        CLEAR t673.
         IF t671 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -9332,16 +8514,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t674 = t671->as_ref( ).
         t673 ?= t674.
         DATA t675 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t675.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t676 TYPE REF TO object.
-        CLEAR t676.
         READ TABLE p1->items INDEX 3 INTO t676.
         t675 ?= t676.
         DATA t677 TYPE REF TO zcl_lnt_abstract_type.
-        CLEAR t677.
         IF t675 IS BOUND.
           IF t675 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -9353,12 +8532,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_ilist_item_s EXPORTING i_name = t670 i_source_75cf = t673 i_source_type = t677.
       WHEN `ZCL_LNT_ILIST_ITEM_T`.
         DATA t657 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t657.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t658 TYPE REF TO object.
-        CLEAR t658.
         READ TABLE p1->items INDEX 1 INTO t658.
         t657 ?= t658.
         DATA(t659) = VALUE string( ).
@@ -9367,16 +8544,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t659 = t657->as_string( ).
         DATA t660 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t660.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t661 TYPE REF TO object.
-        CLEAR t661.
         READ TABLE p1->items INDEX 2 INTO t661.
         t660 ?= t661.
         DATA t662 TYPE REF TO zcl_lnt_expression_node.
-        CLEAR t662.
         IF t660 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -9384,16 +8558,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t663 = t660->as_ref( ).
         t662 ?= t663.
         DATA t664 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t664.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t665 TYPE REF TO object.
-        CLEAR t665.
         READ TABLE p1->items INDEX 3 INTO t665.
         t664 ?= t665.
         DATA t666 TYPE REF TO zcl_lnt_abstract_type.
-        CLEAR t666.
         IF t664 IS BOUND.
           IF t664 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -9405,16 +8576,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_ilist_item_t EXPORTING i_name = t659 i_target_5f8a = t662 i_target_type = t666.
       WHEN `ZCL_LNT_ILOOKUP_RESULT`.
         DATA t1036 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1036.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1037 TYPE REF TO object.
-        CLEAR t1037.
         READ TABLE p1->items INDEX 1 INTO t1037.
         t1036 ?= t1037.
         DATA t1038 TYPE REF TO zcl_lnt_abstract_type.
-        CLEAR t1038.
         IF t1036 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -9422,16 +8590,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t1039 = t1036->as_ref( ).
         t1038 ?= t1039.
         DATA t1040 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1040.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1041 TYPE REF TO object.
-        CLEAR t1041.
         READ TABLE p1->items INDEX 2 INTO t1041.
         t1040 ?= t1041.
         DATA t1042 TYPE REF TO zif_lnt_object.
-        CLEAR t1042.
         IF t1040 IS BOUND.
           IF t1040 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -9445,12 +8610,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
       WHEN `ZCL_LNT_IMETHOD`.
         DATA t1912 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1912.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1913 TYPE REF TO object.
-        CLEAR t1913.
         READ TABLE p1->items INDEX 1 INTO t1913.
         t1912 ?= t1913.
         DATA(t1914) = VALUE string( ).
@@ -9459,16 +8622,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t1914 = t1912->as_string( ).
         DATA t1915 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1915.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1916 TYPE REF TO object.
-        CLEAR t1916.
         READ TABLE p1->items INDEX 2 INTO t1916.
         t1915 ?= t1916.
         DATA t1917 TYPE REF TO zcl_lnt_info_method_definition.
-        CLEAR t1917.
         IF t1915 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -9478,12 +8638,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_imethod EXPORTING i_object_name = t1914 i_method = t1917.
       WHEN `ZCL_LNT_IMETHOD_LENGTH_RESULT`.
         DATA t1972 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1972.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1973 TYPE REF TO object.
-        CLEAR t1973.
         READ TABLE p1->items INDEX 1 INTO t1973.
         t1972 ?= t1973.
         DATA(t1974) = VALUE string( ).
@@ -9492,12 +8650,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t1974 = t1972->as_string( ).
         DATA t1975 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1975.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1976 TYPE REF TO object.
-        CLEAR t1976.
         READ TABLE p1->items INDEX 2 INTO t1976.
         t1975 ?= t1976.
         DATA(t1977) = VALUE string( ).
@@ -9506,12 +8662,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t1977 = t1975->as_string( ).
         DATA t1978 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1978.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1979 TYPE REF TO object.
-        CLEAR t1979.
         READ TABLE p1->items INDEX 3 INTO t1979.
         t1978 ?= t1979.
         DATA(t1980) = VALUE f( ).
@@ -9520,16 +8674,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t1980 = t1978->as_number( ).
         DATA t1981 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1981.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1982 TYPE REF TO object.
-        CLEAR t1982.
         READ TABLE p1->items INDEX 4 INTO t1982.
         t1981 ?= t1982.
         DATA t1983 TYPE REF TO zcl_lnt_abap_file.
-        CLEAR t1983.
         IF t1981 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -9537,16 +8688,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t1984 = t1981->as_ref( ).
         t1983 ?= t1984.
         DATA t1985 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1985.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1986 TYPE REF TO object.
-        CLEAR t1986.
         READ TABLE p1->items INDEX 5 INTO t1986.
         t1985 ?= t1986.
         DATA t1987 TYPE REF TO zcl_lnt_position.
-        CLEAR t1987.
         IF t1985 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -9558,16 +8706,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_implct_strt_of_slctn.
       WHEN `ZCL_LNT_IMPLEMENTATION`.
         DATA t1179 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1179.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1180 TYPE REF TO object.
-        CLEAR t1180.
         READ TABLE p1->items INDEX 1 INTO t1180.
         t1179 ?= t1180.
         DATA t1181 TYPE REF TO zif_lnt_registry.
-        CLEAR t1181.
         IF t1179 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -9585,34 +8730,27 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_import_nametab.
       WHEN `ZCL_LNT_INBOUND_SERVICE`.
         DATA t1525 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1525.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1526 TYPE REF TO object.
-        CLEAR t1526.
         READ TABLE p1->items INDEX 1 INTO t1526.
         t1525 ?= t1526.
-        DATA(t1527) = VALUE string( ).
         IF t1525 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1527 = t1525->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_inbound_service EXPORTING i_name = t1527.
+        CREATE OBJECT result TYPE zcl_lnt_inbound_service EXPORTING i_name = t1525->as_string( ).
       WHEN `ZCL_LNT_INCLUDE`.
         CREATE OBJECT result TYPE zcl_lnt_include.
       WHEN `ZCL_LNT_INCLUDE_GRAPH`.
         DATA t1962 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1962.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1963 TYPE REF TO object.
-        CLEAR t1963.
         READ TABLE p1->items INDEX 1 INTO t1963.
         t1962 ?= t1963.
         DATA t1964 TYPE REF TO zif_lnt_registry.
-        CLEAR t1964.
         IF t1962 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -9620,16 +8758,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t1965 = t1962->as_ref( ).
         t1964 ?= t1965.
         DATA t1966 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1966.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1967 TYPE REF TO object.
-        CLEAR t1967.
         READ TABLE p1->items INDEX 2 INTO t1967.
         t1966 ?= t1967.
         DATA t1968 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t1968.
         IF t1966 IS BOUND.
           t1968 = NEW #( ).
           t1968->has = abap_true.
@@ -9639,16 +8774,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t1968->value = t1966->as_string( ).
         ENDIF.
         DATA t1969 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1969.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1970 TYPE REF TO object.
-        CLEAR t1970.
         READ TABLE p1->items INDEX 3 INTO t1970.
         t1969 ?= t1970.
         DATA t1971 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-        CLEAR t1971.
         IF t1969 IS BOUND.
           t1971 = NEW #( ).
           t1971->has = abap_true.
@@ -9667,16 +8799,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_include_name.
       WHEN `ZCL_LNT_INDENT`.
         DATA t1855 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1855.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1856 TYPE REF TO object.
-        CLEAR t1856.
         READ TABLE p1->items INDEX 1 INTO t1856.
         t1855 ?= t1856.
         DATA t1857 TYPE REF TO zcl_lnt_iindentation_options.
-        CLEAR t1857.
         IF t1855 IS BOUND.
           IF t1855 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -9700,12 +8829,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_infotypes.
       WHEN `ZCL_LNT_INFO_ALIAS`.
         DATA t530 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t530.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t531 TYPE REF TO object.
-        CLEAR t531.
         READ TABLE p1->items INDEX 1 INTO t531.
         t530 ?= t531.
         DATA(t532) = VALUE string( ).
@@ -9714,16 +8841,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t532 = t530->as_string( ).
         DATA t533 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t533.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t534 TYPE REF TO object.
-        CLEAR t534.
         READ TABLE p1->items INDEX 2 INTO t534.
         t533 ?= t534.
         DATA t535 TYPE REF TO zcl_lnt_fi_identifier.
-        CLEAR t535.
         IF t533 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -9731,12 +8855,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t536 = t533->as_ref( ).
         t535 ?= t536.
         DATA t537 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t537.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t538 TYPE REF TO object.
-        CLEAR t538.
         READ TABLE p1->items INDEX 3 INTO t538.
         t537 ?= t538.
         DATA(t539) = VALUE f( ).
@@ -9745,44 +8867,34 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t539 = t537->as_number( ).
         DATA t540 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t540.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t541 TYPE REF TO object.
-        CLEAR t541.
         READ TABLE p1->items INDEX 4 INTO t541.
         t540 ?= t541.
-        DATA(t542) = VALUE string( ).
         IF t540 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t542 = t540->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_info_alias EXPORTING i_name = t532 i_identifier = t535 i_visibility_5c1f = t539 i_component = t542.
+        CREATE OBJECT result TYPE zcl_lnt_info_alias EXPORTING i_name = t532 i_identifier = t535 i_visibility_5c1f = t539 i_component = t540->as_string( ).
       WHEN `ZCL_LNT_INFO_AREA`.
         DATA t1528 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1528.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1529 TYPE REF TO object.
-        CLEAR t1529.
         READ TABLE p1->items INDEX 1 INTO t1529.
         t1528 ?= t1529.
-        DATA(t1530) = VALUE string( ).
         IF t1528 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1530 = t1528->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_info_area EXPORTING i_name = t1530.
+        CREATE OBJECT result TYPE zcl_lnt_info_area EXPORTING i_name = t1528->as_string( ).
       WHEN `ZCL_LNT_INFO_ATTRIBUTE`.
         DATA t488 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t488.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t489 TYPE REF TO object.
-        CLEAR t489.
         READ TABLE p1->items INDEX 1 INTO t489.
         t488 ?= t489.
         DATA(t490) = VALUE string( ).
@@ -9791,16 +8903,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t490 = t488->as_string( ).
         DATA t491 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t491.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t492 TYPE REF TO object.
-        CLEAR t492.
         READ TABLE p1->items INDEX 2 INTO t492.
         t491 ?= t492.
         DATA t493 TYPE REF TO zcl_lnt_fi_identifier.
-        CLEAR t493.
         IF t491 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -9808,12 +8917,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t494 = t491->as_ref( ).
         t493 ?= t494.
         DATA t495 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t495.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t496 TYPE REF TO object.
-        CLEAR t496.
         READ TABLE p1->items INDEX 3 INTO t496.
         t495 ?= t496.
         DATA(t497) = VALUE string( ).
@@ -9822,12 +8929,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t497 = t495->as_string( ).
         DATA t498 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t498.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t499 TYPE REF TO object.
-        CLEAR t499.
         READ TABLE p1->items INDEX 4 INTO t499.
         t498 ?= t499.
         DATA(t500) = VALUE abap_bool( ).
@@ -9836,34 +8941,27 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t500 = t498->as_boolean( ).
         DATA t501 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t501.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t502 TYPE REF TO object.
-        CLEAR t502.
         READ TABLE p1->items INDEX 5 INTO t502.
         t501 ?= t502.
-        DATA(t503) = VALUE f( ).
         IF t501 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t503 = t501->as_number( ).
-        CREATE OBJECT result TYPE zcl_lnt_info_attribute EXPORTING i_name = t490 i_identifier = t493 i_level = t497 i_read_only = t500 i_visibility_5c1f = t503.
+        CREATE OBJECT result TYPE zcl_lnt_info_attribute EXPORTING i_name = t490 i_identifier = t493 i_level = t497 i_read_only = t500 i_visibility_5c1f = t501->as_number( ).
       WHEN `ZCL_LNT_INFO_CLASS_DEFINITION`.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
       WHEN `ZCL_LNT_INFO_CONSTANT`.
         DATA t514 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t514.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t515 TYPE REF TO object.
-        CLEAR t515.
         READ TABLE p1->items INDEX 1 INTO t515.
         t514 ?= t515.
         DATA t516 TYPE REF TO zcl_lnt_fi_identifier.
-        CLEAR t516.
         IF t514 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -9871,12 +8969,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t517 = t514->as_ref( ).
         t516 ?= t517.
         DATA t518 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t518.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t519 TYPE REF TO object.
-        CLEAR t519.
         READ TABLE p1->items INDEX 2 INTO t519.
         t518 ?= t519.
         DATA(t520) = VALUE string( ).
@@ -9885,12 +8981,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t520 = t518->as_string( ).
         DATA t521 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t521.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t522 TYPE REF TO object.
-        CLEAR t522.
         READ TABLE p1->items INDEX 3 INTO t522.
         t521 ?= t522.
         DATA(t523) = VALUE string( ).
@@ -9899,12 +8993,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t523 = t521->as_string( ).
         DATA t524 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t524.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t525 TYPE REF TO object.
-        CLEAR t525.
         READ TABLE p1->items INDEX 4 INTO t525.
         t524 ?= t525.
         DATA(t526) = VALUE f( ).
@@ -9913,28 +9005,22 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t526 = t524->as_number( ).
         DATA t527 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t527.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t528 TYPE REF TO object.
-        CLEAR t528.
         READ TABLE p1->items INDEX 5 INTO t528.
         t527 ?= t528.
-        DATA(t529) = VALUE string( ).
         IF t527 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t529 = t527->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_info_constant EXPORTING i_identifier = t516 i_name = t520 i_type_name = t523 i_visibility_5c1f = t526 i_value = t529.
+        CREATE OBJECT result TYPE zcl_lnt_info_constant EXPORTING i_identifier = t516 i_name = t520 i_type_name = t523 i_visibility_5c1f = t526 i_value = t527->as_string( ).
       WHEN `ZCL_LNT_INFO_FORM_DEFINITION`.
         DATA t543 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t543.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t544 TYPE REF TO object.
-        CLEAR t544.
         READ TABLE p1->items INDEX 1 INTO t544.
         t543 ?= t544.
         DATA(t545) = VALUE string( ).
@@ -9943,16 +9029,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t545 = t543->as_string( ).
         DATA t546 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t546.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t547 TYPE REF TO object.
-        CLEAR t547.
         READ TABLE p1->items INDEX 2 INTO t547.
         t546 ?= t547.
         DATA t548 TYPE REF TO zcl_lnt_fi_identifier.
-        CLEAR t548.
         IF t546 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -9973,12 +9056,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
       WHEN `ZCL_LNT_INFO_METHOD_PARAMETER`.
         DATA t504 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t504.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t505 TYPE REF TO object.
-        CLEAR t505.
         READ TABLE p1->items INDEX 1 INTO t505.
         t504 ?= t505.
         DATA(t506) = VALUE string( ).
@@ -9987,16 +9068,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t506 = t504->as_string( ).
         DATA t507 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t507.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t508 TYPE REF TO object.
-        CLEAR t508.
         READ TABLE p1->items INDEX 2 INTO t508.
         t507 ?= t508.
         DATA t509 TYPE REF TO zcl_lnt_fi_identifier.
-        CLEAR t509.
         IF t507 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -10004,36 +9082,28 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t510 = t507->as_ref( ).
         t509 ?= t510.
         DATA t511 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t511.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t512 TYPE REF TO object.
-        CLEAR t512.
         READ TABLE p1->items INDEX 3 INTO t512.
         t511 ?= t512.
-        DATA(t513) = VALUE string( ).
         IF t511 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t513 = t511->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_info_method_parameter EXPORTING i_name = t506 i_identifier = t509 i_direction = t513.
+        CREATE OBJECT result TYPE zcl_lnt_info_method_parameter EXPORTING i_name = t506 i_identifier = t509 i_direction = t511->as_string( ).
       WHEN `ZCL_LNT_INFO_OBJECT`.
         DATA t1531 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1531.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1532 TYPE REF TO object.
-        CLEAR t1532.
         READ TABLE p1->items INDEX 1 INTO t1532.
         t1531 ?= t1532.
-        DATA(t1533) = VALUE string( ).
         IF t1531 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1533 = t1531->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_info_object EXPORTING i_name = t1533.
+        CREATE OBJECT result TYPE zcl_lnt_info_object EXPORTING i_name = t1531->as_string( ).
       WHEN `ZCL_LNT_INF_CLSS_IMPLMNTTN`.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
       WHEN `ZCL_LNT_INF_INTRFC_DFNTN`.
@@ -10042,16 +9112,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_initialization.
       WHEN `ZCL_LNT_INLAY_HINTS`.
         DATA t1183 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1183.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1184 TYPE REF TO object.
-        CLEAR t1184.
         READ TABLE p1->items INDEX 1 INTO t1184.
         t1183 ?= t1184.
         DATA t1185 TYPE REF TO zif_lnt_registry.
-        CLEAR t1185.
         IF t1183 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -10061,20 +9128,16 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_inlay_hints EXPORTING i_reg_f149 = t1185.
       WHEN `ZCL_LNT_INLAY_HINTS_SETTINGS`.
         DATA t2422 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2422.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2423 TYPE REF TO object.
-        CLEAR t2423.
         READ TABLE p1->items INDEX 1 INTO t2423.
         t2422 ?= t2423.
-        DATA(t2424) = VALUE abap_bool( ).
         IF t2422 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t2424 = t2422->as_boolean( ).
-        CREATE OBJECT result TYPE zcl_lnt_inlay_hints_settings EXPORTING i_inferred_types = t2424.
+        CREATE OBJECT result TYPE zcl_lnt_inlay_hints_settings EXPORTING i_inferred_types = t2422->as_boolean( ).
       WHEN `ZCL_LNT_INLINE_FIELD`.
         CREATE OBJECT result TYPE zcl_lnt_inline_field.
       WHEN `ZCL_LNT_INLN_DT_OLD_VRSNS`.
@@ -10085,16 +9148,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_input.
       WHEN `ZCL_LNT_INSTANCE_ARROW`.
         DATA t138 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t138.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t139 TYPE REF TO object.
-        CLEAR t139.
         READ TABLE p1->items INDEX 1 INTO t139.
         t138 ?= t139.
         DATA t140 TYPE REF TO zcl_lnt_position.
-        CLEAR t140.
         IF t138 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -10102,32 +9162,25 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t141 = t138->as_ref( ).
         t140 ?= t141.
         DATA t142 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t142.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t143 TYPE REF TO object.
-        CLEAR t143.
         READ TABLE p1->items INDEX 2 INTO t143.
         t142 ?= t143.
-        DATA(t144) = VALUE string( ).
         IF t142 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t144 = t142->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_instance_arrow EXPORTING i_start = t140 i_str = t144.
+        CREATE OBJECT result TYPE zcl_lnt_instance_arrow EXPORTING i_start = t140 i_str = t142->as_string( ).
       WHEN `ZCL_LNT_INSTANCE_ARROW_W`.
         DATA t145 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t145.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t146 TYPE REF TO object.
-        CLEAR t146.
         READ TABLE p1->items INDEX 1 INTO t146.
         t145 ?= t146.
         DATA t147 TYPE REF TO zcl_lnt_position.
-        CLEAR t147.
         IF t145 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -10135,34 +9188,27 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t148 = t145->as_ref( ).
         t147 ?= t148.
         DATA t149 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t149.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t150 TYPE REF TO object.
-        CLEAR t150.
         READ TABLE p1->items INDEX 2 INTO t150.
         t149 ?= t150.
-        DATA(t151) = VALUE string( ).
         IF t149 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t151 = t149->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_instance_arrow_w EXPORTING i_start = t147 i_str = t151.
+        CREATE OBJECT result TYPE zcl_lnt_instance_arrow_w EXPORTING i_start = t147 i_str = t149->as_string( ).
       WHEN `ZCL_LNT_INTEGER`.
         CREATE OBJECT result TYPE zcl_lnt_integer.
       WHEN `ZCL_LNT_INTEGER8_TYPE`.
         DATA t808 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t808.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t809 TYPE REF TO object.
-        CLEAR t809.
         READ TABLE p1->items INDEX 1 INTO t809.
         t808 ?= t809.
         DATA t810 TYPE REF TO zcl_lnt_abstract_type_data.
-        CLEAR t810.
         IF t808 IS BOUND.
           IF t808 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -10174,16 +9220,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_integer8_type EXPORTING i_input_967e = t810.
       WHEN `ZCL_LNT_INTEGER_TYPE`.
         DATA t812 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t812.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t813 TYPE REF TO object.
-        CLEAR t813.
         READ TABLE p1->items INDEX 1 INTO t813.
         t812 ?= t813.
         DATA t814 TYPE REF TO zcl_lnt_abstract_type_data.
-        CLEAR t814.
         IF t812 IS BOUND.
           IF t812 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -10205,16 +9248,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_interface_def.
       WHEN `ZCL_LNT_INTERFACE_DEFINITION`.
         DATA t976 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t976.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t977 TYPE REF TO object.
-        CLEAR t977.
         READ TABLE p1->items INDEX 1 INTO t977.
         t976 ?= t977.
         DATA t978 TYPE REF TO zcl_lnt_structure_node.
-        CLEAR t978.
         IF t976 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -10222,16 +9262,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t979 = t976->as_ref( ).
         t978 ?= t979.
         DATA t980 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t980.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t981 TYPE REF TO object.
-        CLEAR t981.
         READ TABLE p1->items INDEX 2 INTO t981.
         t980 ?= t981.
         DATA t982 TYPE REF TO zcl_lnt_syntax_input.
-        CLEAR t982.
         IF t980 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -10259,16 +9296,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_in_sttmnt_indnttn_cnf.
       WHEN `ZCL_LNT_IOBJECT_AND_TOKEN`.
         DATA t23 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t23.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t24 TYPE REF TO object.
-        CLEAR t24.
         READ TABLE p1->items INDEX 1 INTO t24.
         t23 ?= t24.
         DATA t25 TYPE REF TO zif_lnt_object.
-        CLEAR t25.
         IF t23 IS BOUND.
           IF t23 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -10278,16 +9312,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t25 ?= t26.
         ENDIF.
         DATA t27 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t27.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t28 TYPE REF TO object.
-        CLEAR t28.
         READ TABLE p1->items INDEX 2 INTO t28.
         t27 ?= t28.
         DATA t29 TYPE REF TO zcl_lnt_abstract_token.
-        CLEAR t29.
         IF t27 IS BOUND.
           IF t27 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -10297,16 +9328,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t29 ?= t30.
         ENDIF.
         DATA t31 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t31.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t32 TYPE REF TO object.
-        CLEAR t32.
         READ TABLE p1->items INDEX 3 INTO t32.
         t31 ?= t32.
         DATA t33 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t33.
         IF t31 IS BOUND.
           t33 = NEW #( ).
           t33->has = abap_true.
@@ -10318,16 +9346,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_iobject_and_token EXPORTING i_object_19cd = t25 i_token = t29 i_filename = t33.
       WHEN `ZCL_LNT_IPARAMETER_DATA`.
         DATA t1880 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1880.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1881 TYPE REF TO object.
-        CLEAR t1881.
         READ TABLE p1->items INDEX 1 INTO t1881.
         t1880 ?= t1881.
         DATA t1882 TYPE REF TO zif_lnt_node.
-        CLEAR t1882.
         IF t1880 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -10335,16 +9360,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t1883 = t1880->as_ref( ).
         t1882 ?= t1883.
         DATA t1884 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1884.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1885 TYPE REF TO object.
-        CLEAR t1885.
         READ TABLE p1->items INDEX 2 INTO t1885.
         t1884 ?= t1885.
         DATA t1886 TYPE REF TO zcl_lnt_position.
-        CLEAR t1886.
         IF t1884 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -10352,16 +9374,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t1887 = t1884->as_ref( ).
         t1886 ?= t1887.
         DATA t1888 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1888.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1889 TYPE REF TO object.
-        CLEAR t1889.
         READ TABLE p1->items INDEX 3 INTO t1889.
         t1888 ?= t1889.
         DATA t1890 TYPE REF TO zif_lnt_node.
-        CLEAR t1890.
         IF t1888 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -10394,12 +9413,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
     CASE class_name.
       WHEN `ZCL_LNT_IPARSE_RESULT`.
         DATA t1221 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1221.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1222 TYPE REF TO object.
-        CLEAR t1222.
         READ TABLE p1->items INDEX 1 INTO t1222.
         t1221 ?= t1222.
         DATA(t1223) = VALUE abap_bool( ).
@@ -10408,12 +9425,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t1223 = t1221->as_boolean( ).
         DATA t1224 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1224.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1225 TYPE REF TO object.
-        CLEAR t1225.
         READ TABLE p1->items INDEX 2 INTO t1225.
         t1224 ?= t1225.
         DATA(t1226) = VALUE f( ).
@@ -10422,16 +9437,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t1226 = t1224->as_number( ).
         DATA t1227 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1227.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1228 TYPE REF TO object.
-        CLEAR t1228.
         READ TABLE p1->items INDEX 3 INTO t1228.
         t1227 ?= t1228.
         DATA t1229 TYPE REF TO zcl_lnt_shape_8fc6df03.
-        CLEAR t1229.
         IF t1227 IS BOUND.
           IF t1227 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -10443,16 +9455,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_iparse_result EXPORTING i_updated = t1223 i_runtime = t1226 i_runtime_extra = t1229.
       WHEN `ZCL_LNT_IPREPARE_RESULT`.
         DATA t1195 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1195.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1196 TYPE REF TO object.
-        CLEAR t1196.
         READ TABLE p1->items INDEX 1 INTO t1196.
         t1195 ?= t1196.
         DATA t1197 TYPE REF TO zcl_lnt_range.
-        CLEAR t1197.
         IF t1195 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -10460,12 +9469,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t1198 = t1195->as_ref( ).
         t1197 ?= t1198.
         DATA t1199 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1199.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1200 TYPE REF TO object.
-        CLEAR t1200.
         READ TABLE p1->items INDEX 2 INTO t1200.
         t1199 ?= t1200.
         DATA(t1201) = VALUE string( ).
@@ -10474,12 +9481,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t1201 = t1199->as_string( ).
         DATA t1202 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1202.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1203 TYPE REF TO object.
-        CLEAR t1203.
         READ TABLE p1->items INDEX 3 INTO t1203.
         t1202 ?= t1203.
         DATA(t1204) = VALUE f( ).
@@ -10488,16 +9493,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t1204 = t1202->as_number( ).
         DATA t1205 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1205.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1206 TYPE REF TO object.
-        CLEAR t1206.
         READ TABLE p1->items INDEX 4 INTO t1206.
         t1205 ?= t1206.
         DATA t1207 TYPE REF TO zif_lnt_file.
-        CLEAR t1207.
         IF t1205 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -10507,16 +9509,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_iprepare_result EXPORTING i_range = t1197 i_placeholder = t1201 i_type_9913 = t1204 i_file = t1207.
       WHEN `ZCL_LNT_IRANGE`.
         DATA t1060 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1060.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1061 TYPE REF TO object.
-        CLEAR t1061.
         READ TABLE p1->items INDEX 1 INTO t1061.
         t1060 ?= t1061.
         DATA t1062 TYPE REF TO zcl_lnt_position.
-        CLEAR t1062.
         IF t1060 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -10524,16 +9523,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t1063 = t1060->as_ref( ).
         t1062 ?= t1063.
         DATA t1064 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1064.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1065 TYPE REF TO object.
-        CLEAR t1065.
         READ TABLE p1->items INDEX 2 INTO t1065.
         t1064 ?= t1065.
         DATA t1066 TYPE REF TO zcl_lnt_position.
-        CLEAR t1066.
         IF t1064 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -10543,16 +9539,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_irange EXPORTING i_start = t1062 i_end = t1066.
       WHEN `ZCL_LNT_IREFERENCE`.
         DATA t607 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t607.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t608 TYPE REF TO object.
-        CLEAR t608.
         READ TABLE p1->items INDEX 1 INTO t608.
         t607 ?= t608.
         DATA t609 TYPE REF TO zcl_lnt_fi_identifier.
-        CLEAR t609.
         IF t607 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -10560,16 +9553,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t610 = t607->as_ref( ).
         t609 ?= t610.
         DATA t611 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t611.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t612 TYPE REF TO object.
-        CLEAR t612.
         READ TABLE p1->items INDEX 2 INTO t612.
         t611 ?= t612.
         DATA t613 TYPE REF TO zcl_lnt_fi_identifier.
-        CLEAR t613.
         IF t611 IS BOUND.
           IF t611 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -10579,12 +9569,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t613 ?= t614.
         ENDIF.
         DATA t615 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t615.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t616 TYPE REF TO object.
-        CLEAR t616.
         READ TABLE p1->items INDEX 3 INTO t616.
         t615 ?= t616.
         DATA(t617) = VALUE string( ).
@@ -10593,16 +9581,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t617 = t615->as_string( ).
         DATA t618 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t618.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t619 TYPE REF TO object.
-        CLEAR t619.
         READ TABLE p1->items INDEX 4 INTO t619.
         t618 ?= t619.
         DATA t620 TYPE REF TO zcl_lnt_ireference_extras.
-        CLEAR t620.
         IF t618 IS BOUND.
           IF t618 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -10614,16 +9599,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_ireference EXPORTING i_position_a3fd = t609 i_resolved = t613 i_reference_type = t617 i_extra = t620.
       WHEN `ZCL_LNT_IREFERENCE_EXTRAS`.
         DATA t598 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t598.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t599 TYPE REF TO object.
-        CLEAR t599.
         READ TABLE p1->items INDEX 1 INTO t599.
         t598 ?= t599.
         DATA t600 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t600.
         IF t598 IS BOUND.
           t600 = NEW #( ).
           t600->has = abap_true.
@@ -10633,16 +9615,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t600->value = t598->as_string( ).
         ENDIF.
         DATA t601 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t601.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t602 TYPE REF TO object.
-        CLEAR t602.
         READ TABLE p1->items INDEX 2 INTO t602.
         t601 ?= t602.
         DATA t603 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t603.
         IF t601 IS BOUND.
           t603 = NEW #( ).
           t603->has = abap_true.
@@ -10652,16 +9631,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t603->value = t601->as_string( ).
         ENDIF.
         DATA t604 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t604.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t605 TYPE REF TO object.
-        CLEAR t605.
         READ TABLE p1->items INDEX 3 INTO t605.
         t604 ?= t605.
         DATA t606 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-        CLEAR t606.
         IF t604 IS BOUND.
           t606 = NEW #( ).
           t606->has = abap_true.
@@ -10673,16 +9649,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_ireference_extras EXPORTING i_oo_name = t600 i_oo_type = t603 i_found_qualified = t606.
       WHEN `ZCL_LNT_IRENAME_PARAMS`.
         DATA t1097 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1097.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1098 TYPE REF TO object.
-        CLEAR t1098.
         READ TABLE p1->items INDEX 1 INTO t1098.
         t1097 ?= t1098.
         DATA t1099 TYPE REF TO zcl_lnt_txt_dcmnt_idntfr.
-        CLEAR t1099.
         IF t1097 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -10690,16 +9663,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t1100 = t1097->as_ref( ).
         t1099 ?= t1100.
         DATA t1101 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1101.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1102 TYPE REF TO object.
-        CLEAR t1102.
         READ TABLE p1->items INDEX 2 INTO t1102.
         t1101 ?= t1102.
         DATA t1103 TYPE REF TO zcl_lnt_no_position.
-        CLEAR t1103.
         IF t1101 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -10707,20 +9677,16 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t1104 = t1101->as_ref( ).
         t1103 ?= t1104.
         DATA t1105 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1105.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1106 TYPE REF TO object.
-        CLEAR t1106.
         READ TABLE p1->items INDEX 3 INTO t1106.
         t1105 ?= t1106.
-        DATA(t1107) = VALUE string( ).
         IF t1105 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1107 = t1105->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_irename_params EXPORTING i_text_document = t1099 i_position_a3fd = t1103 i_new_name = t1107.
+        CREATE OBJECT result TYPE zcl_lnt_irename_params EXPORTING i_text_document = t1099 i_position_a3fd = t1103 i_new_name = t1105->as_string( ).
       WHEN `ZCL_LNT_IRENAME_RESULT`.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
       WHEN `ZCL_LNT_IRENAME_SETTINGS`.
@@ -10734,16 +9700,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_irule_module.
       WHEN `ZCL_LNT_IRUN_INPUT`.
         DATA t41 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t41.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t42 TYPE REF TO object.
-        CLEAR t42.
         READ TABLE p1->items INDEX 1 INTO t42.
         t41 ?= t42.
         DATA t43 TYPE REF TO zif_lnt_progress.
-        CLEAR t43.
         IF t41 IS BOUND.
           IF t41 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -10753,16 +9716,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t43 ?= t44.
         ENDIF.
         DATA t45 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t45.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t46 TYPE REF TO object.
-        CLEAR t46.
         READ TABLE p1->items INDEX 2 INTO t46.
         t45 ?= t46.
         DATA t47 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-        CLEAR t47.
         IF t45 IS BOUND.
           t47 = NEW #( ).
           t47->has = abap_true.
@@ -10776,12 +9736,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
       WHEN `ZCL_LNT_ISCOPE_IDENTIFIER`.
         DATA t622 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t622.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t623 TYPE REF TO object.
-        CLEAR t623.
         READ TABLE p1->items INDEX 1 INTO t623.
         t622 ?= t623.
         DATA(t624) = VALUE string( ).
@@ -10790,12 +9748,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t624 = t622->as_string( ).
         DATA t625 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t625.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t626 TYPE REF TO object.
-        CLEAR t626.
         READ TABLE p1->items INDEX 2 INTO t626.
         t625 ?= t626.
         DATA(t627) = VALUE string( ).
@@ -10804,12 +9760,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t627 = t625->as_string( ).
         DATA t628 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t628.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t629 TYPE REF TO object.
-        CLEAR t629.
         READ TABLE p1->items INDEX 3 INTO t629.
         t628 ?= t629.
         DATA(t630) = VALUE string( ).
@@ -10818,16 +9772,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t630 = t628->as_string( ).
         DATA t631 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t631.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t632 TYPE REF TO object.
-        CLEAR t632.
         READ TABLE p1->items INDEX 4 INTO t632.
         t631 ?= t632.
         DATA t633 TYPE REF TO zcl_lnt_position.
-        CLEAR t633.
         IF t631 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -10835,16 +9786,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t634 = t631->as_ref( ).
         t633 ?= t634.
         DATA t635 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t635.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t636 TYPE REF TO object.
-        CLEAR t636.
         READ TABLE p1->items INDEX 5 INTO t636.
         t635 ?= t636.
         DATA t637 TYPE REF TO zcl_lnt_position.
-        CLEAR t637.
         IF t635 IS BOUND.
           IF t635 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -10856,12 +9804,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_iscope_identifier EXPORTING i_stype = t624 i_sname = t627 i_filename = t630 i_start = t633 i_end = t637.
       WHEN `ZCL_LNT_ISCOPE_VARIABLE`.
         DATA t639 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t639.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t640 TYPE REF TO object.
-        CLEAR t640.
         READ TABLE p1->items INDEX 1 INTO t640.
         t639 ?= t640.
         DATA(t641) = VALUE string( ).
@@ -10870,16 +9816,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t641 = t639->as_string( ).
         DATA t642 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t642.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t643 TYPE REF TO object.
-        CLEAR t643.
         READ TABLE p1->items INDEX 2 INTO t643.
         t642 ?= t643.
         DATA t644 TYPE REF TO zcl_lnt_typed_identifier.
-        CLEAR t644.
         IF t642 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -10889,16 +9832,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_iscope_variable EXPORTING i_name = t641 i_identifier = t644.
       WHEN `ZCL_LNT_ISSUE`.
         DATA t1085 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1085.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1086 TYPE REF TO object.
-        CLEAR t1086.
         READ TABLE p1->items INDEX 1 INTO t1086.
         t1085 ?= t1086.
         DATA t1087 TYPE REF TO zcl_lnt_iissue_data.
-        CLEAR t1087.
         IF t1085 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -10917,12 +9857,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
     CASE class_name.
       WHEN `ZCL_LNT_ISTRUCTURE_COMPONENT`.
         DATA t848 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t848.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t849 TYPE REF TO object.
-        CLEAR t849.
         READ TABLE p1->items INDEX 1 INTO t849.
         t848 ?= t849.
         DATA(t850) = VALUE string( ).
@@ -10931,16 +9869,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t850 = t848->as_string( ).
         DATA t851 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t851.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t852 TYPE REF TO object.
-        CLEAR t852.
         READ TABLE p1->items INDEX 2 INTO t852.
         t851 ?= t852.
         DATA t853 TYPE REF TO zcl_lnt_abstract_type.
-        CLEAR t853.
         IF t851 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -10948,16 +9883,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t854 = t851->as_ref( ).
         t853 ?= t854.
         DATA t855 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t855.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t856 TYPE REF TO object.
-        CLEAR t856.
         READ TABLE p1->items INDEX 3 INTO t856.
         t855 ?= t856.
         DATA t857 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-        CLEAR t857.
         IF t855 IS BOUND.
           t857 = NEW #( ).
           t857->has = abap_true.
@@ -10967,16 +9899,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t857->value = t855->as_boolean( ).
         ENDIF.
         DATA t858 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t858.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t859 TYPE REF TO object.
-        CLEAR t859.
         READ TABLE p1->items INDEX 4 INTO t859.
         t858 ?= t859.
         DATA t860 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t860.
         IF t858 IS BOUND.
           t860 = NEW #( ).
           t860->has = abap_true.
@@ -10998,16 +9927,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
       WHEN `ZCL_LNT_ITEXT_DOCUMENT_RANGE`.
         DATA t1124 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1124.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1125 TYPE REF TO object.
-        CLEAR t1125.
         READ TABLE p1->items INDEX 1 INTO t1125.
         t1124 ?= t1125.
         DATA t1126 TYPE REF TO zcl_lnt_txt_dcmnt_idntfr.
-        CLEAR t1126.
         IF t1124 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -11015,16 +9941,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t1127 = t1124->as_ref( ).
         t1126 ?= t1127.
         DATA t1128 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1128.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1129 TYPE REF TO object.
-        CLEAR t1129.
         READ TABLE p1->items INDEX 2 INTO t1129.
         t1128 ?= t1129.
         DATA t1130 TYPE REF TO zcl_lnt_no_position.
-        CLEAR t1130.
         IF t1128 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -11032,16 +9955,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t1131 = t1128->as_ref( ).
         t1130 ?= t1131.
         DATA t1132 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1132.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1133 TYPE REF TO object.
-        CLEAR t1133.
         READ TABLE p1->items INDEX 3 INTO t1133.
         t1132 ?= t1133.
         DATA t1134 TYPE REF TO zcl_lnt_no_position.
-        CLEAR t1134.
         IF t1132 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -11051,16 +9971,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_itext_document_range EXPORTING i_text_document = t1126 i_start = t1130 i_end = t1134.
       WHEN `ZCL_LNT_ITEXT_EDIT`.
         DATA t1068 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1068.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1069 TYPE REF TO object.
-        CLEAR t1069.
         READ TABLE p1->items INDEX 1 INTO t1069.
         t1068 ?= t1069.
         DATA t1070 TYPE REF TO zcl_lnt_irange.
-        CLEAR t1070.
         IF t1068 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -11068,34 +9985,27 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t1071 = t1068->as_ref( ).
         t1070 ?= t1071.
         DATA t1072 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1072.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1073 TYPE REF TO object.
-        CLEAR t1073.
         READ TABLE p1->items INDEX 2 INTO t1073.
         t1072 ?= t1073.
-        DATA(t1074) = VALUE string( ).
         IF t1072 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1074 = t1072->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_itext_edit EXPORTING i_range = t1070 i_new_text = t1074.
+        CREATE OBJECT result TYPE zcl_lnt_itext_edit EXPORTING i_range = t1070 i_new_text = t1072->as_string( ).
       WHEN `ZCL_LNT_ITRNSLTN_TXT_ELMNTS`.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
       WHEN `ZCL_LNT_ITXT_DCMNT_PSTN_PRMS`.
         DATA t1089 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1089.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1090 TYPE REF TO object.
-        CLEAR t1090.
         READ TABLE p1->items INDEX 1 INTO t1090.
         t1089 ?= t1090.
         DATA t1091 TYPE REF TO zcl_lnt_txt_dcmnt_idntfr.
-        CLEAR t1091.
         IF t1089 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -11103,16 +10013,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t1092 = t1089->as_ref( ).
         t1091 ?= t1092.
         DATA t1093 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1093.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1094 TYPE REF TO object.
-        CLEAR t1094.
         READ TABLE p1->items INDEX 2 INTO t1094.
         t1093 ?= t1094.
         DATA t1095 TYPE REF TO zcl_lnt_no_position.
-        CLEAR t1095.
         IF t1093 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -11122,16 +10029,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_itxt_dcmnt_pstn_prms EXPORTING i_text_document = t1091 i_position_a3fd = t1095.
       WHEN `ZCL_LNT_IVARIABLE_REFERENCE`.
         DATA t1923 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1923.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1924 TYPE REF TO object.
-        CLEAR t1924.
         READ TABLE p1->items INDEX 1 INTO t1924.
         t1923 ?= t1924.
         DATA t1925 TYPE REF TO zcl_lnt_fi_identifier.
-        CLEAR t1925.
         IF t1923 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -11139,16 +10043,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t1926 = t1923->as_ref( ).
         t1925 ?= t1926.
         DATA t1927 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1927.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1928 TYPE REF TO object.
-        CLEAR t1928.
         READ TABLE p1->items INDEX 2 INTO t1928.
         t1927 ?= t1928.
         DATA t1929 TYPE REF TO zcl_lnt_fi_identifier.
-        CLEAR t1929.
         IF t1927 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -11158,12 +10059,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_ivariable_reference EXPORTING i_position_a3fd = t1925 i_resolved = t1929.
       WHEN `ZCL_LNT_IVERTEX`.
         DATA t1953 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1953.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1954 TYPE REF TO object.
-        CLEAR t1954.
         READ TABLE p1->items INDEX 1 INTO t1954.
         t1953 ?= t1954.
         DATA(t1955) = VALUE string( ).
@@ -11172,16 +10071,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t1955 = t1953->as_string( ).
         DATA t1956 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1956.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1957 TYPE REF TO object.
-        CLEAR t1957.
         READ TABLE p1->items INDEX 2 INTO t1957.
         t1956 ?= t1957.
         DATA t1958 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t1958.
         IF t1956 IS BOUND.
           t1958 = NEW #( ).
           t1958->has = abap_true.
@@ -11191,32 +10087,25 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t1958->value = t1956->as_string( ).
         ENDIF.
         DATA t1959 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1959.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1960 TYPE REF TO object.
-        CLEAR t1960.
         READ TABLE p1->items INDEX 3 INTO t1960.
         t1959 ?= t1960.
-        DATA(t1961) = VALUE abap_bool( ).
         IF t1959 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1961 = t1959->as_boolean( ).
-        CREATE OBJECT result TYPE zcl_lnt_ivertex EXPORTING i_filename = t1955 i_include_name = t1958 i_include_cc4a = t1961.
+        CREATE OBJECT result TYPE zcl_lnt_ivertex EXPORTING i_filename = t1955 i_include_name = t1958 i_include_cc4a = t1959->as_boolean( ).
       WHEN `ZCL_LNT_IVER_OPTIONS`.
         DATA t389 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t389.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t390 TYPE REF TO object.
-        CLEAR t390.
         READ TABLE p1->items INDEX 1 INTO t390.
         t389 ?= t390.
         DATA t391 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t391.
         IF t389 IS BOUND.
           t391 = NEW #( ).
           t391->has = abap_true.
@@ -11254,20 +10143,16 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_keyword_case_module.
       WHEN `ZCL_LNT_KNWLDG_TRNSFR_DCMNT`.
         DATA t1537 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1537.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1538 TYPE REF TO object.
-        CLEAR t1538.
         READ TABLE p1->items INDEX 1 INTO t1538.
         t1537 ?= t1538.
-        DATA(t1539) = VALUE string( ).
         IF t1537 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1539 = t1537->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_knwldg_trnsfr_dcmnt EXPORTING i_name = t1539.
+        CREATE OBJECT result TYPE zcl_lnt_knwldg_trnsfr_dcmnt EXPORTING i_name = t1537->as_string( ).
       WHEN `ZCL_LNT_KP_SN_PRM_CLL_ON_ON_LN`.
         CREATE OBJECT result TYPE zcl_lnt_kp_sn_prm_cll_on_on_ln.
       WHEN `ZCL_LNT_K_SN_PR_CL_ON_ON_LN_CN`.
@@ -11276,16 +10161,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_language.
       WHEN `ZCL_LNT_LANGUAGE_SERVER`.
         DATA t1187 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1187.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1188 TYPE REF TO object.
-        CLEAR t1188.
         READ TABLE p1->items INDEX 1 INTO t1188.
         t1187 ?= t1188.
         DATA t1189 TYPE REF TO zif_lnt_registry.
-        CLEAR t1189.
         IF t1187 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -11295,12 +10177,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_language_server EXPORTING i_reg_f149 = t1189.
       WHEN `ZCL_LNT_LANG_VERS`.
         DATA t403 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t403.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t404 TYPE REF TO object.
-        CLEAR t404.
         READ TABLE p1->items INDEX 1 INTO t404.
         t403 ?= t404.
         DATA(t405) = VALUE string( ).
@@ -11309,16 +10189,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t405 = t403->as_string( ).
         DATA t406 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t406.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t407 TYPE REF TO object.
-        CLEAR t407.
         READ TABLE p1->items INDEX 2 INTO t407.
         t406 ?= t407.
         DATA t408 TYPE REF TO zif_lnt_statement_runnable.
-        CLEAR t408.
         IF t406 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -11328,12 +10205,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_lang_vers EXPORTING i_lang_version = t405 i_runnable = t408.
       WHEN `ZCL_LNT_LANG_VERS_NOT`.
         DATA t410 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t410.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t411 TYPE REF TO object.
-        CLEAR t411.
         READ TABLE p1->items INDEX 1 INTO t411.
         t410 ?= t411.
         DATA(t412) = VALUE string( ).
@@ -11342,16 +10217,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t412 = t410->as_string( ).
         DATA t413 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t413.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t414 TYPE REF TO object.
-        CLEAR t414.
         READ TABLE p1->items INDEX 2 INTO t414.
         t413 ?= t414.
         DATA t415 TYPE REF TO zif_lnt_statement_runnable.
-        CLEAR t415.
         IF t413 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -11375,20 +10247,16 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_lexer.
       WHEN `ZCL_LNT_LEXER_BUFFER`.
         DATA t48 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t48.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t49 TYPE REF TO object.
-        CLEAR t49.
         READ TABLE p1->items INDEX 1 INTO t49.
         t48 ?= t49.
-        DATA(t50) = VALUE string( ).
         IF t48 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t50 = t48->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_lexer_buffer EXPORTING i_raw = t50.
+        CREATE OBJECT result TYPE zcl_lnt_lexer_buffer EXPORTING i_raw = t48->as_string( ).
       WHEN `ZCL_LNT_LEXER_MODULE`.
         IF zcl_lnt_lexer_module=>zlnt_builtin_init_109a3f357d7e = abap_false.
           zcl_lnt_lexer_module=>zlnt_builtin_init_ff145520bf3d( ).
@@ -11396,20 +10264,16 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_lexer_module.
       WHEN `ZCL_LNT_LEXER_STREAM`.
         DATA t51 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t51.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t52 TYPE REF TO object.
-        CLEAR t52.
         READ TABLE p1->items INDEX 1 INTO t52.
         t51 ?= t52.
-        DATA(t53) = VALUE string( ).
         IF t51 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t53 = t51->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_lexer_stream EXPORTING i_raw = t53.
+        CREATE OBJECT result TYPE zcl_lnt_lexer_stream EXPORTING i_raw = t51->as_string( ).
       WHEN `ZCL_LNT_LEXER_STREAM_MODULE`.
         CREATE OBJECT result TYPE zcl_lnt_lexer_stream_module.
       WHEN `ZCL_LNT_LINE_BREAK_STYLE`.
@@ -11461,12 +10325,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_local_variable_names.
       WHEN `ZCL_LNT_LOCATION`.
         DATA t2087 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2087.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2088 TYPE REF TO object.
-        CLEAR t2088.
         READ TABLE p1->items INDEX 1 INTO t2088.
         t2087 ?= t2088.
         DATA(t2089) = VALUE string( ).
@@ -11475,16 +10337,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t2089 = t2087->as_string( ).
         DATA t2090 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2090.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2091 TYPE REF TO object.
-        CLEAR t2091.
         READ TABLE p1->items INDEX 2 INTO t2091.
         t2090 ?= t2091.
         DATA t2092 TYPE REF TO zcl_lnt_range.
-        CLEAR t2092.
         IF t2090 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -11494,20 +10353,16 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_location EXPORTING i_uri = t2089 i_range = t2092.
       WHEN `ZCL_LNT_LOCK_OBJECT`.
         DATA t1540 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1540.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1541 TYPE REF TO object.
-        CLEAR t1541.
         READ TABLE p1->items INDEX 1 INTO t1541.
         t1540 ?= t1541.
-        DATA(t1542) = VALUE string( ).
         IF t1540 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1542 = t1540->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_lock_object EXPORTING i_name = t1542.
+        CREATE OBJECT result TYPE zcl_lnt_lock_object EXPORTING i_name = t1540->as_string( ).
       WHEN `ZCL_LNT_LOOP_GROUP_BY_TARGET`.
         CREATE OBJECT result TYPE zcl_lnt_loop_group_by_target.
       WHEN `ZCL_LNT_LOOP_SOURCE`.
@@ -11522,16 +10377,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_lsp_lookup.
       WHEN `ZCL_LNT_LSP_LOOKUP_RESULT`.
         DATA t1136 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1136.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1137 TYPE REF TO object.
-        CLEAR t1137.
         READ TABLE p1->items INDEX 1 INTO t1137.
         t1136 ?= t1137.
         DATA t1138 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t1138.
         IF t1136 IS BOUND.
           t1138 = NEW #( ).
           t1138->has = abap_true.
@@ -11541,16 +10393,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t1138->value = t1136->as_string( ).
         ENDIF.
         DATA t1139 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1139.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1140 TYPE REF TO object.
-        CLEAR t1140.
         READ TABLE p1->items INDEX 2 INTO t1140.
         t1139 ?= t1140.
         DATA t1141 TYPE REF TO zcl_lnt_location.
-        CLEAR t1141.
         IF t1139 IS BOUND.
           IF t1139 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -11560,16 +10409,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t1141 ?= t1142.
         ENDIF.
         DATA t1143 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1143.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1144 TYPE REF TO object.
-        CLEAR t1144.
         READ TABLE p1->items INDEX 3 INTO t1144.
         t1143 ?= t1144.
         DATA t1145 TYPE REF TO zcl_lnt_location.
-        CLEAR t1145.
         IF t1143 IS BOUND.
           IF t1143 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -11579,16 +10425,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t1145 ?= t1146.
         ENDIF.
         DATA t1147 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1147.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1148 TYPE REF TO object.
-        CLEAR t1148.
         READ TABLE p1->items INDEX 4 INTO t1148.
         t1147 ?= t1148.
         DATA t1149 TYPE REF TO zcl_lnt_fi_identifier.
-        CLEAR t1149.
         IF t1147 IS BOUND.
           IF t1147 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -11598,16 +10441,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t1149 ?= t1150.
         ENDIF.
         DATA t1151 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1151.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1152 TYPE REF TO object.
-        CLEAR t1152.
         READ TABLE p1->items INDEX 5 INTO t1152.
         t1151 ?= t1152.
         DATA t1153 TYPE REF TO zif_lnt_spaghetti_scope_node.
-        CLEAR t1153.
         IF t1151 IS BOUND.
           IF t1151 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -11623,16 +10463,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
       WHEN `ZCL_LNT_LX_AT`.
         DATA t61 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t61.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t62 TYPE REF TO object.
-        CLEAR t62.
         READ TABLE p1->items INDEX 1 INTO t62.
         t61 ?= t62.
         DATA t63 TYPE REF TO zcl_lnt_position.
-        CLEAR t63.
         IF t61 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -11640,32 +10477,25 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t64 = t61->as_ref( ).
         t63 ?= t64.
         DATA t65 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t65.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t66 TYPE REF TO object.
-        CLEAR t66.
         READ TABLE p1->items INDEX 2 INTO t66.
         t65 ?= t66.
-        DATA(t67) = VALUE string( ).
         IF t65 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t67 = t65->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_lx_at EXPORTING i_start = t63 i_str = t67.
+        CREATE OBJECT result TYPE zcl_lnt_lx_at EXPORTING i_start = t63 i_str = t65->as_string( ).
       WHEN `ZCL_LNT_LX_COMMENT`.
         DATA t110 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t110.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t111 TYPE REF TO object.
-        CLEAR t111.
         READ TABLE p1->items INDEX 1 INTO t111.
         t110 ?= t111.
         DATA t112 TYPE REF TO zcl_lnt_position.
-        CLEAR t112.
         IF t110 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -11673,32 +10503,25 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t113 = t110->as_ref( ).
         t112 ?= t113.
         DATA t114 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t114.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t115 TYPE REF TO object.
-        CLEAR t115.
         READ TABLE p1->items INDEX 2 INTO t115.
         t114 ?= t115.
-        DATA(t116) = VALUE string( ).
         IF t114 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t116 = t114->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_lx_comment EXPORTING i_start = t112 i_str = t116.
+        CREATE OBJECT result TYPE zcl_lnt_lx_comment EXPORTING i_start = t112 i_str = t114->as_string( ).
       WHEN `ZCL_LNT_LX_IDENTIFIER`.
         DATA t131 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t131.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t132 TYPE REF TO object.
-        CLEAR t132.
         READ TABLE p1->items INDEX 1 INTO t132.
         t131 ?= t132.
         DATA t133 TYPE REF TO zcl_lnt_position.
-        CLEAR t133.
         IF t131 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -11706,20 +10529,16 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t134 = t131->as_ref( ).
         t133 ?= t134.
         DATA t135 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t135.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t136 TYPE REF TO object.
-        CLEAR t136.
         READ TABLE p1->items INDEX 2 INTO t136.
         t135 ?= t136.
-        DATA(t137) = VALUE string( ).
         IF t135 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t137 = t135->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_lx_identifier EXPORTING i_start = t133 i_str = t137.
+        CREATE OBJECT result TYPE zcl_lnt_lx_identifier EXPORTING i_start = t133 i_str = t135->as_string( ).
       WHEN `ZCL_LNT_LX_INDEX_MODULE`.
         IF zcl_lnt_lx_index_module=>zlnt_builtin_init_f399ac0a203d = abap_false.
           zcl_lnt_lx_index_module=>zlnt_builtin_init_5aef6c4f7306( ).
@@ -11727,16 +10546,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_lx_index_module.
       WHEN `ZCL_LNT_LX_PLUS`.
         DATA t180 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t180.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t181 TYPE REF TO object.
-        CLEAR t181.
         READ TABLE p1->items INDEX 1 INTO t181.
         t180 ?= t181.
         DATA t182 TYPE REF TO zcl_lnt_position.
-        CLEAR t182.
         IF t180 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -11744,32 +10560,25 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t183 = t180->as_ref( ).
         t182 ?= t183.
         DATA t184 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t184.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t185 TYPE REF TO object.
-        CLEAR t185.
         READ TABLE p1->items INDEX 2 INTO t185.
         t184 ?= t185.
-        DATA(t186) = VALUE string( ).
         IF t184 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t186 = t184->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_lx_plus EXPORTING i_start = t182 i_str = t186.
+        CREATE OBJECT result TYPE zcl_lnt_lx_plus EXPORTING i_start = t182 i_str = t184->as_string( ).
       WHEN `ZCL_LNT_LX_STRING_TEMPLATE`.
         DATA t229 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t229.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t230 TYPE REF TO object.
-        CLEAR t230.
         READ TABLE p1->items INDEX 1 INTO t230.
         t229 ?= t230.
         DATA t231 TYPE REF TO zcl_lnt_position.
-        CLEAR t231.
         IF t229 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -11777,20 +10586,16 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t232 = t229->as_ref( ).
         t231 ?= t232.
         DATA t233 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t233.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t234 TYPE REF TO object.
-        CLEAR t234.
         READ TABLE p1->items INDEX 2 INTO t234.
         t233 ?= t234.
-        DATA(t235) = VALUE string( ).
         IF t233 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t235 = t233->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_lx_string_template EXPORTING i_start = t231 i_str = t235.
+        CREATE OBJECT result TYPE zcl_lnt_lx_string_template EXPORTING i_start = t231 i_str = t233->as_string( ).
       WHEN `ZCL_LNT_MACROS`.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
       WHEN `ZCL_LNT_MACRO_CALL`.
@@ -11835,12 +10640,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_mdf_onl_own_db_tbl_cnf.
       WHEN `ZCL_LNT_MEMORY_FILE`.
         DATA t1079 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1079.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1080 TYPE REF TO object.
-        CLEAR t1080.
         READ TABLE p1->items INDEX 1 INTO t1080.
         t1079 ?= t1080.
         DATA(t1081) = VALUE string( ).
@@ -11849,20 +10652,16 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t1081 = t1079->as_string( ).
         DATA t1082 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1082.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1083 TYPE REF TO object.
-        CLEAR t1083.
         READ TABLE p1->items INDEX 2 INTO t1083.
         t1082 ?= t1083.
-        DATA(t1084) = VALUE string( ).
         IF t1082 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1084 = t1082->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_memory_file EXPORTING i_filename = t1081 i_raw = t1084.
+        CREATE OBJECT result TYPE zcl_lnt_memory_file EXPORTING i_filename = t1081 i_raw = t1082->as_string( ).
       WHEN `ZCL_LNT_MERGE_DATABASE`.
         CREATE OBJECT result TYPE zcl_lnt_merge_database.
       WHEN `ZCL_LNT_MESSAGE_EXISTS_CONF`.
@@ -11875,20 +10674,16 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_message_source_source.
       WHEN `ZCL_LNT_MESSAGING_CHANNEL`.
         DATA t1549 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1549.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1550 TYPE REF TO object.
-        CLEAR t1550.
         READ TABLE p1->items INDEX 1 INTO t1550.
         t1549 ?= t1550.
-        DATA(t1551) = VALUE string( ).
         IF t1549 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1551 = t1549->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_messaging_channel EXPORTING i_name = t1551.
+        CREATE OBJECT result TYPE zcl_lnt_messaging_channel EXPORTING i_name = t1549->as_string( ).
       WHEN `ZCL_LNT_METHOD`.
         CREATE OBJECT result TYPE zcl_lnt_method.
       WHEN `ZCL_LNT_METHOD_CALL`.
@@ -11897,16 +10692,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_method_def.
       WHEN `ZCL_LNT_METHOD_DEFINITION`.
         DATA t993 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t993.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t994 TYPE REF TO object.
-        CLEAR t994.
         READ TABLE p1->items INDEX 1 INTO t994.
         t993 ?= t994.
         DATA t995 TYPE REF TO zcl_lnt_statement_node.
-        CLEAR t995.
         IF t993 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -11914,12 +10706,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t996 = t993->as_ref( ).
         t995 ?= t996.
         DATA t997 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t997.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t998 TYPE REF TO object.
-        CLEAR t998.
         READ TABLE p1->items INDEX 2 INTO t998.
         t997 ?= t998.
         DATA(t999) = VALUE f( ).
@@ -11928,16 +10718,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t999 = t997->as_number( ).
         DATA t1000 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1000.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1001 TYPE REF TO object.
-        CLEAR t1001.
         READ TABLE p1->items INDEX 3 INTO t1001.
         t1000 ?= t1001.
         DATA t1002 TYPE REF TO zcl_lnt_syntax_input.
-        CLEAR t1002.
         IF t1000 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -11947,16 +10734,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_method_definition EXPORTING i_node = t995 i_visibility_5c1f = t999 i_input_967e = t1002.
       WHEN `ZCL_LNT_METHOD_DEFINITIONS`.
         DATA t1004 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1004.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1005 TYPE REF TO object.
-        CLEAR t1005.
         READ TABLE p1->items INDEX 1 INTO t1005.
         t1004 ?= t1005.
         DATA t1006 TYPE REF TO zcl_lnt_structure_node.
-        CLEAR t1006.
         IF t1004 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -11964,16 +10748,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t1007 = t1004->as_ref( ).
         t1006 ?= t1007.
         DATA t1008 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1008.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1009 TYPE REF TO object.
-        CLEAR t1009.
         READ TABLE p1->items INDEX 2 INTO t1009.
         t1008 ?= t1009.
         DATA t1010 TYPE REF TO zcl_lnt_syntax_input.
-        CLEAR t1010.
         IF t1008 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -12012,40 +10793,32 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_method_param_optional.
       WHEN `ZCL_LNT_MIME_OBJECT`.
         DATA t1552 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1552.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1553 TYPE REF TO object.
-        CLEAR t1553.
         READ TABLE p1->items INDEX 1 INTO t1553.
         t1552 ?= t1553.
-        DATA(t1554) = VALUE string( ).
         IF t1552 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1554 = t1552->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_mime_object EXPORTING i_name = t1554.
+        CREATE OBJECT result TYPE zcl_lnt_mime_object EXPORTING i_name = t1552->as_string( ).
       WHEN `ZCL_LNT_MIX_RETURNING`.
         CREATE OBJECT result TYPE zcl_lnt_mix_returning.
       WHEN `ZCL_LNT_MIX_RETURNING_CONF`.
         CREATE OBJECT result TYPE zcl_lnt_mix_returning_conf.
       WHEN `ZCL_LNT_MNTNN_AND_TRNSPR_OBJCT`.
         DATA t1543 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1543.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1544 TYPE REF TO object.
-        CLEAR t1544.
         READ TABLE p1->items INDEX 1 INTO t1544.
         t1543 ?= t1544.
-        DATA(t1545) = VALUE string( ).
         IF t1543 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1545 = t1543->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_mntnn_and_trnspr_objct EXPORTING i_name = t1545.
+        CREATE OBJECT result TYPE zcl_lnt_mntnn_and_trnspr_objct EXPORTING i_name = t1543->as_string( ).
       WHEN OTHERS.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDCASE.
@@ -12085,12 +10858,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_modify_line.
       WHEN `ZCL_LNT_MRKD_STRNG_WTH_LNGG`.
         DATA t2439 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2439.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2440 TYPE REF TO object.
-        CLEAR t2440.
         READ TABLE p1->items INDEX 1 INTO t2440.
         t2439 ?= t2440.
         DATA(t2441) = VALUE string( ).
@@ -12099,20 +10870,16 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t2441 = t2439->as_string( ).
         DATA t2442 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2442.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2443 TYPE REF TO object.
-        CLEAR t2443.
         READ TABLE p1->items INDEX 2 INTO t2443.
         t2442 ?= t2443.
-        DATA(t2444) = VALUE string( ).
         IF t2442 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t2444 = t2442->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_mrkd_strng_wth_lngg EXPORTING i_language = t2441 i_value = t2444.
+        CREATE OBJECT result TYPE zcl_lnt_mrkd_strng_wth_lngg EXPORTING i_language = t2441 i_value = t2442->as_string( ).
       WHEN `ZCL_LNT_MSAG_CONSISTENCY`.
         CREATE OBJECT result TYPE zcl_lnt_msag_consistency.
       WHEN `ZCL_LNT_MSAG_CONSISTENCY_CONF`.
@@ -12137,20 +10904,16 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_mx_on_mt_prm_pr_ln_cnf.
       WHEN `ZCL_LNT_NAMESPACE`.
         DATA t1555 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1555.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1556 TYPE REF TO object.
-        CLEAR t1556.
         READ TABLE p1->items INDEX 1 INTO t1556.
         t1555 ?= t1556.
-        DATA(t1557) = VALUE string( ).
         IF t1555 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1557 = t1555->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_namespace EXPORTING i_name = t1557.
+        CREATE OBJECT result TYPE zcl_lnt_namespace EXPORTING i_name = t1555->as_string( ).
       WHEN `ZCL_LNT_NAMESPACE_SIMPLE_NAME`.
         CREATE OBJECT result TYPE zcl_lnt_namespace_simple_name.
       WHEN `ZCL_LNT_NAMES_NO_DASH`.
@@ -12170,324 +10933,244 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_nd_index_module.
       WHEN `ZCL_LNT_NEPTUNE_API`.
         DATA t1558 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1558.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1559 TYPE REF TO object.
-        CLEAR t1559.
         READ TABLE p1->items INDEX 1 INTO t1559.
         t1558 ?= t1559.
-        DATA(t1560) = VALUE string( ).
         IF t1558 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1560 = t1558->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_neptune_api EXPORTING i_name = t1560.
+        CREATE OBJECT result TYPE zcl_lnt_neptune_api EXPORTING i_name = t1558->as_string( ).
       WHEN `ZCL_LNT_NEPTUNE_APP`.
         DATA t1561 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1561.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1562 TYPE REF TO object.
-        CLEAR t1562.
         READ TABLE p1->items INDEX 1 INTO t1562.
         t1561 ?= t1562.
-        DATA(t1563) = VALUE string( ).
         IF t1561 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1563 = t1561->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_neptune_app EXPORTING i_name = t1563.
+        CREATE OBJECT result TYPE zcl_lnt_neptune_app EXPORTING i_name = t1561->as_string( ).
       WHEN `ZCL_LNT_NEPTUNE_CUSTOM_COLOR`.
         DATA t1564 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1564.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1565 TYPE REF TO object.
-        CLEAR t1565.
         READ TABLE p1->items INDEX 1 INTO t1565.
         t1564 ?= t1565.
-        DATA(t1566) = VALUE string( ).
         IF t1564 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1566 = t1564->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_neptune_custom_color EXPORTING i_name = t1566.
+        CREATE OBJECT result TYPE zcl_lnt_neptune_custom_color EXPORTING i_name = t1564->as_string( ).
       WHEN `ZCL_LNT_NEPTUNE_DOCUMENTATION`.
         DATA t1570 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1570.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1571 TYPE REF TO object.
-        CLEAR t1571.
         READ TABLE p1->items INDEX 1 INTO t1571.
         t1570 ?= t1571.
-        DATA(t1572) = VALUE string( ).
         IF t1570 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1572 = t1570->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_neptune_documentation EXPORTING i_name = t1572.
+        CREATE OBJECT result TYPE zcl_lnt_neptune_documentation EXPORTING i_name = t1570->as_string( ).
       WHEN `ZCL_LNT_NEPTUNE_ENHANCEMENT`.
         DATA t1573 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1573.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1574 TYPE REF TO object.
-        CLEAR t1574.
         READ TABLE p1->items INDEX 1 INTO t1574.
         t1573 ?= t1574.
-        DATA(t1575) = VALUE string( ).
         IF t1573 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1575 = t1573->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_neptune_enhancement EXPORTING i_name = t1575.
+        CREATE OBJECT result TYPE zcl_lnt_neptune_enhancement EXPORTING i_name = t1573->as_string( ).
       WHEN `ZCL_LNT_NEPTUNE_LAUNCHPAD`.
         DATA t1576 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1576.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1577 TYPE REF TO object.
-        CLEAR t1577.
         READ TABLE p1->items INDEX 1 INTO t1577.
         t1576 ?= t1577.
-        DATA(t1578) = VALUE string( ).
         IF t1576 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1578 = t1576->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_neptune_launchpad EXPORTING i_name = t1578.
+        CREATE OBJECT result TYPE zcl_lnt_neptune_launchpad EXPORTING i_name = t1576->as_string( ).
       WHEN `ZCL_LNT_NEPTUNE_LOGIN_PAGE`.
         DATA t1582 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1582.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1583 TYPE REF TO object.
-        CLEAR t1583.
         READ TABLE p1->items INDEX 1 INTO t1583.
         t1582 ?= t1583.
-        DATA(t1584) = VALUE string( ).
         IF t1582 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1584 = t1582->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_neptune_login_page EXPORTING i_name = t1584.
+        CREATE OBJECT result TYPE zcl_lnt_neptune_login_page EXPORTING i_name = t1582->as_string( ).
       WHEN `ZCL_LNT_NEPTUNE_MEDIA_LIBRARY`.
         DATA t1585 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1585.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1586 TYPE REF TO object.
-        CLEAR t1586.
         READ TABLE p1->items INDEX 1 INTO t1586.
         t1585 ?= t1586.
-        DATA(t1587) = VALUE string( ).
         IF t1585 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1587 = t1585->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_neptune_media_library EXPORTING i_name = t1587.
+        CREATE OBJECT result TYPE zcl_lnt_neptune_media_library EXPORTING i_name = t1585->as_string( ).
       WHEN `ZCL_LNT_NEPTUNE_MEDIA_PACK`.
         DATA t1588 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1588.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1589 TYPE REF TO object.
-        CLEAR t1589.
         READ TABLE p1->items INDEX 1 INTO t1589.
         t1588 ?= t1589.
-        DATA(t1590) = VALUE string( ).
         IF t1588 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1590 = t1588->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_neptune_media_pack EXPORTING i_name = t1590.
+        CREATE OBJECT result TYPE zcl_lnt_neptune_media_pack EXPORTING i_name = t1588->as_string( ).
       WHEN `ZCL_LNT_NEPTUNE_METADATA`.
         DATA t1591 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1591.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1592 TYPE REF TO object.
-        CLEAR t1592.
         READ TABLE p1->items INDEX 1 INTO t1592.
         t1591 ?= t1592.
-        DATA(t1593) = VALUE string( ).
         IF t1591 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1593 = t1591->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_neptune_metadata EXPORTING i_name = t1593.
+        CREATE OBJECT result TYPE zcl_lnt_neptune_metadata EXPORTING i_name = t1591->as_string( ).
       WHEN `ZCL_LNT_NEPTUNE_MOBILE_CLIENT`.
         DATA t1594 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1594.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1595 TYPE REF TO object.
-        CLEAR t1595.
         READ TABLE p1->items INDEX 1 INTO t1595.
         t1594 ?= t1595.
-        DATA(t1596) = VALUE string( ).
         IF t1594 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1596 = t1594->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_neptune_mobile_client EXPORTING i_name = t1596.
+        CREATE OBJECT result TYPE zcl_lnt_neptune_mobile_client EXPORTING i_name = t1594->as_string( ).
       WHEN `ZCL_LNT_NEPTUNE_O_DATA`.
         DATA t1597 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1597.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1598 TYPE REF TO object.
-        CLEAR t1598.
         READ TABLE p1->items INDEX 1 INTO t1598.
         t1597 ?= t1598.
-        DATA(t1599) = VALUE string( ).
         IF t1597 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1599 = t1597->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_neptune_o_data EXPORTING i_name = t1599.
+        CREATE OBJECT result TYPE zcl_lnt_neptune_o_data EXPORTING i_name = t1597->as_string( ).
       WHEN `ZCL_LNT_NEPTUNE_POLICY`.
         DATA t1600 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1600.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1601 TYPE REF TO object.
-        CLEAR t1601.
         READ TABLE p1->items INDEX 1 INTO t1601.
         t1600 ?= t1601.
-        DATA(t1602) = VALUE string( ).
         IF t1600 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1602 = t1600->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_neptune_policy EXPORTING i_name = t1602.
+        CREATE OBJECT result TYPE zcl_lnt_neptune_policy EXPORTING i_name = t1600->as_string( ).
       WHEN `ZCL_LNT_NEPTUNE_RFC_MAPPING`.
         DATA t1603 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1603.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1604 TYPE REF TO object.
-        CLEAR t1604.
         READ TABLE p1->items INDEX 1 INTO t1604.
         t1603 ?= t1604.
-        DATA(t1605) = VALUE string( ).
         IF t1603 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1605 = t1603->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_neptune_rfc_mapping EXPORTING i_name = t1605.
+        CREATE OBJECT result TYPE zcl_lnt_neptune_rfc_mapping EXPORTING i_name = t1603->as_string( ).
       WHEN `ZCL_LNT_NEPTUNE_SPLASH_SCREEN`.
         DATA t1609 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1609.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1610 TYPE REF TO object.
-        CLEAR t1610.
         READ TABLE p1->items INDEX 1 INTO t1610.
         t1609 ?= t1610.
-        DATA(t1611) = VALUE string( ).
         IF t1609 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1611 = t1609->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_neptune_splash_screen EXPORTING i_name = t1611.
+        CREATE OBJECT result TYPE zcl_lnt_neptune_splash_screen EXPORTING i_name = t1609->as_string( ).
       WHEN `ZCL_LNT_NEPTUNE_STICKY_BANNER`.
         DATA t1612 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1612.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1613 TYPE REF TO object.
-        CLEAR t1613.
         READ TABLE p1->items INDEX 1 INTO t1613.
         t1612 ?= t1613.
-        DATA(t1614) = VALUE string( ).
         IF t1612 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1614 = t1612->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_neptune_sticky_banner EXPORTING i_name = t1614.
+        CREATE OBJECT result TYPE zcl_lnt_neptune_sticky_banner EXPORTING i_name = t1612->as_string( ).
       WHEN `ZCL_LNT_NEPTUNE_TILE`.
         DATA t1615 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1615.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1616 TYPE REF TO object.
-        CLEAR t1616.
         READ TABLE p1->items INDEX 1 INTO t1616.
         t1615 ?= t1616.
-        DATA(t1617) = VALUE string( ).
         IF t1615 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1617 = t1615->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_neptune_tile EXPORTING i_name = t1617.
+        CREATE OBJECT result TYPE zcl_lnt_neptune_tile EXPORTING i_name = t1615->as_string( ).
       WHEN `ZCL_LNT_NEPTUNE_TILE_GROUP`.
         DATA t1618 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1618.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1619 TYPE REF TO object.
-        CLEAR t1619.
         READ TABLE p1->items INDEX 1 INTO t1619.
         t1618 ?= t1619.
-        DATA(t1620) = VALUE string( ).
         IF t1618 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1620 = t1618->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_neptune_tile_group EXPORTING i_name = t1620.
+        CREATE OBJECT result TYPE zcl_lnt_neptune_tile_group EXPORTING i_name = t1618->as_string( ).
       WHEN `ZCL_LNT_NEPTUNE_TILE_LAYOUT`.
         DATA t1621 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1621.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1622 TYPE REF TO object.
-        CLEAR t1622.
         READ TABLE p1->items INDEX 1 INTO t1622.
         t1621 ?= t1622.
-        DATA(t1623) = VALUE string( ).
         IF t1621 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1623 = t1621->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_neptune_tile_layout EXPORTING i_name = t1623.
+        CREATE OBJECT result TYPE zcl_lnt_neptune_tile_layout EXPORTING i_name = t1621->as_string( ).
       WHEN `ZCL_LNT_NEPTUNE_URL_ALIAS`.
         DATA t1624 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1624.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1625 TYPE REF TO object.
-        CLEAR t1625.
         READ TABLE p1->items INDEX 1 INTO t1625.
         t1624 ?= t1625.
-        DATA(t1626) = VALUE string( ).
         IF t1624 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1626 = t1624->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_neptune_url_alias EXPORTING i_name = t1626.
+        CREATE OBJECT result TYPE zcl_lnt_neptune_url_alias EXPORTING i_name = t1624->as_string( ).
       WHEN `ZCL_LNT_NESTING`.
         CREATE OBJECT result TYPE zcl_lnt_nesting.
       WHEN `ZCL_LNT_NESTING_CONF`.
@@ -12520,12 +11203,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_no_macros_conf.
       WHEN `ZCL_LNT_NO_POSITION`.
         DATA t2064 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2064.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2065 TYPE REF TO object.
-        CLEAR t2065.
         READ TABLE p1->items INDEX 1 INTO t2065.
         t2064 ?= t2065.
         DATA(t2066) = VALUE f( ).
@@ -12534,16 +11215,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t2066 = t2064->as_number( ).
         DATA t2067 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2067.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2068 TYPE REF TO object.
-        CLEAR t2068.
         READ TABLE p1->items INDEX 2 INTO t2068.
         t2067 ?= t2068.
         DATA t2069 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
-        CLEAR t2069.
         IF t2067 IS BOUND.
           t2069 = NEW #( ).
           t2069->has = abap_true.
@@ -12572,84 +11250,65 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
     CASE class_name.
       WHEN `ZCL_LNT_NPTN_CSTM_JS_HLPR`.
         DATA t1567 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1567.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1568 TYPE REF TO object.
-        CLEAR t1568.
         READ TABLE p1->items INDEX 1 INTO t1568.
         t1567 ?= t1568.
-        DATA(t1569) = VALUE string( ).
         IF t1567 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1569 = t1567->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_nptn_cstm_js_hlpr EXPORTING i_name = t1569.
+        CREATE OBJECT result TYPE zcl_lnt_nptn_cstm_js_hlpr EXPORTING i_name = t1567->as_string( ).
       WHEN `ZCL_LNT_NPTN_LNCHPD_LYT`.
         DATA t1579 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1579.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1580 TYPE REF TO object.
-        CLEAR t1580.
         READ TABLE p1->items INDEX 1 INTO t1580.
         t1579 ?= t1580.
-        DATA(t1581) = VALUE string( ).
         IF t1579 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1581 = t1579->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_nptn_lnchpd_lyt EXPORTING i_name = t1581.
+        CREATE OBJECT result TYPE zcl_lnt_nptn_lnchpd_lyt EXPORTING i_name = t1579->as_string( ).
       WHEN `ZCL_LNT_NPTN_RCH_TXT_TMPLT`.
         DATA t1606 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1606.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1607 TYPE REF TO object.
-        CLEAR t1607.
         READ TABLE p1->items INDEX 1 INTO t1607.
         t1606 ?= t1607.
-        DATA(t1608) = VALUE string( ).
         IF t1606 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1608 = t1606->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_nptn_rch_txt_tmplt EXPORTING i_name = t1608.
+        CREATE OBJECT result TYPE zcl_lnt_nptn_rch_txt_tmplt EXPORTING i_name = t1606->as_string( ).
       WHEN `ZCL_LNT_NROB_CONSISTENCY`.
         CREATE OBJECT result TYPE zcl_lnt_nrob_consistency.
       WHEN `ZCL_LNT_NROB_CONSISTENCY_CONF`.
         CREATE OBJECT result TYPE zcl_lnt_nrob_consistency_conf.
       WHEN `ZCL_LNT_NUMBER_RANGE`.
         DATA t1627 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1627.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1628 TYPE REF TO object.
-        CLEAR t1628.
         READ TABLE p1->items INDEX 1 INTO t1628.
         t1627 ?= t1628.
-        DATA(t1629) = VALUE string( ).
         IF t1627 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1629 = t1627->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_number_range EXPORTING i_name = t1629.
+        CREATE OBJECT result TYPE zcl_lnt_number_range EXPORTING i_name = t1627->as_string( ).
       WHEN `ZCL_LNT_NUMERIC_GENERIC_TYPE`.
         DATA t816 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t816.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t817 TYPE REF TO object.
-        CLEAR t817.
         READ TABLE p1->items INDEX 1 INTO t817.
         t816 ?= t817.
         DATA t818 TYPE REF TO zcl_lnt_abstract_type_data.
-        CLEAR t818.
         IF t816 IS BOUND.
           IF t816 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -12661,12 +11320,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_numeric_generic_type EXPORTING i_input_967e = t818.
       WHEN `ZCL_LNT_NUMERIC_TYPE`.
         DATA t820 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t820.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t821 TYPE REF TO object.
-        CLEAR t821.
         READ TABLE p1->items INDEX 1 INTO t821.
         t820 ?= t821.
         DATA(t822) = VALUE f( ).
@@ -12675,16 +11332,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t822 = t820->as_number( ).
         DATA t823 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t823.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t824 TYPE REF TO object.
-        CLEAR t824.
         READ TABLE p1->items INDEX 2 INTO t824.
         t823 ?= t824.
         DATA t825 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t825.
         IF t823 IS BOUND.
           t825 = NEW #( ).
           t825->has = abap_true.
@@ -12719,16 +11373,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_n_inl_in_optn_brnc_cnf.
       WHEN `ZCL_LNT_N_MD_FS_XM_PR_LB_FX_A2`.
         DATA t3312 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t3312.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t3313 TYPE REF TO object.
-        CLEAR t3313.
         READ TABLE p1->items INDEX 1 INTO t3313.
         t3312 ?= t3313.
         DATA t3314 TYPE REF TO zcl_lnt_shape_61bfbcef.
-        CLEAR t3314.
         IF t3312 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -12746,52 +11397,41 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_n_yd_cndtns_cnf.
       WHEN `ZCL_LNT_OAUTH2_PROFILE`.
         DATA t1630 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1630.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1631 TYPE REF TO object.
-        CLEAR t1631.
         READ TABLE p1->items INDEX 1 INTO t1631.
         t1630 ?= t1631.
-        DATA(t1632) = VALUE string( ).
         IF t1630 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1632 = t1630->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_oauth2_profile EXPORTING i_name = t1632.
+        CREATE OBJECT result TYPE zcl_lnt_oauth2_profile EXPORTING i_name = t1630->as_string( ).
       WHEN `ZCL_LNT_OBJECT_CHARACTERISTIC`.
         DATA t1633 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1633.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1634 TYPE REF TO object.
-        CLEAR t1634.
         READ TABLE p1->items INDEX 1 INTO t1634.
         t1633 ?= t1634.
-        DATA(t1635) = VALUE string( ).
         IF t1633 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1635 = t1633->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_object_characteristic EXPORTING i_name = t1635.
+        CREATE OBJECT result TYPE zcl_lnt_object_characteristic EXPORTING i_name = t1633->as_string( ).
       WHEN `ZCL_LNT_OBJECT_NAMING`.
         CREATE OBJECT result TYPE zcl_lnt_object_naming.
       WHEN `ZCL_LNT_OBJECT_NAMING_CONF`.
         CREATE OBJECT result TYPE zcl_lnt_object_naming_conf.
       WHEN `ZCL_LNT_OBJECT_ORIENTED`.
         DATA t586 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t586.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t587 TYPE REF TO object.
-        CLEAR t587.
         READ TABLE p1->items INDEX 1 INTO t587.
         t586 ?= t587.
         DATA t588 TYPE REF TO zcl_lnt_current_scope.
-        CLEAR t588.
         IF t586 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -12801,16 +11441,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_object_oriented EXPORTING i_scope = t588.
       WHEN `ZCL_LNT_OBJECT_REFERENCE_TYPE`.
         DATA t826 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t826.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t827 TYPE REF TO object.
-        CLEAR t827.
         READ TABLE p1->items INDEX 1 INTO t827.
         t826 ?= t827.
         DATA t828 TYPE REF TO zcl_lnt_fi_identifier.
-        CLEAR t828.
         IF t826 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -12818,16 +11455,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t829 = t826->as_ref( ).
         t828 ?= t829.
         DATA t830 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t830.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t831 TYPE REF TO object.
-        CLEAR t831.
         READ TABLE p1->items INDEX 2 INTO t831.
         t830 ?= t831.
         DATA t832 TYPE REF TO zcl_lnt_abstract_type_data.
-        CLEAR t832.
         IF t830 IS BOUND.
           IF t830 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -12843,36 +11477,28 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_obsolete_statement.
       WHEN `ZCL_LNT_OB_CDS_TYPE`.
         DATA t1333 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1333.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1334 TYPE REF TO object.
-        CLEAR t1334.
         READ TABLE p1->items INDEX 1 INTO t1334.
         t1333 ?= t1334.
-        DATA(t1335) = VALUE string( ).
         IF t1333 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1335 = t1333->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_ob_cds_type EXPORTING i_name = t1335.
+        CREATE OBJECT result TYPE zcl_lnt_ob_cds_type EXPORTING i_name = t1333->as_string( ).
       WHEN `ZCL_LNT_OB_DATA_DEFINITION`.
         DATA t1381 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1381.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1382 TYPE REF TO object.
-        CLEAR t1382.
         READ TABLE p1->items INDEX 1 INTO t1382.
         t1381 ?= t1382.
-        DATA(t1383) = VALUE string( ).
         IF t1381 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1383 = t1381->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_ob_data_definition EXPORTING i_name = t1383.
+        CREATE OBJECT result TYPE zcl_lnt_ob_data_definition EXPORTING i_name = t1381->as_string( ).
       WHEN `ZCL_LNT_OB_INDEX_MODULE`.
         IF zcl_lnt_ob_index_module=>zlnt_builtin_init_7d9865c72425 = abap_false.
           zcl_lnt_ob_index_module=>zlnt_builtin_init_38a35685e8ab( ).
@@ -12880,100 +11506,76 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_ob_index_module.
       WHEN `ZCL_LNT_OB_INTERFACE`.
         DATA t1534 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1534.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1535 TYPE REF TO object.
-        CLEAR t1535.
         READ TABLE p1->items INDEX 1 INTO t1535.
         t1534 ?= t1535.
-        DATA(t1536) = VALUE string( ).
         IF t1534 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1536 = t1534->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_ob_interface EXPORTING i_name = t1536.
+        CREATE OBJECT result TYPE zcl_lnt_ob_interface EXPORTING i_name = t1534->as_string( ).
       WHEN `ZCL_LNT_OB_MESSAGE_CLASS`.
         DATA t1546 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1546.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1547 TYPE REF TO object.
-        CLEAR t1547.
         READ TABLE p1->items INDEX 1 INTO t1547.
         t1546 ?= t1547.
-        DATA(t1548) = VALUE string( ).
         IF t1546 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1548 = t1546->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_ob_message_class EXPORTING i_name = t1548.
+        CREATE OBJECT result TYPE zcl_lnt_ob_message_class EXPORTING i_name = t1546->as_string( ).
       WHEN `ZCL_LNT_OB_PARAMETER`.
         DATA t1648 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1648.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1649 TYPE REF TO object.
-        CLEAR t1649.
         READ TABLE p1->items INDEX 1 INTO t1649.
         t1648 ?= t1649.
-        DATA(t1650) = VALUE string( ).
         IF t1648 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1650 = t1648->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_ob_parameter EXPORTING i_name = t1650.
+        CREATE OBJECT result TYPE zcl_lnt_ob_parameter EXPORTING i_name = t1648->as_string( ).
       WHEN `ZCL_LNT_OB_PROGRAM`.
         DATA t1654 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1654.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1655 TYPE REF TO object.
-        CLEAR t1655.
         READ TABLE p1->items INDEX 1 INTO t1655.
         t1654 ?= t1655.
-        DATA(t1656) = VALUE string( ).
         IF t1654 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1656 = t1654->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_ob_program EXPORTING i_name = t1656.
+        CREATE OBJECT result TYPE zcl_lnt_ob_program EXPORTING i_name = t1654->as_string( ).
       WHEN `ZCL_LNT_OB_TABLE_TYPE`.
         DATA t1797 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1797.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1798 TYPE REF TO object.
-        CLEAR t1798.
         READ TABLE p1->items INDEX 1 INTO t1798.
         t1797 ?= t1798.
-        DATA(t1799) = VALUE string( ).
         IF t1797 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1799 = t1797->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_ob_table_type EXPORTING i_name = t1799.
+        CREATE OBJECT result TYPE zcl_lnt_ob_table_type EXPORTING i_name = t1797->as_string( ).
       WHEN `ZCL_LNT_OB_TYPE_POOL`.
         DATA t1812 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1812.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1813 TYPE REF TO object.
-        CLEAR t1813.
         READ TABLE p1->items INDEX 1 INTO t1813.
         t1812 ?= t1813.
-        DATA(t1814) = VALUE string( ).
         IF t1812 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1814 = t1812->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_ob_type_pool EXPORTING i_name = t1814.
+        CREATE OBJECT result TYPE zcl_lnt_ob_type_pool EXPORTING i_name = t1812->as_string( ).
       WHEN `ZCL_LNT_OLE_EXPORTING`.
         CREATE OBJECT result TYPE zcl_lnt_ole_exporting.
       WHEN `ZCL_LNT_OMIT_PARAMETER_NAME`.
@@ -12990,16 +11592,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_omt_prmtr_nm_cnf.
       WHEN `ZCL_LNT_OPTIONAL_PRIORITY`.
         DATA t417 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t417.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t418 TYPE REF TO object.
-        CLEAR t418.
         READ TABLE p1->items INDEX 1 INTO t418.
         t417 ?= t418.
         DATA t419 TYPE REF TO zif_lnt_statement_runnable.
-        CLEAR t419.
         IF t417 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -13009,12 +11608,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_optional_priority EXPORTING i_optional = t419.
       WHEN `ZCL_LNT_OPT_VRSN_TXT_DCMN_IDNT`.
         DATA t2233 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2233.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2234 TYPE REF TO object.
-        CLEAR t2234.
         READ TABLE p1->items INDEX 1 INTO t2234.
         t2233 ?= t2234.
         DATA(t2235) = VALUE string( ).
@@ -13023,76 +11620,59 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t2235 = t2233->as_string( ).
         DATA t2236 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2236.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2237 TYPE REF TO object.
-        CLEAR t2237.
         READ TABLE p1->items INDEX 2 INTO t2237.
         t2236 ?= t2237.
-        DATA(t2238) = t2236.
-        CREATE OBJECT result TYPE zcl_lnt_opt_vrsn_txt_dcmn_idnt EXPORTING i_uri = t2235 i_version = t2238.
+        CREATE OBJECT result TYPE zcl_lnt_opt_vrsn_txt_dcmn_idnt EXPORTING i_uri = t2235 i_version = t2236.
       WHEN `ZCL_LNT_OR`.
         CREATE OBJECT result TYPE zcl_lnt_or.
       WHEN `ZCL_LNT_OUTBOUND_SERVICE`.
         DATA t1636 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1636.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1637 TYPE REF TO object.
-        CLEAR t1637.
         READ TABLE p1->items INDEX 1 INTO t1637.
         t1636 ?= t1637.
-        DATA(t1638) = VALUE string( ).
         IF t1636 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1638 = t1636->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_outbound_service EXPORTING i_name = t1638.
+        CREATE OBJECT result TYPE zcl_lnt_outbound_service EXPORTING i_name = t1636->as_string( ).
       WHEN `ZCL_LNT_OVERLAY`.
         CREATE OBJECT result TYPE zcl_lnt_overlay.
       WHEN `ZCL_LNT_PACKAGE`.
         DATA t1639 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1639.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1640 TYPE REF TO object.
-        CLEAR t1640.
         READ TABLE p1->items INDEX 1 INTO t1640.
         t1639 ?= t1640.
-        DATA(t1641) = VALUE string( ).
         IF t1639 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1641 = t1639->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_package EXPORTING i_name = t1641.
+        CREATE OBJECT result TYPE zcl_lnt_package EXPORTING i_name = t1639->as_string( ).
       WHEN `ZCL_LNT_PACKAGE_INTERFACE`.
         DATA t1642 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1642.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1643 TYPE REF TO object.
-        CLEAR t1643.
         READ TABLE p1->items INDEX 1 INTO t1643.
         t1642 ?= t1643.
-        DATA(t1644) = VALUE string( ).
         IF t1642 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1644 = t1642->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_package_interface EXPORTING i_name = t1644.
+        CREATE OBJECT result TYPE zcl_lnt_package_interface EXPORTING i_name = t1642->as_string( ).
       WHEN `ZCL_LNT_PACKED_TYPE`.
         DATA t834 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t834.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t835 TYPE REF TO object.
-        CLEAR t835.
         READ TABLE p1->items INDEX 1 INTO t835.
         t834 ?= t835.
         DATA(t836) = VALUE f( ).
@@ -13101,12 +11681,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t836 = t834->as_number( ).
         DATA t837 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t837.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t838 TYPE REF TO object.
-        CLEAR t838.
         READ TABLE p1->items INDEX 2 INTO t838.
         t837 ?= t838.
         DATA(t839) = VALUE f( ).
@@ -13115,16 +11693,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t839 = t837->as_number( ).
         DATA t840 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t840.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t841 TYPE REF TO object.
-        CLEAR t841.
         READ TABLE p1->items INDEX 3 INTO t841.
         t840 ?= t841.
         DATA t842 TYPE REF TO zcl_lnt_abstract_type_data.
-        CLEAR t842.
         IF t840 IS BOUND.
           IF t840 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -13136,20 +11711,16 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_packed_type EXPORTING i_length = t836 i_decimals_2eed = t839 i_extra = t842.
       WHEN `ZCL_LNT_PAGE_FORMAT`.
         DATA t1645 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1645.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1646 TYPE REF TO object.
-        CLEAR t1646.
         READ TABLE p1->items INDEX 1 INTO t1646.
         t1645 ?= t1646.
-        DATA(t1647) = VALUE string( ).
         IF t1645 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1647 = t1645->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_page_format EXPORTING i_name = t1647.
+        CREATE OBJECT result TYPE zcl_lnt_page_format EXPORTING i_name = t1645->as_string( ).
       WHEN `ZCL_LNT_PARAMETER_EXCEPTION`.
         CREATE OBJECT result TYPE zcl_lnt_parameter_exception.
       WHEN `ZCL_LNT_PARAMETER_LIST_S`.
@@ -13164,16 +11735,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_parameter_t.
       WHEN `ZCL_LNT_PAREN_LEFT`.
         DATA t152 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t152.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t153 TYPE REF TO object.
-        CLEAR t153.
         READ TABLE p1->items INDEX 1 INTO t153.
         t152 ?= t153.
         DATA t154 TYPE REF TO zcl_lnt_position.
-        CLEAR t154.
         IF t152 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -13181,32 +11749,25 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t155 = t152->as_ref( ).
         t154 ?= t155.
         DATA t156 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t156.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t157 TYPE REF TO object.
-        CLEAR t157.
         READ TABLE p1->items INDEX 2 INTO t157.
         t156 ?= t157.
-        DATA(t158) = VALUE string( ).
         IF t156 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t158 = t156->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_paren_left EXPORTING i_start = t154 i_str = t158.
+        CREATE OBJECT result TYPE zcl_lnt_paren_left EXPORTING i_start = t154 i_str = t156->as_string( ).
       WHEN `ZCL_LNT_PAREN_LEFT_W`.
         DATA t159 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t159.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t160 TYPE REF TO object.
-        CLEAR t160.
         READ TABLE p1->items INDEX 1 INTO t160.
         t159 ?= t160.
         DATA t161 TYPE REF TO zcl_lnt_position.
-        CLEAR t161.
         IF t159 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -13214,20 +11775,16 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t162 = t159->as_ref( ).
         t161 ?= t162.
         DATA t163 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t163.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t164 TYPE REF TO object.
-        CLEAR t164.
         READ TABLE p1->items INDEX 2 INTO t164.
         t163 ?= t164.
-        DATA(t165) = VALUE string( ).
         IF t163 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t165 = t163->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_paren_left_w EXPORTING i_start = t161 i_str = t165.
+        CREATE OBJECT result TYPE zcl_lnt_paren_left_w EXPORTING i_start = t161 i_str = t163->as_string( ).
       WHEN OTHERS.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDCASE.
@@ -13245,16 +11802,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
     CASE class_name.
       WHEN `ZCL_LNT_PAREN_RIGHT`.
         DATA t166 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t166.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t167 TYPE REF TO object.
-        CLEAR t167.
         READ TABLE p1->items INDEX 1 INTO t167.
         t166 ?= t167.
         DATA t168 TYPE REF TO zcl_lnt_position.
-        CLEAR t168.
         IF t166 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -13262,32 +11816,25 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t169 = t166->as_ref( ).
         t168 ?= t169.
         DATA t170 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t170.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t171 TYPE REF TO object.
-        CLEAR t171.
         READ TABLE p1->items INDEX 2 INTO t171.
         t170 ?= t171.
-        DATA(t172) = VALUE string( ).
         IF t170 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t172 = t170->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_paren_right EXPORTING i_start = t168 i_str = t172.
+        CREATE OBJECT result TYPE zcl_lnt_paren_right EXPORTING i_start = t168 i_str = t170->as_string( ).
       WHEN `ZCL_LNT_PAREN_RIGHT_W`.
         DATA t173 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t173.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t174 TYPE REF TO object.
-        CLEAR t174.
         READ TABLE p1->items INDEX 1 INTO t174.
         t173 ?= t174.
         DATA t175 TYPE REF TO zcl_lnt_position.
-        CLEAR t175.
         IF t173 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -13295,20 +11842,16 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t176 = t173->as_ref( ).
         t175 ?= t176.
         DATA t177 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t177.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t178 TYPE REF TO object.
-        CLEAR t178.
         READ TABLE p1->items INDEX 2 INTO t178.
         t177 ?= t178.
-        DATA(t179) = VALUE string( ).
         IF t177 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t179 = t177->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_paren_right_w EXPORTING i_start = t175 i_str = t179.
+        CREATE OBJECT result TYPE zcl_lnt_paren_right_w EXPORTING i_start = t175 i_str = t177->as_string( ).
       WHEN `ZCL_LNT_PARSED_DATA_DEFINITION`.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
       WHEN `ZCL_LNT_PARSED_MESSAGE_CLASS`.
@@ -13339,32 +11882,25 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
       WHEN `ZCL_LNT_PERSONALIZATION_OBJECT`.
         DATA t1651 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1651.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1652 TYPE REF TO object.
-        CLEAR t1652.
         READ TABLE p1->items INDEX 1 INTO t1652.
         t1651 ?= t1652.
-        DATA(t1653) = VALUE string( ).
         IF t1651 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1653 = t1651->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_personalization_object EXPORTING i_name = t1653.
+        CREATE OBJECT result TYPE zcl_lnt_personalization_object EXPORTING i_name = t1651->as_string( ).
       WHEN `ZCL_LNT_PLUS_PRIORITY`.
         DATA t437 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t437.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t438 TYPE REF TO object.
-        CLEAR t438.
         READ TABLE p1->items INDEX 1 INTO t438.
         t437 ?= t438.
         DATA t439 TYPE REF TO zif_lnt_statement_runnable.
-        CLEAR t439.
         IF t437 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -13374,16 +11910,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_plus_priority EXPORTING i_plu = t439.
       WHEN `ZCL_LNT_PLUS_W`.
         DATA t187 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t187.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t188 TYPE REF TO object.
-        CLEAR t188.
         READ TABLE p1->items INDEX 1 INTO t188.
         t187 ?= t188.
         DATA t189 TYPE REF TO zcl_lnt_position.
-        CLEAR t189.
         IF t187 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -13391,28 +11924,22 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t190 = t187->as_ref( ).
         t189 ?= t190.
         DATA t191 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t191.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t192 TYPE REF TO object.
-        CLEAR t192.
         READ TABLE p1->items INDEX 2 INTO t192.
         t191 ?= t192.
-        DATA(t193) = VALUE string( ).
         IF t191 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t193 = t191->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_plus_w EXPORTING i_start = t189 i_str = t193.
+        CREATE OBJECT result TYPE zcl_lnt_plus_w EXPORTING i_start = t189 i_str = t191->as_string( ).
       WHEN `ZCL_LNT_POSITION`.
         DATA t1842 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1842.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1843 TYPE REF TO object.
-        CLEAR t1843.
         READ TABLE p1->items INDEX 1 INTO t1843.
         t1842 ?= t1843.
         DATA(t1844) = VALUE f( ).
@@ -13421,16 +11948,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t1844 = t1842->as_number( ).
         DATA t1845 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1845.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1846 TYPE REF TO object.
-        CLEAR t1846.
         READ TABLE p1->items INDEX 2 INTO t1846.
         t1845 ?= t1846.
         DATA t1847 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
-        CLEAR t1847.
         IF t1845 IS BOUND.
           t1847 = NEW #( ).
           t1847->has = abap_true.
@@ -13442,16 +11966,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_position EXPORTING i_row = t1844 i_col = t1847.
       WHEN `ZCL_LNT_PRAGMA`.
         DATA t194 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t194.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t195 TYPE REF TO object.
-        CLEAR t195.
         READ TABLE p1->items INDEX 1 INTO t195.
         t194 ?= t195.
         DATA t196 TYPE REF TO zcl_lnt_position.
-        CLEAR t196.
         IF t194 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -13459,20 +11980,16 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t197 = t194->as_ref( ).
         t196 ?= t197.
         DATA t198 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t198.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t199 TYPE REF TO object.
-        CLEAR t199.
         READ TABLE p1->items INDEX 2 INTO t199.
         t198 ?= t199.
-        DATA(t200) = VALUE string( ).
         IF t198 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t200 = t198->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_pragma EXPORTING i_start = t196 i_str = t200.
+        CREATE OBJECT result TYPE zcl_lnt_pragma EXPORTING i_start = t196 i_str = t198->as_string( ).
       WHEN `ZCL_LNT_PRAGMA_STYLE`.
         CREATE OBJECT result TYPE zcl_lnt_pragma_style.
       WHEN `ZCL_LNT_PRAGMA_STYLE_CONF`.
@@ -13501,16 +12018,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_prefer_xsdbool_conf.
       WHEN `ZCL_LNT_PRETTY_PRINTER`.
         DATA t1868 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1868.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1869 TYPE REF TO object.
-        CLEAR t1869.
         READ TABLE p1->items INDEX 1 INTO t1869.
         t1868 ?= t1869.
         DATA t1870 TYPE REF TO zcl_lnt_abap_file.
-        CLEAR t1870.
         IF t1868 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -13518,16 +12032,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t1871 = t1868->as_ref( ).
         t1870 ?= t1871.
         DATA t1872 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1872.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1873 TYPE REF TO object.
-        CLEAR t1873.
         READ TABLE p1->items INDEX 2 INTO t1873.
         t1872 ?= t1873.
         DATA t1874 TYPE REF TO zif_lnt_configuration.
-        CLEAR t1874.
         IF t1872 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -13572,16 +12083,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_prmtr_lst_excptns.
       WHEN `ZCL_LNT_PROCEDURAL`.
         DATA t590 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t590.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t591 TYPE REF TO object.
-        CLEAR t591.
         READ TABLE p1->items INDEX 1 INTO t591.
         t590 ?= t591.
         DATA t592 TYPE REF TO zif_lnt_registry.
-        CLEAR t592.
         IF t590 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -13589,16 +12097,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t593 = t590->as_ref( ).
         t592 ?= t593.
         DATA t594 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t594.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t595 TYPE REF TO object.
-        CLEAR t595.
         READ TABLE p1->items INDEX 2 INTO t595.
         t594 ?= t595.
         DATA t596 TYPE REF TO zcl_lnt_current_scope.
-        CLEAR t596.
         IF t594 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -13614,16 +12119,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_provide_field_name.
       WHEN `ZCL_LNT_PROXY_DATA_ITEM`.
         DATA t1657 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1657.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1658 TYPE REF TO object.
-        CLEAR t1658.
         READ TABLE p1->items INDEX 1 INTO t1658.
         t1657 ?= t1658.
         DATA t1659 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t1659.
         IF t1657 IS BOUND.
           t1659 = NEW #( ).
           t1659->has = abap_true.
@@ -13633,16 +12135,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t1659->value = t1657->as_string( ).
         ENDIF.
         DATA t1660 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1660.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1661 TYPE REF TO object.
-        CLEAR t1661.
         READ TABLE p1->items INDEX 2 INTO t1661.
         t1660 ?= t1661.
         DATA t1662 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t1662.
         IF t1660 IS BOUND.
           t1662 = NEW #( ).
           t1662->has = abap_true.
@@ -13652,16 +12151,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t1662->value = t1660->as_string( ).
         ENDIF.
         DATA t1663 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1663.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1664 TYPE REF TO object.
-        CLEAR t1664.
         READ TABLE p1->items INDEX 3 INTO t1664.
         t1663 ?= t1664.
         DATA t1665 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t1665.
         IF t1663 IS BOUND.
           t1665 = NEW #( ).
           t1665->has = abap_true.
@@ -13671,16 +12167,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t1665->value = t1663->as_string( ).
         ENDIF.
         DATA t1666 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1666.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1667 TYPE REF TO object.
-        CLEAR t1667.
         READ TABLE p1->items INDEX 4 INTO t1667.
         t1666 ?= t1667.
         DATA t1668 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t1668.
         IF t1666 IS BOUND.
           t1668 = NEW #( ).
           t1668->has = abap_true.
@@ -13690,16 +12183,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t1668->value = t1666->as_string( ).
         ENDIF.
         DATA t1669 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1669.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1670 TYPE REF TO object.
-        CLEAR t1670.
         READ TABLE p1->items INDEX 5 INTO t1670.
         t1669 ?= t1670.
         DATA t1671 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t1671.
         IF t1669 IS BOUND.
           t1671 = NEW #( ).
           t1671->has = abap_true.
@@ -13709,16 +12199,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t1671->value = t1669->as_string( ).
         ENDIF.
         DATA t1672 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1672.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1673 TYPE REF TO object.
-        CLEAR t1673.
         READ TABLE p1->items INDEX 6 INTO t1673.
         t1672 ?= t1673.
         DATA t1674 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t1674.
         IF t1672 IS BOUND.
           t1674 = NEW #( ).
           t1674->has = abap_true.
@@ -13728,16 +12215,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t1674->value = t1672->as_string( ).
         ENDIF.
         DATA t1675 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1675.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1676 TYPE REF TO object.
-        CLEAR t1676.
         READ TABLE p1->items INDEX 7 INTO t1676.
         t1675 ?= t1676.
         DATA t1677 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t1677.
         IF t1675 IS BOUND.
           t1677 = NEW #( ).
           t1677->has = abap_true.
@@ -13747,16 +12231,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t1677->value = t1675->as_string( ).
         ENDIF.
         DATA t1678 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1678.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1679 TYPE REF TO object.
-        CLEAR t1679.
         READ TABLE p1->items INDEX 8 INTO t1679.
         t1678 ?= t1679.
         DATA t1680 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t1680.
         IF t1678 IS BOUND.
           t1680 = NEW #( ).
           t1680->has = abap_true.
@@ -13766,16 +12247,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t1680->value = t1678->as_string( ).
         ENDIF.
         DATA t1681 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1681.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1682 TYPE REF TO object.
-        CLEAR t1682.
         READ TABLE p1->items INDEX 9 INTO t1682.
         t1681 ?= t1682.
         DATA t1683 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t1683.
         IF t1681 IS BOUND.
           t1683 = NEW #( ).
           t1683->has = abap_true.
@@ -13785,16 +12263,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t1683->value = t1681->as_string( ).
         ENDIF.
         DATA t1684 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1684.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1685 TYPE REF TO object.
-        CLEAR t1685.
         READ TABLE p1->items INDEX 10 INTO t1685.
         t1684 ?= t1685.
         DATA t1686 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t1686.
         IF t1684 IS BOUND.
           t1686 = NEW #( ).
           t1686->has = abap_true.
@@ -13804,16 +12279,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t1686->value = t1684->as_string( ).
         ENDIF.
         DATA t1687 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1687.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1688 TYPE REF TO object.
-        CLEAR t1688.
         READ TABLE p1->items INDEX 11 INTO t1688.
         t1687 ?= t1688.
         DATA t1689 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t1689.
         IF t1687 IS BOUND.
           t1689 = NEW #( ).
           t1689->has = abap_true.
@@ -13823,16 +12295,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t1689->value = t1687->as_string( ).
         ENDIF.
         DATA t1690 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1690.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1691 TYPE REF TO object.
-        CLEAR t1691.
         READ TABLE p1->items INDEX 12 INTO t1691.
         t1690 ?= t1691.
         DATA t1692 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t1692.
         IF t1690 IS BOUND.
           t1692 = NEW #( ).
           t1692->has = abap_true.
@@ -13842,16 +12311,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t1692->value = t1690->as_string( ).
         ENDIF.
         DATA t1693 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1693.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1694 TYPE REF TO object.
-        CLEAR t1694.
         READ TABLE p1->items INDEX 13 INTO t1694.
         t1693 ?= t1694.
         DATA t1695 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t1695.
         IF t1693 IS BOUND.
           t1695 = NEW #( ).
           t1695->has = abap_true.
@@ -13864,36 +12330,29 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t1683 i_r3_name = t1686 i_r3_text = t1689 i_ifr_type = t1692 i_ifr_name = t1695.
       WHEN `ZCL_LNT_PROXY_OBJECT`.
         DATA t1696 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1696.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1697 TYPE REF TO object.
-        CLEAR t1697.
         READ TABLE p1->items INDEX 1 INTO t1697.
         t1696 ?= t1697.
-        DATA(t1698) = VALUE string( ).
         IF t1696 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1698 = t1696->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_proxy_object EXPORTING i_name = t1698.
+        CREATE OBJECT result TYPE zcl_lnt_proxy_object EXPORTING i_name = t1696->as_string( ).
       WHEN `ZCL_LNT_PRSD_BHVR_DFNTN`.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
       WHEN `ZCL_LNT_PRSD_FL_INFRMTN`.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
       WHEN `ZCL_LNT_PRSD_MTDT_EXTNSN`.
         DATA t2487 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2487.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2488 TYPE REF TO object.
-        CLEAR t2488.
         READ TABLE p1->items INDEX 1 INTO t2488.
         t2487 ?= t2488.
         DATA t2489 TYPE REF TO zcl_lnt_expression_node.
-        CLEAR t2489.
         IF t2487 IS BOUND.
           IF t2487 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -13922,16 +12381,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_public_section.
       WHEN `ZCL_LNT_PUNCTUATION`.
         DATA t201 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t201.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t202 TYPE REF TO object.
-        CLEAR t202.
         READ TABLE p1->items INDEX 1 INTO t202.
         t201 ?= t202.
         DATA t203 TYPE REF TO zcl_lnt_position.
-        CLEAR t203.
         IF t201 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -13939,36 +12395,28 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t204 = t201->as_ref( ).
         t203 ?= t204.
         DATA t205 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t205.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t206 TYPE REF TO object.
-        CLEAR t206.
         READ TABLE p1->items INDEX 2 INTO t206.
         t205 ?= t206.
-        DATA(t207) = VALUE string( ).
         IF t205 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t207 = t205->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_punctuation EXPORTING i_start = t203 i_str = t207.
+        CREATE OBJECT result TYPE zcl_lnt_punctuation EXPORTING i_start = t203 i_str = t205->as_string( ).
       WHEN `ZCL_LNT_PUSH_CHANNEL`.
         DATA t1699 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1699.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1700 TYPE REF TO object.
-        CLEAR t1700.
         READ TABLE p1->items INDEX 1 INTO t1700.
         t1699 ?= t1700.
-        DATA(t1701) = VALUE string( ).
         IF t1699 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1701 = t1699->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_push_channel EXPORTING i_name = t1701.
+        CREATE OBJECT result TYPE zcl_lnt_push_channel EXPORTING i_name = t1699->as_string( ).
       WHEN `ZCL_LNT_PUT`.
         CREATE OBJECT result TYPE zcl_lnt_put.
       WHEN `ZCL_LNT_P_GENERIC_TYPE`.
@@ -13978,36 +12426,29 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_p_generic_type.
       WHEN `ZCL_LNT_QUERY_USER_GROUP`.
         DATA t1702 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1702.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1703 TYPE REF TO object.
-        CLEAR t1703.
         READ TABLE p1->items INDEX 1 INTO t1703.
         t1702 ?= t1703.
-        DATA(t1704) = VALUE string( ).
         IF t1702 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1704 = t1702->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_query_user_group EXPORTING i_name = t1704.
+        CREATE OBJECT result TYPE zcl_lnt_query_user_group EXPORTING i_name = t1702->as_string( ).
       WHEN `ZCL_LNT_RADIO_GROUP_NAME`.
         CREATE OBJECT result TYPE zcl_lnt_radio_group_name.
       WHEN `ZCL_LNT_RAISE_ENTITY_EVENT`.
         CREATE OBJECT result TYPE zcl_lnt_raise_entity_event.
       WHEN `ZCL_LNT_RANGE`.
         DATA t2070 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2070.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2071 TYPE REF TO object.
-        CLEAR t2071.
         READ TABLE p1->items INDEX 1 INTO t2071.
         t2070 ?= t2071.
         DATA t2072 TYPE REF TO zcl_lnt_no_position.
-        CLEAR t2072.
         IF t2070 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -14015,16 +12456,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t2073 = t2070->as_ref( ).
         t2072 ?= t2073.
         DATA t2074 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2074.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2075 TYPE REF TO object.
-        CLEAR t2075.
         READ TABLE p1->items INDEX 2 INTO t2075.
         t2074 ?= t2075.
         DATA t2076 TYPE REF TO zcl_lnt_no_position.
-        CLEAR t2076.
         IF t2074 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -14048,12 +12486,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_receive_parameters.
       WHEN `ZCL_LNT_RECOMMENDATIONS`.
         DATA t2737 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2737.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2738 TYPE REF TO object.
-        CLEAR t2738.
         READ TABLE p1->items INDEX 1 INTO t2738.
         t2737 ?= t2738.
         DATA(t2739) = VALUE string( ).
@@ -14062,12 +12498,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t2739 = t2737->as_string( ).
         DATA t2740 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2740.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2741 TYPE REF TO object.
-        CLEAR t2741.
         READ TABLE p1->items INDEX 2 INTO t2741.
         t2740 ?= t2741.
         DATA(t2742) = VALUE string( ).
@@ -14076,16 +12510,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t2742 = t2740->as_string( ).
         DATA t2743 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2743.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2744 TYPE REF TO object.
-        CLEAR t2744.
         READ TABLE p1->items INDEX 3 INTO t2744.
         t2743 ?= t2744.
         DATA t2745 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t2745.
         IF t2743 IS BOUND.
           t2745 = NEW #( ).
           t2745->has = abap_true.
@@ -14103,16 +12534,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_redundant_conversion.
       WHEN `ZCL_LNT_REFERENCES`.
         DATA t1191 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1191.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1192 TYPE REF TO object.
-        CLEAR t1192.
         READ TABLE p1->items INDEX 1 INTO t1192.
         t1191 ?= t1192.
         DATA t1193 TYPE REF TO zif_lnt_registry.
-        CLEAR t1193.
         IF t1191 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -14131,16 +12559,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
       WHEN `ZCL_LNT_REGISTRY`.
         DATA t1876 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1876.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1877 TYPE REF TO object.
-        CLEAR t1877.
         READ TABLE p1->items INDEX 1 INTO t1877.
         t1876 ?= t1877.
         DATA t1878 TYPE REF TO zif_lnt_configuration.
-        CLEAR t1878.
         IF t1876 IS BOUND.
           IF t1876 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -14162,16 +12587,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_remove_descriptions.
       WHEN `ZCL_LNT_RENAME`.
         DATA t1209 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1209.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1210 TYPE REF TO object.
-        CLEAR t1210.
         READ TABLE p1->items INDEX 1 INTO t1210.
         t1209 ?= t1210.
         DATA t1211 TYPE REF TO zif_lnt_registry.
-        CLEAR t1211.
         IF t1209 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -14181,16 +12603,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_rename EXPORTING i_reg_f149 = t1211.
       WHEN `ZCL_LNT_RENAMER`.
         DATA t1741 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1741.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1742 TYPE REF TO object.
-        CLEAR t1742.
         READ TABLE p1->items INDEX 1 INTO t1742.
         t1741 ?= t1742.
         DATA t1743 TYPE REF TO zif_lnt_registry.
-        CLEAR t1743.
         IF t1741 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -14207,16 +12626,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
     CASE class_name.
       WHEN `ZCL_LNT_RENAMER_HELPER`.
         DATA t1745 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1745.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1746 TYPE REF TO object.
-        CLEAR t1746.
         READ TABLE p1->items INDEX 1 INTO t1746.
         t1745 ?= t1746.
         DATA t1747 TYPE REF TO zif_lnt_registry.
-        CLEAR t1747.
         IF t1745 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -14226,16 +12642,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_renamer_helper EXPORTING i_reg_f149 = t1747.
       WHEN `ZCL_LNT_RENAME_DATA_ELEMENT`.
         DATA t1705 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1705.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1706 TYPE REF TO object.
-        CLEAR t1706.
         READ TABLE p1->items INDEX 1 INTO t1706.
         t1705 ?= t1706.
         DATA t1707 TYPE REF TO zif_lnt_registry.
-        CLEAR t1707.
         IF t1705 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -14245,16 +12658,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_rename_data_element EXPORTING i_reg_f149 = t1707.
       WHEN `ZCL_LNT_RENAME_DOMAIN`.
         DATA t1709 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1709.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1710 TYPE REF TO object.
-        CLEAR t1710.
         READ TABLE p1->items INDEX 1 INTO t1710.
         t1709 ?= t1710.
         DATA t1711 TYPE REF TO zif_lnt_registry.
-        CLEAR t1711.
         IF t1709 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -14264,16 +12674,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_rename_domain EXPORTING i_reg_f149 = t1711.
       WHEN `ZCL_LNT_RENAME_FILE`.
         DATA t2205 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2205.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2206 TYPE REF TO object.
-        CLEAR t2206.
         READ TABLE p1->items INDEX 1 INTO t2206.
         t2205 ?= t2206.
         DATA t2207 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t2207.
         IF t2205 IS BOUND.
           t2207 = NEW #( ).
           t2207->has = abap_true.
@@ -14283,12 +12690,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2207->value = t2205->as_string( ).
         ENDIF.
         DATA t2208 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2208.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2209 TYPE REF TO object.
-        CLEAR t2209.
         READ TABLE p1->items INDEX 2 INTO t2209.
         t2208 ?= t2209.
         DATA(t2210) = VALUE string( ).
@@ -14297,12 +12702,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t2210 = t2208->as_string( ).
         DATA t2211 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2211.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2212 TYPE REF TO object.
-        CLEAR t2212.
         READ TABLE p1->items INDEX 3 INTO t2212.
         t2211 ?= t2212.
         DATA(t2213) = VALUE string( ).
@@ -14311,12 +12714,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t2213 = t2211->as_string( ).
         DATA t2214 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2214.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2215 TYPE REF TO object.
-        CLEAR t2215.
         READ TABLE p1->items INDEX 4 INTO t2215.
         t2214 ?= t2215.
         DATA(t2216) = VALUE string( ).
@@ -14325,16 +12726,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t2216 = t2214->as_string( ).
         DATA t2217 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2217.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2218 TYPE REF TO object.
-        CLEAR t2218.
         READ TABLE p1->items INDEX 5 INTO t2218.
         t2217 ?= t2218.
         DATA t2219 TYPE REF TO zcl_lnt_rename_file_options.
-        CLEAR t2219.
         IF t2217 IS BOUND.
           IF t2217 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -14346,16 +12744,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_rename_file EXPORTING i_annotation_id = t2207 i_kind = t2210 i_old_uri = t2213 i_new_uri = t2216 i_options = t2219.
       WHEN `ZCL_LNT_RENAME_FILE_OPTIONS`.
         DATA t2227 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2227.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2228 TYPE REF TO object.
-        CLEAR t2228.
         READ TABLE p1->items INDEX 1 INTO t2228.
         t2227 ?= t2228.
         DATA t2229 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-        CLEAR t2229.
         IF t2227 IS BOUND.
           t2229 = NEW #( ).
           t2229->has = abap_true.
@@ -14365,16 +12760,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2229->value = t2227->as_boolean( ).
         ENDIF.
         DATA t2230 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2230.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2231 TYPE REF TO object.
-        CLEAR t2231.
         READ TABLE p1->items INDEX 2 INTO t2231.
         t2230 ?= t2231.
         DATA t2232 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-        CLEAR t2232.
         IF t2230 IS BOUND.
           t2232 = NEW #( ).
           t2232->has = abap_true.
@@ -14386,16 +12778,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_rename_file_options EXPORTING i_overwrite = t2229 i_ignore_if_exists = t2232.
       WHEN `ZCL_LNT_RENAME_GLOBAL_CLASS`.
         DATA t1713 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1713.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1714 TYPE REF TO object.
-        CLEAR t1714.
         READ TABLE p1->items INDEX 1 INTO t1714.
         t1713 ?= t1714.
         DATA t1715 TYPE REF TO zif_lnt_registry.
-        CLEAR t1715.
         IF t1713 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -14405,16 +12794,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_rename_global_class EXPORTING i_reg_f149 = t1715.
       WHEN `ZCL_LNT_RENAME_ICF_SERVICE`.
         DATA t1721 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1721.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1722 TYPE REF TO object.
-        CLEAR t1722.
         READ TABLE p1->items INDEX 1 INTO t1722.
         t1721 ?= t1722.
         DATA t1723 TYPE REF TO zif_lnt_registry.
-        CLEAR t1723.
         IF t1721 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -14424,16 +12810,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_rename_icf_service EXPORTING i_reg_f149 = t1723.
       WHEN `ZCL_LNT_RENAME_MESSAGE_CLASS`.
         DATA t1725 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1725.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1726 TYPE REF TO object.
-        CLEAR t1726.
         READ TABLE p1->items INDEX 1 INTO t1726.
         t1725 ?= t1726.
         DATA t1727 TYPE REF TO zif_lnt_registry.
-        CLEAR t1727.
         IF t1725 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -14448,16 +12831,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_rename_module.
       WHEN `ZCL_LNT_RENAME_PROGRAM`.
         DATA t1729 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1729.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1730 TYPE REF TO object.
-        CLEAR t1730.
         READ TABLE p1->items INDEX 1 INTO t1730.
         t1729 ?= t1730.
         DATA t1731 TYPE REF TO zif_lnt_registry.
-        CLEAR t1731.
         IF t1729 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -14467,16 +12847,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_rename_program EXPORTING i_reg_f149 = t1731.
       WHEN `ZCL_LNT_RENAME_TABLE`.
         DATA t1733 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1733.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1734 TYPE REF TO object.
-        CLEAR t1734.
         READ TABLE p1->items INDEX 1 INTO t1734.
         t1733 ?= t1734.
         DATA t1735 TYPE REF TO zif_lnt_registry.
-        CLEAR t1735.
         IF t1733 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -14486,16 +12863,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_rename_table EXPORTING i_reg_f149 = t1735.
       WHEN `ZCL_LNT_RENAME_TABLE_TYPE`.
         DATA t1737 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1737.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1738 TYPE REF TO object.
-        CLEAR t1738.
         READ TABLE p1->items INDEX 1 INTO t1738.
         t1737 ?= t1738.
         DATA t1739 TYPE REF TO zif_lnt_registry.
-        CLEAR t1739.
         IF t1737 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -14511,12 +12885,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_reserve.
       WHEN `ZCL_LNT_RESOURCE_OPERATION`.
         DATA t2221 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2221.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2222 TYPE REF TO object.
-        CLEAR t2222.
         READ TABLE p1->items INDEX 1 INTO t2222.
         t2221 ?= t2222.
         DATA(t2223) = VALUE string( ).
@@ -14525,16 +12897,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t2223 = t2221->as_string( ).
         DATA t2224 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2224.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2225 TYPE REF TO object.
-        CLEAR t2225.
         READ TABLE p1->items INDEX 2 INTO t2225.
         t2224 ?= t2225.
         DATA t2226 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t2226.
         IF t2224 IS BOUND.
           t2226 = NEW #( ).
           t2226->has = abap_true.
@@ -14546,48 +12915,37 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_resource_operation EXPORTING i_kind = t2223 i_annotation_id = t2226.
       WHEN `ZCL_LNT_RESTRICTION_FIELD`.
         DATA t1749 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1749.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1750 TYPE REF TO object.
-        CLEAR t1750.
         READ TABLE p1->items INDEX 1 INTO t1750.
         t1749 ?= t1750.
-        DATA(t1751) = VALUE string( ).
         IF t1749 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1751 = t1749->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_restriction_field EXPORTING i_name = t1751.
+        CREATE OBJECT result TYPE zcl_lnt_restriction_field EXPORTING i_name = t1749->as_string( ).
       WHEN `ZCL_LNT_RESTRICTION_TYPE`.
         DATA t1752 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1752.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1753 TYPE REF TO object.
-        CLEAR t1753.
         READ TABLE p1->items INDEX 1 INTO t1753.
         t1752 ?= t1753.
-        DATA(t1754) = VALUE string( ).
         IF t1752 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1754 = t1752->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_restriction_type EXPORTING i_name = t1754.
+        CREATE OBJECT result TYPE zcl_lnt_restriction_type EXPORTING i_name = t1752->as_string( ).
       WHEN `ZCL_LNT_RESULT_NODE`.
         DATA t2275 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2275.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2276 TYPE REF TO object.
-        CLEAR t2276.
         READ TABLE p1->items INDEX 1 INTO t2276.
         t2275 ?= t2276.
         DATA t2277 TYPE REF TO zif_lnt_union_4cf1d054.
-        CLEAR t2277.
         IF t2275 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -14595,16 +12953,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t2278 = t2275->as_ref( ).
         t2277 ?= t2278.
         DATA t2279 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2279.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2280 TYPE REF TO object.
-        CLEAR t2280.
         READ TABLE p1->items INDEX 2 INTO t2280.
         t2279 ?= t2280.
         DATA t2281 TYPE REF TO zcl_lnt_result_node.
-        CLEAR t2281.
         IF t2279 IS BOUND.
           IF t2279 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -14624,20 +12979,16 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_rfc_errr_hndlng_cnf.
       WHEN `ZCL_LNT_RFC_SERVICE`.
         DATA t1755 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1755.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1756 TYPE REF TO object.
-        CLEAR t1756.
         READ TABLE p1->items INDEX 1 INTO t1756.
         t1755 ?= t1756.
-        DATA(t1757) = VALUE string( ).
         IF t1755 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1757 = t1755->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_rfc_service EXPORTING i_name = t1757.
+        CREATE OBJECT result TYPE zcl_lnt_rfc_service EXPORTING i_name = t1755->as_string( ).
       WHEN `ZCL_LNT_RL_EXPAND_MACROS`.
         CREATE OBJECT result TYPE zcl_lnt_rl_expand_macros.
       WHEN `ZCL_LNT_RL_INDEX_MODULE`.
@@ -14647,16 +12998,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_rl_index_module.
       WHEN `ZCL_LNT_RL_SKIP`.
         DATA t1919 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1919.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1920 TYPE REF TO object.
-        CLEAR t1920.
         READ TABLE p1->items INDEX 1 INTO t1920.
         t1919 ?= t1920.
         DATA t1921 TYPE REF TO zcl_lnt_keyword_case_conf.
-        CLEAR t1921.
         IF t1919 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -14676,16 +13024,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_rmv_dscrptns_cnf.
       WHEN `ZCL_LNT_RNM_GLBL_INTRFC`.
         DATA t1717 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1717.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1718 TYPE REF TO object.
-        CLEAR t1718.
         READ TABLE p1->items INDEX 1 INTO t1718.
         t1717 ?= t1718.
         DATA t1719 TYPE REF TO zif_lnt_registry.
-        CLEAR t1719.
         IF t1717 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -14746,16 +13091,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_rollback_entities.
       WHEN `ZCL_LNT_RULES_RUNNER`.
         DATA t1931 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1931.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1932 TYPE REF TO object.
-        CLEAR t1932.
         READ TABLE p1->items INDEX 1 INTO t1932.
         t1931 ?= t1932.
         DATA t1933 TYPE REF TO zif_lnt_registry.
-        CLEAR t1933.
         IF t1931 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -14765,36 +13107,28 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_rules_runner EXPORTING i_reg_f149 = t1933.
       WHEN `ZCL_LNT_SAP_SCRIPT`.
         DATA t1758 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1758.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1759 TYPE REF TO object.
-        CLEAR t1759.
         READ TABLE p1->items INDEX 1 INTO t1759.
         t1758 ?= t1759.
-        DATA(t1760) = VALUE string( ).
         IF t1758 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1760 = t1758->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_sap_script EXPORTING i_name = t1760.
+        CREATE OBJECT result TYPE zcl_lnt_sap_script EXPORTING i_name = t1758->as_string( ).
       WHEN `ZCL_LNT_SAP_SCRIPT_STYLE`.
         DATA t1761 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1761.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1762 TYPE REF TO object.
-        CLEAR t1762.
         READ TABLE p1->items INDEX 1 INTO t1762.
         t1761 ?= t1762.
-        DATA(t1763) = VALUE string( ).
         IF t1761 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1763 = t1761->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_sap_script_style EXPORTING i_name = t1763.
+        CREATE OBJECT result TYPE zcl_lnt_sap_script_style EXPORTING i_name = t1761->as_string( ).
       WHEN `ZCL_LNT_SCOPE_DATA`.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
       WHEN `ZCL_LNT_SCOPE_TYPE_MODULE`.
@@ -14804,38 +13138,30 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_scope_type_module.
       WHEN `ZCL_LNT_SCREEN_VARIANT`.
         DATA t1764 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1764.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1765 TYPE REF TO object.
-        CLEAR t1765.
         READ TABLE p1->items INDEX 1 INTO t1765.
         t1764 ?= t1765.
-        DATA(t1766) = VALUE string( ).
         IF t1764 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1766 = t1764->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_screen_variant EXPORTING i_name = t1766.
+        CREATE OBJECT result TYPE zcl_lnt_screen_variant EXPORTING i_name = t1764->as_string( ).
       WHEN `ZCL_LNT_SCROLL_LIST`.
         CREATE OBJECT result TYPE zcl_lnt_scroll_list.
       WHEN `ZCL_LNT_SEARCH_HELP`.
         DATA t1767 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1767.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1768 TYPE REF TO object.
-        CLEAR t1768.
         READ TABLE p1->items INDEX 1 INTO t1768.
         t1767 ?= t1768.
-        DATA(t1769) = VALUE string( ).
         IF t1767 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1769 = t1767->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_search_help EXPORTING i_name = t1769.
+        CREATE OBJECT result TYPE zcl_lnt_search_help EXPORTING i_name = t1767->as_string( ).
       WHEN `ZCL_LNT_SECONDARY_INDEX`.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
       WHEN `ZCL_LNT_SECTION_CONTENTS`.
@@ -14857,16 +13183,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_select_single_full_key.
       WHEN `ZCL_LNT_SEMANTIC_HIGHLIGHTING`.
         DATA t1213 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1213.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1214 TYPE REF TO object.
-        CLEAR t1214.
         READ TABLE p1->items INDEX 1 INTO t1214.
         t1213 ?= t1214.
         DATA t1215 TYPE REF TO zif_lnt_registry.
-        CLEAR t1215.
         IF t1213 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -14885,36 +13208,28 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_sequential_blank_conf.
       WHEN `ZCL_LNT_SERVICE_BINDING`.
         DATA t1770 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1770.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1771 TYPE REF TO object.
-        CLEAR t1771.
         READ TABLE p1->items INDEX 1 INTO t1771.
         t1770 ?= t1771.
-        DATA(t1772) = VALUE string( ).
         IF t1770 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1772 = t1770->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_service_binding EXPORTING i_name = t1772.
+        CREATE OBJECT result TYPE zcl_lnt_service_binding EXPORTING i_name = t1770->as_string( ).
       WHEN `ZCL_LNT_SERVICE_DEFINITION`.
         DATA t1773 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1773.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1774 TYPE REF TO object.
-        CLEAR t1774.
         READ TABLE p1->items INDEX 1 INTO t1774.
         t1773 ?= t1774.
-        DATA(t1775) = VALUE string( ).
         IF t1773 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1775 = t1773->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_service_definition EXPORTING i_name = t1775.
+        CREATE OBJECT result TYPE zcl_lnt_service_definition EXPORTING i_name = t1773->as_string( ).
       WHEN `ZCL_LNT_SET_BLANK`.
         CREATE OBJECT result TYPE zcl_lnt_set_blank.
       WHEN `ZCL_LNT_SET_COUNTRY`.
@@ -14961,12 +13276,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_severity_module.
       WHEN `ZCL_LNT_SHAPE_015C050B`.
         DATA t2101 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2101.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2102 TYPE REF TO object.
-        CLEAR t2102.
         READ TABLE p1->items INDEX 1 INTO t2102.
         t2101 ?= t2102.
         DATA(t2103) = VALUE string( ).
@@ -14975,16 +13288,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t2103 = t2101->as_string( ).
         DATA t2104 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2104.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2105 TYPE REF TO object.
-        CLEAR t2105.
         READ TABLE p1->items INDEX 2 INTO t2105.
         t2104 ?= t2105.
         DATA t2106 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
-        CLEAR t2106.
         IF t2104 IS BOUND.
           t2106 = NEW #( ).
           t2106->has = abap_true.
@@ -14998,16 +13308,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
       WHEN `ZCL_LNT_SHAPE_048F4E75`.
         DATA t2405 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2405.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2406 TYPE REF TO object.
-        CLEAR t2406.
         READ TABLE p1->items INDEX 1 INTO t2406.
         t2405 ?= t2406.
         DATA t2407 TYPE REF TO zcl_lnt_range.
-        CLEAR t2407.
         IF t2405 IS BOUND.
           IF t2405 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -15017,16 +13324,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2407 ?= t2408.
         ENDIF.
         DATA t2409 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2409.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2410 TYPE REF TO object.
-        CLEAR t2410.
         READ TABLE p1->items INDEX 2 INTO t2410.
         t2409 ?= t2410.
         DATA t2411 TYPE REF TO zcl_lnt_command.
-        CLEAR t2411.
         IF t2409 IS BOUND.
           IF t2409 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -15036,16 +13340,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2411 ?= t2412.
         ENDIF.
         DATA t2413 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2413.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2414 TYPE REF TO object.
-        CLEAR t2414.
         READ TABLE p1->items INDEX 3 INTO t2414.
         t2413 ?= t2414.
         DATA t2415 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2415.
         IF t2413 IS BOUND.
           t2415 = t2413.
         ENDIF.
@@ -15085,16 +13386,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         args_write_2033_13( instance = instance2033 frame = frame2033 ).
       WHEN `ZCL_LNT_SHAPE_0802EB0F`.
         DATA t2512 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2512.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2513 TYPE REF TO object.
-        CLEAR t2513.
         READ TABLE p1->items INDEX 1 INTO t2513.
         t2512 ?= t2513.
         DATA t2514 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t2514.
         IF t2512 IS BOUND.
           t2514 = NEW #( ).
           t2514->has = abap_true.
@@ -15104,16 +13402,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2514->value = t2512->as_string( ).
         ENDIF.
         DATA t2515 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2515.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2516 TYPE REF TO object.
-        CLEAR t2516.
         READ TABLE p1->items INDEX 2 INTO t2516.
         t2515 ?= t2516.
         DATA t2517 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t2517.
         IF t2515 IS BOUND.
           t2517 = NEW #( ).
           t2517->has = abap_true.
@@ -15123,16 +13418,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2517->value = t2515->as_string( ).
         ENDIF.
         DATA t2518 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2518.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2519 TYPE REF TO object.
-        CLEAR t2519.
         READ TABLE p1->items INDEX 3 INTO t2519.
         t2518 ?= t2519.
         DATA t2520 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t2520.
         IF t2518 IS BOUND.
           t2520 = NEW #( ).
           t2520->has = abap_true.
@@ -15142,16 +13434,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2520->value = t2518->as_string( ).
         ENDIF.
         DATA t2521 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2521.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2522 TYPE REF TO object.
-        CLEAR t2522.
         READ TABLE p1->items INDEX 4 INTO t2522.
         t2521 ?= t2522.
         DATA t2523 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t2523.
         IF t2521 IS BOUND.
           t2523 = NEW #( ).
           t2523->has = abap_true.
@@ -15161,16 +13450,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2523->value = t2521->as_string( ).
         ENDIF.
         DATA t2524 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2524.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2525 TYPE REF TO object.
-        CLEAR t2525.
         READ TABLE p1->items INDEX 5 INTO t2525.
         t2524 ?= t2525.
         DATA t2526 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t2526.
         IF t2524 IS BOUND.
           t2526 = NEW #( ).
           t2526->has = abap_true.
@@ -15180,16 +13466,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2526->value = t2524->as_string( ).
         ENDIF.
         DATA t2527 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2527.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2528 TYPE REF TO object.
-        CLEAR t2528.
         READ TABLE p1->items INDEX 6 INTO t2528.
         t2527 ?= t2528.
         DATA t2529 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t2529.
         IF t2527 IS BOUND.
           t2529 = NEW #( ).
           t2529->has = abap_true.
@@ -15201,16 +13484,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_shape_0802eb0f EXPORTING i_language = t2514 i_description = t2517 i_short = t2520 i_medium = t2523 i_long = t2526 i_heading = t2529.
       WHEN `ZCL_LNT_SHAPE_08DB6D95`.
         DATA t2120 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2120.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2121 TYPE REF TO object.
-        CLEAR t2121.
         READ TABLE p1->items INDEX 1 INTO t2121.
         t2120 ?= t2121.
         DATA t2122 TYPE REF TO zcl_lnt_abstract_token.
-        CLEAR t2122.
         IF t2120 IS BOUND.
           IF t2120 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -15220,12 +13500,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2122 ?= t2123.
         ENDIF.
         DATA t2124 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2124.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2125 TYPE REF TO object.
-        CLEAR t2125.
         READ TABLE p1->items INDEX 2 INTO t2125.
         t2124 ?= t2125.
         DATA(t2126) = VALUE string( ).
@@ -15234,32 +13512,25 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t2126 = t2124->as_string( ).
         DATA t2127 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2127.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2128 TYPE REF TO object.
-        CLEAR t2128.
         READ TABLE p1->items INDEX 3 INTO t2128.
         t2127 ?= t2128.
-        DATA(t2129) = VALUE string( ).
         IF t2127 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t2129 = t2127->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_shape_08db6d95 EXPORTING i_token = t2122 i_message_class = t2126 i_number = t2129.
+        CREATE OBJECT result TYPE zcl_lnt_shape_08db6d95 EXPORTING i_token = t2122 i_message_class = t2126 i_number = t2127->as_string( ).
       WHEN `ZCL_LNT_SHAPE_0B343CF6`.
         DATA t2536 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2536.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2537 TYPE REF TO object.
-        CLEAR t2537.
         READ TABLE p1->items INDEX 1 INTO t2537.
         t2536 ?= t2537.
         DATA t2538 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t2538.
         IF t2536 IS BOUND.
           t2538 = NEW #( ).
           t2538->has = abap_true.
@@ -15269,16 +13540,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2538->value = t2536->as_string( ).
         ENDIF.
         DATA t2539 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2539.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2540 TYPE REF TO object.
-        CLEAR t2540.
         READ TABLE p1->items INDEX 2 INTO t2540.
         t2539 ?= t2540.
         DATA t2541 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t2541.
         IF t2539 IS BOUND.
           t2541 = NEW #( ).
           t2541->has = abap_true.
@@ -15297,16 +13565,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
     CASE class_name.
       WHEN `ZCL_LNT_SHAPE_0DBCB8A9`.
         DATA t2343 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2343.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2344 TYPE REF TO object.
-        CLEAR t2344.
         READ TABLE p1->items INDEX 1 INTO t2344.
         t2343 ?= t2344.
         DATA t2345 TYPE REF TO zcl_lnt_object_oriented.
-        CLEAR t2345.
         IF t2343 IS BOUND.
           IF t2343 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -15316,16 +13581,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2345 ?= t2346.
         ENDIF.
         DATA t2347 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2347.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2348 TYPE REF TO object.
-        CLEAR t2348.
         READ TABLE p1->items INDEX 2 INTO t2348.
         t2347 ?= t2348.
         DATA t2349 TYPE REF TO zcl_lnt_procedural.
-        CLEAR t2349.
         IF t2347 IS BOUND.
           IF t2347 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -15337,16 +13599,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_shape_0dbcb8a9 EXPORTING i_oooc = t2345 i_proc = t2349.
       WHEN `ZCL_LNT_SHAPE_124357CF`.
         DATA t2566 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2566.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2567 TYPE REF TO object.
-        CLEAR t2567.
         READ TABLE p1->items INDEX 1 INTO t2567.
         t2566 ?= t2567.
         DATA t2568 TYPE REF TO zcl_lnt_abap_file.
-        CLEAR t2568.
         IF t2566 IS BOUND.
           IF t2566 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -15356,28 +13615,22 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2568 ?= t2569.
         ENDIF.
         DATA t2570 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2570.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2571 TYPE REF TO object.
-        CLEAR t2571.
         READ TABLE p1->items INDEX 2 INTO t2571.
         t2570 ?= t2571.
-        DATA(t2572) = VALUE string( ).
         IF t2570 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t2572 = t2570->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_shape_124357cf EXPORTING i_file = t2568 i_name = t2572.
+        CREATE OBJECT result TYPE zcl_lnt_shape_124357cf EXPORTING i_file = t2568 i_name = t2570->as_string( ).
       WHEN `ZCL_LNT_SHAPE_14FEA903`.
         DATA t2309 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2309.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2310 TYPE REF TO object.
-        CLEAR t2310.
         READ TABLE p1->items INDEX 1 INTO t2310.
         t2309 ?= t2310.
         DATA(t2311) = VALUE string( ).
@@ -15386,12 +13639,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t2311 = t2309->as_string( ).
         DATA t2312 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2312.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2313 TYPE REF TO object.
-        CLEAR t2313.
         READ TABLE p1->items INDEX 2 INTO t2313.
         t2312 ?= t2313.
         DATA(t2314) = VALUE string( ).
@@ -15400,16 +13651,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t2314 = t2312->as_string( ).
         DATA t2315 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2315.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2316 TYPE REF TO object.
-        CLEAR t2316.
         READ TABLE p1->items INDEX 3 INTO t2316.
         t2315 ?= t2316.
         DATA t2317 TYPE REF TO zcl_lnt_expression_node.
-        CLEAR t2317.
         IF t2315 IS BOUND.
           IF t2315 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -15421,12 +13669,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_shape_14fea903 EXPORTING i_code = t2311 i_as = t2314 i_expression = t2317.
       WHEN `ZCL_LNT_SHAPE_164098B6`.
         DATA t2329 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2329.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2330 TYPE REF TO object.
-        CLEAR t2330.
         READ TABLE p1->items INDEX 1 INTO t2330.
         t2329 ?= t2330.
         DATA(t2331) = VALUE string( ).
@@ -15435,32 +13681,25 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t2331 = t2329->as_string( ).
         DATA t2332 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2332.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2333 TYPE REF TO object.
-        CLEAR t2333.
         READ TABLE p1->items INDEX 2 INTO t2333.
         t2332 ?= t2333.
-        DATA(t2334) = VALUE f( ).
         IF t2332 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t2334 = t2332->as_number( ).
-        CREATE OBJECT result TYPE zcl_lnt_shape_164098b6 EXPORTING i_abap = t2331 i_length = t2334.
+        CREATE OBJECT result TYPE zcl_lnt_shape_164098b6 EXPORTING i_abap = t2331 i_length = t2332->as_number( ).
       WHEN `ZCL_LNT_SHAPE_16F7D740`.
         DATA t3093 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t3093.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t3094 TYPE REF TO object.
-        CLEAR t3094.
         READ TABLE p1->items INDEX 1 INTO t3094.
         t3093 ?= t3094.
         DATA t3095 TYPE REF TO object.
-        CLEAR t3095.
         IF t3093 IS BOUND.
           IF t3093 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -15470,16 +13709,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t3095 ?= t3096.
         ENDIF.
         DATA t3097 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t3097.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t3098 TYPE REF TO object.
-        CLEAR t3098.
         READ TABLE p1->items INDEX 2 INTO t3098.
         t3097 ?= t3098.
         DATA t3099 TYPE REF TO object.
-        CLEAR t3099.
         IF t3097 IS BOUND.
           IF t3097 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -15489,16 +13725,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t3099 ?= t3100.
         ENDIF.
         DATA t3101 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t3101.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t3102 TYPE REF TO object.
-        CLEAR t3102.
         READ TABLE p1->items INDEX 3 INTO t3102.
         t3101 ?= t3102.
         DATA t3103 TYPE REF TO object.
-        CLEAR t3103.
         IF t3101 IS BOUND.
           IF t3101 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -15508,16 +13741,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t3103 ?= t3104.
         ENDIF.
         DATA t3105 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t3105.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t3106 TYPE REF TO object.
-        CLEAR t3106.
         READ TABLE p1->items INDEX 4 INTO t3106.
         t3105 ?= t3106.
         DATA t3107 TYPE REF TO object.
-        CLEAR t3107.
         IF t3105 IS BOUND.
           IF t3105 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -15527,16 +13757,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t3107 ?= t3108.
         ENDIF.
         DATA t3109 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t3109.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t3110 TYPE REF TO object.
-        CLEAR t3110.
         READ TABLE p1->items INDEX 5 INTO t3110.
         t3109 ?= t3110.
         DATA t3111 TYPE REF TO object.
-        CLEAR t3111.
         IF t3109 IS BOUND.
           IF t3109 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -15546,12 +13773,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t3111 ?= t3112.
         ENDIF.
         DATA t3113 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t3113.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t3114 TYPE REF TO object.
-        CLEAR t3114.
         READ TABLE p1->items INDEX 6 INTO t3114.
         t3113 ?= t3114.
         DATA(t3115) = VALUE string( ).
@@ -15560,32 +13785,25 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t3115 = t3113->as_string( ).
         DATA t3116 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t3116.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t3117 TYPE REF TO object.
-        CLEAR t3117.
         READ TABLE p1->items INDEX 7 INTO t3117.
         t3116 ?= t3117.
-        DATA(t3118) = VALUE f( ).
         IF t3116 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t3118 = t3116->as_number( ).
-        CREATE OBJECT result TYPE zcl_lnt_shape_16f7d740 EXPORTING i_abap = t3095 i_kernel = t3099 i_op = t3103 i_cloud_47cd = t3107 i_ce = t3111 i_name = t3115 i_ordinal = t3118.
+        CREATE OBJECT result TYPE zcl_lnt_shape_16f7d740 EXPORTING i_abap = t3095 i_kernel = t3099 i_op = t3103 i_cloud_47cd = t3107 i_ce = t3111 i_name = t3115 i_ordinal = t3116->as_number( ).
       WHEN `ZCL_LNT_SHAPE_1ADC9D0C`.
         DATA t2283 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2283.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2284 TYPE REF TO object.
-        CLEAR t2284.
         READ TABLE p1->items INDEX 1 INTO t2284.
         t2283 ?= t2284.
         DATA t2285 TYPE REF TO zif_lnt_statement.
-        CLEAR t2285.
         IF t2283 IS BOUND.
           IF t2283 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -15595,16 +13813,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2285 ?= t2286.
         ENDIF.
         DATA t2287 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2287.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2288 TYPE REF TO object.
-        CLEAR t2288.
         READ TABLE p1->items INDEX 2 INTO t2288.
         t2287 ?= t2288.
         DATA t2289 TYPE REF TO zif_lnt_statement_runnable.
-        CLEAR t2289.
         IF t2287 IS BOUND.
           IF t2287 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -15618,84 +13833,67 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
       WHEN `ZCL_LNT_SHAPE_27CFCABC`.
         DATA t2813 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2813.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2814 TYPE REF TO object.
-        CLEAR t2814.
         READ TABLE p1->items INDEX 1 INTO t2814.
         t2813 ?= t2814.
         DATA t2815 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2815.
         IF t2813 IS BOUND.
           t2815 = t2813.
         ENDIF.
         DATA t2816 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2816.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2817 TYPE REF TO object.
-        CLEAR t2817.
         READ TABLE p1->items INDEX 2 INTO t2817.
         t2816 ?= t2817.
         DATA t2818 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2818.
         IF t2816 IS BOUND.
           t2818 = t2816.
         ENDIF.
         DATA t2819 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2819.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2820 TYPE REF TO object.
-        CLEAR t2820.
         READ TABLE p1->items INDEX 3 INTO t2820.
         t2819 ?= t2820.
         DATA t2821 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2821.
         IF t2819 IS BOUND.
           t2821 = t2819.
         ENDIF.
         DATA t2822 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2822.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2823 TYPE REF TO object.
-        CLEAR t2823.
         READ TABLE p1->items INDEX 4 INTO t2823.
         t2822 ?= t2823.
         DATA t2824 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2824.
         IF t2822 IS BOUND.
           t2824 = t2822.
         ENDIF.
         DATA t2825 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2825.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2826 TYPE REF TO object.
-        CLEAR t2826.
         READ TABLE p1->items INDEX 5 INTO t2826.
         t2825 ?= t2826.
         DATA t2827 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2827.
         IF t2825 IS BOUND.
           t2827 = t2825.
         ENDIF.
         CREATE OBJECT result TYPE zcl_lnt_shape_27cfcabc EXPORTING i_abap = t2815 i_kernel = t2818 i_op = t2821 i_cloud_47cd = t2824 i_ce = t2827.
       WHEN `ZCL_LNT_SHAPE_27D92870`.
         DATA t2192 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2192.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2193 TYPE REF TO object.
-        CLEAR t2193.
         READ TABLE p1->items INDEX 1 INTO t2193.
         t2192 ?= t2193.
         DATA(t2194) = VALUE string( ).
@@ -15704,12 +13902,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t2194 = t2192->as_string( ).
         DATA t2195 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2195.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2196 TYPE REF TO object.
-        CLEAR t2196.
         READ TABLE p1->items INDEX 2 INTO t2196.
         t2195 ?= t2196.
         DATA(t2197) = VALUE string( ).
@@ -15718,16 +13914,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t2197 = t2195->as_string( ).
         DATA t2198 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2198.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2199 TYPE REF TO object.
-        CLEAR t2199.
         READ TABLE p1->items INDEX 3 INTO t2199.
         t2198 ?= t2199.
         DATA t2200 TYPE REF TO zcl_lnt_shape_bf434f34.
-        CLEAR t2200.
         IF t2198 IS BOUND.
           IF t2198 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -15737,16 +13930,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2200 ?= t2201.
         ENDIF.
         DATA t2202 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2202.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2203 TYPE REF TO object.
-        CLEAR t2203.
         READ TABLE p1->items INDEX 4 INTO t2203.
         t2202 ?= t2203.
         DATA t2204 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t2204.
         IF t2202 IS BOUND.
           t2204 = NEW #( ).
           t2204->has = abap_true.
@@ -15762,16 +13952,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
       WHEN `ZCL_LNT_SHAPE_327D7720`.
         DATA t2591 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2591.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2592 TYPE REF TO object.
-        CLEAR t2592.
         READ TABLE p1->items INDEX 1 INTO t2592.
         t2591 ?= t2592.
         DATA t2593 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t2593.
         IF t2591 IS BOUND.
           t2593 = NEW #( ).
           t2593->has = abap_true.
@@ -15781,16 +13968,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2593->value = t2591->as_string( ).
         ENDIF.
         DATA t2594 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2594.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2595 TYPE REF TO object.
-        CLEAR t2595.
         READ TABLE p1->items INDEX 2 INTO t2595.
         t2594 ?= t2595.
         DATA t2596 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t2596.
         IF t2594 IS BOUND.
           t2596 = NEW #( ).
           t2596->has = abap_true.
@@ -15800,16 +13984,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2596->value = t2594->as_string( ).
         ENDIF.
         DATA t2597 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2597.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2598 TYPE REF TO object.
-        CLEAR t2598.
         READ TABLE p1->items INDEX 3 INTO t2598.
         t2597 ?= t2598.
         DATA t2599 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t2599.
         IF t2597 IS BOUND.
           t2599 = NEW #( ).
           t2599->has = abap_true.
@@ -15825,16 +14006,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
       WHEN `ZCL_LNT_SHAPE_3488A94D`.
         DATA t2781 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2781.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2782 TYPE REF TO object.
-        CLEAR t2782.
         READ TABLE p1->items INDEX 1 INTO t2782.
         t2781 ?= t2782.
         DATA t2783 TYPE REF TO zcl_lnt_typed_identifier.
-        CLEAR t2783.
         IF t2781 IS BOUND.
           IF t2781 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -15844,28 +14022,22 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2783 ?= t2784.
         ENDIF.
         DATA t2785 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2785.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2786 TYPE REF TO object.
-        CLEAR t2786.
         READ TABLE p1->items INDEX 2 INTO t2786.
         t2785 ?= t2786.
-        DATA(t2787) = VALUE f( ).
         IF t2785 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t2787 = t2785->as_number( ).
-        CREATE OBJECT result TYPE zcl_lnt_shape_3488a94d EXPORTING i_id = t2783 i_count = t2787.
+        CREATE OBJECT result TYPE zcl_lnt_shape_3488a94d EXPORTING i_id = t2783 i_count = t2785->as_number( ).
       WHEN `ZCL_LNT_SHAPE_35310764`.
         DATA t2369 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2369.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2370 TYPE REF TO object.
-        CLEAR t2370.
         READ TABLE p1->items INDEX 1 INTO t2370.
         t2369 ?= t2370.
         DATA(t2371) = VALUE string( ).
@@ -15874,16 +14046,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t2371 = t2369->as_string( ).
         DATA t2372 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2372.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2373 TYPE REF TO object.
-        CLEAR t2373.
         READ TABLE p1->items INDEX 2 INTO t2373.
         t2372 ?= t2373.
         DATA t2374 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t2374.
         IF t2372 IS BOUND.
           t2374 = NEW #( ).
           t2374->has = abap_true.
@@ -15920,16 +14089,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
       WHEN `ZCL_LNT_SHAPE_3940DAAB`.
         DATA t2723 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2723.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2724 TYPE REF TO object.
-        CLEAR t2724.
         READ TABLE p1->items INDEX 1 INTO t2724.
         t2723 ?= t2724.
         DATA t2725 TYPE REF TO zcl_lnt_position.
-        CLEAR t2725.
         IF t2723 IS BOUND.
           IF t2723 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -15939,16 +14105,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2725 ?= t2726.
         ENDIF.
         DATA t2727 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2727.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2728 TYPE REF TO object.
-        CLEAR t2728.
         READ TABLE p1->items INDEX 2 INTO t2728.
         t2727 ?= t2728.
         DATA t2729 TYPE REF TO zcl_lnt_position.
-        CLEAR t2729.
         IF t2727 IS BOUND.
           IF t2727 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -15960,16 +14123,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_shape_3940daab EXPORTING i_name_end = t2725 i_after = t2729.
       WHEN `ZCL_LNT_SHAPE_401D2302`.
         DATA t2699 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2699.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2700 TYPE REF TO object.
-        CLEAR t2700.
         READ TABLE p1->items INDEX 1 INTO t2700.
         t2699 ?= t2700.
         DATA t2701 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t2701.
         IF t2699 IS BOUND.
           t2701 = NEW #( ).
           t2701->has = abap_true.
@@ -15979,16 +14139,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2701->value = t2699->as_string( ).
         ENDIF.
         DATA t2702 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2702.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2703 TYPE REF TO object.
-        CLEAR t2703.
         READ TABLE p1->items INDEX 2 INTO t2703.
         t2702 ?= t2703.
         DATA t2704 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t2704.
         IF t2702 IS BOUND.
           t2704 = NEW #( ).
           t2704->has = abap_true.
@@ -15998,16 +14155,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2704->value = t2702->as_string( ).
         ENDIF.
         DATA t2705 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2705.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2706 TYPE REF TO object.
-        CLEAR t2706.
         READ TABLE p1->items INDEX 3 INTO t2706.
         t2705 ?= t2706.
         DATA t2707 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t2707.
         IF t2705 IS BOUND.
           t2707 = NEW #( ).
           t2707->has = abap_true.
@@ -16017,16 +14171,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2707->value = t2705->as_string( ).
         ENDIF.
         DATA t2708 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2708.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2709 TYPE REF TO object.
-        CLEAR t2709.
         READ TABLE p1->items INDEX 4 INTO t2709.
         t2708 ?= t2709.
         DATA t2710 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t2710.
         IF t2708 IS BOUND.
           t2710 = NEW #( ).
           t2710->has = abap_true.
@@ -16036,16 +14187,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2710->value = t2708->as_string( ).
         ENDIF.
         DATA t2711 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2711.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2712 TYPE REF TO object.
-        CLEAR t2712.
         READ TABLE p1->items INDEX 5 INTO t2712.
         t2711 ?= t2712.
         DATA t2713 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t2713.
         IF t2711 IS BOUND.
           t2713 = NEW #( ).
           t2713->has = abap_true.
@@ -16057,12 +14205,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_shape_401d2302 EXPORTING i_ltab = t2701 i_lfield = t2704 i_operator_049c = t2707 i_rtab = t2710 i_rfield = t2713.
       WHEN `ZCL_LNT_SHAPE_45CAB92F`.
         DATA t3323 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t3323.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t3324 TYPE REF TO object.
-        CLEAR t3324.
         READ TABLE p1->items INDEX 1 INTO t3324.
         t3323 ?= t3324.
         DATA(t3325) = VALUE string( ).
@@ -16071,28 +14217,22 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t3325 = t3323->as_string( ).
         DATA t3326 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t3326.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t3327 TYPE REF TO object.
-        CLEAR t3327.
         READ TABLE p1->items INDEX 2 INTO t3327.
         t3326 ?= t3327.
-        DATA(t3328) = VALUE f( ).
         IF t3326 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t3328 = t3326->as_number( ).
-        CREATE OBJECT result TYPE zcl_lnt_shape_45cab92f EXPORTING i_name = t3325 i_time = t3328.
+        CREATE OBJECT result TYPE zcl_lnt_shape_45cab92f EXPORTING i_name = t3325 i_time = t3326->as_number( ).
       WHEN `ZCL_LNT_SHAPE_4696A092`.
         DATA t2761 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2761.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2762 TYPE REF TO object.
-        CLEAR t2762.
         READ TABLE p1->items INDEX 1 INTO t2762.
         t2761 ?= t2762.
         DATA(t2763) = VALUE string( ).
@@ -16101,32 +14241,25 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t2763 = t2761->as_string( ).
         DATA t2764 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2764.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2765 TYPE REF TO object.
-        CLEAR t2765.
         READ TABLE p1->items INDEX 2 INTO t2765.
         t2764 ?= t2765.
-        DATA(t2766) = VALUE string( ).
         IF t2764 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t2766 = t2764->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_shape_4696a092 EXPORTING i_pseudo = t2763 i_pragma = t2766.
+        CREATE OBJECT result TYPE zcl_lnt_shape_4696a092 EXPORTING i_pseudo = t2763 i_pragma = t2764->as_string( ).
       WHEN `ZCL_LNT_SHAPE_4A88086C`.
         DATA t2375 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2375.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2376 TYPE REF TO object.
-        CLEAR t2376.
         READ TABLE p1->items INDEX 1 INTO t2376.
         t2375 ?= t2376.
         DATA t2377 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t2377.
         IF t2375 IS BOUND.
           t2377 = NEW #( ).
           t2377->has = abap_true.
@@ -16136,16 +14269,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2377->value = t2375->as_string( ).
         ENDIF.
         DATA t2378 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2378.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2379 TYPE REF TO object.
-        CLEAR t2379.
         READ TABLE p1->items INDEX 2 INTO t2379.
         t2378 ?= t2379.
         DATA t2380 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t2380.
         IF t2378 IS BOUND.
           t2380 = NEW #( ).
           t2380->has = abap_true.
@@ -16155,16 +14285,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2380->value = t2378->as_string( ).
         ENDIF.
         DATA t2381 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2381.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2382 TYPE REF TO object.
-        CLEAR t2382.
         READ TABLE p1->items INDEX 3 INTO t2382.
         t2381 ?= t2382.
         DATA t2383 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t2383.
         IF t2381 IS BOUND.
           t2383 = NEW #( ).
           t2383->has = abap_true.
@@ -16174,12 +14301,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2383->value = t2381->as_string( ).
         ENDIF.
         DATA t2384 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2384.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2385 TYPE REF TO object.
-        CLEAR t2385.
         READ TABLE p1->items INDEX 4 INTO t2385.
         t2384 ?= t2385.
         DATA(t2386) = VALUE string( ).
@@ -16188,16 +14313,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t2386 = t2384->as_string( ).
         DATA t2387 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2387.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2388 TYPE REF TO object.
-        CLEAR t2388.
         READ TABLE p1->items INDEX 5 INTO t2388.
         t2387 ?= t2388.
         DATA t2389 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t2389.
         IF t2387 IS BOUND.
           t2389 = NEW #( ).
           t2389->has = abap_true.
@@ -16207,16 +14329,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2389->value = t2387->as_string( ).
         ENDIF.
         DATA t2390 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2390.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2391 TYPE REF TO object.
-        CLEAR t2391.
         READ TABLE p1->items INDEX 6 INTO t2391.
         t2390 ?= t2391.
         DATA t2392 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t2392.
         IF t2390 IS BOUND.
           t2392 = NEW #( ).
           t2392->has = abap_true.
@@ -16226,16 +14345,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2392->value = t2390->as_string( ).
         ENDIF.
         DATA t2393 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2393.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2394 TYPE REF TO object.
-        CLEAR t2394.
         READ TABLE p1->items INDEX 7 INTO t2394.
         t2393 ?= t2394.
         DATA t2395 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t2395.
         IF t2393 IS BOUND.
           t2395 = NEW #( ).
           t2395->has = abap_true.
@@ -16245,16 +14361,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2395->value = t2393->as_string( ).
         ENDIF.
         DATA t2396 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2396.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2397 TYPE REF TO object.
-        CLEAR t2397.
         READ TABLE p1->items INDEX 8 INTO t2397.
         t2396 ?= t2397.
         DATA t2398 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t2398.
         IF t2396 IS BOUND.
           t2398 = NEW #( ).
           t2398->has = abap_true.
@@ -16266,16 +14379,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_shape_4a88086c EXPORTING i_text = t2377 i_length = t2380 i_decimals_2eed = t2383 i_info_text = t2386 i_qualified_name = t2389 i_conversion_exit = t2392 i_ddic_name = t2395 i_description = t2398.
       WHEN `ZCL_LNT_SHAPE_4D146093`.
         DATA t3126 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t3126.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t3127 TYPE REF TO object.
-        CLEAR t3127.
         READ TABLE p1->items INDEX 1 INTO t3127.
         t3126 ?= t3127.
         DATA t3128 TYPE REF TO zcl_lnt_abap_release.
-        CLEAR t3128.
         IF t3126 IS BOUND.
           IF t3126 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -16285,16 +14395,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t3128 ?= t3129.
         ENDIF.
         DATA t3130 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t3130.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t3131 TYPE REF TO object.
-        CLEAR t3131.
         READ TABLE p1->items INDEX 2 INTO t3131.
         t3130 ?= t3131.
         DATA t3132 TYPE REF TO zcl_lnt_abap_release.
-        CLEAR t3132.
         IF t3130 IS BOUND.
           IF t3130 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -16304,16 +14411,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t3132 ?= t3133.
         ENDIF.
         DATA t3134 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t3134.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t3135 TYPE REF TO object.
-        CLEAR t3135.
         READ TABLE p1->items INDEX 3 INTO t3135.
         t3134 ?= t3135.
         DATA t3136 TYPE REF TO zcl_lnt_abap_release.
-        CLEAR t3136.
         IF t3134 IS BOUND.
           IF t3134 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -16323,16 +14427,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t3136 ?= t3137.
         ENDIF.
         DATA t3138 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t3138.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t3139 TYPE REF TO object.
-        CLEAR t3139.
         READ TABLE p1->items INDEX 4 INTO t3139.
         t3138 ?= t3139.
         DATA t3140 TYPE REF TO zcl_lnt_abap_release.
-        CLEAR t3140.
         IF t3138 IS BOUND.
           IF t3138 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -16342,16 +14443,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t3140 ?= t3141.
         ENDIF.
         DATA t3142 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t3142.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t3143 TYPE REF TO object.
-        CLEAR t3143.
         READ TABLE p1->items INDEX 5 INTO t3143.
         t3142 ?= t3143.
         DATA t3144 TYPE REF TO zcl_lnt_abap_release.
-        CLEAR t3144.
         IF t3142 IS BOUND.
           IF t3142 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -16361,16 +14459,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t3144 ?= t3145.
         ENDIF.
         DATA t3146 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t3146.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t3147 TYPE REF TO object.
-        CLEAR t3147.
         READ TABLE p1->items INDEX 6 INTO t3147.
         t3146 ?= t3147.
         DATA t3148 TYPE REF TO zcl_lnt_abap_release.
-        CLEAR t3148.
         IF t3146 IS BOUND.
           IF t3146 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -16380,16 +14475,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t3148 ?= t3149.
         ENDIF.
         DATA t3150 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t3150.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t3151 TYPE REF TO object.
-        CLEAR t3151.
         READ TABLE p1->items INDEX 7 INTO t3151.
         t3150 ?= t3151.
         DATA t3152 TYPE REF TO zcl_lnt_abap_release.
-        CLEAR t3152.
         IF t3150 IS BOUND.
           IF t3150 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -16399,16 +14491,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t3152 ?= t3153.
         ENDIF.
         DATA t3154 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t3154.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t3155 TYPE REF TO object.
-        CLEAR t3155.
         READ TABLE p1->items INDEX 8 INTO t3155.
         t3154 ?= t3155.
         DATA t3156 TYPE REF TO zcl_lnt_abap_release.
-        CLEAR t3156.
         IF t3154 IS BOUND.
           IF t3154 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -16418,16 +14507,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t3156 ?= t3157.
         ENDIF.
         DATA t3158 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t3158.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t3159 TYPE REF TO object.
-        CLEAR t3159.
         READ TABLE p1->items INDEX 9 INTO t3159.
         t3158 ?= t3159.
         DATA t3160 TYPE REF TO zcl_lnt_abap_release.
-        CLEAR t3160.
         IF t3158 IS BOUND.
           IF t3158 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -16437,16 +14523,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t3160 ?= t3161.
         ENDIF.
         DATA t3162 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t3162.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t3163 TYPE REF TO object.
-        CLEAR t3163.
         READ TABLE p1->items INDEX 10 INTO t3163.
         t3162 ?= t3163.
         DATA t3164 TYPE REF TO zcl_lnt_abap_release.
-        CLEAR t3164.
         IF t3162 IS BOUND.
           IF t3162 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -16458,12 +14541,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_shape_4d146093 EXPORTING i_v750 = t3128 i_v751 = t3132 i_v752 = t3136 i_v753 = t3140 i_v754 = t3144 i_v755 = t3148 i_v756 = t3152 i_v757 = t3156 i_v758 = t3160 i_v816 = t3164.
       WHEN `ZCL_LNT_SHAPE_4EBEEEE9`.
         DATA t3050 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t3050.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t3051 TYPE REF TO object.
-        CLEAR t3051.
         READ TABLE p1->items INDEX 1 INTO t3051.
         t3050 ?= t3051.
         DATA(t3052) = VALUE string( ).
@@ -16472,12 +14553,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t3052 = t3050->as_string( ).
         DATA t3053 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t3053.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t3054 TYPE REF TO object.
-        CLEAR t3054.
         READ TABLE p1->items INDEX 2 INTO t3054.
         t3053 ?= t3054.
         DATA(t3055) = VALUE f( ).
@@ -16486,12 +14565,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t3055 = t3053->as_number( ).
         DATA t3056 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t3056.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t3057 TYPE REF TO object.
-        CLEAR t3057.
         READ TABLE p1->items INDEX 3 INTO t3057.
         t3056 ?= t3057.
         DATA(t3058) = VALUE f( ).
@@ -16500,12 +14577,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t3058 = t3056->as_number( ).
         DATA t3059 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t3059.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t3060 TYPE REF TO object.
-        CLEAR t3060.
         READ TABLE p1->items INDEX 4 INTO t3060.
         t3059 ?= t3060.
         DATA(t3061) = VALUE f( ).
@@ -16514,12 +14589,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t3061 = t3059->as_number( ).
         DATA t3062 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t3062.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t3063 TYPE REF TO object.
-        CLEAR t3063.
         READ TABLE p1->items INDEX 5 INTO t3063.
         t3062 ?= t3063.
         DATA(t3064) = VALUE f( ).
@@ -16528,12 +14601,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t3064 = t3062->as_number( ).
         DATA t3065 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t3065.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t3066 TYPE REF TO object.
-        CLEAR t3066.
         READ TABLE p1->items INDEX 6 INTO t3066.
         t3065 ?= t3066.
         DATA(t3067) = VALUE string( ).
@@ -16542,20 +14613,16 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t3067 = t3065->as_string( ).
         DATA t3068 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t3068.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t3069 TYPE REF TO object.
-        CLEAR t3069.
         READ TABLE p1->items INDEX 7 INTO t3069.
         t3068 ?= t3069.
-        DATA(t3070) = VALUE f( ).
         IF t3068 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t3070 = t3068->as_number( ).
-        CREATE OBJECT result TYPE zcl_lnt_shape_4ebeeee9 EXPORTING i_abap = t3052 i_kernel = t3055 i_op = t3058 i_cloud_47cd = t3061 i_ce = t3064 i_name = t3067 i_ordinal = t3070.
+        CREATE OBJECT result TYPE zcl_lnt_shape_4ebeeee9 EXPORTING i_abap = t3052 i_kernel = t3055 i_op = t3058 i_cloud_47cd = t3061 i_ce = t3064 i_name = t3067 i_ordinal = t3068->as_number( ).
       WHEN OTHERS.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDCASE.
@@ -16567,16 +14634,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
       WHEN `ZCL_LNT_SHAPE_51788160`.
         DATA t2573 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2573.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2574 TYPE REF TO object.
-        CLEAR t2574.
         READ TABLE p1->items INDEX 1 INTO t2574.
         t2573 ?= t2574.
         DATA t2575 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t2575.
         IF t2573 IS BOUND.
           t2575 = NEW #( ).
           t2575->has = abap_true.
@@ -16586,16 +14650,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2575->value = t2573->as_string( ).
         ENDIF.
         DATA t2576 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2576.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2577 TYPE REF TO object.
-        CLEAR t2577.
         READ TABLE p1->items INDEX 2 INTO t2577.
         t2576 ?= t2577.
         DATA t2578 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t2578.
         IF t2576 IS BOUND.
           t2578 = NEW #( ).
           t2578->has = abap_true.
@@ -16605,16 +14666,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2578->value = t2576->as_string( ).
         ENDIF.
         DATA t2579 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2579.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2580 TYPE REF TO object.
-        CLEAR t2580.
         READ TABLE p1->items INDEX 3 INTO t2580.
         t2579 ?= t2580.
         DATA t2581 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t2581.
         IF t2579 IS BOUND.
           t2581 = NEW #( ).
           t2581->has = abap_true.
@@ -16628,16 +14686,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
       WHEN `ZCL_LNT_SHAPE_5543F3F8`.
         DATA t2459 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2459.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2460 TYPE REF TO object.
-        CLEAR t2460.
         READ TABLE p1->items INDEX 1 INTO t2460.
         t2459 ?= t2460.
         DATA t2461 TYPE REF TO zcl_lnt_range.
-        CLEAR t2461.
         IF t2459 IS BOUND.
           IF t2459 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -16647,16 +14702,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2461 ?= t2462.
         ENDIF.
         DATA t2463 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2463.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2464 TYPE REF TO object.
-        CLEAR t2464.
         READ TABLE p1->items INDEX 2 INTO t2464.
         t2463 ?= t2464.
         DATA t2465 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
-        CLEAR t2465.
         IF t2463 IS BOUND.
           t2465 = NEW #( ).
           t2465->has = abap_true.
@@ -16668,16 +14720,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_shape_5543f3f8 EXPORTING i_range = t2461 i_kind = t2465.
       WHEN `ZCL_LNT_SHAPE_55554241`.
         DATA t2530 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2530.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2531 TYPE REF TO object.
-        CLEAR t2531.
         READ TABLE p1->items INDEX 1 INTO t2531.
         t2530 ?= t2531.
         DATA t2532 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t2532.
         IF t2530 IS BOUND.
           t2532 = NEW #( ).
           t2532->has = abap_true.
@@ -16687,16 +14736,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2532->value = t2530->as_string( ).
         ENDIF.
         DATA t2533 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2533.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2534 TYPE REF TO object.
-        CLEAR t2534.
         READ TABLE p1->items INDEX 2 INTO t2534.
         t2533 ?= t2534.
         DATA t2535 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t2535.
         IF t2533 IS BOUND.
           t2535 = NEW #( ).
           t2535->has = abap_true.
@@ -16708,12 +14754,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_shape_55554241 EXPORTING i_class_name = t2532 i_description = t2535.
       WHEN `ZCL_LNT_SHAPE_57C6F233`.
         DATA t2239 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2239.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2240 TYPE REF TO object.
-        CLEAR t2240.
         READ TABLE p1->items INDEX 1 INTO t2240.
         t2239 ?= t2240.
         DATA(t2241) = VALUE string( ).
@@ -16722,16 +14766,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t2241 = t2239->as_string( ).
         DATA t2242 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2242.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2243 TYPE REF TO object.
-        CLEAR t2243.
         READ TABLE p1->items INDEX 2 INTO t2243.
         t2242 ?= t2243.
         DATA t2244 TYPE REF TO zcl_lnt_range.
-        CLEAR t2244.
         IF t2242 IS BOUND.
           IF t2242 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -16741,32 +14782,25 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2244 ?= t2245.
         ENDIF.
         DATA t2246 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2246.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2247 TYPE REF TO object.
-        CLEAR t2247.
         READ TABLE p1->items INDEX 3 INTO t2247.
         t2246 ?= t2247.
-        DATA(t2248) = VALUE string( ).
         IF t2246 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t2248 = t2246->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_shape_57c6f233 EXPORTING i_annotation_id = t2241 i_range = t2244 i_new_text = t2248.
+        CREATE OBJECT result TYPE zcl_lnt_shape_57c6f233 EXPORTING i_annotation_id = t2241 i_range = t2244 i_new_text = t2246->as_string( ).
       WHEN `ZCL_LNT_SHAPE_59E28496`.
         DATA t2291 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2291.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2292 TYPE REF TO object.
-        CLEAR t2292.
         READ TABLE p1->items INDEX 1 INTO t2292.
         t2291 ?= t2292.
         DATA t2293 TYPE REF TO zcl_lnt_fi_identifier.
-        CLEAR t2293.
         IF t2291 IS BOUND.
           IF t2291 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -16776,16 +14810,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2293 ?= t2294.
         ENDIF.
         DATA t2295 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2295.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2296 TYPE REF TO object.
-        CLEAR t2296.
         READ TABLE p1->items INDEX 2 INTO t2296.
         t2295 ?= t2296.
         DATA t2297 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t2297.
         IF t2295 IS BOUND.
           t2297 = NEW #( ).
           t2297->has = abap_true.
@@ -16795,16 +14826,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2297->value = t2295->as_string( ).
         ENDIF.
         DATA t2298 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2298.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2299 TYPE REF TO object.
-        CLEAR t2299.
         READ TABLE p1->items INDEX 3 INTO t2299.
         t2298 ?= t2299.
         DATA t2300 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t2300.
         IF t2298 IS BOUND.
           t2300 = NEW #( ).
           t2300->has = abap_true.
@@ -16833,16 +14861,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
     CASE class_name.
       WHEN `ZCL_LNT_SHAPE_5BD99AC8`.
         DATA t2767 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2767.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2768 TYPE REF TO object.
-        CLEAR t2768.
         READ TABLE p1->items INDEX 1 INTO t2768.
         t2767 ?= t2768.
         DATA t2769 TYPE REF TO zcl_lnt_position.
-        CLEAR t2769.
         IF t2767 IS BOUND.
           IF t2767 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -16852,16 +14877,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2769 ?= t2770.
         ENDIF.
         DATA t2771 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2771.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2772 TYPE REF TO object.
-        CLEAR t2772.
         READ TABLE p1->items INDEX 2 INTO t2772.
         t2771 ?= t2772.
         DATA t2773 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t2773.
         IF t2771 IS BOUND.
           t2773 = NEW #( ).
           t2773->has = abap_true.
@@ -16873,12 +14895,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_shape_5bd99ac8 EXPORTING i_pos = t2769 i_member = t2773.
       WHEN `ZCL_LNT_SHAPE_610D43D5`.
         DATA t2173 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2173.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2174 TYPE REF TO object.
-        CLEAR t2174.
         READ TABLE p1->items INDEX 1 INTO t2174.
         t2173 ?= t2174.
         DATA(t2175) = VALUE string( ).
@@ -16887,12 +14907,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t2175 = t2173->as_string( ).
         DATA t2176 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2176.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2177 TYPE REF TO object.
-        CLEAR t2177.
         READ TABLE p1->items INDEX 2 INTO t2177.
         t2176 ?= t2177.
         DATA(t2178) = VALUE string( ).
@@ -16901,16 +14919,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t2178 = t2176->as_string( ).
         DATA t2179 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2179.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2180 TYPE REF TO object.
-        CLEAR t2180.
         READ TABLE p1->items INDEX 3 INTO t2180.
         t2179 ?= t2180.
         DATA t2181 TYPE REF TO zcl_lnt_shape_f7fb0253.
-        CLEAR t2181.
         IF t2179 IS BOUND.
           IF t2179 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -16920,16 +14935,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2181 ?= t2182.
         ENDIF.
         DATA t2183 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2183.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2184 TYPE REF TO object.
-        CLEAR t2184.
         READ TABLE p1->items INDEX 4 INTO t2184.
         t2183 ?= t2184.
         DATA t2185 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t2185.
         IF t2183 IS BOUND.
           t2185 = NEW #( ).
           t2185->has = abap_true.
@@ -16941,12 +14953,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_shape_610d43d5 EXPORTING i_kind = t2175 i_uri = t2178 i_options = t2181 i_annotation_id = t2185.
       WHEN `ZCL_LNT_SHAPE_61BFBCEF`.
         DATA t3300 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t3300.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t3301 TYPE REF TO object.
-        CLEAR t3301.
         READ TABLE p1->items INDEX 1 INTO t3301.
         t3300 ?= t3301.
         DATA(t3302) = VALUE string( ).
@@ -16955,12 +14965,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t3302 = t3300->as_string( ).
         DATA t3303 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t3303.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t3304 TYPE REF TO object.
-        CLEAR t3304.
         READ TABLE p1->items INDEX 2 INTO t3304.
         t3303 ?= t3304.
         DATA(t3305) = VALUE string( ).
@@ -16969,12 +14977,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t3305 = t3303->as_string( ).
         DATA t3306 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t3306.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t3307 TYPE REF TO object.
-        CLEAR t3307.
         READ TABLE p1->items INDEX 3 INTO t3307.
         t3306 ?= t3307.
         DATA(t3308) = VALUE f( ).
@@ -16983,34 +14989,27 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t3308 = t3306->as_number( ).
         DATA t3309 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t3309.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t3310 TYPE REF TO object.
-        CLEAR t3310.
         READ TABLE p1->items INDEX 4 INTO t3310.
         t3309 ?= t3310.
-        DATA(t3311) = VALUE f( ).
         IF t3309 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t3311 = t3309->as_number( ).
-        CREATE OBJECT result TYPE zcl_lnt_shape_61bfbcef EXPORTING i_code = t3302 i_msg = t3305 i_line = t3308 i_col = t3311.
+        CREATE OBJECT result TYPE zcl_lnt_shape_61bfbcef EXPORTING i_code = t3302 i_msg = t3305 i_line = t3308 i_col = t3309->as_number( ).
       WHEN `ZCL_LNT_SHAPE_63D6A181`.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
       WHEN `ZCL_LNT_SHAPE_66ADD1D1`.
         DATA t2500 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2500.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2501 TYPE REF TO object.
-        CLEAR t2501.
         READ TABLE p1->items INDEX 1 INTO t2501.
         t2500 ?= t2501.
         DATA t2502 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t2502.
         IF t2500 IS BOUND.
           t2502 = NEW #( ).
           t2502->has = abap_true.
@@ -17020,16 +15019,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2502->value = t2500->as_string( ).
         ENDIF.
         DATA t2503 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2503.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2504 TYPE REF TO object.
-        CLEAR t2504.
         READ TABLE p1->items INDEX 2 INTO t2504.
         t2503 ?= t2504.
         DATA t2505 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t2505.
         IF t2503 IS BOUND.
           t2505 = NEW #( ).
           t2505->has = abap_true.
@@ -17039,16 +15035,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2505->value = t2503->as_string( ).
         ENDIF.
         DATA t2506 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2506.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2507 TYPE REF TO object.
-        CLEAR t2507.
         READ TABLE p1->items INDEX 3 INTO t2507.
         t2506 ?= t2507.
         DATA t2508 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t2508.
         IF t2506 IS BOUND.
           t2508 = NEW #( ).
           t2508->has = abap_true.
@@ -17058,16 +15051,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2508->value = t2506->as_string( ).
         ENDIF.
         DATA t2509 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2509.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2510 TYPE REF TO object.
-        CLEAR t2510.
         READ TABLE p1->items INDEX 4 INTO t2510.
         t2509 ?= t2510.
         DATA t2511 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t2511.
         IF t2509 IS BOUND.
           t2511 = NEW #( ).
           t2511->has = abap_true.
@@ -17079,16 +15069,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_shape_66add1d1 EXPORTING i_short = t2502 i_medium = t2505 i_long = t2508 i_heading = t2511.
       WHEN `ZCL_LNT_SHAPE_67DB130D`.
         DATA t3263 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t3263.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t3264 TYPE REF TO object.
-        CLEAR t3264.
         READ TABLE p1->items INDEX 1 INTO t3264.
         t3263 ?= t3264.
         DATA t3265 TYPE REF TO zcl_lnt_iabaplint_app_settings.
-        CLEAR t3265.
         IF t3263 IS BOUND.
           IF t3263 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -17100,12 +15087,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_shape_67db130d EXPORTING i_changes = t3265.
       WHEN `ZCL_LNT_SHAPE_6C44845D`.
         DATA t2980 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2980.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2981 TYPE REF TO object.
-        CLEAR t2981.
         READ TABLE p1->items INDEX 1 INTO t2981.
         t2980 ?= t2981.
         DATA(t2982) = VALUE string( ).
@@ -17114,12 +15099,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t2982 = t2980->as_string( ).
         DATA t2983 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2983.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2984 TYPE REF TO object.
-        CLEAR t2984.
         READ TABLE p1->items INDEX 2 INTO t2984.
         t2983 ?= t2984.
         DATA(t2985) = VALUE f( ).
@@ -17128,12 +15111,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t2985 = t2983->as_number( ).
         DATA t2986 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2986.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2987 TYPE REF TO object.
-        CLEAR t2987.
         READ TABLE p1->items INDEX 3 INTO t2987.
         t2986 ?= t2987.
         DATA(t2988) = VALUE f( ).
@@ -17142,16 +15123,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t2988 = t2986->as_number( ).
         DATA t2989 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2989.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2990 TYPE REF TO object.
-        CLEAR t2990.
         READ TABLE p1->items INDEX 4 INTO t2990.
         t2989 ?= t2990.
         DATA t2991 TYPE REF TO object.
-        CLEAR t2991.
         IF t2989 IS BOUND.
           IF t2989 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -17161,16 +15139,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2991 ?= t2992.
         ENDIF.
         DATA t2993 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2993.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2994 TYPE REF TO object.
-        CLEAR t2994.
         READ TABLE p1->items INDEX 5 INTO t2994.
         t2993 ?= t2994.
         DATA t2995 TYPE REF TO object.
-        CLEAR t2995.
         IF t2993 IS BOUND.
           IF t2993 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -17180,12 +15155,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2995 ?= t2996.
         ENDIF.
         DATA t2997 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2997.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2998 TYPE REF TO object.
-        CLEAR t2998.
         READ TABLE p1->items INDEX 6 INTO t2998.
         t2997 ?= t2998.
         DATA(t2999) = VALUE string( ).
@@ -17194,32 +15167,25 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t2999 = t2997->as_string( ).
         DATA t3000 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t3000.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t3001 TYPE REF TO object.
-        CLEAR t3001.
         READ TABLE p1->items INDEX 7 INTO t3001.
         t3000 ?= t3001.
-        DATA(t3002) = VALUE f( ).
         IF t3000 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t3002 = t3000->as_number( ).
-        CREATE OBJECT result TYPE zcl_lnt_shape_6c44845d EXPORTING i_abap = t2982 i_kernel = t2985 i_op = t2988 i_cloud_47cd = t2991 i_ce = t2995 i_name = t2999 i_ordinal = t3002.
+        CREATE OBJECT result TYPE zcl_lnt_shape_6c44845d EXPORTING i_abap = t2982 i_kernel = t2985 i_op = t2988 i_cloud_47cd = t2991 i_ce = t2995 i_name = t2999 i_ordinal = t3000->as_number( ).
       WHEN `ZCL_LNT_SHAPE_6FAC5803`.
         DATA t2249 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2249.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2250 TYPE REF TO object.
-        CLEAR t2250.
         READ TABLE p1->items INDEX 1 INTO t2250.
         t2249 ?= t2250.
         DATA t2251 TYPE REF TO zcl_lnt_range.
-        CLEAR t2251.
         IF t2249 IS BOUND.
           IF t2249 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -17229,16 +15195,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2251 ?= t2252.
         ENDIF.
         DATA t2253 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2253.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2254 TYPE REF TO object.
-        CLEAR t2254.
         READ TABLE p1->items INDEX 2 INTO t2254.
         t2253 ?= t2254.
         DATA t2255 TYPE REF TO zcl_lnt_shape_d0b60cb0.
-        CLEAR t2255.
         IF t2253 IS BOUND.
           IF t2253 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -17248,16 +15211,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2255 ?= t2256.
         ENDIF.
         DATA t2257 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2257.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2258 TYPE REF TO object.
-        CLEAR t2258.
         READ TABLE p1->items INDEX 3 INTO t2258.
         t2257 ?= t2258.
         DATA t2259 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t2259.
         IF t2257 IS BOUND.
           t2259 = NEW #( ).
           t2259->has = abap_true.
@@ -17271,30 +15231,24 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
       WHEN `ZCL_LNT_SHAPE_748AE280`.
         DATA t2445 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2445.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2446 TYPE REF TO object.
-        CLEAR t2446.
         READ TABLE p1->items INDEX 1 INTO t2446.
         t2445 ?= t2446.
         DATA t2447 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2447.
         IF t2445 IS BOUND.
           t2447 = t2445.
         ENDIF.
         DATA t2448 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2448.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2449 TYPE REF TO object.
-        CLEAR t2449.
         READ TABLE p1->items INDEX 2 INTO t2449.
         t2448 ?= t2449.
         DATA t2450 TYPE REF TO zcl_lnt_range.
-        CLEAR t2450.
         IF t2448 IS BOUND.
           IF t2448 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -17306,12 +15260,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_shape_748ae280 EXPORTING i_contents = t2447 i_range = t2450.
       WHEN `ZCL_LNT_SHAPE_7C1B39E6`.
         DATA t2107 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2107.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2108 TYPE REF TO object.
-        CLEAR t2108.
         READ TABLE p1->items INDEX 1 INTO t2108.
         t2107 ?= t2108.
         DATA(t2109) = VALUE string( ).
@@ -17320,12 +15272,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t2109 = t2107->as_string( ).
         DATA t2110 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2110.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2111 TYPE REF TO object.
-        CLEAR t2111.
         READ TABLE p1->items INDEX 2 INTO t2111.
         t2110 ?= t2111.
         DATA(t2112) = VALUE string( ).
@@ -17334,16 +15284,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t2112 = t2110->as_string( ).
         DATA t2113 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2113.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2114 TYPE REF TO object.
-        CLEAR t2114.
         READ TABLE p1->items INDEX 3 INTO t2114.
         t2113 ?= t2114.
         DATA t2115 TYPE REF TO zcl_lnt_abstract_token.
-        CLEAR t2115.
         IF t2113 IS BOUND.
           IF t2113 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -17353,16 +15300,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2115 ?= t2116.
         ENDIF.
         DATA t2117 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2117.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2118 TYPE REF TO object.
-        CLEAR t2118.
         READ TABLE p1->items INDEX 4 INTO t2118.
         t2117 ?= t2118.
         DATA t2119 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t2119.
         IF t2117 IS BOUND.
           t2119 = NEW #( ).
           t2119->has = abap_true.
@@ -17374,16 +15318,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_shape_7c1b39e6 EXPORTING i_type_9913 = t2109 i_name = t2112 i_token = t2115 i_filename = t2119.
       WHEN `ZCL_LNT_SHAPE_7DDEB4AB`.
         DATA t2774 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2774.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2775 TYPE REF TO object.
-        CLEAR t2775.
         READ TABLE p1->items INDEX 1 INTO t2775.
         t2774 ?= t2775.
         DATA t2776 TYPE REF TO zcl_lnt_fi_identifier.
-        CLEAR t2776.
         IF t2774 IS BOUND.
           IF t2774 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -17393,36 +15334,29 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2776 ?= t2777.
         ENDIF.
         DATA t2778 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2778.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2779 TYPE REF TO object.
-        CLEAR t2779.
         READ TABLE p1->items INDEX 2 INTO t2779.
         t2778 ?= t2779.
-        DATA(t2780) = VALUE string( ).
         IF t2778 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t2780 = t2778->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_shape_7ddeb4ab EXPORTING i_id = t2776 i_found = t2780.
+        CREATE OBJECT result TYPE zcl_lnt_shape_7ddeb4ab EXPORTING i_id = t2776 i_found = t2778->as_string( ).
       WHEN `ZCL_LNT_SHAPE_7E12C7B7`.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
       WHEN `ZCL_LNT_SHAPE_7FBAEC50`.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
       WHEN `ZCL_LNT_SHAPE_8306A8A1`.
         DATA t2094 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2094.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2095 TYPE REF TO object.
-        CLEAR t2095.
         READ TABLE p1->items INDEX 1 INTO t2095.
         t2094 ?= t2095.
         DATA t2096 TYPE REF TO zcl_lnt_location.
-        CLEAR t2096.
         IF t2094 IS BOUND.
           IF t2094 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -17432,28 +15366,22 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2096 ?= t2097.
         ENDIF.
         DATA t2098 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2098.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2099 TYPE REF TO object.
-        CLEAR t2099.
         READ TABLE p1->items INDEX 2 INTO t2099.
         t2098 ?= t2099.
-        DATA(t2100) = VALUE string( ).
         IF t2098 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t2100 = t2098->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_shape_8306a8a1 EXPORTING i_location = t2096 i_message_26cb = t2100.
+        CREATE OBJECT result TYPE zcl_lnt_shape_8306a8a1 EXPORTING i_location = t2096 i_message_26cb = t2098->as_string( ).
       WHEN `ZCL_LNT_SHAPE_88A44908`.
         DATA t2416 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2416.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2417 TYPE REF TO object.
-        CLEAR t2417.
         READ TABLE p1->items INDEX 1 INTO t2417.
         t2416 ?= t2417.
         DATA(t2418) = VALUE string( ).
@@ -17462,20 +15390,16 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t2418 = t2416->as_string( ).
         DATA t2419 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2419.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2420 TYPE REF TO object.
-        CLEAR t2420.
         READ TABLE p1->items INDEX 2 INTO t2420.
         t2419 ?= t2420.
-        DATA(t2421) = VALUE abap_bool( ).
         IF t2419 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t2421 = t2419->as_boolean( ).
-        CREATE OBJECT result TYPE zcl_lnt_shape_88a44908 EXPORTING i_value = t2418 i_keyword = t2421.
+        CREATE OBJECT result TYPE zcl_lnt_shape_88a44908 EXPORTING i_value = t2418 i_keyword = t2419->as_boolean( ).
       WHEN OTHERS.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDCASE.
@@ -17493,16 +15417,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
     CASE class_name.
       WHEN `ZCL_LNT_SHAPE_88C047D7`.
         DATA t2466 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2466.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2467 TYPE REF TO object.
-        CLEAR t2467.
         READ TABLE p1->items INDEX 1 INTO t2467.
         t2466 ?= t2467.
         DATA t2468 TYPE REF TO zcl_lnt_abstract_token.
-        CLEAR t2468.
         IF t2466 IS BOUND.
           IF t2466 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -17512,16 +15433,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2468 ?= t2469.
         ENDIF.
         DATA t2470 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2470.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2471 TYPE REF TO object.
-        CLEAR t2471.
         READ TABLE p1->items INDEX 2 INTO t2471.
         t2470 ?= t2471.
         DATA t2472 TYPE REF TO zcl_lnt_position.
-        CLEAR t2472.
         IF t2470 IS BOUND.
           IF t2470 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -17531,16 +15449,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2472 ?= t2473.
         ENDIF.
         DATA t2474 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2474.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2475 TYPE REF TO object.
-        CLEAR t2475.
         READ TABLE p1->items INDEX 3 INTO t2475.
         t2474 ?= t2475.
         DATA t2476 TYPE REF TO zcl_lnt_position.
-        CLEAR t2476.
         IF t2474 IS BOUND.
           IF t2474 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -17552,30 +15467,24 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_shape_88c047d7 EXPORTING i_token = t2468 i_start = t2472 i_end = t2476.
       WHEN `ZCL_LNT_SHAPE_88EE2C6C`.
         DATA t2078 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2078.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2079 TYPE REF TO object.
-        CLEAR t2079.
         READ TABLE p1->items INDEX 1 INTO t2079.
         t2078 ?= t2079.
-        DATA(t2080) = VALUE string( ).
         IF t2078 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t2080 = t2078->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_shape_88ee2c6c EXPORTING i_href = t2080.
+        CREATE OBJECT result TYPE zcl_lnt_shape_88ee2c6c EXPORTING i_href = t2078->as_string( ).
       WHEN `ZCL_LNT_SHAPE_897EAE97`.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
       WHEN `ZCL_LNT_SHAPE_8FC6DF03`.
         DATA t2052 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2052.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2053 TYPE REF TO object.
-        CLEAR t2053.
         READ TABLE p1->items INDEX 1 INTO t2053.
         t2052 ?= t2053.
         DATA(t2054) = VALUE f( ).
@@ -17584,12 +15493,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t2054 = t2052->as_number( ).
         DATA t2055 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2055.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2056 TYPE REF TO object.
-        CLEAR t2056.
         READ TABLE p1->items INDEX 2 INTO t2056.
         t2055 ?= t2056.
         DATA(t2057) = VALUE f( ).
@@ -17598,32 +15505,25 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t2057 = t2055->as_number( ).
         DATA t2058 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2058.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2059 TYPE REF TO object.
-        CLEAR t2059.
         READ TABLE p1->items INDEX 3 INTO t2059.
         t2058 ?= t2059.
-        DATA(t2060) = VALUE f( ).
         IF t2058 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t2060 = t2058->as_number( ).
-        CREATE OBJECT result TYPE zcl_lnt_shape_8fc6df03 EXPORTING i_lexing = t2054 i_statements = t2057 i_structure = t2060.
+        CREATE OBJECT result TYPE zcl_lnt_shape_8fc6df03 EXPORTING i_lexing = t2054 i_statements = t2057 i_structure = t2058->as_number( ).
       WHEN `ZCL_LNT_SHAPE_90553F00`.
         DATA t2478 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2478.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2479 TYPE REF TO object.
-        CLEAR t2479.
         READ TABLE p1->items INDEX 1 INTO t2479.
         t2478 ?= t2479.
         DATA t2480 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t2480.
         IF t2478 IS BOUND.
           t2480 = NEW #( ).
           t2480->has = abap_true.
@@ -17635,16 +15535,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_shape_90553f00 EXPORTING i_rollname_aa57 = t2480.
       WHEN `ZCL_LNT_SHAPE_93CA86E8`.
         DATA t2663 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2663.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2664 TYPE REF TO object.
-        CLEAR t2664.
         READ TABLE p1->items INDEX 1 INTO t2664.
         t2663 ?= t2664.
         DATA t2665 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t2665.
         IF t2663 IS BOUND.
           t2665 = NEW #( ).
           t2665->has = abap_true.
@@ -17654,16 +15551,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2665->value = t2663->as_string( ).
         ENDIF.
         DATA t2666 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2666.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2667 TYPE REF TO object.
-        CLEAR t2667.
         READ TABLE p1->items INDEX 2 INTO t2667.
         t2666 ?= t2667.
         DATA t2668 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t2668.
         IF t2666 IS BOUND.
           t2668 = NEW #( ).
           t2668->has = abap_true.
@@ -17675,12 +15569,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_shape_93ca86e8 EXPORTING i_keyname = t2665 i_keyfield = t2668.
       WHEN `ZCL_LNT_SHAPE_9428B3E9`.
         DATA t2481 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2481.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2482 TYPE REF TO object.
-        CLEAR t2482.
         READ TABLE p1->items INDEX 1 INTO t2482.
         t2481 ?= t2482.
         DATA(t2483) = VALUE string( ).
@@ -17689,16 +15581,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t2483 = t2481->as_string( ).
         DATA t2484 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2484.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2485 TYPE REF TO object.
-        CLEAR t2485.
         READ TABLE p1->items INDEX 2 INTO t2485.
         t2484 ?= t2485.
         DATA t2486 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t2486.
         IF t2484 IS BOUND.
           t2486 = NEW #( ).
           t2486->has = abap_true.
@@ -17710,16 +15599,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_shape_9428b3e9 EXPORTING i_name = t2483 i_alias = t2486.
       WHEN `ZCL_LNT_SHAPE_96FAA29E`.
         DATA t2669 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2669.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2670 TYPE REF TO object.
-        CLEAR t2670.
         READ TABLE p1->items INDEX 1 INTO t2670.
         t2669 ?= t2670.
         DATA t2671 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t2671.
         IF t2669 IS BOUND.
           t2671 = NEW #( ).
           t2671->has = abap_true.
@@ -17729,16 +15615,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2671->value = t2669->as_string( ).
         ENDIF.
         DATA t2672 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2672.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2673 TYPE REF TO object.
-        CLEAR t2673.
         READ TABLE p1->items INDEX 2 INTO t2673.
         t2672 ?= t2673.
         DATA t2674 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t2674.
         IF t2672 IS BOUND.
           t2674 = NEW #( ).
           t2674->has = abap_true.
@@ -17748,16 +15631,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2674->value = t2672->as_string( ).
         ENDIF.
         DATA t2675 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2675.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2676 TYPE REF TO object.
-        CLEAR t2676.
         READ TABLE p1->items INDEX 3 INTO t2676.
         t2675 ?= t2676.
         DATA t2677 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t2677.
         IF t2675 IS BOUND.
           t2677 = NEW #( ).
           t2677->has = abap_true.
@@ -17767,28 +15647,22 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2677->value = t2675->as_string( ).
         ENDIF.
         DATA t2678 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2678.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2679 TYPE REF TO object.
-        CLEAR t2679.
         READ TABLE p1->items INDEX 4 INTO t2679.
         t2678 ?= t2679.
-        DATA(t2680) = VALUE abap_bool( ).
         IF t2678 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t2680 = t2678->as_boolean( ).
-        CREATE OBJECT result TYPE zcl_lnt_shape_96faa29e EXPORTING i_keyname = t2671 i_accessmode = t2674 i_kind = t2677 i_unique = t2680.
+        CREATE OBJECT result TYPE zcl_lnt_shape_96faa29e EXPORTING i_keyname = t2671 i_accessmode = t2674 i_kind = t2677 i_unique = t2678->as_boolean( ).
       WHEN `ZCL_LNT_SHAPE_9919B469`.
         DATA t2260 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2260.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2261 TYPE REF TO object.
-        CLEAR t2261.
         READ TABLE p1->items INDEX 1 INTO t2261.
         t2260 ?= t2261.
         DATA(t2262) = VALUE string( ).
@@ -17797,16 +15671,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t2262 = t2260->as_string( ).
         DATA t2263 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2263.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2264 TYPE REF TO object.
-        CLEAR t2264.
         READ TABLE p1->items INDEX 2 INTO t2264.
         t2263 ?= t2264.
         DATA t2265 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-        CLEAR t2265.
         IF t2263 IS BOUND.
           t2265 = NEW #( ).
           t2265->has = abap_true.
@@ -17816,16 +15687,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2265->value = t2263->as_boolean( ).
         ENDIF.
         DATA t2266 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2266.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2267 TYPE REF TO object.
-        CLEAR t2267.
         READ TABLE p1->items INDEX 3 INTO t2267.
         t2266 ?= t2267.
         DATA t2268 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t2268.
         IF t2266 IS BOUND.
           t2268 = NEW #( ).
           t2268->has = abap_true.
@@ -17837,12 +15705,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_shape_9919b469 EXPORTING i_label = t2262 i_needs_confirmation = t2265 i_description = t2268.
       WHEN `ZCL_LNT_SHAPE_9A575E77`.
         DATA t2042 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2042.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2043 TYPE REF TO object.
-        CLEAR t2043.
         READ TABLE p1->items INDEX 1 INTO t2043.
         t2042 ?= t2043.
         DATA(t2044) = VALUE string( ).
@@ -17851,12 +15717,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t2044 = t2042->as_string( ).
         DATA t2045 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2045.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2046 TYPE REF TO object.
-        CLEAR t2046.
         READ TABLE p1->items INDEX 2 INTO t2046.
         t2045 ?= t2046.
         DATA(t2047) = VALUE string( ).
@@ -17865,16 +15729,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t2047 = t2045->as_string( ).
         DATA t2048 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2048.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2049 TYPE REF TO object.
-        CLEAR t2049.
         READ TABLE p1->items INDEX 3 INTO t2049.
         t2048 ?= t2049.
         DATA t2050 TYPE REF TO zcl_lnt_abstract_token.
-        CLEAR t2050.
         IF t2048 IS BOUND.
           IF t2048 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -17890,12 +15751,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
       WHEN `ZCL_LNT_SHAPE_9D728A2D`.
         DATA t2908 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2908.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2909 TYPE REF TO object.
-        CLEAR t2909.
         READ TABLE p1->items INDEX 1 INTO t2909.
         t2908 ?= t2909.
         DATA(t2910) = VALUE string( ).
@@ -17904,12 +15763,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t2910 = t2908->as_string( ).
         DATA t2911 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2911.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2912 TYPE REF TO object.
-        CLEAR t2912.
         READ TABLE p1->items INDEX 2 INTO t2912.
         t2911 ?= t2912.
         DATA(t2913) = VALUE f( ).
@@ -17918,12 +15775,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t2913 = t2911->as_number( ).
         DATA t2914 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2914.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2915 TYPE REF TO object.
-        CLEAR t2915.
         READ TABLE p1->items INDEX 3 INTO t2915.
         t2914 ?= t2915.
         DATA(t2916) = VALUE f( ).
@@ -17932,12 +15787,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t2916 = t2914->as_number( ).
         DATA t2917 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2917.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2918 TYPE REF TO object.
-        CLEAR t2918.
         READ TABLE p1->items INDEX 4 INTO t2918.
         t2917 ?= t2918.
         DATA(t2919) = VALUE f( ).
@@ -17946,28 +15799,22 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t2919 = t2917->as_number( ).
         DATA t2920 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2920.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2921 TYPE REF TO object.
-        CLEAR t2921.
         READ TABLE p1->items INDEX 5 INTO t2921.
         t2920 ?= t2921.
-        DATA(t2922) = VALUE f( ).
         IF t2920 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t2922 = t2920->as_number( ).
-        CREATE OBJECT result TYPE zcl_lnt_shape_9d728a2d EXPORTING i_abap = t2910 i_kernel = t2913 i_op = t2916 i_cloud_47cd = t2919 i_ce = t2922.
+        CREATE OBJECT result TYPE zcl_lnt_shape_9d728a2d EXPORTING i_abap = t2910 i_kernel = t2913 i_op = t2916 i_cloud_47cd = t2919 i_ce = t2920->as_number( ).
       WHEN `ZCL_LNT_SHAPE_9E749DB2`.
         DATA t2026 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2026.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2027 TYPE REF TO object.
-        CLEAR t2027.
         READ TABLE p1->items INDEX 1 INTO t2027.
         t2026 ?= t2027.
         DATA(t2028) = VALUE string( ).
@@ -17976,12 +15823,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t2028 = t2026->as_string( ).
         DATA t2029 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2029.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2030 TYPE REF TO object.
-        CLEAR t2030.
         READ TABLE p1->items INDEX 2 INTO t2030.
         t2029 ?= t2030.
         DATA(t2031) = VALUE string( ).
@@ -17990,28 +15835,22 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t2031 = t2029->as_string( ).
         DATA t2032 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2032.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2033 TYPE REF TO object.
-        CLEAR t2033.
         READ TABLE p1->items INDEX 3 INTO t2033.
         t2032 ?= t2033.
-        DATA(t2034) = VALUE string( ).
         IF t2032 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t2034 = t2032->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_shape_9e749db2 EXPORTING i_type_9913 = t2028 i_old_name = t2031 i_new_name = t2034.
+        CREATE OBJECT result TYPE zcl_lnt_shape_9e749db2 EXPORTING i_type_9913 = t2028 i_old_name = t2031 i_new_name = t2032->as_string( ).
       WHEN `ZCL_LNT_SHAPE_9F7A8372`.
         DATA t2885 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2885.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2886 TYPE REF TO object.
-        CLEAR t2886.
         READ TABLE p1->items INDEX 1 INTO t2886.
         t2885 ?= t2886.
         DATA(t2887) = VALUE string( ).
@@ -18020,12 +15859,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t2887 = t2885->as_string( ).
         DATA t2888 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2888.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2889 TYPE REF TO object.
-        CLEAR t2889.
         READ TABLE p1->items INDEX 2 INTO t2889.
         t2888 ?= t2889.
         DATA(t2890) = VALUE f( ).
@@ -18034,12 +15871,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t2890 = t2888->as_number( ).
         DATA t2891 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2891.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2892 TYPE REF TO object.
-        CLEAR t2892.
         READ TABLE p1->items INDEX 3 INTO t2892.
         t2891 ?= t2892.
         DATA(t2893) = VALUE f( ).
@@ -18048,12 +15883,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t2893 = t2891->as_number( ).
         DATA t2894 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2894.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2895 TYPE REF TO object.
-        CLEAR t2895.
         READ TABLE p1->items INDEX 4 INTO t2895.
         t2894 ?= t2895.
         DATA(t2896) = VALUE f( ).
@@ -18062,16 +15895,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t2896 = t2894->as_number( ).
         DATA t2897 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2897.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2898 TYPE REF TO object.
-        CLEAR t2898.
         READ TABLE p1->items INDEX 5 INTO t2898.
         t2897 ?= t2898.
         DATA t2899 TYPE REF TO object.
-        CLEAR t2899.
         IF t2897 IS BOUND.
           IF t2897 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -18083,12 +15913,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_shape_9f7a8372 EXPORTING i_abap = t2887 i_kernel = t2890 i_op = t2893 i_cloud_47cd = t2896 i_ce = t2899.
       WHEN `ZCL_LNT_SHAPE_A19BF969`.
         DATA t3003 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t3003.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t3004 TYPE REF TO object.
-        CLEAR t3004.
         READ TABLE p1->items INDEX 1 INTO t3004.
         t3003 ?= t3004.
         DATA(t3005) = VALUE string( ).
@@ -18097,16 +15925,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t3005 = t3003->as_string( ).
         DATA t3006 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t3006.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t3007 TYPE REF TO object.
-        CLEAR t3007.
         READ TABLE p1->items INDEX 2 INTO t3007.
         t3006 ?= t3007.
         DATA t3008 TYPE REF TO object.
-        CLEAR t3008.
         IF t3006 IS BOUND.
           IF t3006 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -18116,16 +15941,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t3008 ?= t3009.
         ENDIF.
         DATA t3010 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t3010.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t3011 TYPE REF TO object.
-        CLEAR t3011.
         READ TABLE p1->items INDEX 3 INTO t3011.
         t3010 ?= t3011.
         DATA t3012 TYPE REF TO object.
-        CLEAR t3012.
         IF t3010 IS BOUND.
           IF t3010 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -18135,16 +15957,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t3012 ?= t3013.
         ENDIF.
         DATA t3014 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t3014.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t3015 TYPE REF TO object.
-        CLEAR t3015.
         READ TABLE p1->items INDEX 4 INTO t3015.
         t3014 ?= t3015.
         DATA t3016 TYPE REF TO object.
-        CLEAR t3016.
         IF t3014 IS BOUND.
           IF t3014 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -18154,16 +15973,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t3016 ?= t3017.
         ENDIF.
         DATA t3018 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t3018.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t3019 TYPE REF TO object.
-        CLEAR t3019.
         READ TABLE p1->items INDEX 5 INTO t3019.
         t3018 ?= t3019.
         DATA t3020 TYPE REF TO object.
-        CLEAR t3020.
         IF t3018 IS BOUND.
           IF t3018 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -18173,12 +15989,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t3020 ?= t3021.
         ENDIF.
         DATA t3022 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t3022.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t3023 TYPE REF TO object.
-        CLEAR t3023.
         READ TABLE p1->items INDEX 6 INTO t3023.
         t3022 ?= t3023.
         DATA(t3024) = VALUE string( ).
@@ -18187,20 +16001,16 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t3024 = t3022->as_string( ).
         DATA t3025 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t3025.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t3026 TYPE REF TO object.
-        CLEAR t3026.
         READ TABLE p1->items INDEX 7 INTO t3026.
         t3025 ?= t3026.
-        DATA(t3027) = VALUE f( ).
         IF t3025 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t3027 = t3025->as_number( ).
-        CREATE OBJECT result TYPE zcl_lnt_shape_a19bf969 EXPORTING i_abap = t3005 i_kernel = t3008 i_op = t3012 i_cloud_47cd = t3016 i_ce = t3020 i_name = t3024 i_ordinal = t3027.
+        CREATE OBJECT result TYPE zcl_lnt_shape_a19bf969 EXPORTING i_abap = t3005 i_kernel = t3008 i_op = t3012 i_cloud_47cd = t3016 i_ce = t3020 i_name = t3024 i_ordinal = t3025->as_number( ).
       WHEN OTHERS.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDCASE.
@@ -18210,16 +16020,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
     CASE class_name.
       WHEN `ZCL_LNT_SHAPE_A38E878F`.
         DATA t2301 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2301.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2302 TYPE REF TO object.
-        CLEAR t2302.
         READ TABLE p1->items INDEX 1 INTO t2302.
         t2301 ?= t2302.
         DATA t2303 TYPE REF TO zif_lnt_method_definition.
-        CLEAR t2303.
         IF t2301 IS BOUND.
           IF t2301 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -18229,16 +16036,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2303 ?= t2304.
         ENDIF.
         DATA t2305 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2305.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2306 TYPE REF TO object.
-        CLEAR t2306.
         READ TABLE p1->items INDEX 2 INTO t2306.
         t2305 ?= t2306.
         DATA t2307 TYPE REF TO zif_lnt_interface_definition.
-        CLEAR t2307.
         IF t2305 IS BOUND.
           IF t2305 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -18250,12 +16054,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_shape_a38e878f EXPORTING i_method = t2303 i_def = t2307.
       WHEN `ZCL_LNT_SHAPE_A69DD887`.
         DATA t2788 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2788.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2789 TYPE REF TO object.
-        CLEAR t2789.
         READ TABLE p1->items INDEX 1 INTO t2789.
         t2788 ?= t2789.
         DATA(t2790) = VALUE f( ).
@@ -18264,28 +16066,22 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t2790 = t2788->as_number( ).
         DATA t2791 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2791.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2792 TYPE REF TO object.
-        CLEAR t2792.
         READ TABLE p1->items INDEX 2 INTO t2792.
         t2791 ?= t2792.
-        DATA(t2793) = VALUE string( ).
         IF t2791 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t2793 = t2791->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_shape_a69dd887 EXPORTING i_runtime = t2790 i_name = t2793.
+        CREATE OBJECT result TYPE zcl_lnt_shape_a69dd887 EXPORTING i_runtime = t2790 i_name = t2791->as_string( ).
       WHEN `ZCL_LNT_SHAPE_A6B0F742`.
         DATA t3071 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t3071.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t3072 TYPE REF TO object.
-        CLEAR t3072.
         READ TABLE p1->items INDEX 1 INTO t3072.
         t3071 ?= t3072.
         DATA(t3073) = VALUE string( ).
@@ -18294,12 +16090,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t3073 = t3071->as_string( ).
         DATA t3074 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t3074.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t3075 TYPE REF TO object.
-        CLEAR t3075.
         READ TABLE p1->items INDEX 2 INTO t3075.
         t3074 ?= t3075.
         DATA(t3076) = VALUE f( ).
@@ -18308,16 +16102,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t3076 = t3074->as_number( ).
         DATA t3077 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t3077.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t3078 TYPE REF TO object.
-        CLEAR t3078.
         READ TABLE p1->items INDEX 3 INTO t3078.
         t3077 ?= t3078.
         DATA t3079 TYPE REF TO object.
-        CLEAR t3079.
         IF t3077 IS BOUND.
           IF t3077 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -18327,12 +16118,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t3079 ?= t3080.
         ENDIF.
         DATA t3081 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t3081.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t3082 TYPE REF TO object.
-        CLEAR t3082.
         READ TABLE p1->items INDEX 4 INTO t3082.
         t3081 ?= t3082.
         DATA(t3083) = VALUE f( ).
@@ -18341,12 +16130,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t3083 = t3081->as_number( ).
         DATA t3084 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t3084.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t3085 TYPE REF TO object.
-        CLEAR t3085.
         READ TABLE p1->items INDEX 5 INTO t3085.
         t3084 ?= t3085.
         DATA(t3086) = VALUE f( ).
@@ -18355,12 +16142,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t3086 = t3084->as_number( ).
         DATA t3087 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t3087.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t3088 TYPE REF TO object.
-        CLEAR t3088.
         READ TABLE p1->items INDEX 6 INTO t3088.
         t3087 ?= t3088.
         DATA(t3089) = VALUE string( ).
@@ -18369,28 +16154,22 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t3089 = t3087->as_string( ).
         DATA t3090 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t3090.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t3091 TYPE REF TO object.
-        CLEAR t3091.
         READ TABLE p1->items INDEX 7 INTO t3091.
         t3090 ?= t3091.
-        DATA(t3092) = VALUE f( ).
         IF t3090 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t3092 = t3090->as_number( ).
-        CREATE OBJECT result TYPE zcl_lnt_shape_a6b0f742 EXPORTING i_abap = t3073 i_kernel = t3076 i_op = t3079 i_cloud_47cd = t3083 i_ce = t3086 i_name = t3089 i_ordinal = t3092.
+        CREATE OBJECT result TYPE zcl_lnt_shape_a6b0f742 EXPORTING i_abap = t3073 i_kernel = t3076 i_op = t3079 i_cloud_47cd = t3083 i_ce = t3086 i_name = t3089 i_ordinal = t3090->as_number( ).
       WHEN `ZCL_LNT_SHAPE_A83BB7E1`.
         DATA t3028 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t3028.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t3029 TYPE REF TO object.
-        CLEAR t3029.
         READ TABLE p1->items INDEX 1 INTO t3029.
         t3028 ?= t3029.
         DATA(t3030) = VALUE string( ).
@@ -18399,12 +16178,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t3030 = t3028->as_string( ).
         DATA t3031 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t3031.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t3032 TYPE REF TO object.
-        CLEAR t3032.
         READ TABLE p1->items INDEX 2 INTO t3032.
         t3031 ?= t3032.
         DATA(t3033) = VALUE f( ).
@@ -18413,12 +16190,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t3033 = t3031->as_number( ).
         DATA t3034 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t3034.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t3035 TYPE REF TO object.
-        CLEAR t3035.
         READ TABLE p1->items INDEX 3 INTO t3035.
         t3034 ?= t3035.
         DATA(t3036) = VALUE f( ).
@@ -18427,12 +16202,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t3036 = t3034->as_number( ).
         DATA t3037 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t3037.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t3038 TYPE REF TO object.
-        CLEAR t3038.
         READ TABLE p1->items INDEX 4 INTO t3038.
         t3037 ?= t3038.
         DATA(t3039) = VALUE f( ).
@@ -18441,16 +16214,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t3039 = t3037->as_number( ).
         DATA t3040 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t3040.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t3041 TYPE REF TO object.
-        CLEAR t3041.
         READ TABLE p1->items INDEX 5 INTO t3041.
         t3040 ?= t3041.
         DATA t3042 TYPE REF TO object.
-        CLEAR t3042.
         IF t3040 IS BOUND.
           IF t3040 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -18460,12 +16230,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t3042 ?= t3043.
         ENDIF.
         DATA t3044 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t3044.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t3045 TYPE REF TO object.
-        CLEAR t3045.
         READ TABLE p1->items INDEX 6 INTO t3045.
         t3044 ?= t3045.
         DATA(t3046) = VALUE string( ).
@@ -18474,28 +16242,22 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t3046 = t3044->as_string( ).
         DATA t3047 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t3047.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t3048 TYPE REF TO object.
-        CLEAR t3048.
         READ TABLE p1->items INDEX 7 INTO t3048.
         t3047 ?= t3048.
-        DATA(t3049) = VALUE f( ).
         IF t3047 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t3049 = t3047->as_number( ).
-        CREATE OBJECT result TYPE zcl_lnt_shape_a83bb7e1 EXPORTING i_abap = t3030 i_kernel = t3033 i_op = t3036 i_cloud_47cd = t3039 i_ce = t3042 i_name = t3046 i_ordinal = t3049.
+        CREATE OBJECT result TYPE zcl_lnt_shape_a83bb7e1 EXPORTING i_abap = t3030 i_kernel = t3033 i_op = t3036 i_cloud_47cd = t3039 i_ce = t3042 i_name = t3046 i_ordinal = t3047->as_number( ).
       WHEN `ZCL_LNT_SHAPE_AEA25758`.
         DATA t2425 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2425.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2426 TYPE REF TO object.
-        CLEAR t2426.
         READ TABLE p1->items INDEX 1 INTO t2426.
         t2425 ?= t2426.
         DATA(t2427) = VALUE string( ).
@@ -18504,30 +16266,24 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t2427 = t2425->as_string( ).
         DATA t2428 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2428.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2429 TYPE REF TO object.
-        CLEAR t2429.
         READ TABLE p1->items INDEX 2 INTO t2429.
         t2428 ?= t2429.
         DATA t2430 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2430.
         IF t2428 IS BOUND.
           t2430 = t2428.
         ENDIF.
         DATA t2431 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2431.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2432 TYPE REF TO object.
-        CLEAR t2432.
         READ TABLE p1->items INDEX 3 INTO t2432.
         t2431 ?= t2432.
         DATA t2433 TYPE REF TO zcl_lnt_location.
-        CLEAR t2433.
         IF t2431 IS BOUND.
           IF t2431 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -18537,16 +16293,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2433 ?= t2434.
         ENDIF.
         DATA t2435 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2435.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2436 TYPE REF TO object.
-        CLEAR t2436.
         READ TABLE p1->items INDEX 4 INTO t2436.
         t2435 ?= t2436.
         DATA t2437 TYPE REF TO zcl_lnt_command.
-        CLEAR t2437.
         IF t2435 IS BOUND.
           IF t2435 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -18562,12 +16315,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
       WHEN `ZCL_LNT_SHAPE_B9E98CEA`.
         DATA t2731 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2731.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2732 TYPE REF TO object.
-        CLEAR t2732.
         READ TABLE p1->items INDEX 1 INTO t2732.
         t2731 ?= t2732.
         DATA(t2733) = VALUE string( ).
@@ -18576,32 +16327,25 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t2733 = t2731->as_string( ).
         DATA t2734 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2734.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2735 TYPE REF TO object.
-        CLEAR t2735.
         READ TABLE p1->items INDEX 2 INTO t2735.
         t2734 ?= t2735.
-        DATA(t2736) = VALUE string( ).
         IF t2734 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t2736 = t2734->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_shape_b9e98cea EXPORTING i_body = t2733 i_end = t2736.
+        CREATE OBJECT result TYPE zcl_lnt_shape_b9e98cea EXPORTING i_body = t2733 i_end = t2734->as_string( ).
       WHEN `ZCL_LNT_SHAPE_BF434F34`.
         DATA t2186 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2186.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2187 TYPE REF TO object.
-        CLEAR t2187.
         READ TABLE p1->items INDEX 1 INTO t2187.
         t2186 ?= t2187.
         DATA t2188 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-        CLEAR t2188.
         IF t2186 IS BOUND.
           t2188 = NEW #( ).
           t2188->has = abap_true.
@@ -18611,16 +16355,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2188->value = t2186->as_boolean( ).
         ENDIF.
         DATA t2189 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2189.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2190 TYPE REF TO object.
-        CLEAR t2190.
         READ TABLE p1->items INDEX 2 INTO t2190.
         t2189 ?= t2190.
         DATA t2191 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-        CLEAR t2191.
         IF t2189 IS BOUND.
           t2191 = NEW #( ).
           t2191->has = abap_true.
@@ -18632,16 +16373,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_shape_bf434f34 EXPORTING i_recursive = t2188 i_ignore_if_not_exists = t2191.
       WHEN `ZCL_LNT_SHAPE_C0ACC5F0`.
         DATA t2600 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2600.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2601 TYPE REF TO object.
-        CLEAR t2601.
         READ TABLE p1->items INDEX 1 INTO t2601.
         t2600 ?= t2601.
         DATA t2602 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t2602.
         IF t2600 IS BOUND.
           t2602 = NEW #( ).
           t2602->has = abap_true.
@@ -18651,16 +16389,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2602->value = t2600->as_string( ).
         ENDIF.
         DATA t2603 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2603.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2604 TYPE REF TO object.
-        CLEAR t2604.
         READ TABLE p1->items INDEX 2 INTO t2604.
         t2603 ?= t2604.
         DATA t2605 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t2605.
         IF t2603 IS BOUND.
           t2605 = NEW #( ).
           t2605->has = abap_true.
@@ -18670,16 +16405,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2605->value = t2603->as_string( ).
         ENDIF.
         DATA t2606 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2606.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2607 TYPE REF TO object.
-        CLEAR t2607.
         READ TABLE p1->items INDEX 3 INTO t2607.
         t2606 ?= t2607.
         DATA t2608 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t2608.
         IF t2606 IS BOUND.
           t2608 = NEW #( ).
           t2608->has = abap_true.
@@ -18691,12 +16423,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_shape_c0acc5f0 EXPORTING i_url_de75 = t2602 i_class_e01a = t2605 i_folder_0010 = t2608.
       WHEN `ZCL_LNT_SHAPE_C1CE1FF3`.
         DATA t3291 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t3291.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t3292 TYPE REF TO object.
-        CLEAR t3292.
         READ TABLE p1->items INDEX 1 INTO t3292.
         t3291 ?= t3292.
         DATA(t3293) = VALUE string( ).
@@ -18705,20 +16435,16 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t3293 = t3291->as_string( ).
         DATA t3294 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t3294.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t3295 TYPE REF TO object.
-        CLEAR t3295.
         READ TABLE p1->items INDEX 2 INTO t3295.
         t3294 ?= t3295.
-        DATA(t3296) = VALUE string( ).
         IF t3294 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t3296 = t3294->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_shape_c1ce1ff3 EXPORTING i_left = t3293 i_right = t3296.
+        CREATE OBJECT result TYPE zcl_lnt_shape_c1ce1ff3 EXPORTING i_left = t3293 i_right = t3294->as_string( ).
       WHEN `ZCL_LNT_SHAPE_C1D59DC9`.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
       WHEN `ZCL_LNT_SHAPE_C5606A32`.
@@ -18727,12 +16453,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
       WHEN `ZCL_LNT_SHAPE_C82321F8`.
         DATA t2835 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2835.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2836 TYPE REF TO object.
-        CLEAR t2836.
         READ TABLE p1->items INDEX 1 INTO t2836.
         t2835 ?= t2836.
         DATA(t2837) = VALUE string( ).
@@ -18741,12 +16465,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t2837 = t2835->as_string( ).
         DATA t2838 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2838.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2839 TYPE REF TO object.
-        CLEAR t2839.
         READ TABLE p1->items INDEX 2 INTO t2839.
         t2838 ?= t2839.
         DATA(t2840) = VALUE f( ).
@@ -18755,12 +16477,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t2840 = t2838->as_number( ).
         DATA t2841 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2841.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2842 TYPE REF TO object.
-        CLEAR t2842.
         READ TABLE p1->items INDEX 3 INTO t2842.
         t2841 ?= t2842.
         DATA(t2843) = VALUE f( ).
@@ -18769,16 +16489,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t2843 = t2841->as_number( ).
         DATA t2844 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2844.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2845 TYPE REF TO object.
-        CLEAR t2845.
         READ TABLE p1->items INDEX 4 INTO t2845.
         t2844 ?= t2845.
         DATA t2846 TYPE REF TO object.
-        CLEAR t2846.
         IF t2844 IS BOUND.
           IF t2844 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -18788,16 +16505,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2846 ?= t2847.
         ENDIF.
         DATA t2848 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2848.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2849 TYPE REF TO object.
-        CLEAR t2849.
         READ TABLE p1->items INDEX 5 INTO t2849.
         t2848 ?= t2849.
         DATA t2850 TYPE REF TO object.
-        CLEAR t2850.
         IF t2848 IS BOUND.
           IF t2848 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -18809,12 +16523,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_shape_c82321f8 EXPORTING i_abap = t2837 i_kernel = t2840 i_op = t2843 i_cloud_47cd = t2846 i_ce = t2850.
       WHEN `ZCL_LNT_SHAPE_C89A2931`.
         DATA t2714 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2714.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2715 TYPE REF TO object.
-        CLEAR t2715.
         READ TABLE p1->items INDEX 1 INTO t2715.
         t2714 ?= t2715.
         DATA(t2716) = VALUE f( ).
@@ -18823,12 +16535,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t2716 = t2714->as_number( ).
         DATA t2717 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2717.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2718 TYPE REF TO object.
-        CLEAR t2718.
         READ TABLE p1->items INDEX 2 INTO t2718.
         t2717 ?= t2718.
         DATA(t2719) = VALUE string( ).
@@ -18837,20 +16547,16 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t2719 = t2717->as_string( ).
         DATA t2720 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2720.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2721 TYPE REF TO object.
-        CLEAR t2721.
         READ TABLE p1->items INDEX 3 INTO t2721.
         t2720 ?= t2721.
-        DATA(t2722) = VALUE string( ).
         IF t2720 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t2722 = t2720->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_shape_c89a2931 EXPORTING i_runtime = t2716 i_name = t2719 i_extra = t2722.
+        CREATE OBJECT result TYPE zcl_lnt_shape_c89a2931 EXPORTING i_runtime = t2716 i_name = t2719 i_extra = t2720->as_string( ).
       WHEN OTHERS.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDCASE.
@@ -18886,12 +16592,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
       WHEN `ZCL_LNT_SHAPE_CA561C1A`.
         DATA t2859 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2859.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2860 TYPE REF TO object.
-        CLEAR t2860.
         READ TABLE p1->items INDEX 1 INTO t2860.
         t2859 ?= t2860.
         DATA(t2861) = VALUE string( ).
@@ -18900,16 +16604,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t2861 = t2859->as_string( ).
         DATA t2862 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2862.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2863 TYPE REF TO object.
-        CLEAR t2863.
         READ TABLE p1->items INDEX 2 INTO t2863.
         t2862 ?= t2863.
         DATA t2864 TYPE REF TO object.
-        CLEAR t2864.
         IF t2862 IS BOUND.
           IF t2862 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -18919,16 +16620,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2864 ?= t2865.
         ENDIF.
         DATA t2866 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2866.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2867 TYPE REF TO object.
-        CLEAR t2867.
         READ TABLE p1->items INDEX 3 INTO t2867.
         t2866 ?= t2867.
         DATA t2868 TYPE REF TO object.
-        CLEAR t2868.
         IF t2866 IS BOUND.
           IF t2866 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -18938,16 +16636,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2868 ?= t2869.
         ENDIF.
         DATA t2870 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2870.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2871 TYPE REF TO object.
-        CLEAR t2871.
         READ TABLE p1->items INDEX 4 INTO t2871.
         t2870 ?= t2871.
         DATA t2872 TYPE REF TO object.
-        CLEAR t2872.
         IF t2870 IS BOUND.
           IF t2870 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -18957,16 +16652,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2872 ?= t2873.
         ENDIF.
         DATA t2874 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2874.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2875 TYPE REF TO object.
-        CLEAR t2875.
         READ TABLE p1->items INDEX 5 INTO t2875.
         t2874 ?= t2875.
         DATA t2876 TYPE REF TO object.
-        CLEAR t2876.
         IF t2874 IS BOUND.
           IF t2874 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -18978,12 +16670,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_shape_ca561c1a EXPORTING i_abap = t2861 i_kernel = t2864 i_op = t2868 i_cloud_47cd = t2872 i_ce = t2876.
       WHEN `ZCL_LNT_SHAPE_CA985C56`.
         DATA t2130 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2130.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2131 TYPE REF TO object.
-        CLEAR t2131.
         READ TABLE p1->items INDEX 1 INTO t2131.
         t2130 ?= t2131.
         DATA(t2132) = VALUE f( ).
@@ -18992,12 +16682,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t2132 = t2130->as_number( ).
         DATA t2133 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2133.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2134 TYPE REF TO object.
-        CLEAR t2134.
         READ TABLE p1->items INDEX 2 INTO t2134.
         t2133 ?= t2134.
         DATA(t2135) = VALUE f( ).
@@ -19006,32 +16694,25 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t2135 = t2133->as_number( ).
         DATA t2136 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2136.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2137 TYPE REF TO object.
-        CLEAR t2137.
         READ TABLE p1->items INDEX 3 INTO t2137.
         t2136 ?= t2137.
-        DATA(t2138) = VALUE f( ).
         IF t2136 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t2138 = t2136->as_number( ).
-        CREATE OBJECT result TYPE zcl_lnt_shape_ca985c56 EXPORTING i_total = t2132 i_normal = t2135 i_dependencies = t2138.
+        CREATE OBJECT result TYPE zcl_lnt_shape_ca985c56 EXPORTING i_total = t2132 i_normal = t2135 i_dependencies = t2136->as_number( ).
       WHEN `ZCL_LNT_SHAPE_CD8A49BE`.
         DATA t2681 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2681.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2682 TYPE REF TO object.
-        CLEAR t2682.
         READ TABLE p1->items INDEX 1 INTO t2682.
         t2681 ?= t2682.
         DATA t2683 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t2683.
         IF t2681 IS BOUND.
           t2683 = NEW #( ).
           t2683->has = abap_true.
@@ -19041,16 +16722,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2683->value = t2681->as_string( ).
         ENDIF.
         DATA t2684 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2684.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2685 TYPE REF TO object.
-        CLEAR t2685.
         READ TABLE p1->items INDEX 2 INTO t2685.
         t2684 ?= t2685.
         DATA t2686 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t2686.
         IF t2684 IS BOUND.
           t2686 = NEW #( ).
           t2686->has = abap_true.
@@ -19062,16 +16740,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_shape_cd8a49be EXPORTING i_viewclass = t2683 i_ddtext_4f13 = t2686.
       WHEN `ZCL_LNT_SHAPE_CDA19F43`.
         DATA t2582 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2582.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2583 TYPE REF TO object.
-        CLEAR t2583.
         READ TABLE p1->items INDEX 1 INTO t2583.
         t2582 ?= t2583.
         DATA t2584 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t2584.
         IF t2582 IS BOUND.
           t2584 = NEW #( ).
           t2584->has = abap_true.
@@ -19081,16 +16756,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2584->value = t2582->as_string( ).
         ENDIF.
         DATA t2585 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2585.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2586 TYPE REF TO object.
-        CLEAR t2586.
         READ TABLE p1->items INDEX 2 INTO t2586.
         t2585 ?= t2586.
         DATA t2587 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t2587.
         IF t2585 IS BOUND.
           t2587 = NEW #( ).
           t2587->has = abap_true.
@@ -19100,16 +16772,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2587->value = t2585->as_string( ).
         ENDIF.
         DATA t2588 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2588.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2589 TYPE REF TO object.
-        CLEAR t2589.
         READ TABLE p1->items INDEX 3 INTO t2589.
         t2588 ?= t2589.
         DATA t2590 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t2590.
         IF t2588 IS BOUND.
           t2590 = NEW #( ).
           t2590->has = abap_true.
@@ -19121,12 +16790,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_shape_cda19f43 EXPORTING i_area = t2584 i_object_name = t2587 i_object_type = t2590.
       WHEN `ZCL_LNT_SHAPE_D0B60CB0`.
         DATA t2081 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2081.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2082 TYPE REF TO object.
-        CLEAR t2082.
         READ TABLE p1->items INDEX 1 INTO t2082.
         t2081 ?= t2082.
         DATA(t2083) = VALUE string( ).
@@ -19135,34 +16802,27 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t2083 = t2081->as_string( ).
         DATA t2084 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2084.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2085 TYPE REF TO object.
-        CLEAR t2085.
         READ TABLE p1->items INDEX 2 INTO t2085.
         t2084 ?= t2085.
-        DATA(t2086) = VALUE string( ).
         IF t2084 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t2086 = t2084->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_shape_d0b60cb0 EXPORTING i_kind = t2083 i_value = t2086.
+        CREATE OBJECT result TYPE zcl_lnt_shape_d0b60cb0 EXPORTING i_kind = t2083 i_value = t2084->as_string( ).
       WHEN `ZCL_LNT_SHAPE_D48DA73B`.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
       WHEN `ZCL_LNT_SHAPE_D6DAFB2C`.
         DATA t2452 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2452.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2453 TYPE REF TO object.
-        CLEAR t2453.
         READ TABLE p1->items INDEX 1 INTO t2453.
         t2452 ?= t2453.
         DATA t2454 TYPE REF TO zcl_lnt_range.
-        CLEAR t2454.
         IF t2452 IS BOUND.
           IF t2452 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -19172,20 +16832,16 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2454 ?= t2455.
         ENDIF.
         DATA t2456 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2456.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2457 TYPE REF TO object.
-        CLEAR t2457.
         READ TABLE p1->items INDEX 2 INTO t2457.
         t2456 ?= t2457.
-        DATA(t2458) = VALUE string( ).
         IF t2456 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t2458 = t2456->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_shape_d6dafb2c EXPORTING i_range = t2454 i_placeholder = t2458.
+        CREATE OBJECT result TYPE zcl_lnt_shape_d6dafb2c EXPORTING i_range = t2454 i_placeholder = t2456->as_string( ).
       WHEN OTHERS.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDCASE.
@@ -19199,16 +16855,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
       WHEN `ZCL_LNT_SHAPE_DA8531C1`.
         DATA t2687 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2687.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2688 TYPE REF TO object.
-        CLEAR t2688.
         READ TABLE p1->items INDEX 1 INTO t2688.
         t2687 ?= t2688.
         DATA t2689 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t2689.
         IF t2687 IS BOUND.
           t2689 = NEW #( ).
           t2689->has = abap_true.
@@ -19218,16 +16871,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2689->value = t2687->as_string( ).
         ENDIF.
         DATA t2690 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2690.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2691 TYPE REF TO object.
-        CLEAR t2691.
         READ TABLE p1->items INDEX 2 INTO t2691.
         t2690 ?= t2691.
         DATA t2692 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t2692.
         IF t2690 IS BOUND.
           t2692 = NEW #( ).
           t2692->has = abap_true.
@@ -19237,16 +16887,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2692->value = t2690->as_string( ).
         ENDIF.
         DATA t2693 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2693.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2694 TYPE REF TO object.
-        CLEAR t2694.
         READ TABLE p1->items INDEX 3 INTO t2694.
         t2693 ?= t2694.
         DATA t2695 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t2695.
         IF t2693 IS BOUND.
           t2695 = NEW #( ).
           t2695->has = abap_true.
@@ -19256,16 +16903,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2695->value = t2693->as_string( ).
         ENDIF.
         DATA t2696 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2696.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2697 TYPE REF TO object.
-        CLEAR t2697.
         READ TABLE p1->items INDEX 4 INTO t2697.
         t2696 ?= t2697.
         DATA t2698 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t2698.
         IF t2696 IS BOUND.
           t2698 = NEW #( ).
           t2698->has = abap_true.
@@ -19277,12 +16921,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_shape_da8531c1 EXPORTING i_viewfield = t2689 i_tabname = t2692 i_fieldname = t2695 i_keyflag = t2698.
       WHEN `ZCL_LNT_SHAPE_DF104AB4`.
         DATA t2930 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2930.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2931 TYPE REF TO object.
-        CLEAR t2931.
         READ TABLE p1->items INDEX 1 INTO t2931.
         t2930 ?= t2931.
         DATA(t2932) = VALUE string( ).
@@ -19291,12 +16933,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t2932 = t2930->as_string( ).
         DATA t2933 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2933.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2934 TYPE REF TO object.
-        CLEAR t2934.
         READ TABLE p1->items INDEX 2 INTO t2934.
         t2933 ?= t2934.
         DATA(t2935) = VALUE f( ).
@@ -19305,16 +16945,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t2935 = t2933->as_number( ).
         DATA t2936 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2936.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2937 TYPE REF TO object.
-        CLEAR t2937.
         READ TABLE p1->items INDEX 3 INTO t2937.
         t2936 ?= t2937.
         DATA t2938 TYPE REF TO object.
-        CLEAR t2938.
         IF t2936 IS BOUND.
           IF t2936 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -19324,12 +16961,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2938 ?= t2939.
         ENDIF.
         DATA t2940 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2940.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2941 TYPE REF TO object.
-        CLEAR t2941.
         READ TABLE p1->items INDEX 4 INTO t2941.
         t2940 ?= t2941.
         DATA(t2942) = VALUE f( ).
@@ -19338,34 +16973,27 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t2942 = t2940->as_number( ).
         DATA t2943 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2943.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2944 TYPE REF TO object.
-        CLEAR t2944.
         READ TABLE p1->items INDEX 5 INTO t2944.
         t2943 ?= t2944.
-        DATA(t2945) = VALUE f( ).
         IF t2943 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t2945 = t2943->as_number( ).
-        CREATE OBJECT result TYPE zcl_lnt_shape_df104ab4 EXPORTING i_abap = t2932 i_kernel = t2935 i_op = t2938 i_cloud_47cd = t2942 i_ce = t2945.
+        CREATE OBJECT result TYPE zcl_lnt_shape_df104ab4 EXPORTING i_abap = t2932 i_kernel = t2935 i_op = t2938 i_cloud_47cd = t2942 i_ce = t2943->as_number( ).
       WHEN `ZCL_LNT_SHAPE_DF3D0820`.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
       WHEN `ZCL_LNT_SHAPE_DFEB56FD`.
         DATA t2953 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2953.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2954 TYPE REF TO object.
-        CLEAR t2954.
         READ TABLE p1->items INDEX 1 INTO t2954.
         t2953 ?= t2954.
         DATA t2955 TYPE REF TO object.
-        CLEAR t2955.
         IF t2953 IS BOUND.
           IF t2953 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -19375,16 +17003,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2955 ?= t2956.
         ENDIF.
         DATA t2957 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2957.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2958 TYPE REF TO object.
-        CLEAR t2958.
         READ TABLE p1->items INDEX 2 INTO t2958.
         t2957 ?= t2958.
         DATA t2959 TYPE REF TO object.
-        CLEAR t2959.
         IF t2957 IS BOUND.
           IF t2957 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -19394,16 +17019,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2959 ?= t2960.
         ENDIF.
         DATA t2961 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2961.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2962 TYPE REF TO object.
-        CLEAR t2962.
         READ TABLE p1->items INDEX 3 INTO t2962.
         t2961 ?= t2962.
         DATA t2963 TYPE REF TO object.
-        CLEAR t2963.
         IF t2961 IS BOUND.
           IF t2961 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -19413,16 +17035,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2963 ?= t2964.
         ENDIF.
         DATA t2965 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2965.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2966 TYPE REF TO object.
-        CLEAR t2966.
         READ TABLE p1->items INDEX 4 INTO t2966.
         t2965 ?= t2966.
         DATA t2967 TYPE REF TO object.
-        CLEAR t2967.
         IF t2965 IS BOUND.
           IF t2965 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -19432,16 +17051,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2967 ?= t2968.
         ENDIF.
         DATA t2969 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2969.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2970 TYPE REF TO object.
-        CLEAR t2970.
         READ TABLE p1->items INDEX 5 INTO t2970.
         t2969 ?= t2970.
         DATA t2971 TYPE REF TO object.
-        CLEAR t2971.
         IF t2969 IS BOUND.
           IF t2969 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -19453,16 +17069,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_shape_dfeb56fd EXPORTING i_abap = t2955 i_kernel = t2959 i_op = t2963 i_cloud_47cd = t2967 i_ce = t2971.
       WHEN `ZCL_LNT_SHAPE_E272B380`.
         DATA t2491 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2491.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2492 TYPE REF TO object.
-        CLEAR t2492.
         READ TABLE p1->items INDEX 1 INTO t2492.
         t2491 ?= t2492.
         DATA t2493 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t2493.
         IF t2491 IS BOUND.
           t2493 = NEW #( ).
           t2493->has = abap_true.
@@ -19472,16 +17085,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2493->value = t2491->as_string( ).
         ENDIF.
         DATA t2494 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2494.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2495 TYPE REF TO object.
-        CLEAR t2495.
         READ TABLE p1->items INDEX 2 INTO t2495.
         t2494 ?= t2495.
         DATA t2496 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t2496.
         IF t2494 IS BOUND.
           t2496 = NEW #( ).
           t2496->has = abap_true.
@@ -19491,16 +17101,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2496->value = t2494->as_string( ).
         ENDIF.
         DATA t2497 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2497.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2498 TYPE REF TO object.
-        CLEAR t2498.
         READ TABLE p1->items INDEX 3 INTO t2498.
         t2497 ?= t2498.
         DATA t2499 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t2499.
         IF t2497 IS BOUND.
           t2499 = NEW #( ).
           t2499->has = abap_true.
@@ -19512,16 +17119,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_shape_e272b380 EXPORTING i_name = t2493 i_description = t2496 i_category = t2499.
       WHEN `ZCL_LNT_SHAPE_E534171C`.
         DATA t2618 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2618.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2619 TYPE REF TO object.
-        CLEAR t2619.
         READ TABLE p1->items INDEX 1 INTO t2619.
         t2618 ?= t2619.
         DATA t2620 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t2620.
         IF t2618 IS BOUND.
           t2620 = NEW #( ).
           t2620->has = abap_true.
@@ -19531,16 +17135,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2620->value = t2618->as_string( ).
         ENDIF.
         DATA t2621 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2621.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2622 TYPE REF TO object.
-        CLEAR t2622.
         READ TABLE p1->items INDEX 2 INTO t2622.
         t2621 ?= t2622.
         DATA t2623 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t2623.
         IF t2621 IS BOUND.
           t2623 = NEW #( ).
           t2623->has = abap_true.
@@ -19550,16 +17151,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2623->value = t2621->as_string( ).
         ENDIF.
         DATA t2624 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2624.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2625 TYPE REF TO object.
-        CLEAR t2625.
         READ TABLE p1->items INDEX 3 INTO t2625.
         t2624 ?= t2625.
         DATA t2626 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t2626.
         IF t2624 IS BOUND.
           t2626 = NEW #( ).
           t2626->has = abap_true.
@@ -19569,16 +17167,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2626->value = t2624->as_string( ).
         ENDIF.
         DATA t2627 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2627.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2628 TYPE REF TO object.
-        CLEAR t2628.
         READ TABLE p1->items INDEX 4 INTO t2628.
         t2627 ?= t2628.
         DATA t2629 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t2629.
         IF t2627 IS BOUND.
           t2629 = NEW #( ).
           t2629->has = abap_true.
@@ -19588,16 +17183,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2629->value = t2627->as_string( ).
         ENDIF.
         DATA t2630 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2630.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2631 TYPE REF TO object.
-        CLEAR t2631.
         READ TABLE p1->items INDEX 5 INTO t2631.
         t2630 ?= t2631.
         DATA t2632 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t2632.
         IF t2630 IS BOUND.
           t2632 = NEW #( ).
           t2632->has = abap_true.
@@ -19607,16 +17199,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2632->value = t2630->as_string( ).
         ENDIF.
         DATA t2633 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2633.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2634 TYPE REF TO object.
-        CLEAR t2634.
         READ TABLE p1->items INDEX 6 INTO t2634.
         t2633 ?= t2634.
         DATA t2635 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t2635.
         IF t2633 IS BOUND.
           t2635 = NEW #( ).
           t2635->has = abap_true.
@@ -19626,16 +17215,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2635->value = t2633->as_string( ).
         ENDIF.
         DATA t2636 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2636.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2637 TYPE REF TO object.
-        CLEAR t2637.
         READ TABLE p1->items INDEX 7 INTO t2637.
         t2636 ?= t2637.
         DATA t2638 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t2638.
         IF t2636 IS BOUND.
           t2638 = NEW #( ).
           t2638->has = abap_true.
@@ -19645,16 +17231,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2638->value = t2636->as_string( ).
         ENDIF.
         DATA t2639 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2639.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2640 TYPE REF TO object.
-        CLEAR t2640.
         READ TABLE p1->items INDEX 8 INTO t2640.
         t2639 ?= t2640.
         DATA t2641 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t2641.
         IF t2639 IS BOUND.
           t2641 = NEW #( ).
           t2641->has = abap_true.
@@ -19664,16 +17247,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2641->value = t2639->as_string( ).
         ENDIF.
         DATA t2642 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2642.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2643 TYPE REF TO object.
-        CLEAR t2643.
         READ TABLE p1->items INDEX 9 INTO t2643.
         t2642 ?= t2643.
         DATA t2644 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t2644.
         IF t2642 IS BOUND.
           t2644 = NEW #( ).
           t2644->has = abap_true.
@@ -19683,16 +17263,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2644->value = t2642->as_string( ).
         ENDIF.
         DATA t2645 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2645.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2646 TYPE REF TO object.
-        CLEAR t2646.
         READ TABLE p1->items INDEX 10 INTO t2646.
         t2645 ?= t2646.
         DATA t2647 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t2647.
         IF t2645 IS BOUND.
           t2647 = NEW #( ).
           t2647->has = abap_true.
@@ -19702,16 +17279,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2647->value = t2645->as_string( ).
         ENDIF.
         DATA t2648 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2648.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2649 TYPE REF TO object.
-        CLEAR t2649.
         READ TABLE p1->items INDEX 11 INTO t2649.
         t2648 ?= t2649.
         DATA t2650 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t2650.
         IF t2648 IS BOUND.
           t2650 = NEW #( ).
           t2650->has = abap_true.
@@ -19721,16 +17295,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2650->value = t2648->as_string( ).
         ENDIF.
         DATA t2651 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2651.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2652 TYPE REF TO object.
-        CLEAR t2652.
         READ TABLE p1->items INDEX 12 INTO t2652.
         t2651 ?= t2652.
         DATA t2653 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t2653.
         IF t2651 IS BOUND.
           t2653 = NEW #( ).
           t2653->has = abap_true.
@@ -19740,16 +17311,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2653->value = t2651->as_string( ).
         ENDIF.
         DATA t2654 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2654.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2655 TYPE REF TO object.
-        CLEAR t2655.
         READ TABLE p1->items INDEX 13 INTO t2655.
         t2654 ?= t2655.
         DATA t2656 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t2656.
         IF t2654 IS BOUND.
           t2656 = NEW #( ).
           t2656->has = abap_true.
@@ -19759,16 +17327,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2656->value = t2654->as_string( ).
         ENDIF.
         DATA t2657 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2657.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2658 TYPE REF TO object.
-        CLEAR t2658.
         READ TABLE p1->items INDEX 14 INTO t2658.
         t2657 ?= t2658.
         DATA t2659 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t2659.
         IF t2657 IS BOUND.
           t2659 = NEW #( ).
           t2659->has = abap_true.
@@ -19778,16 +17343,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2659->value = t2657->as_string( ).
         ENDIF.
         DATA t2660 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2660.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2661 TYPE REF TO object.
-        CLEAR t2661.
         READ TABLE p1->items INDEX 15 INTO t2661.
         t2660 ?= t2661.
         DATA t2662 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t2662.
         IF t2660 IS BOUND.
           t2662 = NEW #( ).
           t2662->has = abap_true.
@@ -19815,16 +17377,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
     CASE class_name.
       WHEN `ZCL_LNT_SHAPE_E8FB1D71`.
         DATA t2746 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2746.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2747 TYPE REF TO object.
-        CLEAR t2747.
         READ TABLE p1->items INDEX 1 INTO t2747.
         t2746 ?= t2747.
         DATA t2748 TYPE REF TO zcl_lnt_info_class_definition.
-        CLEAR t2748.
         IF t2746 IS BOUND.
           IF t2746 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -19834,16 +17393,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2748 ?= t2749.
         ENDIF.
         DATA t2750 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2750.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2751 TYPE REF TO object.
-        CLEAR t2751.
         READ TABLE p1->items INDEX 2 INTO t2751.
         t2750 ?= t2751.
         DATA t2752 TYPE REF TO zcl_lnt_inf_clss_implmnttn.
-        CLEAR t2752.
         IF t2750 IS BOUND.
           IF t2750 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -19855,16 +17411,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_shape_e8fb1d71 EXPORTING i_def = t2748 i_impl = t2752.
       WHEN `ZCL_LNT_SHAPE_EF834E92`.
         DATA t3166 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t3166.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t3167 TYPE REF TO object.
-        CLEAR t3167.
         READ TABLE p1->items INDEX 1 INTO t3167.
         t3166 ?= t3167.
         DATA t3168 TYPE REF TO zcl_lnt_abap_release.
-        CLEAR t3168.
         IF t3166 IS BOUND.
           IF t3166 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -19874,16 +17427,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t3168 ?= t3169.
         ENDIF.
         DATA t3170 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t3170.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t3171 TYPE REF TO object.
-        CLEAR t3171.
         READ TABLE p1->items INDEX 2 INTO t3171.
         t3170 ?= t3171.
         DATA t3172 TYPE REF TO zcl_lnt_abap_release.
-        CLEAR t3172.
         IF t3170 IS BOUND.
           IF t3170 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -19893,16 +17443,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t3172 ?= t3173.
         ENDIF.
         DATA t3174 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t3174.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t3175 TYPE REF TO object.
-        CLEAR t3175.
         READ TABLE p1->items INDEX 3 INTO t3175.
         t3174 ?= t3175.
         DATA t3176 TYPE REF TO zcl_lnt_abap_release.
-        CLEAR t3176.
         IF t3174 IS BOUND.
           IF t3174 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -19912,16 +17459,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t3176 ?= t3177.
         ENDIF.
         DATA t3178 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t3178.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t3179 TYPE REF TO object.
-        CLEAR t3179.
         READ TABLE p1->items INDEX 4 INTO t3179.
         t3178 ?= t3179.
         DATA t3180 TYPE REF TO zcl_lnt_abap_release.
-        CLEAR t3180.
         IF t3178 IS BOUND.
           IF t3178 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -19931,16 +17475,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t3180 ?= t3181.
         ENDIF.
         DATA t3182 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t3182.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t3183 TYPE REF TO object.
-        CLEAR t3183.
         READ TABLE p1->items INDEX 5 INTO t3183.
         t3182 ?= t3183.
         DATA t3184 TYPE REF TO zcl_lnt_abap_release.
-        CLEAR t3184.
         IF t3182 IS BOUND.
           IF t3182 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -19950,16 +17491,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t3184 ?= t3185.
         ENDIF.
         DATA t3186 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t3186.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t3187 TYPE REF TO object.
-        CLEAR t3187.
         READ TABLE p1->items INDEX 6 INTO t3187.
         t3186 ?= t3187.
         DATA t3188 TYPE REF TO zcl_lnt_abap_release.
-        CLEAR t3188.
         IF t3186 IS BOUND.
           IF t3186 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -19969,16 +17507,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t3188 ?= t3189.
         ENDIF.
         DATA t3190 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t3190.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t3191 TYPE REF TO object.
-        CLEAR t3191.
         READ TABLE p1->items INDEX 7 INTO t3191.
         t3190 ?= t3191.
         DATA t3192 TYPE REF TO zcl_lnt_abap_release.
-        CLEAR t3192.
         IF t3190 IS BOUND.
           IF t3190 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -19988,16 +17523,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t3192 ?= t3193.
         ENDIF.
         DATA t3194 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t3194.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t3195 TYPE REF TO object.
-        CLEAR t3195.
         READ TABLE p1->items INDEX 8 INTO t3195.
         t3194 ?= t3195.
         DATA t3196 TYPE REF TO zcl_lnt_abap_release.
-        CLEAR t3196.
         IF t3194 IS BOUND.
           IF t3194 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -20007,16 +17539,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t3196 ?= t3197.
         ENDIF.
         DATA t3198 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t3198.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t3199 TYPE REF TO object.
-        CLEAR t3199.
         READ TABLE p1->items INDEX 9 INTO t3199.
         t3198 ?= t3199.
         DATA t3200 TYPE REF TO zcl_lnt_abap_release.
-        CLEAR t3200.
         IF t3198 IS BOUND.
           IF t3198 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -20026,16 +17555,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t3200 ?= t3201.
         ENDIF.
         DATA t3202 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t3202.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t3203 TYPE REF TO object.
-        CLEAR t3203.
         READ TABLE p1->items INDEX 10 INTO t3203.
         t3202 ?= t3203.
         DATA t3204 TYPE REF TO zcl_lnt_abap_release.
-        CLEAR t3204.
         IF t3202 IS BOUND.
           IF t3202 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -20045,16 +17571,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t3204 ?= t3205.
         ENDIF.
         DATA t3206 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t3206.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t3207 TYPE REF TO object.
-        CLEAR t3207.
         READ TABLE p1->items INDEX 11 INTO t3207.
         t3206 ?= t3207.
         DATA t3208 TYPE REF TO zcl_lnt_abap_release.
-        CLEAR t3208.
         IF t3206 IS BOUND.
           IF t3206 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -20064,16 +17587,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t3208 ?= t3209.
         ENDIF.
         DATA t3210 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t3210.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t3211 TYPE REF TO object.
-        CLEAR t3211.
         READ TABLE p1->items INDEX 12 INTO t3211.
         t3210 ?= t3211.
         DATA t3212 TYPE REF TO zcl_lnt_abap_release.
-        CLEAR t3212.
         IF t3210 IS BOUND.
           IF t3210 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -20083,16 +17603,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t3212 ?= t3213.
         ENDIF.
         DATA t3214 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t3214.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t3215 TYPE REF TO object.
-        CLEAR t3215.
         READ TABLE p1->items INDEX 13 INTO t3215.
         t3214 ?= t3215.
         DATA t3216 TYPE REF TO zcl_lnt_abap_release.
-        CLEAR t3216.
         IF t3214 IS BOUND.
           IF t3214 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -20102,16 +17619,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t3216 ?= t3217.
         ENDIF.
         DATA t3218 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t3218.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t3219 TYPE REF TO object.
-        CLEAR t3219.
         READ TABLE p1->items INDEX 14 INTO t3219.
         t3218 ?= t3219.
         DATA t3220 TYPE REF TO zcl_lnt_abap_release.
-        CLEAR t3220.
         IF t3218 IS BOUND.
           IF t3218 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -20121,16 +17635,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t3220 ?= t3221.
         ENDIF.
         DATA t3222 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t3222.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t3223 TYPE REF TO object.
-        CLEAR t3223.
         READ TABLE p1->items INDEX 15 INTO t3223.
         t3222 ?= t3223.
         DATA t3224 TYPE REF TO zcl_lnt_abap_release.
-        CLEAR t3224.
         IF t3222 IS BOUND.
           IF t3222 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -20140,16 +17651,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t3224 ?= t3225.
         ENDIF.
         DATA t3226 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t3226.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t3227 TYPE REF TO object.
-        CLEAR t3227.
         READ TABLE p1->items INDEX 16 INTO t3227.
         t3226 ?= t3227.
         DATA t3228 TYPE REF TO zcl_lnt_abap_release.
-        CLEAR t3228.
         IF t3226 IS BOUND.
           IF t3226 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -20159,16 +17667,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t3228 ?= t3229.
         ENDIF.
         DATA t3230 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t3230.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t3231 TYPE REF TO object.
-        CLEAR t3231.
         READ TABLE p1->items INDEX 17 INTO t3231.
         t3230 ?= t3231.
         DATA t3232 TYPE REF TO zcl_lnt_abap_release.
-        CLEAR t3232.
         IF t3230 IS BOUND.
           IF t3230 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -20181,16 +17686,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t3208 i_v756 = t3212 i_v757 = t3216 i_v758 = t3220 i_v816 = t3224 i_cloud_a4f6 = t3228 i_open_abap = t3232.
       WHEN `ZCL_LNT_SHAPE_F2185CD1`.
         DATA t3251 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t3251.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t3252 TYPE REF TO object.
-        CLEAR t3252.
         READ TABLE p1->items INDEX 1 INTO t3252.
         t3251 ?= t3252.
         DATA t3253 TYPE REF TO zcl_lnt_abstract_type.
-        CLEAR t3253.
         IF t3251 IS BOUND.
           IF t3251 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -20200,16 +17702,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t3253 ?= t3254.
         ENDIF.
         DATA t3255 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t3255.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t3256 TYPE REF TO object.
-        CLEAR t3256.
         READ TABLE p1->items INDEX 2 INTO t3256.
         t3255 ?= t3256.
         DATA t3257 TYPE REF TO zcl_lnt_ob_data_definition.
-        CLEAR t3257.
         IF t3255 IS BOUND.
           IF t3255 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -20223,16 +17722,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
       WHEN `ZCL_LNT_SHAPE_F7FB0253`.
         DATA t2167 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2167.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2168 TYPE REF TO object.
-        CLEAR t2168.
         READ TABLE p1->items INDEX 1 INTO t2168.
         t2167 ?= t2168.
         DATA t2169 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-        CLEAR t2169.
         IF t2167 IS BOUND.
           t2169 = NEW #( ).
           t2169->has = abap_true.
@@ -20242,16 +17738,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2169->value = t2167->as_boolean( ).
         ENDIF.
         DATA t2170 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2170.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2171 TYPE REF TO object.
-        CLEAR t2171.
         READ TABLE p1->items INDEX 2 INTO t2171.
         t2170 ?= t2171.
         DATA t2172 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-        CLEAR t2172.
         IF t2170 IS BOUND.
           t2172 = NEW #( ).
           t2172->has = abap_true.
@@ -20263,16 +17756,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_shape_f7fb0253 EXPORTING i_overwrite = t2169 i_ignore_if_exists = t2172.
       WHEN `ZCL_LNT_SHAPE_F96FB7AA`.
         DATA t2609 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2609.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2610 TYPE REF TO object.
-        CLEAR t2610.
         READ TABLE p1->items INDEX 1 INTO t2610.
         t2609 ?= t2610.
         DATA t2611 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t2611.
         IF t2609 IS BOUND.
           t2611 = NEW #( ).
           t2611->has = abap_true.
@@ -20282,16 +17772,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2611->value = t2609->as_string( ).
         ENDIF.
         DATA t2612 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2612.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2613 TYPE REF TO object.
-        CLEAR t2613.
         READ TABLE p1->items INDEX 2 INTO t2613.
         t2612 ?= t2613.
         DATA t2614 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t2614.
         IF t2612 IS BOUND.
           t2614 = NEW #( ).
           t2614->has = abap_true.
@@ -20301,16 +17788,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t2614->value = t2612->as_string( ).
         ENDIF.
         DATA t2615 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2615.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2616 TYPE REF TO object.
-        CLEAR t2616.
         READ TABLE p1->items INDEX 3 INTO t2616.
         t2615 ?= t2616.
         DATA t2617 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
-        CLEAR t2617.
         IF t2615 IS BOUND.
           t2617 = NEW #( ).
           t2617->has = abap_true.
@@ -20322,20 +17806,16 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_shape_f96fb7aa EXPORTING i_description = t2611 i_domain = t2614 i_percentage = t2617.
       WHEN `ZCL_LNT_SHARED_MEMORY`.
         DATA t1776 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1776.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1777 TYPE REF TO object.
-        CLEAR t1777.
         READ TABLE p1->items INDEX 1 INTO t1777.
         t1776 ?= t1777.
-        DATA(t1778) = VALUE string( ).
         IF t1776 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1778 = t1776->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_shared_memory EXPORTING i_name = t1778.
+        CREATE OBJECT result TYPE zcl_lnt_shared_memory EXPORTING i_name = t1776->as_string( ).
       WHEN `ZCL_LNT_SHORT_CASE`.
         CREATE OBJECT result TYPE zcl_lnt_short_case.
       WHEN `ZCL_LNT_SHORT_CASE_CONF`.
@@ -20382,16 +17862,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_simple_type.
       WHEN `ZCL_LNT_SKIP_LOGIC`.
         DATA t1935 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1935.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1936 TYPE REF TO object.
-        CLEAR t1936.
         READ TABLE p1->items INDEX 1 INTO t1936.
         t1935 ?= t1936.
         DATA t1937 TYPE REF TO zif_lnt_registry.
-        CLEAR t1937.
         IF t1935 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -20423,36 +17900,28 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_slw_prmtr_pssng_cnf.
       WHEN `ZCL_LNT_SMART_FORM`.
         DATA t1779 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1779.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1780 TYPE REF TO object.
-        CLEAR t1780.
         READ TABLE p1->items INDEX 1 INTO t1780.
         t1779 ?= t1780.
-        DATA(t1781) = VALUE string( ).
         IF t1779 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1781 = t1779->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_smart_form EXPORTING i_name = t1781.
+        CREATE OBJECT result TYPE zcl_lnt_smart_form EXPORTING i_name = t1779->as_string( ).
       WHEN `ZCL_LNT_SMART_STYLE`.
         DATA t1782 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1782.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1783 TYPE REF TO object.
-        CLEAR t1783.
         READ TABLE p1->items INDEX 1 INTO t1783.
         t1782 ?= t1783.
-        DATA(t1784) = VALUE string( ).
         IF t1782 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1784 = t1782->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_smart_style EXPORTING i_name = t1784.
+        CREATE OBJECT result TYPE zcl_lnt_smart_style EXPORTING i_name = t1782->as_string( ).
       WHEN `ZCL_LNT_SMIM_CONSISTENCY`.
         CREATE OBJECT result TYPE zcl_lnt_smim_consistency.
       WHEN `ZCL_LNT_SMIM_CONSISTENCY_CONF`.
@@ -20467,16 +17936,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_space_before_dot_conf.
       WHEN `ZCL_LNT_SPAGHETTI_SCOPE`.
         DATA t691 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t691.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t692 TYPE REF TO object.
-        CLEAR t692.
         READ TABLE p1->items INDEX 1 INTO t692.
         t691 ?= t692.
         DATA t693 TYPE REF TO zcl_lnt_spaghetti_scope_node.
-        CLEAR t693.
         IF t691 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -20486,16 +17952,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_spaghetti_scope EXPORTING i_top = t693.
       WHEN `ZCL_LNT_SPAGHETTI_SCOPE_NODE`.
         DATA t683 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t683.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t684 TYPE REF TO object.
-        CLEAR t684.
         READ TABLE p1->items INDEX 1 INTO t684.
         t683 ?= t684.
         DATA t685 TYPE REF TO zcl_lnt_iscope_identifier.
-        CLEAR t685.
         IF t683 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -20503,16 +17966,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t686 = t683->as_ref( ).
         t685 ?= t686.
         DATA t687 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t687.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t688 TYPE REF TO object.
-        CLEAR t688.
         READ TABLE p1->items INDEX 2 INTO t688.
         t687 ?= t688.
         DATA t689 TYPE REF TO zcl_lnt_spaghetti_scope_node.
-        CLEAR t689.
         IF t687 IS BOUND.
           IF t687 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -20524,16 +17984,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_spaghetti_scope_node EXPORTING i_identifier = t685 i_parent = t689.
       WHEN `ZCL_LNT_SPAG_HELPER`.
         DATA t1908 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1908.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1909 TYPE REF TO object.
-        CLEAR t1909.
         READ TABLE p1->items INDEX 1 INTO t1909.
         t1908 ?= t1909.
         DATA t1910 TYPE REF TO zif_lnt_spaghetti_scope_node.
-        CLEAR t1910.
         IF t1908 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -20690,12 +18147,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_sql_mppng_frm_entty.
       WHEN `ZCL_LNT_SQL_NAMED_PARAM`.
         DATA t2804 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2804.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2805 TYPE REF TO object.
-        CLEAR t2805.
         READ TABLE p1->items INDEX 1 INTO t2805.
         t2804 ?= t2805.
         DATA(t2806) = VALUE string( ).
@@ -20704,12 +18159,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t2806 = t2804->as_string( ).
         DATA t2807 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2807.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2808 TYPE REF TO object.
-        CLEAR t2808.
         READ TABLE p1->items INDEX 2 INTO t2808.
         t2807 ?= t2808.
         DATA(t2809) = VALUE string( ).
@@ -20718,16 +18171,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t2809 = t2807->as_string( ).
         DATA t2810 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2810.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2811 TYPE REF TO object.
-        CLEAR t2811.
         READ TABLE p1->items INDEX 3 INTO t2811.
         t2810 ?= t2811.
         DATA t2812 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-        CLEAR t2812.
         IF t2810 IS BOUND.
           t2812 = NEW #( ).
           t2812->has = abap_true.
@@ -20762,16 +18212,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_sql_path_join_type.
       WHEN `ZCL_LNT_SQL_PATH_SEGMENT`.
         DATA t459 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t459.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t460 TYPE REF TO object.
-        CLEAR t460.
         READ TABLE p1->items INDEX 1 INTO t460.
         t459 ?= t460.
         DATA t461 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-        CLEAR t461.
         IF t459 IS BOUND.
           t461 = NEW #( ).
           t461->has = abap_true.
@@ -20929,16 +18376,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_sr_on_change.
       WHEN `ZCL_LNT_SR_OPTIONAL`.
         DATA t473 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t473.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t474 TYPE REF TO object.
-        CLEAR t474.
         READ TABLE p1->items INDEX 1 INTO t474.
         t473 ?= t474.
         DATA t475 TYPE REF TO zif_lnt_structure_runnable.
-        CLEAR t475.
         IF t473 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -20962,16 +18406,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
       WHEN `ZCL_LNT_SR_STAR`.
         DATA t477 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t477.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t478 TYPE REF TO object.
-        CLEAR t478.
         READ TABLE p1->items INDEX 1 INTO t478.
         t477 ?= t478.
         DATA t479 TYPE REF TO zif_lnt_structure_runnable.
-        CLEAR t479.
         IF t477 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -21012,20 +18453,16 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_stack.
       WHEN `ZCL_LNT_STANDARD_TASK`.
         DATA t1785 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1785.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1786 TYPE REF TO object.
-        CLEAR t1786.
         READ TABLE p1->items INDEX 1 INTO t1786.
         t1785 ?= t1786.
-        DATA(t1787) = VALUE string( ).
         IF t1785 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1787 = t1785->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_standard_task EXPORTING i_name = t1787.
+        CREATE OBJECT result TYPE zcl_lnt_standard_task EXPORTING i_name = t1785->as_string( ).
       WHEN `ZCL_LNT_START_AT_TAB`.
         CREATE OBJECT result TYPE zcl_lnt_start_at_tab.
       WHEN `ZCL_LNT_START_AT_TAB_CONF`.
@@ -21034,16 +18471,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_start_of_selection.
       WHEN `ZCL_LNT_STAR_PRIORITY`.
         DATA t429 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t429.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t430 TYPE REF TO object.
-        CLEAR t430.
         READ TABLE p1->items INDEX 1 INTO t430.
         t429 ?= t430.
         DATA t431 TYPE REF TO zif_lnt_statement_runnable.
-        CLEAR t431.
         IF t429 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -21062,16 +18496,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_statement_node_module.
       WHEN `ZCL_LNT_STATEMENT_PARSER`.
         DATA t462 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t462.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t463 TYPE REF TO object.
-        CLEAR t463.
         READ TABLE p1->items INDEX 1 INTO t463.
         t462 ?= t463.
         DATA t464 TYPE REF TO zcl_lnt_abap_release.
-        CLEAR t464.
         IF t462 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -21079,16 +18510,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t465 = t462->as_ref( ).
         t464 ?= t465.
         DATA t466 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t466.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t467 TYPE REF TO object.
-        CLEAR t467.
         READ TABLE p1->items INDEX 2 INTO t467.
         t466 ?= t467.
         DATA t468 TYPE REF TO zif_lnt_registry.
-        CLEAR t468.
         IF t466 IS BOUND.
           IF t466 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -21098,16 +18526,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t468 ?= t469.
         ENDIF.
         DATA t470 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t470.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t471 TYPE REF TO object.
-        CLEAR t471.
         READ TABLE p1->items INDEX 3 INTO t471.
         t470 ?= t471.
         DATA t472 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t472.
         IF t470 IS BOUND.
           t472 = NEW #( ).
           t472->has = abap_true.
@@ -21119,16 +18544,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_statement_parser EXPORTING i_release_7928 = t464 i_reg_f149 = t468 i_language_version_0e1d = t472.
       WHEN `ZCL_LNT_STATIC_ARROW`.
         DATA t208 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t208.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t209 TYPE REF TO object.
-        CLEAR t209.
         READ TABLE p1->items INDEX 1 INTO t209.
         t208 ?= t209.
         DATA t210 TYPE REF TO zcl_lnt_position.
-        CLEAR t210.
         IF t208 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -21136,32 +18558,25 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t211 = t208->as_ref( ).
         t210 ?= t211.
         DATA t212 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t212.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t213 TYPE REF TO object.
-        CLEAR t213.
         READ TABLE p1->items INDEX 2 INTO t213.
         t212 ?= t213.
-        DATA(t214) = VALUE string( ).
         IF t212 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t214 = t212->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_static_arrow EXPORTING i_start = t210 i_str = t214.
+        CREATE OBJECT result TYPE zcl_lnt_static_arrow EXPORTING i_start = t210 i_str = t212->as_string( ).
       WHEN `ZCL_LNT_STATIC_ARROW_W`.
         DATA t215 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t215.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t216 TYPE REF TO object.
-        CLEAR t216.
         READ TABLE p1->items INDEX 1 INTO t216.
         t215 ?= t216.
         DATA t217 TYPE REF TO zcl_lnt_position.
-        CLEAR t217.
         IF t215 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -21169,20 +18584,16 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t218 = t215->as_ref( ).
         t217 ?= t218.
         DATA t219 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t219.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t220 TYPE REF TO object.
-        CLEAR t220.
         READ TABLE p1->items INDEX 2 INTO t220.
         t219 ?= t220.
-        DATA(t221) = VALUE string( ).
         IF t219 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t221 = t219->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_static_arrow_w EXPORTING i_start = t217 i_str = t221.
+        CREATE OBJECT result TYPE zcl_lnt_static_arrow_w EXPORTING i_start = t217 i_str = t219->as_string( ).
       WHEN `ZCL_LNT_STATIC_BEGIN`.
         CREATE OBJECT result TYPE zcl_lnt_static_begin.
       WHEN `ZCL_LNT_STATIC_END`.
@@ -21193,12 +18604,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
       WHEN `ZCL_LNT_STOP_BEFORE2`.
         DATA t450 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t450.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t451 TYPE REF TO object.
-        CLEAR t451.
         READ TABLE p1->items INDEX 1 INTO t451.
         t450 ?= t451.
         DATA(t452) = VALUE string( ).
@@ -21207,52 +18616,41 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t452 = t450->as_string( ).
         DATA t453 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t453.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t454 TYPE REF TO object.
-        CLEAR t454.
         READ TABLE p1->items INDEX 2 INTO t454.
         t453 ?= t454.
-        DATA(t455) = VALUE string( ).
         IF t453 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t455 = t453->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_stop_before2 EXPORTING i_t1 = t452 i_t2 = t455.
+        CREATE OBJECT result TYPE zcl_lnt_stop_before2 EXPORTING i_t1 = t452 i_t2 = t453->as_string( ).
       WHEN `ZCL_LNT_STREAM`.
         DATA t1030 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1030.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1031 TYPE REF TO object.
-        CLEAR t1031.
         READ TABLE p1->items INDEX 1 INTO t1031.
         t1030 ?= t1031.
-        DATA(t1032) = VALUE string( ).
         IF t1030 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1032 = t1030->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_stream EXPORTING i_buffer = t1032.
+        CREATE OBJECT result TYPE zcl_lnt_stream EXPORTING i_buffer = t1030->as_string( ).
       WHEN `ZCL_LNT_STRICT_SQL`.
         CREATE OBJECT result TYPE zcl_lnt_strict_sql.
       WHEN `ZCL_LNT_STRICT_SQL_CONF`.
         CREATE OBJECT result TYPE zcl_lnt_strict_sql_conf.
       WHEN `ZCL_LNT_STRING_TEMPLATE_BEGIN`.
         DATA t236 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t236.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t237 TYPE REF TO object.
-        CLEAR t237.
         READ TABLE p1->items INDEX 1 INTO t237.
         t236 ?= t237.
         DATA t238 TYPE REF TO zcl_lnt_position.
-        CLEAR t238.
         IF t236 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -21260,32 +18658,25 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t239 = t236->as_ref( ).
         t238 ?= t239.
         DATA t240 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t240.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t241 TYPE REF TO object.
-        CLEAR t241.
         READ TABLE p1->items INDEX 2 INTO t241.
         t240 ?= t241.
-        DATA(t242) = VALUE string( ).
         IF t240 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t242 = t240->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_string_template_begin EXPORTING i_start = t238 i_str = t242.
+        CREATE OBJECT result TYPE zcl_lnt_string_template_begin EXPORTING i_start = t238 i_str = t240->as_string( ).
       WHEN `ZCL_LNT_STRING_TEMPLATE_END`.
         DATA t243 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t243.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t244 TYPE REF TO object.
-        CLEAR t244.
         READ TABLE p1->items INDEX 1 INTO t244.
         t243 ?= t244.
         DATA t245 TYPE REF TO zcl_lnt_position.
-        CLEAR t245.
         IF t243 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -21293,32 +18684,25 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t246 = t243->as_ref( ).
         t245 ?= t246.
         DATA t247 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t247.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t248 TYPE REF TO object.
-        CLEAR t248.
         READ TABLE p1->items INDEX 2 INTO t248.
         t247 ?= t248.
-        DATA(t249) = VALUE string( ).
         IF t247 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t249 = t247->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_string_template_end EXPORTING i_start = t245 i_str = t249.
+        CREATE OBJECT result TYPE zcl_lnt_string_template_end EXPORTING i_start = t245 i_str = t247->as_string( ).
       WHEN `ZCL_LNT_STRING_TEMPLATE_MIDDLE`.
         DATA t250 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t250.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t251 TYPE REF TO object.
-        CLEAR t251.
         READ TABLE p1->items INDEX 1 INTO t251.
         t250 ?= t251.
         DATA t252 TYPE REF TO zcl_lnt_position.
-        CLEAR t252.
         IF t250 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -21326,34 +18710,27 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t253 = t250->as_ref( ).
         t252 ?= t253.
         DATA t254 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t254.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t255 TYPE REF TO object.
-        CLEAR t255.
         READ TABLE p1->items INDEX 2 INTO t255.
         t254 ?= t255.
-        DATA(t256) = VALUE string( ).
         IF t254 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t256 = t254->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_string_template_middle EXPORTING i_start = t252 i_str = t256.
+        CREATE OBJECT result TYPE zcl_lnt_string_template_middle EXPORTING i_start = t252 i_str = t254->as_string( ).
       WHEN `ZCL_LNT_STRING_TEMPLATE_SOURCE`.
         CREATE OBJECT result TYPE zcl_lnt_string_template_source.
       WHEN `ZCL_LNT_STRING_TOKEN`.
         DATA t222 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t222.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t223 TYPE REF TO object.
-        CLEAR t223.
         READ TABLE p1->items INDEX 1 INTO t223.
         t222 ?= t223.
         DATA t224 TYPE REF TO zcl_lnt_position.
-        CLEAR t224.
         IF t222 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -21361,32 +18738,25 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t225 = t222->as_ref( ).
         t224 ?= t225.
         DATA t226 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t226.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t227 TYPE REF TO object.
-        CLEAR t227.
         READ TABLE p1->items INDEX 2 INTO t227.
         t226 ?= t227.
-        DATA(t228) = VALUE string( ).
         IF t226 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t228 = t226->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_string_token EXPORTING i_start = t224 i_str = t228.
+        CREATE OBJECT result TYPE zcl_lnt_string_token EXPORTING i_start = t224 i_str = t226->as_string( ).
       WHEN `ZCL_LNT_STRING_TYPE`.
         DATA t844 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t844.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t845 TYPE REF TO object.
-        CLEAR t845.
         READ TABLE p1->items INDEX 1 INTO t845.
         t844 ?= t845.
         DATA t846 TYPE REF TO zcl_lnt_abstract_type_data.
-        CLEAR t846.
         IF t844 IS BOUND.
           IF t844 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -21403,16 +18773,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_strng_tmplt_frmttng.
       WHEN `ZCL_LNT_STRUCTURE_NODE`.
         DATA t711 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t711.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t712 TYPE REF TO object.
-        CLEAR t712.
         READ TABLE p1->items INDEX 1 INTO t712.
         t711 ?= t712.
         DATA t713 TYPE REF TO zif_lnt_structure.
-        CLEAR t713.
         IF t711 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -21575,16 +18942,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_st_data.
       WHEN `ZCL_LNT_ST_DATABASE_TABLE`.
         DATA t456 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t456.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t457 TYPE REF TO object.
-        CLEAR t457.
         READ TABLE p1->items INDEX 1 INTO t457.
         t456 ?= t457.
         DATA t458 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-        CLEAR t458.
         IF t456 IS BOUND.
           t458 = NEW #( ).
           t458->has = abap_true.
@@ -21850,16 +19214,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_st_open_dataset.
       WHEN `ZCL_LNT_ST_OPTIONAL`.
         DATA t421 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t421.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t422 TYPE REF TO object.
-        CLEAR t422.
         READ TABLE p1->items INDEX 1 INTO t422.
         t421 ?= t422.
         DATA t423 TYPE REF TO zif_lnt_statement_runnable.
-        CLEAR t423.
         IF t421 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -21875,16 +19236,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_st_perform.
       WHEN `ZCL_LNT_ST_PLUS`.
         DATA t433 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t433.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t434 TYPE REF TO object.
-        CLEAR t434.
         READ TABLE p1->items INDEX 1 INTO t434.
         t433 ?= t434.
         DATA t435 TYPE REF TO zif_lnt_statement_runnable.
-        CLEAR t435.
         IF t433 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -21994,16 +19352,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_st_sql_source.
       WHEN `ZCL_LNT_ST_STAR`.
         DATA t425 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t425.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t426 TYPE REF TO object.
-        CLEAR t426.
         READ TABLE p1->items INDEX 1 INTO t426.
         t425 ?= t426.
         DATA t427 TYPE REF TO zif_lnt_statement_runnable.
-        CLEAR t427.
         IF t425 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -22059,21 +19414,16 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_st_test_seam.
       WHEN `ZCL_LNT_ST_TOKEN`.
         DATA t386 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t386.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t387 TYPE REF TO object.
-        CLEAR t387.
         READ TABLE p1->items INDEX 1 INTO t387.
         t386 ?= t387.
-        DATA t388 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-        CLEAR t388.
         IF t386 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t388 = t386->as_classvalue( ).
-        CREATE OBJECT result TYPE zcl_lnt_st_token EXPORTING i_t = t388.
+        CREATE OBJECT result TYPE zcl_lnt_st_token EXPORTING i_t = t386->as_classvalue( ).
       WHEN `ZCL_LNT_ST_TRANSFER`.
         CREATE OBJECT result TYPE zcl_lnt_st_transfer.
       WHEN `ZCL_LNT_ST_TRANSLATE`.
@@ -22118,33 +19468,25 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_st_write.
       WHEN `ZCL_LNT_SUB_STATEMENT`.
         DATA t485 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t485.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t486 TYPE REF TO object.
-        CLEAR t486.
         READ TABLE p1->items INDEX 1 INTO t486.
         t485 ?= t486.
-        DATA t487 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-        CLEAR t487.
         IF t485 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t487 = t485->as_classvalue( ).
-        CREATE OBJECT result TYPE zcl_lnt_sub_statement EXPORTING i_obj_1ed0 = t487.
+        CREATE OBJECT result TYPE zcl_lnt_sub_statement EXPORTING i_obj_1ed0 = t485->as_classvalue( ).
       WHEN `ZCL_LNT_SUB_STRUCTURE`.
         DATA t481 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t481.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t482 TYPE REF TO object.
-        CLEAR t482.
         READ TABLE p1->items INDEX 1 INTO t482.
         t481 ?= t482.
         DATA t483 TYPE REF TO zif_lnt_structure.
-        CLEAR t483.
         IF t481 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -22172,48 +19514,37 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_suppress_dialog.
       WHEN `ZCL_LNT_SWITCH_ASSIGNMENTS`.
         DATA t1791 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1791.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1792 TYPE REF TO object.
-        CLEAR t1792.
         READ TABLE p1->items INDEX 1 INTO t1792.
         t1791 ?= t1792.
-        DATA(t1793) = VALUE string( ).
         IF t1791 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1793 = t1791->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_switch_assignments EXPORTING i_name = t1793.
+        CREATE OBJECT result TYPE zcl_lnt_switch_assignments EXPORTING i_name = t1791->as_string( ).
       WHEN `ZCL_LNT_SWTCH_ASSGNMNT_HRRCHY`.
         DATA t1788 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1788.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1789 TYPE REF TO object.
-        CLEAR t1789.
         READ TABLE p1->items INDEX 1 INTO t1789.
         t1788 ?= t1789.
-        DATA(t1790) = VALUE string( ).
         IF t1788 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1790 = t1788->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_swtch_assgnmnt_hrrchy EXPORTING i_name = t1790.
+        CREATE OBJECT result TYPE zcl_lnt_swtch_assgnmnt_hrrchy EXPORTING i_name = t1788->as_string( ).
       WHEN `ZCL_LNT_SYMBOLS`.
         DATA t1217 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1217.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1218 TYPE REF TO object.
-        CLEAR t1218.
         READ TABLE p1->items INDEX 1 INTO t1218.
         t1217 ?= t1218.
         DATA t1219 TYPE REF TO zif_lnt_registry.
-        CLEAR t1219.
         IF t1217 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -22227,16 +19558,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_syntax_input_module.
       WHEN `ZCL_LNT_SYNTAX_LOGIC`.
         DATA t695 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t695.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t696 TYPE REF TO object.
-        CLEAR t696.
         READ TABLE p1->items INDEX 1 INTO t696.
         t695 ?= t696.
         DATA t697 TYPE REF TO zif_lnt_registry.
-        CLEAR t697.
         IF t695 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -22244,16 +19572,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t698 = t695->as_ref( ).
         t697 ?= t698.
         DATA t699 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t699.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t700 TYPE REF TO object.
-        CLEAR t700.
         READ TABLE p1->items INDEX 2 INTO t700.
         t699 ?= t700.
         DATA t701 TYPE REF TO zcl_lnt_abap_object.
-        CLEAR t701.
         IF t699 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -22565,16 +19890,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_sy_perform.
       WHEN `ZCL_LNT_SY_PERFORM_PARAMETER`.
         DATA t2335 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2335.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2336 TYPE REF TO object.
-        CLEAR t2336.
         READ TABLE p1->items INDEX 1 INTO t2336.
         t2335 ?= t2336.
         DATA t2337 TYPE REF TO zcl_lnt_expression_node.
-        CLEAR t2337.
         IF t2335 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -22582,16 +19904,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t2338 = t2335->as_ref( ).
         t2337 ?= t2338.
         DATA t2339 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2339.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2340 TYPE REF TO object.
-        CLEAR t2340.
         READ TABLE p1->items INDEX 2 INTO t2340.
         t2339 ?= t2340.
         DATA t2341 TYPE REF TO zcl_lnt_abstract_type.
-        CLEAR t2341.
         IF t2339 IS BOUND.
           IF t2339 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -22804,20 +20123,16 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_sy_write.
       WHEN `ZCL_LNT_TABLE`.
         DATA t1794 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1794.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1795 TYPE REF TO object.
-        CLEAR t1795.
         READ TABLE p1->items INDEX 1 INTO t1795.
         t1794 ?= t1795.
-        DATA(t1796) = VALUE string( ).
         IF t1794 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1796 = t1794->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_table EXPORTING i_name = t1796.
+        CREATE OBJECT result TYPE zcl_lnt_table EXPORTING i_name = t1794->as_string( ).
       WHEN `ZCL_LNT_TABLE_BODY`.
         CREATE OBJECT result TYPE zcl_lnt_table_body.
       WHEN `ZCL_LNT_TABLE_MODULE`.
@@ -22844,36 +20159,29 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_tbl_enhncmnt_ctgry_cnf.
       WHEN `ZCL_LNT_TCHNCL_JB_DFNTN`.
         DATA t1800 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1800.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1801 TYPE REF TO object.
-        CLEAR t1801.
         READ TABLE p1->items INDEX 1 INTO t1801.
         t1800 ?= t1801.
-        DATA(t1802) = VALUE string( ).
         IF t1800 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1802 = t1800->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_tchncl_jb_dfntn EXPORTING i_name = t1802.
+        CREATE OBJECT result TYPE zcl_lnt_tchncl_jb_dfntn EXPORTING i_name = t1800->as_string( ).
       WHEN `ZCL_LNT_TEST_SEAM_NAME`.
         CREATE OBJECT result TYPE zcl_lnt_test_seam_name.
       WHEN `ZCL_LNT_TEXT_DOCUMENT_EDIT`.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
       WHEN `ZCL_LNT_TEXT_EDIT`.
         DATA t2160 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2160.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2161 TYPE REF TO object.
-        CLEAR t2161.
         READ TABLE p1->items INDEX 1 INTO t2161.
         t2160 ?= t2161.
         DATA t2162 TYPE REF TO zcl_lnt_range.
-        CLEAR t2162.
         IF t2160 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -22881,20 +20189,16 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t2163 = t2160->as_ref( ).
         t2162 ?= t2163.
         DATA t2164 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2164.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2165 TYPE REF TO object.
-        CLEAR t2165.
         READ TABLE p1->items INDEX 2 INTO t2165.
         t2164 ?= t2165.
-        DATA(t2166) = VALUE string( ).
         IF t2164 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t2166 = t2164->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_text_edit EXPORTING i_range = t2162 i_new_text = t2166.
+        CREATE OBJECT result TYPE zcl_lnt_text_edit EXPORTING i_range = t2162 i_new_text = t2164->as_string( ).
       WHEN `ZCL_LNT_TEXT_ELEMENT`.
         CREATE OBJECT result TYPE zcl_lnt_text_element.
       WHEN `ZCL_LNT_TEXT_ELEMENT_KEY`.
@@ -22905,16 +20209,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_throw.
       WHEN `ZCL_LNT_TIME_TYPE`.
         DATA t875 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t875.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t876 TYPE REF TO object.
-        CLEAR t876.
         READ TABLE p1->items INDEX 1 INTO t876.
         t875 ?= t876.
         DATA t877 TYPE REF TO zcl_lnt_abstract_type_data.
-        CLEAR t877.
         IF t875 IS BOUND.
           IF t875 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -22926,16 +20227,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_time_type EXPORTING i_input_967e = t877.
       WHEN `ZCL_LNT_TOKEN_AND_KEYWORD`.
         DATA t2754 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2754.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2755 TYPE REF TO object.
-        CLEAR t2755.
         READ TABLE p1->items INDEX 1 INTO t2755.
         t2754 ?= t2755.
         DATA t2756 TYPE REF TO zcl_lnt_abstract_token.
-        CLEAR t2756.
         IF t2754 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -22943,32 +20241,25 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t2757 = t2754->as_ref( ).
         t2756 ?= t2757.
         DATA t2758 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2758.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2759 TYPE REF TO object.
-        CLEAR t2759.
         READ TABLE p1->items INDEX 2 INTO t2759.
         t2758 ?= t2759.
-        DATA(t2760) = VALUE abap_bool( ).
         IF t2758 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t2760 = t2758->as_boolean( ).
-        CREATE OBJECT result TYPE zcl_lnt_token_and_keyword EXPORTING i_token = t2756 i_keyword = t2760.
+        CREATE OBJECT result TYPE zcl_lnt_token_and_keyword EXPORTING i_token = t2756 i_keyword = t2758->as_boolean( ).
       WHEN `ZCL_LNT_TOKEN_NODE`.
         DATA t715 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t715.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t716 TYPE REF TO object.
-        CLEAR t716.
         READ TABLE p1->items INDEX 1 INTO t716.
         t715 ?= t716.
         DATA t717 TYPE REF TO zcl_lnt_abstract_token.
-        CLEAR t717.
         IF t715 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -22983,16 +20274,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_token_node_module.
       WHEN `ZCL_LNT_TOKEN_NODE_REGEX`.
         DATA t719 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t719.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t720 TYPE REF TO object.
-        CLEAR t720.
         READ TABLE p1->items INDEX 1 INTO t720.
         t719 ?= t720.
         DATA t721 TYPE REF TO zcl_lnt_abstract_token.
-        CLEAR t721.
         IF t719 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -23004,52 +20292,40 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_top_of_page.
       WHEN `ZCL_LNT_TRANSACTION`.
         DATA t1803 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1803.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1804 TYPE REF TO object.
-        CLEAR t1804.
         READ TABLE p1->items INDEX 1 INTO t1804.
         t1803 ?= t1804.
-        DATA(t1805) = VALUE string( ).
         IF t1803 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1805 = t1803->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_transaction EXPORTING i_name = t1805.
+        CREATE OBJECT result TYPE zcl_lnt_transaction EXPORTING i_name = t1803->as_string( ).
       WHEN `ZCL_LNT_TRANSACTION_VARIANT`.
         DATA t1806 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1806.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1807 TYPE REF TO object.
-        CLEAR t1807.
         READ TABLE p1->items INDEX 1 INTO t1807.
         t1806 ?= t1807.
-        DATA(t1808) = VALUE string( ).
         IF t1806 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1808 = t1806->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_transaction_variant EXPORTING i_name = t1808.
+        CREATE OBJECT result TYPE zcl_lnt_transaction_variant EXPORTING i_name = t1806->as_string( ).
       WHEN `ZCL_LNT_TRANSFORMATION`.
         DATA t1809 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1809.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1810 TYPE REF TO object.
-        CLEAR t1810.
         READ TABLE p1->items INDEX 1 INTO t1810.
         t1809 ?= t1810.
-        DATA(t1811) = VALUE string( ).
         IF t1809 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1811 = t1809->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_transformation EXPORTING i_name = t1811.
+        CREATE OBJECT result TYPE zcl_lnt_transformation EXPORTING i_name = t1809->as_string( ).
       WHEN `ZCL_LNT_TRANSPORTING_FIELDS`.
         CREATE OBJECT result TYPE zcl_lnt_transporting_fields.
       WHEN `ZCL_LNT_TRY_WITHOUT_CATCH`.
@@ -23058,12 +20334,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_try_without_catch_conf.
       WHEN `ZCL_LNT_TUPLE_23A05AEB`.
         DATA t3119 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t3119.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t3120 TYPE REF TO object.
-        CLEAR t3120.
         READ TABLE p1->items INDEX 1 INTO t3120.
         t3119 ?= t3120.
         DATA(t3121) = VALUE string( ).
@@ -23072,16 +20346,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t3121 = t3119->as_string( ).
         DATA t3122 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t3122.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t3123 TYPE REF TO object.
-        CLEAR t3123.
         READ TABLE p1->items INDEX 2 INTO t3123.
         t3122 ?= t3123.
         DATA t3124 TYPE REF TO zcl_lnt_abap_release.
-        CLEAR t3124.
         IF t3122 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -23091,12 +20362,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_tuple_23a05aeb EXPORTING i_f0 = t3121 i_f1 = t3124.
       WHEN `ZCL_LNT_TUPLE_356DF4C3`.
         DATA t2923 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2923.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2924 TYPE REF TO object.
-        CLEAR t2924.
         READ TABLE p1->items INDEX 1 INTO t2924.
         t2923 ?= t2924.
         DATA(t2925) = VALUE string( ).
@@ -23105,16 +20374,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t2925 = t2923->as_string( ).
         DATA t2926 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2926.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2927 TYPE REF TO object.
-        CLEAR t2927.
         READ TABLE p1->items INDEX 2 INTO t2927.
         t2926 ?= t2927.
         DATA t2928 TYPE REF TO zcl_lnt_shape_9d728a2d.
-        CLEAR t2928.
         IF t2926 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -23126,12 +20392,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
       WHEN `ZCL_LNT_TUPLE_53B925EE`.
         DATA t2828 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2828.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2829 TYPE REF TO object.
-        CLEAR t2829.
         READ TABLE p1->items INDEX 1 INTO t2829.
         t2828 ?= t2829.
         DATA(t2830) = VALUE string( ).
@@ -23140,16 +20404,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t2830 = t2828->as_string( ).
         DATA t2831 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2831.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2832 TYPE REF TO object.
-        CLEAR t2832.
         READ TABLE p1->items INDEX 2 INTO t2832.
         t2831 ?= t2832.
         DATA t2833 TYPE REF TO zcl_lnt_shape_27cfcabc.
-        CLEAR t2833.
         IF t2831 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -23170,12 +20431,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         args_write_2019_2( instance = instance2019 frame = frame2019 ).
       WHEN `ZCL_LNT_TUPLE_8EEDFA28`.
         DATA t2852 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2852.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2853 TYPE REF TO object.
-        CLEAR t2853.
         READ TABLE p1->items INDEX 1 INTO t2853.
         t2852 ?= t2853.
         DATA(t2854) = VALUE string( ).
@@ -23184,16 +20443,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t2854 = t2852->as_string( ).
         DATA t2855 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2855.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2856 TYPE REF TO object.
-        CLEAR t2856.
         READ TABLE p1->items INDEX 2 INTO t2856.
         t2855 ?= t2856.
         DATA t2857 TYPE REF TO zcl_lnt_shape_c82321f8.
-        CLEAR t2857.
         IF t2855 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -23203,12 +20459,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_tuple_8eedfa28 EXPORTING i_f0 = t2854 i_f1 = t2857.
       WHEN `ZCL_LNT_TUPLE_A5E994D8`.
         DATA t3316 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t3316.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t3317 TYPE REF TO object.
-        CLEAR t3317.
         READ TABLE p1->items INDEX 1 INTO t3317.
         t3316 ?= t3317.
         DATA(t3318) = VALUE string( ).
@@ -23217,16 +20471,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t3318 = t3316->as_string( ).
         DATA t3319 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t3319.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t3320 TYPE REF TO object.
-        CLEAR t3320.
         READ TABLE p1->items INDEX 2 INTO t3320.
         t3319 ?= t3320.
         DATA t3321 TYPE REF TO zcl_lnt_shape_015c050b.
-        CLEAR t3321.
         IF t3319 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -23236,12 +20487,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_tuple_a5e994d8 EXPORTING i_f0 = t3318 i_f1 = t3321.
       WHEN `ZCL_LNT_TUPLE_BCD18EFA`.
         DATA t2901 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2901.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2902 TYPE REF TO object.
-        CLEAR t2902.
         READ TABLE p1->items INDEX 1 INTO t2902.
         t2901 ?= t2902.
         DATA(t2903) = VALUE string( ).
@@ -23250,16 +20499,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t2903 = t2901->as_string( ).
         DATA t2904 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2904.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2905 TYPE REF TO object.
-        CLEAR t2905.
         READ TABLE p1->items INDEX 2 INTO t2905.
         t2904 ?= t2905.
         DATA t2906 TYPE REF TO zcl_lnt_shape_9f7a8372.
-        CLEAR t2906.
         IF t2904 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -23269,31 +20515,25 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_tuple_bcd18efa EXPORTING i_f0 = t2903 i_f1 = t2906.
       WHEN `ZCL_LNT_TUPLE_CC45EE1D`.
         DATA t3234 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t3234.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t3235 TYPE REF TO object.
-        CLEAR t3235.
         READ TABLE p1->items INDEX 1 INTO t3235.
         t3234 ?= t3235.
         DATA t3236 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-        CLEAR t3236.
         IF t3234 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         t3236 = t3234->as_classvalue( ).
         DATA t3237 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t3237.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t3238 TYPE REF TO object.
-        CLEAR t3238.
         READ TABLE p1->items INDEX 2 INTO t3238.
         t3237 ?= t3238.
         DATA t3239 TYPE REF TO zif_lnt_statement_runnable.
-        CLEAR t3239.
         IF t3237 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -23301,12 +20541,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t3240 = t3237->as_ref( ).
         t3239 ?= t3240.
         DATA t3241 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t3241.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t3242 TYPE REF TO object.
-        CLEAR t3242.
         READ TABLE p1->items INDEX 3 INTO t3242.
         t3241 ?= t3242.
         DATA(t3243) = VALUE string( ).
@@ -23315,16 +20553,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t3243 = t3241->as_string( ).
         DATA t3244 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t3244.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t3245 TYPE REF TO object.
-        CLEAR t3245.
         READ TABLE p1->items INDEX 4 INTO t3245.
         t3244 ?= t3245.
         DATA t3246 TYPE REF TO zif_lnt_statement_runnable.
-        CLEAR t3246.
         IF t3244 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -23332,28 +20567,22 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t3247 = t3244->as_ref( ).
         t3246 ?= t3247.
         DATA t3248 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t3248.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t3249 TYPE REF TO object.
-        CLEAR t3249.
         READ TABLE p1->items INDEX 5 INTO t3249.
         t3248 ?= t3249.
-        DATA(t3250) = VALUE string( ).
         IF t3248 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t3250 = t3248->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_tuple_cc45ee1d EXPORTING i_f0 = t3236 i_f1 = t3239 i_f2 = t3243 i_f3 = t3246 i_f4 = t3250.
+        CREATE OBJECT result TYPE zcl_lnt_tuple_cc45ee1d EXPORTING i_f0 = t3236 i_f1 = t3239 i_f2 = t3243 i_f3 = t3246 i_f4 = t3248->as_string( ).
       WHEN `ZCL_LNT_TUPLE_DB7D0A56`.
         DATA t2973 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2973.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2974 TYPE REF TO object.
-        CLEAR t2974.
         READ TABLE p1->items INDEX 1 INTO t2974.
         t2973 ?= t2974.
         DATA(t2975) = VALUE string( ).
@@ -23362,16 +20591,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t2975 = t2973->as_string( ).
         DATA t2976 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2976.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2977 TYPE REF TO object.
-        CLEAR t2977.
         READ TABLE p1->items INDEX 2 INTO t2977.
         t2976 ?= t2977.
         DATA t2978 TYPE REF TO zcl_lnt_shape_dfeb56fd.
-        CLEAR t2978.
         IF t2976 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -23381,12 +20607,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_tuple_db7d0a56 EXPORTING i_f0 = t2975 i_f1 = t2978.
       WHEN `ZCL_LNT_TUPLE_DDA7DD58`.
         DATA t2794 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2794.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2795 TYPE REF TO object.
-        CLEAR t2795.
         READ TABLE p1->items INDEX 1 INTO t2795.
         t2794 ?= t2795.
         DATA(t2796) = VALUE string( ).
@@ -23395,12 +20619,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t2796 = t2794->as_string( ).
         DATA t2797 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2797.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2798 TYPE REF TO object.
-        CLEAR t2798.
         READ TABLE p1->items INDEX 2 INTO t2798.
         t2797 ?= t2798.
         DATA(t2799) = VALUE f( ).
@@ -23409,16 +20631,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t2799 = t2797->as_number( ).
         DATA t2800 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2800.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2801 TYPE REF TO object.
-        CLEAR t2801.
         READ TABLE p1->items INDEX 3 INTO t2801.
         t2800 ?= t2801.
         DATA t2802 TYPE REF TO zcl_lnt_abap_release.
-        CLEAR t2802.
         IF t2800 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -23428,12 +20647,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_tuple_dda7dd58 EXPORTING i_f0 = t2796 i_f1 = t2799 i_f2 = t2802.
       WHEN `ZCL_LNT_TUPLE_E60AA2B5`.
         DATA t2946 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2946.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2947 TYPE REF TO object.
-        CLEAR t2947.
         READ TABLE p1->items INDEX 1 INTO t2947.
         t2946 ?= t2947.
         DATA(t2948) = VALUE string( ).
@@ -23442,16 +20659,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t2948 = t2946->as_string( ).
         DATA t2949 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2949.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2950 TYPE REF TO object.
-        CLEAR t2950.
         READ TABLE p1->items INDEX 2 INTO t2950.
         t2949 ?= t2950.
         DATA t2951 TYPE REF TO zcl_lnt_shape_df104ab4.
-        CLEAR t2951.
         IF t2949 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -23461,12 +20675,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_tuple_e60aa2b5 EXPORTING i_f0 = t2948 i_f1 = t2951.
       WHEN `ZCL_LNT_TUPLE_E87E4BFA`.
         DATA t2878 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2878.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2879 TYPE REF TO object.
-        CLEAR t2879.
         READ TABLE p1->items INDEX 1 INTO t2879.
         t2878 ?= t2879.
         DATA(t2880) = VALUE string( ).
@@ -23475,16 +20687,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t2880 = t2878->as_string( ).
         DATA t2881 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2881.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2882 TYPE REF TO object.
-        CLEAR t2882.
         READ TABLE p1->items INDEX 2 INTO t2882.
         t2881 ?= t2882.
         DATA t2883 TYPE REF TO zcl_lnt_shape_ca561c1a.
-        CLEAR t2883.
         IF t2881 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -23494,20 +20703,16 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_tuple_e87e4bfa EXPORTING i_f0 = t2880 i_f1 = t2883.
       WHEN `ZCL_LNT_TXT_DCMNT_IDNTFR`.
         DATA t2061 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2061.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2062 TYPE REF TO object.
-        CLEAR t2062.
         READ TABLE p1->items INDEX 1 INTO t2062.
         t2061 ?= t2062.
-        DATA(t2063) = VALUE string( ).
         IF t2061 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t2063 = t2061->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_txt_dcmnt_idntfr EXPORTING i_uri = t2063.
+        CREATE OBJECT result TYPE zcl_lnt_txt_dcmnt_idntfr EXPORTING i_uri = t2061->as_string( ).
       WHEN `ZCL_LNT_TYPD_IDNTFR_MDL`.
         IF zcl_lnt_typd_idntfr_mdl=>zlnt_builtin_init_910ada6e0975 = abap_false.
           zcl_lnt_typd_idntfr_mdl=>zlnt_builtin_init_0fa96352736b( ).
@@ -23540,16 +20745,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
       WHEN `ZCL_LNT_TYPE_DEFINITIONS_ENTRY`.
         DATA t2153 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2153.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2154 TYPE REF TO object.
-        CLEAR t2154.
         READ TABLE p1->items INDEX 1 INTO t2154.
         t2153 ?= t2154.
         DATA t2155 TYPE REF TO zcl_lnt_typed_identifier.
-        CLEAR t2155.
         IF t2153 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -23557,20 +20759,16 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t2156 = t2153->as_ref( ).
         t2155 ?= t2156.
         DATA t2157 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2157.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2158 TYPE REF TO object.
-        CLEAR t2158.
         READ TABLE p1->items INDEX 2 INTO t2158.
         t2157 ?= t2158.
-        DATA(t2159) = VALUE f( ).
         IF t2157 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t2159 = t2157->as_number( ).
-        CREATE OBJECT result TYPE zcl_lnt_type_definitions_entry EXPORTING i_type_9913 = t2155 i_visibility_5c1f = t2159.
+        CREATE OBJECT result TYPE zcl_lnt_type_definitions_entry EXPORTING i_type_9913 = t2155 i_visibility_5c1f = t2157->as_number( ).
       WHEN `ZCL_LNT_TYPE_END`.
         CREATE OBJECT result TYPE zcl_lnt_type_end.
       WHEN `ZCL_LNT_TYPE_ENUM_BEGIN`.
@@ -23597,16 +20795,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_type_structure.
       WHEN `ZCL_LNT_TYPE_UTILS`.
         DATA t646 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t646.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t647 TYPE REF TO object.
-        CLEAR t647.
         READ TABLE p1->items INDEX 1 INTO t647.
         t646 ?= t647.
         DATA t648 TYPE REF TO zcl_lnt_current_scope.
-        CLEAR t648.
         IF t646 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -23623,16 +20818,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_ty_basic_index_module.
       WHEN `ZCL_LNT_TY_CLASS_DEFINITION`.
         DATA t921 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t921.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t922 TYPE REF TO object.
-        CLEAR t922.
         READ TABLE p1->items INDEX 1 INTO t922.
         t921 ?= t922.
         DATA t923 TYPE REF TO zcl_lnt_structure_node.
-        CLEAR t923.
         IF t921 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -23640,16 +20832,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t924 = t921->as_ref( ).
         t923 ?= t924.
         DATA t925 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t925.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t926 TYPE REF TO object.
-        CLEAR t926.
         READ TABLE p1->items INDEX 2 INTO t926.
         t925 ?= t926.
         DATA t927 TYPE REF TO zcl_lnt_syntax_input.
-        CLEAR t927.
         IF t925 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -23659,16 +20848,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_ty_class_definition EXPORTING i_node = t923 i_input_967e = t927.
       WHEN `ZCL_LNT_TY_CLSS_IMPLMNTTN`.
         DATA t929 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t929.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t930 TYPE REF TO object.
-        CLEAR t930.
         READ TABLE p1->items INDEX 1 INTO t930.
         t929 ?= t930.
         DATA t931 TYPE REF TO zcl_lnt_structure_node.
-        CLEAR t931.
         IF t929 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -23676,32 +20862,25 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t932 = t929->as_ref( ).
         t931 ?= t932.
         DATA t933 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t933.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t934 TYPE REF TO object.
-        CLEAR t934.
         READ TABLE p1->items INDEX 2 INTO t934.
         t933 ?= t934.
-        DATA(t935) = VALUE string( ).
         IF t933 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t935 = t933->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_ty_clss_implmnttn EXPORTING i_node = t931 i_filename = t935.
+        CREATE OBJECT result TYPE zcl_lnt_ty_clss_implmnttn EXPORTING i_node = t931 i_filename = t933->as_string( ).
       WHEN `ZCL_LNT_TY_FORM_DEFINITION`.
         DATA t947 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t947.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t948 TYPE REF TO object.
-        CLEAR t948.
         READ TABLE p1->items INDEX 1 INTO t948.
         t947 ?= t948.
         DATA t949 TYPE REF TO zif_lnt_union_8249fcb1.
-        CLEAR t949.
         IF t947 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -23709,16 +20888,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t950 = t947->as_ref( ).
         t949 ?= t950.
         DATA t951 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t951.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t952 TYPE REF TO object.
-        CLEAR t952.
         READ TABLE p1->items INDEX 2 INTO t952.
         t951 ?= t952.
         DATA t953 TYPE REF TO zcl_lnt_syntax_input.
-        CLEAR t953.
         IF t951 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -23728,16 +20904,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_ty_form_definition EXPORTING i_node = t949 i_input_967e = t953.
       WHEN `ZCL_LNT_TY_MESSAGE`.
         DATA t984 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t984.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t985 TYPE REF TO object.
-        CLEAR t985.
         READ TABLE p1->items INDEX 1 INTO t985.
         t984 ?= t985.
         DATA t986 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t986.
         IF t984 IS BOUND.
           t986 = NEW #( ).
           t986->has = abap_true.
@@ -23747,16 +20920,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t986->value = t984->as_string( ).
         ENDIF.
         DATA t987 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t987.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t988 TYPE REF TO object.
-        CLEAR t988.
         READ TABLE p1->items INDEX 2 INTO t988.
         t987 ?= t988.
         DATA t989 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t989.
         IF t987 IS BOUND.
           t989 = NEW #( ).
           t989->has = abap_true.
@@ -23766,16 +20936,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t989->value = t987->as_string( ).
         ENDIF.
         DATA t990 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t990.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t991 TYPE REF TO object.
-        CLEAR t991.
         READ TABLE p1->items INDEX 3 INTO t991.
         t990 ?= t991.
         DATA t992 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t992.
         IF t990 IS BOUND.
           t992 = NEW #( ).
           t992->has = abap_true.
@@ -23787,16 +20954,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_ty_message EXPORTING i_number = t986 i_message_26cb = t989 i_class_name = t992.
       WHEN `ZCL_LNT_TY_METHOD_PARAMETERS`.
         DATA t1019 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1019.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1020 TYPE REF TO object.
-        CLEAR t1020.
         READ TABLE p1->items INDEX 1 INTO t1020.
         t1019 ?= t1020.
         DATA t1021 TYPE REF TO zcl_lnt_statement_node.
-        CLEAR t1021.
         IF t1019 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -23804,16 +20968,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t1022 = t1019->as_ref( ).
         t1021 ?= t1022.
         DATA t1023 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1023.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1024 TYPE REF TO object.
-        CLEAR t1024.
         READ TABLE p1->items INDEX 2 INTO t1024.
         t1023 ?= t1024.
         DATA t1025 TYPE REF TO zcl_lnt_syntax_input.
-        CLEAR t1025.
         IF t1023 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -23821,32 +20982,25 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t1026 = t1023->as_ref( ).
         t1025 ?= t1026.
         DATA t1027 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1027.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1028 TYPE REF TO object.
-        CLEAR t1028.
         READ TABLE p1->items INDEX 3 INTO t1028.
         t1027 ?= t1028.
-        DATA(t1029) = VALUE abap_bool( ).
         IF t1027 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1029 = t1027->as_boolean( ).
-        CREATE OBJECT result TYPE zcl_lnt_ty_method_parameters EXPORTING i_node = t1021 i_input_967e = t1025 i_abstract_method = t1029.
+        CREATE OBJECT result TYPE zcl_lnt_ty_method_parameters EXPORTING i_node = t1021 i_input_967e = t1025 i_abstract_method = t1027->as_boolean( ).
       WHEN `ZCL_LNT_TY_MTHD_IMPLMNTTN`.
         DATA t1012 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1012.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1013 TYPE REF TO object.
-        CLEAR t1013.
         READ TABLE p1->items INDEX 1 INTO t1013.
         t1012 ?= t1013.
         DATA t1014 TYPE REF TO zcl_lnt_structure_node.
-        CLEAR t1014.
         IF t1012 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -23854,32 +21008,25 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t1015 = t1012->as_ref( ).
         t1014 ?= t1015.
         DATA t1016 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1016.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1017 TYPE REF TO object.
-        CLEAR t1017.
         READ TABLE p1->items INDEX 2 INTO t1017.
         t1016 ?= t1017.
-        DATA(t1018) = VALUE string( ).
         IF t1016 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1018 = t1016->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_ty_mthd_implmnttn EXPORTING i_node = t1014 i_filename = t1018.
+        CREATE OBJECT result TYPE zcl_lnt_ty_mthd_implmnttn EXPORTING i_node = t1014 i_filename = t1016->as_string( ).
       WHEN `ZCL_LNT_TY_TABLE_TYPE`.
         DATA t861 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t861.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t862 TYPE REF TO object.
-        CLEAR t862.
         READ TABLE p1->items INDEX 1 INTO t862.
         t861 ?= t862.
         DATA t863 TYPE REF TO zcl_lnt_abstract_type.
-        CLEAR t863.
         IF t861 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -23887,16 +21034,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t864 = t861->as_ref( ).
         t863 ?= t864.
         DATA t865 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t865.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t866 TYPE REF TO object.
-        CLEAR t866.
         READ TABLE p1->items INDEX 2 INTO t866.
         t865 ?= t866.
         DATA t867 TYPE REF TO zcl_lnt_itable_options.
-        CLEAR t867.
         IF t865 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -23904,16 +21048,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t868 = t865->as_ref( ).
         t867 ?= t868.
         DATA t869 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t869.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t870 TYPE REF TO object.
-        CLEAR t870.
         READ TABLE p1->items INDEX 3 INTO t870.
         t869 ?= t870.
         DATA t871 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t871.
         IF t869 IS BOUND.
           t871 = NEW #( ).
           t871->has = abap_true.
@@ -23923,16 +21064,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t871->value = t869->as_string( ).
         ENDIF.
         DATA t872 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t872.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t873 TYPE REF TO object.
-        CLEAR t873.
         READ TABLE p1->items INDEX 4 INTO t873.
         t872 ?= t873.
         DATA t874 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t874.
         IF t872 IS BOUND.
           t874 = NEW #( ).
           t874->has = abap_true.
@@ -23961,12 +21099,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_unknown.
       WHEN `ZCL_LNT_UNKNOWN_OBJECT`.
         DATA t1231 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1231.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1232 TYPE REF TO object.
-        CLEAR t1232.
         READ TABLE p1->items INDEX 1 INTO t1232.
         t1231 ?= t1232.
         DATA(t1233) = VALUE string( ).
@@ -23975,28 +21111,22 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t1233 = t1231->as_string( ).
         DATA t1234 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1234.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1235 TYPE REF TO object.
-        CLEAR t1235.
         READ TABLE p1->items INDEX 2 INTO t1235.
         t1234 ?= t1235.
-        DATA(t1236) = VALUE string( ).
         IF t1234 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1236 = t1234->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_unknown_object EXPORTING i_name = t1233 i_type_9913 = t1236.
+        CREATE OBJECT result TYPE zcl_lnt_unknown_object EXPORTING i_name = t1233 i_type_9913 = t1234->as_string( ).
       WHEN `ZCL_LNT_UNKNOWN_TYPE`.
         DATA t879 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t879.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t880 TYPE REF TO object.
-        CLEAR t880.
         READ TABLE p1->items INDEX 1 INTO t880.
         t879 ?= t880.
         DATA(t881) = VALUE string( ).
@@ -24005,16 +21135,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t881 = t879->as_string( ).
         DATA t882 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t882.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t883 TYPE REF TO object.
-        CLEAR t883.
         READ TABLE p1->items INDEX 2 INTO t883.
         t882 ?= t883.
         DATA t884 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t884.
         IF t882 IS BOUND.
           t884 = NEW #( ).
           t884->has = abap_true.
@@ -24086,16 +21213,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_us_clss_bsd_excptn_cnf.
       WHEN `ZCL_LNT_UTC_LONG_TYPE`.
         DATA t885 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t885.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t886 TYPE REF TO object.
-        CLEAR t886.
         READ TABLE p1->items INDEX 1 INTO t886.
         t885 ?= t886.
         DATA t887 TYPE REF TO zcl_lnt_abstract_type_data.
-        CLEAR t887.
         IF t885 IS BOUND.
           IF t885 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -24124,16 +21248,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_verification_message.
       WHEN `ZCL_LNT_VERS`.
         DATA t392 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t392.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t393 TYPE REF TO object.
-        CLEAR t393.
         READ TABLE p1->items INDEX 1 INTO t393.
         t392 ?= t393.
         DATA t394 TYPE REF TO zcl_lnt_abap_release.
-        CLEAR t394.
         IF t392 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -24141,16 +21262,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t395 = t392->as_ref( ).
         t394 ?= t395.
         DATA t396 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t396.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t397 TYPE REF TO object.
-        CLEAR t397.
         READ TABLE p1->items INDEX 2 INTO t397.
         t396 ?= t397.
         DATA t398 TYPE REF TO zif_lnt_statement_runnable.
-        CLEAR t398.
         IF t396 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -24158,16 +21276,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t399 = t396->as_ref( ).
         t398 ?= t399.
         DATA t400 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t400.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t401 TYPE REF TO object.
-        CLEAR t401.
         READ TABLE p1->items INDEX 3 INTO t401.
         t400 ?= t401.
         DATA t402 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t402.
         IF t400 IS BOUND.
           t402 = NEW #( ).
           t402->has = abap_true.
@@ -24184,12 +21299,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_version_module.
       WHEN `ZCL_LNT_VERSION_NEW`.
         DATA t2020 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2020.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2021 TYPE REF TO object.
-        CLEAR t2021.
         READ TABLE p1->items INDEX 1 INTO t2021.
         t2020 ?= t2021.
         DATA(t2022) = VALUE string( ).
@@ -24198,52 +21311,40 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t2022 = t2020->as_string( ).
         DATA t2023 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2023.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2024 TYPE REF TO object.
-        CLEAR t2024.
         READ TABLE p1->items INDEX 2 INTO t2024.
         t2023 ?= t2024.
-        DATA(t2025) = VALUE string( ).
         IF t2023 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t2025 = t2023->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_version_new EXPORTING i_release_7928 = t2022 i_language = t2025.
+        CREATE OBJECT result TYPE zcl_lnt_version_new EXPORTING i_release_7928 = t2022 i_language = t2023->as_string( ).
       WHEN `ZCL_LNT_VIEW`.
         DATA t1815 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1815.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1816 TYPE REF TO object.
-        CLEAR t1816.
         READ TABLE p1->items INDEX 1 INTO t1816.
         t1815 ?= t1816.
-        DATA(t1817) = VALUE string( ).
         IF t1815 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1817 = t1815->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_view EXPORTING i_name = t1817.
+        CREATE OBJECT result TYPE zcl_lnt_view EXPORTING i_name = t1815->as_string( ).
       WHEN `ZCL_LNT_VIEW_CLUSTER`.
         DATA t1818 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1818.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1819 TYPE REF TO object.
-        CLEAR t1819.
         READ TABLE p1->items INDEX 1 INTO t1819.
         t1818 ?= t1819.
-        DATA(t1820) = VALUE string( ).
         IF t1818 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1820 = t1818->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_view_cluster EXPORTING i_name = t1820.
+        CREATE OBJECT result TYPE zcl_lnt_view_cluster EXPORTING i_name = t1818->as_string( ).
       WHEN `ZCL_LNT_VIEW_MODULE`.
         IF zcl_lnt_view_module=>zlnt_builtin_init_885f7b9f9121 = abap_false.
           zcl_lnt_view_module=>zlnt_builtin_init_332fcec4d426( ).
@@ -24251,32 +21352,25 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_view_module.
       WHEN `ZCL_LNT_VIRTUAL_END_POINT`.
         DATA t1821 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1821.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1822 TYPE REF TO object.
-        CLEAR t1822.
         READ TABLE p1->items INDEX 1 INTO t1822.
         t1821 ?= t1822.
-        DATA(t1823) = VALUE string( ).
         IF t1821 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1823 = t1821->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_virtual_end_point EXPORTING i_name = t1823.
+        CREATE OBJECT result TYPE zcl_lnt_virtual_end_point EXPORTING i_name = t1821->as_string( ).
       WHEN `ZCL_LNT_VIRTUAL_POSITION`.
         DATA t2010 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2010.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2011 TYPE REF TO object.
-        CLEAR t2011.
         READ TABLE p1->items INDEX 1 INTO t2011.
         t2010 ?= t2011.
         DATA t2012 TYPE REF TO zcl_lnt_position.
-        CLEAR t2012.
         IF t2010 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -24284,12 +21378,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t2013 = t2010->as_ref( ).
         t2012 ?= t2013.
         DATA t2014 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2014.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2015 TYPE REF TO object.
-        CLEAR t2015.
         READ TABLE p1->items INDEX 2 INTO t2015.
         t2014 ?= t2015.
         DATA(t2016) = VALUE f( ).
@@ -24298,16 +21390,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t2016 = t2014->as_number( ).
         DATA t2017 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2017.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2018 TYPE REF TO object.
-        CLEAR t2018.
         READ TABLE p1->items INDEX 3 INTO t2018.
         t2017 ?= t2018.
         DATA t2019 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
-        CLEAR t2019.
         IF t2017 IS BOUND.
           t2019 = NEW #( ).
           t2019->has = abap_true.
@@ -24324,16 +21413,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_visibility_module.
       WHEN `ZCL_LNT_VOID_TYPE`.
         DATA t889 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t889.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t890 TYPE REF TO object.
-        CLEAR t890.
         READ TABLE p1->items INDEX 1 INTO t890.
         t889 ?= t890.
         DATA t891 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t891.
         IF t889 IS BOUND.
           t891 = NEW #( ).
           t891->has = abap_true.
@@ -24343,16 +21429,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
           t891->value = t889->as_string( ).
         ENDIF.
         DATA t892 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t892.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t893 TYPE REF TO object.
-        CLEAR t893.
         READ TABLE p1->items INDEX 2 INTO t893.
         t892 ?= t893.
         DATA t894 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t894.
         IF t892 IS BOUND.
           t894 = NEW #( ).
           t894->has = abap_true.
@@ -24367,12 +21450,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_void_type EXPORTING i_voided = t891 i_qualified_name = t894.
       WHEN `ZCL_LNT_VRSND_TXT_DCMNT_IDNTFR`.
         DATA t3270 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t3270.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t3271 TYPE REF TO object.
-        CLEAR t3271.
         READ TABLE p1->items INDEX 1 INTO t3271.
         t3270 ?= t3271.
         DATA(t3272) = VALUE string( ).
@@ -24381,116 +21462,88 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         ENDIF.
         t3272 = t3270->as_string( ).
         DATA t3273 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t3273.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t3274 TYPE REF TO object.
-        CLEAR t3274.
         READ TABLE p1->items INDEX 2 INTO t3274.
         t3273 ?= t3274.
-        DATA(t3275) = VALUE f( ).
         IF t3273 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t3275 = t3273->as_number( ).
-        CREATE OBJECT result TYPE zcl_lnt_vrsnd_txt_dcmnt_idntfr EXPORTING i_uri = t3272 i_version = t3275.
+        CREATE OBJECT result TYPE zcl_lnt_vrsnd_txt_dcmnt_idntfr EXPORTING i_uri = t3272 i_version = t3273->as_number( ).
       WHEN `ZCL_LNT_WB_DYNPR_APPLCT_CNFGRT`.
         DATA t1827 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1827.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1828 TYPE REF TO object.
-        CLEAR t1828.
         READ TABLE p1->items INDEX 1 INTO t1828.
         t1827 ?= t1828.
-        DATA(t1829) = VALUE string( ).
         IF t1827 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1829 = t1827->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_wb_dynpr_applct_cnfgrt EXPORTING i_name = t1829.
+        CREATE OBJECT result TYPE zcl_lnt_wb_dynpr_applct_cnfgrt EXPORTING i_name = t1827->as_string( ).
       WHEN `ZCL_LNT_WB_DYNPR_CMPNNT_CNFGRT`.
         DATA t1833 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1833.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1834 TYPE REF TO object.
-        CLEAR t1834.
         READ TABLE p1->items INDEX 1 INTO t1834.
         t1833 ?= t1834.
-        DATA(t1835) = VALUE string( ).
         IF t1833 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1835 = t1833->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_wb_dynpr_cmpnnt_cnfgrt EXPORTING i_name = t1835.
+        CREATE OBJECT result TYPE zcl_lnt_wb_dynpr_cmpnnt_cnfgrt EXPORTING i_name = t1833->as_string( ).
       WHEN `ZCL_LNT_WEB_DYNPRO_APPLICATION`.
         DATA t1824 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1824.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1825 TYPE REF TO object.
-        CLEAR t1825.
         READ TABLE p1->items INDEX 1 INTO t1825.
         t1824 ?= t1825.
-        DATA(t1826) = VALUE string( ).
         IF t1824 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1826 = t1824->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_web_dynpro_application EXPORTING i_name = t1826.
+        CREATE OBJECT result TYPE zcl_lnt_web_dynpro_application EXPORTING i_name = t1824->as_string( ).
       WHEN `ZCL_LNT_WEB_DYNPRO_COMPONENT`.
         DATA t1830 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1830.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1831 TYPE REF TO object.
-        CLEAR t1831.
         READ TABLE p1->items INDEX 1 INTO t1831.
         t1830 ?= t1831.
-        DATA(t1832) = VALUE string( ).
         IF t1830 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1832 = t1830->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_web_dynpro_component EXPORTING i_name = t1832.
+        CREATE OBJECT result TYPE zcl_lnt_web_dynpro_component EXPORTING i_name = t1830->as_string( ).
       WHEN `ZCL_LNT_WEB_MIME`.
         DATA t1836 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1836.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1837 TYPE REF TO object.
-        CLEAR t1837.
         READ TABLE p1->items INDEX 1 INTO t1837.
         t1836 ?= t1837.
-        DATA(t1838) = VALUE string( ).
         IF t1836 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1838 = t1836->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_web_mime EXPORTING i_name = t1838.
+        CREATE OBJECT result TYPE zcl_lnt_web_mime EXPORTING i_name = t1836->as_string( ).
       WHEN `ZCL_LNT_WEB_REPORTING_TEMPLATE`.
         DATA t1839 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1839.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1840 TYPE REF TO object.
-        CLEAR t1840.
         READ TABLE p1->items INDEX 1 INTO t1840.
         t1839 ?= t1840.
-        DATA(t1841) = VALUE string( ).
         IF t1839 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t1841 = t1839->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_web_reporting_template EXPORTING i_name = t1841.
+        CREATE OBJECT result TYPE zcl_lnt_web_reporting_template EXPORTING i_name = t1839->as_string( ).
       WHEN `ZCL_LNT_WHEN_OTHERS`.
         CREATE OBJECT result TYPE zcl_lnt_when_others.
       WHEN `ZCL_LNT_WHEN_OTHERS_LAST`.
@@ -24507,36 +21560,28 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_with_name.
       WHEN `ZCL_LNT_WORD`.
         DATA t383 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t383.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t384 TYPE REF TO object.
-        CLEAR t384.
         READ TABLE p1->items INDEX 1 INTO t384.
         t383 ?= t384.
-        DATA(t385) = VALUE string( ).
         IF t383 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t385 = t383->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_word EXPORTING i_s = t385.
+        CREATE OBJECT result TYPE zcl_lnt_word EXPORTING i_s = t383->as_string( ).
       WHEN `ZCL_LNT_WORD_SEQUENCE`.
         DATA t441 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t441.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t442 TYPE REF TO object.
-        CLEAR t442.
         READ TABLE p1->items INDEX 1 INTO t442.
         t441 ?= t442.
-        DATA(t443) = VALUE string( ).
         IF t441 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t443 = t441->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_word_sequence EXPORTING i_stri = t443.
+        CREATE OBJECT result TYPE zcl_lnt_word_sequence EXPORTING i_stri = t441->as_string( ).
       WHEN `ZCL_LNT_WRITE_OFFSET_LENGTH`.
         CREATE OBJECT result TYPE zcl_lnt_write_offset_length.
       WHEN OTHERS.
@@ -24552,16 +21597,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_wrong_abapdoc_position.
       WHEN `ZCL_LNT_W_AT`.
         DATA t257 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t257.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t258 TYPE REF TO object.
-        CLEAR t258.
         READ TABLE p1->items INDEX 1 INTO t258.
         t257 ?= t258.
         DATA t259 TYPE REF TO zcl_lnt_position.
-        CLEAR t259.
         IF t257 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -24569,32 +21611,25 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t260 = t257->as_ref( ).
         t259 ?= t260.
         DATA t261 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t261.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t262 TYPE REF TO object.
-        CLEAR t262.
         READ TABLE p1->items INDEX 2 INTO t262.
         t261 ?= t262.
-        DATA(t263) = VALUE string( ).
         IF t261 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t263 = t261->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_w_at EXPORTING i_start = t259 i_str = t263.
+        CREATE OBJECT result TYPE zcl_lnt_w_at EXPORTING i_start = t259 i_str = t261->as_string( ).
       WHEN `ZCL_LNT_W_AT_W`.
         DATA t264 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t264.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t265 TYPE REF TO object.
-        CLEAR t265.
         READ TABLE p1->items INDEX 1 INTO t265.
         t264 ?= t265.
         DATA t266 TYPE REF TO zcl_lnt_position.
-        CLEAR t266.
         IF t264 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -24602,32 +21637,25 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t267 = t264->as_ref( ).
         t266 ?= t267.
         DATA t268 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t268.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t269 TYPE REF TO object.
-        CLEAR t269.
         READ TABLE p1->items INDEX 2 INTO t269.
         t268 ?= t269.
-        DATA(t270) = VALUE string( ).
         IF t268 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t270 = t268->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_w_at_w EXPORTING i_start = t266 i_str = t270.
+        CREATE OBJECT result TYPE zcl_lnt_w_at_w EXPORTING i_start = t266 i_str = t268->as_string( ).
       WHEN `ZCL_LNT_W_BRACKET_LEFT`.
         DATA t271 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t271.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t272 TYPE REF TO object.
-        CLEAR t272.
         READ TABLE p1->items INDEX 1 INTO t272.
         t271 ?= t272.
         DATA t273 TYPE REF TO zcl_lnt_position.
-        CLEAR t273.
         IF t271 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -24635,32 +21663,25 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t274 = t271->as_ref( ).
         t273 ?= t274.
         DATA t275 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t275.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t276 TYPE REF TO object.
-        CLEAR t276.
         READ TABLE p1->items INDEX 2 INTO t276.
         t275 ?= t276.
-        DATA(t277) = VALUE string( ).
         IF t275 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t277 = t275->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_w_bracket_left EXPORTING i_start = t273 i_str = t277.
+        CREATE OBJECT result TYPE zcl_lnt_w_bracket_left EXPORTING i_start = t273 i_str = t275->as_string( ).
       WHEN `ZCL_LNT_W_BRACKET_LEFT_W`.
         DATA t278 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t278.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t279 TYPE REF TO object.
-        CLEAR t279.
         READ TABLE p1->items INDEX 1 INTO t279.
         t278 ?= t279.
         DATA t280 TYPE REF TO zcl_lnt_position.
-        CLEAR t280.
         IF t278 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -24668,32 +21689,25 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t281 = t278->as_ref( ).
         t280 ?= t281.
         DATA t282 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t282.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t283 TYPE REF TO object.
-        CLEAR t283.
         READ TABLE p1->items INDEX 2 INTO t283.
         t282 ?= t283.
-        DATA(t284) = VALUE string( ).
         IF t282 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t284 = t282->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_w_bracket_left_w EXPORTING i_start = t280 i_str = t284.
+        CREATE OBJECT result TYPE zcl_lnt_w_bracket_left_w EXPORTING i_start = t280 i_str = t282->as_string( ).
       WHEN `ZCL_LNT_W_BRACKET_RIGHT`.
         DATA t285 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t285.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t286 TYPE REF TO object.
-        CLEAR t286.
         READ TABLE p1->items INDEX 1 INTO t286.
         t285 ?= t286.
         DATA t287 TYPE REF TO zcl_lnt_position.
-        CLEAR t287.
         IF t285 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -24701,32 +21715,25 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t288 = t285->as_ref( ).
         t287 ?= t288.
         DATA t289 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t289.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t290 TYPE REF TO object.
-        CLEAR t290.
         READ TABLE p1->items INDEX 2 INTO t290.
         t289 ?= t290.
-        DATA(t291) = VALUE string( ).
         IF t289 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t291 = t289->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_w_bracket_right EXPORTING i_start = t287 i_str = t291.
+        CREATE OBJECT result TYPE zcl_lnt_w_bracket_right EXPORTING i_start = t287 i_str = t289->as_string( ).
       WHEN `ZCL_LNT_W_BRACKET_RIGHT_W`.
         DATA t292 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t292.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t293 TYPE REF TO object.
-        CLEAR t293.
         READ TABLE p1->items INDEX 1 INTO t293.
         t292 ?= t293.
         DATA t294 TYPE REF TO zcl_lnt_position.
-        CLEAR t294.
         IF t292 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -24734,32 +21741,25 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t295 = t292->as_ref( ).
         t294 ?= t295.
         DATA t296 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t296.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t297 TYPE REF TO object.
-        CLEAR t297.
         READ TABLE p1->items INDEX 2 INTO t297.
         t296 ?= t297.
-        DATA(t298) = VALUE string( ).
         IF t296 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t298 = t296->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_w_bracket_right_w EXPORTING i_start = t294 i_str = t298.
+        CREATE OBJECT result TYPE zcl_lnt_w_bracket_right_w EXPORTING i_start = t294 i_str = t296->as_string( ).
       WHEN `ZCL_LNT_W_DASH`.
         DATA t299 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t299.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t300 TYPE REF TO object.
-        CLEAR t300.
         READ TABLE p1->items INDEX 1 INTO t300.
         t299 ?= t300.
         DATA t301 TYPE REF TO zcl_lnt_position.
-        CLEAR t301.
         IF t299 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -24767,32 +21767,25 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t302 = t299->as_ref( ).
         t301 ?= t302.
         DATA t303 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t303.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t304 TYPE REF TO object.
-        CLEAR t304.
         READ TABLE p1->items INDEX 2 INTO t304.
         t303 ?= t304.
-        DATA(t305) = VALUE string( ).
         IF t303 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t305 = t303->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_w_dash EXPORTING i_start = t301 i_str = t305.
+        CREATE OBJECT result TYPE zcl_lnt_w_dash EXPORTING i_start = t301 i_str = t303->as_string( ).
       WHEN `ZCL_LNT_W_DASH_W`.
         DATA t306 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t306.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t307 TYPE REF TO object.
-        CLEAR t307.
         READ TABLE p1->items INDEX 1 INTO t307.
         t306 ?= t307.
         DATA t308 TYPE REF TO zcl_lnt_position.
-        CLEAR t308.
         IF t306 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -24800,32 +21793,25 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t309 = t306->as_ref( ).
         t308 ?= t309.
         DATA t310 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t310.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t311 TYPE REF TO object.
-        CLEAR t311.
         READ TABLE p1->items INDEX 2 INTO t311.
         t310 ?= t311.
-        DATA(t312) = VALUE string( ).
         IF t310 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t312 = t310->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_w_dash_w EXPORTING i_start = t308 i_str = t312.
+        CREATE OBJECT result TYPE zcl_lnt_w_dash_w EXPORTING i_start = t308 i_str = t310->as_string( ).
       WHEN `ZCL_LNT_W_INSTANCE_ARROW`.
         DATA t313 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t313.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t314 TYPE REF TO object.
-        CLEAR t314.
         READ TABLE p1->items INDEX 1 INTO t314.
         t313 ?= t314.
         DATA t315 TYPE REF TO zcl_lnt_position.
-        CLEAR t315.
         IF t313 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -24833,32 +21819,25 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t316 = t313->as_ref( ).
         t315 ?= t316.
         DATA t317 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t317.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t318 TYPE REF TO object.
-        CLEAR t318.
         READ TABLE p1->items INDEX 2 INTO t318.
         t317 ?= t318.
-        DATA(t319) = VALUE string( ).
         IF t317 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t319 = t317->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_w_instance_arrow EXPORTING i_start = t315 i_str = t319.
+        CREATE OBJECT result TYPE zcl_lnt_w_instance_arrow EXPORTING i_start = t315 i_str = t317->as_string( ).
       WHEN `ZCL_LNT_W_INSTANCE_ARROW_W`.
         DATA t320 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t320.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t321 TYPE REF TO object.
-        CLEAR t321.
         READ TABLE p1->items INDEX 1 INTO t321.
         t320 ?= t321.
         DATA t322 TYPE REF TO zcl_lnt_position.
-        CLEAR t322.
         IF t320 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -24866,32 +21845,25 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t323 = t320->as_ref( ).
         t322 ?= t323.
         DATA t324 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t324.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t325 TYPE REF TO object.
-        CLEAR t325.
         READ TABLE p1->items INDEX 2 INTO t325.
         t324 ?= t325.
-        DATA(t326) = VALUE string( ).
         IF t324 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t326 = t324->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_w_instance_arrow_w EXPORTING i_start = t322 i_str = t326.
+        CREATE OBJECT result TYPE zcl_lnt_w_instance_arrow_w EXPORTING i_start = t322 i_str = t324->as_string( ).
       WHEN `ZCL_LNT_W_PAREN_LEFT`.
         DATA t327 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t327.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t328 TYPE REF TO object.
-        CLEAR t328.
         READ TABLE p1->items INDEX 1 INTO t328.
         t327 ?= t328.
         DATA t329 TYPE REF TO zcl_lnt_position.
-        CLEAR t329.
         IF t327 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -24899,32 +21871,25 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t330 = t327->as_ref( ).
         t329 ?= t330.
         DATA t331 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t331.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t332 TYPE REF TO object.
-        CLEAR t332.
         READ TABLE p1->items INDEX 2 INTO t332.
         t331 ?= t332.
-        DATA(t333) = VALUE string( ).
         IF t331 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t333 = t331->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_w_paren_left EXPORTING i_start = t329 i_str = t333.
+        CREATE OBJECT result TYPE zcl_lnt_w_paren_left EXPORTING i_start = t329 i_str = t331->as_string( ).
       WHEN `ZCL_LNT_W_PAREN_LEFT_W`.
         DATA t334 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t334.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t335 TYPE REF TO object.
-        CLEAR t335.
         READ TABLE p1->items INDEX 1 INTO t335.
         t334 ?= t335.
         DATA t336 TYPE REF TO zcl_lnt_position.
-        CLEAR t336.
         IF t334 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -24932,32 +21897,25 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t337 = t334->as_ref( ).
         t336 ?= t337.
         DATA t338 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t338.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t339 TYPE REF TO object.
-        CLEAR t339.
         READ TABLE p1->items INDEX 2 INTO t339.
         t338 ?= t339.
-        DATA(t340) = VALUE string( ).
         IF t338 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t340 = t338->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_w_paren_left_w EXPORTING i_start = t336 i_str = t340.
+        CREATE OBJECT result TYPE zcl_lnt_w_paren_left_w EXPORTING i_start = t336 i_str = t338->as_string( ).
       WHEN `ZCL_LNT_W_PAREN_RIGHT`.
         DATA t341 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t341.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t342 TYPE REF TO object.
-        CLEAR t342.
         READ TABLE p1->items INDEX 1 INTO t342.
         t341 ?= t342.
         DATA t343 TYPE REF TO zcl_lnt_position.
-        CLEAR t343.
         IF t341 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -24965,32 +21923,25 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t344 = t341->as_ref( ).
         t343 ?= t344.
         DATA t345 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t345.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t346 TYPE REF TO object.
-        CLEAR t346.
         READ TABLE p1->items INDEX 2 INTO t346.
         t345 ?= t346.
-        DATA(t347) = VALUE string( ).
         IF t345 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t347 = t345->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_w_paren_right EXPORTING i_start = t343 i_str = t347.
+        CREATE OBJECT result TYPE zcl_lnt_w_paren_right EXPORTING i_start = t343 i_str = t345->as_string( ).
       WHEN `ZCL_LNT_W_PAREN_RIGHT_W`.
         DATA t348 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t348.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t349 TYPE REF TO object.
-        CLEAR t349.
         READ TABLE p1->items INDEX 1 INTO t349.
         t348 ?= t349.
         DATA t350 TYPE REF TO zcl_lnt_position.
-        CLEAR t350.
         IF t348 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -24998,32 +21949,25 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t351 = t348->as_ref( ).
         t350 ?= t351.
         DATA t352 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t352.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t353 TYPE REF TO object.
-        CLEAR t353.
         READ TABLE p1->items INDEX 2 INTO t353.
         t352 ?= t353.
-        DATA(t354) = VALUE string( ).
         IF t352 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t354 = t352->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_w_paren_right_w EXPORTING i_start = t350 i_str = t354.
+        CREATE OBJECT result TYPE zcl_lnt_w_paren_right_w EXPORTING i_start = t350 i_str = t352->as_string( ).
       WHEN `ZCL_LNT_W_PLUS`.
         DATA t355 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t355.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t356 TYPE REF TO object.
-        CLEAR t356.
         READ TABLE p1->items INDEX 1 INTO t356.
         t355 ?= t356.
         DATA t357 TYPE REF TO zcl_lnt_position.
-        CLEAR t357.
         IF t355 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -25031,32 +21975,25 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t358 = t355->as_ref( ).
         t357 ?= t358.
         DATA t359 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t359.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t360 TYPE REF TO object.
-        CLEAR t360.
         READ TABLE p1->items INDEX 2 INTO t360.
         t359 ?= t360.
-        DATA(t361) = VALUE string( ).
         IF t359 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t361 = t359->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_w_plus EXPORTING i_start = t357 i_str = t361.
+        CREATE OBJECT result TYPE zcl_lnt_w_plus EXPORTING i_start = t357 i_str = t359->as_string( ).
       WHEN `ZCL_LNT_W_PLUS_W`.
         DATA t362 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t362.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t363 TYPE REF TO object.
-        CLEAR t363.
         READ TABLE p1->items INDEX 1 INTO t363.
         t362 ?= t363.
         DATA t364 TYPE REF TO zcl_lnt_position.
-        CLEAR t364.
         IF t362 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -25064,32 +22001,25 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t365 = t362->as_ref( ).
         t364 ?= t365.
         DATA t366 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t366.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t367 TYPE REF TO object.
-        CLEAR t367.
         READ TABLE p1->items INDEX 2 INTO t367.
         t366 ?= t367.
-        DATA(t368) = VALUE string( ).
         IF t366 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t368 = t366->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_w_plus_w EXPORTING i_start = t364 i_str = t368.
+        CREATE OBJECT result TYPE zcl_lnt_w_plus_w EXPORTING i_start = t364 i_str = t366->as_string( ).
       WHEN `ZCL_LNT_W_STATIC_ARROW`.
         DATA t369 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t369.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t370 TYPE REF TO object.
-        CLEAR t370.
         READ TABLE p1->items INDEX 1 INTO t370.
         t369 ?= t370.
         DATA t371 TYPE REF TO zcl_lnt_position.
-        CLEAR t371.
         IF t369 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -25097,32 +22027,25 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t372 = t369->as_ref( ).
         t371 ?= t372.
         DATA t373 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t373.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t374 TYPE REF TO object.
-        CLEAR t374.
         READ TABLE p1->items INDEX 2 INTO t374.
         t373 ?= t374.
-        DATA(t375) = VALUE string( ).
         IF t373 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t375 = t373->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_w_static_arrow EXPORTING i_start = t371 i_str = t375.
+        CREATE OBJECT result TYPE zcl_lnt_w_static_arrow EXPORTING i_start = t371 i_str = t373->as_string( ).
       WHEN `ZCL_LNT_W_STATIC_ARROW_W`.
         DATA t376 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t376.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t377 TYPE REF TO object.
-        CLEAR t377.
         READ TABLE p1->items INDEX 1 INTO t377.
         t376 ?= t377.
         DATA t378 TYPE REF TO zcl_lnt_position.
-        CLEAR t378.
         IF t376 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -25130,20 +22053,16 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         t379 = t376->as_ref( ).
         t378 ?= t379.
         DATA t380 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t380.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t381 TYPE REF TO object.
-        CLEAR t381.
         READ TABLE p1->items INDEX 2 INTO t381.
         t380 ?= t381.
-        DATA(t382) = VALUE string( ).
         IF t380 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
-        t382 = t380->as_string( ).
-        CREATE OBJECT result TYPE zcl_lnt_w_static_arrow_w EXPORTING i_start = t378 i_str = t382.
+        CREATE OBJECT result TYPE zcl_lnt_w_static_arrow_w EXPORTING i_start = t378 i_str = t380->as_string( ).
       WHEN `ZCL_LNT_XMLBOM`.
         CREATE OBJECT result TYPE zcl_lnt_xmlbom.
       WHEN `ZCL_LNT_XMLBOM_CONF`.
@@ -25161,16 +22080,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_x_generic_type.
       WHEN `ZCL_LNT_X_SEQUENCE_TYPE`.
         DATA t895 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t895.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t896 TYPE REF TO object.
-        CLEAR t896.
         READ TABLE p1->items INDEX 1 INTO t896.
         t895 ?= t896.
         DATA t897 TYPE REF TO zcl_lnt_abstract_type_data.
-        CLEAR t897.
         IF t895 IS BOUND.
           IF t895 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -25182,16 +22098,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_x_sequence_type EXPORTING i_input_967e = t897.
       WHEN `ZCL_LNT_X_STRING_TYPE`.
         DATA t899 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t899.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t900 TYPE REF TO object.
-        CLEAR t900.
         READ TABLE p1->items INDEX 1 INTO t900.
         t899 ?= t900.
         DATA t901 TYPE REF TO zcl_lnt_abstract_type_data.
-        CLEAR t901.
         IF t899 IS BOUND.
           IF t899 IS NOT BOUND.
             RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
@@ -25206,16 +22119,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcl_lnt_x_string_type EXPORTING i_input_967e = t901.
       WHEN `ZCX_LNT_ASSERT_ERROR`.
         DATA t650 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t650.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t651 TYPE REF TO object.
-        CLEAR t651.
         READ TABLE p1->items INDEX 1 INTO t651.
         t650 ?= t651.
         DATA t652 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t652.
         IF t650 IS BOUND.
           t652 = NEW #( ).
           t652->has = abap_true.
@@ -25227,16 +22137,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcx_lnt_assert_error EXPORTING i_message_26cb = t652.
       WHEN `ZCX_LNT_BUILTIN_4C6A1223`.
         DATA t2272 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t2272.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t2273 TYPE REF TO object.
-        CLEAR t2273.
         READ TABLE p1->items INDEX 1 INTO t2273.
         t2272 ?= t2273.
         DATA t2274 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t2274.
         IF t2272 IS BOUND.
           t2274 = NEW #( ).
           t2274->has = abap_true.
@@ -25248,16 +22155,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcx_lnt_builtin_4c6a1223 EXPORTING i_message_26cb = t2274.
       WHEN `ZCX_LNT_FAIL_COMBINATOR_ERROR`.
         DATA t444 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t444.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t445 TYPE REF TO object.
-        CLEAR t445.
         READ TABLE p1->items INDEX 1 INTO t445.
         t444 ?= t445.
         DATA t446 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t446.
         IF t444 IS BOUND.
           t446 = NEW #( ).
           t446->has = abap_true.
@@ -25269,16 +22173,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcx_lnt_fail_combinator_error EXPORTING i_message_26cb = t446.
       WHEN `ZCX_LNT_FAIL_STAR_ERROR`.
         DATA t447 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t447.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t448 TYPE REF TO object.
-        CLEAR t448.
         READ TABLE p1->items INDEX 1 INTO t448.
         t447 ?= t448.
         DATA t449 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t449.
         IF t447 IS BOUND.
           t449 = NEW #( ).
           t449->has = abap_true.
@@ -25290,16 +22191,13 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
         CREATE OBJECT result TYPE zcx_lnt_fail_star_error EXPORTING i_message_26cb = t449.
       WHEN `ZCX_LNT_SKIP_TO_NEXT_FILE`.
         DATA t1904 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-        CLEAR t1904.
         IF p1 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
         DATA t1905 TYPE REF TO object.
-        CLEAR t1905.
         READ TABLE p1->items INDEX 1 INTO t1905.
         t1904 ?= t1905.
         DATA t1906 TYPE REF TO zcl_lnt_issue.
-        CLEAR t1906.
         IF t1904 IS NOT BOUND.
           RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
         ENDIF.
@@ -25362,12 +22260,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
 
   METHOD args_decode_2019_0.
     DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t1.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t2 TYPE REF TO object.
-    CLEAR t2.
     READ TABLE p1->items INDEX 1 INTO t2.
     t1 ?= t2.
     IF t1 IS NOT BOUND.
@@ -25377,12 +22273,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
     t3 = t1->as_ref( ).
     frame-a0 ?= t3.
     DATA t4 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t4.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t5 TYPE REF TO object.
-    CLEAR t5.
     READ TABLE p1->items INDEX 2 INTO t5.
     t4 ?= t5.
     IF t4 IS NOT BOUND.
@@ -25392,12 +22286,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
     t6 = t4->as_ref( ).
     frame-a1 ?= t6.
     DATA t7 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t7.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t8 TYPE REF TO object.
-    CLEAR t8.
     READ TABLE p1->items INDEX 3 INTO t8.
     t7 ?= t8.
     IF t7 IS NOT BOUND.
@@ -25407,12 +22299,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
     t9 = t7->as_ref( ).
     frame-a2 ?= t9.
     DATA t10 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t10.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t11 TYPE REF TO object.
-    CLEAR t11.
     READ TABLE p1->items INDEX 4 INTO t11.
     t10 ?= t11.
     IF t10 IS NOT BOUND.
@@ -25422,12 +22312,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
     t12 = t10->as_ref( ).
     frame-a3 ?= t12.
     DATA t13 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t13.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t14 TYPE REF TO object.
-    CLEAR t14.
     READ TABLE p1->items INDEX 5 INTO t14.
     t13 ?= t14.
     IF t13 IS NOT BOUND.
@@ -25437,12 +22325,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
     t15 = t13->as_ref( ).
     frame-a4 ?= t15.
     DATA t16 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t16.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t17 TYPE REF TO object.
-    CLEAR t17.
     READ TABLE p1->items INDEX 6 INTO t17.
     t16 ?= t17.
     IF t16 IS NOT BOUND.
@@ -25452,12 +22338,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
     t18 = t16->as_ref( ).
     frame-a5 ?= t18.
     DATA t19 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t19.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t20 TYPE REF TO object.
-    CLEAR t20.
     READ TABLE p1->items INDEX 7 INTO t20.
     t19 ?= t20.
     IF t19 IS NOT BOUND.
@@ -25467,12 +22351,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
     t21 = t19->as_ref( ).
     frame-a6 ?= t21.
     DATA t22 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t22.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t23 TYPE REF TO object.
-    CLEAR t23.
     READ TABLE p1->items INDEX 8 INTO t23.
     t22 ?= t23.
     IF t22 IS NOT BOUND.
@@ -25482,12 +22364,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
     t24 = t22->as_ref( ).
     frame-a7 ?= t24.
     DATA t25 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t25.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t26 TYPE REF TO object.
-    CLEAR t26.
     READ TABLE p1->items INDEX 9 INTO t26.
     t25 ?= t26.
     IF t25 IS NOT BOUND.
@@ -25497,12 +22377,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
     t27 = t25->as_ref( ).
     frame-a8 ?= t27.
     DATA t28 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t28.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t29 TYPE REF TO object.
-    CLEAR t29.
     READ TABLE p1->items INDEX 10 INTO t29.
     t28 ?= t29.
     IF t28 IS NOT BOUND.
@@ -25512,12 +22390,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
     t30 = t28->as_ref( ).
     frame-a9 ?= t30.
     DATA t31 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t31.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t32 TYPE REF TO object.
-    CLEAR t32.
     READ TABLE p1->items INDEX 11 INTO t32.
     t31 ?= t32.
     IF t31 IS NOT BOUND.
@@ -25527,12 +22403,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
     t33 = t31->as_ref( ).
     frame-a10 ?= t33.
     DATA t34 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t34.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t35 TYPE REF TO object.
-    CLEAR t35.
     READ TABLE p1->items INDEX 12 INTO t35.
     t34 ?= t35.
     IF t34 IS NOT BOUND.
@@ -25542,12 +22416,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
     t36 = t34->as_ref( ).
     frame-a11 ?= t36.
     DATA t37 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t37.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t38 TYPE REF TO object.
-    CLEAR t38.
     READ TABLE p1->items INDEX 13 INTO t38.
     t37 ?= t38.
     IF t37 IS NOT BOUND.
@@ -25557,12 +22429,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
     t39 = t37->as_ref( ).
     frame-a12 ?= t39.
     DATA t40 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t40.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t41 TYPE REF TO object.
-    CLEAR t41.
     READ TABLE p1->items INDEX 14 INTO t41.
     t40 ?= t41.
     IF t40 IS NOT BOUND.
@@ -25572,12 +22442,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
     t42 = t40->as_ref( ).
     frame-a13 ?= t42.
     DATA t43 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t43.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t44 TYPE REF TO object.
-    CLEAR t44.
     READ TABLE p1->items INDEX 15 INTO t44.
     t43 ?= t44.
     IF t43 IS NOT BOUND.
@@ -25587,12 +22455,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
     t45 = t43->as_ref( ).
     frame-a14 ?= t45.
     DATA t46 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t46.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t47 TYPE REF TO object.
-    CLEAR t47.
     READ TABLE p1->items INDEX 16 INTO t47.
     t46 ?= t47.
     IF t46 IS NOT BOUND.
@@ -25602,12 +22468,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
     t48 = t46->as_ref( ).
     frame-a15 ?= t48.
     DATA t49 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t49.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t50 TYPE REF TO object.
-    CLEAR t50.
     READ TABLE p1->items INDEX 17 INTO t50.
     t49 ?= t50.
     IF t49 IS NOT BOUND.
@@ -25617,12 +22481,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
     t51 = t49->as_ref( ).
     frame-a16 ?= t51.
     DATA t52 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t52.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t53 TYPE REF TO object.
-    CLEAR t53.
     READ TABLE p1->items INDEX 18 INTO t53.
     t52 ?= t53.
     IF t52 IS NOT BOUND.
@@ -25632,12 +22494,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
     t54 = t52->as_ref( ).
     frame-a17 ?= t54.
     DATA t55 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t55.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t56 TYPE REF TO object.
-    CLEAR t56.
     READ TABLE p1->items INDEX 19 INTO t56.
     t55 ?= t56.
     IF t55 IS NOT BOUND.
@@ -25647,12 +22507,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
     t57 = t55->as_ref( ).
     frame-a18 ?= t57.
     DATA t58 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t58.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t59 TYPE REF TO object.
-    CLEAR t59.
     READ TABLE p1->items INDEX 20 INTO t59.
     t58 ?= t59.
     IF t58 IS NOT BOUND.
@@ -25662,12 +22520,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
     t60 = t58->as_ref( ).
     frame-a19 ?= t60.
     DATA t61 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t61.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t62 TYPE REF TO object.
-    CLEAR t62.
     READ TABLE p1->items INDEX 21 INTO t62.
     t61 ?= t62.
     IF t61 IS NOT BOUND.
@@ -25677,12 +22533,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
     t63 = t61->as_ref( ).
     frame-a20 ?= t63.
     DATA t64 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t64.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t65 TYPE REF TO object.
-    CLEAR t65.
     READ TABLE p1->items INDEX 22 INTO t65.
     t64 ?= t65.
     IF t64 IS NOT BOUND.
@@ -25692,12 +22546,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
     t66 = t64->as_ref( ).
     frame-a21 ?= t66.
     DATA t67 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t67.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t68 TYPE REF TO object.
-    CLEAR t68.
     READ TABLE p1->items INDEX 23 INTO t68.
     t67 ?= t68.
     IF t67 IS NOT BOUND.
@@ -25707,12 +22559,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
     t69 = t67->as_ref( ).
     frame-a22 ?= t69.
     DATA t70 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t70.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t71 TYPE REF TO object.
-    CLEAR t71.
     READ TABLE p1->items INDEX 24 INTO t71.
     t70 ?= t71.
     IF t70 IS NOT BOUND.
@@ -25725,12 +22575,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
 
   METHOD args_decode_2019_1.
     DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t1.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t2 TYPE REF TO object.
-    CLEAR t2.
     READ TABLE p1->items INDEX 25 INTO t2.
     t1 ?= t2.
     IF t1 IS NOT BOUND.
@@ -25740,12 +22588,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
     t3 = t1->as_ref( ).
     frame-a24 ?= t3.
     DATA t4 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t4.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t5 TYPE REF TO object.
-    CLEAR t5.
     READ TABLE p1->items INDEX 26 INTO t5.
     t4 ?= t5.
     IF t4 IS NOT BOUND.
@@ -25755,12 +22601,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
     t6 = t4->as_ref( ).
     frame-a25 ?= t6.
     DATA t7 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t7.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t8 TYPE REF TO object.
-    CLEAR t8.
     READ TABLE p1->items INDEX 27 INTO t8.
     t7 ?= t8.
     IF t7 IS NOT BOUND.
@@ -25770,12 +22614,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
     t9 = t7->as_ref( ).
     frame-a26 ?= t9.
     DATA t10 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t10.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t11 TYPE REF TO object.
-    CLEAR t11.
     READ TABLE p1->items INDEX 28 INTO t11.
     t10 ?= t11.
     IF t10 IS NOT BOUND.
@@ -25785,12 +22627,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
     t12 = t10->as_ref( ).
     frame-a27 ?= t12.
     DATA t13 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t13.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t14 TYPE REF TO object.
-    CLEAR t14.
     READ TABLE p1->items INDEX 29 INTO t14.
     t13 ?= t14.
     IF t13 IS NOT BOUND.
@@ -25800,12 +22640,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
     t15 = t13->as_ref( ).
     frame-a28 ?= t15.
     DATA t16 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t16.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t17 TYPE REF TO object.
-    CLEAR t17.
     READ TABLE p1->items INDEX 30 INTO t17.
     t16 ?= t17.
     IF t16 IS NOT BOUND.
@@ -25815,12 +22653,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
     t18 = t16->as_ref( ).
     frame-a29 ?= t18.
     DATA t19 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t19.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t20 TYPE REF TO object.
-    CLEAR t20.
     READ TABLE p1->items INDEX 31 INTO t20.
     t19 ?= t20.
     IF t19 IS NOT BOUND.
@@ -25830,12 +22666,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
     t21 = t19->as_ref( ).
     frame-a30 ?= t21.
     DATA t22 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t22.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t23 TYPE REF TO object.
-    CLEAR t23.
     READ TABLE p1->items INDEX 32 INTO t23.
     t22 ?= t23.
     IF t22 IS NOT BOUND.
@@ -25845,12 +22679,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
     t24 = t22->as_ref( ).
     frame-a31 ?= t24.
     DATA t25 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t25.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t26 TYPE REF TO object.
-    CLEAR t26.
     READ TABLE p1->items INDEX 33 INTO t26.
     t25 ?= t26.
     IF t25 IS NOT BOUND.
@@ -25860,12 +22692,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
     t27 = t25->as_ref( ).
     frame-a32 ?= t27.
     DATA t28 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t28.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t29 TYPE REF TO object.
-    CLEAR t29.
     READ TABLE p1->items INDEX 34 INTO t29.
     t28 ?= t29.
     IF t28 IS NOT BOUND.
@@ -25875,12 +22705,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
     t30 = t28->as_ref( ).
     frame-a33 ?= t30.
     DATA t31 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t31.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t32 TYPE REF TO object.
-    CLEAR t32.
     READ TABLE p1->items INDEX 35 INTO t32.
     t31 ?= t32.
     IF t31 IS NOT BOUND.
@@ -25890,12 +22718,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
     t33 = t31->as_ref( ).
     frame-a34 ?= t33.
     DATA t34 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t34.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t35 TYPE REF TO object.
-    CLEAR t35.
     READ TABLE p1->items INDEX 36 INTO t35.
     t34 ?= t35.
     IF t34 IS NOT BOUND.
@@ -25905,12 +22731,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
     t36 = t34->as_ref( ).
     frame-a35 ?= t36.
     DATA t37 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t37.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t38 TYPE REF TO object.
-    CLEAR t38.
     READ TABLE p1->items INDEX 37 INTO t38.
     t37 ?= t38.
     IF t37 IS NOT BOUND.
@@ -25920,12 +22744,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
     t39 = t37->as_ref( ).
     frame-a36 ?= t39.
     DATA t40 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t40.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t41 TYPE REF TO object.
-    CLEAR t41.
     READ TABLE p1->items INDEX 38 INTO t41.
     t40 ?= t41.
     IF t40 IS NOT BOUND.
@@ -25935,12 +22757,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
     t42 = t40->as_ref( ).
     frame-a37 ?= t42.
     DATA t43 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t43.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t44 TYPE REF TO object.
-    CLEAR t44.
     READ TABLE p1->items INDEX 39 INTO t44.
     t43 ?= t44.
     IF t43 IS NOT BOUND.
@@ -25950,12 +22770,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
     t45 = t43->as_ref( ).
     frame-a38 ?= t45.
     DATA t46 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t46.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t47 TYPE REF TO object.
-    CLEAR t47.
     READ TABLE p1->items INDEX 40 INTO t47.
     t46 ?= t47.
     IF t46 IS NOT BOUND.
@@ -25965,12 +22783,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
     t48 = t46->as_ref( ).
     frame-a39 ?= t48.
     DATA t49 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t49.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t50 TYPE REF TO object.
-    CLEAR t50.
     READ TABLE p1->items INDEX 41 INTO t50.
     t49 ?= t50.
     IF t49 IS NOT BOUND.
@@ -25980,12 +22796,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
     t51 = t49->as_ref( ).
     frame-a40 ?= t51.
     DATA t52 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t52.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t53 TYPE REF TO object.
-    CLEAR t53.
     READ TABLE p1->items INDEX 42 INTO t53.
     t52 ?= t53.
     IF t52 IS NOT BOUND.
@@ -25995,12 +22809,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
     t54 = t52->as_ref( ).
     frame-a41 ?= t54.
     DATA t55 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t55.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t56 TYPE REF TO object.
-    CLEAR t56.
     READ TABLE p1->items INDEX 43 INTO t56.
     t55 ?= t56.
     IF t55 IS NOT BOUND.
@@ -26010,12 +22822,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
     t57 = t55->as_ref( ).
     frame-a42 ?= t57.
     DATA t58 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t58.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t59 TYPE REF TO object.
-    CLEAR t59.
     READ TABLE p1->items INDEX 44 INTO t59.
     t58 ?= t59.
     IF t58 IS NOT BOUND.
@@ -26025,12 +22835,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
     t60 = t58->as_ref( ).
     frame-a43 ?= t60.
     DATA t61 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t61.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t62 TYPE REF TO object.
-    CLEAR t62.
     READ TABLE p1->items INDEX 45 INTO t62.
     t61 ?= t62.
     IF t61 IS NOT BOUND.
@@ -26040,12 +22848,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
     t63 = t61->as_ref( ).
     frame-a44 ?= t63.
     DATA t64 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t64.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t65 TYPE REF TO object.
-    CLEAR t65.
     READ TABLE p1->items INDEX 46 INTO t65.
     t64 ?= t65.
     IF t64 IS NOT BOUND.
@@ -26055,12 +22861,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
     t66 = t64->as_ref( ).
     frame-a45 ?= t66.
     DATA t67 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t67.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t68 TYPE REF TO object.
-    CLEAR t68.
     READ TABLE p1->items INDEX 47 INTO t68.
     t67 ?= t68.
     IF t67 IS NOT BOUND.
@@ -26070,12 +22874,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
     t69 = t67->as_ref( ).
     frame-a46 ?= t69.
     DATA t70 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t70.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t71 TYPE REF TO object.
-    CLEAR t71.
     READ TABLE p1->items INDEX 48 INTO t71.
     t70 ?= t71.
     IF t70 IS NOT BOUND.
@@ -26088,12 +22890,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
 
   METHOD args_decode_2019_2.
     DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t1.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t2 TYPE REF TO object.
-    CLEAR t2.
     READ TABLE p1->items INDEX 49 INTO t2.
     t1 ?= t2.
     IF t1 IS NOT BOUND.
@@ -26103,12 +22903,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
     t3 = t1->as_ref( ).
     frame-a48 ?= t3.
     DATA t4 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t4.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t5 TYPE REF TO object.
-    CLEAR t5.
     READ TABLE p1->items INDEX 50 INTO t5.
     t4 ?= t5.
     IF t4 IS NOT BOUND.
@@ -26118,12 +22916,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
     t6 = t4->as_ref( ).
     frame-a49 ?= t6.
     DATA t7 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t7.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t8 TYPE REF TO object.
-    CLEAR t8.
     READ TABLE p1->items INDEX 51 INTO t8.
     t7 ?= t8.
     IF t7 IS NOT BOUND.
@@ -26133,12 +22929,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
     t9 = t7->as_ref( ).
     frame-a50 ?= t9.
     DATA t10 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t10.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t11 TYPE REF TO object.
-    CLEAR t11.
     READ TABLE p1->items INDEX 52 INTO t11.
     t10 ?= t11.
     IF t10 IS NOT BOUND.
@@ -26148,12 +22942,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
     t12 = t10->as_ref( ).
     frame-a51 ?= t12.
     DATA t13 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t13.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t14 TYPE REF TO object.
-    CLEAR t14.
     READ TABLE p1->items INDEX 53 INTO t14.
     t13 ?= t14.
     IF t13 IS NOT BOUND.
@@ -26163,12 +22955,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
     t15 = t13->as_ref( ).
     frame-a52 ?= t15.
     DATA t16 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t16.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t17 TYPE REF TO object.
-    CLEAR t17.
     READ TABLE p1->items INDEX 54 INTO t17.
     t16 ?= t17.
     IF t16 IS NOT BOUND.
@@ -26178,12 +22968,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
     t18 = t16->as_ref( ).
     frame-a53 ?= t18.
     DATA t19 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t19.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t20 TYPE REF TO object.
-    CLEAR t20.
     READ TABLE p1->items INDEX 55 INTO t20.
     t19 ?= t20.
     IF t19 IS NOT BOUND.
@@ -26193,12 +22981,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
     t21 = t19->as_ref( ).
     frame-a54 ?= t21.
     DATA t22 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t22.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t23 TYPE REF TO object.
-    CLEAR t23.
     READ TABLE p1->items INDEX 56 INTO t23.
     t22 ?= t23.
     IF t22 IS NOT BOUND.
@@ -26208,12 +22994,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
     t24 = t22->as_ref( ).
     frame-a55 ?= t24.
     DATA t25 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t25.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t26 TYPE REF TO object.
-    CLEAR t26.
     READ TABLE p1->items INDEX 57 INTO t26.
     t25 ?= t26.
     IF t25 IS NOT BOUND.
@@ -26223,12 +23007,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
     t27 = t25->as_ref( ).
     frame-a56 ?= t27.
     DATA t28 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t28.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t29 TYPE REF TO object.
-    CLEAR t29.
     READ TABLE p1->items INDEX 58 INTO t29.
     t28 ?= t29.
     IF t28 IS NOT BOUND.
@@ -26240,138 +23022,78 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD args_write_2019_0.
-    DATA(t1) = CAST zcl_lnt_tuple_8eedfa28( frame-a0 ).
-    instance->f0 = t1.
-    DATA(t2) = CAST zcl_lnt_tuple_8eedfa28( frame-a1 ).
-    instance->f1 = t2.
-    DATA(t3) = CAST zcl_lnt_tuple_8eedfa28( frame-a2 ).
-    instance->f2 = t3.
-    DATA(t4) = CAST zcl_lnt_tuple_e87e4bfa( frame-a3 ).
-    instance->f3 = t4.
-    DATA(t5) = CAST zcl_lnt_tuple_8eedfa28( frame-a4 ).
-    instance->f4 = t5.
-    DATA(t6) = CAST zcl_lnt_tuple_8eedfa28( frame-a5 ).
-    instance->f5 = t6.
-    DATA(t7) = CAST zcl_lnt_tuple_8eedfa28( frame-a6 ).
-    instance->f6 = t7.
-    DATA(t8) = CAST zcl_lnt_tuple_8eedfa28( frame-a7 ).
-    instance->f7 = t8.
-    DATA(t9) = CAST zcl_lnt_tuple_8eedfa28( frame-a8 ).
-    instance->f8 = t9.
-    DATA(t10) = CAST zcl_lnt_tuple_8eedfa28( frame-a9 ).
-    instance->f9 = t10.
-    DATA(t11) = CAST zcl_lnt_tuple_8eedfa28( frame-a10 ).
-    instance->f10 = t11.
-    DATA(t12) = CAST zcl_lnt_tuple_8eedfa28( frame-a11 ).
-    instance->f11 = t12.
-    DATA(t13) = CAST zcl_lnt_tuple_8eedfa28( frame-a12 ).
-    instance->f12 = t13.
-    DATA(t14) = CAST zcl_lnt_tuple_bcd18efa( frame-a13 ).
-    instance->f13 = t14.
-    DATA(t15) = CAST zcl_lnt_tuple_bcd18efa( frame-a14 ).
-    instance->f14 = t15.
-    DATA(t16) = CAST zcl_lnt_tuple_bcd18efa( frame-a15 ).
-    instance->f15 = t16.
-    DATA(t17) = CAST zcl_lnt_tuple_bcd18efa( frame-a16 ).
-    instance->f16 = t17.
-    DATA(t18) = CAST zcl_lnt_tuple_bcd18efa( frame-a17 ).
-    instance->f17 = t18.
-    DATA(t19) = CAST zcl_lnt_tuple_bcd18efa( frame-a18 ).
-    instance->f18 = t19.
-    DATA(t20) = CAST zcl_lnt_tuple_bcd18efa( frame-a19 ).
-    instance->f19 = t20.
-    DATA(t21) = CAST zcl_lnt_tuple_356df4c3( frame-a20 ).
-    instance->f20 = t21.
-    DATA(t22) = CAST zcl_lnt_tuple_356df4c3( frame-a21 ).
-    instance->f21 = t22.
-    DATA(t23) = CAST zcl_lnt_tuple_356df4c3( frame-a22 ).
-    instance->f22 = t23.
-    DATA(t24) = CAST zcl_lnt_tuple_356df4c3( frame-a23 ).
-    instance->f23 = t24.
+    instance->f0 = CAST zcl_lnt_tuple_8eedfa28( frame-a0 ).
+    instance->f1 = CAST zcl_lnt_tuple_8eedfa28( frame-a1 ).
+    instance->f2 = CAST zcl_lnt_tuple_8eedfa28( frame-a2 ).
+    instance->f3 = CAST zcl_lnt_tuple_e87e4bfa( frame-a3 ).
+    instance->f4 = CAST zcl_lnt_tuple_8eedfa28( frame-a4 ).
+    instance->f5 = CAST zcl_lnt_tuple_8eedfa28( frame-a5 ).
+    instance->f6 = CAST zcl_lnt_tuple_8eedfa28( frame-a6 ).
+    instance->f7 = CAST zcl_lnt_tuple_8eedfa28( frame-a7 ).
+    instance->f8 = CAST zcl_lnt_tuple_8eedfa28( frame-a8 ).
+    instance->f9 = CAST zcl_lnt_tuple_8eedfa28( frame-a9 ).
+    instance->f10 = CAST zcl_lnt_tuple_8eedfa28( frame-a10 ).
+    instance->f11 = CAST zcl_lnt_tuple_8eedfa28( frame-a11 ).
+    instance->f12 = CAST zcl_lnt_tuple_8eedfa28( frame-a12 ).
+    instance->f13 = CAST zcl_lnt_tuple_bcd18efa( frame-a13 ).
+    instance->f14 = CAST zcl_lnt_tuple_bcd18efa( frame-a14 ).
+    instance->f15 = CAST zcl_lnt_tuple_bcd18efa( frame-a15 ).
+    instance->f16 = CAST zcl_lnt_tuple_bcd18efa( frame-a16 ).
+    instance->f17 = CAST zcl_lnt_tuple_bcd18efa( frame-a17 ).
+    instance->f18 = CAST zcl_lnt_tuple_bcd18efa( frame-a18 ).
+    instance->f19 = CAST zcl_lnt_tuple_bcd18efa( frame-a19 ).
+    instance->f20 = CAST zcl_lnt_tuple_356df4c3( frame-a20 ).
+    instance->f21 = CAST zcl_lnt_tuple_356df4c3( frame-a21 ).
+    instance->f22 = CAST zcl_lnt_tuple_356df4c3( frame-a22 ).
+    instance->f23 = CAST zcl_lnt_tuple_356df4c3( frame-a23 ).
   ENDMETHOD.
 
   METHOD args_write_2019_1.
-    DATA(t1) = CAST zcl_lnt_tuple_356df4c3( frame-a24 ).
-    instance->f24 = t1.
-    DATA(t2) = CAST zcl_lnt_tuple_356df4c3( frame-a25 ).
-    instance->f25 = t2.
-    DATA(t3) = CAST zcl_lnt_tuple_356df4c3( frame-a26 ).
-    instance->f26 = t3.
-    DATA(t4) = CAST zcl_lnt_tuple_356df4c3( frame-a27 ).
-    instance->f27 = t4.
-    DATA(t5) = CAST zcl_lnt_tuple_356df4c3( frame-a28 ).
-    instance->f28 = t5.
-    DATA(t6) = CAST zcl_lnt_tuple_356df4c3( frame-a29 ).
-    instance->f29 = t6.
-    DATA(t7) = CAST zcl_lnt_tuple_356df4c3( frame-a30 ).
-    instance->f30 = t7.
-    DATA(t8) = CAST zcl_lnt_tuple_356df4c3( frame-a31 ).
-    instance->f31 = t8.
-    DATA(t9) = CAST zcl_lnt_tuple_356df4c3( frame-a32 ).
-    instance->f32 = t9.
-    DATA(t10) = CAST zcl_lnt_tuple_356df4c3( frame-a33 ).
-    instance->f33 = t10.
-    DATA(t11) = CAST zcl_lnt_tuple_356df4c3( frame-a34 ).
-    instance->f34 = t11.
-    DATA(t12) = CAST zcl_lnt_tuple_356df4c3( frame-a35 ).
-    instance->f35 = t12.
-    DATA(t13) = CAST zcl_lnt_tuple_356df4c3( frame-a36 ).
-    instance->f36 = t13.
-    DATA(t14) = CAST zcl_lnt_tuple_356df4c3( frame-a37 ).
-    instance->f37 = t14.
-    DATA(t15) = CAST zcl_lnt_tuple_356df4c3( frame-a38 ).
-    instance->f38 = t15.
-    DATA(t16) = CAST zcl_lnt_tuple_356df4c3( frame-a39 ).
-    instance->f39 = t16.
-    DATA(t17) = CAST zcl_lnt_tuple_356df4c3( frame-a40 ).
-    instance->f40 = t17.
-    DATA(t18) = CAST zcl_lnt_tuple_356df4c3( frame-a41 ).
-    instance->f41 = t18.
-    DATA(t19) = CAST zcl_lnt_tuple_356df4c3( frame-a42 ).
-    instance->f42 = t19.
-    DATA(t20) = CAST zcl_lnt_tuple_356df4c3( frame-a43 ).
-    instance->f43 = t20.
-    DATA(t21) = CAST zcl_lnt_tuple_356df4c3( frame-a44 ).
-    instance->f44 = t21.
-    DATA(t22) = CAST zcl_lnt_tuple_356df4c3( frame-a45 ).
-    instance->f45 = t22.
-    DATA(t23) = CAST zcl_lnt_tuple_356df4c3( frame-a46 ).
-    instance->f46 = t23.
-    DATA(t24) = CAST zcl_lnt_tuple_356df4c3( frame-a47 ).
-    instance->f47 = t24.
+    instance->f24 = CAST zcl_lnt_tuple_356df4c3( frame-a24 ).
+    instance->f25 = CAST zcl_lnt_tuple_356df4c3( frame-a25 ).
+    instance->f26 = CAST zcl_lnt_tuple_356df4c3( frame-a26 ).
+    instance->f27 = CAST zcl_lnt_tuple_356df4c3( frame-a27 ).
+    instance->f28 = CAST zcl_lnt_tuple_356df4c3( frame-a28 ).
+    instance->f29 = CAST zcl_lnt_tuple_356df4c3( frame-a29 ).
+    instance->f30 = CAST zcl_lnt_tuple_356df4c3( frame-a30 ).
+    instance->f31 = CAST zcl_lnt_tuple_356df4c3( frame-a31 ).
+    instance->f32 = CAST zcl_lnt_tuple_356df4c3( frame-a32 ).
+    instance->f33 = CAST zcl_lnt_tuple_356df4c3( frame-a33 ).
+    instance->f34 = CAST zcl_lnt_tuple_356df4c3( frame-a34 ).
+    instance->f35 = CAST zcl_lnt_tuple_356df4c3( frame-a35 ).
+    instance->f36 = CAST zcl_lnt_tuple_356df4c3( frame-a36 ).
+    instance->f37 = CAST zcl_lnt_tuple_356df4c3( frame-a37 ).
+    instance->f38 = CAST zcl_lnt_tuple_356df4c3( frame-a38 ).
+    instance->f39 = CAST zcl_lnt_tuple_356df4c3( frame-a39 ).
+    instance->f40 = CAST zcl_lnt_tuple_356df4c3( frame-a40 ).
+    instance->f41 = CAST zcl_lnt_tuple_356df4c3( frame-a41 ).
+    instance->f42 = CAST zcl_lnt_tuple_356df4c3( frame-a42 ).
+    instance->f43 = CAST zcl_lnt_tuple_356df4c3( frame-a43 ).
+    instance->f44 = CAST zcl_lnt_tuple_356df4c3( frame-a44 ).
+    instance->f45 = CAST zcl_lnt_tuple_356df4c3( frame-a45 ).
+    instance->f46 = CAST zcl_lnt_tuple_356df4c3( frame-a46 ).
+    instance->f47 = CAST zcl_lnt_tuple_356df4c3( frame-a47 ).
   ENDMETHOD.
 
   METHOD args_write_2019_2.
-    DATA(t1) = CAST zcl_lnt_tuple_356df4c3( frame-a48 ).
-    instance->f48 = t1.
-    DATA(t2) = CAST zcl_lnt_tuple_356df4c3( frame-a49 ).
-    instance->f49 = t2.
-    DATA(t3) = CAST zcl_lnt_tuple_356df4c3( frame-a50 ).
-    instance->f50 = t3.
-    DATA(t4) = CAST zcl_lnt_tuple_356df4c3( frame-a51 ).
-    instance->f51 = t4.
-    DATA(t5) = CAST zcl_lnt_tuple_356df4c3( frame-a52 ).
-    instance->f52 = t5.
-    DATA(t6) = CAST zcl_lnt_tuple_356df4c3( frame-a53 ).
-    instance->f53 = t6.
-    DATA(t7) = CAST zcl_lnt_tuple_356df4c3( frame-a54 ).
-    instance->f54 = t7.
-    DATA(t8) = CAST zcl_lnt_tuple_e60aa2b5( frame-a55 ).
-    instance->f55 = t8.
-    DATA(t9) = CAST zcl_lnt_tuple_e60aa2b5( frame-a56 ).
-    instance->f56 = t9.
-    DATA(t10) = CAST zcl_lnt_tuple_db7d0a56( frame-a57 ).
-    instance->f57 = t10.
+    instance->f48 = CAST zcl_lnt_tuple_356df4c3( frame-a48 ).
+    instance->f49 = CAST zcl_lnt_tuple_356df4c3( frame-a49 ).
+    instance->f50 = CAST zcl_lnt_tuple_356df4c3( frame-a50 ).
+    instance->f51 = CAST zcl_lnt_tuple_356df4c3( frame-a51 ).
+    instance->f52 = CAST zcl_lnt_tuple_356df4c3( frame-a52 ).
+    instance->f53 = CAST zcl_lnt_tuple_356df4c3( frame-a53 ).
+    instance->f54 = CAST zcl_lnt_tuple_356df4c3( frame-a54 ).
+    instance->f55 = CAST zcl_lnt_tuple_e60aa2b5( frame-a55 ).
+    instance->f56 = CAST zcl_lnt_tuple_e60aa2b5( frame-a56 ).
+    instance->f57 = CAST zcl_lnt_tuple_db7d0a56( frame-a57 ).
   ENDMETHOD.
 
   METHOD args_decode_2033_0.
     DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t1.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t2 TYPE REF TO object.
-    CLEAR t2.
     READ TABLE p1->items INDEX 1 INTO t2.
     t1 ?= t2.
     IF t1 IS BOUND.
@@ -26381,12 +23103,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a0 = t1->as_classvalue( ).
     ENDIF.
     DATA t3 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t3.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t4 TYPE REF TO object.
-    CLEAR t4.
     READ TABLE p1->items INDEX 2 INTO t4.
     t3 ?= t4.
     IF t3 IS BOUND.
@@ -26396,12 +23116,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a1 = t3->as_classvalue( ).
     ENDIF.
     DATA t5 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t5.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t6 TYPE REF TO object.
-    CLEAR t6.
     READ TABLE p1->items INDEX 3 INTO t6.
     t5 ?= t6.
     IF t5 IS BOUND.
@@ -26411,12 +23129,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a2 = t5->as_classvalue( ).
     ENDIF.
     DATA t7 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t7.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t8 TYPE REF TO object.
-    CLEAR t8.
     READ TABLE p1->items INDEX 4 INTO t8.
     t7 ?= t8.
     IF t7 IS BOUND.
@@ -26426,12 +23142,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a3 = t7->as_classvalue( ).
     ENDIF.
     DATA t9 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t9.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t10 TYPE REF TO object.
-    CLEAR t10.
     READ TABLE p1->items INDEX 5 INTO t10.
     t9 ?= t10.
     IF t9 IS BOUND.
@@ -26441,12 +23155,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a4 = t9->as_classvalue( ).
     ENDIF.
     DATA t11 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t11.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t12 TYPE REF TO object.
-    CLEAR t12.
     READ TABLE p1->items INDEX 6 INTO t12.
     t11 ?= t12.
     IF t11 IS BOUND.
@@ -26456,12 +23168,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a5 = t11->as_classvalue( ).
     ENDIF.
     DATA t13 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t13.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t14 TYPE REF TO object.
-    CLEAR t14.
     READ TABLE p1->items INDEX 7 INTO t14.
     t13 ?= t14.
     IF t13 IS BOUND.
@@ -26471,12 +23181,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a6 = t13->as_classvalue( ).
     ENDIF.
     DATA t15 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t15.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t16 TYPE REF TO object.
-    CLEAR t16.
     READ TABLE p1->items INDEX 8 INTO t16.
     t15 ?= t16.
     IF t15 IS BOUND.
@@ -26486,12 +23194,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a7 = t15->as_classvalue( ).
     ENDIF.
     DATA t17 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t17.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t18 TYPE REF TO object.
-    CLEAR t18.
     READ TABLE p1->items INDEX 9 INTO t18.
     t17 ?= t18.
     IF t17 IS BOUND.
@@ -26501,12 +23207,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a8 = t17->as_classvalue( ).
     ENDIF.
     DATA t19 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t19.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t20 TYPE REF TO object.
-    CLEAR t20.
     READ TABLE p1->items INDEX 10 INTO t20.
     t19 ?= t20.
     IF t19 IS BOUND.
@@ -26516,12 +23220,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a9 = t19->as_classvalue( ).
     ENDIF.
     DATA t21 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t21.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t22 TYPE REF TO object.
-    CLEAR t22.
     READ TABLE p1->items INDEX 11 INTO t22.
     t21 ?= t22.
     IF t21 IS BOUND.
@@ -26531,12 +23233,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a10 = t21->as_classvalue( ).
     ENDIF.
     DATA t23 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t23.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t24 TYPE REF TO object.
-    CLEAR t24.
     READ TABLE p1->items INDEX 12 INTO t24.
     t23 ?= t24.
     IF t23 IS BOUND.
@@ -26546,12 +23246,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a11 = t23->as_classvalue( ).
     ENDIF.
     DATA t25 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t25.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t26 TYPE REF TO object.
-    CLEAR t26.
     READ TABLE p1->items INDEX 13 INTO t26.
     t25 ?= t26.
     IF t25 IS BOUND.
@@ -26561,12 +23259,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a12 = t25->as_classvalue( ).
     ENDIF.
     DATA t27 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t27.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t28 TYPE REF TO object.
-    CLEAR t28.
     READ TABLE p1->items INDEX 14 INTO t28.
     t27 ?= t28.
     IF t27 IS BOUND.
@@ -26576,12 +23272,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a13 = t27->as_classvalue( ).
     ENDIF.
     DATA t29 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t29.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t30 TYPE REF TO object.
-    CLEAR t30.
     READ TABLE p1->items INDEX 15 INTO t30.
     t29 ?= t30.
     IF t29 IS BOUND.
@@ -26591,12 +23285,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a14 = t29->as_classvalue( ).
     ENDIF.
     DATA t31 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t31.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t32 TYPE REF TO object.
-    CLEAR t32.
     READ TABLE p1->items INDEX 16 INTO t32.
     t31 ?= t32.
     IF t31 IS BOUND.
@@ -26606,12 +23298,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a15 = t31->as_classvalue( ).
     ENDIF.
     DATA t33 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t33.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t34 TYPE REF TO object.
-    CLEAR t34.
     READ TABLE p1->items INDEX 17 INTO t34.
     t33 ?= t34.
     IF t33 IS BOUND.
@@ -26621,12 +23311,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a16 = t33->as_classvalue( ).
     ENDIF.
     DATA t35 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t35.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t36 TYPE REF TO object.
-    CLEAR t36.
     READ TABLE p1->items INDEX 18 INTO t36.
     t35 ?= t36.
     IF t35 IS BOUND.
@@ -26636,12 +23324,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a17 = t35->as_classvalue( ).
     ENDIF.
     DATA t37 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t37.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t38 TYPE REF TO object.
-    CLEAR t38.
     READ TABLE p1->items INDEX 19 INTO t38.
     t37 ?= t38.
     IF t37 IS BOUND.
@@ -26651,12 +23337,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a18 = t37->as_classvalue( ).
     ENDIF.
     DATA t39 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t39.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t40 TYPE REF TO object.
-    CLEAR t40.
     READ TABLE p1->items INDEX 20 INTO t40.
     t39 ?= t40.
     IF t39 IS BOUND.
@@ -26666,12 +23350,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a19 = t39->as_classvalue( ).
     ENDIF.
     DATA t41 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t41.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t42 TYPE REF TO object.
-    CLEAR t42.
     READ TABLE p1->items INDEX 21 INTO t42.
     t41 ?= t42.
     IF t41 IS BOUND.
@@ -26681,12 +23363,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a20 = t41->as_classvalue( ).
     ENDIF.
     DATA t43 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t43.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t44 TYPE REF TO object.
-    CLEAR t44.
     READ TABLE p1->items INDEX 22 INTO t44.
     t43 ?= t44.
     IF t43 IS BOUND.
@@ -26696,12 +23376,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a21 = t43->as_classvalue( ).
     ENDIF.
     DATA t45 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t45.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t46 TYPE REF TO object.
-    CLEAR t46.
     READ TABLE p1->items INDEX 23 INTO t46.
     t45 ?= t46.
     IF t45 IS BOUND.
@@ -26711,12 +23389,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a22 = t45->as_classvalue( ).
     ENDIF.
     DATA t47 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t47.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t48 TYPE REF TO object.
-    CLEAR t48.
     READ TABLE p1->items INDEX 24 INTO t48.
     t47 ?= t48.
     IF t47 IS BOUND.
@@ -26729,12 +23405,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
 
   METHOD args_decode_2033_1.
     DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t1.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t2 TYPE REF TO object.
-    CLEAR t2.
     READ TABLE p1->items INDEX 25 INTO t2.
     t1 ?= t2.
     IF t1 IS BOUND.
@@ -26744,12 +23418,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a24 = t1->as_classvalue( ).
     ENDIF.
     DATA t3 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t3.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t4 TYPE REF TO object.
-    CLEAR t4.
     READ TABLE p1->items INDEX 26 INTO t4.
     t3 ?= t4.
     IF t3 IS BOUND.
@@ -26759,12 +23431,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a25 = t3->as_classvalue( ).
     ENDIF.
     DATA t5 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t5.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t6 TYPE REF TO object.
-    CLEAR t6.
     READ TABLE p1->items INDEX 27 INTO t6.
     t5 ?= t6.
     IF t5 IS BOUND.
@@ -26774,12 +23444,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a26 = t5->as_classvalue( ).
     ENDIF.
     DATA t7 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t7.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t8 TYPE REF TO object.
-    CLEAR t8.
     READ TABLE p1->items INDEX 28 INTO t8.
     t7 ?= t8.
     IF t7 IS BOUND.
@@ -26789,12 +23457,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a27 = t7->as_classvalue( ).
     ENDIF.
     DATA t9 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t9.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t10 TYPE REF TO object.
-    CLEAR t10.
     READ TABLE p1->items INDEX 29 INTO t10.
     t9 ?= t10.
     IF t9 IS BOUND.
@@ -26804,12 +23470,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a28 = t9->as_classvalue( ).
     ENDIF.
     DATA t11 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t11.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t12 TYPE REF TO object.
-    CLEAR t12.
     READ TABLE p1->items INDEX 30 INTO t12.
     t11 ?= t12.
     IF t11 IS BOUND.
@@ -26819,12 +23483,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a29 = t11->as_classvalue( ).
     ENDIF.
     DATA t13 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t13.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t14 TYPE REF TO object.
-    CLEAR t14.
     READ TABLE p1->items INDEX 31 INTO t14.
     t13 ?= t14.
     IF t13 IS BOUND.
@@ -26834,12 +23496,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a30 = t13->as_classvalue( ).
     ENDIF.
     DATA t15 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t15.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t16 TYPE REF TO object.
-    CLEAR t16.
     READ TABLE p1->items INDEX 32 INTO t16.
     t15 ?= t16.
     IF t15 IS BOUND.
@@ -26849,12 +23509,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a31 = t15->as_classvalue( ).
     ENDIF.
     DATA t17 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t17.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t18 TYPE REF TO object.
-    CLEAR t18.
     READ TABLE p1->items INDEX 33 INTO t18.
     t17 ?= t18.
     IF t17 IS BOUND.
@@ -26864,12 +23522,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a32 = t17->as_classvalue( ).
     ENDIF.
     DATA t19 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t19.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t20 TYPE REF TO object.
-    CLEAR t20.
     READ TABLE p1->items INDEX 34 INTO t20.
     t19 ?= t20.
     IF t19 IS BOUND.
@@ -26879,12 +23535,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a33 = t19->as_classvalue( ).
     ENDIF.
     DATA t21 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t21.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t22 TYPE REF TO object.
-    CLEAR t22.
     READ TABLE p1->items INDEX 35 INTO t22.
     t21 ?= t22.
     IF t21 IS BOUND.
@@ -26894,12 +23548,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a34 = t21->as_classvalue( ).
     ENDIF.
     DATA t23 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t23.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t24 TYPE REF TO object.
-    CLEAR t24.
     READ TABLE p1->items INDEX 36 INTO t24.
     t23 ?= t24.
     IF t23 IS BOUND.
@@ -26909,12 +23561,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a35 = t23->as_classvalue( ).
     ENDIF.
     DATA t25 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t25.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t26 TYPE REF TO object.
-    CLEAR t26.
     READ TABLE p1->items INDEX 37 INTO t26.
     t25 ?= t26.
     IF t25 IS BOUND.
@@ -26924,12 +23574,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a36 = t25->as_classvalue( ).
     ENDIF.
     DATA t27 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t27.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t28 TYPE REF TO object.
-    CLEAR t28.
     READ TABLE p1->items INDEX 38 INTO t28.
     t27 ?= t28.
     IF t27 IS BOUND.
@@ -26939,12 +23587,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a37 = t27->as_classvalue( ).
     ENDIF.
     DATA t29 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t29.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t30 TYPE REF TO object.
-    CLEAR t30.
     READ TABLE p1->items INDEX 39 INTO t30.
     t29 ?= t30.
     IF t29 IS BOUND.
@@ -26954,12 +23600,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a38 = t29->as_classvalue( ).
     ENDIF.
     DATA t31 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t31.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t32 TYPE REF TO object.
-    CLEAR t32.
     READ TABLE p1->items INDEX 40 INTO t32.
     t31 ?= t32.
     IF t31 IS BOUND.
@@ -26969,12 +23613,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a39 = t31->as_classvalue( ).
     ENDIF.
     DATA t33 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t33.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t34 TYPE REF TO object.
-    CLEAR t34.
     READ TABLE p1->items INDEX 41 INTO t34.
     t33 ?= t34.
     IF t33 IS BOUND.
@@ -26984,12 +23626,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a40 = t33->as_classvalue( ).
     ENDIF.
     DATA t35 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t35.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t36 TYPE REF TO object.
-    CLEAR t36.
     READ TABLE p1->items INDEX 42 INTO t36.
     t35 ?= t36.
     IF t35 IS BOUND.
@@ -26999,12 +23639,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a41 = t35->as_classvalue( ).
     ENDIF.
     DATA t37 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t37.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t38 TYPE REF TO object.
-    CLEAR t38.
     READ TABLE p1->items INDEX 43 INTO t38.
     t37 ?= t38.
     IF t37 IS BOUND.
@@ -27014,12 +23652,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a42 = t37->as_classvalue( ).
     ENDIF.
     DATA t39 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t39.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t40 TYPE REF TO object.
-    CLEAR t40.
     READ TABLE p1->items INDEX 44 INTO t40.
     t39 ?= t40.
     IF t39 IS BOUND.
@@ -27029,12 +23665,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a43 = t39->as_classvalue( ).
     ENDIF.
     DATA t41 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t41.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t42 TYPE REF TO object.
-    CLEAR t42.
     READ TABLE p1->items INDEX 45 INTO t42.
     t41 ?= t42.
     IF t41 IS BOUND.
@@ -27044,12 +23678,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a44 = t41->as_classvalue( ).
     ENDIF.
     DATA t43 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t43.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t44 TYPE REF TO object.
-    CLEAR t44.
     READ TABLE p1->items INDEX 46 INTO t44.
     t43 ?= t44.
     IF t43 IS BOUND.
@@ -27059,12 +23691,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a45 = t43->as_classvalue( ).
     ENDIF.
     DATA t45 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t45.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t46 TYPE REF TO object.
-    CLEAR t46.
     READ TABLE p1->items INDEX 47 INTO t46.
     t45 ?= t46.
     IF t45 IS BOUND.
@@ -27074,12 +23704,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a46 = t45->as_classvalue( ).
     ENDIF.
     DATA t47 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t47.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t48 TYPE REF TO object.
-    CLEAR t48.
     READ TABLE p1->items INDEX 48 INTO t48.
     t47 ?= t48.
     IF t47 IS BOUND.
@@ -27092,12 +23720,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
 
   METHOD args_decode_2033_2.
     DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t1.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t2 TYPE REF TO object.
-    CLEAR t2.
     READ TABLE p1->items INDEX 49 INTO t2.
     t1 ?= t2.
     IF t1 IS BOUND.
@@ -27107,12 +23733,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a48 = t1->as_classvalue( ).
     ENDIF.
     DATA t3 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t3.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t4 TYPE REF TO object.
-    CLEAR t4.
     READ TABLE p1->items INDEX 50 INTO t4.
     t3 ?= t4.
     IF t3 IS BOUND.
@@ -27122,12 +23746,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a49 = t3->as_classvalue( ).
     ENDIF.
     DATA t5 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t5.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t6 TYPE REF TO object.
-    CLEAR t6.
     READ TABLE p1->items INDEX 51 INTO t6.
     t5 ?= t6.
     IF t5 IS BOUND.
@@ -27137,12 +23759,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a50 = t5->as_classvalue( ).
     ENDIF.
     DATA t7 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t7.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t8 TYPE REF TO object.
-    CLEAR t8.
     READ TABLE p1->items INDEX 52 INTO t8.
     t7 ?= t8.
     IF t7 IS BOUND.
@@ -27152,12 +23772,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a51 = t7->as_classvalue( ).
     ENDIF.
     DATA t9 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t9.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t10 TYPE REF TO object.
-    CLEAR t10.
     READ TABLE p1->items INDEX 53 INTO t10.
     t9 ?= t10.
     IF t9 IS BOUND.
@@ -27167,12 +23785,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a52 = t9->as_classvalue( ).
     ENDIF.
     DATA t11 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t11.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t12 TYPE REF TO object.
-    CLEAR t12.
     READ TABLE p1->items INDEX 54 INTO t12.
     t11 ?= t12.
     IF t11 IS BOUND.
@@ -27182,12 +23798,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a53 = t11->as_classvalue( ).
     ENDIF.
     DATA t13 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t13.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t14 TYPE REF TO object.
-    CLEAR t14.
     READ TABLE p1->items INDEX 55 INTO t14.
     t13 ?= t14.
     IF t13 IS BOUND.
@@ -27197,12 +23811,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a54 = t13->as_classvalue( ).
     ENDIF.
     DATA t15 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t15.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t16 TYPE REF TO object.
-    CLEAR t16.
     READ TABLE p1->items INDEX 56 INTO t16.
     t15 ?= t16.
     IF t15 IS BOUND.
@@ -27212,12 +23824,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a55 = t15->as_classvalue( ).
     ENDIF.
     DATA t17 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t17.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t18 TYPE REF TO object.
-    CLEAR t18.
     READ TABLE p1->items INDEX 57 INTO t18.
     t17 ?= t18.
     IF t17 IS BOUND.
@@ -27227,12 +23837,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a56 = t17->as_classvalue( ).
     ENDIF.
     DATA t19 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t19.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t20 TYPE REF TO object.
-    CLEAR t20.
     READ TABLE p1->items INDEX 58 INTO t20.
     t19 ?= t20.
     IF t19 IS BOUND.
@@ -27242,12 +23850,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a57 = t19->as_classvalue( ).
     ENDIF.
     DATA t21 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t21.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t22 TYPE REF TO object.
-    CLEAR t22.
     READ TABLE p1->items INDEX 59 INTO t22.
     t21 ?= t22.
     IF t21 IS BOUND.
@@ -27257,12 +23863,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a58 = t21->as_classvalue( ).
     ENDIF.
     DATA t23 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t23.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t24 TYPE REF TO object.
-    CLEAR t24.
     READ TABLE p1->items INDEX 60 INTO t24.
     t23 ?= t24.
     IF t23 IS BOUND.
@@ -27272,12 +23876,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a59 = t23->as_classvalue( ).
     ENDIF.
     DATA t25 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t25.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t26 TYPE REF TO object.
-    CLEAR t26.
     READ TABLE p1->items INDEX 61 INTO t26.
     t25 ?= t26.
     IF t25 IS BOUND.
@@ -27287,12 +23889,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a60 = t25->as_classvalue( ).
     ENDIF.
     DATA t27 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t27.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t28 TYPE REF TO object.
-    CLEAR t28.
     READ TABLE p1->items INDEX 62 INTO t28.
     t27 ?= t28.
     IF t27 IS BOUND.
@@ -27302,12 +23902,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a61 = t27->as_classvalue( ).
     ENDIF.
     DATA t29 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t29.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t30 TYPE REF TO object.
-    CLEAR t30.
     READ TABLE p1->items INDEX 63 INTO t30.
     t29 ?= t30.
     IF t29 IS BOUND.
@@ -27317,12 +23915,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a62 = t29->as_classvalue( ).
     ENDIF.
     DATA t31 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t31.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t32 TYPE REF TO object.
-    CLEAR t32.
     READ TABLE p1->items INDEX 64 INTO t32.
     t31 ?= t32.
     IF t31 IS BOUND.
@@ -27332,12 +23928,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a63 = t31->as_classvalue( ).
     ENDIF.
     DATA t33 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t33.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t34 TYPE REF TO object.
-    CLEAR t34.
     READ TABLE p1->items INDEX 65 INTO t34.
     t33 ?= t34.
     IF t33 IS BOUND.
@@ -27347,12 +23941,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a64 = t33->as_classvalue( ).
     ENDIF.
     DATA t35 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t35.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t36 TYPE REF TO object.
-    CLEAR t36.
     READ TABLE p1->items INDEX 66 INTO t36.
     t35 ?= t36.
     IF t35 IS BOUND.
@@ -27362,12 +23954,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a65 = t35->as_classvalue( ).
     ENDIF.
     DATA t37 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t37.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t38 TYPE REF TO object.
-    CLEAR t38.
     READ TABLE p1->items INDEX 67 INTO t38.
     t37 ?= t38.
     IF t37 IS BOUND.
@@ -27377,12 +23967,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a66 = t37->as_classvalue( ).
     ENDIF.
     DATA t39 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t39.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t40 TYPE REF TO object.
-    CLEAR t40.
     READ TABLE p1->items INDEX 68 INTO t40.
     t39 ?= t40.
     IF t39 IS BOUND.
@@ -27392,12 +23980,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a67 = t39->as_classvalue( ).
     ENDIF.
     DATA t41 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t41.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t42 TYPE REF TO object.
-    CLEAR t42.
     READ TABLE p1->items INDEX 69 INTO t42.
     t41 ?= t42.
     IF t41 IS BOUND.
@@ -27407,12 +23993,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a68 = t41->as_classvalue( ).
     ENDIF.
     DATA t43 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t43.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t44 TYPE REF TO object.
-    CLEAR t44.
     READ TABLE p1->items INDEX 70 INTO t44.
     t43 ?= t44.
     IF t43 IS BOUND.
@@ -27422,12 +24006,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a69 = t43->as_classvalue( ).
     ENDIF.
     DATA t45 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t45.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t46 TYPE REF TO object.
-    CLEAR t46.
     READ TABLE p1->items INDEX 71 INTO t46.
     t45 ?= t46.
     IF t45 IS BOUND.
@@ -27437,12 +24019,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a70 = t45->as_classvalue( ).
     ENDIF.
     DATA t47 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t47.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t48 TYPE REF TO object.
-    CLEAR t48.
     READ TABLE p1->items INDEX 72 INTO t48.
     t47 ?= t48.
     IF t47 IS BOUND.
@@ -27455,12 +24035,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
 
   METHOD args_decode_2033_3.
     DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t1.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t2 TYPE REF TO object.
-    CLEAR t2.
     READ TABLE p1->items INDEX 73 INTO t2.
     t1 ?= t2.
     IF t1 IS BOUND.
@@ -27470,12 +24048,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a72 = t1->as_classvalue( ).
     ENDIF.
     DATA t3 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t3.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t4 TYPE REF TO object.
-    CLEAR t4.
     READ TABLE p1->items INDEX 74 INTO t4.
     t3 ?= t4.
     IF t3 IS BOUND.
@@ -27485,12 +24061,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a73 = t3->as_classvalue( ).
     ENDIF.
     DATA t5 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t5.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t6 TYPE REF TO object.
-    CLEAR t6.
     READ TABLE p1->items INDEX 75 INTO t6.
     t5 ?= t6.
     IF t5 IS BOUND.
@@ -27500,12 +24074,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a74 = t5->as_classvalue( ).
     ENDIF.
     DATA t7 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t7.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t8 TYPE REF TO object.
-    CLEAR t8.
     READ TABLE p1->items INDEX 76 INTO t8.
     t7 ?= t8.
     IF t7 IS BOUND.
@@ -27515,12 +24087,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a75 = t7->as_classvalue( ).
     ENDIF.
     DATA t9 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t9.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t10 TYPE REF TO object.
-    CLEAR t10.
     READ TABLE p1->items INDEX 77 INTO t10.
     t9 ?= t10.
     IF t9 IS BOUND.
@@ -27530,12 +24100,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a76 = t9->as_classvalue( ).
     ENDIF.
     DATA t11 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t11.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t12 TYPE REF TO object.
-    CLEAR t12.
     READ TABLE p1->items INDEX 78 INTO t12.
     t11 ?= t12.
     IF t11 IS BOUND.
@@ -27545,12 +24113,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a77 = t11->as_classvalue( ).
     ENDIF.
     DATA t13 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t13.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t14 TYPE REF TO object.
-    CLEAR t14.
     READ TABLE p1->items INDEX 79 INTO t14.
     t13 ?= t14.
     IF t13 IS BOUND.
@@ -27560,12 +24126,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a78 = t13->as_classvalue( ).
     ENDIF.
     DATA t15 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t15.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t16 TYPE REF TO object.
-    CLEAR t16.
     READ TABLE p1->items INDEX 80 INTO t16.
     t15 ?= t16.
     IF t15 IS BOUND.
@@ -27575,12 +24139,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a79 = t15->as_classvalue( ).
     ENDIF.
     DATA t17 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t17.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t18 TYPE REF TO object.
-    CLEAR t18.
     READ TABLE p1->items INDEX 81 INTO t18.
     t17 ?= t18.
     IF t17 IS BOUND.
@@ -27590,12 +24152,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a80 = t17->as_classvalue( ).
     ENDIF.
     DATA t19 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t19.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t20 TYPE REF TO object.
-    CLEAR t20.
     READ TABLE p1->items INDEX 82 INTO t20.
     t19 ?= t20.
     IF t19 IS BOUND.
@@ -27605,12 +24165,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a81 = t19->as_classvalue( ).
     ENDIF.
     DATA t21 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t21.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t22 TYPE REF TO object.
-    CLEAR t22.
     READ TABLE p1->items INDEX 83 INTO t22.
     t21 ?= t22.
     IF t21 IS BOUND.
@@ -27620,12 +24178,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a82 = t21->as_classvalue( ).
     ENDIF.
     DATA t23 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t23.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t24 TYPE REF TO object.
-    CLEAR t24.
     READ TABLE p1->items INDEX 84 INTO t24.
     t23 ?= t24.
     IF t23 IS BOUND.
@@ -27635,12 +24191,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a83 = t23->as_classvalue( ).
     ENDIF.
     DATA t25 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t25.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t26 TYPE REF TO object.
-    CLEAR t26.
     READ TABLE p1->items INDEX 85 INTO t26.
     t25 ?= t26.
     IF t25 IS BOUND.
@@ -27650,12 +24204,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a84 = t25->as_classvalue( ).
     ENDIF.
     DATA t27 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t27.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t28 TYPE REF TO object.
-    CLEAR t28.
     READ TABLE p1->items INDEX 86 INTO t28.
     t27 ?= t28.
     IF t27 IS BOUND.
@@ -27665,12 +24217,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a85 = t27->as_classvalue( ).
     ENDIF.
     DATA t29 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t29.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t30 TYPE REF TO object.
-    CLEAR t30.
     READ TABLE p1->items INDEX 87 INTO t30.
     t29 ?= t30.
     IF t29 IS BOUND.
@@ -27680,12 +24230,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a86 = t29->as_classvalue( ).
     ENDIF.
     DATA t31 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t31.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t32 TYPE REF TO object.
-    CLEAR t32.
     READ TABLE p1->items INDEX 88 INTO t32.
     t31 ?= t32.
     IF t31 IS BOUND.
@@ -27695,12 +24243,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a87 = t31->as_classvalue( ).
     ENDIF.
     DATA t33 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t33.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t34 TYPE REF TO object.
-    CLEAR t34.
     READ TABLE p1->items INDEX 89 INTO t34.
     t33 ?= t34.
     IF t33 IS BOUND.
@@ -27710,12 +24256,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a88 = t33->as_classvalue( ).
     ENDIF.
     DATA t35 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t35.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t36 TYPE REF TO object.
-    CLEAR t36.
     READ TABLE p1->items INDEX 90 INTO t36.
     t35 ?= t36.
     IF t35 IS BOUND.
@@ -27725,12 +24269,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a89 = t35->as_classvalue( ).
     ENDIF.
     DATA t37 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t37.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t38 TYPE REF TO object.
-    CLEAR t38.
     READ TABLE p1->items INDEX 91 INTO t38.
     t37 ?= t38.
     IF t37 IS BOUND.
@@ -27740,12 +24282,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a90 = t37->as_classvalue( ).
     ENDIF.
     DATA t39 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t39.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t40 TYPE REF TO object.
-    CLEAR t40.
     READ TABLE p1->items INDEX 92 INTO t40.
     t39 ?= t40.
     IF t39 IS BOUND.
@@ -27755,12 +24295,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a91 = t39->as_classvalue( ).
     ENDIF.
     DATA t41 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t41.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t42 TYPE REF TO object.
-    CLEAR t42.
     READ TABLE p1->items INDEX 93 INTO t42.
     t41 ?= t42.
     IF t41 IS BOUND.
@@ -27770,12 +24308,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a92 = t41->as_classvalue( ).
     ENDIF.
     DATA t43 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t43.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t44 TYPE REF TO object.
-    CLEAR t44.
     READ TABLE p1->items INDEX 94 INTO t44.
     t43 ?= t44.
     IF t43 IS BOUND.
@@ -27785,12 +24321,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a93 = t43->as_classvalue( ).
     ENDIF.
     DATA t45 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t45.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t46 TYPE REF TO object.
-    CLEAR t46.
     READ TABLE p1->items INDEX 95 INTO t46.
     t45 ?= t46.
     IF t45 IS BOUND.
@@ -27800,12 +24334,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a94 = t45->as_classvalue( ).
     ENDIF.
     DATA t47 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t47.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t48 TYPE REF TO object.
-    CLEAR t48.
     READ TABLE p1->items INDEX 96 INTO t48.
     t47 ?= t48.
     IF t47 IS BOUND.
@@ -27818,12 +24350,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
 
   METHOD args_decode_2033_4.
     DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t1.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t2 TYPE REF TO object.
-    CLEAR t2.
     READ TABLE p1->items INDEX 97 INTO t2.
     t1 ?= t2.
     IF t1 IS BOUND.
@@ -27833,12 +24363,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a96 = t1->as_classvalue( ).
     ENDIF.
     DATA t3 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t3.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t4 TYPE REF TO object.
-    CLEAR t4.
     READ TABLE p1->items INDEX 98 INTO t4.
     t3 ?= t4.
     IF t3 IS BOUND.
@@ -27848,12 +24376,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a97 = t3->as_classvalue( ).
     ENDIF.
     DATA t5 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t5.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t6 TYPE REF TO object.
-    CLEAR t6.
     READ TABLE p1->items INDEX 99 INTO t6.
     t5 ?= t6.
     IF t5 IS BOUND.
@@ -27863,12 +24389,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a98 = t5->as_classvalue( ).
     ENDIF.
     DATA t7 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t7.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t8 TYPE REF TO object.
-    CLEAR t8.
     READ TABLE p1->items INDEX 100 INTO t8.
     t7 ?= t8.
     IF t7 IS BOUND.
@@ -27878,12 +24402,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a99 = t7->as_classvalue( ).
     ENDIF.
     DATA t9 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t9.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t10 TYPE REF TO object.
-    CLEAR t10.
     READ TABLE p1->items INDEX 101 INTO t10.
     t9 ?= t10.
     IF t9 IS BOUND.
@@ -27893,12 +24415,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a100 = t9->as_classvalue( ).
     ENDIF.
     DATA t11 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t11.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t12 TYPE REF TO object.
-    CLEAR t12.
     READ TABLE p1->items INDEX 102 INTO t12.
     t11 ?= t12.
     IF t11 IS BOUND.
@@ -27908,12 +24428,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a101 = t11->as_classvalue( ).
     ENDIF.
     DATA t13 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t13.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t14 TYPE REF TO object.
-    CLEAR t14.
     READ TABLE p1->items INDEX 103 INTO t14.
     t13 ?= t14.
     IF t13 IS BOUND.
@@ -27923,12 +24441,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a102 = t13->as_classvalue( ).
     ENDIF.
     DATA t15 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t15.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t16 TYPE REF TO object.
-    CLEAR t16.
     READ TABLE p1->items INDEX 104 INTO t16.
     t15 ?= t16.
     IF t15 IS BOUND.
@@ -27938,12 +24454,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a103 = t15->as_classvalue( ).
     ENDIF.
     DATA t17 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t17.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t18 TYPE REF TO object.
-    CLEAR t18.
     READ TABLE p1->items INDEX 105 INTO t18.
     t17 ?= t18.
     IF t17 IS BOUND.
@@ -27953,12 +24467,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a104 = t17->as_classvalue( ).
     ENDIF.
     DATA t19 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t19.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t20 TYPE REF TO object.
-    CLEAR t20.
     READ TABLE p1->items INDEX 106 INTO t20.
     t19 ?= t20.
     IF t19 IS BOUND.
@@ -27968,12 +24480,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a105 = t19->as_classvalue( ).
     ENDIF.
     DATA t21 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t21.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t22 TYPE REF TO object.
-    CLEAR t22.
     READ TABLE p1->items INDEX 107 INTO t22.
     t21 ?= t22.
     IF t21 IS BOUND.
@@ -27983,12 +24493,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a106 = t21->as_classvalue( ).
     ENDIF.
     DATA t23 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t23.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t24 TYPE REF TO object.
-    CLEAR t24.
     READ TABLE p1->items INDEX 108 INTO t24.
     t23 ?= t24.
     IF t23 IS BOUND.
@@ -27998,12 +24506,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a107 = t23->as_classvalue( ).
     ENDIF.
     DATA t25 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t25.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t26 TYPE REF TO object.
-    CLEAR t26.
     READ TABLE p1->items INDEX 109 INTO t26.
     t25 ?= t26.
     IF t25 IS BOUND.
@@ -28013,12 +24519,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a108 = t25->as_classvalue( ).
     ENDIF.
     DATA t27 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t27.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t28 TYPE REF TO object.
-    CLEAR t28.
     READ TABLE p1->items INDEX 110 INTO t28.
     t27 ?= t28.
     IF t27 IS BOUND.
@@ -28028,12 +24532,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a109 = t27->as_classvalue( ).
     ENDIF.
     DATA t29 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t29.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t30 TYPE REF TO object.
-    CLEAR t30.
     READ TABLE p1->items INDEX 111 INTO t30.
     t29 ?= t30.
     IF t29 IS BOUND.
@@ -28043,12 +24545,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a110 = t29->as_classvalue( ).
     ENDIF.
     DATA t31 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t31.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t32 TYPE REF TO object.
-    CLEAR t32.
     READ TABLE p1->items INDEX 112 INTO t32.
     t31 ?= t32.
     IF t31 IS BOUND.
@@ -28058,12 +24558,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a111 = t31->as_classvalue( ).
     ENDIF.
     DATA t33 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t33.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t34 TYPE REF TO object.
-    CLEAR t34.
     READ TABLE p1->items INDEX 113 INTO t34.
     t33 ?= t34.
     IF t33 IS BOUND.
@@ -28073,12 +24571,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a112 = t33->as_classvalue( ).
     ENDIF.
     DATA t35 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t35.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t36 TYPE REF TO object.
-    CLEAR t36.
     READ TABLE p1->items INDEX 114 INTO t36.
     t35 ?= t36.
     IF t35 IS BOUND.
@@ -28088,12 +24584,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a113 = t35->as_classvalue( ).
     ENDIF.
     DATA t37 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t37.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t38 TYPE REF TO object.
-    CLEAR t38.
     READ TABLE p1->items INDEX 115 INTO t38.
     t37 ?= t38.
     IF t37 IS BOUND.
@@ -28103,12 +24597,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a114 = t37->as_classvalue( ).
     ENDIF.
     DATA t39 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t39.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t40 TYPE REF TO object.
-    CLEAR t40.
     READ TABLE p1->items INDEX 116 INTO t40.
     t39 ?= t40.
     IF t39 IS BOUND.
@@ -28118,12 +24610,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a115 = t39->as_classvalue( ).
     ENDIF.
     DATA t41 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t41.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t42 TYPE REF TO object.
-    CLEAR t42.
     READ TABLE p1->items INDEX 117 INTO t42.
     t41 ?= t42.
     IF t41 IS BOUND.
@@ -28133,12 +24623,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a116 = t41->as_classvalue( ).
     ENDIF.
     DATA t43 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t43.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t44 TYPE REF TO object.
-    CLEAR t44.
     READ TABLE p1->items INDEX 118 INTO t44.
     t43 ?= t44.
     IF t43 IS BOUND.
@@ -28148,12 +24636,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a117 = t43->as_classvalue( ).
     ENDIF.
     DATA t45 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t45.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t46 TYPE REF TO object.
-    CLEAR t46.
     READ TABLE p1->items INDEX 119 INTO t46.
     t45 ?= t46.
     IF t45 IS BOUND.
@@ -28163,12 +24649,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a118 = t45->as_classvalue( ).
     ENDIF.
     DATA t47 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t47.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t48 TYPE REF TO object.
-    CLEAR t48.
     READ TABLE p1->items INDEX 120 INTO t48.
     t47 ?= t48.
     IF t47 IS BOUND.
@@ -28181,12 +24665,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
 
   METHOD args_decode_2033_5.
     DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t1.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t2 TYPE REF TO object.
-    CLEAR t2.
     READ TABLE p1->items INDEX 121 INTO t2.
     t1 ?= t2.
     IF t1 IS BOUND.
@@ -28196,12 +24678,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a120 = t1->as_classvalue( ).
     ENDIF.
     DATA t3 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t3.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t4 TYPE REF TO object.
-    CLEAR t4.
     READ TABLE p1->items INDEX 122 INTO t4.
     t3 ?= t4.
     IF t3 IS BOUND.
@@ -28211,12 +24691,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a121 = t3->as_classvalue( ).
     ENDIF.
     DATA t5 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t5.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t6 TYPE REF TO object.
-    CLEAR t6.
     READ TABLE p1->items INDEX 123 INTO t6.
     t5 ?= t6.
     IF t5 IS BOUND.
@@ -28226,12 +24704,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a122 = t5->as_classvalue( ).
     ENDIF.
     DATA t7 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t7.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t8 TYPE REF TO object.
-    CLEAR t8.
     READ TABLE p1->items INDEX 124 INTO t8.
     t7 ?= t8.
     IF t7 IS BOUND.
@@ -28241,12 +24717,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a123 = t7->as_classvalue( ).
     ENDIF.
     DATA t9 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t9.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t10 TYPE REF TO object.
-    CLEAR t10.
     READ TABLE p1->items INDEX 125 INTO t10.
     t9 ?= t10.
     IF t9 IS BOUND.
@@ -28256,12 +24730,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a124 = t9->as_classvalue( ).
     ENDIF.
     DATA t11 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t11.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t12 TYPE REF TO object.
-    CLEAR t12.
     READ TABLE p1->items INDEX 126 INTO t12.
     t11 ?= t12.
     IF t11 IS BOUND.
@@ -28271,12 +24743,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a125 = t11->as_classvalue( ).
     ENDIF.
     DATA t13 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t13.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t14 TYPE REF TO object.
-    CLEAR t14.
     READ TABLE p1->items INDEX 127 INTO t14.
     t13 ?= t14.
     IF t13 IS BOUND.
@@ -28286,12 +24756,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a126 = t13->as_classvalue( ).
     ENDIF.
     DATA t15 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t15.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t16 TYPE REF TO object.
-    CLEAR t16.
     READ TABLE p1->items INDEX 128 INTO t16.
     t15 ?= t16.
     IF t15 IS BOUND.
@@ -28301,12 +24769,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a127 = t15->as_classvalue( ).
     ENDIF.
     DATA t17 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t17.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t18 TYPE REF TO object.
-    CLEAR t18.
     READ TABLE p1->items INDEX 129 INTO t18.
     t17 ?= t18.
     IF t17 IS BOUND.
@@ -28316,12 +24782,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a128 = t17->as_classvalue( ).
     ENDIF.
     DATA t19 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t19.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t20 TYPE REF TO object.
-    CLEAR t20.
     READ TABLE p1->items INDEX 130 INTO t20.
     t19 ?= t20.
     IF t19 IS BOUND.
@@ -28331,12 +24795,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a129 = t19->as_classvalue( ).
     ENDIF.
     DATA t21 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t21.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t22 TYPE REF TO object.
-    CLEAR t22.
     READ TABLE p1->items INDEX 131 INTO t22.
     t21 ?= t22.
     IF t21 IS BOUND.
@@ -28346,12 +24808,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a130 = t21->as_classvalue( ).
     ENDIF.
     DATA t23 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t23.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t24 TYPE REF TO object.
-    CLEAR t24.
     READ TABLE p1->items INDEX 132 INTO t24.
     t23 ?= t24.
     IF t23 IS BOUND.
@@ -28361,12 +24821,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a131 = t23->as_classvalue( ).
     ENDIF.
     DATA t25 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t25.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t26 TYPE REF TO object.
-    CLEAR t26.
     READ TABLE p1->items INDEX 133 INTO t26.
     t25 ?= t26.
     IF t25 IS BOUND.
@@ -28376,12 +24834,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a132 = t25->as_classvalue( ).
     ENDIF.
     DATA t27 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t27.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t28 TYPE REF TO object.
-    CLEAR t28.
     READ TABLE p1->items INDEX 134 INTO t28.
     t27 ?= t28.
     IF t27 IS BOUND.
@@ -28391,12 +24847,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a133 = t27->as_classvalue( ).
     ENDIF.
     DATA t29 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t29.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t30 TYPE REF TO object.
-    CLEAR t30.
     READ TABLE p1->items INDEX 135 INTO t30.
     t29 ?= t30.
     IF t29 IS BOUND.
@@ -28406,12 +24860,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a134 = t29->as_classvalue( ).
     ENDIF.
     DATA t31 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t31.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t32 TYPE REF TO object.
-    CLEAR t32.
     READ TABLE p1->items INDEX 136 INTO t32.
     t31 ?= t32.
     IF t31 IS BOUND.
@@ -28421,12 +24873,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a135 = t31->as_classvalue( ).
     ENDIF.
     DATA t33 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t33.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t34 TYPE REF TO object.
-    CLEAR t34.
     READ TABLE p1->items INDEX 137 INTO t34.
     t33 ?= t34.
     IF t33 IS BOUND.
@@ -28436,12 +24886,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a136 = t33->as_classvalue( ).
     ENDIF.
     DATA t35 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t35.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t36 TYPE REF TO object.
-    CLEAR t36.
     READ TABLE p1->items INDEX 138 INTO t36.
     t35 ?= t36.
     IF t35 IS BOUND.
@@ -28451,12 +24899,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a137 = t35->as_classvalue( ).
     ENDIF.
     DATA t37 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t37.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t38 TYPE REF TO object.
-    CLEAR t38.
     READ TABLE p1->items INDEX 139 INTO t38.
     t37 ?= t38.
     IF t37 IS BOUND.
@@ -28466,12 +24912,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a138 = t37->as_classvalue( ).
     ENDIF.
     DATA t39 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t39.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t40 TYPE REF TO object.
-    CLEAR t40.
     READ TABLE p1->items INDEX 140 INTO t40.
     t39 ?= t40.
     IF t39 IS BOUND.
@@ -28481,12 +24925,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a139 = t39->as_classvalue( ).
     ENDIF.
     DATA t41 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t41.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t42 TYPE REF TO object.
-    CLEAR t42.
     READ TABLE p1->items INDEX 141 INTO t42.
     t41 ?= t42.
     IF t41 IS BOUND.
@@ -28496,12 +24938,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a140 = t41->as_classvalue( ).
     ENDIF.
     DATA t43 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t43.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t44 TYPE REF TO object.
-    CLEAR t44.
     READ TABLE p1->items INDEX 142 INTO t44.
     t43 ?= t44.
     IF t43 IS BOUND.
@@ -28511,12 +24951,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a141 = t43->as_classvalue( ).
     ENDIF.
     DATA t45 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t45.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t46 TYPE REF TO object.
-    CLEAR t46.
     READ TABLE p1->items INDEX 143 INTO t46.
     t45 ?= t46.
     IF t45 IS BOUND.
@@ -28526,12 +24964,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a142 = t45->as_classvalue( ).
     ENDIF.
     DATA t47 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t47.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t48 TYPE REF TO object.
-    CLEAR t48.
     READ TABLE p1->items INDEX 144 INTO t48.
     t47 ?= t48.
     IF t47 IS BOUND.
@@ -28544,12 +24980,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
 
   METHOD args_decode_2033_6.
     DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t1.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t2 TYPE REF TO object.
-    CLEAR t2.
     READ TABLE p1->items INDEX 145 INTO t2.
     t1 ?= t2.
     IF t1 IS BOUND.
@@ -28559,12 +24993,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a144 = t1->as_classvalue( ).
     ENDIF.
     DATA t3 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t3.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t4 TYPE REF TO object.
-    CLEAR t4.
     READ TABLE p1->items INDEX 146 INTO t4.
     t3 ?= t4.
     IF t3 IS BOUND.
@@ -28574,12 +25006,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a145 = t3->as_classvalue( ).
     ENDIF.
     DATA t5 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t5.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t6 TYPE REF TO object.
-    CLEAR t6.
     READ TABLE p1->items INDEX 147 INTO t6.
     t5 ?= t6.
     IF t5 IS BOUND.
@@ -28589,12 +25019,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a146 = t5->as_classvalue( ).
     ENDIF.
     DATA t7 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t7.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t8 TYPE REF TO object.
-    CLEAR t8.
     READ TABLE p1->items INDEX 148 INTO t8.
     t7 ?= t8.
     IF t7 IS BOUND.
@@ -28604,12 +25032,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a147 = t7->as_classvalue( ).
     ENDIF.
     DATA t9 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t9.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t10 TYPE REF TO object.
-    CLEAR t10.
     READ TABLE p1->items INDEX 149 INTO t10.
     t9 ?= t10.
     IF t9 IS BOUND.
@@ -28619,12 +25045,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a148 = t9->as_classvalue( ).
     ENDIF.
     DATA t11 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t11.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t12 TYPE REF TO object.
-    CLEAR t12.
     READ TABLE p1->items INDEX 150 INTO t12.
     t11 ?= t12.
     IF t11 IS BOUND.
@@ -28634,12 +25058,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a149 = t11->as_classvalue( ).
     ENDIF.
     DATA t13 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t13.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t14 TYPE REF TO object.
-    CLEAR t14.
     READ TABLE p1->items INDEX 151 INTO t14.
     t13 ?= t14.
     IF t13 IS BOUND.
@@ -28649,12 +25071,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a150 = t13->as_classvalue( ).
     ENDIF.
     DATA t15 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t15.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t16 TYPE REF TO object.
-    CLEAR t16.
     READ TABLE p1->items INDEX 152 INTO t16.
     t15 ?= t16.
     IF t15 IS BOUND.
@@ -28664,12 +25084,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a151 = t15->as_classvalue( ).
     ENDIF.
     DATA t17 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t17.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t18 TYPE REF TO object.
-    CLEAR t18.
     READ TABLE p1->items INDEX 153 INTO t18.
     t17 ?= t18.
     IF t17 IS BOUND.
@@ -28679,12 +25097,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a152 = t17->as_classvalue( ).
     ENDIF.
     DATA t19 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t19.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t20 TYPE REF TO object.
-    CLEAR t20.
     READ TABLE p1->items INDEX 154 INTO t20.
     t19 ?= t20.
     IF t19 IS BOUND.
@@ -28694,12 +25110,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a153 = t19->as_classvalue( ).
     ENDIF.
     DATA t21 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t21.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t22 TYPE REF TO object.
-    CLEAR t22.
     READ TABLE p1->items INDEX 155 INTO t22.
     t21 ?= t22.
     IF t21 IS BOUND.
@@ -28709,12 +25123,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a154 = t21->as_classvalue( ).
     ENDIF.
     DATA t23 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t23.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t24 TYPE REF TO object.
-    CLEAR t24.
     READ TABLE p1->items INDEX 156 INTO t24.
     t23 ?= t24.
     IF t23 IS BOUND.
@@ -28724,12 +25136,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a155 = t23->as_classvalue( ).
     ENDIF.
     DATA t25 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t25.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t26 TYPE REF TO object.
-    CLEAR t26.
     READ TABLE p1->items INDEX 157 INTO t26.
     t25 ?= t26.
     IF t25 IS BOUND.
@@ -28739,12 +25149,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a156 = t25->as_classvalue( ).
     ENDIF.
     DATA t27 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t27.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t28 TYPE REF TO object.
-    CLEAR t28.
     READ TABLE p1->items INDEX 158 INTO t28.
     t27 ?= t28.
     IF t27 IS BOUND.
@@ -28754,12 +25162,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a157 = t27->as_classvalue( ).
     ENDIF.
     DATA t29 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t29.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t30 TYPE REF TO object.
-    CLEAR t30.
     READ TABLE p1->items INDEX 159 INTO t30.
     t29 ?= t30.
     IF t29 IS BOUND.
@@ -28769,12 +25175,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a158 = t29->as_classvalue( ).
     ENDIF.
     DATA t31 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t31.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t32 TYPE REF TO object.
-    CLEAR t32.
     READ TABLE p1->items INDEX 160 INTO t32.
     t31 ?= t32.
     IF t31 IS BOUND.
@@ -28784,12 +25188,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a159 = t31->as_classvalue( ).
     ENDIF.
     DATA t33 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t33.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t34 TYPE REF TO object.
-    CLEAR t34.
     READ TABLE p1->items INDEX 161 INTO t34.
     t33 ?= t34.
     IF t33 IS BOUND.
@@ -28799,12 +25201,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a160 = t33->as_classvalue( ).
     ENDIF.
     DATA t35 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t35.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t36 TYPE REF TO object.
-    CLEAR t36.
     READ TABLE p1->items INDEX 162 INTO t36.
     t35 ?= t36.
     IF t35 IS BOUND.
@@ -28814,12 +25214,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a161 = t35->as_classvalue( ).
     ENDIF.
     DATA t37 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t37.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t38 TYPE REF TO object.
-    CLEAR t38.
     READ TABLE p1->items INDEX 163 INTO t38.
     t37 ?= t38.
     IF t37 IS BOUND.
@@ -28829,12 +25227,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a162 = t37->as_classvalue( ).
     ENDIF.
     DATA t39 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t39.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t40 TYPE REF TO object.
-    CLEAR t40.
     READ TABLE p1->items INDEX 164 INTO t40.
     t39 ?= t40.
     IF t39 IS BOUND.
@@ -28844,12 +25240,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a163 = t39->as_classvalue( ).
     ENDIF.
     DATA t41 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t41.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t42 TYPE REF TO object.
-    CLEAR t42.
     READ TABLE p1->items INDEX 165 INTO t42.
     t41 ?= t42.
     IF t41 IS BOUND.
@@ -28859,12 +25253,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a164 = t41->as_classvalue( ).
     ENDIF.
     DATA t43 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t43.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t44 TYPE REF TO object.
-    CLEAR t44.
     READ TABLE p1->items INDEX 166 INTO t44.
     t43 ?= t44.
     IF t43 IS BOUND.
@@ -28874,12 +25266,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a165 = t43->as_classvalue( ).
     ENDIF.
     DATA t45 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t45.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t46 TYPE REF TO object.
-    CLEAR t46.
     READ TABLE p1->items INDEX 167 INTO t46.
     t45 ?= t46.
     IF t45 IS BOUND.
@@ -28889,12 +25279,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a166 = t45->as_classvalue( ).
     ENDIF.
     DATA t47 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t47.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t48 TYPE REF TO object.
-    CLEAR t48.
     READ TABLE p1->items INDEX 168 INTO t48.
     t47 ?= t48.
     IF t47 IS BOUND.
@@ -28907,12 +25295,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
 
   METHOD args_decode_2033_7.
     DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t1.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t2 TYPE REF TO object.
-    CLEAR t2.
     READ TABLE p1->items INDEX 169 INTO t2.
     t1 ?= t2.
     IF t1 IS BOUND.
@@ -28922,12 +25308,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a168 = t1->as_classvalue( ).
     ENDIF.
     DATA t3 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t3.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t4 TYPE REF TO object.
-    CLEAR t4.
     READ TABLE p1->items INDEX 170 INTO t4.
     t3 ?= t4.
     IF t3 IS BOUND.
@@ -28937,12 +25321,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a169 = t3->as_classvalue( ).
     ENDIF.
     DATA t5 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t5.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t6 TYPE REF TO object.
-    CLEAR t6.
     READ TABLE p1->items INDEX 171 INTO t6.
     t5 ?= t6.
     IF t5 IS BOUND.
@@ -28952,12 +25334,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a170 = t5->as_classvalue( ).
     ENDIF.
     DATA t7 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t7.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t8 TYPE REF TO object.
-    CLEAR t8.
     READ TABLE p1->items INDEX 172 INTO t8.
     t7 ?= t8.
     IF t7 IS BOUND.
@@ -28967,12 +25347,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a171 = t7->as_classvalue( ).
     ENDIF.
     DATA t9 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t9.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t10 TYPE REF TO object.
-    CLEAR t10.
     READ TABLE p1->items INDEX 173 INTO t10.
     t9 ?= t10.
     IF t9 IS BOUND.
@@ -28982,12 +25360,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a172 = t9->as_classvalue( ).
     ENDIF.
     DATA t11 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t11.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t12 TYPE REF TO object.
-    CLEAR t12.
     READ TABLE p1->items INDEX 174 INTO t12.
     t11 ?= t12.
     IF t11 IS BOUND.
@@ -28997,12 +25373,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a173 = t11->as_classvalue( ).
     ENDIF.
     DATA t13 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t13.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t14 TYPE REF TO object.
-    CLEAR t14.
     READ TABLE p1->items INDEX 175 INTO t14.
     t13 ?= t14.
     IF t13 IS BOUND.
@@ -29012,12 +25386,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a174 = t13->as_classvalue( ).
     ENDIF.
     DATA t15 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t15.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t16 TYPE REF TO object.
-    CLEAR t16.
     READ TABLE p1->items INDEX 176 INTO t16.
     t15 ?= t16.
     IF t15 IS BOUND.
@@ -29027,12 +25399,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a175 = t15->as_classvalue( ).
     ENDIF.
     DATA t17 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t17.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t18 TYPE REF TO object.
-    CLEAR t18.
     READ TABLE p1->items INDEX 177 INTO t18.
     t17 ?= t18.
     IF t17 IS BOUND.
@@ -29042,12 +25412,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a176 = t17->as_classvalue( ).
     ENDIF.
     DATA t19 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t19.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t20 TYPE REF TO object.
-    CLEAR t20.
     READ TABLE p1->items INDEX 178 INTO t20.
     t19 ?= t20.
     IF t19 IS BOUND.
@@ -29057,12 +25425,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a177 = t19->as_classvalue( ).
     ENDIF.
     DATA t21 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t21.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t22 TYPE REF TO object.
-    CLEAR t22.
     READ TABLE p1->items INDEX 179 INTO t22.
     t21 ?= t22.
     IF t21 IS BOUND.
@@ -29072,12 +25438,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a178 = t21->as_classvalue( ).
     ENDIF.
     DATA t23 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t23.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t24 TYPE REF TO object.
-    CLEAR t24.
     READ TABLE p1->items INDEX 180 INTO t24.
     t23 ?= t24.
     IF t23 IS BOUND.
@@ -29087,12 +25451,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a179 = t23->as_classvalue( ).
     ENDIF.
     DATA t25 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t25.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t26 TYPE REF TO object.
-    CLEAR t26.
     READ TABLE p1->items INDEX 181 INTO t26.
     t25 ?= t26.
     IF t25 IS BOUND.
@@ -29102,12 +25464,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a180 = t25->as_classvalue( ).
     ENDIF.
     DATA t27 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t27.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t28 TYPE REF TO object.
-    CLEAR t28.
     READ TABLE p1->items INDEX 182 INTO t28.
     t27 ?= t28.
     IF t27 IS BOUND.
@@ -29117,12 +25477,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a181 = t27->as_classvalue( ).
     ENDIF.
     DATA t29 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t29.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t30 TYPE REF TO object.
-    CLEAR t30.
     READ TABLE p1->items INDEX 183 INTO t30.
     t29 ?= t30.
     IF t29 IS BOUND.
@@ -29132,12 +25490,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a182 = t29->as_classvalue( ).
     ENDIF.
     DATA t31 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t31.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t32 TYPE REF TO object.
-    CLEAR t32.
     READ TABLE p1->items INDEX 184 INTO t32.
     t31 ?= t32.
     IF t31 IS BOUND.
@@ -29147,12 +25503,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a183 = t31->as_classvalue( ).
     ENDIF.
     DATA t33 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t33.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t34 TYPE REF TO object.
-    CLEAR t34.
     READ TABLE p1->items INDEX 185 INTO t34.
     t33 ?= t34.
     IF t33 IS BOUND.
@@ -29162,12 +25516,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a184 = t33->as_classvalue( ).
     ENDIF.
     DATA t35 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t35.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t36 TYPE REF TO object.
-    CLEAR t36.
     READ TABLE p1->items INDEX 186 INTO t36.
     t35 ?= t36.
     IF t35 IS BOUND.
@@ -29177,12 +25529,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a185 = t35->as_classvalue( ).
     ENDIF.
     DATA t37 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t37.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t38 TYPE REF TO object.
-    CLEAR t38.
     READ TABLE p1->items INDEX 187 INTO t38.
     t37 ?= t38.
     IF t37 IS BOUND.
@@ -29192,12 +25542,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a186 = t37->as_classvalue( ).
     ENDIF.
     DATA t39 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t39.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t40 TYPE REF TO object.
-    CLEAR t40.
     READ TABLE p1->items INDEX 188 INTO t40.
     t39 ?= t40.
     IF t39 IS BOUND.
@@ -29207,12 +25555,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a187 = t39->as_classvalue( ).
     ENDIF.
     DATA t41 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t41.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t42 TYPE REF TO object.
-    CLEAR t42.
     READ TABLE p1->items INDEX 189 INTO t42.
     t41 ?= t42.
     IF t41 IS BOUND.
@@ -29222,12 +25568,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a188 = t41->as_classvalue( ).
     ENDIF.
     DATA t43 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t43.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t44 TYPE REF TO object.
-    CLEAR t44.
     READ TABLE p1->items INDEX 190 INTO t44.
     t43 ?= t44.
     IF t43 IS BOUND.
@@ -29237,12 +25581,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a189 = t43->as_classvalue( ).
     ENDIF.
     DATA t45 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t45.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t46 TYPE REF TO object.
-    CLEAR t46.
     READ TABLE p1->items INDEX 191 INTO t46.
     t45 ?= t46.
     IF t45 IS BOUND.
@@ -29252,12 +25594,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a190 = t45->as_classvalue( ).
     ENDIF.
     DATA t47 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t47.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t48 TYPE REF TO object.
-    CLEAR t48.
     READ TABLE p1->items INDEX 192 INTO t48.
     t47 ?= t48.
     IF t47 IS BOUND.
@@ -29270,12 +25610,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
 
   METHOD args_decode_2033_8.
     DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t1.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t2 TYPE REF TO object.
-    CLEAR t2.
     READ TABLE p1->items INDEX 193 INTO t2.
     t1 ?= t2.
     IF t1 IS BOUND.
@@ -29285,12 +25623,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a192 = t1->as_classvalue( ).
     ENDIF.
     DATA t3 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t3.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t4 TYPE REF TO object.
-    CLEAR t4.
     READ TABLE p1->items INDEX 194 INTO t4.
     t3 ?= t4.
     IF t3 IS BOUND.
@@ -29300,12 +25636,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a193 = t3->as_classvalue( ).
     ENDIF.
     DATA t5 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t5.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t6 TYPE REF TO object.
-    CLEAR t6.
     READ TABLE p1->items INDEX 195 INTO t6.
     t5 ?= t6.
     IF t5 IS BOUND.
@@ -29315,12 +25649,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a194 = t5->as_classvalue( ).
     ENDIF.
     DATA t7 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t7.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t8 TYPE REF TO object.
-    CLEAR t8.
     READ TABLE p1->items INDEX 196 INTO t8.
     t7 ?= t8.
     IF t7 IS BOUND.
@@ -29330,12 +25662,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a195 = t7->as_classvalue( ).
     ENDIF.
     DATA t9 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t9.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t10 TYPE REF TO object.
-    CLEAR t10.
     READ TABLE p1->items INDEX 197 INTO t10.
     t9 ?= t10.
     IF t9 IS BOUND.
@@ -29345,12 +25675,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a196 = t9->as_classvalue( ).
     ENDIF.
     DATA t11 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t11.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t12 TYPE REF TO object.
-    CLEAR t12.
     READ TABLE p1->items INDEX 198 INTO t12.
     t11 ?= t12.
     IF t11 IS BOUND.
@@ -29360,12 +25688,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a197 = t11->as_classvalue( ).
     ENDIF.
     DATA t13 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t13.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t14 TYPE REF TO object.
-    CLEAR t14.
     READ TABLE p1->items INDEX 199 INTO t14.
     t13 ?= t14.
     IF t13 IS BOUND.
@@ -29375,12 +25701,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a198 = t13->as_classvalue( ).
     ENDIF.
     DATA t15 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t15.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t16 TYPE REF TO object.
-    CLEAR t16.
     READ TABLE p1->items INDEX 200 INTO t16.
     t15 ?= t16.
     IF t15 IS BOUND.
@@ -29390,12 +25714,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a199 = t15->as_classvalue( ).
     ENDIF.
     DATA t17 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t17.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t18 TYPE REF TO object.
-    CLEAR t18.
     READ TABLE p1->items INDEX 201 INTO t18.
     t17 ?= t18.
     IF t17 IS BOUND.
@@ -29405,12 +25727,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a200 = t17->as_classvalue( ).
     ENDIF.
     DATA t19 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t19.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t20 TYPE REF TO object.
-    CLEAR t20.
     READ TABLE p1->items INDEX 202 INTO t20.
     t19 ?= t20.
     IF t19 IS BOUND.
@@ -29420,12 +25740,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a201 = t19->as_classvalue( ).
     ENDIF.
     DATA t21 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t21.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t22 TYPE REF TO object.
-    CLEAR t22.
     READ TABLE p1->items INDEX 203 INTO t22.
     t21 ?= t22.
     IF t21 IS BOUND.
@@ -29435,12 +25753,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a202 = t21->as_classvalue( ).
     ENDIF.
     DATA t23 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t23.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t24 TYPE REF TO object.
-    CLEAR t24.
     READ TABLE p1->items INDEX 204 INTO t24.
     t23 ?= t24.
     IF t23 IS BOUND.
@@ -29450,12 +25766,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a203 = t23->as_classvalue( ).
     ENDIF.
     DATA t25 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t25.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t26 TYPE REF TO object.
-    CLEAR t26.
     READ TABLE p1->items INDEX 205 INTO t26.
     t25 ?= t26.
     IF t25 IS BOUND.
@@ -29465,12 +25779,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a204 = t25->as_classvalue( ).
     ENDIF.
     DATA t27 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t27.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t28 TYPE REF TO object.
-    CLEAR t28.
     READ TABLE p1->items INDEX 206 INTO t28.
     t27 ?= t28.
     IF t27 IS BOUND.
@@ -29480,12 +25792,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a205 = t27->as_classvalue( ).
     ENDIF.
     DATA t29 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t29.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t30 TYPE REF TO object.
-    CLEAR t30.
     READ TABLE p1->items INDEX 207 INTO t30.
     t29 ?= t30.
     IF t29 IS BOUND.
@@ -29495,12 +25805,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a206 = t29->as_classvalue( ).
     ENDIF.
     DATA t31 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t31.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t32 TYPE REF TO object.
-    CLEAR t32.
     READ TABLE p1->items INDEX 208 INTO t32.
     t31 ?= t32.
     IF t31 IS BOUND.
@@ -29510,12 +25818,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a207 = t31->as_classvalue( ).
     ENDIF.
     DATA t33 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t33.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t34 TYPE REF TO object.
-    CLEAR t34.
     READ TABLE p1->items INDEX 209 INTO t34.
     t33 ?= t34.
     IF t33 IS BOUND.
@@ -29525,12 +25831,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a208 = t33->as_classvalue( ).
     ENDIF.
     DATA t35 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t35.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t36 TYPE REF TO object.
-    CLEAR t36.
     READ TABLE p1->items INDEX 210 INTO t36.
     t35 ?= t36.
     IF t35 IS BOUND.
@@ -29540,12 +25844,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a209 = t35->as_classvalue( ).
     ENDIF.
     DATA t37 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t37.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t38 TYPE REF TO object.
-    CLEAR t38.
     READ TABLE p1->items INDEX 211 INTO t38.
     t37 ?= t38.
     IF t37 IS BOUND.
@@ -29555,12 +25857,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a210 = t37->as_classvalue( ).
     ENDIF.
     DATA t39 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t39.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t40 TYPE REF TO object.
-    CLEAR t40.
     READ TABLE p1->items INDEX 212 INTO t40.
     t39 ?= t40.
     IF t39 IS BOUND.
@@ -29570,12 +25870,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a211 = t39->as_classvalue( ).
     ENDIF.
     DATA t41 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t41.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t42 TYPE REF TO object.
-    CLEAR t42.
     READ TABLE p1->items INDEX 213 INTO t42.
     t41 ?= t42.
     IF t41 IS BOUND.
@@ -29585,12 +25883,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a212 = t41->as_classvalue( ).
     ENDIF.
     DATA t43 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t43.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t44 TYPE REF TO object.
-    CLEAR t44.
     READ TABLE p1->items INDEX 214 INTO t44.
     t43 ?= t44.
     IF t43 IS BOUND.
@@ -29600,12 +25896,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a213 = t43->as_classvalue( ).
     ENDIF.
     DATA t45 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t45.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t46 TYPE REF TO object.
-    CLEAR t46.
     READ TABLE p1->items INDEX 215 INTO t46.
     t45 ?= t46.
     IF t45 IS BOUND.
@@ -29615,12 +25909,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a214 = t45->as_classvalue( ).
     ENDIF.
     DATA t47 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t47.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t48 TYPE REF TO object.
-    CLEAR t48.
     READ TABLE p1->items INDEX 216 INTO t48.
     t47 ?= t48.
     IF t47 IS BOUND.
@@ -29633,12 +25925,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
 
   METHOD args_decode_2033_9.
     DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t1.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t2 TYPE REF TO object.
-    CLEAR t2.
     READ TABLE p1->items INDEX 217 INTO t2.
     t1 ?= t2.
     IF t1 IS BOUND.
@@ -29648,12 +25938,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a216 = t1->as_classvalue( ).
     ENDIF.
     DATA t3 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t3.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t4 TYPE REF TO object.
-    CLEAR t4.
     READ TABLE p1->items INDEX 218 INTO t4.
     t3 ?= t4.
     IF t3 IS BOUND.
@@ -29663,12 +25951,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a217 = t3->as_classvalue( ).
     ENDIF.
     DATA t5 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t5.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t6 TYPE REF TO object.
-    CLEAR t6.
     READ TABLE p1->items INDEX 219 INTO t6.
     t5 ?= t6.
     IF t5 IS BOUND.
@@ -29678,12 +25964,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a218 = t5->as_classvalue( ).
     ENDIF.
     DATA t7 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t7.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t8 TYPE REF TO object.
-    CLEAR t8.
     READ TABLE p1->items INDEX 220 INTO t8.
     t7 ?= t8.
     IF t7 IS BOUND.
@@ -29693,12 +25977,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a219 = t7->as_classvalue( ).
     ENDIF.
     DATA t9 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t9.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t10 TYPE REF TO object.
-    CLEAR t10.
     READ TABLE p1->items INDEX 221 INTO t10.
     t9 ?= t10.
     IF t9 IS BOUND.
@@ -29708,12 +25990,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a220 = t9->as_classvalue( ).
     ENDIF.
     DATA t11 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t11.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t12 TYPE REF TO object.
-    CLEAR t12.
     READ TABLE p1->items INDEX 222 INTO t12.
     t11 ?= t12.
     IF t11 IS BOUND.
@@ -29723,12 +26003,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a221 = t11->as_classvalue( ).
     ENDIF.
     DATA t13 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t13.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t14 TYPE REF TO object.
-    CLEAR t14.
     READ TABLE p1->items INDEX 223 INTO t14.
     t13 ?= t14.
     IF t13 IS BOUND.
@@ -29738,12 +26016,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a222 = t13->as_classvalue( ).
     ENDIF.
     DATA t15 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t15.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t16 TYPE REF TO object.
-    CLEAR t16.
     READ TABLE p1->items INDEX 224 INTO t16.
     t15 ?= t16.
     IF t15 IS BOUND.
@@ -29753,12 +26029,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a223 = t15->as_classvalue( ).
     ENDIF.
     DATA t17 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t17.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t18 TYPE REF TO object.
-    CLEAR t18.
     READ TABLE p1->items INDEX 225 INTO t18.
     t17 ?= t18.
     IF t17 IS BOUND.
@@ -29768,12 +26042,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a224 = t17->as_classvalue( ).
     ENDIF.
     DATA t19 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t19.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t20 TYPE REF TO object.
-    CLEAR t20.
     READ TABLE p1->items INDEX 226 INTO t20.
     t19 ?= t20.
     IF t19 IS BOUND.
@@ -29783,12 +26055,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a225 = t19->as_classvalue( ).
     ENDIF.
     DATA t21 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t21.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t22 TYPE REF TO object.
-    CLEAR t22.
     READ TABLE p1->items INDEX 227 INTO t22.
     t21 ?= t22.
     IF t21 IS BOUND.
@@ -29798,12 +26068,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a226 = t21->as_classvalue( ).
     ENDIF.
     DATA t23 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t23.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t24 TYPE REF TO object.
-    CLEAR t24.
     READ TABLE p1->items INDEX 228 INTO t24.
     t23 ?= t24.
     IF t23 IS BOUND.
@@ -29813,12 +26081,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a227 = t23->as_classvalue( ).
     ENDIF.
     DATA t25 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t25.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t26 TYPE REF TO object.
-    CLEAR t26.
     READ TABLE p1->items INDEX 229 INTO t26.
     t25 ?= t26.
     IF t25 IS BOUND.
@@ -29828,12 +26094,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a228 = t25->as_classvalue( ).
     ENDIF.
     DATA t27 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t27.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t28 TYPE REF TO object.
-    CLEAR t28.
     READ TABLE p1->items INDEX 230 INTO t28.
     t27 ?= t28.
     IF t27 IS BOUND.
@@ -29843,12 +26107,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a229 = t27->as_classvalue( ).
     ENDIF.
     DATA t29 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t29.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t30 TYPE REF TO object.
-    CLEAR t30.
     READ TABLE p1->items INDEX 231 INTO t30.
     t29 ?= t30.
     IF t29 IS BOUND.
@@ -29858,12 +26120,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a230 = t29->as_classvalue( ).
     ENDIF.
     DATA t31 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t31.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t32 TYPE REF TO object.
-    CLEAR t32.
     READ TABLE p1->items INDEX 232 INTO t32.
     t31 ?= t32.
     IF t31 IS BOUND.
@@ -29873,12 +26133,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a231 = t31->as_classvalue( ).
     ENDIF.
     DATA t33 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t33.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t34 TYPE REF TO object.
-    CLEAR t34.
     READ TABLE p1->items INDEX 233 INTO t34.
     t33 ?= t34.
     IF t33 IS BOUND.
@@ -29888,12 +26146,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a232 = t33->as_classvalue( ).
     ENDIF.
     DATA t35 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t35.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t36 TYPE REF TO object.
-    CLEAR t36.
     READ TABLE p1->items INDEX 234 INTO t36.
     t35 ?= t36.
     IF t35 IS BOUND.
@@ -29903,12 +26159,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a233 = t35->as_classvalue( ).
     ENDIF.
     DATA t37 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t37.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t38 TYPE REF TO object.
-    CLEAR t38.
     READ TABLE p1->items INDEX 235 INTO t38.
     t37 ?= t38.
     IF t37 IS BOUND.
@@ -29918,12 +26172,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a234 = t37->as_classvalue( ).
     ENDIF.
     DATA t39 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t39.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t40 TYPE REF TO object.
-    CLEAR t40.
     READ TABLE p1->items INDEX 236 INTO t40.
     t39 ?= t40.
     IF t39 IS BOUND.
@@ -29933,12 +26185,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a235 = t39->as_classvalue( ).
     ENDIF.
     DATA t41 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t41.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t42 TYPE REF TO object.
-    CLEAR t42.
     READ TABLE p1->items INDEX 237 INTO t42.
     t41 ?= t42.
     IF t41 IS BOUND.
@@ -29948,12 +26198,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a236 = t41->as_classvalue( ).
     ENDIF.
     DATA t43 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t43.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t44 TYPE REF TO object.
-    CLEAR t44.
     READ TABLE p1->items INDEX 238 INTO t44.
     t43 ?= t44.
     IF t43 IS BOUND.
@@ -29963,12 +26211,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a237 = t43->as_classvalue( ).
     ENDIF.
     DATA t45 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t45.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t46 TYPE REF TO object.
-    CLEAR t46.
     READ TABLE p1->items INDEX 239 INTO t46.
     t45 ?= t46.
     IF t45 IS BOUND.
@@ -29978,12 +26224,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a238 = t45->as_classvalue( ).
     ENDIF.
     DATA t47 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t47.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t48 TYPE REF TO object.
-    CLEAR t48.
     READ TABLE p1->items INDEX 240 INTO t48.
     t47 ?= t48.
     IF t47 IS BOUND.
@@ -29996,12 +26240,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
 
   METHOD args_decode_2033_10.
     DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t1.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t2 TYPE REF TO object.
-    CLEAR t2.
     READ TABLE p1->items INDEX 241 INTO t2.
     t1 ?= t2.
     IF t1 IS BOUND.
@@ -30011,12 +26253,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a240 = t1->as_classvalue( ).
     ENDIF.
     DATA t3 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t3.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t4 TYPE REF TO object.
-    CLEAR t4.
     READ TABLE p1->items INDEX 242 INTO t4.
     t3 ?= t4.
     IF t3 IS BOUND.
@@ -30026,12 +26266,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a241 = t3->as_classvalue( ).
     ENDIF.
     DATA t5 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t5.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t6 TYPE REF TO object.
-    CLEAR t6.
     READ TABLE p1->items INDEX 243 INTO t6.
     t5 ?= t6.
     IF t5 IS BOUND.
@@ -30041,12 +26279,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a242 = t5->as_classvalue( ).
     ENDIF.
     DATA t7 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t7.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t8 TYPE REF TO object.
-    CLEAR t8.
     READ TABLE p1->items INDEX 244 INTO t8.
     t7 ?= t8.
     IF t7 IS BOUND.
@@ -30056,12 +26292,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a243 = t7->as_classvalue( ).
     ENDIF.
     DATA t9 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t9.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t10 TYPE REF TO object.
-    CLEAR t10.
     READ TABLE p1->items INDEX 245 INTO t10.
     t9 ?= t10.
     IF t9 IS BOUND.
@@ -30071,12 +26305,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a244 = t9->as_classvalue( ).
     ENDIF.
     DATA t11 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t11.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t12 TYPE REF TO object.
-    CLEAR t12.
     READ TABLE p1->items INDEX 246 INTO t12.
     t11 ?= t12.
     IF t11 IS BOUND.
@@ -30086,12 +26318,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a245 = t11->as_classvalue( ).
     ENDIF.
     DATA t13 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t13.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t14 TYPE REF TO object.
-    CLEAR t14.
     READ TABLE p1->items INDEX 247 INTO t14.
     t13 ?= t14.
     IF t13 IS BOUND.
@@ -30101,12 +26331,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a246 = t13->as_classvalue( ).
     ENDIF.
     DATA t15 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t15.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t16 TYPE REF TO object.
-    CLEAR t16.
     READ TABLE p1->items INDEX 248 INTO t16.
     t15 ?= t16.
     IF t15 IS BOUND.
@@ -30116,12 +26344,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a247 = t15->as_classvalue( ).
     ENDIF.
     DATA t17 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t17.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t18 TYPE REF TO object.
-    CLEAR t18.
     READ TABLE p1->items INDEX 249 INTO t18.
     t17 ?= t18.
     IF t17 IS BOUND.
@@ -30131,12 +26357,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a248 = t17->as_classvalue( ).
     ENDIF.
     DATA t19 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t19.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t20 TYPE REF TO object.
-    CLEAR t20.
     READ TABLE p1->items INDEX 250 INTO t20.
     t19 ?= t20.
     IF t19 IS BOUND.
@@ -30146,12 +26370,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a249 = t19->as_classvalue( ).
     ENDIF.
     DATA t21 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t21.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t22 TYPE REF TO object.
-    CLEAR t22.
     READ TABLE p1->items INDEX 251 INTO t22.
     t21 ?= t22.
     IF t21 IS BOUND.
@@ -30161,12 +26383,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a250 = t21->as_classvalue( ).
     ENDIF.
     DATA t23 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t23.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t24 TYPE REF TO object.
-    CLEAR t24.
     READ TABLE p1->items INDEX 252 INTO t24.
     t23 ?= t24.
     IF t23 IS BOUND.
@@ -30176,12 +26396,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a251 = t23->as_classvalue( ).
     ENDIF.
     DATA t25 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t25.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t26 TYPE REF TO object.
-    CLEAR t26.
     READ TABLE p1->items INDEX 253 INTO t26.
     t25 ?= t26.
     IF t25 IS BOUND.
@@ -30191,12 +26409,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a252 = t25->as_classvalue( ).
     ENDIF.
     DATA t27 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t27.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t28 TYPE REF TO object.
-    CLEAR t28.
     READ TABLE p1->items INDEX 254 INTO t28.
     t27 ?= t28.
     IF t27 IS BOUND.
@@ -30206,12 +26422,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a253 = t27->as_classvalue( ).
     ENDIF.
     DATA t29 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t29.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t30 TYPE REF TO object.
-    CLEAR t30.
     READ TABLE p1->items INDEX 255 INTO t30.
     t29 ?= t30.
     IF t29 IS BOUND.
@@ -30221,12 +26435,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a254 = t29->as_classvalue( ).
     ENDIF.
     DATA t31 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t31.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t32 TYPE REF TO object.
-    CLEAR t32.
     READ TABLE p1->items INDEX 256 INTO t32.
     t31 ?= t32.
     IF t31 IS BOUND.
@@ -30236,12 +26448,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a255 = t31->as_classvalue( ).
     ENDIF.
     DATA t33 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t33.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t34 TYPE REF TO object.
-    CLEAR t34.
     READ TABLE p1->items INDEX 257 INTO t34.
     t33 ?= t34.
     IF t33 IS BOUND.
@@ -30251,12 +26461,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a256 = t33->as_classvalue( ).
     ENDIF.
     DATA t35 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t35.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t36 TYPE REF TO object.
-    CLEAR t36.
     READ TABLE p1->items INDEX 258 INTO t36.
     t35 ?= t36.
     IF t35 IS BOUND.
@@ -30266,12 +26474,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a257 = t35->as_classvalue( ).
     ENDIF.
     DATA t37 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t37.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t38 TYPE REF TO object.
-    CLEAR t38.
     READ TABLE p1->items INDEX 259 INTO t38.
     t37 ?= t38.
     IF t37 IS BOUND.
@@ -30281,12 +26487,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a258 = t37->as_classvalue( ).
     ENDIF.
     DATA t39 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t39.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t40 TYPE REF TO object.
-    CLEAR t40.
     READ TABLE p1->items INDEX 260 INTO t40.
     t39 ?= t40.
     IF t39 IS BOUND.
@@ -30296,12 +26500,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a259 = t39->as_classvalue( ).
     ENDIF.
     DATA t41 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t41.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t42 TYPE REF TO object.
-    CLEAR t42.
     READ TABLE p1->items INDEX 261 INTO t42.
     t41 ?= t42.
     IF t41 IS BOUND.
@@ -30311,12 +26513,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a260 = t41->as_classvalue( ).
     ENDIF.
     DATA t43 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t43.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t44 TYPE REF TO object.
-    CLEAR t44.
     READ TABLE p1->items INDEX 262 INTO t44.
     t43 ?= t44.
     IF t43 IS BOUND.
@@ -30326,12 +26526,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a261 = t43->as_classvalue( ).
     ENDIF.
     DATA t45 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t45.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t46 TYPE REF TO object.
-    CLEAR t46.
     READ TABLE p1->items INDEX 263 INTO t46.
     t45 ?= t46.
     IF t45 IS BOUND.
@@ -30341,12 +26539,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a262 = t45->as_classvalue( ).
     ENDIF.
     DATA t47 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t47.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t48 TYPE REF TO object.
-    CLEAR t48.
     READ TABLE p1->items INDEX 264 INTO t48.
     t47 ?= t48.
     IF t47 IS BOUND.
@@ -30359,12 +26555,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
 
   METHOD args_decode_2033_11.
     DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t1.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t2 TYPE REF TO object.
-    CLEAR t2.
     READ TABLE p1->items INDEX 265 INTO t2.
     t1 ?= t2.
     IF t1 IS BOUND.
@@ -30374,12 +26568,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a264 = t1->as_classvalue( ).
     ENDIF.
     DATA t3 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t3.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t4 TYPE REF TO object.
-    CLEAR t4.
     READ TABLE p1->items INDEX 266 INTO t4.
     t3 ?= t4.
     IF t3 IS BOUND.
@@ -30389,12 +26581,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a265 = t3->as_classvalue( ).
     ENDIF.
     DATA t5 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t5.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t6 TYPE REF TO object.
-    CLEAR t6.
     READ TABLE p1->items INDEX 267 INTO t6.
     t5 ?= t6.
     IF t5 IS BOUND.
@@ -30404,12 +26594,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a266 = t5->as_classvalue( ).
     ENDIF.
     DATA t7 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t7.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t8 TYPE REF TO object.
-    CLEAR t8.
     READ TABLE p1->items INDEX 268 INTO t8.
     t7 ?= t8.
     IF t7 IS BOUND.
@@ -30419,12 +26607,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a267 = t7->as_classvalue( ).
     ENDIF.
     DATA t9 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t9.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t10 TYPE REF TO object.
-    CLEAR t10.
     READ TABLE p1->items INDEX 269 INTO t10.
     t9 ?= t10.
     IF t9 IS BOUND.
@@ -30434,12 +26620,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a268 = t9->as_classvalue( ).
     ENDIF.
     DATA t11 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t11.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t12 TYPE REF TO object.
-    CLEAR t12.
     READ TABLE p1->items INDEX 270 INTO t12.
     t11 ?= t12.
     IF t11 IS BOUND.
@@ -30449,12 +26633,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a269 = t11->as_classvalue( ).
     ENDIF.
     DATA t13 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t13.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t14 TYPE REF TO object.
-    CLEAR t14.
     READ TABLE p1->items INDEX 271 INTO t14.
     t13 ?= t14.
     IF t13 IS BOUND.
@@ -30464,12 +26646,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a270 = t13->as_classvalue( ).
     ENDIF.
     DATA t15 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t15.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t16 TYPE REF TO object.
-    CLEAR t16.
     READ TABLE p1->items INDEX 272 INTO t16.
     t15 ?= t16.
     IF t15 IS BOUND.
@@ -30479,12 +26659,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a271 = t15->as_classvalue( ).
     ENDIF.
     DATA t17 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t17.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t18 TYPE REF TO object.
-    CLEAR t18.
     READ TABLE p1->items INDEX 273 INTO t18.
     t17 ?= t18.
     IF t17 IS BOUND.
@@ -30494,12 +26672,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a272 = t17->as_classvalue( ).
     ENDIF.
     DATA t19 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t19.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t20 TYPE REF TO object.
-    CLEAR t20.
     READ TABLE p1->items INDEX 274 INTO t20.
     t19 ?= t20.
     IF t19 IS BOUND.
@@ -30509,12 +26685,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a273 = t19->as_classvalue( ).
     ENDIF.
     DATA t21 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t21.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t22 TYPE REF TO object.
-    CLEAR t22.
     READ TABLE p1->items INDEX 275 INTO t22.
     t21 ?= t22.
     IF t21 IS BOUND.
@@ -30524,12 +26698,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a274 = t21->as_classvalue( ).
     ENDIF.
     DATA t23 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t23.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t24 TYPE REF TO object.
-    CLEAR t24.
     READ TABLE p1->items INDEX 276 INTO t24.
     t23 ?= t24.
     IF t23 IS BOUND.
@@ -30539,12 +26711,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a275 = t23->as_classvalue( ).
     ENDIF.
     DATA t25 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t25.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t26 TYPE REF TO object.
-    CLEAR t26.
     READ TABLE p1->items INDEX 277 INTO t26.
     t25 ?= t26.
     IF t25 IS BOUND.
@@ -30554,12 +26724,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a276 = t25->as_classvalue( ).
     ENDIF.
     DATA t27 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t27.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t28 TYPE REF TO object.
-    CLEAR t28.
     READ TABLE p1->items INDEX 278 INTO t28.
     t27 ?= t28.
     IF t27 IS BOUND.
@@ -30569,12 +26737,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a277 = t27->as_classvalue( ).
     ENDIF.
     DATA t29 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t29.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t30 TYPE REF TO object.
-    CLEAR t30.
     READ TABLE p1->items INDEX 279 INTO t30.
     t29 ?= t30.
     IF t29 IS BOUND.
@@ -30584,12 +26750,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a278 = t29->as_classvalue( ).
     ENDIF.
     DATA t31 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t31.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t32 TYPE REF TO object.
-    CLEAR t32.
     READ TABLE p1->items INDEX 280 INTO t32.
     t31 ?= t32.
     IF t31 IS BOUND.
@@ -30599,12 +26763,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a279 = t31->as_classvalue( ).
     ENDIF.
     DATA t33 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t33.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t34 TYPE REF TO object.
-    CLEAR t34.
     READ TABLE p1->items INDEX 281 INTO t34.
     t33 ?= t34.
     IF t33 IS BOUND.
@@ -30614,12 +26776,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a280 = t33->as_classvalue( ).
     ENDIF.
     DATA t35 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t35.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t36 TYPE REF TO object.
-    CLEAR t36.
     READ TABLE p1->items INDEX 282 INTO t36.
     t35 ?= t36.
     IF t35 IS BOUND.
@@ -30629,12 +26789,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a281 = t35->as_classvalue( ).
     ENDIF.
     DATA t37 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t37.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t38 TYPE REF TO object.
-    CLEAR t38.
     READ TABLE p1->items INDEX 283 INTO t38.
     t37 ?= t38.
     IF t37 IS BOUND.
@@ -30644,12 +26802,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a282 = t37->as_classvalue( ).
     ENDIF.
     DATA t39 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t39.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t40 TYPE REF TO object.
-    CLEAR t40.
     READ TABLE p1->items INDEX 284 INTO t40.
     t39 ?= t40.
     IF t39 IS BOUND.
@@ -30659,12 +26815,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a283 = t39->as_classvalue( ).
     ENDIF.
     DATA t41 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t41.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t42 TYPE REF TO object.
-    CLEAR t42.
     READ TABLE p1->items INDEX 285 INTO t42.
     t41 ?= t42.
     IF t41 IS BOUND.
@@ -30674,12 +26828,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a284 = t41->as_classvalue( ).
     ENDIF.
     DATA t43 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t43.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t44 TYPE REF TO object.
-    CLEAR t44.
     READ TABLE p1->items INDEX 286 INTO t44.
     t43 ?= t44.
     IF t43 IS BOUND.
@@ -30689,12 +26841,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a285 = t43->as_classvalue( ).
     ENDIF.
     DATA t45 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t45.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t46 TYPE REF TO object.
-    CLEAR t46.
     READ TABLE p1->items INDEX 287 INTO t46.
     t45 ?= t46.
     IF t45 IS BOUND.
@@ -30704,12 +26854,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a286 = t45->as_classvalue( ).
     ENDIF.
     DATA t47 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t47.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t48 TYPE REF TO object.
-    CLEAR t48.
     READ TABLE p1->items INDEX 288 INTO t48.
     t47 ?= t48.
     IF t47 IS BOUND.
@@ -30722,12 +26870,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
 
   METHOD args_decode_2033_12.
     DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t1.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t2 TYPE REF TO object.
-    CLEAR t2.
     READ TABLE p1->items INDEX 289 INTO t2.
     t1 ?= t2.
     IF t1 IS BOUND.
@@ -30737,12 +26883,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a288 = t1->as_classvalue( ).
     ENDIF.
     DATA t3 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t3.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t4 TYPE REF TO object.
-    CLEAR t4.
     READ TABLE p1->items INDEX 290 INTO t4.
     t3 ?= t4.
     IF t3 IS BOUND.
@@ -30752,12 +26896,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a289 = t3->as_classvalue( ).
     ENDIF.
     DATA t5 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t5.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t6 TYPE REF TO object.
-    CLEAR t6.
     READ TABLE p1->items INDEX 291 INTO t6.
     t5 ?= t6.
     IF t5 IS BOUND.
@@ -30767,12 +26909,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a290 = t5->as_classvalue( ).
     ENDIF.
     DATA t7 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t7.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t8 TYPE REF TO object.
-    CLEAR t8.
     READ TABLE p1->items INDEX 292 INTO t8.
     t7 ?= t8.
     IF t7 IS BOUND.
@@ -30782,12 +26922,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a291 = t7->as_classvalue( ).
     ENDIF.
     DATA t9 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t9.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t10 TYPE REF TO object.
-    CLEAR t10.
     READ TABLE p1->items INDEX 293 INTO t10.
     t9 ?= t10.
     IF t9 IS BOUND.
@@ -30797,12 +26935,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a292 = t9->as_classvalue( ).
     ENDIF.
     DATA t11 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t11.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t12 TYPE REF TO object.
-    CLEAR t12.
     READ TABLE p1->items INDEX 294 INTO t12.
     t11 ?= t12.
     IF t11 IS BOUND.
@@ -30812,12 +26948,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a293 = t11->as_classvalue( ).
     ENDIF.
     DATA t13 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t13.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t14 TYPE REF TO object.
-    CLEAR t14.
     READ TABLE p1->items INDEX 295 INTO t14.
     t13 ?= t14.
     IF t13 IS BOUND.
@@ -30827,12 +26961,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a294 = t13->as_classvalue( ).
     ENDIF.
     DATA t15 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t15.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t16 TYPE REF TO object.
-    CLEAR t16.
     READ TABLE p1->items INDEX 296 INTO t16.
     t15 ?= t16.
     IF t15 IS BOUND.
@@ -30842,12 +26974,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a295 = t15->as_classvalue( ).
     ENDIF.
     DATA t17 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t17.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t18 TYPE REF TO object.
-    CLEAR t18.
     READ TABLE p1->items INDEX 297 INTO t18.
     t17 ?= t18.
     IF t17 IS BOUND.
@@ -30857,12 +26987,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a296 = t17->as_classvalue( ).
     ENDIF.
     DATA t19 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t19.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t20 TYPE REF TO object.
-    CLEAR t20.
     READ TABLE p1->items INDEX 298 INTO t20.
     t19 ?= t20.
     IF t19 IS BOUND.
@@ -30872,12 +27000,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a297 = t19->as_classvalue( ).
     ENDIF.
     DATA t21 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t21.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t22 TYPE REF TO object.
-    CLEAR t22.
     READ TABLE p1->items INDEX 299 INTO t22.
     t21 ?= t22.
     IF t21 IS BOUND.
@@ -30887,12 +27013,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a298 = t21->as_classvalue( ).
     ENDIF.
     DATA t23 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t23.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t24 TYPE REF TO object.
-    CLEAR t24.
     READ TABLE p1->items INDEX 300 INTO t24.
     t23 ?= t24.
     IF t23 IS BOUND.
@@ -30902,12 +27026,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a299 = t23->as_classvalue( ).
     ENDIF.
     DATA t25 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t25.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t26 TYPE REF TO object.
-    CLEAR t26.
     READ TABLE p1->items INDEX 301 INTO t26.
     t25 ?= t26.
     IF t25 IS BOUND.
@@ -30917,12 +27039,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a300 = t25->as_classvalue( ).
     ENDIF.
     DATA t27 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t27.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t28 TYPE REF TO object.
-    CLEAR t28.
     READ TABLE p1->items INDEX 302 INTO t28.
     t27 ?= t28.
     IF t27 IS BOUND.
@@ -30932,12 +27052,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a301 = t27->as_classvalue( ).
     ENDIF.
     DATA t29 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t29.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t30 TYPE REF TO object.
-    CLEAR t30.
     READ TABLE p1->items INDEX 303 INTO t30.
     t29 ?= t30.
     IF t29 IS BOUND.
@@ -30947,12 +27065,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a302 = t29->as_classvalue( ).
     ENDIF.
     DATA t31 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t31.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t32 TYPE REF TO object.
-    CLEAR t32.
     READ TABLE p1->items INDEX 304 INTO t32.
     t31 ?= t32.
     IF t31 IS BOUND.
@@ -30962,12 +27078,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a303 = t31->as_classvalue( ).
     ENDIF.
     DATA t33 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t33.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t34 TYPE REF TO object.
-    CLEAR t34.
     READ TABLE p1->items INDEX 305 INTO t34.
     t33 ?= t34.
     IF t33 IS BOUND.
@@ -30977,12 +27091,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a304 = t33->as_classvalue( ).
     ENDIF.
     DATA t35 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t35.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t36 TYPE REF TO object.
-    CLEAR t36.
     READ TABLE p1->items INDEX 306 INTO t36.
     t35 ?= t36.
     IF t35 IS BOUND.
@@ -30992,12 +27104,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a305 = t35->as_classvalue( ).
     ENDIF.
     DATA t37 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t37.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t38 TYPE REF TO object.
-    CLEAR t38.
     READ TABLE p1->items INDEX 307 INTO t38.
     t37 ?= t38.
     IF t37 IS BOUND.
@@ -31007,12 +27117,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a306 = t37->as_classvalue( ).
     ENDIF.
     DATA t39 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t39.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t40 TYPE REF TO object.
-    CLEAR t40.
     READ TABLE p1->items INDEX 308 INTO t40.
     t39 ?= t40.
     IF t39 IS BOUND.
@@ -31022,12 +27130,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a307 = t39->as_classvalue( ).
     ENDIF.
     DATA t41 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t41.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t42 TYPE REF TO object.
-    CLEAR t42.
     READ TABLE p1->items INDEX 309 INTO t42.
     t41 ?= t42.
     IF t41 IS BOUND.
@@ -31037,12 +27143,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a308 = t41->as_classvalue( ).
     ENDIF.
     DATA t43 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t43.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t44 TYPE REF TO object.
-    CLEAR t44.
     READ TABLE p1->items INDEX 310 INTO t44.
     t43 ?= t44.
     IF t43 IS BOUND.
@@ -31052,12 +27156,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a309 = t43->as_classvalue( ).
     ENDIF.
     DATA t45 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t45.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t46 TYPE REF TO object.
-    CLEAR t46.
     READ TABLE p1->items INDEX 311 INTO t46.
     t45 ?= t46.
     IF t45 IS BOUND.
@@ -31067,12 +27169,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a310 = t45->as_classvalue( ).
     ENDIF.
     DATA t47 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t47.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t48 TYPE REF TO object.
-    CLEAR t48.
     READ TABLE p1->items INDEX 312 INTO t48.
     t47 ?= t48.
     IF t47 IS BOUND.
@@ -31085,12 +27185,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
 
   METHOD args_decode_2033_13.
     DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t1.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t2 TYPE REF TO object.
-    CLEAR t2.
     READ TABLE p1->items INDEX 313 INTO t2.
     t1 ?= t2.
     IF t1 IS BOUND.
@@ -31100,12 +27198,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a312 = t1->as_classvalue( ).
     ENDIF.
     DATA t3 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t3.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t4 TYPE REF TO object.
-    CLEAR t4.
     READ TABLE p1->items INDEX 314 INTO t4.
     t3 ?= t4.
     IF t3 IS BOUND.
@@ -31115,12 +27211,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a313 = t3->as_classvalue( ).
     ENDIF.
     DATA t5 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t5.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t6 TYPE REF TO object.
-    CLEAR t6.
     READ TABLE p1->items INDEX 315 INTO t6.
     t5 ?= t6.
     IF t5 IS BOUND.
@@ -31130,12 +27224,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a314 = t5->as_classvalue( ).
     ENDIF.
     DATA t7 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t7.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t8 TYPE REF TO object.
-    CLEAR t8.
     READ TABLE p1->items INDEX 316 INTO t8.
     t7 ?= t8.
     IF t7 IS BOUND.
@@ -31145,12 +27237,10 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
       frame-a315 = t7->as_classvalue( ).
     ENDIF.
     DATA t9 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t9.
     IF p1 IS NOT BOUND.
       RAISE EXCEPTION TYPE zlnt_class_refusa_99eac77bbe39.
     ENDIF.
     DATA t10 TYPE REF TO object.
-    CLEAR t10.
     READ TABLE p1->items INDEX 317 INTO t10.
     t9 ?= t10.
     IF t9 IS BOUND.
@@ -31162,1312 +27252,361 @@ CLASS zlnt_runtime_clas_c216c6067abd IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD args_write_2033_0.
-    DATA t1 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t2) = CAST zlnt_runtime_clas_a39833db3295( frame-a0 ).
-    t1 = t2.
-    instance->data_4939 = t1.
-    DATA t3 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t4) = CAST zlnt_runtime_clas_a39833db3295( frame-a1 ).
-    t3 = t4.
-    instance->report_d765 = t3.
-    DATA t5 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t6) = CAST zlnt_runtime_clas_a39833db3295( frame-a2 ).
-    t5 = t6.
-    instance->write_91d1 = t5.
-    DATA t7 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t8) = CAST zlnt_runtime_clas_a39833db3295( frame-a3 ).
-    t7 = t8.
-    instance->end_method = t7.
-    DATA t9 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t10) = CAST zlnt_runtime_clas_a39833db3295( frame-a4 ).
-    t9 = t10.
-    instance->method_implementation = t9.
-    DATA t11 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t12) = CAST zlnt_runtime_clas_a39833db3295( frame-a5 ).
-    t11 = t12.
-    instance->end_form = t11.
-    DATA t13 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t14) = CAST zlnt_runtime_clas_a39833db3295( frame-a6 ).
-    t13 = t14.
-    instance->form_e887 = t13.
-    DATA t15 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t16) = CAST zlnt_runtime_clas_a39833db3295( frame-a7 ).
-    t15 = t16.
-    instance->import_nametab = t15.
-    DATA t17 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t18) = CAST zlnt_runtime_clas_a39833db3295( frame-a8 ).
-    t17 = t18.
-    instance->check_select_options = t17.
-    DATA t19 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t20) = CAST zlnt_runtime_clas_a39833db3295( frame-a9 ).
-    t19 = t20.
-    instance->call_badi = t19.
-    DATA t21 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t22) = CAST zlnt_runtime_clas_a39833db3295( frame-a10 ).
-    t21 = t22.
-    instance->class_data = t21.
-    DATA t23 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t24) = CAST zlnt_runtime_clas_a39833db3295( frame-a11 ).
-    t23 = t24.
-    instance->class_data_begin = t23.
-    DATA t25 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t26) = CAST zlnt_runtime_clas_a39833db3295( frame-a12 ).
-    t25 = t26.
-    instance->class_data_end = t25.
-    DATA t27 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t28) = CAST zlnt_runtime_clas_a39833db3295( frame-a13 ).
-    t27 = t28.
-    instance->select_loop = t27.
-    DATA t29 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t30) = CAST zlnt_runtime_clas_a39833db3295( frame-a14 ).
-    t29 = t30.
-    instance->do_3360 = t29.
-    DATA t31 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t32) = CAST zlnt_runtime_clas_a39833db3295( frame-a15 ).
-    t31 = t32.
-    instance->break_id = t31.
-    DATA t33 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t34) = CAST zlnt_runtime_clas_a39833db3295( frame-a16 ).
-    t33 = t34.
-    instance->interface_deferred = t33.
-    DATA t35 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t36) = CAST zlnt_runtime_clas_a39833db3295( frame-a17 ).
-    t35 = t36.
-    instance->while_0a91 = t35.
-    DATA t37 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t38) = CAST zlnt_runtime_clas_a39833db3295( frame-a18 ).
-    t37 = t38.
-    instance->loop_at_screen = t37.
-    DATA t39 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t40) = CAST zlnt_runtime_clas_a39833db3295( frame-a19 ).
-    t39 = t40.
-    instance->loop_c596 = t39.
-    DATA t41 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t42) = CAST zlnt_runtime_clas_a39833db3295( frame-a20 ).
-    t41 = t42.
-    instance->check_6031 = t41.
-    DATA t43 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t44) = CAST zlnt_runtime_clas_a39833db3295( frame-a21 ).
-    t43 = t44.
-    instance->end_provide = t43.
-    DATA t45 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t46) = CAST zlnt_runtime_clas_a39833db3295( frame-a22 ).
-    t45 = t46.
-    instance->if_925a = t45.
-    DATA t47 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t48) = CAST zlnt_runtime_clas_a39833db3295( frame-a23 ).
-    t47 = t48.
-    instance->convert_text = t47.
+    instance->data_4939 = CAST zlnt_runtime_clas_a39833db3295( frame-a0 ).
+    instance->report_d765 = CAST zlnt_runtime_clas_a39833db3295( frame-a1 ).
+    instance->write_91d1 = CAST zlnt_runtime_clas_a39833db3295( frame-a2 ).
+    instance->end_method = CAST zlnt_runtime_clas_a39833db3295( frame-a3 ).
+    instance->method_implementation = CAST zlnt_runtime_clas_a39833db3295( frame-a4 ).
+    instance->end_form = CAST zlnt_runtime_clas_a39833db3295( frame-a5 ).
+    instance->form_e887 = CAST zlnt_runtime_clas_a39833db3295( frame-a6 ).
+    instance->import_nametab = CAST zlnt_runtime_clas_a39833db3295( frame-a7 ).
+    instance->check_select_options = CAST zlnt_runtime_clas_a39833db3295( frame-a8 ).
+    instance->call_badi = CAST zlnt_runtime_clas_a39833db3295( frame-a9 ).
+    instance->class_data = CAST zlnt_runtime_clas_a39833db3295( frame-a10 ).
+    instance->class_data_begin = CAST zlnt_runtime_clas_a39833db3295( frame-a11 ).
+    instance->class_data_end = CAST zlnt_runtime_clas_a39833db3295( frame-a12 ).
+    instance->select_loop = CAST zlnt_runtime_clas_a39833db3295( frame-a13 ).
+    instance->do_3360 = CAST zlnt_runtime_clas_a39833db3295( frame-a14 ).
+    instance->break_id = CAST zlnt_runtime_clas_a39833db3295( frame-a15 ).
+    instance->interface_deferred = CAST zlnt_runtime_clas_a39833db3295( frame-a16 ).
+    instance->while_0a91 = CAST zlnt_runtime_clas_a39833db3295( frame-a17 ).
+    instance->loop_at_screen = CAST zlnt_runtime_clas_a39833db3295( frame-a18 ).
+    instance->loop_c596 = CAST zlnt_runtime_clas_a39833db3295( frame-a19 ).
+    instance->check_6031 = CAST zlnt_runtime_clas_a39833db3295( frame-a20 ).
+    instance->end_provide = CAST zlnt_runtime_clas_a39833db3295( frame-a21 ).
+    instance->if_925a = CAST zlnt_runtime_clas_a39833db3295( frame-a22 ).
+    instance->convert_text = CAST zlnt_runtime_clas_a39833db3295( frame-a23 ).
   ENDMETHOD.
 
   METHOD args_write_2033_1.
-    DATA t1 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t2) = CAST zlnt_runtime_clas_a39833db3295( frame-a24 ).
-    t1 = t2.
-    instance->log_point = t1.
-    DATA t3 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t4) = CAST zlnt_runtime_clas_a39833db3295( frame-a25 ).
-    t3 = t4.
-    instance->window = t3.
-    DATA t5 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t6) = CAST zlnt_runtime_clas_a39833db3295( frame-a26 ).
-    t5 = t6.
-    instance->end_if = t5.
-    DATA t7 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t8) = CAST zlnt_runtime_clas_a39833db3295( frame-a27 ).
-    t7 = t8.
-    instance->type_enum = t7.
-    DATA t9 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t10) = CAST zlnt_runtime_clas_a39833db3295( frame-a28 ).
-    t9 = t10.
-    instance->type_enum_begin = t9.
-    DATA t11 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t12) = CAST zlnt_runtime_clas_a39833db3295( frame-a29 ).
-    t11 = t12.
-    instance->type_enum_end = t11.
-    DATA t13 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t14) = CAST zlnt_runtime_clas_a39833db3295( frame-a30 ).
-    t13 = t14.
-    instance->set_run_time = t13.
-    DATA t15 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t16) = CAST zlnt_runtime_clas_a39833db3295( frame-a31 ).
-    t15 = t16.
-    instance->field_group = t15.
-    DATA t17 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t18) = CAST zlnt_runtime_clas_a39833db3295( frame-a32 ).
-    t17 = t18.
-    instance->print_control = t17.
-    DATA t19 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t20) = CAST zlnt_runtime_clas_a39833db3295( frame-a33 ).
-    t19 = t20.
-    instance->extract = t19.
-    DATA t21 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t22) = CAST zlnt_runtime_clas_a39833db3295( frame-a34 ).
-    t21 = t22.
-    instance->sum = t21.
-    DATA t23 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t24) = CAST zlnt_runtime_clas_a39833db3295( frame-a35 ).
-    t23 = t24.
-    instance->end_of_page = t23.
-    DATA t25 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t26) = CAST zlnt_runtime_clas_a39833db3295( frame-a36 ).
-    t25 = t26.
-    instance->generate_report_04cd = t25.
-    DATA t27 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t28) = CAST zlnt_runtime_clas_a39833db3295( frame-a37 ).
-    t27 = t28.
-    instance->else_if = t27.
-    DATA t29 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t30) = CAST zlnt_runtime_clas_a39833db3295( frame-a38 ).
-    t29 = t30.
-    instance->else = t29.
-    DATA t31 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t32) = CAST zlnt_runtime_clas_a39833db3295( frame-a39 ).
-    t31 = t32.
-    instance->perform_6b17 = t31.
-    DATA t33 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t34) = CAST zlnt_runtime_clas_a39833db3295( frame-a40 ).
-    t33 = t34.
-    instance->append = t33.
-    DATA t35 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t36) = CAST zlnt_runtime_clas_a39833db3295( frame-a41 ).
-    t35 = t36.
-    instance->clear_69de = t35.
-    DATA t37 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t38) = CAST zlnt_runtime_clas_a39833db3295( frame-a42 ).
-    t37 = t38.
-    instance->concatenate = t37.
-    DATA t39 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t40) = CAST zlnt_runtime_clas_a39833db3295( frame-a43 ).
-    t39 = t40.
-    instance->end_do = t39.
-    DATA t41 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t42) = CAST zlnt_runtime_clas_a39833db3295( frame-a44 ).
-    t41 = t42.
-    instance->end_class = t41.
-    DATA t43 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t44) = CAST zlnt_runtime_clas_a39833db3295( frame-a45 ).
-    t43 = t44.
-    instance->try_9fd1 = t43.
-    DATA t45 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t46) = CAST zlnt_runtime_clas_a39833db3295( frame-a46 ).
-    t45 = t46.
-    instance->end_try = t45.
-    DATA t47 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t48) = CAST zlnt_runtime_clas_a39833db3295( frame-a47 ).
-    t47 = t48.
-    instance->assert = t47.
+    instance->log_point = CAST zlnt_runtime_clas_a39833db3295( frame-a24 ).
+    instance->window = CAST zlnt_runtime_clas_a39833db3295( frame-a25 ).
+    instance->end_if = CAST zlnt_runtime_clas_a39833db3295( frame-a26 ).
+    instance->type_enum = CAST zlnt_runtime_clas_a39833db3295( frame-a27 ).
+    instance->type_enum_begin = CAST zlnt_runtime_clas_a39833db3295( frame-a28 ).
+    instance->type_enum_end = CAST zlnt_runtime_clas_a39833db3295( frame-a29 ).
+    instance->set_run_time = CAST zlnt_runtime_clas_a39833db3295( frame-a30 ).
+    instance->field_group = CAST zlnt_runtime_clas_a39833db3295( frame-a31 ).
+    instance->print_control = CAST zlnt_runtime_clas_a39833db3295( frame-a32 ).
+    instance->extract = CAST zlnt_runtime_clas_a39833db3295( frame-a33 ).
+    instance->sum = CAST zlnt_runtime_clas_a39833db3295( frame-a34 ).
+    instance->end_of_page = CAST zlnt_runtime_clas_a39833db3295( frame-a35 ).
+    instance->generate_report_04cd = CAST zlnt_runtime_clas_a39833db3295( frame-a36 ).
+    instance->else_if = CAST zlnt_runtime_clas_a39833db3295( frame-a37 ).
+    instance->else = CAST zlnt_runtime_clas_a39833db3295( frame-a38 ).
+    instance->perform_6b17 = CAST zlnt_runtime_clas_a39833db3295( frame-a39 ).
+    instance->append = CAST zlnt_runtime_clas_a39833db3295( frame-a40 ).
+    instance->clear_69de = CAST zlnt_runtime_clas_a39833db3295( frame-a41 ).
+    instance->concatenate = CAST zlnt_runtime_clas_a39833db3295( frame-a42 ).
+    instance->end_do = CAST zlnt_runtime_clas_a39833db3295( frame-a43 ).
+    instance->end_class = CAST zlnt_runtime_clas_a39833db3295( frame-a44 ).
+    instance->try_9fd1 = CAST zlnt_runtime_clas_a39833db3295( frame-a45 ).
+    instance->end_try = CAST zlnt_runtime_clas_a39833db3295( frame-a46 ).
+    instance->assert = CAST zlnt_runtime_clas_a39833db3295( frame-a47 ).
   ENDMETHOD.
 
   METHOD args_write_2033_2.
-    DATA t1 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t2) = CAST zlnt_runtime_clas_a39833db3295( frame-a48 ).
-    t1 = t2.
-    instance->return_5e94 = t1.
-    DATA t3 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t4) = CAST zlnt_runtime_clas_a39833db3295( frame-a49 ).
-    t3 = t4.
-    instance->end_while = t3.
-    DATA t5 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t6) = CAST zlnt_runtime_clas_a39833db3295( frame-a50 ).
-    t5 = t6.
-    instance->constant = t5.
-    DATA t7 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t8) = CAST zlnt_runtime_clas_a39833db3295( frame-a51 ).
-    t7 = t8.
-    instance->catch = t7.
-    DATA t9 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t10) = CAST zlnt_runtime_clas_a39833db3295( frame-a52 ).
-    t9 = t10.
-    instance->infotypes = t9.
-    DATA t11 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t12) = CAST zlnt_runtime_clas_a39833db3295( frame-a53 ).
-    t11 = t12.
-    instance->message_48f9 = t11.
-    DATA t13 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t14) = CAST zlnt_runtime_clas_a39833db3295( frame-a54 ).
-    t13 = t14.
-    instance->read_table_e6f6 = t13.
-    DATA t15 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t16) = CAST zlnt_runtime_clas_a39833db3295( frame-a55 ).
-    t15 = t16.
-    instance->end_loop = t15.
-    DATA t17 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t18) = CAST zlnt_runtime_clas_a39833db3295( frame-a56 ).
-    t17 = t18.
-    instance->case_1fc5 = t17.
-    DATA t19 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t20) = CAST zlnt_runtime_clas_a39833db3295( frame-a57 ).
-    t19 = t20.
-    instance->create_object_c8e5 = t19.
-    DATA t21 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t22) = CAST zlnt_runtime_clas_a39833db3295( frame-a58 ).
-    t21 = t22.
-    instance->select_178a = t21.
-    DATA t23 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t24) = CAST zlnt_runtime_clas_a39833db3295( frame-a59 ).
-    t23 = t24.
-    instance->call_966f = t23.
-    DATA t25 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t26) = CAST zlnt_runtime_clas_a39833db3295( frame-a60 ).
-    t25 = t26.
-    instance->class_local_friends = t25.
-    DATA t27 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t28) = CAST zlnt_runtime_clas_a39833db3295( frame-a61 ).
-    t27 = t28.
-    instance->class_deferred = t27.
-    DATA t29 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t30) = CAST zlnt_runtime_clas_a39833db3295( frame-a62 ).
-    t29 = t30.
-    instance->field_symbol = t29.
-    DATA t31 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t32) = CAST zlnt_runtime_clas_a39833db3295( frame-a63 ).
-    t31 = t32.
-    instance->class_definition_dd40 = t31.
-    DATA t33 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t34) = CAST zlnt_runtime_clas_a39833db3295( frame-a64 ).
-    t33 = t34.
-    instance->class_implementation = t33.
-    DATA t35 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t36) = CAST zlnt_runtime_clas_a39833db3295( frame-a65 ).
-    t35 = t36.
-    instance->translate = t35.
-    DATA t37 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t38) = CAST zlnt_runtime_clas_a39833db3295( frame-a66 ).
-    t37 = t38.
-    instance->exit = t37.
-    DATA t39 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t40) = CAST zlnt_runtime_clas_a39833db3295( frame-a67 ).
-    t39 = t40.
-    instance->end_case = t39.
-    DATA t41 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t42) = CAST zlnt_runtime_clas_a39833db3295( frame-a68 ).
-    t41 = t42.
-    instance->constant_begin = t41.
-    DATA t43 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t44) = CAST zlnt_runtime_clas_a39833db3295( frame-a69 ).
-    t43 = t44.
-    instance->constant_end = t43.
-    DATA t45 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t46) = CAST zlnt_runtime_clas_a39833db3295( frame-a70 ).
-    t45 = t46.
-    instance->when_others = t45.
-    DATA t47 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t48) = CAST zlnt_runtime_clas_a39833db3295( frame-a71 ).
-    t47 = t48.
-    instance->when_2c09 = t47.
+    instance->return_5e94 = CAST zlnt_runtime_clas_a39833db3295( frame-a48 ).
+    instance->end_while = CAST zlnt_runtime_clas_a39833db3295( frame-a49 ).
+    instance->constant = CAST zlnt_runtime_clas_a39833db3295( frame-a50 ).
+    instance->catch = CAST zlnt_runtime_clas_a39833db3295( frame-a51 ).
+    instance->infotypes = CAST zlnt_runtime_clas_a39833db3295( frame-a52 ).
+    instance->message_48f9 = CAST zlnt_runtime_clas_a39833db3295( frame-a53 ).
+    instance->read_table_e6f6 = CAST zlnt_runtime_clas_a39833db3295( frame-a54 ).
+    instance->end_loop = CAST zlnt_runtime_clas_a39833db3295( frame-a55 ).
+    instance->case_1fc5 = CAST zlnt_runtime_clas_a39833db3295( frame-a56 ).
+    instance->create_object_c8e5 = CAST zlnt_runtime_clas_a39833db3295( frame-a57 ).
+    instance->select_178a = CAST zlnt_runtime_clas_a39833db3295( frame-a58 ).
+    instance->call_966f = CAST zlnt_runtime_clas_a39833db3295( frame-a59 ).
+    instance->class_local_friends = CAST zlnt_runtime_clas_a39833db3295( frame-a60 ).
+    instance->class_deferred = CAST zlnt_runtime_clas_a39833db3295( frame-a61 ).
+    instance->field_symbol = CAST zlnt_runtime_clas_a39833db3295( frame-a62 ).
+    instance->class_definition_dd40 = CAST zlnt_runtime_clas_a39833db3295( frame-a63 ).
+    instance->class_implementation = CAST zlnt_runtime_clas_a39833db3295( frame-a64 ).
+    instance->translate = CAST zlnt_runtime_clas_a39833db3295( frame-a65 ).
+    instance->exit = CAST zlnt_runtime_clas_a39833db3295( frame-a66 ).
+    instance->end_case = CAST zlnt_runtime_clas_a39833db3295( frame-a67 ).
+    instance->constant_begin = CAST zlnt_runtime_clas_a39833db3295( frame-a68 ).
+    instance->constant_end = CAST zlnt_runtime_clas_a39833db3295( frame-a69 ).
+    instance->when_others = CAST zlnt_runtime_clas_a39833db3295( frame-a70 ).
+    instance->when_2c09 = CAST zlnt_runtime_clas_a39833db3295( frame-a71 ).
   ENDMETHOD.
 
   METHOD args_write_2033_3.
-    DATA t1 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t2) = CAST zlnt_runtime_clas_a39833db3295( frame-a72 ).
-    t1 = t2.
-    instance->continue = t1.
-    DATA t3 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t4) = CAST zlnt_runtime_clas_a39833db3295( frame-a73 ).
-    t3 = t4.
-    instance->assign_c3e3 = t3.
-    DATA t5 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t6) = CAST zlnt_runtime_clas_a39833db3295( frame-a74 ).
-    t5 = t6.
-    instance->get_badi_8066 = t5.
-    DATA t7 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t8) = CAST zlnt_runtime_clas_a39833db3295( frame-a75 ).
-    t7 = t8.
-    instance->suppress_dialog = t7.
-    DATA t9 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t10) = CAST zlnt_runtime_clas_a39833db3295( frame-a76 ).
-    t9 = t10.
-    instance->type_e5bc = t9.
-    DATA t11 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t12) = CAST zlnt_runtime_clas_a39833db3295( frame-a77 ).
-    t11 = t12.
-    instance->hide_d6f2 = t11.
-    DATA t13 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t14) = CAST zlnt_runtime_clas_a39833db3295( frame-a78 ).
-    t13 = t14.
-    instance->get_locale = t13.
-    DATA t15 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t16) = CAST zlnt_runtime_clas_a39833db3295( frame-a79 ).
-    t15 = t16.
-    instance->set_locale = t15.
-    DATA t17 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t18) = CAST zlnt_runtime_clas_a39833db3295( frame-a80 ).
-    t17 = t18.
-    instance->commit = t17.
-    DATA t19 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t20) = CAST zlnt_runtime_clas_a39833db3295( frame-a81 ).
-    t19 = t20.
-    instance->modify_screen = t19.
-    DATA t21 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t22) = CAST zlnt_runtime_clas_a39833db3295( frame-a82 ).
-    t21 = t22.
-    instance->commit_entities = t21.
-    DATA t23 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t24) = CAST zlnt_runtime_clas_a39833db3295( frame-a83 ).
-    t23 = t24.
-    instance->modify_entities = t23.
-    DATA t25 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t26) = CAST zlnt_runtime_clas_a39833db3295( frame-a84 ).
-    t25 = t26.
-    instance->read_entities = t25.
-    DATA t27 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t28) = CAST zlnt_runtime_clas_a39833db3295( frame-a85 ).
-    t27 = t28.
-    instance->rollback_entities = t27.
-    DATA t29 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t30) = CAST zlnt_runtime_clas_a39833db3295( frame-a86 ).
-    t29 = t30.
-    instance->summary = t29.
-    DATA t31 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t32) = CAST zlnt_runtime_clas_a39833db3295( frame-a87 ).
-    t31 = t32.
-    instance->input_5b94 = t31.
-    DATA t33 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t34) = CAST zlnt_runtime_clas_a39833db3295( frame-a88 ).
-    t33 = t34.
-    instance->on_change = t33.
-    DATA t35 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t36) = CAST zlnt_runtime_clas_a39833db3295( frame-a89 ).
-    t35 = t36.
-    instance->at_user_command = t35.
-    DATA t37 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t38) = CAST zlnt_runtime_clas_a39833db3295( frame-a90 ).
-    t37 = t38.
-    instance->position_c758 = t37.
-    DATA t39 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t40) = CAST zlnt_runtime_clas_a39833db3295( frame-a91 ).
-    t39 = t40.
-    instance->resume = t39.
-    DATA t41 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t42) = CAST zlnt_runtime_clas_a39833db3295( frame-a92 ).
-    t41 = t42.
-    instance->stop = t41.
-    DATA t43 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t44) = CAST zlnt_runtime_clas_a39833db3295( frame-a93 ).
-    t43 = t44.
-    instance->get_pf_status = t43.
-    DATA t45 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t46) = CAST zlnt_runtime_clas_a39833db3295( frame-a94 ).
-    t45 = t46.
-    instance->delete_report_e98a = t45.
-    DATA t47 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t48) = CAST zlnt_runtime_clas_a39833db3295( frame-a95 ).
-    t47 = t48.
-    instance->controls = t47.
+    instance->continue = CAST zlnt_runtime_clas_a39833db3295( frame-a72 ).
+    instance->assign_c3e3 = CAST zlnt_runtime_clas_a39833db3295( frame-a73 ).
+    instance->get_badi_8066 = CAST zlnt_runtime_clas_a39833db3295( frame-a74 ).
+    instance->suppress_dialog = CAST zlnt_runtime_clas_a39833db3295( frame-a75 ).
+    instance->type_e5bc = CAST zlnt_runtime_clas_a39833db3295( frame-a76 ).
+    instance->hide_d6f2 = CAST zlnt_runtime_clas_a39833db3295( frame-a77 ).
+    instance->get_locale = CAST zlnt_runtime_clas_a39833db3295( frame-a78 ).
+    instance->set_locale = CAST zlnt_runtime_clas_a39833db3295( frame-a79 ).
+    instance->commit = CAST zlnt_runtime_clas_a39833db3295( frame-a80 ).
+    instance->modify_screen = CAST zlnt_runtime_clas_a39833db3295( frame-a81 ).
+    instance->commit_entities = CAST zlnt_runtime_clas_a39833db3295( frame-a82 ).
+    instance->modify_entities = CAST zlnt_runtime_clas_a39833db3295( frame-a83 ).
+    instance->read_entities = CAST zlnt_runtime_clas_a39833db3295( frame-a84 ).
+    instance->rollback_entities = CAST zlnt_runtime_clas_a39833db3295( frame-a85 ).
+    instance->summary = CAST zlnt_runtime_clas_a39833db3295( frame-a86 ).
+    instance->input_5b94 = CAST zlnt_runtime_clas_a39833db3295( frame-a87 ).
+    instance->on_change = CAST zlnt_runtime_clas_a39833db3295( frame-a88 ).
+    instance->at_user_command = CAST zlnt_runtime_clas_a39833db3295( frame-a89 ).
+    instance->position_c758 = CAST zlnt_runtime_clas_a39833db3295( frame-a90 ).
+    instance->resume = CAST zlnt_runtime_clas_a39833db3295( frame-a91 ).
+    instance->stop = CAST zlnt_runtime_clas_a39833db3295( frame-a92 ).
+    instance->get_pf_status = CAST zlnt_runtime_clas_a39833db3295( frame-a93 ).
+    instance->delete_report_e98a = CAST zlnt_runtime_clas_a39833db3295( frame-a94 ).
+    instance->controls = CAST zlnt_runtime_clas_a39833db3295( frame-a95 ).
   ENDMETHOD.
 
   METHOD args_write_2033_4.
-    DATA t1 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t2) = CAST zlnt_runtime_clas_a39833db3295( frame-a96 ).
-    t1 = t2.
-    instance->at_line_selection = t1.
-    DATA t3 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t4) = CAST zlnt_runtime_clas_a39833db3295( frame-a97 ).
-    t3 = t4.
-    instance->new_page = t3.
-    DATA t5 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t6) = CAST zlnt_runtime_clas_a39833db3295( frame-a98 ).
-    t5 = t6.
-    instance->set_dataset = t5.
-    DATA t7 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t8) = CAST zlnt_runtime_clas_a39833db3295( frame-a99 ).
-    t7 = t8.
-    instance->get_property = t7.
-    DATA t9 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t10) = CAST zlnt_runtime_clas_a39833db3295( frame-a100 ).
-    t9 = t10.
-    instance->scroll_list = t9.
-    DATA t11 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t12) = CAST zlnt_runtime_clas_a39833db3295( frame-a101 ).
-    t11 = t12.
-    instance->load_of_program = t11.
-    DATA t13 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t14) = CAST zlnt_runtime_clas_a39833db3295( frame-a102 ).
-    t13 = t14.
-    instance->top_of_page = t13.
-    DATA t15 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t16) = CAST zlnt_runtime_clas_a39833db3295( frame-a103 ).
-    t15 = t16.
-    instance->truncate_dataset = t15.
-    DATA t17 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t18) = CAST zlnt_runtime_clas_a39833db3295( frame-a104 ).
-    t17 = t18.
-    instance->set_update_task = t17.
-    DATA t19 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t20) = CAST zlnt_runtime_clas_a39833db3295( frame-a105 ).
-    t19 = t20.
-    instance->set_user_command = t19.
-    DATA t21 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t22) = CAST zlnt_runtime_clas_a39833db3295( frame-a106 ).
-    t21 = t22.
-    instance->rollback = t21.
-    DATA t23 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t24) = CAST zlnt_runtime_clas_a39833db3295( frame-a107 ).
-    t23 = t24.
-    instance->delete_internal = t23.
-    DATA t25 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t26) = CAST zlnt_runtime_clas_a39833db3295( frame-a108 ).
-    t25 = t26.
-    instance->delete_database_4d9f = t25.
-    DATA t27 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t28) = CAST zlnt_runtime_clas_a39833db3295( frame-a109 ).
-    t27 = t28.
-    instance->delete_dataset = t27.
-    DATA t29 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t30) = CAST zlnt_runtime_clas_a39833db3295( frame-a110 ).
-    t29 = t30.
-    instance->free_memory_dddf = t29.
-    DATA t31 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t32) = CAST zlnt_runtime_clas_a39833db3295( frame-a111 ).
-    t31 = t32.
-    instance->catch_system_exceptions = t31.
-    DATA t33 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t34) = CAST zlnt_runtime_clas_a39833db3295( frame-a112 ).
-    t33 = t34.
-    instance->end_catch = t33.
-    DATA t35 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t36) = CAST zlnt_runtime_clas_a39833db3295( frame-a113 ).
-    t35 = t36.
-    instance->assign_local_copy = t35.
-    DATA t37 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t38) = CAST zlnt_runtime_clas_a39833db3295( frame-a114 ).
-    t37 = t38.
-    instance->set_extended_check = t37.
-    DATA t39 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t40) = CAST zlnt_runtime_clas_a39833db3295( frame-a115 ).
-    t39 = t40.
-    instance->split = t39.
-    DATA t41 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t42) = CAST zlnt_runtime_clas_a39833db3295( frame-a116 ).
-    t41 = t42.
-    instance->new_line = t41.
-    DATA t43 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t44) = CAST zlnt_runtime_clas_a39833db3295( frame-a117 ).
-    t43 = t44.
-    instance->free_object = t43.
-    DATA t45 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t46) = CAST zlnt_runtime_clas_a39833db3295( frame-a118 ).
-    t45 = t46.
-    instance->sort_4f19 = t45.
-    DATA t47 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t48) = CAST zlnt_runtime_clas_a39833db3295( frame-a119 ).
-    t47 = t48.
-    instance->replace_acb7 = t47.
+    instance->at_line_selection = CAST zlnt_runtime_clas_a39833db3295( frame-a96 ).
+    instance->new_page = CAST zlnt_runtime_clas_a39833db3295( frame-a97 ).
+    instance->set_dataset = CAST zlnt_runtime_clas_a39833db3295( frame-a98 ).
+    instance->get_property = CAST zlnt_runtime_clas_a39833db3295( frame-a99 ).
+    instance->scroll_list = CAST zlnt_runtime_clas_a39833db3295( frame-a100 ).
+    instance->load_of_program = CAST zlnt_runtime_clas_a39833db3295( frame-a101 ).
+    instance->top_of_page = CAST zlnt_runtime_clas_a39833db3295( frame-a102 ).
+    instance->truncate_dataset = CAST zlnt_runtime_clas_a39833db3295( frame-a103 ).
+    instance->set_update_task = CAST zlnt_runtime_clas_a39833db3295( frame-a104 ).
+    instance->set_user_command = CAST zlnt_runtime_clas_a39833db3295( frame-a105 ).
+    instance->rollback = CAST zlnt_runtime_clas_a39833db3295( frame-a106 ).
+    instance->delete_internal = CAST zlnt_runtime_clas_a39833db3295( frame-a107 ).
+    instance->delete_database_4d9f = CAST zlnt_runtime_clas_a39833db3295( frame-a108 ).
+    instance->delete_dataset = CAST zlnt_runtime_clas_a39833db3295( frame-a109 ).
+    instance->free_memory_dddf = CAST zlnt_runtime_clas_a39833db3295( frame-a110 ).
+    instance->catch_system_exceptions = CAST zlnt_runtime_clas_a39833db3295( frame-a111 ).
+    instance->end_catch = CAST zlnt_runtime_clas_a39833db3295( frame-a112 ).
+    instance->assign_local_copy = CAST zlnt_runtime_clas_a39833db3295( frame-a113 ).
+    instance->set_extended_check = CAST zlnt_runtime_clas_a39833db3295( frame-a114 ).
+    instance->split = CAST zlnt_runtime_clas_a39833db3295( frame-a115 ).
+    instance->new_line = CAST zlnt_runtime_clas_a39833db3295( frame-a116 ).
+    instance->free_object = CAST zlnt_runtime_clas_a39833db3295( frame-a117 ).
+    instance->sort_4f19 = CAST zlnt_runtime_clas_a39833db3295( frame-a118 ).
+    instance->replace_acb7 = CAST zlnt_runtime_clas_a39833db3295( frame-a119 ).
   ENDMETHOD.
 
   METHOD args_write_2033_5.
-    DATA t1 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t2) = CAST zlnt_runtime_clas_a39833db3295( frame-a120 ).
-    t1 = t2.
-    instance->with = t1.
-    DATA t3 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t4) = CAST zlnt_runtime_clas_a39833db3295( frame-a121 ).
-    t3 = t4.
-    instance->with_loop = t3.
-    DATA t5 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t6) = CAST zlnt_runtime_clas_a39833db3295( frame-a122 ).
-    t5 = t6.
-    instance->end_with = t5.
-    DATA t7 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t8) = CAST zlnt_runtime_clas_a39833db3295( frame-a123 ).
-    t7 = t8.
-    instance->condense = t7.
-    DATA t9 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t10) = CAST zlnt_runtime_clas_a39833db3295( frame-a124 ).
-    t9 = t10.
-    instance->insert_internal = t9.
-    DATA t11 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t12) = CAST zlnt_runtime_clas_a39833db3295( frame-a125 ).
-    t11 = t12.
-    instance->insert_database_0870 = t11.
-    DATA t13 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t14) = CAST zlnt_runtime_clas_a39833db3295( frame-a126 ).
-    t13 = t14.
-    instance->insert_field_group = t13.
-    DATA t15 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t16) = CAST zlnt_runtime_clas_a39833db3295( frame-a127 ).
-    t15 = t16.
-    instance->update_database_e50a = t15.
-    DATA t17 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t18) = CAST zlnt_runtime_clas_a39833db3295( frame-a128 ).
-    t17 = t18.
-    instance->modify_database_f459 = t17.
-    DATA t19 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t20) = CAST zlnt_runtime_clas_a39833db3295( frame-a129 ).
-    t19 = t20.
-    instance->merge_database = t19.
-    DATA t21 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t22) = CAST zlnt_runtime_clas_a39833db3295( frame-a130 ).
-    t21 = t22.
-    instance->modify_internal = t21.
-    DATA t23 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t24) = CAST zlnt_runtime_clas_a39833db3295( frame-a131 ).
-    t23 = t24.
-    instance->raise = t23.
-    DATA t25 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t26) = CAST zlnt_runtime_clas_a39833db3295( frame-a132 ).
-    t25 = t26.
-    instance->define_042e = t25.
-    DATA t27 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t28) = CAST zlnt_runtime_clas_a39833db3295( frame-a133 ).
-    t27 = t28.
-    instance->end_of_definition = t27.
-    DATA t29 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t30) = CAST zlnt_runtime_clas_a39833db3295( frame-a134 ).
-    t29 = t30.
-    instance->find_340f = t29.
-    DATA t31 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t32) = CAST zlnt_runtime_clas_a39833db3295( frame-a135 ).
-    t31 = t32.
-    instance->move_f496 = t31.
-    DATA t33 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t34) = CAST zlnt_runtime_clas_a39833db3295( frame-a136 ).
-    t33 = t34.
-    instance->move_corresponding = t33.
-    DATA t35 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t36) = CAST zlnt_runtime_clas_a39833db3295( frame-a137 ).
-    t35 = t36.
-    instance->get_time = t35.
-    DATA t37 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t38) = CAST zlnt_runtime_clas_a39833db3295( frame-a138 ).
-    t37 = t38.
-    instance->enhancement_point = t37.
-    DATA t39 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t40) = CAST zlnt_runtime_clas_a39833db3295( frame-a139 ).
-    t39 = t40.
-    instance->enhancement_section = t39.
-    DATA t41 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t42) = CAST zlnt_runtime_clas_a39833db3295( frame-a140 ).
-    t41 = t42.
-    instance->end_enhancement_section = t41.
-    DATA t43 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t44) = CAST zlnt_runtime_clas_a39833db3295( frame-a141 ).
-    t43 = t44.
-    instance->set_handler = t43.
-    DATA t45 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t46) = CAST zlnt_runtime_clas_a39833db3295( frame-a142 ).
-    t45 = t46.
-    instance->set_left = t45.
-    DATA t47 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t48) = CAST zlnt_runtime_clas_a39833db3295( frame-a143 ).
-    t47 = t48.
-    instance->pack_3e97 = t47.
+    instance->with = CAST zlnt_runtime_clas_a39833db3295( frame-a120 ).
+    instance->with_loop = CAST zlnt_runtime_clas_a39833db3295( frame-a121 ).
+    instance->end_with = CAST zlnt_runtime_clas_a39833db3295( frame-a122 ).
+    instance->condense = CAST zlnt_runtime_clas_a39833db3295( frame-a123 ).
+    instance->insert_internal = CAST zlnt_runtime_clas_a39833db3295( frame-a124 ).
+    instance->insert_database_0870 = CAST zlnt_runtime_clas_a39833db3295( frame-a125 ).
+    instance->insert_field_group = CAST zlnt_runtime_clas_a39833db3295( frame-a126 ).
+    instance->update_database_e50a = CAST zlnt_runtime_clas_a39833db3295( frame-a127 ).
+    instance->modify_database_f459 = CAST zlnt_runtime_clas_a39833db3295( frame-a128 ).
+    instance->merge_database = CAST zlnt_runtime_clas_a39833db3295( frame-a129 ).
+    instance->modify_internal = CAST zlnt_runtime_clas_a39833db3295( frame-a130 ).
+    instance->raise = CAST zlnt_runtime_clas_a39833db3295( frame-a131 ).
+    instance->define_042e = CAST zlnt_runtime_clas_a39833db3295( frame-a132 ).
+    instance->end_of_definition = CAST zlnt_runtime_clas_a39833db3295( frame-a133 ).
+    instance->find_340f = CAST zlnt_runtime_clas_a39833db3295( frame-a134 ).
+    instance->move_f496 = CAST zlnt_runtime_clas_a39833db3295( frame-a135 ).
+    instance->move_corresponding = CAST zlnt_runtime_clas_a39833db3295( frame-a136 ).
+    instance->get_time = CAST zlnt_runtime_clas_a39833db3295( frame-a137 ).
+    instance->enhancement_point = CAST zlnt_runtime_clas_a39833db3295( frame-a138 ).
+    instance->enhancement_section = CAST zlnt_runtime_clas_a39833db3295( frame-a139 ).
+    instance->end_enhancement_section = CAST zlnt_runtime_clas_a39833db3295( frame-a140 ).
+    instance->set_handler = CAST zlnt_runtime_clas_a39833db3295( frame-a141 ).
+    instance->set_left = CAST zlnt_runtime_clas_a39833db3295( frame-a142 ).
+    instance->pack_3e97 = CAST zlnt_runtime_clas_a39833db3295( frame-a143 ).
   ENDMETHOD.
 
   METHOD args_write_2033_6.
-    DATA t1 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t2) = CAST zlnt_runtime_clas_a39833db3295( frame-a144 ).
-    t1 = t2.
-    instance->case_type = t1.
-    DATA t3 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t4) = CAST zlnt_runtime_clas_a39833db3295( frame-a145 ).
-    t3 = t4.
-    instance->when_type = t3.
-    DATA t5 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t6) = CAST zlnt_runtime_clas_a39833db3295( frame-a146 ).
-    t5 = t6.
-    instance->exec_sql_f319 = t5.
-    DATA t7 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t8) = CAST zlnt_runtime_clas_a39833db3295( frame-a147 ).
-    t7 = t8.
-    instance->open_cursor = t7.
-    DATA t9 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t10) = CAST zlnt_runtime_clas_a39833db3295( frame-a148 ).
-    t9 = t10.
-    instance->communication_41de = t9.
-    DATA t11 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t12) = CAST zlnt_runtime_clas_a39833db3295( frame-a149 ).
-    t11 = t12.
-    instance->generate_subroutine_290c = t11.
-    DATA t13 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t14) = CAST zlnt_runtime_clas_a39833db3295( frame-a150 ).
-    t13 = t14.
-    instance->reject = t13.
-    DATA t15 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t16) = CAST zlnt_runtime_clas_a39833db3295( frame-a151 ).
-    t15 = t16.
-    instance->load_report = t15.
-    DATA t17 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t18) = CAST zlnt_runtime_clas_a39833db3295( frame-a152 ).
-    t17 = t18.
-    instance->private = t17.
-    DATA t19 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t20) = CAST zlnt_runtime_clas_a39833db3295( frame-a153 ).
-    t19 = t20.
-    instance->system_call_438e = t19.
-    DATA t21 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t22) = CAST zlnt_runtime_clas_a39833db3295( frame-a154 ).
-    t21 = t22.
-    instance->set_language = t21.
-    DATA t23 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t24) = CAST zlnt_runtime_clas_a39833db3295( frame-a155 ).
-    t23 = t24.
-    instance->call_dialog = t23.
-    DATA t25 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t26) = CAST zlnt_runtime_clas_a39833db3295( frame-a156 ).
-    t25 = t26.
-    instance->protected = t25.
-    DATA t27 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t28) = CAST zlnt_runtime_clas_a39833db3295( frame-a157 ).
-    t27 = t28.
-    instance->public = t27.
-    DATA t29 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t30) = CAST zlnt_runtime_clas_a39833db3295( frame-a158 ).
-    t29 = t30.
-    instance->nodes_be95 = t29.
-    DATA t31 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t32) = CAST zlnt_runtime_clas_a39833db3295( frame-a159 ).
-    t31 = t32.
-    instance->demand = t31.
-    DATA t33 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t34) = CAST zlnt_runtime_clas_a39833db3295( frame-a160 ).
-    t33 = t34.
-    instance->supply = t33.
-    DATA t35 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t36) = CAST zlnt_runtime_clas_a39833db3295( frame-a161 ).
-    t35 = t36.
-    instance->fields_fbdf = t35.
-    DATA t37 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t38) = CAST zlnt_runtime_clas_a39833db3295( frame-a162 ).
-    t37 = t38.
-    instance->delete_cluster = t37.
-    DATA t39 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t40) = CAST zlnt_runtime_clas_a39833db3295( frame-a163 ).
-    t39 = t40.
-    instance->set_margin = t39.
-    DATA t41 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t42) = CAST zlnt_runtime_clas_a39833db3295( frame-a164 ).
-    t41 = t42.
-    instance->call_database = t41.
-    DATA t43 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t44) = CAST zlnt_runtime_clas_a39833db3295( frame-a165 ).
-    t43 = t44.
-    instance->contexts = t43.
-    DATA t45 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t46) = CAST zlnt_runtime_clas_a39833db3295( frame-a166 ).
-    t45 = t46.
-    instance->interface_2dbc = t45.
-    DATA t47 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t48) = CAST zlnt_runtime_clas_a39833db3295( frame-a167 ).
-    t47 = t48.
-    instance->end_interface = t47.
+    instance->case_type = CAST zlnt_runtime_clas_a39833db3295( frame-a144 ).
+    instance->when_type = CAST zlnt_runtime_clas_a39833db3295( frame-a145 ).
+    instance->exec_sql_f319 = CAST zlnt_runtime_clas_a39833db3295( frame-a146 ).
+    instance->open_cursor = CAST zlnt_runtime_clas_a39833db3295( frame-a147 ).
+    instance->communication_41de = CAST zlnt_runtime_clas_a39833db3295( frame-a148 ).
+    instance->generate_subroutine_290c = CAST zlnt_runtime_clas_a39833db3295( frame-a149 ).
+    instance->reject = CAST zlnt_runtime_clas_a39833db3295( frame-a150 ).
+    instance->load_report = CAST zlnt_runtime_clas_a39833db3295( frame-a151 ).
+    instance->private = CAST zlnt_runtime_clas_a39833db3295( frame-a152 ).
+    instance->system_call_438e = CAST zlnt_runtime_clas_a39833db3295( frame-a153 ).
+    instance->set_language = CAST zlnt_runtime_clas_a39833db3295( frame-a154 ).
+    instance->call_dialog = CAST zlnt_runtime_clas_a39833db3295( frame-a155 ).
+    instance->protected = CAST zlnt_runtime_clas_a39833db3295( frame-a156 ).
+    instance->public = CAST zlnt_runtime_clas_a39833db3295( frame-a157 ).
+    instance->nodes_be95 = CAST zlnt_runtime_clas_a39833db3295( frame-a158 ).
+    instance->demand = CAST zlnt_runtime_clas_a39833db3295( frame-a159 ).
+    instance->supply = CAST zlnt_runtime_clas_a39833db3295( frame-a160 ).
+    instance->fields_fbdf = CAST zlnt_runtime_clas_a39833db3295( frame-a161 ).
+    instance->delete_cluster = CAST zlnt_runtime_clas_a39833db3295( frame-a162 ).
+    instance->set_margin = CAST zlnt_runtime_clas_a39833db3295( frame-a163 ).
+    instance->call_database = CAST zlnt_runtime_clas_a39833db3295( frame-a164 ).
+    instance->contexts = CAST zlnt_runtime_clas_a39833db3295( frame-a165 ).
+    instance->interface_2dbc = CAST zlnt_runtime_clas_a39833db3295( frame-a166 ).
+    instance->end_interface = CAST zlnt_runtime_clas_a39833db3295( frame-a167 ).
   ENDMETHOD.
 
   METHOD args_write_2033_7.
-    DATA t1 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t2) = CAST zlnt_runtime_clas_a39833db3295( frame-a168 ).
-    t1 = t2.
-    instance->parameter_5560 = t1.
-    DATA t3 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t4) = CAST zlnt_runtime_clas_a39833db3295( frame-a169 ).
-    t3 = t4.
-    instance->include_9b20 = t3.
-    DATA t5 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t6) = CAST zlnt_runtime_clas_a39833db3295( frame-a170 ).
-    t5 = t6.
-    instance->collect = t5.
-    DATA t7 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t8) = CAST zlnt_runtime_clas_a39833db3295( frame-a171 ).
-    t7 = t8.
-    instance->ranges_81c8 = t7.
-    DATA t9 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t10) = CAST zlnt_runtime_clas_a39833db3295( frame-a172 ).
-    t9 = t10.
-    instance->events_40c3 = t9.
-    DATA t11 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t12) = CAST zlnt_runtime_clas_a39833db3295( frame-a173 ).
-    t11 = t12.
-    instance->receive = t11.
-    DATA t13 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t14) = CAST zlnt_runtime_clas_a39833db3295( frame-a174 ).
-    t13 = t14.
-    instance->back = t13.
-    DATA t15 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t16) = CAST zlnt_runtime_clas_a39833db3295( frame-a175 ).
-    t15 = t16.
-    instance->add_corresponding = t15.
-    DATA t17 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t18) = CAST zlnt_runtime_clas_a39833db3295( frame-a176 ).
-    t17 = t18.
-    instance->subtract_corresponding = t17.
-    DATA t19 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t20) = CAST zlnt_runtime_clas_a39833db3295( frame-a177 ).
-    t19 = t20.
-    instance->static_begin = t19.
-    DATA t21 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t22) = CAST zlnt_runtime_clas_a39833db3295( frame-a178 ).
-    t21 = t22.
-    instance->static_end = t21.
-    DATA t23 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t24) = CAST zlnt_runtime_clas_a39833db3295( frame-a179 ).
-    t23 = t24.
-    instance->get_dataset = t23.
-    DATA t25 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t26) = CAST zlnt_runtime_clas_a39833db3295( frame-a180 ).
-    t25 = t26.
-    instance->tables_0871 = t25.
-    DATA t27 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t28) = CAST zlnt_runtime_clas_a39833db3295( frame-a181 ).
-    t27 = t28.
-    instance->local_47b5 = t27.
-    DATA t29 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t30) = CAST zlnt_runtime_clas_a39833db3295( frame-a182 ).
-    t29 = t30.
-    instance->add_3508 = t29.
-    DATA t31 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t32) = CAST zlnt_runtime_clas_a39833db3295( frame-a183 ).
-    t31 = t32.
-    instance->describe = t31.
-    DATA t33 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t34) = CAST zlnt_runtime_clas_a39833db3295( frame-a184 ).
-    t33 = t34.
-    instance->submit_67e4 = t33.
-    DATA t35 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t36) = CAST zlnt_runtime_clas_a39833db3295( frame-a185 ).
-    t35 = t36.
-    instance->scan = t35.
-    DATA t37 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t38) = CAST zlnt_runtime_clas_a39833db3295( frame-a186 ).
-    t37 = t38.
-    instance->export = t37.
-    DATA t39 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t40) = CAST zlnt_runtime_clas_a39833db3295( frame-a187 ).
-    t39 = t40.
-    instance->import = t39.
-    DATA t41 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t42) = CAST zlnt_runtime_clas_a39833db3295( frame-a188 ).
-    t41 = t42.
-    instance->at_first = t41.
-    DATA t43 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t44) = CAST zlnt_runtime_clas_a39833db3295( frame-a189 ).
-    t43 = t44.
-    instance->at_last = t43.
-    DATA t45 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t46) = CAST zlnt_runtime_clas_a39833db3295( frame-a190 ).
-    t45 = t46.
-    instance->at_pf = t45.
-    DATA t47 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t48) = CAST zlnt_runtime_clas_a39833db3295( frame-a191 ).
-    t47 = t48.
-    instance->at_c575 = t47.
+    instance->parameter_5560 = CAST zlnt_runtime_clas_a39833db3295( frame-a168 ).
+    instance->include_9b20 = CAST zlnt_runtime_clas_a39833db3295( frame-a169 ).
+    instance->collect = CAST zlnt_runtime_clas_a39833db3295( frame-a170 ).
+    instance->ranges_81c8 = CAST zlnt_runtime_clas_a39833db3295( frame-a171 ).
+    instance->events_40c3 = CAST zlnt_runtime_clas_a39833db3295( frame-a172 ).
+    instance->receive = CAST zlnt_runtime_clas_a39833db3295( frame-a173 ).
+    instance->back = CAST zlnt_runtime_clas_a39833db3295( frame-a174 ).
+    instance->add_corresponding = CAST zlnt_runtime_clas_a39833db3295( frame-a175 ).
+    instance->subtract_corresponding = CAST zlnt_runtime_clas_a39833db3295( frame-a176 ).
+    instance->static_begin = CAST zlnt_runtime_clas_a39833db3295( frame-a177 ).
+    instance->static_end = CAST zlnt_runtime_clas_a39833db3295( frame-a178 ).
+    instance->get_dataset = CAST zlnt_runtime_clas_a39833db3295( frame-a179 ).
+    instance->tables_0871 = CAST zlnt_runtime_clas_a39833db3295( frame-a180 ).
+    instance->local_47b5 = CAST zlnt_runtime_clas_a39833db3295( frame-a181 ).
+    instance->add_3508 = CAST zlnt_runtime_clas_a39833db3295( frame-a182 ).
+    instance->describe = CAST zlnt_runtime_clas_a39833db3295( frame-a183 ).
+    instance->submit_67e4 = CAST zlnt_runtime_clas_a39833db3295( frame-a184 ).
+    instance->scan = CAST zlnt_runtime_clas_a39833db3295( frame-a185 ).
+    instance->export = CAST zlnt_runtime_clas_a39833db3295( frame-a186 ).
+    instance->import = CAST zlnt_runtime_clas_a39833db3295( frame-a187 ).
+    instance->at_first = CAST zlnt_runtime_clas_a39833db3295( frame-a188 ).
+    instance->at_last = CAST zlnt_runtime_clas_a39833db3295( frame-a189 ).
+    instance->at_pf = CAST zlnt_runtime_clas_a39833db3295( frame-a190 ).
+    instance->at_c575 = CAST zlnt_runtime_clas_a39833db3295( frame-a191 ).
   ENDMETHOD.
 
   METHOD args_write_2033_8.
-    DATA t1 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t2) = CAST zlnt_runtime_clas_a39833db3295( frame-a192 ).
-    t1 = t2.
-    instance->put = t1.
-    DATA t3 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t4) = CAST zlnt_runtime_clas_a39833db3295( frame-a193 ).
-    t3 = t4.
-    instance->end_at = t3.
-    DATA t5 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t6) = CAST zlnt_runtime_clas_a39833db3295( frame-a194 ).
-    t5 = t6.
-    instance->end_select_ff0f = t5.
-    DATA t7 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t8) = CAST zlnt_runtime_clas_a39833db3295( frame-a195 ).
-    t7 = t8.
-    instance->refresh_d835 = t7.
-    DATA t9 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t10) = CAST zlnt_runtime_clas_a39833db3295( frame-a196 ).
-    t9 = t10.
-    instance->shift_20b0 = t9.
-    DATA t11 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t12) = CAST zlnt_runtime_clas_a39833db3295( frame-a197 ).
-    t11 = t12.
-    instance->type_mesh = t11.
-    DATA t13 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t14) = CAST zlnt_runtime_clas_a39833db3295( frame-a198 ).
-    t13 = t14.
-    instance->transfer = t13.
-    DATA t15 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t16) = CAST zlnt_runtime_clas_a39833db3295( frame-a199 ).
-    t15 = t16.
-    instance->subtract_f60f = t15.
-    DATA t17 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t18) = CAST zlnt_runtime_clas_a39833db3295( frame-a200 ).
-    t17 = t18.
-    instance->unassign_8208 = t17.
-    DATA t19 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t20) = CAST zlnt_runtime_clas_a39833db3295( frame-a201 ).
-    t19 = t20.
-    instance->open_dataset_1685 = t19.
-    DATA t21 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t22) = CAST zlnt_runtime_clas_a39833db3295( frame-a202 ).
-    t21 = t22.
-    instance->close_dataset = t21.
-    DATA t23 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t24) = CAST zlnt_runtime_clas_a39833db3295( frame-a203 ).
-    t23 = t24.
-    instance->interface_load = t23.
-    DATA t25 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t26) = CAST zlnt_runtime_clas_a39833db3295( frame-a204 ).
-    t25 = t26.
-    instance->close_cursor = t25.
-    DATA t27 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t28) = CAST zlnt_runtime_clas_a39833db3295( frame-a205 ).
-    t27 = t28.
-    instance->leave = t27.
-    DATA t29 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t30) = CAST zlnt_runtime_clas_a39833db3295( frame-a206 ).
-    t29 = t30.
-    instance->class_definition_load = t29.
-    DATA t31 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t32) = CAST zlnt_runtime_clas_a39833db3295( frame-a207 ).
-    t31 = t32.
-    instance->initialization = t31.
-    DATA t33 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t34) = CAST zlnt_runtime_clas_a39833db3295( frame-a208 ).
-    t33 = t34.
-    instance->start_of_selection = t33.
-    DATA t35 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t36) = CAST zlnt_runtime_clas_a39833db3295( frame-a209 ).
-    t35 = t36.
-    instance->set_blank = t35.
-    DATA t37 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t38) = CAST zlnt_runtime_clas_a39833db3295( frame-a210 ).
-    t37 = t38.
-    instance->export_dynpro_d6d2 = t37.
-    DATA t39 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t40) = CAST zlnt_runtime_clas_a39833db3295( frame-a211 ).
-    t39 = t40.
-    instance->end_of_selection = t39.
-    DATA t41 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t42) = CAST zlnt_runtime_clas_a39833db3295( frame-a212 ).
-    t41 = t42.
-    instance->search_5904 = t41.
-    DATA t43 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t44) = CAST zlnt_runtime_clas_a39833db3295( frame-a213 ).
-    t43 = t44.
-    instance->modify_line = t43.
-    DATA t45 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t46) = CAST zlnt_runtime_clas_a39833db3295( frame-a214 ).
-    t45 = t46.
-    instance->selection_screen = t45.
-    DATA t47 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t48) = CAST zlnt_runtime_clas_a39833db3295( frame-a215 ).
-    t47 = t48.
-    instance->free_ae65 = t47.
+    instance->put = CAST zlnt_runtime_clas_a39833db3295( frame-a192 ).
+    instance->end_at = CAST zlnt_runtime_clas_a39833db3295( frame-a193 ).
+    instance->end_select_ff0f = CAST zlnt_runtime_clas_a39833db3295( frame-a194 ).
+    instance->refresh_d835 = CAST zlnt_runtime_clas_a39833db3295( frame-a195 ).
+    instance->shift_20b0 = CAST zlnt_runtime_clas_a39833db3295( frame-a196 ).
+    instance->type_mesh = CAST zlnt_runtime_clas_a39833db3295( frame-a197 ).
+    instance->transfer = CAST zlnt_runtime_clas_a39833db3295( frame-a198 ).
+    instance->subtract_f60f = CAST zlnt_runtime_clas_a39833db3295( frame-a199 ).
+    instance->unassign_8208 = CAST zlnt_runtime_clas_a39833db3295( frame-a200 ).
+    instance->open_dataset_1685 = CAST zlnt_runtime_clas_a39833db3295( frame-a201 ).
+    instance->close_dataset = CAST zlnt_runtime_clas_a39833db3295( frame-a202 ).
+    instance->interface_load = CAST zlnt_runtime_clas_a39833db3295( frame-a203 ).
+    instance->close_cursor = CAST zlnt_runtime_clas_a39833db3295( frame-a204 ).
+    instance->leave = CAST zlnt_runtime_clas_a39833db3295( frame-a205 ).
+    instance->class_definition_load = CAST zlnt_runtime_clas_a39833db3295( frame-a206 ).
+    instance->initialization = CAST zlnt_runtime_clas_a39833db3295( frame-a207 ).
+    instance->start_of_selection = CAST zlnt_runtime_clas_a39833db3295( frame-a208 ).
+    instance->set_blank = CAST zlnt_runtime_clas_a39833db3295( frame-a209 ).
+    instance->export_dynpro_d6d2 = CAST zlnt_runtime_clas_a39833db3295( frame-a210 ).
+    instance->end_of_selection = CAST zlnt_runtime_clas_a39833db3295( frame-a211 ).
+    instance->search_5904 = CAST zlnt_runtime_clas_a39833db3295( frame-a212 ).
+    instance->modify_line = CAST zlnt_runtime_clas_a39833db3295( frame-a213 ).
+    instance->selection_screen = CAST zlnt_runtime_clas_a39833db3295( frame-a214 ).
+    instance->free_ae65 = CAST zlnt_runtime_clas_a39833db3295( frame-a215 ).
   ENDMETHOD.
 
   METHOD args_write_2033_9.
-    DATA t1 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t2) = CAST zlnt_runtime_clas_a39833db3295( frame-a216 ).
-    t1 = t2.
-    instance->end_on = t1.
-    DATA t3 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t4) = CAST zlnt_runtime_clas_a39833db3295( frame-a217 ).
-    t3 = t4.
-    instance->fetch_next_cursor = t3.
-    DATA t5 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t6) = CAST zlnt_runtime_clas_a39833db3295( frame-a218 ).
-    t5 = t6.
-    instance->reserve = t5.
-    DATA t7 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t8) = CAST zlnt_runtime_clas_a39833db3295( frame-a219 ).
-    t7 = t8.
-    instance->raise_entity_event = t7.
-    DATA t9 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t10) = CAST zlnt_runtime_clas_a39833db3295( frame-a220 ).
-    t9 = t10.
-    instance->refresh_control = t9.
-    DATA t11 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t12) = CAST zlnt_runtime_clas_a39833db3295( frame-a221 ).
-    t11 = t12.
-    instance->delete_dynpro_ee3b = t11.
-    DATA t13 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t14) = CAST zlnt_runtime_clas_a39833db3295( frame-a222 ).
-    t13 = t14.
-    instance->generate_dynpro_4f98 = t13.
-    DATA t15 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t16) = CAST zlnt_runtime_clas_a39833db3295( frame-a223 ).
-    t15 = t16.
-    instance->process_on_help_request = t15.
-    DATA t17 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t18) = CAST zlnt_runtime_clas_a39833db3295( frame-a224 ).
-    t17 = t18.
-    instance->detail_5387 = t17.
-    DATA t19 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t20) = CAST zlnt_runtime_clas_a39833db3295( frame-a225 ).
-    t19 = t20.
-    instance->editor_call = t19.
-    DATA t21 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t22) = CAST zlnt_runtime_clas_a39833db3295( frame-a226 ).
-    t21 = t22.
-    instance->break_b498 = t21.
-    DATA t23 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t24) = CAST zlnt_runtime_clas_a39833db3295( frame-a227 ).
-    t23 = t24.
-    instance->delete_textpool_9381 = t23.
-    DATA t25 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t26) = CAST zlnt_runtime_clas_a39833db3295( frame-a228 ).
-    t25 = t26.
-    instance->get_6347 = t25.
-    DATA t27 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t28) = CAST zlnt_runtime_clas_a39833db3295( frame-a229 ).
-    t27 = t28.
-    instance->loop_extract_459c = t27.
-    DATA t29 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t30) = CAST zlnt_runtime_clas_a39833db3295( frame-a230 ).
-    t29 = t30.
-    instance->select_option_6e8f = t29.
-    DATA t31 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t32) = CAST zlnt_runtime_clas_a39833db3295( frame-a231 ).
-    t31 = t32.
-    instance->convert = t31.
-    DATA t33 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t34) = CAST zlnt_runtime_clas_a39833db3295( frame-a232 ).
-    t33 = t34.
-    instance->static_9685 = t33.
-    DATA t35 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t36) = CAST zlnt_runtime_clas_a39833db3295( frame-a233 ).
-    t35 = t36.
-    instance->compute_2725 = t35.
-    DATA t37 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t38) = CAST zlnt_runtime_clas_a39833db3295( frame-a234 ).
-    t37 = t38.
-    instance->multiply_ace2 = t37.
-    DATA t39 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t40) = CAST zlnt_runtime_clas_a39833db3295( frame-a235 ).
-    t39 = t40.
-    instance->divide_f7f7 = t39.
-    DATA t41 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t42) = CAST zlnt_runtime_clas_a39833db3295( frame-a236 ).
-    t41 = t42.
-    instance->format = t41.
-    DATA t43 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t44) = CAST zlnt_runtime_clas_a39833db3295( frame-a237 ).
-    t43 = t44.
-    instance->syntax_check = t43.
-    DATA t45 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t46) = CAST zlnt_runtime_clas_a39833db3295( frame-a238 ).
-    t45 = t46.
-    instance->aliases_dfd7 = t45.
-    DATA t47 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t48) = CAST zlnt_runtime_clas_a39833db3295( frame-a239 ).
-    t47 = t48.
-    instance->method_def = t47.
+    instance->end_on = CAST zlnt_runtime_clas_a39833db3295( frame-a216 ).
+    instance->fetch_next_cursor = CAST zlnt_runtime_clas_a39833db3295( frame-a217 ).
+    instance->reserve = CAST zlnt_runtime_clas_a39833db3295( frame-a218 ).
+    instance->raise_entity_event = CAST zlnt_runtime_clas_a39833db3295( frame-a219 ).
+    instance->refresh_control = CAST zlnt_runtime_clas_a39833db3295( frame-a220 ).
+    instance->delete_dynpro_ee3b = CAST zlnt_runtime_clas_a39833db3295( frame-a221 ).
+    instance->generate_dynpro_4f98 = CAST zlnt_runtime_clas_a39833db3295( frame-a222 ).
+    instance->process_on_help_request = CAST zlnt_runtime_clas_a39833db3295( frame-a223 ).
+    instance->detail_5387 = CAST zlnt_runtime_clas_a39833db3295( frame-a224 ).
+    instance->editor_call = CAST zlnt_runtime_clas_a39833db3295( frame-a225 ).
+    instance->break_b498 = CAST zlnt_runtime_clas_a39833db3295( frame-a226 ).
+    instance->delete_textpool_9381 = CAST zlnt_runtime_clas_a39833db3295( frame-a227 ).
+    instance->get_6347 = CAST zlnt_runtime_clas_a39833db3295( frame-a228 ).
+    instance->loop_extract_459c = CAST zlnt_runtime_clas_a39833db3295( frame-a229 ).
+    instance->select_option_6e8f = CAST zlnt_runtime_clas_a39833db3295( frame-a230 ).
+    instance->convert = CAST zlnt_runtime_clas_a39833db3295( frame-a231 ).
+    instance->static_9685 = CAST zlnt_runtime_clas_a39833db3295( frame-a232 ).
+    instance->compute_2725 = CAST zlnt_runtime_clas_a39833db3295( frame-a233 ).
+    instance->multiply_ace2 = CAST zlnt_runtime_clas_a39833db3295( frame-a234 ).
+    instance->divide_f7f7 = CAST zlnt_runtime_clas_a39833db3295( frame-a235 ).
+    instance->format = CAST zlnt_runtime_clas_a39833db3295( frame-a236 ).
+    instance->syntax_check = CAST zlnt_runtime_clas_a39833db3295( frame-a237 ).
+    instance->aliases_dfd7 = CAST zlnt_runtime_clas_a39833db3295( frame-a238 ).
+    instance->method_def = CAST zlnt_runtime_clas_a39833db3295( frame-a239 ).
   ENDMETHOD.
 
   METHOD args_write_2033_10.
-    DATA t1 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t2) = CAST zlnt_runtime_clas_a39833db3295( frame-a240 ).
-    t1 = t2.
-    instance->type_mesh_begin = t1.
-    DATA t3 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t4) = CAST zlnt_runtime_clas_a39833db3295( frame-a241 ).
-    t3 = t4.
-    instance->type_mesh_end = t3.
-    DATA t5 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t6) = CAST zlnt_runtime_clas_a39833db3295( frame-a242 ).
-    t5 = t6.
-    instance->interface_def = t5.
-    DATA t7 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t8) = CAST zlnt_runtime_clas_a39833db3295( frame-a243 ).
-    t7 = t8.
-    instance->at_selection_screen = t7.
-    DATA t9 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t10) = CAST zlnt_runtime_clas_a39833db3295( frame-a244 ).
-    t9 = t10.
-    instance->include_type = t9.
-    DATA t11 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t12) = CAST zlnt_runtime_clas_a39833db3295( frame-a245 ).
-    t11 = t12.
-    instance->import_dynpro = t11.
-    DATA t13 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t14) = CAST zlnt_runtime_clas_a39833db3295( frame-a246 ).
-    t13 = t14.
-    instance->call_function_e725 = t13.
-    DATA t15 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t16) = CAST zlnt_runtime_clas_a39833db3295( frame-a247 ).
-    t15 = t16.
-    instance->call_selection_screen = t15.
-    DATA t17 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t18) = CAST zlnt_runtime_clas_a39833db3295( frame-a248 ).
-    t17 = t18.
-    instance->call_transformation_54f4 = t17.
-    DATA t19 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t20) = CAST zlnt_runtime_clas_a39833db3295( frame-a249 ).
-    t19 = t20.
-    instance->read_line = t19.
-    DATA t21 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t22) = CAST zlnt_runtime_clas_a39833db3295( frame-a250 ).
-    t21 = t22.
-    instance->read_textpool = t21.
-    DATA t23 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t24) = CAST zlnt_runtime_clas_a39833db3295( frame-a251 ).
-    t23 = t24.
-    instance->read_report = t23.
-    DATA t25 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t26) = CAST zlnt_runtime_clas_a39833db3295( frame-a252 ).
-    t25 = t26.
-    instance->read_dataset = t25.
-    DATA t27 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t28) = CAST zlnt_runtime_clas_a39833db3295( frame-a253 ).
-    t27 = t28.
-    instance->get_bit = t27.
-    DATA t29 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t30) = CAST zlnt_runtime_clas_a39833db3295( frame-a254 ).
-    t29 = t30.
-    instance->get_reference_48e0 = t29.
-    DATA t31 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t32) = CAST zlnt_runtime_clas_a39833db3295( frame-a255 ).
-    t31 = t32.
-    instance->insert_report_118b = t31.
-    DATA t33 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t34) = CAST zlnt_runtime_clas_a39833db3295( frame-a256 ).
-    t33 = t34.
-    instance->insert_textpool_1097 = t33.
-    DATA t35 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t36) = CAST zlnt_runtime_clas_a39833db3295( frame-a257 ).
-    t35 = t36.
-    instance->set_bit = t35.
-    DATA t37 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t38) = CAST zlnt_runtime_clas_a39833db3295( frame-a258 ).
-    t37 = t38.
-    instance->get_run_time = t37.
-    DATA t39 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t40) = CAST zlnt_runtime_clas_a39833db3295( frame-a259 ).
-    t39 = t40.
-    instance->get_parameter_91bd = t39.
-    DATA t41 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t42) = CAST zlnt_runtime_clas_a39833db3295( frame-a260 ).
-    t41 = t42.
-    instance->create_data_b8e4 = t41.
-    DATA t43 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t44) = CAST zlnt_runtime_clas_a39833db3295( frame-a261 ).
-    t43 = t44.
-    instance->set_country = t43.
-    DATA t45 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t46) = CAST zlnt_runtime_clas_a39833db3295( frame-a262 ).
-    t45 = t46.
-    instance->function_module = t45.
-    DATA t47 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t48) = CAST zlnt_runtime_clas_a39833db3295( frame-a263 ).
-    t47 = t48.
-    instance->dynpro_loop = t47.
+    instance->type_mesh_begin = CAST zlnt_runtime_clas_a39833db3295( frame-a240 ).
+    instance->type_mesh_end = CAST zlnt_runtime_clas_a39833db3295( frame-a241 ).
+    instance->interface_def = CAST zlnt_runtime_clas_a39833db3295( frame-a242 ).
+    instance->at_selection_screen = CAST zlnt_runtime_clas_a39833db3295( frame-a243 ).
+    instance->include_type = CAST zlnt_runtime_clas_a39833db3295( frame-a244 ).
+    instance->import_dynpro = CAST zlnt_runtime_clas_a39833db3295( frame-a245 ).
+    instance->call_function_e725 = CAST zlnt_runtime_clas_a39833db3295( frame-a246 ).
+    instance->call_selection_screen = CAST zlnt_runtime_clas_a39833db3295( frame-a247 ).
+    instance->call_transformation_54f4 = CAST zlnt_runtime_clas_a39833db3295( frame-a248 ).
+    instance->read_line = CAST zlnt_runtime_clas_a39833db3295( frame-a249 ).
+    instance->read_textpool = CAST zlnt_runtime_clas_a39833db3295( frame-a250 ).
+    instance->read_report = CAST zlnt_runtime_clas_a39833db3295( frame-a251 ).
+    instance->read_dataset = CAST zlnt_runtime_clas_a39833db3295( frame-a252 ).
+    instance->get_bit = CAST zlnt_runtime_clas_a39833db3295( frame-a253 ).
+    instance->get_reference_48e0 = CAST zlnt_runtime_clas_a39833db3295( frame-a254 ).
+    instance->insert_report_118b = CAST zlnt_runtime_clas_a39833db3295( frame-a255 ).
+    instance->insert_textpool_1097 = CAST zlnt_runtime_clas_a39833db3295( frame-a256 ).
+    instance->set_bit = CAST zlnt_runtime_clas_a39833db3295( frame-a257 ).
+    instance->get_run_time = CAST zlnt_runtime_clas_a39833db3295( frame-a258 ).
+    instance->get_parameter_91bd = CAST zlnt_runtime_clas_a39833db3295( frame-a259 ).
+    instance->create_data_b8e4 = CAST zlnt_runtime_clas_a39833db3295( frame-a260 ).
+    instance->set_country = CAST zlnt_runtime_clas_a39833db3295( frame-a261 ).
+    instance->function_module = CAST zlnt_runtime_clas_a39833db3295( frame-a262 ).
+    instance->dynpro_loop = CAST zlnt_runtime_clas_a39833db3295( frame-a263 ).
   ENDMETHOD.
 
   METHOD args_write_2033_11.
-    DATA t1 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t2) = CAST zlnt_runtime_clas_a39833db3295( frame-a264 ).
-    t1 = t2.
-    instance->type_pools_b851 = t1.
-    DATA t3 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t4) = CAST zlnt_runtime_clas_a39833db3295( frame-a265 ).
-    t3 = t4.
-    instance->type_pool = t3.
-    DATA t5 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t6) = CAST zlnt_runtime_clas_a39833db3295( frame-a266 ).
-    t5 = t6.
-    instance->wait = t5.
-    DATA t7 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t8) = CAST zlnt_runtime_clas_a39833db3295( frame-a267 ).
-    t7 = t8.
-    instance->overlay = t7.
-    DATA t9 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t10) = CAST zlnt_runtime_clas_a39833db3295( frame-a268 ).
-    t9 = t10.
-    instance->set_screen = t9.
-    DATA t11 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t12) = CAST zlnt_runtime_clas_a39833db3295( frame-a269 ).
-    t11 = t12.
-    instance->set_cursor = t11.
-    DATA t13 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t14) = CAST zlnt_runtime_clas_a39833db3295( frame-a270 ).
-    t13 = t14.
-    instance->call_screen = t13.
-    DATA t15 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t16) = CAST zlnt_runtime_clas_a39833db3295( frame-a271 ).
-    t15 = t16.
-    instance->set_pf_status = t15.
-    DATA t17 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t18) = CAST zlnt_runtime_clas_a39833db3295( frame-a272 ).
-    t17 = t18.
-    instance->set_titlebar = t17.
-    DATA t19 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t20) = CAST zlnt_runtime_clas_a39833db3295( frame-a273 ).
-    t19 = t20.
-    instance->program = t19.
-    DATA t21 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t22) = CAST zlnt_runtime_clas_a39833db3295( frame-a274 ).
-    t21 = t22.
-    instance->function_pool = t21.
-    DATA t23 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t24) = CAST zlnt_runtime_clas_a39833db3295( frame-a275 ).
-    t23 = t24.
-    instance->module = t23.
-    DATA t25 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t26) = CAST zlnt_runtime_clas_a39833db3295( frame-a276 ).
-    t25 = t26.
-    instance->end_module = t25.
-    DATA t27 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t28) = CAST zlnt_runtime_clas_a39833db3295( frame-a277 ).
-    t27 = t28.
-    instance->end_function = t27.
-    DATA t29 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t30) = CAST zlnt_runtime_clas_a39833db3295( frame-a278 ).
-    t29 = t30.
-    instance->retry = t29.
-    DATA t31 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t32) = CAST zlnt_runtime_clas_a39833db3295( frame-a279 ).
-    t31 = t32.
-    instance->authority_check_b39c = t31.
-    DATA t33 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t34) = CAST zlnt_runtime_clas_a39833db3295( frame-a280 ).
-    t33 = t34.
-    instance->set_parameter = t33.
-    DATA t35 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t36) = CAST zlnt_runtime_clas_a39833db3295( frame-a281 ).
-    t35 = t36.
-    instance->field = t35.
-    DATA t37 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t38) = CAST zlnt_runtime_clas_a39833db3295( frame-a282 ).
-    t37 = t38.
-    instance->get_cursor = t37.
-    DATA t39 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t40) = CAST zlnt_runtime_clas_a39833db3295( frame-a283 ).
-    t39 = t40.
-    instance->call_kernel = t39.
-    DATA t41 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t42) = CAST zlnt_runtime_clas_a39833db3295( frame-a284 ).
-    t41 = t42.
-    instance->call_transaction_be4a = t41.
-    DATA t43 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t44) = CAST zlnt_runtime_clas_a39833db3295( frame-a285 ).
-    t43 = t44.
-    instance->unpack = t43.
-    DATA t45 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t46) = CAST zlnt_runtime_clas_a39833db3295( frame-a286 ).
-    t45 = t46.
-    instance->skip_18e2 = t45.
-    DATA t47 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t48) = CAST zlnt_runtime_clas_a39833db3295( frame-a287 ).
-    t47 = t48.
-    instance->uline = t47.
+    instance->type_pools_b851 = CAST zlnt_runtime_clas_a39833db3295( frame-a264 ).
+    instance->type_pool = CAST zlnt_runtime_clas_a39833db3295( frame-a265 ).
+    instance->wait = CAST zlnt_runtime_clas_a39833db3295( frame-a266 ).
+    instance->overlay = CAST zlnt_runtime_clas_a39833db3295( frame-a267 ).
+    instance->set_screen = CAST zlnt_runtime_clas_a39833db3295( frame-a268 ).
+    instance->set_cursor = CAST zlnt_runtime_clas_a39833db3295( frame-a269 ).
+    instance->call_screen = CAST zlnt_runtime_clas_a39833db3295( frame-a270 ).
+    instance->set_pf_status = CAST zlnt_runtime_clas_a39833db3295( frame-a271 ).
+    instance->set_titlebar = CAST zlnt_runtime_clas_a39833db3295( frame-a272 ).
+    instance->program = CAST zlnt_runtime_clas_a39833db3295( frame-a273 ).
+    instance->function_pool = CAST zlnt_runtime_clas_a39833db3295( frame-a274 ).
+    instance->module = CAST zlnt_runtime_clas_a39833db3295( frame-a275 ).
+    instance->end_module = CAST zlnt_runtime_clas_a39833db3295( frame-a276 ).
+    instance->end_function = CAST zlnt_runtime_clas_a39833db3295( frame-a277 ).
+    instance->retry = CAST zlnt_runtime_clas_a39833db3295( frame-a278 ).
+    instance->authority_check_b39c = CAST zlnt_runtime_clas_a39833db3295( frame-a279 ).
+    instance->set_parameter = CAST zlnt_runtime_clas_a39833db3295( frame-a280 ).
+    instance->field = CAST zlnt_runtime_clas_a39833db3295( frame-a281 ).
+    instance->get_cursor = CAST zlnt_runtime_clas_a39833db3295( frame-a282 ).
+    instance->call_kernel = CAST zlnt_runtime_clas_a39833db3295( frame-a283 ).
+    instance->call_transaction_be4a = CAST zlnt_runtime_clas_a39833db3295( frame-a284 ).
+    instance->unpack = CAST zlnt_runtime_clas_a39833db3295( frame-a285 ).
+    instance->skip_18e2 = CAST zlnt_runtime_clas_a39833db3295( frame-a286 ).
+    instance->uline = CAST zlnt_runtime_clas_a39833db3295( frame-a287 ).
   ENDMETHOD.
 
   METHOD args_write_2033_12.
-    DATA t1 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t2) = CAST zlnt_runtime_clas_a39833db3295( frame-a288 ).
-    t1 = t2.
-    instance->data_begin = t1.
-    DATA t3 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t4) = CAST zlnt_runtime_clas_a39833db3295( frame-a289 ).
-    t3 = t4.
-    instance->data_end = t3.
-    DATA t5 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t6) = CAST zlnt_runtime_clas_a39833db3295( frame-a290 ).
-    t5 = t6.
-    instance->type_begin = t5.
-    DATA t7 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t8) = CAST zlnt_runtime_clas_a39833db3295( frame-a291 ).
-    t7 = t8.
-    instance->process_after_input = t7.
-    DATA t9 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t10) = CAST zlnt_runtime_clas_a39833db3295( frame-a292 ).
-    t9 = t10.
-    instance->process_before_output = t9.
-    DATA t11 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t12) = CAST zlnt_runtime_clas_a39833db3295( frame-a293 ).
-    t11 = t12.
-    instance->process_on_value_request = t11.
-    DATA t13 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t14) = CAST zlnt_runtime_clas_a39833db3295( frame-a294 ).
-    t13 = t14.
-    instance->type_end = t13.
-    DATA t15 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t16) = CAST zlnt_runtime_clas_a39833db3295( frame-a295 ).
-    t15 = t16.
-    instance->raise_event = t15.
-    DATA t17 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t18) = CAST zlnt_runtime_clas_a39833db3295( frame-a296 ).
-    t17 = t18.
-    instance->cleanup = t17.
-    DATA t19 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t20) = CAST zlnt_runtime_clas_a39833db3295( frame-a297 ).
-    t19 = t20.
-    instance->create_ole = t19.
-    DATA t21 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t22) = CAST zlnt_runtime_clas_a39833db3295( frame-a298 ).
-    t21 = t22.
-    instance->call_ole = t21.
-    DATA t23 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t24) = CAST zlnt_runtime_clas_a39833db3295( frame-a299 ).
-    t23 = t24.
-    instance->set_property = t23.
-    DATA t25 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t26) = CAST zlnt_runtime_clas_a39833db3295( frame-a300 ).
-    t25 = t26.
-    instance->test_injection = t25.
-    DATA t27 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t28) = CAST zlnt_runtime_clas_a39833db3295( frame-a301 ).
-    t27 = t28.
-    instance->end_test_injection = t27.
-    DATA t29 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t30) = CAST zlnt_runtime_clas_a39833db3295( frame-a302 ).
-    t29 = t30.
-    instance->test_seam = t29.
-    DATA t31 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t32) = CAST zlnt_runtime_clas_a39833db3295( frame-a303 ).
-    t31 = t32.
-    instance->end_test_seam = t31.
-    DATA t33 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t34) = CAST zlnt_runtime_clas_a39833db3295( frame-a304 ).
-    t33 = t34.
-    instance->delete_memory = t33.
-    DATA t35 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t36) = CAST zlnt_runtime_clas_a39833db3295( frame-a305 ).
-    t35 = t36.
-    instance->provide = t35.
-    DATA t37 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t38) = CAST zlnt_runtime_clas_a39833db3295( frame-a306 ).
-    t37 = t38.
-    instance->end_exec = t37.
-    DATA t39 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t40) = CAST zlnt_runtime_clas_a39833db3295( frame-a307 ).
-    t39 = t40.
-    instance->chain = t39.
-    DATA t41 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t42) = CAST zlnt_runtime_clas_a39833db3295( frame-a308 ).
-    t41 = t42.
-    instance->end_chain = t41.
-    DATA t43 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t44) = CAST zlnt_runtime_clas_a39833db3295( frame-a309 ).
-    t43 = t44.
-    instance->call_subscreen = t43.
-    DATA t45 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t46) = CAST zlnt_runtime_clas_a39833db3295( frame-a310 ).
-    t45 = t46.
-    instance->sort_dataset = t45.
-    DATA t47 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t48) = CAST zlnt_runtime_clas_a39833db3295( frame-a311 ).
-    t47 = t48.
-    instance->get_permissions = t47.
+    instance->data_begin = CAST zlnt_runtime_clas_a39833db3295( frame-a288 ).
+    instance->data_end = CAST zlnt_runtime_clas_a39833db3295( frame-a289 ).
+    instance->type_begin = CAST zlnt_runtime_clas_a39833db3295( frame-a290 ).
+    instance->process_after_input = CAST zlnt_runtime_clas_a39833db3295( frame-a291 ).
+    instance->process_before_output = CAST zlnt_runtime_clas_a39833db3295( frame-a292 ).
+    instance->process_on_value_request = CAST zlnt_runtime_clas_a39833db3295( frame-a293 ).
+    instance->type_end = CAST zlnt_runtime_clas_a39833db3295( frame-a294 ).
+    instance->raise_event = CAST zlnt_runtime_clas_a39833db3295( frame-a295 ).
+    instance->cleanup = CAST zlnt_runtime_clas_a39833db3295( frame-a296 ).
+    instance->create_ole = CAST zlnt_runtime_clas_a39833db3295( frame-a297 ).
+    instance->call_ole = CAST zlnt_runtime_clas_a39833db3295( frame-a298 ).
+    instance->set_property = CAST zlnt_runtime_clas_a39833db3295( frame-a299 ).
+    instance->test_injection = CAST zlnt_runtime_clas_a39833db3295( frame-a300 ).
+    instance->end_test_injection = CAST zlnt_runtime_clas_a39833db3295( frame-a301 ).
+    instance->test_seam = CAST zlnt_runtime_clas_a39833db3295( frame-a302 ).
+    instance->end_test_seam = CAST zlnt_runtime_clas_a39833db3295( frame-a303 ).
+    instance->delete_memory = CAST zlnt_runtime_clas_a39833db3295( frame-a304 ).
+    instance->provide = CAST zlnt_runtime_clas_a39833db3295( frame-a305 ).
+    instance->end_exec = CAST zlnt_runtime_clas_a39833db3295( frame-a306 ).
+    instance->chain = CAST zlnt_runtime_clas_a39833db3295( frame-a307 ).
+    instance->end_chain = CAST zlnt_runtime_clas_a39833db3295( frame-a308 ).
+    instance->call_subscreen = CAST zlnt_runtime_clas_a39833db3295( frame-a309 ).
+    instance->sort_dataset = CAST zlnt_runtime_clas_a39833db3295( frame-a310 ).
+    instance->get_permissions = CAST zlnt_runtime_clas_a39833db3295( frame-a311 ).
   ENDMETHOD.
 
   METHOD args_write_2033_13.
-    DATA t1 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t2) = CAST zlnt_runtime_clas_a39833db3295( frame-a312 ).
-    t1 = t2.
-    instance->set_locks = t1.
-    DATA t3 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t4) = CAST zlnt_runtime_clas_a39833db3295( frame-a313 ).
-    t3 = t4.
-    instance->enhancement = t3.
-    DATA t5 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t6) = CAST zlnt_runtime_clas_a39833db3295( frame-a314 ).
-    t5 = t6.
-    instance->end_enhancement = t5.
-    DATA t7 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t8) = CAST zlnt_runtime_clas_a39833db3295( frame-a315 ).
-    t7 = t8.
-    instance->form_definition_faa7 = t7.
-    DATA t9 TYPE REF TO zlnt_runtime_clas_a39833db3295.
-    DATA(t10) = CAST zlnt_runtime_clas_a39833db3295( frame-a316 ).
-    t9 = t10.
-    instance->verification_message = t9.
+    instance->set_locks = CAST zlnt_runtime_clas_a39833db3295( frame-a312 ).
+    instance->enhancement = CAST zlnt_runtime_clas_a39833db3295( frame-a313 ).
+    instance->end_enhancement = CAST zlnt_runtime_clas_a39833db3295( frame-a314 ).
+    instance->form_definition_faa7 = CAST zlnt_runtime_clas_a39833db3295( frame-a315 ).
+    instance->verification_message = CAST zlnt_runtime_clas_a39833db3295( frame-a316 ).
   ENDMETHOD.
 ENDCLASS.

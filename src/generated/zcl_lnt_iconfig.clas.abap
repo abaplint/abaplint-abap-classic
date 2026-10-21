@@ -43,27 +43,20 @@ CLASS zcl_lnt_iconfig IMPLEMENTATION.
       me->zlnt_view_source_36f3bf68b9b8 = view_source.
       RETURN.
     ENDIF.
-    DATA(t1) = i_global.
     DATA(t2) = i_dependencies.
     DATA(t3) = i_syntax.
     DATA(t4) = i_rename.
     DATA(t5) = i_app.
     DATA(t6) = i_rules.
     DATA(t7) = i_target_rules.
-    DATA(t8) = t1.
+    DATA(t8) = i_global.
     me->zlnt_view_write_s_5c569edd2912( p0 = t8 ).
-    DATA(t9) = t2.
-    me->zlnt_view_write_s_2a65a0b901ec( p0 = t9 ).
-    DATA(t10) = t3.
-    me->zlnt_view_write_s_37fa673e301e( p0 = t10 ).
-    DATA(t11) = t4.
-    me->zlnt_view_write_s_e921da9cf7c4( p0 = t11 ).
-    DATA(t12) = t5.
-    me->zlnt_view_write_s_8b83e7bd600b( p0 = t12 ).
-    DATA(t13) = t6.
-    me->zlnt_view_write_s_d9e6cf9a7c68( p0 = t13 ).
-    DATA(t14) = t7.
-    me->zlnt_view_write_s_383630b38e32( p0 = t14 ).
+    me->zlnt_view_write_s_2a65a0b901ec( p0 = t2 ).
+    me->zlnt_view_write_s_37fa673e301e( p0 = t3 ).
+    me->zlnt_view_write_s_e921da9cf7c4( p0 = t4 ).
+    me->zlnt_view_write_s_8b83e7bd600b( p0 = t5 ).
+    me->zlnt_view_write_s_d9e6cf9a7c68( p0 = t6 ).
+    me->zlnt_view_write_s_383630b38e32( p0 = t7 ).
   ENDMETHOD.
 
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
@@ -98,7 +91,6 @@ CLASS zcl_lnt_iconfig IMPLEMENTATION.
         IF result IS NOT BOUND.
           IF t1->tag <> zlnt_runtime_dyna_a429568d5be8=>tag_object AND t1->tag <> zlnt_runtime_dyna_a429568d5be8=>tag_string AND t1->tag <> zlnt_runtime_dyna_a429568d5be8=>tag_number AND t1->tag <> zlnt_runtime_dyna_a429568d5be8=>tag_boolean.
             DATA t2 TYPE REF TO zlnt_view_storage_74017ca272ac.
-            CLEAR t2.
             IF t1->tag <> zlnt_runtime_dyna_a429568d5be8=>tag_ref.
               RAISE EXCEPTION TYPE zlnt_view_refusal_6fcecbe45fbf EXPORTING reason = `live_class_view.go: liveView: source is neither object graph nor reference`.
             ENDIF.
@@ -112,29 +104,17 @@ CLASS zcl_lnt_iconfig IMPLEMENTATION.
             ENDIF.
           ENDIF.
           DATA t3 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-          CLEAR t3.
           DATA t4 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-          CLEAR t4.
           DATA t5 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-          CLEAR t5.
           DATA t6 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-          CLEAR t6.
           DATA t7 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-          CLEAR t7.
           DATA t8 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-          CLEAR t8.
           DATA t9 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-          CLEAR t9.
           DATA t10 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-          CLEAR t10.
           DATA t11 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-          CLEAR t11.
           DATA t12 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-          CLEAR t12.
           DATA t13 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-          CLEAR t13.
           DATA t14 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-          CLEAR t14.
           result = NEW zcl_lnt_iglobal_config( view_source = t1 i_files = t3 i_skp_gnrtd_bpf_intrfcs = t4 i_skp_gnrtd_fnctn_grps = t5 i_skp_gnrtd_gtwy_clsss = t6 i_skp_gnrtd_prsstnt_clsss = t7 i_skip_generated_proxy_classes = t8
           i_skp_gnrtd_prxy_intrfcs = t9 i_use_apack_dependencies = t10 i_skip_includes_without_main = t11 i_error_on_duplicate_filenames = t12 i_exclude = t13 i_no_issues = t14 ).
         ENDIF.
@@ -147,14 +127,9 @@ CLASS zcl_lnt_iconfig IMPLEMENTATION.
   METHOD zlnt_view_write_s_5c569edd2912.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t1.
-      CLEAR t1.
       IF p0 IS BOUND.
         DATA t2 TYPE REF TO zlnt_view_storage_74017ca272ac.
-        CLEAR t2.
         DATA t3 TYPE REF TO object.
-        CLEAR t3.
-        CLEAR t2.
         t3 = p0.
         TRY.
             t1 ?= t3.
@@ -179,7 +154,6 @@ CLASS zcl_lnt_iconfig IMPLEMENTATION.
     ELSE.
       me->global = p0.
       DATA t4 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t4.
       IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
         me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `global` p1 = t4 ).
       ENDIF.
@@ -208,9 +182,7 @@ CLASS zcl_lnt_iconfig IMPLEMENTATION.
           ENDIF.
           result->load( ).
           DATA t2 TYPE REF TO object.
-          CLEAR t2.
           DATA t3 TYPE REF TO zcl_lnt_idependency.
-          CLEAR t3.
           LOOP AT result->items INTO t2.
             DATA t4 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
             CLEAR t4.
@@ -247,8 +219,7 @@ CLASS zcl_lnt_iconfig IMPLEMENTATION.
                   CLEAR t7.
                   DATA t8 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
                   CLEAR t8.
-                  DATA(t9) = VALUE string( ).
-                  t3 = NEW zcl_lnt_idependency( view_source = t4 i_url_8ce1 = t6 i_branch = t7 i_folder_5c67 = t8 i_files = t9 ).
+                  t3 = NEW zcl_lnt_idependency( view_source = t4 i_url_8ce1 = t6 i_branch = t7 i_folder_5c67 = t8 i_files = VALUE string( ) ).
                 ENDIF.
               ENDIF.
             ELSE.
@@ -265,16 +236,10 @@ CLASS zcl_lnt_iconfig IMPLEMENTATION.
   METHOD zlnt_view_write_s_2a65a0b901ec.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t1.
-      CLEAR t1.
       IF p0 IS BOUND.
-        CLEAR t1.
         IF p0 IS BOUND.
           DATA t2 TYPE REF TO zlnt_view_storage_74017ca272ac.
-          CLEAR t2.
           DATA t3 TYPE REF TO object.
-          CLEAR t3.
-          CLEAR t2.
           t3 = p0.
           TRY.
               t1 ?= t3.
@@ -300,7 +265,6 @@ CLASS zcl_lnt_iconfig IMPLEMENTATION.
     ELSE.
       me->dependencies = p0.
       DATA t4 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t4.
       IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
         me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `dependencies` p1 = t4 ).
       ENDIF.
@@ -322,7 +286,6 @@ CLASS zcl_lnt_iconfig IMPLEMENTATION.
         IF result IS NOT BOUND.
           IF t1->tag <> zlnt_runtime_dyna_a429568d5be8=>tag_object.
             DATA t2 TYPE REF TO zlnt_view_storage_74017ca272ac.
-            CLEAR t2.
             IF t1->tag <> zlnt_runtime_dyna_a429568d5be8=>tag_ref.
               RAISE EXCEPTION TYPE zlnt_view_refusal_6fcecbe45fbf EXPORTING reason = `live_class_view.go: liveView: source is neither object graph nor reference`.
             ENDIF.
@@ -336,15 +299,10 @@ CLASS zcl_lnt_iconfig IMPLEMENTATION.
             ENDIF.
           ENDIF.
           DATA t3 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-          CLEAR t3.
-          DATA(t4) = VALUE string( ).
           DATA t5 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-          CLEAR t5.
           DATA t6 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-          CLEAR t6.
           DATA t7 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-          CLEAR t7.
-          result = NEW zcl_lnt_isyntax_settings( view_source = t1 i_version = t3 i_error_namespace = t4 i_global_constants = t5 i_ambigious_voids = t6 i_global_macros_5535 = t7 ).
+          result = NEW zcl_lnt_isyntax_settings( view_source = t1 i_version = t3 i_error_namespace = VALUE string( ) i_global_constants = t5 i_ambigious_voids = t6 i_global_macros_5535 = t7 ).
         ENDIF.
       ENDIF.
     ELSE.
@@ -355,14 +313,9 @@ CLASS zcl_lnt_iconfig IMPLEMENTATION.
   METHOD zlnt_view_write_s_37fa673e301e.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t1.
-      CLEAR t1.
       IF p0 IS BOUND.
         DATA t2 TYPE REF TO zlnt_view_storage_74017ca272ac.
-        CLEAR t2.
         DATA t3 TYPE REF TO object.
-        CLEAR t3.
-        CLEAR t2.
         t3 = p0.
         TRY.
             t1 ?= t3.
@@ -387,7 +340,6 @@ CLASS zcl_lnt_iconfig IMPLEMENTATION.
     ELSE.
       me->syntax = p0.
       DATA t4 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t4.
       IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
         me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `syntax` p1 = t4 ).
       ENDIF.
@@ -411,7 +363,6 @@ CLASS zcl_lnt_iconfig IMPLEMENTATION.
           IF result IS NOT BOUND.
             IF t1->tag <> zlnt_runtime_dyna_a429568d5be8=>tag_object.
               DATA t2 TYPE REF TO zlnt_view_storage_74017ca272ac.
-              CLEAR t2.
               IF t1->tag <> zlnt_runtime_dyna_a429568d5be8=>tag_ref.
                 RAISE EXCEPTION TYPE zlnt_view_refusal_6fcecbe45fbf EXPORTING reason = `live_class_view.go: liveView: source is neither object graph nor reference`.
               ENDIF.
@@ -425,11 +376,8 @@ CLASS zcl_lnt_iconfig IMPLEMENTATION.
               ENDIF.
             ENDIF.
             DATA t3 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-            CLEAR t3.
             DATA t4 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-            CLEAR t4.
             DATA t5 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-            CLEAR t5.
             result = NEW zcl_lnt_irename_settings( view_source = t1 i_output = t3 i_skip_34cc = t4 i_patterns = t5 ).
           ENDIF.
         ENDIF.
@@ -442,16 +390,10 @@ CLASS zcl_lnt_iconfig IMPLEMENTATION.
   METHOD zlnt_view_write_s_e921da9cf7c4.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t1.
-      CLEAR t1.
       IF p0 IS BOUND.
-        CLEAR t1.
         IF p0 IS BOUND.
           DATA t2 TYPE REF TO zlnt_view_storage_74017ca272ac.
-          CLEAR t2.
           DATA t3 TYPE REF TO object.
-          CLEAR t3.
-          CLEAR t2.
           t3 = p0.
           TRY.
               t1 ?= t3.
@@ -477,7 +419,6 @@ CLASS zcl_lnt_iconfig IMPLEMENTATION.
     ELSE.
       me->rename = p0.
       DATA t4 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t4.
       IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
         me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `rename` p1 = t4 ).
       ENDIF.
@@ -501,7 +442,6 @@ CLASS zcl_lnt_iconfig IMPLEMENTATION.
           IF result IS NOT BOUND.
             IF t1->tag <> zlnt_runtime_dyna_a429568d5be8=>tag_object.
               DATA t2 TYPE REF TO zlnt_view_storage_74017ca272ac.
-              CLEAR t2.
               IF t1->tag <> zlnt_runtime_dyna_a429568d5be8=>tag_ref.
                 RAISE EXCEPTION TYPE zlnt_view_refusal_6fcecbe45fbf EXPORTING reason = `live_class_view.go: liveView: source is neither object graph nor reference`.
               ENDIF.
@@ -515,7 +455,6 @@ CLASS zcl_lnt_iconfig IMPLEMENTATION.
               ENDIF.
             ENDIF.
             DATA t3 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-            CLEAR t3.
             result = NEW zcl_lnt_iabaplint_app_settings( view_source = t1 i_observations = t3 ).
           ENDIF.
         ENDIF.
@@ -528,16 +467,10 @@ CLASS zcl_lnt_iconfig IMPLEMENTATION.
   METHOD zlnt_view_write_s_8b83e7bd600b.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t1.
-      CLEAR t1.
       IF p0 IS BOUND.
-        CLEAR t1.
         IF p0 IS BOUND.
           DATA t2 TYPE REF TO zlnt_view_storage_74017ca272ac.
-          CLEAR t2.
           DATA t3 TYPE REF TO object.
-          CLEAR t3.
-          CLEAR t2.
           t3 = p0.
           TRY.
               t1 ?= t3.
@@ -563,7 +496,6 @@ CLASS zcl_lnt_iconfig IMPLEMENTATION.
     ELSE.
       me->app = p0.
       DATA t4 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t4.
       IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
         me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `app` p1 = t4 ).
       ENDIF.
@@ -573,8 +505,7 @@ CLASS zcl_lnt_iconfig IMPLEMENTATION.
 
   METHOD zlnt_view_read_sr_0c3f68125cb5.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `rules` ) ).
-      result = t1.
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `rules` ) ).
     ELSE.
       result = me->rules.
     ENDIF.
@@ -587,7 +518,6 @@ CLASS zcl_lnt_iconfig IMPLEMENTATION.
     ELSE.
       me->rules = p0.
       DATA t2 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t2.
       IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
         me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `rules` p1 = t2 ).
       ENDIF.
@@ -610,8 +540,6 @@ CLASS zcl_lnt_iconfig IMPLEMENTATION.
   METHOD zlnt_view_write_s_383630b38e32.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t1.
-      CLEAR t1.
       IF p0 IS BOUND.
         t1 = p0.
       ENDIF.
@@ -619,7 +547,6 @@ CLASS zcl_lnt_iconfig IMPLEMENTATION.
     ELSE.
       me->target_rules = p0.
       DATA t2 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t2.
       IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
         me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `targetRules` p1 = t2 ).
       ENDIF.
@@ -689,7 +616,6 @@ CLASS zcl_lnt_iconfig IMPLEMENTATION.
 
   METHOD zlnt_own_storage_4c72afe8366e~keys.
     DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t1.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       result = zlnt_runtime_ownk_4497b85e405d=>keys( me->zlnt_view_source_36f3bf68b9b8 ).
       RETURN.
@@ -739,10 +665,7 @@ CLASS zcl_lnt_iconfig IMPLEMENTATION.
         CLEAR result.
         IF me->global IS BOUND.
           DATA t1 TYPE REF TO zlnt_view_storage_74017ca272ac.
-          CLEAR t1.
           DATA t2 TYPE REF TO object.
-          CLEAR t2.
-          CLEAR t1.
           t2 = me->global.
           TRY.
               result ?= t2.
@@ -769,10 +692,7 @@ CLASS zcl_lnt_iconfig IMPLEMENTATION.
           CLEAR result.
           IF me->dependencies IS BOUND.
             DATA t3 TYPE REF TO zlnt_view_storage_74017ca272ac.
-            CLEAR t3.
             DATA t4 TYPE REF TO object.
-            CLEAR t4.
-            CLEAR t3.
             t4 = me->dependencies.
             TRY.
                 result ?= t4.
@@ -798,10 +718,7 @@ CLASS zcl_lnt_iconfig IMPLEMENTATION.
         CLEAR result.
         IF me->syntax IS BOUND.
           DATA t5 TYPE REF TO zlnt_view_storage_74017ca272ac.
-          CLEAR t5.
           DATA t6 TYPE REF TO object.
-          CLEAR t6.
-          CLEAR t5.
           t6 = me->syntax.
           TRY.
               result ?= t6.
@@ -828,10 +745,7 @@ CLASS zcl_lnt_iconfig IMPLEMENTATION.
           CLEAR result.
           IF me->rename IS BOUND.
             DATA t7 TYPE REF TO zlnt_view_storage_74017ca272ac.
-            CLEAR t7.
             DATA t8 TYPE REF TO object.
-            CLEAR t8.
-            CLEAR t7.
             t8 = me->rename.
             TRY.
                 result ?= t8.
@@ -859,10 +773,7 @@ CLASS zcl_lnt_iconfig IMPLEMENTATION.
           CLEAR result.
           IF me->app IS BOUND.
             DATA t9 TYPE REF TO zlnt_view_storage_74017ca272ac.
-            CLEAR t9.
             DATA t10 TYPE REF TO object.
-            CLEAR t10.
-            CLEAR t9.
             t10 = me->app.
             TRY.
                 result ?= t10.
@@ -919,7 +830,6 @@ CLASS zcl_lnt_iconfig IMPLEMENTATION.
           IF me->global IS NOT BOUND.
             IF p1->tag <> zlnt_runtime_dyna_a429568d5be8=>tag_object AND p1->tag <> zlnt_runtime_dyna_a429568d5be8=>tag_string AND p1->tag <> zlnt_runtime_dyna_a429568d5be8=>tag_number AND p1->tag <> zlnt_runtime_dyna_a429568d5be8=>tag_boolean.
               DATA t1 TYPE REF TO zlnt_view_storage_74017ca272ac.
-              CLEAR t1.
               IF p1->tag <> zlnt_runtime_dyna_a429568d5be8=>tag_ref.
                 RAISE EXCEPTION TYPE zlnt_view_refusal_6fcecbe45fbf EXPORTING reason = `live_class_view.go: liveView: source is neither object graph nor reference`.
               ENDIF.
@@ -933,29 +843,17 @@ CLASS zcl_lnt_iconfig IMPLEMENTATION.
               ENDIF.
             ENDIF.
             DATA t2 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-            CLEAR t2.
             DATA t3 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-            CLEAR t3.
             DATA t4 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-            CLEAR t4.
             DATA t5 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-            CLEAR t5.
             DATA t6 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-            CLEAR t6.
             DATA t7 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-            CLEAR t7.
             DATA t8 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-            CLEAR t8.
             DATA t9 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-            CLEAR t9.
             DATA t10 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-            CLEAR t10.
             DATA t11 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-            CLEAR t11.
             DATA t12 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-            CLEAR t12.
             DATA t13 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-            CLEAR t13.
             me->global = NEW zcl_lnt_iglobal_config( view_source = p1 i_files = t2 i_skp_gnrtd_bpf_intrfcs = t3 i_skp_gnrtd_fnctn_grps = t4 i_skp_gnrtd_gtwy_clsss = t5 i_skp_gnrtd_prsstnt_clsss = t6 i_skip_generated_proxy_classes = t7
             i_skp_gnrtd_prxy_intrfcs = t8 i_use_apack_dependencies = t9 i_skip_includes_without_main = t10 i_error_on_duplicate_filenames = t11 i_exclude = t12 i_no_issues = t13 ).
           ENDIF.
@@ -980,9 +878,7 @@ CLASS zcl_lnt_iconfig IMPLEMENTATION.
             ENDIF.
             me->dependencies->load( ).
             DATA t14 TYPE REF TO object.
-            CLEAR t14.
             DATA t15 TYPE REF TO zcl_lnt_idependency.
-            CLEAR t15.
             LOOP AT me->dependencies->items INTO t14.
               DATA t16 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
               CLEAR t16.
@@ -1019,8 +915,7 @@ CLASS zcl_lnt_iconfig IMPLEMENTATION.
                     CLEAR t19.
                     DATA t20 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
                     CLEAR t20.
-                    DATA(t21) = VALUE string( ).
-                    t15 = NEW zcl_lnt_idependency( view_source = t16 i_url_8ce1 = t18 i_branch = t19 i_folder_5c67 = t20 i_files = t21 ).
+                    t15 = NEW zcl_lnt_idependency( view_source = t16 i_url_8ce1 = t18 i_branch = t19 i_folder_5c67 = t20 i_files = VALUE string( ) ).
                   ENDIF.
                 ENDIF.
               ELSE.
@@ -1042,7 +937,6 @@ CLASS zcl_lnt_iconfig IMPLEMENTATION.
           IF me->syntax IS NOT BOUND.
             IF p1->tag <> zlnt_runtime_dyna_a429568d5be8=>tag_object.
               DATA t22 TYPE REF TO zlnt_view_storage_74017ca272ac.
-              CLEAR t22.
               IF p1->tag <> zlnt_runtime_dyna_a429568d5be8=>tag_ref.
                 RAISE EXCEPTION TYPE zlnt_view_refusal_6fcecbe45fbf EXPORTING reason = `live_class_view.go: liveView: source is neither object graph nor reference`.
               ENDIF.
@@ -1056,14 +950,10 @@ CLASS zcl_lnt_iconfig IMPLEMENTATION.
               ENDIF.
             ENDIF.
             DATA t23 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-            CLEAR t23.
             DATA(t24) = VALUE string( ).
             DATA t25 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-            CLEAR t25.
             DATA t26 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-            CLEAR t26.
             DATA t27 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-            CLEAR t27.
             me->syntax = NEW zcl_lnt_isyntax_settings( view_source = p1 i_version = t23 i_error_namespace = t24 i_global_constants = t25 i_ambigious_voids = t26 i_global_macros_5535 = t27 ).
           ENDIF.
         ENDIF.
@@ -1082,7 +972,6 @@ CLASS zcl_lnt_iconfig IMPLEMENTATION.
             IF me->rename IS NOT BOUND.
               IF p1->tag <> zlnt_runtime_dyna_a429568d5be8=>tag_object.
                 DATA t28 TYPE REF TO zlnt_view_storage_74017ca272ac.
-                CLEAR t28.
                 IF p1->tag <> zlnt_runtime_dyna_a429568d5be8=>tag_ref.
                   RAISE EXCEPTION TYPE zlnt_view_refusal_6fcecbe45fbf EXPORTING reason = `live_class_view.go: liveView: source is neither object graph nor reference`.
                 ENDIF.
@@ -1096,11 +985,8 @@ CLASS zcl_lnt_iconfig IMPLEMENTATION.
                 ENDIF.
               ENDIF.
               DATA t29 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-              CLEAR t29.
               DATA t30 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-              CLEAR t30.
               DATA t31 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-              CLEAR t31.
               me->rename = NEW zcl_lnt_irename_settings( view_source = p1 i_output = t29 i_skip_34cc = t30 i_patterns = t31 ).
             ENDIF.
           ENDIF.
@@ -1120,7 +1006,6 @@ CLASS zcl_lnt_iconfig IMPLEMENTATION.
             IF me->app IS NOT BOUND.
               IF p1->tag <> zlnt_runtime_dyna_a429568d5be8=>tag_object.
                 DATA t32 TYPE REF TO zlnt_view_storage_74017ca272ac.
-                CLEAR t32.
                 IF p1->tag <> zlnt_runtime_dyna_a429568d5be8=>tag_ref.
                   RAISE EXCEPTION TYPE zlnt_view_refusal_6fcecbe45fbf EXPORTING reason = `live_class_view.go: liveView: source is neither object graph nor reference`.
                 ENDIF.
@@ -1134,7 +1019,6 @@ CLASS zcl_lnt_iconfig IMPLEMENTATION.
                 ENDIF.
               ENDIF.
               DATA t33 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-              CLEAR t33.
               me->app = NEW zcl_lnt_iabaplint_app_settings( view_source = p1 i_observations = t33 ).
             ENDIF.
           ENDIF.
@@ -1163,7 +1047,6 @@ CLASS zcl_lnt_iconfig IMPLEMENTATION.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = p0 p1 = VALUE #( ) ).
     ENDIF.
     DATA t34 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t34.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       me->zlnt_json_ownkeys_70e5fd461788->put( p0 = p0 p1 = t34 ).
     ENDIF.

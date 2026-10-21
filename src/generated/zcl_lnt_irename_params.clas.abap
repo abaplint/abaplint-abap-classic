@@ -19,50 +19,37 @@ CLASS zcl_lnt_irename_params DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_irename_params IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = i_text_document.
     DATA(t2) = i_position_a3fd.
     DATA(t3) = i_new_name.
-    DATA(t4) = t1.
-    me->text_document = t4.
+    me->text_document = i_text_document.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `textDocument`.
     DATA t5 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t5.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `textDocument` p1 = t5 ).
     ENDIF.
-    DATA(t6) = |textDocument|.
     DATA t7 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t7.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t6 p1 = t7 ).
+      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = |textDocument| p1 = t7 ).
     ENDIF.
-    DATA(t8) = t2.
-    me->position_7b94 = t8.
+    me->position_7b94 = t2.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `position`.
     DATA t9 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t9.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `position` p1 = t9 ).
     ENDIF.
-    DATA(t10) = |position|.
     DATA t11 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t11.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t10 p1 = t11 ).
+      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = |position| p1 = t11 ).
     ENDIF.
-    DATA(t12) = t3.
-    me->new_name = t12.
+    me->new_name = t3.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `newName`.
     DATA t13 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t13.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `newName` p1 = t13 ).
     ENDIF.
-    DATA(t14) = |newName|.
     DATA t15 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t15.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t14 p1 = t15 ).
+      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = |newName| p1 = t15 ).
     ENDIF.
   ENDMETHOD.
 
@@ -151,10 +138,7 @@ CLASS zcl_lnt_irename_params IMPLEMENTATION.
         CLEAR result.
         IF me->text_document IS BOUND.
           DATA t1 TYPE REF TO zlnt_view_storage_74017ca272ac.
-          CLEAR t1.
           DATA t2 TYPE REF TO object.
-          CLEAR t2.
-          CLEAR t1.
           t2 = me->text_document.
           TRY.
               result ?= t2.
@@ -179,10 +163,7 @@ CLASS zcl_lnt_irename_params IMPLEMENTATION.
         CLEAR result.
         IF me->position_7b94 IS BOUND.
           DATA t3 TYPE REF TO zlnt_view_storage_74017ca272ac.
-          CLEAR t3.
           DATA t4 TYPE REF TO object.
-          CLEAR t4.
-          CLEAR t3.
           t4 = me->position_7b94.
           TRY.
               result ?= t4.
@@ -232,7 +213,6 @@ CLASS zcl_lnt_irename_params IMPLEMENTATION.
           IF me->text_document IS NOT BOUND.
             IF p1->tag <> zlnt_runtime_dyna_a429568d5be8=>tag_object.
               DATA t1 TYPE REF TO zlnt_view_storage_74017ca272ac.
-              CLEAR t1.
               IF p1->tag <> zlnt_runtime_dyna_a429568d5be8=>tag_ref.
                 RAISE EXCEPTION TYPE zlnt_view_refusal_6fcecbe45fbf EXPORTING reason = `live_class_view.go: liveView: source is neither object graph nor reference`.
               ENDIF.
@@ -262,7 +242,6 @@ CLASS zcl_lnt_irename_params IMPLEMENTATION.
           IF me->position_7b94 IS NOT BOUND.
             IF p1->tag <> zlnt_runtime_dyna_a429568d5be8=>tag_object.
               DATA t3 TYPE REF TO zlnt_view_storage_74017ca272ac.
-              CLEAR t3.
               IF p1->tag <> zlnt_runtime_dyna_a429568d5be8=>tag_ref.
                 RAISE EXCEPTION TYPE zlnt_view_refusal_6fcecbe45fbf EXPORTING reason = `live_class_view.go: liveView: source is neither object graph nor reference`.
               ENDIF.
@@ -277,7 +256,6 @@ CLASS zcl_lnt_irename_params IMPLEMENTATION.
             ENDIF.
             DATA(t4) = VALUE f( ).
             DATA t5 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
-            CLEAR t5.
             me->position_7b94 = NEW zcl_lnt_no_position( view_source = p1 i_line = t4 i_character = t5 ).
           ENDIF.
         ENDIF.
@@ -299,7 +277,6 @@ CLASS zcl_lnt_irename_params IMPLEMENTATION.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = p0 p1 = VALUE #( ) ).
     ENDIF.
     DATA t6 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t6.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       me->zlnt_json_ownkeys_70e5fd461788->put( p0 = p0 p1 = t6 ).
     ENDIF.

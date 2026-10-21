@@ -14,16 +14,10 @@ CLASS zcl_lnt_mssg_typ_and_nmbr IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD get_runnable.
-    DATA t1 TYPE REF TO zif_lnt_statement_runnable.
     DATA t2 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-    CLEAR t2.
-    DATA(t3) = `^[iweaxs]\d\d\d$`.
-    DATA(t4) = |^[iweaxs][0-9][0-9][0-9]$|.
-    DATA(t5) = |i|.
-    CREATE OBJECT t2 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = t4 flags = t5.
-    t2->source = t3.
-    t1 = zcl_lnt_st_combi_module=>regex( i_r_f634 = t2 ).
-    result = t1.
+    CREATE OBJECT t2 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = |^[iweaxs][0-9][0-9][0-9]$| flags = |i|.
+    t2->source = `^[iweaxs]\d\d\d$`.
+    result = zcl_lnt_st_combi_module=>regex( i_r_f634 = t2 ).
 
   ENDMETHOD.
 

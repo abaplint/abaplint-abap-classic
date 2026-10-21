@@ -22,80 +22,59 @@ CLASS zcl_lnt_imatch DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_imatch IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = i_matched.
     DATA(t2) = i_unmatched.
     DATA(t3) = i_error.
     DATA(t4) = i_error_description.
     DATA(t5) = i_error_matched.
-    DATA(t6) = t1.
-    me->matched = t6.
+    me->matched = i_matched.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `matched`.
     DATA t7 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t7.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `matched` p1 = t7 ).
     ENDIF.
-    DATA(t8) = |matched|.
     DATA t9 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t9.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t8 p1 = t9 ).
+      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = |matched| p1 = t9 ).
     ENDIF.
-    DATA(t10) = t2.
-    me->unmatched = t10.
+    me->unmatched = t2.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `unmatched`.
     DATA t11 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t11.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `unmatched` p1 = t11 ).
     ENDIF.
-    DATA(t12) = |unmatched|.
     DATA t13 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t13.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t12 p1 = t13 ).
+      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = |unmatched| p1 = t13 ).
     ENDIF.
-    DATA(t14) = t3.
-    me->error = t14.
+    me->error = t3.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `error`.
     DATA t15 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t15.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `error` p1 = t15 ).
     ENDIF.
-    DATA(t16) = |error|.
     DATA t17 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t17.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t16 p1 = t17 ).
+      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = |error| p1 = t17 ).
     ENDIF.
-    DATA(t18) = t4.
-    me->error_description = t18.
+    me->error_description = t4.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `errorDescription`.
     DATA t19 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t19.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `errorDescription` p1 = t19 ).
     ENDIF.
-    DATA(t20) = |errorDescription|.
     DATA t21 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t21.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t20 p1 = t21 ).
+      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = |errorDescription| p1 = t21 ).
     ENDIF.
-    DATA(t22) = t5.
-    me->error_matched = t22.
+    me->error_matched = t5.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `errorMatched`.
     DATA t23 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t23.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `errorMatched` p1 = t23 ).
     ENDIF.
-    DATA(t24) = |errorMatched|.
     DATA t25 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t25.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t24 p1 = t25 ).
+      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = |errorMatched| p1 = t25 ).
     ENDIF.
   ENDMETHOD.
 
@@ -189,10 +168,7 @@ CLASS zcl_lnt_imatch IMPLEMENTATION.
         CLEAR result.
         IF me->matched IS BOUND.
           DATA t1 TYPE REF TO zlnt_view_storage_74017ca272ac.
-          CLEAR t1.
           DATA t2 TYPE REF TO object.
-          CLEAR t2.
-          CLEAR t1.
           t2 = me->matched.
           TRY.
               result ?= t2.
@@ -217,10 +193,7 @@ CLASS zcl_lnt_imatch IMPLEMENTATION.
         CLEAR result.
         IF me->unmatched IS BOUND.
           DATA t3 TYPE REF TO zlnt_view_storage_74017ca272ac.
-          CLEAR t3.
           DATA t4 TYPE REF TO object.
-          CLEAR t4.
-          CLEAR t3.
           t4 = me->unmatched.
           TRY.
               result ?= t4.
@@ -288,9 +261,7 @@ CLASS zcl_lnt_imatch IMPLEMENTATION.
           ENDIF.
           me->matched->load( ).
           DATA t1 TYPE REF TO object.
-          CLEAR t1.
           DATA t2 TYPE REF TO zcl_lnt_statement_node.
-          CLEAR t2.
           LOOP AT me->matched->items INTO t1.
             DATA t3 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
             CLEAR t3.
@@ -298,7 +269,6 @@ CLASS zcl_lnt_imatch IMPLEMENTATION.
             IF t1 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
               t3 ?= t1.
               DATA t4 TYPE REF TO object.
-              CLEAR t4.
               t4 = t3->as_ref( ).
               t2 ?= t4.
             ELSE.
@@ -324,9 +294,7 @@ CLASS zcl_lnt_imatch IMPLEMENTATION.
           ENDIF.
           me->unmatched->load( ).
           DATA t5 TYPE REF TO object.
-          CLEAR t5.
           DATA t6 TYPE REF TO zcl_lnt_statement_node.
-          CLEAR t6.
           LOOP AT me->unmatched->items INTO t5.
             DATA t7 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
             CLEAR t7.
@@ -334,7 +302,6 @@ CLASS zcl_lnt_imatch IMPLEMENTATION.
             IF t5 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
               t7 ?= t5.
               DATA t8 TYPE REF TO object.
-              CLEAR t8.
               t8 = t7->as_ref( ).
               t6 ?= t8.
             ELSE.
@@ -374,7 +341,6 @@ CLASS zcl_lnt_imatch IMPLEMENTATION.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = p0 p1 = VALUE #( ) ).
     ENDIF.
     DATA t9 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t9.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       me->zlnt_json_ownkeys_70e5fd461788->put( p0 = p0 p1 = t9 ).
     ENDIF.

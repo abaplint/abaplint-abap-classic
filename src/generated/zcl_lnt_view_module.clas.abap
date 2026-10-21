@@ -20,19 +20,12 @@ CLASS zcl_lnt_view_module IMPLEMENTATION.
     IF zcl_lnt_view_module=>zlnt_builtin_init_885f7b9f9121 = abap_false.
       zcl_lnt_view_module=>zlnt_builtin_init_332fcec4d426( ).
     ENDIF.
-    DATA(t1) = NEW zlnt_runtime_map__a1006b231250( ).
-    zcl_lnt_view_module=>view_class_namespace = t1.
+    zcl_lnt_view_module=>view_class_namespace = NEW zlnt_runtime_map__a1006b231250( ).
     DATA t2 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    CLEAR t2.
-    DATA t3 TYPE REF TO zlnt_runtime_map__a1006b231250.
-    CLEAR t3.
     IF zcl_lnt_view_module=>zlnt_builtin_init_885f7b9f9121 = abap_false.
       zcl_lnt_view_module=>zlnt_builtin_init_332fcec4d426( ).
     ENDIF.
-    t3 = zcl_lnt_view_module=>view_class_namespace.
-    DATA(t4) = |ExternalView|.
-    DATA(t5) = |X|.
-    t2 = t3->set( p0 = t4 p1 = t5 ).
+    t2 = zcl_lnt_view_module=>view_class_namespace->set( p0 = |ExternalView| p1 = |X| ).
   ENDMETHOD.
 
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.

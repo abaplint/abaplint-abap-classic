@@ -27,12 +27,10 @@ CLASS zcl_lnt_check_comments_conf IMPLEMENTATION.
       me->zlnt_view_source_36f3bf68b9b8 = view_source.
       RETURN.
     ENDIF.
-    DATA(t1) = abap_false.
-    me->zlnt_view_write_s_1f9bc2af93e1( p0 = t1 ).
-    DATA(t2) = CONV f( 10 ).
+    me->zlnt_view_write_s_1f9bc2af93e1( p0 = abap_false ).
     DATA(t3) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
     t3->has = abap_true.
-    t3->value = t2.
+    t3->value = CONV f( 10 ).
     me->zlnt_view_write_s_f5eda22e8d58( p0 = t3 ).
   ENDMETHOD.
 
@@ -51,8 +49,7 @@ CLASS zcl_lnt_check_comments_conf IMPLEMENTATION.
 
   METHOD zlnt_view_read_sr_938313da583d.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `allowEndOfLine` ) ).
-      result = t1->as_boolean( ).
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `allowEndOfLine` ) )->as_boolean( ).
     ELSE.
       result = me->allow_end_of_line.
     ENDIF.
@@ -61,8 +58,6 @@ CLASS zcl_lnt_check_comments_conf IMPLEMENTATION.
   METHOD zlnt_view_write_s_1f9bc2af93e1.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t1.
-      CLEAR t1.
       CREATE OBJECT t1.
       t1->tag = zlnt_runtime_dyna_a429568d5be8=>tag_boolean.
       t1->bval = p0.
@@ -93,10 +88,7 @@ CLASS zcl_lnt_check_comments_conf IMPLEMENTATION.
   METHOD zlnt_view_write_s_f5eda22e8d58.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t1.
-      CLEAR t1.
       IF p0 IS BOUND AND p0->has = abap_true.
-        CLEAR t1.
         CREATE OBJECT t1.
         t1->tag = zlnt_runtime_dyna_a429568d5be8=>tag_number.
         t1->nval = p0->value.
@@ -140,7 +132,6 @@ CLASS zcl_lnt_check_comments_conf IMPLEMENTATION.
 
   METHOD zlnt_own_storage_4c72afe8366e~keys.
     DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t1.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       result = zlnt_runtime_ownk_4497b85e405d=>keys( me->zlnt_view_source_36f3bf68b9b8 ).
       RETURN.
@@ -193,10 +184,7 @@ CLASS zcl_lnt_check_comments_conf IMPLEMENTATION.
           CLEAR result.
           IF me->exclude IS BOUND.
             DATA t1 TYPE REF TO zlnt_view_storage_74017ca272ac.
-            CLEAR t1.
             DATA t2 TYPE REF TO object.
-            CLEAR t2.
-            CLEAR t1.
             t2 = me->exclude.
             TRY.
                 result ?= t2.

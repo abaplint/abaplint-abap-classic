@@ -18,35 +18,26 @@ CLASS zcl_lnt_shape_cd8a49be DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_shape_cd8a49be IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = i_viewclass.
     DATA(t2) = i_ddtext_4f13.
-    DATA(t3) = t1.
-    me->viewclass = t3.
+    me->viewclass = i_viewclass.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `VIEWCLASS`.
     DATA t4 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t4.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `VIEWCLASS` p1 = t4 ).
     ENDIF.
-    DATA(t5) = |VIEWCLASS|.
     DATA t6 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t6.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t5 p1 = t6 ).
+      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = |VIEWCLASS| p1 = t6 ).
     ENDIF.
-    DATA(t7) = t2.
-    me->ddtext_87ee = t7.
+    me->ddtext_87ee = t2.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `DDTEXT`.
     DATA t8 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t8.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `DDTEXT` p1 = t8 ).
     ENDIF.
-    DATA(t9) = |DDTEXT|.
     DATA t10 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t10.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t9 p1 = t10 ).
+      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = |DDTEXT| p1 = t10 ).
     ENDIF.
   ENDMETHOD.
 
@@ -189,7 +180,6 @@ CLASS zcl_lnt_shape_cd8a49be IMPLEMENTATION.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = p0 p1 = VALUE #( ) ).
     ENDIF.
     DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t1.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       me->zlnt_json_ownkeys_70e5fd461788->put( p0 = p0 p1 = t1 ).
     ENDIF.

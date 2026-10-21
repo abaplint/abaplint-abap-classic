@@ -20,8 +20,7 @@ CLASS zcl_lnt_interfaces_module IMPLEMENTATION.
     IF zcl_lnt_interfaces_module=>zlnt_builtin_init_67322045648e = abap_false.
       zcl_lnt_interfaces_module=>zlnt_builtin_init_213df4d97709( ).
     ENDIF.
-    DATA(t1) = NEW zlnt_runtime_map__a5ffc3d163a5( ).
-    zcl_lnt_interfaces_module=>ns = t1.
+    zcl_lnt_interfaces_module=>ns = NEW zlnt_runtime_map__a5ffc3d163a5( ).
   ENDMETHOD.
 
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.

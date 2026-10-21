@@ -12,34 +12,23 @@ CLASS zcl_lnt_sy_format DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_sy_format IMPLEMENTATION.
   METHOD run_syntax.
-    DATA(t1) = i_node.
     DATA(t2) = i_input_967e.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t4) = t1.
-    DATA t5 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
+    DATA(t4) = i_node.
     DATA t6 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t7 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t7.
-    t6 = t7.
-    DATA(t8) = t6.
+    CREATE OBJECT t6.
     DATA(t9) = zlnt_runtime_desc_78196487750d=>zlnt_member_d95_8e6c9823a7c185.
-    t8->load( ).
-    APPEND t9 TO t8->items.
-    t8->save( ).
-    DATA(t10) = t6.
+    t6->load( ).
+    APPEND t9 TO t6->items.
+    t6->save( ).
     DATA(t11) = zlnt_runtime_desc_78196487750d=>zlnt_member_d94_8a2bfacd888428.
-    t10->load( ).
-    APPEND t11 TO t10->items.
-    t10->save( ).
-    DATA(t12) = t6.
-    t5 = t12.
+    t6->load( ).
+    APPEND t11 TO t6->items.
+    t6->save( ).
     DATA t13 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-    CLEAR t13.
-    t3 = t4->find_all_expressions_multi( i_type_9913 = t5 i_recursive = t13 ).
+    t3 = t4->find_all_expressions_multi( i_type_9913 = t6 i_recursive = t13 ).
     DATA t14 TYPE REF TO zcl_lnt_expression_node.
-    CLEAR t14.
     DATA t15 TYPE REF TO object.
-    CLEAR t15.
     DATA(t16) = VALUE i( ).
     DO.
       t3->load( ).
@@ -61,19 +50,9 @@ CLASS zcl_lnt_sy_format IMPLEMENTATION.
         t14 ?= t15.
       ENDIF.
       DATA t19 TYPE REF TO zcl_lnt_abstract_type.
-      CLEAR t19.
       DATA t20 TYPE REF TO zcl_lnt_expression_node.
       CLEAR t20.
-      DATA(t21) = abap_true.
-      IF t21 = abap_true.
-        DATA(t22) = t14.
-        t20 = t22.
-      ELSE.
-        DATA t23 TYPE REF TO zcl_lnt_expression_node.
-        CLEAR t23.
-        t20 = t23.
-      ENDIF.
-      DATA(t24) = t2.
+      t20 = t14.
       DATA t25 TYPE REF TO zcl_lnt_abstract_type.
       CLEAR t25.
       DATA t26 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
@@ -82,7 +61,7 @@ CLASS zcl_lnt_sy_format IMPLEMENTATION.
       CLEAR t27.
       DATA t28 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
       CLEAR t28.
-      t19 = zcl_lnt_sy_source=>run_syntax( i_node = t20 i_input_967e = t24 i_target_type = t25 i_write_reference = t26 i_allow_generic_deference = t27 i_read_reference = t28 ).
+      t19 = zcl_lnt_sy_source=>run_syntax( i_node = t20 i_input_967e = t2 i_target_type = t25 i_write_reference = t26 i_allow_generic_deference = t27 i_read_reference = t28 ).
     ENDDO.
   ENDMETHOD.
 

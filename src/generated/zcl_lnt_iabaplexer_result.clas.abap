@@ -18,35 +18,26 @@ CLASS zcl_lnt_iabaplexer_result DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_iabaplexer_result IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = i_file.
     DATA(t2) = i_tokens.
-    DATA(t3) = t1.
-    me->file = t3.
+    me->file = i_file.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `file`.
     DATA t4 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t4.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `file` p1 = t4 ).
     ENDIF.
-    DATA(t5) = |file|.
     DATA t6 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t6.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t5 p1 = t6 ).
+      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = |file| p1 = t6 ).
     ENDIF.
-    DATA(t7) = t2.
-    me->tokens = t7.
+    me->tokens = t2.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `tokens`.
     DATA t8 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t8.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `tokens` p1 = t8 ).
     ENDIF.
-    DATA(t9) = |tokens|.
     DATA t10 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t10.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t9 p1 = t10 ).
+      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = |tokens| p1 = t10 ).
     ENDIF.
   ENDMETHOD.
 
@@ -133,13 +124,8 @@ CLASS zcl_lnt_iabaplexer_result IMPLEMENTATION.
         CLEAR result.
         IF me->file IS BOUND.
           DATA t1 TYPE REF TO zlnt_view_storage_74017ca272ac.
-          CLEAR t1.
-          DATA t2 TYPE REF TO object.
-          CLEAR t2.
-          CLEAR t1.
-          t2 = me->file.
           TRY.
-              result ?= t2.
+              result ?= me->file.
             CATCH cx_sy_move_cast_error.
           ENDTRY.
           IF result IS NOT BOUND.
@@ -161,10 +147,7 @@ CLASS zcl_lnt_iabaplexer_result IMPLEMENTATION.
         CLEAR result.
         IF me->tokens IS BOUND.
           DATA t3 TYPE REF TO zlnt_view_storage_74017ca272ac.
-          CLEAR t3.
           DATA t4 TYPE REF TO object.
-          CLEAR t4.
-          CLEAR t3.
           t4 = me->tokens.
           TRY.
               result ?= t4.
@@ -199,7 +182,6 @@ CLASS zcl_lnt_iabaplexer_result IMPLEMENTATION.
     CASE p0.
       WHEN `file`.
         DATA t1 TYPE REF TO object.
-        CLEAR t1.
         t1 = p1->as_ref( ).
         me->file ?= t1.
         DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `file`.
@@ -220,9 +202,7 @@ CLASS zcl_lnt_iabaplexer_result IMPLEMENTATION.
           ENDIF.
           me->tokens->load( ).
           DATA t2 TYPE REF TO object.
-          CLEAR t2.
           DATA t3 TYPE REF TO zcl_lnt_abstract_token.
-          CLEAR t3.
           LOOP AT me->tokens->items INTO t2.
             DATA t4 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
             CLEAR t4.
@@ -230,7 +210,6 @@ CLASS zcl_lnt_iabaplexer_result IMPLEMENTATION.
             IF t2 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
               t4 ?= t2.
               DATA t5 TYPE REF TO object.
-              CLEAR t5.
               t5 = t4->as_ref( ).
               t3 ?= t5.
             ELSE.
@@ -253,7 +232,6 @@ CLASS zcl_lnt_iabaplexer_result IMPLEMENTATION.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = p0 p1 = VALUE #( ) ).
     ENDIF.
     DATA t6 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t6.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       me->zlnt_json_ownkeys_70e5fd461788->put( p0 = p0 p1 = t6 ).
     ENDIF.

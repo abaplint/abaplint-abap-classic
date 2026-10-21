@@ -15,38 +15,32 @@ CLASS zcl_lnt_date_type DEFINITION PUBLIC INHERITING FROM zcl_lnt_abstract_type 
 ENDCLASS.
 CLASS zcl_lnt_date_type IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = i_input_967e.
-    DATA(t2) = t1.
+    DATA(t2) = i_input_967e.
     super->constructor( i_input_967e = t2 ).
   ENDMETHOD.
 
   METHOD t_t_i_s_a_t_b_d_t_t_dt_ty_93f7.
-    DATA(t1) = |```d```|.
-    result = t1.
+    result = |```d```|.
 
   ENDMETHOD.
 
   METHOD is_generic.
-    DATA(t1) = abap_false.
-    result = t1.
+    result = abap_false.
 
   ENDMETHOD.
 
   METHOD to_abap.
-    DATA(t1) = |d|.
-    result = t1.
+    result = |d|.
 
   ENDMETHOD.
 
   METHOD contains_void.
-    DATA(t1) = abap_false.
-    result = t1.
+    result = abap_false.
 
   ENDMETHOD.
 
   METHOD to_cds.
-    DATA(t1) = |abap.dats|.
-    result = t1.
+    result = |abap.dats|.
 
   ENDMETHOD.
 

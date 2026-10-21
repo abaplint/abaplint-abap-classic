@@ -14,42 +14,20 @@ CLASS zcl_lnt_sql_expose_client_as IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD get_runnable.
-    DATA t1 TYPE REF TO zif_lnt_statement_runnable.
-    CLEAR t1.
-    DATA t2 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t2.
     DATA t3 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t3.
-    DATA(t4) = |EXPOSE CLIENT AS|.
-    CLEAR t3.
     CREATE OBJECT t3.
     t3->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t3->sval = t4.
-    t2 = t3.
-    DATA t5 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t5.
+    t3->sval = |EXPOSE CLIENT AS|.
     DATA t6 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t6.
     DATA t7 TYPE REF TO zif_lnt_statement_runnable.
-    CLEAR t7.
     DATA t8 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-    CLEAR t8.
-    DATA(t9) = `^\w+$`.
-    DATA(t10) = |^[A-Za-z0-9_]+$|.
-    DATA(t11) = ||.
-    CREATE OBJECT t8 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = t10 flags = t11.
-    t8->source = t9.
+    CREATE OBJECT t8 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = |^[A-Za-z0-9_]+$| flags = ||.
+    t8->source = `^\w+$`.
     t7 = zcl_lnt_st_combi_module=>regex( i_r_f634 = t8 ).
-    CLEAR t6.
     IF t7 IS BOUND.
       DATA t12 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      CLEAR t12.
-      DATA t13 TYPE REF TO object.
-      CLEAR t13.
-      CLEAR t12.
-      t13 = t7.
       TRY.
-          t6 ?= t13.
+          t6 ?= t7.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t6 IS NOT BOUND.
@@ -67,21 +45,9 @@ CLASS zcl_lnt_sql_expose_client_as IMPLEMENTATION.
         ENDIF.
       ENDIF.
     ENDIF.
-    t5 = t6.
-    DATA t14 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CLEAR t14.
     DATA t15 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CLEAR t15.
     CREATE OBJECT t15.
-    t14 = t15.
-    DATA t16 TYPE REF TO zif_lnt_statement_runnable.
-    CLEAR t16.
-    DATA(t17) = t2.
-    DATA(t18) = t5.
-    DATA(t19) = t14.
-    t16 = zcl_lnt_st_combi_module=>seq( i_first = t17 i_second = t18 i_rest = t19 ).
-    t1 = t16.
-    result = t1.
+    result = zcl_lnt_st_combi_module=>seq( i_first = t3 i_second = t6 i_rest = t15 ).
 
   ENDMETHOD.
 

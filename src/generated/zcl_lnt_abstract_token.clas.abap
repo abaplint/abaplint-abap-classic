@@ -22,18 +22,14 @@ CLASS zcl_lnt_abstract_token DEFINITION PUBLIC ABSTRACT CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_abstract_token IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = i_start.
     DATA(t2) = i_str.
-    DATA(t3) = t1.
-    me->start = t3.
+    me->start = i_start.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `start`.
-    DATA(t4) = t2.
-    me->str = t4.
+    me->str = t2.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `str`.
     DATA t5 TYPE string.
-    DATA(t6) = t2.
-    DATA(t7) = strlen( t6 ).
-    t5 = t6.
+    DATA(t7) = strlen( t2 ).
+    t5 = t2.
     IF t5 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
       TRANSLATE t5 TO UPPER CASE.
     ELSE.
@@ -68,68 +64,32 @@ CLASS zcl_lnt_abstract_token IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD get_row.
-    DATA t1 TYPE f.
-    DATA t2 TYPE REF TO zcl_lnt_position.
-    DATA(t3) = me->start.
-    t2 = t3.
-    DATA t4 TYPE f.
-    DATA(t5) = t2.
-    t4 = t5->row.
-    t1 = t4.
-    result = t1.
+    result = me->start->row.
 
   ENDMETHOD.
 
   METHOD get_col.
-    DATA t1 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
-    DATA t2 TYPE REF TO zcl_lnt_position.
-    DATA(t3) = me->start.
-    t2 = t3.
-    DATA t4 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
-    DATA(t5) = t2.
-    t4 = t5->col.
-    t1 = t4.
-    result = t1.
+    result = me->start->col.
 
   ENDMETHOD.
 
   METHOD get_start.
-    DATA(t1) = me->start.
-    result = t1.
+    result = me->start.
 
   ENDMETHOD.
 
   METHOD get_end.
-    DATA t1 TYPE REF TO zcl_lnt_position.
     DATA t2 TYPE f.
-    DATA t3 TYPE REF TO zcl_lnt_position.
-    DATA(t4) = me->start.
-    t3 = t4.
-    DATA t5 TYPE f.
-    DATA(t6) = t3.
-    t5 = t6->row.
-    t2 = t5.
-    DATA t7 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
+    t2 = me->start->row.
     DATA t8 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
-    DATA t9 TYPE REF TO zcl_lnt_position.
-    DATA(t10) = me->start.
-    t9 = t10.
-    DATA t11 TYPE REF TO zlnt_runtime_opti_8df4f98f9a3a.
-    DATA(t12) = t9.
-    t11 = t12->col.
-    t8 = t11.
+    t8 = me->start->col.
     DATA t13 TYPE f.
-    DATA t14 TYPE i.
     DATA(t15) = CONV string( me->str ).
-    DATA(t16) = strlen( t15 ).
-    t14 = t16.
-    t13 = t14.
+    t13 = strlen( t15 ).
     DATA(t17) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
     t17->has = abap_true.
     t17->value = t13.
-    t7 = zlnt_runtime_numb_290eb04a9758=>calculate( left = t8 right = t17 op = `+` ).
-    t1 = NEW zcl_lnt_position( i_row = t2 i_col = t7 ).
-    result = t1.
+    result = NEW zcl_lnt_position( i_row = t2 i_col = zlnt_runtime_numb_290eb04a9758=>calculate( left = t8 right = t17 op = `+` ) ).
 
   ENDMETHOD.
 

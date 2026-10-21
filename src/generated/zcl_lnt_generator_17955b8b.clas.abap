@@ -13,13 +13,10 @@ CLASS zcl_lnt_generator_17955b8b DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_generator_17955b8b IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = i_done.
     DATA(t2) = i_value.
-    DATA(t3) = t1.
-    me->done = t3.
+    me->done = i_done.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `done`.
-    DATA(t4) = t2.
-    me->value = t4.
+    me->value = t2.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `value`.
   ENDMETHOD.
 

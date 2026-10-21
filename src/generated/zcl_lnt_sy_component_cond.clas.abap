@@ -16,13 +16,10 @@ CLASS zcl_lnt_sy_component_cond IMPLEMENTATION.
     DATA(t3) = i_left_type.
     DATA(t4) = i_right_type.
     DATA t5 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t6) = t1.
     DATA(t7) = zlnt_runtime_desc_78196487750d=>zlnt_member_d132_568147cc297b.
-    t5 = t6->find_direct_expressions( i_type_9913 = t7 ).
+    t5 = t1->find_direct_expressions( i_type_9913 = t7 ).
     DATA t8 TYPE REF TO zcl_lnt_expression_node.
-    CLEAR t8.
     DATA t9 TYPE REF TO object.
-    CLEAR t9.
     DATA(t10) = VALUE i( ).
     DO.
       t5->load( ).
@@ -44,32 +41,17 @@ CLASS zcl_lnt_sy_component_cond IMPLEMENTATION.
         t8 ?= t9.
       ENDIF.
       DATA t13 TYPE REF TO zcl_lnt_expression_node.
-      DATA t14 TYPE REF TO zcl_lnt_expression_node.
-      DATA(t15) = t8.
       DATA(t16) = zlnt_runtime_desc_78196487750d=>zlnt_member_d133_716522bf3a6a.
-      t14 = t15->find_direct_expression( i_type_9913 = t16 ).
-      t13 = t14.
-      DATA t17 TYPE abap_bool.
-      DATA(t18) = t13.
-      t17 = xsdbool( t18 IS BOUND ).
-      IF t17 = abap_true.
-        DATA t19 TYPE REF TO zcl_lnt_expression_node.
-        DATA(t20) = t13.
-        t19 = t20.
-        DATA(t21) = t2.
-        DATA(t22) = t3.
-        DATA(t23) = t4.
-        zcl_lnt_sy_component_cond=>run_syntax( i_node = t19 i_input_967e = t21 i_left_type = t22 i_right_type = t23 ).
+      t13 = t8->find_direct_expression( i_type_9913 = t16 ).
+      IF xsdbool( t13 IS BOUND ) = abap_true.
+        zcl_lnt_sy_component_cond=>run_syntax( i_node = t13 i_input_967e = t2 i_left_type = t3 i_right_type = t4 ).
       ENDIF.
     ENDDO.
     DATA t24 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t25) = t1.
     DATA(t26) = zlnt_runtime_desc_78196487750d=>zlnt_member_d128_b497db583ff7.
-    t24 = t25->find_direct_expressions( i_type_9913 = t26 ).
+    t24 = t1->find_direct_expressions( i_type_9913 = t26 ).
     DATA t27 TYPE REF TO zcl_lnt_expression_node.
-    CLEAR t27.
     DATA t28 TYPE REF TO object.
-    CLEAR t28.
     DATA(t29) = VALUE i( ).
     DO.
       t24->load( ).
@@ -90,11 +72,7 @@ CLASS zcl_lnt_sy_component_cond IMPLEMENTATION.
       ELSE.
         t27 ?= t28.
       ENDIF.
-      DATA(t32) = t27.
-      DATA(t33) = t2.
-      DATA(t34) = t3.
-      DATA(t35) = t4.
-      zcl_lnt_sy_component_compare=>run_syntax( i_node = t32 i_input_967e = t33 i_left_type = t34 i_right_type = t35 ).
+      zcl_lnt_sy_component_compare=>run_syntax( i_node = t27 i_input_967e = t2 i_left_type = t3 i_right_type = t4 ).
     ENDDO.
   ENDMETHOD.
 

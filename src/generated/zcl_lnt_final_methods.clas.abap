@@ -14,44 +14,24 @@ CLASS zcl_lnt_final_methods IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD get_runnable.
-    DATA t1 TYPE REF TO zif_lnt_statement_runnable.
-    CLEAR t1.
-    DATA t2 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t2.
     DATA t3 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t3.
-    DATA(t4) = |FINAL METHODS|.
-    CLEAR t3.
     CREATE OBJECT t3.
     t3->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t3->sval = t4.
-    t2 = t3.
-    DATA t5 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t5.
+    t3->sval = |FINAL METHODS|.
     DATA t6 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t6.
     DATA t7 TYPE REF TO zif_lnt_statement_runnable.
-    CLEAR t7.
     DATA t8 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t8.
     DATA(t9) = zlnt_runtime_desc_78196487750d=>zlnt_member_d88_73c97f542216fb.
-    CLEAR t8.
     IF t9 IS BOUND.
       CREATE OBJECT t8.
       t8->tag = zlnt_runtime_dyna_a429568d5be8=>tag_class.
       t8->cval = t9.
     ENDIF.
     t7 = zcl_lnt_st_combi_module=>plus( i_first = t8 ).
-    CLEAR t6.
     IF t7 IS BOUND.
       DATA t10 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      CLEAR t10.
-      DATA t11 TYPE REF TO object.
-      CLEAR t11.
-      CLEAR t10.
-      t11 = t7.
       TRY.
-          t6 ?= t11.
+          t6 ?= t7.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t6 IS NOT BOUND.
@@ -69,21 +49,9 @@ CLASS zcl_lnt_final_methods IMPLEMENTATION.
         ENDIF.
       ENDIF.
     ENDIF.
-    t5 = t6.
-    DATA t12 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CLEAR t12.
     DATA t13 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CLEAR t13.
     CREATE OBJECT t13.
-    t12 = t13.
-    DATA t14 TYPE REF TO zif_lnt_statement_runnable.
-    CLEAR t14.
-    DATA(t15) = t2.
-    DATA(t16) = t5.
-    DATA(t17) = t12.
-    t14 = zcl_lnt_st_combi_module=>seq( i_first = t15 i_second = t16 i_rest = t17 ).
-    t1 = t14.
-    result = t1.
+    result = zcl_lnt_st_combi_module=>seq( i_first = t3 i_second = t6 i_rest = t13 ).
 
   ENDMETHOD.
 

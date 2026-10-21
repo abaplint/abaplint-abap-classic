@@ -13,19 +13,16 @@ CLASS zcl_lnt_exclude_helper IMPLEMENTATION.
   METHOD is_excluded.
     DATA(t1) = i_filename.
     DATA(t2) = i_exclude_patterns.
-    DATA(t3) = t2.
     DATA t4 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-    CLEAR t4.
     DATA t5 TYPE REF TO object.
-    CLEAR t5.
     DATA(t6) = VALUE i( ).
     DO.
-      t3->load( ).
-      IF t6 >= lines( t3->items ).
+      t2->load( ).
+      IF t6 >= lines( t2->items ).
         EXIT.
       ENDIF.
       CLEAR t5.
-      READ TABLE t3->items INDEX t6 + 1 INTO t5.
+      READ TABLE t2->items INDEX t6 + 1 INTO t5.
       t6 = t6 + 1.
       DATA t7 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t7.
@@ -33,42 +30,29 @@ CLASS zcl_lnt_exclude_helper IMPLEMENTATION.
       IF t5 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
         t7 ?= t5.
         RAISE EXCEPTION TYPE zlnt_view_refusal_6fcecbe45fbf EXPORTING reason = `live_class_view.go: liveUnbox: slot has no exact unbox ABI`.
-      ELSE.
-        t4 ?= t5.
       ENDIF.
-      DATA(t8) = VALUE abap_bool( ).
-      DATA(t9) = t4.
-      DATA(t10) = VALUE string( ).
+      t4 ?= t5.
+
       DATA t11 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      DATA(t12) = t1.
-      t11 = t12.
+      t11 = t1.
       DATA(t13) = VALUE string( ).
       DATA(t14) = VALUE abap_bool( ).
-      DATA(t15) = t11.
-      IF t15 IS INITIAL.
+      IF t11 IS INITIAL.
         t14 = abap_true.
-      ELSEIF t15->has = abap_false.
+      ELSEIF t11->has = abap_false.
         t14 = abap_true.
       ENDIF.
       IF t14 = abap_true.
-        DATA(t16) = |undefined|.
-        t13 = t16.
+        t13 = |undefined|.
       ELSE.
-        DATA t17 TYPE string.
-        DATA(t18) = t11.
-        t17 = t18->value.
-        t13 = t17.
+        t13 = t11->value.
       ENDIF.
-      t10 = t13.
-      t8 = t9->test( p0 = t10 ).
-      IF t8 = abap_true.
-        DATA(t19) = abap_true.
-        result = t19.
+      IF t4->test( p0 = t13 ) = abap_true.
+        result = abap_true.
         RETURN.
       ENDIF.
     ENDDO.
-    DATA(t20) = abap_false.
-    result = t20.
+    result = abap_false.
 
   ENDMETHOD.
 

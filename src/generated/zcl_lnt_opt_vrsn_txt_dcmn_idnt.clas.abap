@@ -27,12 +27,10 @@ CLASS zcl_lnt_opt_vrsn_txt_dcmn_idnt IMPLEMENTATION.
       me->zlnt_view_source_36f3bf68b9b8 = view_source.
       RETURN.
     ENDIF.
-    DATA(t1) = i_uri.
     DATA(t2) = i_version.
-    DATA(t3) = t1.
+    DATA(t3) = i_uri.
     me->zlnt_view_write_n_dabd9edac27f( p0 = t3 ).
-    DATA(t4) = t2.
-    me->zlnt_view_write_n_6e886c2a45d5( p0 = t4 ).
+    me->zlnt_view_write_n_6e886c2a45d5( p0 = t2 ).
   ENDMETHOD.
 
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
@@ -55,8 +53,7 @@ CLASS zcl_lnt_opt_vrsn_txt_dcmn_idnt IMPLEMENTATION.
 
   METHOD zlnt_view_read_no_99604757acee.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `uri` ) ).
-      result = t1->as_string( ).
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `uri` ) )->as_string( ).
     ELSE.
       result = me->uri.
     ENDIF.
@@ -65,8 +62,6 @@ CLASS zcl_lnt_opt_vrsn_txt_dcmn_idnt IMPLEMENTATION.
   METHOD zlnt_view_write_n_dabd9edac27f.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t1.
-      CLEAR t1.
       CREATE OBJECT t1.
       t1->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
       t1->sval = p0.
@@ -74,7 +69,6 @@ CLASS zcl_lnt_opt_vrsn_txt_dcmn_idnt IMPLEMENTATION.
     ELSE.
       me->uri = p0.
       DATA t2 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t2.
       IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
         me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `uri` p1 = t2 ).
       ENDIF.
@@ -84,8 +78,7 @@ CLASS zcl_lnt_opt_vrsn_txt_dcmn_idnt IMPLEMENTATION.
 
   METHOD zlnt_view_read_no_e6ded1ef8a27.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `version` ) ).
-      result = t1.
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `version` ) ).
     ELSE.
       result = me->version.
     ENDIF.
@@ -98,7 +91,6 @@ CLASS zcl_lnt_opt_vrsn_txt_dcmn_idnt IMPLEMENTATION.
     ELSE.
       me->version = p0.
       DATA t2 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t2.
       IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
         me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `version` p1 = t2 ).
       ENDIF.
@@ -154,7 +146,6 @@ CLASS zcl_lnt_opt_vrsn_txt_dcmn_idnt IMPLEMENTATION.
 
   METHOD zlnt_own_storage_4c72afe8366e~keys.
     DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t1.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       result = zlnt_runtime_ownk_4497b85e405d=>keys( me->zlnt_view_source_36f3bf68b9b8 ).
       RETURN.
@@ -243,7 +234,6 @@ CLASS zcl_lnt_opt_vrsn_txt_dcmn_idnt IMPLEMENTATION.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = p0 p1 = VALUE #( ) ).
     ENDIF.
     DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t1.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       me->zlnt_json_ownkeys_70e5fd461788->put( p0 = p0 p1 = t1 ).
     ENDIF.

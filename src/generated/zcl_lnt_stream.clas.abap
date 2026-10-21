@@ -15,14 +15,11 @@ CLASS zcl_lnt_stream DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_stream IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = i_buffer.
-    DATA(t2) = t1.
-    me->buffer = t2.
+    me->buffer = i_buffer.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `buffer`.
   ENDMETHOD.
 
   METHOD take_next.
-    DATA(t1) = VALUE string( ).
     DATA(t2) = VALUE string( ).
     DATA(t3) = CONV string( me->buffer ).
     DATA(t4) = 0.
@@ -37,19 +34,14 @@ CLASS zcl_lnt_stream IMPLEMENTATION.
     ENDIF.
     t6 = t5 - t4.
     t2 = t3+t4(t6).
-    t1 = t2.
-    DATA(t7) = VALUE string( ).
     DATA t8 TYPE string.
     DATA(t9) = CONV string( me->buffer ).
     t8 = t9.
     DATA(t10) = VALUE string( ).
-    DATA(t11) = t8.
     DATA(t12) = 1.
     DATA t13 TYPE i.
-    DATA(t14) = t8.
-    DATA(t15) = strlen( t14 ).
-    t13 = t15.
-    DATA(t16) = strlen( t11 ).
+    t13 = strlen( t8 ).
+    DATA(t16) = strlen( t8 ).
     t12 = COND i( WHEN t12 < 0 THEN 0 WHEN t12 > t16 THEN t16 ELSE t12 ).
     t13 = COND i( WHEN t13 < 0 THEN 0 WHEN t13 > t16 THEN t16 ELSE t13 ).
     IF t12 > t13.
@@ -58,17 +50,14 @@ CLASS zcl_lnt_stream IMPLEMENTATION.
       t13 = t16.
     ENDIF.
     t16 = t13 - t12.
-    t10 = t11+t12(t16).
-    t7 = t10.
-    me->buffer = t7.
+    t10 = t8+t12(t16).
+    me->buffer = t10.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `buffer`.
-    DATA(t17) = t1.
-    result = t17.
+    result = t2.
 
   ENDMETHOD.
 
   METHOD peek_next.
-    DATA(t1) = VALUE string( ).
     DATA(t2) = VALUE string( ).
     DATA(t3) = CONV string( me->buffer ).
     DATA(t4) = 0.
@@ -83,19 +72,14 @@ CLASS zcl_lnt_stream IMPLEMENTATION.
     ENDIF.
     t6 = t5 - t4.
     t2 = t3+t4(t6).
-    t1 = t2.
-    DATA(t7) = t1.
-    result = t7.
+    result = t2.
 
   ENDMETHOD.
 
   METHOD length.
     DATA t1 TYPE f.
-    DATA t2 TYPE i.
     DATA(t3) = CONV string( me->buffer ).
-    DATA(t4) = strlen( t3 ).
-    t2 = t4.
-    t1 = t2.
+    t1 = strlen( t3 ).
     result = t1.
 
   ENDMETHOD.

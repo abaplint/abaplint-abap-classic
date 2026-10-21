@@ -13,59 +13,30 @@ CLASS zcl_lnt_st_data DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_st_data IMPLEMENTATION.
   METHOD get_matcher.
-    DATA t1 TYPE REF TO zif_lnt_statement_runnable.
-    CLEAR t1.
-    DATA t2 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t2.
     DATA t3 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t3.
-    DATA(t4) = |DATA|.
-    CLEAR t3.
     CREATE OBJECT t3.
     t3->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t3->sval = t4.
-    t2 = t3.
-    DATA t5 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t5.
+    t3->sval = |DATA|.
     DATA t6 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t6.
     DATA(t7) = zlnt_runtime_desc_78196487750d=>zlnt_member_d154_aaa60b9d16df.
-    CLEAR t6.
     IF t7 IS BOUND.
       CREATE OBJECT t6.
       t6->tag = zlnt_runtime_dyna_a429568d5be8=>tag_class.
       t6->cval = t7.
     ENDIF.
-    t5 = t6.
     DATA t8 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CLEAR t8.
-    DATA t9 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CLEAR t9.
-    CREATE OBJECT t9.
-    t8 = t9.
-    DATA(t10) = t8.
+    CREATE OBJECT t8.
     DATA t11 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t11.
     DATA t12 TYPE REF TO zif_lnt_statement_runnable.
-    CLEAR t12.
     DATA t13 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t13.
-    DATA(t14) = |%_PREDEFINED|.
-    CLEAR t13.
     CREATE OBJECT t13.
     t13->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t13->sval = t14.
+    t13->sval = |%_PREDEFINED|.
     t12 = zcl_lnt_st_combi_module=>opt_prio( i_first = t13 ).
-    CLEAR t11.
     IF t12 IS BOUND.
       DATA t15 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      CLEAR t15.
-      DATA t16 TYPE REF TO object.
-      CLEAR t16.
-      CLEAR t15.
-      t16 = t12.
       TRY.
-          t11 ?= t16.
+          t11 ?= t12.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t11 IS NOT BOUND.
@@ -83,17 +54,10 @@ CLASS zcl_lnt_st_data IMPLEMENTATION.
         ENDIF.
       ENDIF.
     ENDIF.
-    t10->load( ).
-    APPEND t11 TO t10->items.
-    t10->save( ).
-    DATA t17 TYPE REF TO zif_lnt_statement_runnable.
-    CLEAR t17.
-    DATA(t18) = t2.
-    DATA(t19) = t5.
-    DATA(t20) = t8.
-    t17 = zcl_lnt_st_combi_module=>seq( i_first = t18 i_second = t19 i_rest = t20 ).
-    t1 = t17.
-    result = t1.
+    t8->load( ).
+    APPEND t11 TO t8->items.
+    t8->save( ).
+    result = zcl_lnt_st_combi_module=>seq( i_first = t3 i_second = t6 i_rest = t8 ).
 
   ENDMETHOD.
 

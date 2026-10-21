@@ -27,12 +27,10 @@ CLASS zcl_lnt_isyntax_result IMPLEMENTATION.
       me->zlnt_view_source_36f3bf68b9b8 = view_source.
       RETURN.
     ENDIF.
-    DATA(t1) = i_issues.
     DATA(t2) = i_spaghetti.
-    DATA(t3) = t1.
+    DATA(t3) = i_issues.
     me->zlnt_view_write_s_6bf517164d8f( p0 = t3 ).
-    DATA(t4) = t2.
-    me->zlnt_view_write_s_7720575782fc( p0 = t4 ).
+    me->zlnt_view_write_s_7720575782fc( p0 = t2 ).
   ENDMETHOD.
 
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
@@ -72,9 +70,7 @@ CLASS zcl_lnt_isyntax_result IMPLEMENTATION.
         ENDIF.
         result->load( ).
         DATA t2 TYPE REF TO object.
-        CLEAR t2.
         DATA t3 TYPE REF TO zcl_lnt_issue.
-        CLEAR t3.
         LOOP AT result->items INTO t2.
           DATA t4 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t4.
@@ -82,7 +78,6 @@ CLASS zcl_lnt_isyntax_result IMPLEMENTATION.
           IF t2 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
             t4 ?= t2.
             DATA t5 TYPE REF TO object.
-            CLEAR t5.
             t5 = t4->as_ref( ).
             t3 ?= t5.
           ELSE.
@@ -98,14 +93,9 @@ CLASS zcl_lnt_isyntax_result IMPLEMENTATION.
   METHOD zlnt_view_write_s_6bf517164d8f.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t1.
-      CLEAR t1.
       IF p0 IS BOUND.
         DATA t2 TYPE REF TO zlnt_view_storage_74017ca272ac.
-        CLEAR t2.
         DATA t3 TYPE REF TO object.
-        CLEAR t3.
-        CLEAR t2.
         t3 = p0.
         TRY.
             t1 ?= t3.
@@ -130,7 +120,6 @@ CLASS zcl_lnt_isyntax_result IMPLEMENTATION.
     ELSE.
       me->issues = p0.
       DATA t4 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t4.
       IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
         me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `issues` p1 = t4 ).
       ENDIF.
@@ -140,9 +129,8 @@ CLASS zcl_lnt_isyntax_result IMPLEMENTATION.
 
   METHOD zlnt_view_read_sr_b6b1d9e0c93e.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `spaghetti` ) ).
       DATA t2 TYPE REF TO object.
-      t2 = t1->as_ref( ).
+      t2 = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `spaghetti` ) )->as_ref( ).
       result ?= t2.
     ELSE.
       result = me->spaghetti.
@@ -152,17 +140,10 @@ CLASS zcl_lnt_isyntax_result IMPLEMENTATION.
   METHOD zlnt_view_write_s_7720575782fc.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t1.
-      CLEAR t1.
       IF p0 IS BOUND.
         DATA t2 TYPE REF TO zlnt_view_storage_74017ca272ac.
-        CLEAR t2.
-        DATA t3 TYPE REF TO object.
-        CLEAR t3.
-        CLEAR t2.
-        t3 = p0.
         TRY.
-            t1 ?= t3.
+            t1 ?= p0.
           CATCH cx_sy_move_cast_error.
         ENDTRY.
         IF t1 IS NOT BOUND.
@@ -184,7 +165,6 @@ CLASS zcl_lnt_isyntax_result IMPLEMENTATION.
     ELSE.
       me->spaghetti = p0.
       DATA t4 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t4.
       IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
         me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `spaghetti` p1 = t4 ).
       ENDIF.
@@ -239,7 +219,6 @@ CLASS zcl_lnt_isyntax_result IMPLEMENTATION.
 
   METHOD zlnt_own_storage_4c72afe8366e~keys.
     DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t1.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       result = zlnt_runtime_ownk_4497b85e405d=>keys( me->zlnt_view_source_36f3bf68b9b8 ).
       RETURN.
@@ -289,10 +268,7 @@ CLASS zcl_lnt_isyntax_result IMPLEMENTATION.
         CLEAR result.
         IF me->issues IS BOUND.
           DATA t1 TYPE REF TO zlnt_view_storage_74017ca272ac.
-          CLEAR t1.
           DATA t2 TYPE REF TO object.
-          CLEAR t2.
-          CLEAR t1.
           t2 = me->issues.
           TRY.
               result ?= t2.
@@ -317,13 +293,8 @@ CLASS zcl_lnt_isyntax_result IMPLEMENTATION.
         CLEAR result.
         IF me->spaghetti IS BOUND.
           DATA t3 TYPE REF TO zlnt_view_storage_74017ca272ac.
-          CLEAR t3.
-          DATA t4 TYPE REF TO object.
-          CLEAR t4.
-          CLEAR t3.
-          t4 = me->spaghetti.
           TRY.
-              result ?= t4.
+              result ?= me->spaghetti.
             CATCH cx_sy_move_cast_error.
           ENDTRY.
           IF result IS NOT BOUND.
@@ -374,9 +345,7 @@ CLASS zcl_lnt_isyntax_result IMPLEMENTATION.
           ENDIF.
           me->issues->load( ).
           DATA t1 TYPE REF TO object.
-          CLEAR t1.
           DATA t2 TYPE REF TO zcl_lnt_issue.
-          CLEAR t2.
           LOOP AT me->issues->items INTO t1.
             DATA t3 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
             CLEAR t3.
@@ -384,7 +353,6 @@ CLASS zcl_lnt_isyntax_result IMPLEMENTATION.
             IF t1 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
               t3 ?= t1.
               DATA t4 TYPE REF TO object.
-              CLEAR t4.
               t4 = t3->as_ref( ).
               t2 ?= t4.
             ELSE.
@@ -395,7 +363,6 @@ CLASS zcl_lnt_isyntax_result IMPLEMENTATION.
         DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `issues`.
       WHEN `spaghetti`.
         DATA t5 TYPE REF TO object.
-        CLEAR t5.
         t5 = p1->as_ref( ).
         me->spaghetti ?= t5.
         DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `spaghetti`.
@@ -413,7 +380,6 @@ CLASS zcl_lnt_isyntax_result IMPLEMENTATION.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = p0 p1 = VALUE #( ) ).
     ENDIF.
     DATA t6 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t6.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       me->zlnt_json_ownkeys_70e5fd461788->put( p0 = p0 p1 = t6 ).
     ENDIF.

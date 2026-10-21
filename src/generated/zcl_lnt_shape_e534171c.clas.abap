@@ -35,7 +35,6 @@ CLASS zcl_lnt_shape_e534171c DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_shape_e534171c IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = i_fieldname.
     DATA(t2) = i_rollname_e353.
     DATA(t3) = i_comptype.
     DATA(t4) = i_precfield.
@@ -50,215 +49,155 @@ CLASS zcl_lnt_shape_e534171c IMPLEMENTATION.
     DATA(t13) = i_reffield.
     DATA(t14) = i_reftype.
     DATA(t15) = i_ddtext_4f13.
-    DATA(t16) = t1.
-    me->fieldname = t16.
+    me->fieldname = i_fieldname.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `FIELDNAME`.
     DATA t17 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t17.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `FIELDNAME` p1 = t17 ).
     ENDIF.
-    DATA(t18) = |FIELDNAME|.
     DATA t19 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t19.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t18 p1 = t19 ).
+      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = |FIELDNAME| p1 = t19 ).
     ENDIF.
-    DATA(t20) = t2.
-    me->rollname_a788 = t20.
+    me->rollname_a788 = t2.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `ROLLNAME`.
     DATA t21 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t21.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `ROLLNAME` p1 = t21 ).
     ENDIF.
-    DATA(t22) = |ROLLNAME|.
     DATA t23 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t23.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t22 p1 = t23 ).
+      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = |ROLLNAME| p1 = t23 ).
     ENDIF.
-    DATA(t24) = t3.
-    me->comptype = t24.
+    me->comptype = t3.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `COMPTYPE`.
     DATA t25 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t25.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `COMPTYPE` p1 = t25 ).
     ENDIF.
-    DATA(t26) = |COMPTYPE|.
     DATA t27 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t27.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t26 p1 = t27 ).
+      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = |COMPTYPE| p1 = t27 ).
     ENDIF.
-    DATA(t28) = t4.
-    me->precfield = t28.
+    me->precfield = t4.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `PRECFIELD`.
     DATA t29 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t29.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `PRECFIELD` p1 = t29 ).
     ENDIF.
-    DATA(t30) = |PRECFIELD|.
     DATA t31 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t31.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t30 p1 = t31 ).
+      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = |PRECFIELD| p1 = t31 ).
     ENDIF.
-    DATA(t32) = t5.
-    me->leng_0540 = t32.
+    me->leng_0540 = t5.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `LENG`.
     DATA t33 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t33.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `LENG` p1 = t33 ).
     ENDIF.
-    DATA(t34) = |LENG|.
     DATA t35 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t35.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t34 p1 = t35 ).
+      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = |LENG| p1 = t35 ).
     ENDIF.
-    DATA(t36) = t6.
-    me->intlen = t36.
+    me->intlen = t6.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `INTLEN`.
     DATA t37 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t37.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `INTLEN` p1 = t37 ).
     ENDIF.
-    DATA(t38) = |INTLEN|.
     DATA t39 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t39.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t38 p1 = t39 ).
+      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = |INTLEN| p1 = t39 ).
     ENDIF.
-    DATA(t40) = t7.
-    me->datatype_2bc5 = t40.
+    me->datatype_2bc5 = t7.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `DATATYPE`.
     DATA t41 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t41.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `DATATYPE` p1 = t41 ).
     ENDIF.
-    DATA(t42) = |DATATYPE|.
     DATA t43 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t43.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t42 p1 = t43 ).
+      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = |DATATYPE| p1 = t43 ).
     ENDIF.
-    DATA(t44) = t8.
-    me->decimals_0f26 = t44.
+    me->decimals_0f26 = t8.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `DECIMALS`.
     DATA t45 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t45.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `DECIMALS` p1 = t45 ).
     ENDIF.
-    DATA(t46) = |DECIMALS|.
     DATA t47 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t47.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t46 p1 = t47 ).
+      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = |DECIMALS| p1 = t47 ).
     ENDIF.
-    DATA(t48) = t9.
-    me->keyflag = t48.
+    me->keyflag = t9.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `KEYFLAG`.
     DATA t49 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t49.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `KEYFLAG` p1 = t49 ).
     ENDIF.
-    DATA(t50) = |KEYFLAG|.
     DATA t51 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t51.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t50 p1 = t51 ).
+      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = |KEYFLAG| p1 = t51 ).
     ENDIF.
-    DATA(t52) = t10.
-    me->groupname = t52.
+    me->groupname = t10.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `GROUPNAME`.
     DATA t53 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t53.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `GROUPNAME` p1 = t53 ).
     ENDIF.
-    DATA(t54) = |GROUPNAME|.
     DATA t55 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t55.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t54 p1 = t55 ).
+      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = |GROUPNAME| p1 = t55 ).
     ENDIF.
-    DATA(t56) = t11.
-    me->checktable = t56.
+    me->checktable = t11.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `CHECKTABLE`.
     DATA t57 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t57.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `CHECKTABLE` p1 = t57 ).
     ENDIF.
-    DATA(t58) = |CHECKTABLE|.
     DATA t59 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t59.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t58 p1 = t59 ).
+      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = |CHECKTABLE| p1 = t59 ).
     ENDIF.
-    DATA(t60) = t12.
-    me->reftable = t60.
+    me->reftable = t12.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `REFTABLE`.
     DATA t61 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t61.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `REFTABLE` p1 = t61 ).
     ENDIF.
-    DATA(t62) = |REFTABLE|.
     DATA t63 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t63.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t62 p1 = t63 ).
+      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = |REFTABLE| p1 = t63 ).
     ENDIF.
-    DATA(t64) = t13.
-    me->reffield = t64.
+    me->reffield = t13.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `REFFIELD`.
     DATA t65 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t65.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `REFFIELD` p1 = t65 ).
     ENDIF.
-    DATA(t66) = |REFFIELD|.
     DATA t67 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t67.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t66 p1 = t67 ).
+      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = |REFFIELD| p1 = t67 ).
     ENDIF.
-    DATA(t68) = t14.
-    me->reftype = t68.
+    me->reftype = t14.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `REFTYPE`.
     DATA t69 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t69.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `REFTYPE` p1 = t69 ).
     ENDIF.
-    DATA(t70) = |REFTYPE|.
     DATA t71 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t71.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t70 p1 = t71 ).
+      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = |REFTYPE| p1 = t71 ).
     ENDIF.
-    DATA(t72) = t15.
-    me->ddtext_87ee = t72.
+    me->ddtext_87ee = t15.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `DDTEXT`.
     DATA t73 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t73.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `DDTEXT` p1 = t73 ).
     ENDIF.
-    DATA(t74) = |DDTEXT|.
     DATA t75 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t75.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t74 p1 = t75 ).
+      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = |DDTEXT| p1 = t75 ).
     ENDIF.
   ENDMETHOD.
 
@@ -648,7 +587,6 @@ CLASS zcl_lnt_shape_e534171c IMPLEMENTATION.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = p0 p1 = VALUE #( ) ).
     ENDIF.
     DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t1.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       me->zlnt_json_ownkeys_70e5fd461788->put( p0 = p0 p1 = t1 ).
     ENDIF.

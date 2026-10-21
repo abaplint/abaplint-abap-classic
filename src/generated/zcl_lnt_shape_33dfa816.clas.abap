@@ -18,39 +18,26 @@ CLASS zcl_lnt_shape_33dfa816 DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_shape_33dfa816 IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = i_token.
     DATA(t2) = i_stack.
-    DATA t3 TYPE REF TO zcl_lnt_abstract_token.
-    DATA(t4) = t1.
-    t3 = t4.
-    me->token = t3.
+    me->token = i_token.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `token`.
     DATA t5 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t5.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `token` p1 = t5 ).
     ENDIF.
-    DATA(t6) = |token|.
     DATA t7 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t7.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t6 p1 = t7 ).
+      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = |token| p1 = t7 ).
     ENDIF.
-    DATA t8 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t9) = t2.
-    t8 = t9.
-    me->stack = t8.
+    me->stack = t2.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `stack`.
     DATA t10 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t10.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `stack` p1 = t10 ).
     ENDIF.
-    DATA(t11) = |stack|.
     DATA t12 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t12.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t11 p1 = t12 ).
+      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = |stack| p1 = t12 ).
     ENDIF.
   ENDMETHOD.
 
@@ -137,10 +124,7 @@ CLASS zcl_lnt_shape_33dfa816 IMPLEMENTATION.
         CLEAR result.
         IF me->token IS BOUND.
           DATA t1 TYPE REF TO zlnt_view_storage_74017ca272ac.
-          CLEAR t1.
           DATA t2 TYPE REF TO object.
-          CLEAR t2.
-          CLEAR t1.
           t2 = me->token.
           TRY.
               result ?= t2.
@@ -165,10 +149,7 @@ CLASS zcl_lnt_shape_33dfa816 IMPLEMENTATION.
         CLEAR result.
         IF me->stack IS BOUND.
           DATA t3 TYPE REF TO zlnt_view_storage_74017ca272ac.
-          CLEAR t3.
           DATA t4 TYPE REF TO object.
-          CLEAR t4.
-          CLEAR t3.
           t4 = me->stack.
           TRY.
               result ?= t4.
@@ -203,7 +184,6 @@ CLASS zcl_lnt_shape_33dfa816 IMPLEMENTATION.
     CASE p0.
       WHEN `token`.
         DATA t1 TYPE REF TO object.
-        CLEAR t1.
         t1 = p1->as_ref( ).
         me->token ?= t1.
         DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `token`.
@@ -224,9 +204,7 @@ CLASS zcl_lnt_shape_33dfa816 IMPLEMENTATION.
           ENDIF.
           me->stack->load( ).
           DATA t2 TYPE REF TO object.
-          CLEAR t2.
           DATA t3 TYPE REF TO zif_lnt_node.
-          CLEAR t3.
           LOOP AT me->stack->items INTO t2.
             DATA t4 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
             CLEAR t4.
@@ -234,7 +212,6 @@ CLASS zcl_lnt_shape_33dfa816 IMPLEMENTATION.
             IF t2 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
               t4 ?= t2.
               DATA t5 TYPE REF TO object.
-              CLEAR t5.
               t5 = t4->as_ref( ).
               t3 ?= t5.
             ELSE.
@@ -257,7 +234,6 @@ CLASS zcl_lnt_shape_33dfa816 IMPLEMENTATION.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = p0 p1 = VALUE #( ) ).
     ENDIF.
     DATA t6 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t6.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       me->zlnt_json_ownkeys_70e5fd461788->put( p0 = p0 p1 = t6 ).
     ENDIF.

@@ -14,79 +14,40 @@ ENDCLASS.
 CLASS zcl_lnt_st_call_badi IMPLEMENTATION.
   METHOD get_matcher.
     DATA t1 TYPE REF TO zif_lnt_statement_runnable.
-    CLEAR t1.
-    DATA t2 TYPE REF TO zif_lnt_statement_runnable.
-    CLEAR t2.
-    DATA t3 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t3.
     DATA t4 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t4.
-    DATA(t5) = |CALL BADI|.
-    CLEAR t4.
     CREATE OBJECT t4.
     t4->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t4->sval = t5.
-    t3 = t4.
-    DATA t6 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t6.
+    t4->sval = |CALL BADI|.
     DATA t7 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t7.
     DATA(t8) = zlnt_runtime_desc_78196487750d=>zlnt_member_d237_6d1df3154820.
-    CLEAR t7.
     IF t8 IS BOUND.
       CREATE OBJECT t7.
       t7->tag = zlnt_runtime_dyna_a429568d5be8=>tag_class.
       t7->cval = t8.
     ENDIF.
-    t6 = t7.
     DATA t9 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CLEAR t9.
-    DATA t10 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CLEAR t10.
-    CREATE OBJECT t10.
-    t9 = t10.
-    DATA(t11) = t9.
+    CREATE OBJECT t9.
     DATA t12 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t12.
     DATA(t13) = zlnt_runtime_desc_78196487750d=>zlnt_member_d223_6da5f452a761.
-    CLEAR t12.
     IF t13 IS BOUND.
       CREATE OBJECT t12.
       t12->tag = zlnt_runtime_dyna_a429568d5be8=>tag_class.
       t12->cval = t13.
     ENDIF.
-    t11->load( ).
-    APPEND t12 TO t11->items.
-    t11->save( ).
-    DATA t14 TYPE REF TO zif_lnt_statement_runnable.
-    CLEAR t14.
-    DATA(t15) = t3.
-    DATA(t16) = t6.
-    DATA(t17) = t9.
-    t14 = zcl_lnt_st_combi_module=>seq( i_first = t15 i_second = t16 i_rest = t17 ).
-    t2 = t14.
-    t1 = t2.
-    DATA t18 TYPE REF TO zif_lnt_statement_runnable.
-    CLEAR t18.
-    DATA(t19) = |Cloud|.
+    t9->load( ).
+    APPEND t12 TO t9->items.
+    t9->save( ).
+    t1 = zcl_lnt_st_combi_module=>seq( i_first = t4 i_second = t7 i_rest = t9 ).
     DATA t20 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t20.
-    DATA(t21) = t1.
-    CLEAR t20.
-    IF t21 IS BOUND.
+    IF t1 IS BOUND.
       DATA t22 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      CLEAR t22.
-      DATA t23 TYPE REF TO object.
-      CLEAR t23.
-      CLEAR t22.
-      t23 = t21.
       TRY.
-          t20 ?= t23.
+          t20 ?= t1.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t20 IS NOT BOUND.
         TRY.
-            t22 ?= t21.
+            t22 ?= t1.
           CATCH cx_sy_move_cast_error.
         ENDTRY.
         IF t22 IS BOUND.
@@ -95,12 +56,11 @@ CLASS zcl_lnt_st_call_badi IMPLEMENTATION.
         IF t20 IS NOT BOUND.
           CREATE OBJECT t20.
           t20->tag = zlnt_runtime_dyna_a429568d5be8=>tag_ref.
-          t20->oval = t21.
+          t20->oval = t1.
         ENDIF.
       ENDIF.
     ENDIF.
-    t18 = zcl_lnt_st_combi_module=>ver_not_lang( i_lang_version = t19 i_first = t20 ).
-    result = t18.
+    result = zcl_lnt_st_combi_module=>ver_not_lang( i_lang_version = |Cloud| i_first = t20 ).
 
   ENDMETHOD.
 

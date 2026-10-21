@@ -13,10 +13,7 @@ CLASS zcl_lnt_private DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_private IMPLEMENTATION.
   METHOD get_matcher.
-    DATA t1 TYPE REF TO zif_lnt_statement_runnable.
-    DATA(t2) = |PRIVATE SECTION|.
-    t1 = zcl_lnt_st_combi_module=>str( i_s = t2 ).
-    result = t1.
+    result = zcl_lnt_st_combi_module=>str( i_s = |PRIVATE SECTION| ).
 
   ENDMETHOD.
 

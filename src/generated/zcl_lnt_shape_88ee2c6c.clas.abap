@@ -17,20 +17,15 @@ CLASS zcl_lnt_shape_88ee2c6c DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_shape_88ee2c6c IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = i_href.
-    DATA(t2) = t1.
-    me->href = t2.
+    me->href = i_href.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `href`.
     DATA t3 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t3.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `href` p1 = t3 ).
     ENDIF.
-    DATA(t4) = |href|.
     DATA t5 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t5.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t4 p1 = t5 ).
+      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = |href| p1 = t5 ).
     ENDIF.
   ENDMETHOD.
 
@@ -145,7 +140,6 @@ CLASS zcl_lnt_shape_88ee2c6c IMPLEMENTATION.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = p0 p1 = VALUE #( ) ).
     ENDIF.
     DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t1.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       me->zlnt_json_ownkeys_70e5fd461788->put( p0 = p0 p1 = t1 ).
     ENDIF.

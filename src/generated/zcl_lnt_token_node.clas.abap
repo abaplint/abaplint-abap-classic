@@ -26,60 +26,40 @@ CLASS zcl_lnt_token_node DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_token_node IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = i_token.
-    DATA(t2) = t1.
-    me->token = t2.
+    me->token = i_token.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `token`.
   ENDMETHOD.
 
   METHOD a_c_in_sr_ab_nd_tk_nd_ts_tk_nd.
     DATA(t1) = i_n_2941.
     DATA t2 TYPE REF TO zlnt_exception_cl_30eec8e8805d.
-    CLEAR t2.
     DATA t3 TYPE REF TO zcl_lnt_builtin_e8b3bd7e.
-    CLEAR t3.
-    DATA t4 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    CLEAR t4.
-    DATA(t5) = abap_true.
-    IF t5 = abap_true.
-      DATA(t6) = |TokenNode, Method not implemented.|.
-      DATA(t7) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
-      t7->has = abap_true.
-      t7->value = t6.
-      t4 = t7.
-    ELSE.
-      DATA t8 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      CLEAR t8.
-      t4 = t8.
-    ENDIF.
-    t3 = NEW zcl_lnt_builtin_e8b3bd7e( i_message_26cb = t4 ).
+    DATA(t7) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
+    t7->has = abap_true.
+    t7->value = |TokenNode, Method not implemented.|.
+    t3 = NEW zcl_lnt_builtin_e8b3bd7e( i_message_26cb = t7 ).
     t2 = NEW #( ).
     t2->payload = t3.
     CLEAR t2->source_value.
-    IF t3 IS BOUND.
-      DATA t9 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      CLEAR t9.
-      DATA t10 TYPE REF TO object.
-      CLEAR t10.
-      CLEAR t9.
-      t10 = t3.
+    DATA t9 TYPE REF TO zlnt_view_storage_74017ca272ac.
+    DATA t10 TYPE REF TO object.
+    t10 = t3.
+    TRY.
+        t2->source_value ?= t10.
+      CATCH cx_sy_move_cast_error.
+    ENDTRY.
+    IF t2->source_value IS NOT BOUND.
       TRY.
-          t2->source_value ?= t10.
+          t9 ?= t3.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
+      IF t9 IS BOUND.
+        t2->source_value = t9->source( ).
+      ENDIF.
       IF t2->source_value IS NOT BOUND.
-        TRY.
-            t9 ?= t3.
-          CATCH cx_sy_move_cast_error.
-        ENDTRY.
-        IF t9 IS BOUND.
-          t2->source_value = t9->source( ).
-        ENDIF.
-        IF t2->source_value IS NOT BOUND.
-          CREATE OBJECT t2->source_value.
-          t2->source_value->tag = zlnt_runtime_dyna_a429568d5be8=>tag_ref.
-          t2->source_value->oval = t3.
-        ENDIF.
+        CREATE OBJECT t2->source_value.
+        t2->source_value->tag = zlnt_runtime_dyna_a429568d5be8=>tag_ref.
+        t2->source_value->oval = t3.
       ENDIF.
     ENDIF.
     RAISE EXCEPTION t2.
@@ -88,119 +68,83 @@ CLASS zcl_lnt_token_node IMPLEMENTATION.
   METHOD s_c_in_sr_ab_nd_tk_nd_ts_tk_nd.
     DATA(t1) = i_children_ea49.
     DATA t2 TYPE REF TO zlnt_exception_cl_30eec8e8805d.
-    CLEAR t2.
     DATA t3 TYPE REF TO zcl_lnt_builtin_e8b3bd7e.
-    CLEAR t3.
-    DATA t4 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    CLEAR t4.
-    DATA(t5) = abap_true.
-    IF t5 = abap_true.
-      DATA(t6) = |TokenNode, Method not implemented.|.
-      DATA(t7) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
-      t7->has = abap_true.
-      t7->value = t6.
-      t4 = t7.
-    ELSE.
-      DATA t8 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      CLEAR t8.
-      t4 = t8.
-    ENDIF.
-    t3 = NEW zcl_lnt_builtin_e8b3bd7e( i_message_26cb = t4 ).
+    DATA(t7) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
+    t7->has = abap_true.
+    t7->value = |TokenNode, Method not implemented.|.
+    t3 = NEW zcl_lnt_builtin_e8b3bd7e( i_message_26cb = t7 ).
     t2 = NEW #( ).
     t2->payload = t3.
     CLEAR t2->source_value.
-    IF t3 IS BOUND.
-      DATA t9 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      CLEAR t9.
-      DATA t10 TYPE REF TO object.
-      CLEAR t10.
-      CLEAR t9.
-      t10 = t3.
+    DATA t9 TYPE REF TO zlnt_view_storage_74017ca272ac.
+    DATA t10 TYPE REF TO object.
+    t10 = t3.
+    TRY.
+        t2->source_value ?= t10.
+      CATCH cx_sy_move_cast_error.
+    ENDTRY.
+    IF t2->source_value IS NOT BOUND.
       TRY.
-          t2->source_value ?= t10.
+          t9 ?= t3.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
+      IF t9 IS BOUND.
+        t2->source_value = t9->source( ).
+      ENDIF.
       IF t2->source_value IS NOT BOUND.
-        TRY.
-            t9 ?= t3.
-          CATCH cx_sy_move_cast_error.
-        ENDTRY.
-        IF t9 IS BOUND.
-          t2->source_value = t9->source( ).
-        ENDIF.
-        IF t2->source_value IS NOT BOUND.
-          CREATE OBJECT t2->source_value.
-          t2->source_value->tag = zlnt_runtime_dyna_a429568d5be8=>tag_ref.
-          t2->source_value->oval = t3.
-        ENDIF.
+        CREATE OBJECT t2->source_value.
+        t2->source_value->tag = zlnt_runtime_dyna_a429568d5be8=>tag_ref.
+        t2->source_value->oval = t3.
       ENDIF.
     ENDIF.
     RAISE EXCEPTION t2.
   ENDMETHOD.
 
   METHOD get_children.
-    DATA t1 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CLEAR t1.
     IF zcl_lnt_token_node_module=>zlnt_builtin_init_67616964ab0b = abap_false.
       zcl_lnt_token_node_module=>zlnt_builtin_init_fbfa5be386ab( ).
     ENDIF.
-    t1 = zcl_lnt_token_node_module=>empty_children.
-    result = t1.
+    result = zcl_lnt_token_node_module=>empty_children.
 
   ENDMETHOD.
 
   METHOD concat_tokens.
-    DATA t1 TYPE string.
-    DATA t2 TYPE REF TO zcl_lnt_abstract_token.
-    DATA(t3) = me->token.
-    t2 = t3.
-    DATA t4 TYPE string.
-    DATA(t5) = t2.
-    t4 = t5->str.
-    t1 = t4.
-    result = t1.
+    result = me->token->str.
 
   ENDMETHOD.
 
   METHOD gt_in_sr_ab_nd_tk_nd_ts_tkn_nd.
-    DATA(t1) = me->token.
-    result = t1.
+    result = me->token.
 
   ENDMETHOD.
 
   METHOD count_tokens.
-    DATA(t1) = CONV f( 1 ).
-    result = t1.
+    result = CONV f( 1 ).
 
   ENDMETHOD.
 
   METHOD get_first_token.
-    DATA(t1) = me->token.
-    result = t1.
+    result = me->token.
 
   ENDMETHOD.
 
   METHOD get_last_token.
-    DATA(t1) = me->token.
-    result = t1.
+    result = me->token.
 
   ENDMETHOD.
 
   METHOD add_child.
-    DATA(t1) = i_n_0c97.
-    DATA(t2) = t1.
+    DATA(t2) = i_n_0c97.
     me->a_c_in_sr_ab_nd_tk_nd_ts_tk_nd( i_n_2941 = t2 ).
   ENDMETHOD.
 
   METHOD set_children.
-    DATA(t1) = i_children_9020.
-    DATA(t2) = t1.
+    DATA(t2) = i_children_9020.
     me->s_c_in_sr_ab_nd_tk_nd_ts_tk_nd( i_children_ea49 = t2 ).
   ENDMETHOD.
 
   METHOD get_db65.
-    DATA(t1) = CAST zcl_lnt_abstract_token( me->gt_in_sr_ab_nd_tk_nd_ts_tkn_nd( ) ).
-    result = t1.
+    result = CAST zcl_lnt_abstract_token( me->gt_in_sr_ab_nd_tk_nd_ts_tkn_nd( ) ).
 
   ENDMETHOD.
 

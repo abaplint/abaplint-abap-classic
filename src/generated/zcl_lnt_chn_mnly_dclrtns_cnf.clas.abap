@@ -54,28 +54,17 @@ CLASS zcl_lnt_chn_mnly_dclrtns_cnf IMPLEMENTATION.
       me->zlnt_view_source_36f3bf68b9b8 = view_source.
       RETURN.
     ENDIF.
-    DATA(t1) = abap_true.
-    me->zlnt_view_write_s_851655681e33( p0 = t1 ).
-    DATA(t2) = abap_true.
-    me->zlnt_view_write_s_b7cbe44a9682( p0 = t2 ).
-    DATA(t3) = abap_true.
-    me->zlnt_view_write_s_3a635e60afa0( p0 = t3 ).
-    DATA(t4) = abap_true.
-    me->zlnt_view_write_s_14bc399a4320( p0 = t4 ).
-    DATA(t5) = abap_true.
-    me->zlnt_view_write_s_1b1f13067302( p0 = t5 ).
-    DATA(t6) = abap_true.
-    me->zlnt_view_write_s_cf78e5a75a41( p0 = t6 ).
-    DATA(t7) = abap_true.
-    me->zlnt_view_write_s_a58a359a3800( p0 = t7 ).
-    DATA(t8) = abap_true.
-    me->zlnt_view_write_s_03e8ff3b7184( p0 = t8 ).
-    DATA(t9) = abap_true.
-    me->zlnt_view_write_s_3c5fe332e8f0( p0 = t9 ).
-    DATA(t10) = abap_true.
-    me->zlnt_view_write_s_dd8125e637ac( p0 = t10 ).
-    DATA(t11) = abap_true.
-    me->zlnt_view_write_s_93f8796a616a( p0 = t11 ).
+    me->zlnt_view_write_s_851655681e33( p0 = abap_true ).
+    me->zlnt_view_write_s_b7cbe44a9682( p0 = abap_true ).
+    me->zlnt_view_write_s_3a635e60afa0( p0 = abap_true ).
+    me->zlnt_view_write_s_14bc399a4320( p0 = abap_true ).
+    me->zlnt_view_write_s_1b1f13067302( p0 = abap_true ).
+    me->zlnt_view_write_s_cf78e5a75a41( p0 = abap_true ).
+    me->zlnt_view_write_s_a58a359a3800( p0 = abap_true ).
+    me->zlnt_view_write_s_03e8ff3b7184( p0 = abap_true ).
+    me->zlnt_view_write_s_3c5fe332e8f0( p0 = abap_true ).
+    me->zlnt_view_write_s_dd8125e637ac( p0 = abap_true ).
+    me->zlnt_view_write_s_93f8796a616a( p0 = abap_true ).
   ENDMETHOD.
 
   METHOD zlnt_builtin_nati_72359f490bf2.
@@ -93,8 +82,7 @@ CLASS zcl_lnt_chn_mnly_dclrtns_cnf IMPLEMENTATION.
 
   METHOD zlnt_view_read_sr_379733500cb0.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `definitions` ) ).
-      result = t1->as_boolean( ).
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `definitions` ) )->as_boolean( ).
     ELSE.
       result = me->definitions.
     ENDIF.
@@ -103,8 +91,6 @@ CLASS zcl_lnt_chn_mnly_dclrtns_cnf IMPLEMENTATION.
   METHOD zlnt_view_write_s_851655681e33.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t1.
-      CLEAR t1.
       CREATE OBJECT t1.
       t1->tag = zlnt_runtime_dyna_a429568d5be8=>tag_boolean.
       t1->bval = p0.
@@ -117,8 +103,7 @@ CLASS zcl_lnt_chn_mnly_dclrtns_cnf IMPLEMENTATION.
 
   METHOD zlnt_view_read_sr_52806862a0a0.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `write` ) ).
-      result = t1->as_boolean( ).
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `write` ) )->as_boolean( ).
     ELSE.
       result = me->write_7543.
     ENDIF.
@@ -127,8 +112,6 @@ CLASS zcl_lnt_chn_mnly_dclrtns_cnf IMPLEMENTATION.
   METHOD zlnt_view_write_s_b7cbe44a9682.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t1.
-      CLEAR t1.
       CREATE OBJECT t1.
       t1->tag = zlnt_runtime_dyna_a429568d5be8=>tag_boolean.
       t1->bval = p0.
@@ -141,8 +124,7 @@ CLASS zcl_lnt_chn_mnly_dclrtns_cnf IMPLEMENTATION.
 
   METHOD zlnt_view_read_sr_af9a1dd4900b.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `move` ) ).
-      result = t1->as_boolean( ).
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `move` ) )->as_boolean( ).
     ELSE.
       result = me->move_9ad0.
     ENDIF.
@@ -151,8 +133,6 @@ CLASS zcl_lnt_chn_mnly_dclrtns_cnf IMPLEMENTATION.
   METHOD zlnt_view_write_s_3a635e60afa0.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t1.
-      CLEAR t1.
       CREATE OBJECT t1.
       t1->tag = zlnt_runtime_dyna_a429568d5be8=>tag_boolean.
       t1->bval = p0.
@@ -165,8 +145,7 @@ CLASS zcl_lnt_chn_mnly_dclrtns_cnf IMPLEMENTATION.
 
   METHOD zlnt_view_read_sr_4ab669e566d5.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `refresh` ) ).
-      result = t1->as_boolean( ).
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `refresh` ) )->as_boolean( ).
     ELSE.
       result = me->refresh_83dc.
     ENDIF.
@@ -175,8 +154,6 @@ CLASS zcl_lnt_chn_mnly_dclrtns_cnf IMPLEMENTATION.
   METHOD zlnt_view_write_s_14bc399a4320.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t1.
-      CLEAR t1.
       CREATE OBJECT t1.
       t1->tag = zlnt_runtime_dyna_a429568d5be8=>tag_boolean.
       t1->bval = p0.
@@ -189,8 +166,7 @@ CLASS zcl_lnt_chn_mnly_dclrtns_cnf IMPLEMENTATION.
 
   METHOD zlnt_view_read_sr_fcc3b6176335.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `unassign` ) ).
-      result = t1->as_boolean( ).
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `unassign` ) )->as_boolean( ).
     ELSE.
       result = me->unassign_0e7b.
     ENDIF.
@@ -199,8 +175,6 @@ CLASS zcl_lnt_chn_mnly_dclrtns_cnf IMPLEMENTATION.
   METHOD zlnt_view_write_s_1b1f13067302.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t1.
-      CLEAR t1.
       CREATE OBJECT t1.
       t1->tag = zlnt_runtime_dyna_a429568d5be8=>tag_boolean.
       t1->bval = p0.
@@ -213,8 +187,7 @@ CLASS zcl_lnt_chn_mnly_dclrtns_cnf IMPLEMENTATION.
 
   METHOD zlnt_view_read_sr_9c170c5c305f.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `clear` ) ).
-      result = t1->as_boolean( ).
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `clear` ) )->as_boolean( ).
     ELSE.
       result = me->clear_feba.
     ENDIF.
@@ -223,8 +196,6 @@ CLASS zcl_lnt_chn_mnly_dclrtns_cnf IMPLEMENTATION.
   METHOD zlnt_view_write_s_cf78e5a75a41.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t1.
-      CLEAR t1.
       CREATE OBJECT t1.
       t1->tag = zlnt_runtime_dyna_a429568d5be8=>tag_boolean.
       t1->bval = p0.
@@ -237,8 +208,7 @@ CLASS zcl_lnt_chn_mnly_dclrtns_cnf IMPLEMENTATION.
 
   METHOD zlnt_view_read_sr_9762d2acd538.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `hide` ) ).
-      result = t1->as_boolean( ).
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `hide` ) )->as_boolean( ).
     ELSE.
       result = me->hide_03a8.
     ENDIF.
@@ -247,8 +217,6 @@ CLASS zcl_lnt_chn_mnly_dclrtns_cnf IMPLEMENTATION.
   METHOD zlnt_view_write_s_a58a359a3800.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t1.
-      CLEAR t1.
       CREATE OBJECT t1.
       t1->tag = zlnt_runtime_dyna_a429568d5be8=>tag_boolean.
       t1->bval = p0.
@@ -261,8 +229,7 @@ CLASS zcl_lnt_chn_mnly_dclrtns_cnf IMPLEMENTATION.
 
   METHOD zlnt_view_read_sr_972a7b120c53.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `free` ) ).
-      result = t1->as_boolean( ).
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `free` ) )->as_boolean( ).
     ELSE.
       result = me->free_f889.
     ENDIF.
@@ -271,8 +238,6 @@ CLASS zcl_lnt_chn_mnly_dclrtns_cnf IMPLEMENTATION.
   METHOD zlnt_view_write_s_03e8ff3b7184.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t1.
-      CLEAR t1.
       CREATE OBJECT t1.
       t1->tag = zlnt_runtime_dyna_a429568d5be8=>tag_boolean.
       t1->bval = p0.
@@ -285,8 +250,7 @@ CLASS zcl_lnt_chn_mnly_dclrtns_cnf IMPLEMENTATION.
 
   METHOD zlnt_view_read_sr_e9e51bddcd51.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `include` ) ).
-      result = t1->as_boolean( ).
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `include` ) )->as_boolean( ).
     ELSE.
       result = me->include_3f11.
     ENDIF.
@@ -295,8 +259,6 @@ CLASS zcl_lnt_chn_mnly_dclrtns_cnf IMPLEMENTATION.
   METHOD zlnt_view_write_s_3c5fe332e8f0.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t1.
-      CLEAR t1.
       CREATE OBJECT t1.
       t1->tag = zlnt_runtime_dyna_a429568d5be8=>tag_boolean.
       t1->bval = p0.
@@ -309,8 +271,7 @@ CLASS zcl_lnt_chn_mnly_dclrtns_cnf IMPLEMENTATION.
 
   METHOD zlnt_view_read_sr_9d95884b1e2f.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `check` ) ).
-      result = t1->as_boolean( ).
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `check` ) )->as_boolean( ).
     ELSE.
       result = me->check_bf6e.
     ENDIF.
@@ -319,8 +280,6 @@ CLASS zcl_lnt_chn_mnly_dclrtns_cnf IMPLEMENTATION.
   METHOD zlnt_view_write_s_dd8125e637ac.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t1.
-      CLEAR t1.
       CREATE OBJECT t1.
       t1->tag = zlnt_runtime_dyna_a429568d5be8=>tag_boolean.
       t1->bval = p0.
@@ -333,8 +292,7 @@ CLASS zcl_lnt_chn_mnly_dclrtns_cnf IMPLEMENTATION.
 
   METHOD zlnt_view_read_sr_a93433db50e7.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `sort` ) ).
-      result = t1->as_boolean( ).
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `sort` ) )->as_boolean( ).
     ELSE.
       result = me->sort_0232.
     ENDIF.
@@ -343,8 +301,6 @@ CLASS zcl_lnt_chn_mnly_dclrtns_cnf IMPLEMENTATION.
   METHOD zlnt_view_write_s_93f8796a616a.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t1.
-      CLEAR t1.
       CREATE OBJECT t1.
       t1->tag = zlnt_runtime_dyna_a429568d5be8=>tag_boolean.
       t1->bval = p0.
@@ -404,7 +360,6 @@ CLASS zcl_lnt_chn_mnly_dclrtns_cnf IMPLEMENTATION.
 
   METHOD zlnt_own_storage_4c72afe8366e~keys.
     DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t1.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       result = zlnt_runtime_ownk_4497b85e405d=>keys( me->zlnt_view_source_36f3bf68b9b8 ).
       RETURN.
@@ -493,10 +448,7 @@ CLASS zcl_lnt_chn_mnly_dclrtns_cnf IMPLEMENTATION.
           CLEAR result.
           IF me->exclude IS BOUND.
             DATA t1 TYPE REF TO zlnt_view_storage_74017ca272ac.
-            CLEAR t1.
             DATA t2 TYPE REF TO object.
-            CLEAR t2.
-            CLEAR t1.
             t2 = me->exclude.
             TRY.
                 result ?= t2.

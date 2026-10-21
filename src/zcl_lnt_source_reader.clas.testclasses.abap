@@ -222,7 +222,9 @@ ENDCLASS.
 
 CLASS ltcl_includes IMPLEMENTATION.
   METHOD find_includes.
-    DATA(lt_includes) = NEW zcl_lnt_source_reader( )->find_includes(
+
+    cl_abap_unit_assert=>assert_equals(
+      act = NEW zcl_lnt_source_reader( )->find_includes(
       iv_prefix = 'LZLNT_TEST'
       it_source = VALUE #(
         ( `*******************************************************************` )
@@ -232,10 +234,7 @@ CLASS ltcl_includes IMPLEMENTATION.
         ( `  INCLUDE zlnt_test_other_include.` )
         ( `  INCLUDE STRUCTURE t100.` )
         ( `  INCLUDE TYPE ty_foo.` )
-        ( `  INCLUDE lzlnt_testf01 IF FOUND.` ) ) ).
-
-    cl_abap_unit_assert=>assert_equals(
-      act = lt_includes
+        ( `  INCLUDE lzlnt_testf01 IF FOUND.` ) ) )
       exp = VALUE string_table(
         ( `LZLNT_TESTTOP` )
         ( `LZLNT_TESTUXX` )

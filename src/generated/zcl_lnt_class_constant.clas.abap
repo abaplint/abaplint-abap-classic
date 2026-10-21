@@ -17,69 +17,24 @@ CLASS zcl_lnt_class_constant IMPLEMENTATION.
     DATA(t3) = i_value.
     DATA t4 TYPE REF TO zcl_lnt_abstract_token.
     DATA t5 TYPE REF TO zcl_lnt_fi_identifier.
-    DATA(t6) = t1.
-    t5 = t6.
-    DATA t7 TYPE REF TO zcl_lnt_abstract_token.
-    DATA(t8) = t5.
-    t7 = t8->token.
-    t4 = t7.
+    t5 = t1.
+    t4 = t5->token.
     DATA t9 TYPE string.
     DATA t10 TYPE REF TO zcl_lnt_fi_identifier.
-    DATA(t11) = t1.
-    t10 = t11.
-    DATA t12 TYPE string.
-    DATA(t13) = t10.
-    t12 = t13->filename.
-    t9 = t12.
+    t10 = t1.
+    t9 = t10->filename.
     DATA t14 TYPE REF TO zcl_lnt_abstract_type.
-    DATA t15 TYPE REF TO zcl_lnt_typed_identifier.
-    DATA(t16) = t1.
-    t15 = t16.
-    DATA t17 TYPE REF TO zcl_lnt_abstract_type.
-    DATA(t18) = t15.
-    t17 = t18->type_cba0.
-    t14 = t17.
-    DATA t19 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    CLEAR t19.
-    DATA(t20) = abap_true.
-    IF t20 = abap_true.
-      DATA t21 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-      DATA t22 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-      DATA t23 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-      CREATE OBJECT t23.
-      t22 = t23.
-      DATA(t24) = t22.
-      DATA(t25) = |read_only|.
-      t24->load( ).
-      APPEND t25 TO t24->items.
-      t24->save( ).
-      DATA(t26) = t22.
-      DATA(t27) = |static|.
-      t26->load( ).
-      APPEND t27 TO t26->items.
-      t26->save( ).
-      DATA(t28) = t22.
-      t21 = t28.
-      t19 = t21.
-    ELSE.
-      DATA t29 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-      CLEAR t29.
-      t19 = t29.
-    ENDIF.
-    DATA t30 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t30.
-    DATA(t31) = abap_true.
-    IF t31 = abap_true.
-      DATA(t32) = t3.
-      t30 = t32.
-    ELSE.
-      DATA t33 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t33.
-      t30 = t33.
-    ENDIF.
-    super->constructor( i_token = t4 i_filename = t9 i_type_9913 = t14 i_meta = t19 i_value = t30 ).
-    DATA(t34) = t2.
-    me->visibility = t34.
+    t14 = t1->type_cba0.
+    DATA t22 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
+    CREATE OBJECT t22.
+    t22->load( ).
+    APPEND |read_only| TO t22->items.
+    t22->save( ).
+    t22->load( ).
+    APPEND |static| TO t22->items.
+    t22->save( ).
+    super->constructor( i_token = t4 i_filename = t9 i_type_9913 = t14 i_meta = t22 i_value = t3 ).
+    me->visibility = t2.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `visibility`.
   ENDMETHOD.
 

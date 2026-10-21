@@ -20,76 +20,51 @@ CLASS zcl_lnt_check_abstract_module IMPLEMENTATION.
     IF zcl_lnt_check_abstract_module=>zlnt_builtin_init_25c2cab3d2da = abap_false.
       zcl_lnt_check_abstract_module=>zlnt_builtin_init_0190aec18b1f( ).
     ENDIF.
-    DATA(t1) = NEW zlnt_runtime_map__abd6fd794ffb( ).
-    zcl_lnt_check_abstract_module=>issue_type_namespace = t1.
+    zcl_lnt_check_abstract_module=>issue_type_namespace = NEW zlnt_runtime_map__abd6fd794ffb( ).
     DATA t2 TYPE REF TO zlnt_runtime_map__abd6fd794ffb.
-    CLEAR t2.
     DATA t3 TYPE REF TO zlnt_runtime_map__abd6fd794ffb.
-    CLEAR t3.
     IF zcl_lnt_check_abstract_module=>zlnt_builtin_init_25c2cab3d2da = abap_false.
       zcl_lnt_check_abstract_module=>zlnt_builtin_init_0190aec18b1f( ).
     ENDIF.
     t3 = zcl_lnt_check_abstract_module=>issue_type_namespace.
-    DATA(t4) = |0|.
     DATA t5 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t5.
-    DATA(t6) = |NotAbstractClass|.
-    CLEAR t5.
     CREATE OBJECT t5.
     t5->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t5->sval = t6.
-    t2 = t3->set( p0 = t4 p1 = t5 ).
+    t5->sval = |NotAbstractClass|.
+    t2 = t3->set( p0 = |0| p1 = t5 ).
     DATA t7 TYPE REF TO zlnt_runtime_map__abd6fd794ffb.
-    CLEAR t7.
     DATA t8 TYPE REF TO zlnt_runtime_map__abd6fd794ffb.
-    CLEAR t8.
     IF zcl_lnt_check_abstract_module=>zlnt_builtin_init_25c2cab3d2da = abap_false.
       zcl_lnt_check_abstract_module=>zlnt_builtin_init_0190aec18b1f( ).
     ENDIF.
     t8 = zcl_lnt_check_abstract_module=>issue_type_namespace.
-    DATA(t9) = |1|.
     DATA t10 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t10.
-    DATA(t11) = |AbstractAndFinal|.
-    CLEAR t10.
     CREATE OBJECT t10.
     t10->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
-    t10->sval = t11.
-    t7 = t8->set( p0 = t9 p1 = t10 ).
+    t10->sval = |AbstractAndFinal|.
+    t7 = t8->set( p0 = |1| p1 = t10 ).
     DATA t12 TYPE REF TO zlnt_runtime_map__abd6fd794ffb.
-    CLEAR t12.
     DATA t13 TYPE REF TO zlnt_runtime_map__abd6fd794ffb.
-    CLEAR t13.
     IF zcl_lnt_check_abstract_module=>zlnt_builtin_init_25c2cab3d2da = abap_false.
       zcl_lnt_check_abstract_module=>zlnt_builtin_init_0190aec18b1f( ).
     ENDIF.
     t13 = zcl_lnt_check_abstract_module=>issue_type_namespace.
-    DATA(t14) = |NotAbstractClass|.
     DATA t15 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t15.
-    DATA(t16) = 0.
-    CLEAR t15.
     CREATE OBJECT t15.
     t15->tag = zlnt_runtime_dyna_a429568d5be8=>tag_number.
-    t15->nval = t16.
-    t12 = t13->set( p0 = t14 p1 = t15 ).
+    t15->nval = 0.
+    t12 = t13->set( p0 = |NotAbstractClass| p1 = t15 ).
     DATA t17 TYPE REF TO zlnt_runtime_map__abd6fd794ffb.
-    CLEAR t17.
     DATA t18 TYPE REF TO zlnt_runtime_map__abd6fd794ffb.
-    CLEAR t18.
     IF zcl_lnt_check_abstract_module=>zlnt_builtin_init_25c2cab3d2da = abap_false.
       zcl_lnt_check_abstract_module=>zlnt_builtin_init_0190aec18b1f( ).
     ENDIF.
     t18 = zcl_lnt_check_abstract_module=>issue_type_namespace.
-    DATA(t19) = |AbstractAndFinal|.
     DATA t20 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t20.
-    DATA(t21) = 1.
-    CLEAR t20.
     CREATE OBJECT t20.
     t20->tag = zlnt_runtime_dyna_a429568d5be8=>tag_number.
-    t20->nval = t21.
-    t17 = t18->set( p0 = t19 p1 = t20 ).
+    t20->nval = 1.
+    t17 = t18->set( p0 = |AbstractAndFinal| p1 = t20 ).
   ENDMETHOD.
 
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.

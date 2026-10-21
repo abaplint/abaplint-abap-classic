@@ -33,60 +33,25 @@ CLASS zcl_lnt_void_type IMPLEMENTATION.
       zcl_lnt_void_type=>zlnt_builtin_init_d4e641a3993b( ).
     ENDIF.
     DATA(t1) = i_voided.
-    DATA(t2) = i_qualified_name.
-    DATA t3 TYPE REF TO zcl_lnt_abstract_type_data.
-    CLEAR t3.
-    DATA(t4) = abap_true.
-    IF t4 = abap_true.
-      DATA t5 TYPE REF TO zcl_lnt_abstract_type_data.
-      DATA t6 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      DATA(t7) = t2.
-      t6 = t7.
-      DATA t8 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      DATA t9 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      CLEAR t9.
-      t8 = t9.
-      DATA t10 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-      DATA t11 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-      CLEAR t11.
-      t10 = t11.
-      DATA t12 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      DATA t13 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      CLEAR t13.
-      t12 = t13.
-      DATA t14 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      DATA t15 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      CLEAR t15.
-      t14 = t15.
-      DATA t16 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      DATA t17 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      CLEAR t17.
-      t16 = t17.
-      t5 = NEW zcl_lnt_abstract_type_data( i_qualified_name = t6 i_conversion_exit = t8 i_derived_from_constant = t10 i_ddic_name = t12 i_rtti_name = t14 i_description = t16 ).
-      CREATE OBJECT t5->zlnt_view_ownkeys_b0e8086400eb.
-      t5->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-      DATA t18 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t18.
-      IF t5->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
-        t5->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `qualifiedName` p1 = t18 ).
-      ENDIF.
-      CREATE OBJECT t5->zlnt_json_ownkeys_70e5fd461788.
-      t5->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-      DATA(t19) = |qualifiedName|.
-      DATA t20 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t20.
-      IF t5->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-        t5->zlnt_json_ownkeys_70e5fd461788->put( p0 = t19 p1 = t20 ).
-      ENDIF.
-      t3 = t5.
-    ELSE.
-      DATA t21 TYPE REF TO zcl_lnt_abstract_type_data.
-      CLEAR t21.
-      t3 = t21.
-    ENDIF.
-    super->constructor( i_input_967e = t3 ).
-    DATA(t22) = t1.
-    me->voided = t22.
+    DATA t5 TYPE REF TO zcl_lnt_abstract_type_data.
+    DATA t6 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
+    t6 = i_qualified_name.
+    DATA t8 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
+    DATA t10 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
+    DATA t12 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
+    DATA t14 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
+    DATA t16 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
+    t5 = NEW zcl_lnt_abstract_type_data( i_qualified_name = t6 i_conversion_exit = t8 i_derived_from_constant = t10 i_ddic_name = t12 i_rtti_name = t14 i_description = t16 ).
+    CREATE OBJECT t5->zlnt_view_ownkeys_b0e8086400eb.
+    t5->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA t18 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    t5->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `qualifiedName` p1 = t18 ).
+    CREATE OBJECT t5->zlnt_json_ownkeys_70e5fd461788.
+    t5->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
+    DATA t20 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
+    t5->zlnt_json_ownkeys_70e5fd461788->put( p0 = |qualifiedName| p1 = t20 ).
+    super->constructor( i_input_967e = t5 ).
+    me->voided = t1.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `voided`.
   ENDMETHOD.
 
@@ -96,101 +61,75 @@ CLASS zcl_lnt_void_type IMPLEMENTATION.
     ENDIF.
     DATA(t1) = i_voided.
     DATA(t2) = i_qualified_name.
-    DATA t3 TYPE REF TO zcl_lnt_void_type.
-    CLEAR t3.
     IF zcl_lnt_void_type=>zlnt_builtin_init_8e2cbb35b29e = abap_false.
       zcl_lnt_void_type=>zlnt_builtin_init_d4e641a3993b( ).
     ENDIF.
-    DATA(t4) = t1.
-    DATA(t5) = t2.
-    t3 = NEW zcl_lnt_void_type( i_voided = t4 i_qualified_name = t5 ).
-    result = t3.
+    result = NEW zcl_lnt_void_type( i_voided = t1 i_qualified_name = t2 ).
 
   ENDMETHOD.
 
   METHOD get_voided.
-    DATA(t1) = me->voided.
-    result = t1.
+    result = me->voided.
 
   ENDMETHOD.
 
   METHOD to_abap.
-    DATA(t1) = VALUE string( ).
     DATA t2 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    DATA(t3) = me->voided.
-    t2 = t3.
+    t2 = me->voided.
     DATA(t4) = VALUE string( ).
     DATA(t5) = VALUE abap_bool( ).
-    DATA(t6) = t2.
-    IF t6 IS BOUND.
-      IF t6->has = abap_true.
-        t5 = xsdbool( strlen( t6->value ) > 0 ).
+    IF t2 IS BOUND.
+      IF t2->has = abap_true.
+        t5 = xsdbool( strlen( t2->value ) > 0 ).
       ENDIF.
     ENDIF.
     IF t5 = abap_true.
-      DATA t7 TYPE string.
-      DATA(t8) = t2.
-      t7 = t8->value.
-      t4 = t7.
+      t4 = t2->value.
     ELSE.
-      DATA(t9) = |VOIDEDtoABAP|.
-      t4 = t9.
+      t4 = |VOIDEDtoABAP|.
     ENDIF.
-    t1 = t4.
-    result = t1.
+    result = t4.
 
   ENDMETHOD.
 
   METHOD t_t_i_s_a_ty_bs_vd_ty_ts_vd_ty.
-    DATA(t1) = VALUE string( ).
     DATA(t2) = VALUE string( ).
     DATA(t3) = |Void(|.
     DATA(t4) = VALUE string( ).
     DATA t5 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    DATA(t6) = me->voided.
-    t5 = t6.
+    t5 = me->voided.
     DATA(t7) = VALUE string( ).
     DATA(t8) = VALUE abap_bool( ).
-    DATA(t9) = t5.
-    IF t9 IS INITIAL.
+    IF t5 IS INITIAL.
       t8 = abap_true.
-    ELSEIF t9->has = abap_false.
+    ELSEIF t5->has = abap_false.
       t8 = abap_true.
     ENDIF.
     IF t8 = abap_true.
-      DATA(t10) = |undefined|.
-      t7 = t10.
+      t7 = |undefined|.
     ELSE.
-      DATA t11 TYPE string.
-      DATA(t12) = t5.
-      t11 = t12->value.
-      t7 = t11.
+      t7 = t5->value.
     ENDIF.
     t4 = t7.
     DATA(t13) = strlen( t3 ).
     t2 = |{ t3 }{ t4 }|.
-    DATA(t14) = |)|.
     DATA(t15) = strlen( t2 ).
-    t1 = |{ t2 }{ t14 }|.
-    result = t1.
+    result = |{ t2 }{ |)| }|.
 
   ENDMETHOD.
 
   METHOD is_generic.
-    DATA(t1) = abap_false.
-    result = t1.
+    result = abap_false.
 
   ENDMETHOD.
 
   METHOD contains_void.
-    DATA(t1) = abap_true.
-    result = t1.
+    result = abap_true.
 
   ENDMETHOD.
 
   METHOD to_cds.
-    DATA(t1) = |abap.TODO_VOID|.
-    result = t1.
+    result = |abap.TODO_VOID|.
 
   ENDMETHOD.
 
@@ -208,8 +147,7 @@ CLASS zcl_lnt_void_type IMPLEMENTATION.
     IF zcl_lnt_void_type=>zlnt_builtin_init_8e2cbb35b29e = abap_false.
       zcl_lnt_void_type=>zlnt_builtin_init_d4e641a3993b( ).
     ENDIF.
-    DATA(t1) = NEW zlnt_runtime_map__363847cd8bb7( ).
-    zcl_lnt_void_type=>singletons = t1.
+    zcl_lnt_void_type=>singletons = NEW zlnt_runtime_map__363847cd8bb7( ).
   ENDMETHOD.
 
   METHOD zlnt_builtin_nati_72359f490bf2.

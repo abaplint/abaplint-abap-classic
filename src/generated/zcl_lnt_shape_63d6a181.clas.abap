@@ -18,39 +18,26 @@ CLASS zcl_lnt_shape_63d6a181 DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_shape_63d6a181 IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = i_first.
     DATA(t2) = i_second.
-    DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t4) = t1.
-    t3 = t4.
-    me->first = t3.
+    me->first = i_first.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `first`.
     DATA t5 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t5.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `first` p1 = t5 ).
     ENDIF.
-    DATA(t6) = |first|.
     DATA t7 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t7.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t6 p1 = t7 ).
+      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = |first| p1 = t7 ).
     ENDIF.
-    DATA t8 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t9) = t2.
-    t8 = t9.
-    me->second = t8.
+    me->second = t2.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `second`.
     DATA t10 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t10.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `second` p1 = t10 ).
     ENDIF.
-    DATA(t11) = |second|.
     DATA t12 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t12.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t11 p1 = t12 ).
+      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = |second| p1 = t12 ).
     ENDIF.
   ENDMETHOD.
 
@@ -137,10 +124,7 @@ CLASS zcl_lnt_shape_63d6a181 IMPLEMENTATION.
         CLEAR result.
         IF me->first IS BOUND.
           DATA t1 TYPE REF TO zlnt_view_storage_74017ca272ac.
-          CLEAR t1.
           DATA t2 TYPE REF TO object.
-          CLEAR t2.
-          CLEAR t1.
           t2 = me->first.
           TRY.
               result ?= t2.
@@ -165,10 +149,7 @@ CLASS zcl_lnt_shape_63d6a181 IMPLEMENTATION.
         CLEAR result.
         IF me->second IS BOUND.
           DATA t3 TYPE REF TO zlnt_view_storage_74017ca272ac.
-          CLEAR t3.
           DATA t4 TYPE REF TO object.
-          CLEAR t4.
-          CLEAR t3.
           t4 = me->second.
           TRY.
               result ?= t4.
@@ -218,9 +199,7 @@ CLASS zcl_lnt_shape_63d6a181 IMPLEMENTATION.
           ENDIF.
           me->first->load( ).
           DATA t1 TYPE REF TO object.
-          CLEAR t1.
           DATA t2 TYPE REF TO zcl_lnt_abstract_token.
-          CLEAR t2.
           LOOP AT me->first->items INTO t1.
             DATA t3 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
             CLEAR t3.
@@ -228,7 +207,6 @@ CLASS zcl_lnt_shape_63d6a181 IMPLEMENTATION.
             IF t1 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
               t3 ?= t1.
               DATA t4 TYPE REF TO object.
-              CLEAR t4.
               t4 = t3->as_ref( ).
               t2 ?= t4.
             ELSE.
@@ -254,9 +232,7 @@ CLASS zcl_lnt_shape_63d6a181 IMPLEMENTATION.
           ENDIF.
           me->second->load( ).
           DATA t5 TYPE REF TO object.
-          CLEAR t5.
           DATA t6 TYPE REF TO zcl_lnt_abstract_token.
-          CLEAR t6.
           LOOP AT me->second->items INTO t5.
             DATA t7 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
             CLEAR t7.
@@ -264,7 +240,6 @@ CLASS zcl_lnt_shape_63d6a181 IMPLEMENTATION.
             IF t5 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
               t7 ?= t5.
               DATA t8 TYPE REF TO object.
-              CLEAR t8.
               t8 = t7->as_ref( ).
               t6 ?= t8.
             ELSE.
@@ -287,7 +262,6 @@ CLASS zcl_lnt_shape_63d6a181 IMPLEMENTATION.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = p0 p1 = VALUE #( ) ).
     ENDIF.
     DATA t9 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t9.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       me->zlnt_json_ownkeys_70e5fd461788->put( p0 = p0 p1 = t9 ).
     ENDIF.

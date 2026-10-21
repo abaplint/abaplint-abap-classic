@@ -17,9 +17,7 @@ CLASS zcl_lnt_generator_7e7dc2c1 DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_generator_7e7dc2c1 IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = i_array.
-    DATA(t2) = t1.
-    me->array = t2.
+    me->array = i_array.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `array`.
   ENDMETHOD.
 
@@ -28,40 +26,23 @@ CLASS zcl_lnt_generator_7e7dc2c1 IMPLEMENTATION.
     CONSTANTS range_i32_upper TYPE f VALUE '2147483647'.
     DATA(t1) = CONV abap_bool( me->closed ).
     IF t1 = abap_true.
-      DATA t2 TYPE REF TO zcl_lnt_generator_17955b8b.
-      DATA(t3) = abap_true.
       DATA t4 TYPE REF TO zif_lnt_object.
-      CLEAR t4.
-      t2 = NEW zcl_lnt_generator_17955b8b( i_done = t3 i_value = t4 ).
-      result = t2.
+      result = NEW zcl_lnt_generator_17955b8b( i_done = abap_true i_value = t4 ).
       RETURN.
     ENDIF.
-    DATA t5 TYPE abap_bool.
     DATA(t6) = CONV f( me->index ).
     DATA t7 TYPE f.
-    DATA t8 TYPE i.
     DATA(t9) = me->array.
     t9->load( ).
-    t8 = lines( t9->items ).
-    t7 = t8.
-    t5 = xsdbool( t6 >= t7 ).
-    IF t5 = abap_true.
-      DATA(t10) = abap_true.
-      me->closed = t10.
+    t7 = lines( t9->items ).
+    IF xsdbool( t6 >= t7 ) = abap_true.
+      me->closed = abap_true.
       DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `closed`.
-      DATA t11 TYPE REF TO zcl_lnt_generator_17955b8b.
-      DATA(t12) = abap_true.
       DATA t13 TYPE REF TO zif_lnt_object.
-      CLEAR t13.
-      t11 = NEW zcl_lnt_generator_17955b8b( i_done = t12 i_value = t13 ).
-      result = t11.
+      result = NEW zcl_lnt_generator_17955b8b( i_done = abap_true i_value = t13 ).
       RETURN.
     ENDIF.
-    DATA t14 TYPE REF TO zif_lnt_object.
-    CLEAR t14.
     DATA t15 TYPE REF TO zif_lnt_object.
-    CLEAR t15.
-    DATA(t16) = me->array.
     DATA(t17) = VALUE i( ).
     DATA(t18) = CONV f( me->index ).
     IF t18 > range_i32_upper.
@@ -72,10 +53,8 @@ CLASS zcl_lnt_generator_7e7dc2c1 IMPLEMENTATION.
       t17 = trunc( t18 ).
     ENDIF.
     DATA t19 TYPE REF TO object.
-    t19 = t16->get( p0 = t17 ).
+    t19 = me->array->get( p0 = t17 ).
     DATA t20 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t20.
-    CLEAR t15.
     IF t19 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
       t20 ?= t19.
       DATA t21 TYPE REF TO object.
@@ -84,24 +63,16 @@ CLASS zcl_lnt_generator_7e7dc2c1 IMPLEMENTATION.
     ELSE.
       t15 ?= t19.
     ENDIF.
-    t14 = t15.
-    DATA t22 TYPE f.
     DATA(t23) = CONV f( me->index ).
     DATA(t24) = CONV f( 1 ).
-    t22 = t23 + t24.
-    me->index = t22.
+    me->index = t23 + t24.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `index`.
-    DATA t25 TYPE REF TO zcl_lnt_generator_17955b8b.
-    DATA(t26) = abap_false.
-    DATA(t27) = t14.
-    t25 = NEW zcl_lnt_generator_17955b8b( i_done = t26 i_value = t27 ).
-    result = t25.
+    result = NEW zcl_lnt_generator_17955b8b( i_done = abap_false i_value = t15 ).
 
   ENDMETHOD.
 
   METHOD close.
-    DATA(t1) = abap_true.
-    me->closed = t1.
+    me->closed = abap_true.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `closed`.
   ENDMETHOD.
 

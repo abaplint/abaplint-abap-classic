@@ -19,50 +19,37 @@ CLASS zcl_lnt_iallowed_naming DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_iallowed_naming IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = i_max_length.
     DATA(t2) = i_allow_namespace.
     DATA(t3) = i_custom_regex.
-    DATA(t4) = t1.
-    me->max_length = t4.
+    me->max_length = i_max_length.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `maxLength`.
     DATA t5 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t5.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `maxLength` p1 = t5 ).
     ENDIF.
-    DATA(t6) = |maxLength|.
     DATA t7 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t7.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t6 p1 = t7 ).
+      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = |maxLength| p1 = t7 ).
     ENDIF.
-    DATA(t8) = t2.
-    me->allow_namespace = t8.
+    me->allow_namespace = t2.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `allowNamespace`.
     DATA t9 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t9.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `allowNamespace` p1 = t9 ).
     ENDIF.
-    DATA(t10) = |allowNamespace|.
     DATA t11 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t11.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t10 p1 = t11 ).
+      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = |allowNamespace| p1 = t11 ).
     ENDIF.
-    DATA(t12) = t3.
-    me->custom_regex = t12.
+    me->custom_regex = t3.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `customRegex`.
     DATA t13 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t13.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `customRegex` p1 = t13 ).
     ENDIF.
-    DATA(t14) = |customRegex|.
     DATA t15 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t15.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t14 p1 = t15 ).
+      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = |customRegex| p1 = t15 ).
     ENDIF.
   ENDMETHOD.
 
@@ -164,10 +151,7 @@ CLASS zcl_lnt_iallowed_naming IMPLEMENTATION.
           CLEAR result.
           IF me->custom_regex IS BOUND.
             DATA t1 TYPE REF TO zlnt_view_storage_74017ca272ac.
-            CLEAR t1.
             DATA t2 TYPE REF TO object.
-            CLEAR t2.
-            CLEAR t1.
             t2 = me->custom_regex.
             TRY.
                 result ?= t2.
@@ -230,7 +214,6 @@ CLASS zcl_lnt_iallowed_naming IMPLEMENTATION.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = p0 p1 = VALUE #( ) ).
     ENDIF.
     DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t1.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       me->zlnt_json_ownkeys_70e5fd461788->put( p0 = p0 p1 = t1 ).
     ENDIF.

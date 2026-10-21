@@ -14,17 +14,13 @@ CLASS zcl_lnt_tuple_443ddf92 DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_tuple_443ddf92 IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = i_f0.
     DATA(t2) = i_f1.
     DATA(t3) = i_f2.
-    DATA(t4) = t1.
-    me->f0 = t4.
+    me->f0 = i_f0.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `f0`.
-    DATA(t5) = t2.
-    me->f1 = t5.
+    me->f1 = t2.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `f1`.
-    DATA(t6) = t3.
-    me->f2 = t6.
+    me->f2 = t3.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `f2`.
   ENDMETHOD.
 

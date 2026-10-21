@@ -31,15 +31,12 @@ CLASS zcl_lnt_irename_settings IMPLEMENTATION.
       me->zlnt_view_source_36f3bf68b9b8 = view_source.
       RETURN.
     ENDIF.
-    DATA(t1) = i_output.
     DATA(t2) = i_skip_34cc.
     DATA(t3) = i_patterns.
-    DATA(t4) = t1.
+    DATA(t4) = i_output.
     me->zlnt_view_write_s_5d1905e74984( p0 = t4 ).
-    DATA(t5) = t2.
-    me->zlnt_view_write_s_3e041294d004( p0 = t5 ).
-    DATA(t6) = t3.
-    me->zlnt_view_write_s_39e65ce9dc64( p0 = t6 ).
+    me->zlnt_view_write_s_3e041294d004( p0 = t2 ).
+    me->zlnt_view_write_s_39e65ce9dc64( p0 = t3 ).
   ENDMETHOD.
 
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
@@ -77,10 +74,7 @@ CLASS zcl_lnt_irename_settings IMPLEMENTATION.
   METHOD zlnt_view_write_s_5d1905e74984.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t1.
-      CLEAR t1.
       IF p0 IS BOUND AND p0->has = abap_true.
-        CLEAR t1.
         CREATE OBJECT t1.
         t1->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
         t1->sval = p0->value.
@@ -89,7 +83,6 @@ CLASS zcl_lnt_irename_settings IMPLEMENTATION.
     ELSE.
       me->output = p0.
       DATA t2 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t2.
       IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
         me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `output` p1 = t2 ).
       ENDIF.
@@ -127,16 +120,10 @@ CLASS zcl_lnt_irename_settings IMPLEMENTATION.
   METHOD zlnt_view_write_s_3e041294d004.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t1.
-      CLEAR t1.
       IF p0 IS BOUND.
-        CLEAR t1.
         IF p0 IS BOUND.
           DATA t2 TYPE REF TO zlnt_view_storage_74017ca272ac.
-          CLEAR t2.
           DATA t3 TYPE REF TO object.
-          CLEAR t3.
-          CLEAR t2.
           t3 = p0.
           TRY.
               t1 ?= t3.
@@ -162,7 +149,6 @@ CLASS zcl_lnt_irename_settings IMPLEMENTATION.
     ELSE.
       me->skip_0892 = p0.
       DATA t4 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t4.
       IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
         me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `skip` p1 = t4 ).
       ENDIF.
@@ -189,9 +175,7 @@ CLASS zcl_lnt_irename_settings IMPLEMENTATION.
         ENDIF.
         result->load( ).
         DATA t2 TYPE REF TO object.
-        CLEAR t2.
         DATA t3 TYPE REF TO zcl_lnt_shape_9e749db2.
-        CLEAR t3.
         LOOP AT result->items INTO t2.
           DATA t4 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
           CLEAR t4.
@@ -222,10 +206,7 @@ CLASS zcl_lnt_irename_settings IMPLEMENTATION.
                     RAISE EXCEPTION TYPE zlnt_view_refusal_6fcecbe45fbf EXPORTING reason = `live_class_view.go: liveView: reference storage is not structural`.
                   ENDIF.
                 ENDIF.
-                DATA(t6) = VALUE string( ).
-                DATA(t7) = VALUE string( ).
-                DATA(t8) = VALUE string( ).
-                t3 = NEW zcl_lnt_shape_9e749db2( view_source = t4 i_type_9913 = t6 i_old_name = t7 i_new_name = t8 ).
+                t3 = NEW zcl_lnt_shape_9e749db2( view_source = t4 i_type_9913 = VALUE string( ) i_old_name = VALUE string( ) i_new_name = VALUE string( ) ).
               ENDIF.
             ENDIF.
           ELSE.
@@ -241,14 +222,9 @@ CLASS zcl_lnt_irename_settings IMPLEMENTATION.
   METHOD zlnt_view_write_s_39e65ce9dc64.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t1.
-      CLEAR t1.
       IF p0 IS BOUND.
         DATA t2 TYPE REF TO zlnt_view_storage_74017ca272ac.
-        CLEAR t2.
         DATA t3 TYPE REF TO object.
-        CLEAR t3.
-        CLEAR t2.
         t3 = p0.
         TRY.
             t1 ?= t3.
@@ -273,7 +249,6 @@ CLASS zcl_lnt_irename_settings IMPLEMENTATION.
     ELSE.
       me->patterns = p0.
       DATA t4 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t4.
       IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
         me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `patterns` p1 = t4 ).
       ENDIF.
@@ -332,7 +307,6 @@ CLASS zcl_lnt_irename_settings IMPLEMENTATION.
 
   METHOD zlnt_own_storage_4c72afe8366e~keys.
     DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t1.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       result = zlnt_runtime_ownk_4497b85e405d=>keys( me->zlnt_view_source_36f3bf68b9b8 ).
       RETURN.
@@ -392,10 +366,7 @@ CLASS zcl_lnt_irename_settings IMPLEMENTATION.
           CLEAR result.
           IF me->skip_0892 IS BOUND.
             DATA t1 TYPE REF TO zlnt_view_storage_74017ca272ac.
-            CLEAR t1.
             DATA t2 TYPE REF TO object.
-            CLEAR t2.
-            CLEAR t1.
             t2 = me->skip_0892.
             TRY.
                 result ?= t2.
@@ -421,10 +392,7 @@ CLASS zcl_lnt_irename_settings IMPLEMENTATION.
         CLEAR result.
         IF me->patterns IS BOUND.
           DATA t3 TYPE REF TO zlnt_view_storage_74017ca272ac.
-          CLEAR t3.
           DATA t4 TYPE REF TO object.
-          CLEAR t4.
-          CLEAR t3.
           t4 = me->patterns.
           TRY.
               result ?= t4.
@@ -507,9 +475,7 @@ CLASS zcl_lnt_irename_settings IMPLEMENTATION.
           ENDIF.
           me->patterns->load( ).
           DATA t1 TYPE REF TO object.
-          CLEAR t1.
           DATA t2 TYPE REF TO zcl_lnt_shape_9e749db2.
-          CLEAR t2.
           LOOP AT me->patterns->items INTO t1.
             DATA t3 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
             CLEAR t3.
@@ -540,10 +506,7 @@ CLASS zcl_lnt_irename_settings IMPLEMENTATION.
                       RAISE EXCEPTION TYPE zlnt_view_refusal_6fcecbe45fbf EXPORTING reason = `live_class_view.go: liveView: reference storage is not structural`.
                     ENDIF.
                   ENDIF.
-                  DATA(t5) = VALUE string( ).
-                  DATA(t6) = VALUE string( ).
-                  DATA(t7) = VALUE string( ).
-                  t2 = NEW zcl_lnt_shape_9e749db2( view_source = t3 i_type_9913 = t5 i_old_name = t6 i_new_name = t7 ).
+                  t2 = NEW zcl_lnt_shape_9e749db2( view_source = t3 i_type_9913 = VALUE string( ) i_old_name = VALUE string( ) i_new_name = VALUE string( ) ).
                 ENDIF.
               ENDIF.
             ELSE.
@@ -566,7 +529,6 @@ CLASS zcl_lnt_irename_settings IMPLEMENTATION.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = p0 p1 = VALUE #( ) ).
     ENDIF.
     DATA t8 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t8.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       me->zlnt_json_ownkeys_70e5fd461788->put( p0 = p0 p1 = t8 ).
     ENDIF.

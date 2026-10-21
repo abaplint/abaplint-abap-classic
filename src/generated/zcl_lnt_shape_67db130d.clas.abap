@@ -17,22 +17,15 @@ CLASS zcl_lnt_shape_67db130d DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_shape_67db130d IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = i_changes.
-    DATA t2 TYPE REF TO zcl_lnt_iabaplint_app_settings.
-    DATA(t3) = t1.
-    t2 = t3.
-    me->changes = t2.
+    me->changes = i_changes.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `changes`.
     DATA t4 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t4.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `changes` p1 = t4 ).
     ENDIF.
-    DATA(t5) = |changes|.
     DATA t6 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t6.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t5 p1 = t6 ).
+      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = |changes| p1 = t6 ).
     ENDIF.
   ENDMETHOD.
 
@@ -117,10 +110,7 @@ CLASS zcl_lnt_shape_67db130d IMPLEMENTATION.
         CLEAR result.
         IF me->changes IS BOUND.
           DATA t1 TYPE REF TO zlnt_view_storage_74017ca272ac.
-          CLEAR t1.
           DATA t2 TYPE REF TO object.
-          CLEAR t2.
-          CLEAR t1.
           t2 = me->changes.
           TRY.
               result ?= t2.
@@ -165,7 +155,6 @@ CLASS zcl_lnt_shape_67db130d IMPLEMENTATION.
           IF me->changes IS NOT BOUND.
             IF p1->tag <> zlnt_runtime_dyna_a429568d5be8=>tag_object.
               DATA t1 TYPE REF TO zlnt_view_storage_74017ca272ac.
-              CLEAR t1.
               IF p1->tag <> zlnt_runtime_dyna_a429568d5be8=>tag_ref.
                 RAISE EXCEPTION TYPE zlnt_view_refusal_6fcecbe45fbf EXPORTING reason = `live_class_view.go: liveView: source is neither object graph nor reference`.
               ENDIF.
@@ -179,7 +168,6 @@ CLASS zcl_lnt_shape_67db130d IMPLEMENTATION.
               ENDIF.
             ENDIF.
             DATA t2 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-            CLEAR t2.
             me->changes = NEW zcl_lnt_iabaplint_app_settings( view_source = p1 i_observations = t2 ).
           ENDIF.
         ENDIF.
@@ -198,7 +186,6 @@ CLASS zcl_lnt_shape_67db130d IMPLEMENTATION.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = p0 p1 = VALUE #( ) ).
     ENDIF.
     DATA t3 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t3.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       me->zlnt_json_ownkeys_70e5fd461788->put( p0 = p0 p1 = t3 ).
     ENDIF.

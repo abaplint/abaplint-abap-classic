@@ -15,9 +15,7 @@ CLASS zcl_lnt_rename_domain DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_rename_domain IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = i_reg_f149.
-    DATA(t2) = t1.
-    me->reg = t2.
+    me->reg = i_reg_f149.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `reg`.
   ENDMETHOD.
 
@@ -25,193 +23,84 @@ CLASS zcl_lnt_rename_domain IMPLEMENTATION.
     DATA(t1) = i_obj_1ed0.
     DATA(t2) = i_old_name.
     DATA(t3) = i_new_name.
-    DATA(t4) = VALUE abap_bool( ).
-    DATA(t5) = VALUE abap_bool( ).
-    DATA(t6) = t1.
-    t5 = xsdbool( t6 IS BOUND AND t6 IS INSTANCE OF zcl_lnt_domain ).
-    t4 = xsdbool( t5 = abap_false ).
-    IF t4 = abap_true.
+    IF xsdbool( xsdbool( t1 IS BOUND AND t1 IS INSTANCE OF zcl_lnt_domain ) = abap_false ) = abap_true.
       DATA t7 TYPE REF TO zlnt_exception_cl_30eec8e8805d.
-      CLEAR t7.
       DATA t8 TYPE REF TO zcl_lnt_builtin_e8b3bd7e.
-      CLEAR t8.
-      DATA t9 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      CLEAR t9.
-      DATA(t10) = abap_true.
-      IF t10 = abap_true.
-        DATA(t11) = |RenameDomain, not a domain|.
-        DATA(t12) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
-        t12->has = abap_true.
-        t12->value = t11.
-        t9 = t12.
-      ELSE.
-        DATA t13 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t13.
-        t9 = t13.
-      ENDIF.
-      t8 = NEW zcl_lnt_builtin_e8b3bd7e( i_message_26cb = t9 ).
+      DATA(t12) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
+      t12->has = abap_true.
+      t12->value = |RenameDomain, not a domain|.
+      t8 = NEW zcl_lnt_builtin_e8b3bd7e( i_message_26cb = t12 ).
       t7 = NEW #( ).
       t7->payload = t8.
       CLEAR t7->source_value.
-      IF t8 IS BOUND.
-        DATA t14 TYPE REF TO zlnt_view_storage_74017ca272ac.
-        CLEAR t14.
-        DATA t15 TYPE REF TO object.
-        CLEAR t15.
-        CLEAR t14.
-        t15 = t8.
+      DATA t14 TYPE REF TO zlnt_view_storage_74017ca272ac.
+      DATA t15 TYPE REF TO object.
+      t15 = t8.
+      TRY.
+          t7->source_value ?= t15.
+        CATCH cx_sy_move_cast_error.
+      ENDTRY.
+      IF t7->source_value IS NOT BOUND.
         TRY.
-            t7->source_value ?= t15.
+            t14 ?= t8.
           CATCH cx_sy_move_cast_error.
         ENDTRY.
+        IF t14 IS BOUND.
+          t7->source_value = t14->source( ).
+        ENDIF.
         IF t7->source_value IS NOT BOUND.
-          TRY.
-              t14 ?= t8.
-            CATCH cx_sy_move_cast_error.
-          ENDTRY.
-          IF t14 IS BOUND.
-            t7->source_value = t14->source( ).
-          ENDIF.
-          IF t7->source_value IS NOT BOUND.
-            CREATE OBJECT t7->source_value.
-            t7->source_value->tag = zlnt_runtime_dyna_a429568d5be8=>tag_ref.
-            t7->source_value->oval = t8.
-          ENDIF.
+          CREATE OBJECT t7->source_value.
+          t7->source_value->tag = zlnt_runtime_dyna_a429568d5be8=>tag_ref.
+          t7->source_value->oval = t8.
         ENDIF.
       ENDIF.
       RAISE EXCEPTION t7.
     ENDIF.
     DATA t16 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CLEAR t16.
-    DATA t17 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CLEAR t17.
-    CREATE OBJECT t17.
-    t16 = t17.
+    CREATE OBJECT t16.
     DATA t18 TYPE REF TO zcl_lnt_renamer_helper.
-    CLEAR t18.
-    DATA t19 TYPE REF TO zcl_lnt_renamer_helper.
-    CLEAR t19.
     DATA(t20) = me->reg.
-    t19 = NEW zcl_lnt_renamer_helper( i_reg_f149 = t20 ).
-    t18 = t19.
-    DATA t21 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CLEAR t21.
-    DATA(t22) = t16.
+    t18 = NEW zcl_lnt_renamer_helper( i_reg_f149 = t20 ).
     DATA t23 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CLEAR t23.
     DATA t24 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CLEAR t24.
-    DATA(t25) = t18.
     DATA t26 TYPE REF TO zcl_lnt_domain.
-    CLEAR t26.
-    DATA(t27) = t1.
-    DATA t28 TYPE REF TO object.
-    CLEAR t28.
-    t28 = t27.
-    t26 ?= t28.
-    DATA(t29) = |DOMNAME|.
-    DATA(t30) = t2.
-    DATA(t31) = t3.
+    t26 ?= t1.
     DATA t32 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
-    CLEAR t32.
-    t24 = t25->build_xml_file_edits( i_object_19cd = t26 i_xml_tag = t29 i_old_name = t30 i_new_name = t31 i_use_lower_case = t32 ).
+    t24 = t18->build_xml_file_edits( i_object_19cd = t26 i_xml_tag = |DOMNAME| i_old_name = t2 i_new_name = t3 i_use_lower_case = t32 ).
     t23 ?= t24.
-    t21 = t22->concat( p0 = t23 ).
-    t16 = t21.
-    DATA t33 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CLEAR t33.
-    DATA(t34) = t16.
-    DATA t35 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CLEAR t35.
-    DATA(t36) = t18.
+    t16 = t16->concat( p0 = t23 ).
     DATA t37 TYPE REF TO zcl_lnt_domain.
-    CLEAR t37.
-    DATA(t38) = t1.
-    DATA t39 TYPE REF TO object.
-    CLEAR t39.
-    t39 = t38.
-    t37 ?= t39.
-    DATA(t40) = t2.
-    DATA(t41) = t3.
-    t35 = t36->rename_files( i_obj_1ed0 = t37 i_old_name = t40 i_name = t41 ).
-    t33 = t34->concat( p0 = t35 ).
-    t16 = t33.
-    DATA t42 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CLEAR t42.
-    DATA(t43) = t16.
+    t37 ?= t1.
+    t16 = t16->concat( p0 = t18->rename_files( i_obj_1ed0 = t37 i_old_name = t2 i_name = t3 ) ).
     DATA t44 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CLEAR t44.
     DATA t45 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CLEAR t45.
-    DATA(t46) = t18.
     DATA t47 TYPE REF TO zcl_lnt_domain.
-    CLEAR t47.
-    DATA(t48) = t1.
-    DATA t49 TYPE REF TO object.
-    CLEAR t49.
-    t49 = t48.
-    t47 ?= t49.
-    DATA(t50) = t2.
-    DATA(t51) = t3.
-    t45 = t46->rename_ddicdtel_references( i_obj_1ed0 = t47 i_old_name = t50 i_new_name = t51 ).
+    t47 ?= t1.
+    t45 = t18->rename_ddicdtel_references( i_obj_1ed0 = t47 i_old_name = t2 i_new_name = t3 ).
     t44 ?= t45.
-    t42 = t43->concat( p0 = t44 ).
-    t16 = t42.
+    t16 = t16->concat( p0 = t44 ).
     DATA t52 TYPE REF TO zcl_lnt_shape_36bc2e57.
-    CLEAR t52.
-    DATA t53 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CLEAR t53.
-    DATA t54 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CLEAR t54.
-    DATA(t55) = abap_true.
-    IF t55 = abap_true.
-      DATA(t56) = t16.
-      t54 = t56.
-    ELSE.
-      DATA t57 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      CLEAR t57.
-      t54 = t57.
-    ENDIF.
-    t53 = t54.
     DATA t58 TYPE REF TO zlnt_runtime_map__3e259f4987b9.
-    CLEAR t58.
-    DATA t59 TYPE REF TO zlnt_runtime_map__3e259f4987b9.
-    CLEAR t59.
-    t58 = t59.
     DATA t60 TYPE REF TO zlnt_runtime_map__617ff131b0f3.
-    CLEAR t60.
-    DATA t61 TYPE REF TO zlnt_runtime_map__617ff131b0f3.
-    CLEAR t61.
-    t60 = t61.
-    t52 = NEW zcl_lnt_shape_36bc2e57( i_changes = t58 i_document_changes = t53 i_change_annotations = t60 ).
+    t52 = NEW zcl_lnt_shape_36bc2e57( i_changes = t58 i_document_changes = t16 i_change_annotations = t60 ).
     CREATE OBJECT t52->zlnt_view_ownkeys_b0e8086400eb.
     t52->zlnt_view_ownkeys_b0e8086400eb->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
     DATA t62 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t62.
-    IF t52->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
-      t52->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `documentChanges` p1 = t62 ).
-    ENDIF.
+    t52->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `documentChanges` p1 = t62 ).
     CREATE OBJECT t52->zlnt_json_ownkeys_70e5fd461788.
     t52->zlnt_json_ownkeys_70e5fd461788->tag = zlnt_runtime_dyna_a429568d5be8=>tag_object.
-    DATA(t63) = |documentChanges|.
     DATA t64 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t64.
-    IF t52->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      t52->zlnt_json_ownkeys_70e5fd461788->put( p0 = t63 p1 = t64 ).
-    ENDIF.
+    t52->zlnt_json_ownkeys_70e5fd461788->put( p0 = |documentChanges| p1 = t64 ).
     result = t52.
 
   ENDMETHOD.
 
   METHOD build_edits.
-    DATA(t1) = i_obj_1ed0.
-    DATA(t2) = i_old_name.
-    DATA(t3) = i_new_name.
     DATA t4 TYPE REF TO zcl_lnt_shape_36bc2e57.
     DATA t5 TYPE REF TO object.
-    DATA(t6) = t1.
-    DATA(t7) = t2.
-    DATA(t8) = t3.
+    DATA(t6) = i_obj_1ed0.
+    DATA(t7) = i_old_name.
+    DATA(t8) = i_new_name.
     t5 = me->b_e_in_sr_ob_rn_rn_dm_ts_rn_dm( i_obj_1ed0 = t6 i_old_name = t7 i_new_name = t8 ).
     t4 ?= t5.
     result = t4.

@@ -13,15 +13,13 @@ CLASS zlnt_runtime_stri_248d3505915c DEFINITION PUBLIC CREATE PRIVATE.
 ENDCLASS.
 CLASS zlnt_runtime_stri_248d3505915c IMPLEMENTATION.
   METHOD code_unit.
-    DATA converter TYPE REF TO cl_abap_conv_out_ce.
     DATA bytes TYPE xstring.
     DATA low TYPE x LENGTH 1.
     DATA high TYPE x LENGTH 1.
     DATA hi TYPE i.
     result = cl_abap_conv_out_ce=>uccpi( ch ).
     IF result >= 255.
-      converter = cl_abap_conv_out_ce=>create( encoding = '4103' ).
-      converter->convert( EXPORTING data = ch IMPORTING buffer = bytes ).
+      cl_abap_conv_out_ce=>create( encoding = '4103' )->convert( EXPORTING data = ch IMPORTING buffer = bytes ).
       low = bytes+0(1).
       high = bytes+1(1).
       result = low.

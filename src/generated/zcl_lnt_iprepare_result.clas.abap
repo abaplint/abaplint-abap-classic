@@ -20,65 +20,48 @@ CLASS zcl_lnt_iprepare_result DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_iprepare_result IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = i_range.
     DATA(t2) = i_placeholder.
     DATA(t3) = i_type_9913.
     DATA(t4) = i_file.
-    DATA(t5) = t1.
-    me->range = t5.
+    me->range = i_range.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `range`.
     DATA t6 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t6.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `range` p1 = t6 ).
     ENDIF.
-    DATA(t7) = |range|.
     DATA t8 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t8.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t7 p1 = t8 ).
+      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = |range| p1 = t8 ).
     ENDIF.
-    DATA(t9) = t2.
-    me->placeholder = t9.
+    me->placeholder = t2.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `placeholder`.
     DATA t10 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t10.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `placeholder` p1 = t10 ).
     ENDIF.
-    DATA(t11) = |placeholder|.
     DATA t12 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t12.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t11 p1 = t12 ).
+      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = |placeholder| p1 = t12 ).
     ENDIF.
-    DATA(t13) = t3.
-    me->type_cba0 = t13.
+    me->type_cba0 = t3.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `type`.
     DATA t14 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t14.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `type` p1 = t14 ).
     ENDIF.
-    DATA(t15) = |type|.
     DATA t16 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t16.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t15 p1 = t16 ).
+      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = |type| p1 = t16 ).
     ENDIF.
-    DATA(t17) = t4.
-    me->file = t17.
+    me->file = t4.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `file`.
     DATA t18 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t18.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `file` p1 = t18 ).
     ENDIF.
-    DATA(t19) = |file|.
     DATA t20 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t20.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t19 p1 = t20 ).
+      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = |file| p1 = t20 ).
     ENDIF.
   ENDMETHOD.
 
@@ -169,10 +152,7 @@ CLASS zcl_lnt_iprepare_result IMPLEMENTATION.
         CLEAR result.
         IF me->range IS BOUND.
           DATA t1 TYPE REF TO zlnt_view_storage_74017ca272ac.
-          CLEAR t1.
           DATA t2 TYPE REF TO object.
-          CLEAR t2.
-          CLEAR t1.
           t2 = me->range.
           TRY.
               result ?= t2.
@@ -207,13 +187,8 @@ CLASS zcl_lnt_iprepare_result IMPLEMENTATION.
         CLEAR result.
         IF me->file IS BOUND.
           DATA t3 TYPE REF TO zlnt_view_storage_74017ca272ac.
-          CLEAR t3.
-          DATA t4 TYPE REF TO object.
-          CLEAR t4.
-          CLEAR t3.
-          t4 = me->file.
           TRY.
-              result ?= t4.
+              result ?= me->file.
             CATCH cx_sy_move_cast_error.
           ENDTRY.
           IF result IS NOT BOUND.
@@ -255,7 +230,6 @@ CLASS zcl_lnt_iprepare_result IMPLEMENTATION.
           IF me->range IS NOT BOUND.
             IF p1->tag <> zlnt_runtime_dyna_a429568d5be8=>tag_object.
               DATA t1 TYPE REF TO zlnt_view_storage_74017ca272ac.
-              CLEAR t1.
               IF p1->tag <> zlnt_runtime_dyna_a429568d5be8=>tag_ref.
                 RAISE EXCEPTION TYPE zlnt_view_refusal_6fcecbe45fbf EXPORTING reason = `live_class_view.go: liveView: source is neither object graph nor reference`.
               ENDIF.
@@ -269,9 +243,7 @@ CLASS zcl_lnt_iprepare_result IMPLEMENTATION.
               ENDIF.
             ENDIF.
             DATA t2 TYPE REF TO zcl_lnt_no_position.
-            CLEAR t2.
             DATA t3 TYPE REF TO zcl_lnt_no_position.
-            CLEAR t3.
             me->range = NEW zcl_lnt_range( view_source = p1 i_start = t2 i_end = t3 ).
           ENDIF.
         ENDIF.
@@ -287,7 +259,6 @@ CLASS zcl_lnt_iprepare_result IMPLEMENTATION.
         DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `type`.
       WHEN `file`.
         DATA t4 TYPE REF TO object.
-        CLEAR t4.
         t4 = p1->as_ref( ).
         me->file ?= t4.
         DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `file`.
@@ -305,7 +276,6 @@ CLASS zcl_lnt_iprepare_result IMPLEMENTATION.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = p0 p1 = VALUE #( ) ).
     ENDIF.
     DATA t5 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t5.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       me->zlnt_json_ownkeys_70e5fd461788->put( p0 = p0 p1 = t5 ).
     ENDIF.

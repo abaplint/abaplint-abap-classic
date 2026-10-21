@@ -24,8 +24,7 @@ CLASS zcl_lnt_iabaplint_app_settings IMPLEMENTATION.
       me->zlnt_view_source_36f3bf68b9b8 = view_source.
       RETURN.
     ENDIF.
-    DATA(t1) = i_observations.
-    DATA(t2) = t1.
+    DATA(t2) = i_observations.
     me->zlnt_view_write_s_92858bbf3045( p0 = t2 ).
   ENDMETHOD.
 
@@ -64,10 +63,7 @@ CLASS zcl_lnt_iabaplint_app_settings IMPLEMENTATION.
   METHOD zlnt_view_write_s_92858bbf3045.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t1.
-      CLEAR t1.
       IF p0 IS BOUND AND p0->has = abap_true.
-        CLEAR t1.
         CREATE OBJECT t1.
         t1->tag = zlnt_runtime_dyna_a429568d5be8=>tag_boolean.
         t1->bval = p0->value.
@@ -76,7 +72,6 @@ CLASS zcl_lnt_iabaplint_app_settings IMPLEMENTATION.
     ELSE.
       me->observations = p0.
       DATA t2 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t2.
       IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
         me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `observations` p1 = t2 ).
       ENDIF.
@@ -130,7 +125,6 @@ CLASS zcl_lnt_iabaplint_app_settings IMPLEMENTATION.
 
   METHOD zlnt_own_storage_4c72afe8366e~keys.
     DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t1.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       result = zlnt_runtime_ownk_4497b85e405d=>keys( me->zlnt_view_source_36f3bf68b9b8 ).
       RETURN.
@@ -222,7 +216,6 @@ CLASS zcl_lnt_iabaplint_app_settings IMPLEMENTATION.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = p0 p1 = VALUE #( ) ).
     ENDIF.
     DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t1.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       me->zlnt_json_ownkeys_70e5fd461788->put( p0 = p0 p1 = t1 ).
     ENDIF.

@@ -45,42 +45,34 @@ CLASS zcl_lnt_no_prefixes_conf IMPLEMENTATION.
       me->zlnt_view_source_36f3bf68b9b8 = view_source.
       RETURN.
     ENDIF.
-    DATA(t1) = |^[LGM].?_|.
     DATA(t2) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
     t2->has = abap_true.
-    t2->value = t1.
+    t2->value = |^[LGM].?_|.
     me->zlnt_view_write_s_d12305478068( p0 = t2 ).
-    DATA(t3) = |^S.?_|.
     DATA(t4) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
     t4->has = abap_true.
-    t4->value = t3.
+    t4->value = |^S.?_|.
     me->zlnt_view_write_s_de66a556be8d( p0 = t4 ).
-    DATA(t5) = |^<[LGM].?_|.
     DATA(t6) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
     t6->has = abap_true.
-    t6->value = t5.
+    t6->value = |^<[LGM].?_|.
     me->zlnt_view_write_s_a94744793f24( p0 = t6 ).
-    DATA(t7) = |^[LGM]?C.?_|.
     DATA(t8) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
     t8->has = abap_true.
-    t8->value = t7.
+    t8->value = |^[LGM]?C.?_|.
     me->zlnt_view_write_s_566074400cd1( p0 = t8 ).
-    DATA(t9) = |^TY_|.
     DATA(t10) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
     t10->has = abap_true.
-    t10->value = t9.
+    t10->value = |^TY_|.
     me->zlnt_view_write_s_df9f5d93b53a( p0 = t10 ).
-    DATA(t11) = |^[ICER].?_|.
     DATA(t12) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
     t12->has = abap_true.
-    t12->value = t11.
+    t12->value = |^[ICER].?_|.
     me->zlnt_view_write_s_8febcfc2d485( p0 = t12 ).
-    DATA(t13) = abap_true.
-    me->zlnt_view_write_s_5d2436c6d6c3( p0 = t13 ).
-    DATA(t14) = CONV f( 10 ).
+    me->zlnt_view_write_s_5d2436c6d6c3( p0 = abap_true ).
     DATA(t15) = NEW zlnt_runtime_opti_8df4f98f9a3a( ).
     t15->has = abap_true.
-    t15->value = t14.
+    t15->value = CONV f( 10 ).
     me->zlnt_view_write_s_17c92bfb8c4c( p0 = t15 ).
   ENDMETHOD.
 
@@ -114,10 +106,7 @@ CLASS zcl_lnt_no_prefixes_conf IMPLEMENTATION.
   METHOD zlnt_view_write_s_d12305478068.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t1.
-      CLEAR t1.
       IF p0 IS BOUND AND p0->has = abap_true.
-        CLEAR t1.
         CREATE OBJECT t1.
         t1->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
         t1->sval = p0->value.
@@ -146,10 +135,7 @@ CLASS zcl_lnt_no_prefixes_conf IMPLEMENTATION.
   METHOD zlnt_view_write_s_de66a556be8d.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t1.
-      CLEAR t1.
       IF p0 IS BOUND AND p0->has = abap_true.
-        CLEAR t1.
         CREATE OBJECT t1.
         t1->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
         t1->sval = p0->value.
@@ -178,10 +164,7 @@ CLASS zcl_lnt_no_prefixes_conf IMPLEMENTATION.
   METHOD zlnt_view_write_s_a94744793f24.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t1.
-      CLEAR t1.
       IF p0 IS BOUND AND p0->has = abap_true.
-        CLEAR t1.
         CREATE OBJECT t1.
         t1->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
         t1->sval = p0->value.
@@ -210,10 +193,7 @@ CLASS zcl_lnt_no_prefixes_conf IMPLEMENTATION.
   METHOD zlnt_view_write_s_566074400cd1.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t1.
-      CLEAR t1.
       IF p0 IS BOUND AND p0->has = abap_true.
-        CLEAR t1.
         CREATE OBJECT t1.
         t1->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
         t1->sval = p0->value.
@@ -242,10 +222,7 @@ CLASS zcl_lnt_no_prefixes_conf IMPLEMENTATION.
   METHOD zlnt_view_write_s_df9f5d93b53a.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t1.
-      CLEAR t1.
       IF p0 IS BOUND AND p0->has = abap_true.
-        CLEAR t1.
         CREATE OBJECT t1.
         t1->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
         t1->sval = p0->value.
@@ -274,10 +251,7 @@ CLASS zcl_lnt_no_prefixes_conf IMPLEMENTATION.
   METHOD zlnt_view_write_s_8febcfc2d485.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t1.
-      CLEAR t1.
       IF p0 IS BOUND AND p0->has = abap_true.
-        CLEAR t1.
         CREATE OBJECT t1.
         t1->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
         t1->sval = p0->value.
@@ -291,8 +265,7 @@ CLASS zcl_lnt_no_prefixes_conf IMPLEMENTATION.
 
   METHOD zlnt_view_read_sr_c67116829635.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `allowIsPrefixBoolean` ) ).
-      result = t1->as_boolean( ).
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `allowIsPrefixBoolean` ) )->as_boolean( ).
     ELSE.
       result = me->allow_is_prefix_boolean.
     ENDIF.
@@ -301,8 +274,6 @@ CLASS zcl_lnt_no_prefixes_conf IMPLEMENTATION.
   METHOD zlnt_view_write_s_5d2436c6d6c3.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t1.
-      CLEAR t1.
       CREATE OBJECT t1.
       t1->tag = zlnt_runtime_dyna_a429568d5be8=>tag_boolean.
       t1->bval = p0.
@@ -333,10 +304,7 @@ CLASS zcl_lnt_no_prefixes_conf IMPLEMENTATION.
   METHOD zlnt_view_write_s_17c92bfb8c4c.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t1.
-      CLEAR t1.
       IF p0 IS BOUND AND p0->has = abap_true.
-        CLEAR t1.
         CREATE OBJECT t1.
         t1->tag = zlnt_runtime_dyna_a429568d5be8=>tag_number.
         t1->nval = p0->value.
@@ -392,7 +360,6 @@ CLASS zcl_lnt_no_prefixes_conf IMPLEMENTATION.
 
   METHOD zlnt_own_storage_4c72afe8366e~keys.
     DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t1.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       result = zlnt_runtime_ownk_4497b85e405d=>keys( me->zlnt_view_source_36f3bf68b9b8 ).
       RETURN.
@@ -469,10 +436,7 @@ CLASS zcl_lnt_no_prefixes_conf IMPLEMENTATION.
           CLEAR result.
           IF me->exclude IS BOUND.
             DATA t1 TYPE REF TO zlnt_view_storage_74017ca272ac.
-            CLEAR t1.
             DATA t2 TYPE REF TO object.
-            CLEAR t2.
-            CLEAR t1.
             t2 = me->exclude.
             TRY.
                 result ?= t2.

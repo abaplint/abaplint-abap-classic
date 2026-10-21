@@ -23,7 +23,6 @@ CLASS zcl_lnt_c_like_type IMPLEMENTATION.
       zcl_lnt_c_like_type=>zlnt_builtin_init_7baed2618343( ).
     ENDIF.
     DATA t1 TYPE REF TO zcl_lnt_abstract_type_data.
-    CLEAR t1.
     super->constructor( i_input_967e = t1 ).
   ENDMETHOD.
 
@@ -31,89 +30,64 @@ CLASS zcl_lnt_c_like_type IMPLEMENTATION.
     IF zcl_lnt_c_like_type=>zlnt_builtin_init_6c060cbec4ed = abap_false.
       zcl_lnt_c_like_type=>zlnt_builtin_init_7baed2618343( ).
     ENDIF.
-    DATA t1 TYPE REF TO zcl_lnt_c_like_type.
-    CLEAR t1.
     IF zcl_lnt_c_like_type=>zlnt_builtin_init_6c060cbec4ed = abap_false.
       zcl_lnt_c_like_type=>zlnt_builtin_init_7baed2618343( ).
     ENDIF.
-    t1 = zcl_lnt_c_like_type=>singleton.
-    result = t1.
+    result = zcl_lnt_c_like_type=>singleton.
 
   ENDMETHOD.
 
   METHOD t_t_i_s_a_t_b_cl_ty_ts_c_lk_ty.
-    DATA(t1) = |```clike```|.
-    result = t1.
+    result = |```clike```|.
 
   ENDMETHOD.
 
   METHOD is_generic.
-    DATA(t1) = abap_true.
-    result = t1.
+    result = abap_true.
 
   ENDMETHOD.
 
   METHOD to_abap.
     DATA t1 TYPE REF TO zlnt_exception_cl_30eec8e8805d.
-    CLEAR t1.
     DATA t2 TYPE REF TO zcl_lnt_builtin_e8b3bd7e.
-    CLEAR t2.
-    DATA t3 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    CLEAR t3.
-    DATA(t4) = abap_true.
-    IF t4 = abap_true.
-      DATA(t5) = |clike, generic|.
-      DATA(t6) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
-      t6->has = abap_true.
-      t6->value = t5.
-      t3 = t6.
-    ELSE.
-      DATA t7 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      CLEAR t7.
-      t3 = t7.
-    ENDIF.
-    t2 = NEW zcl_lnt_builtin_e8b3bd7e( i_message_26cb = t3 ).
+    DATA(t6) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
+    t6->has = abap_true.
+    t6->value = |clike, generic|.
+    t2 = NEW zcl_lnt_builtin_e8b3bd7e( i_message_26cb = t6 ).
     t1 = NEW #( ).
     t1->payload = t2.
     CLEAR t1->source_value.
-    IF t2 IS BOUND.
-      DATA t8 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      CLEAR t8.
-      DATA t9 TYPE REF TO object.
-      CLEAR t9.
-      CLEAR t8.
-      t9 = t2.
+    DATA t8 TYPE REF TO zlnt_view_storage_74017ca272ac.
+    DATA t9 TYPE REF TO object.
+    t9 = t2.
+    TRY.
+        t1->source_value ?= t9.
+      CATCH cx_sy_move_cast_error.
+    ENDTRY.
+    IF t1->source_value IS NOT BOUND.
       TRY.
-          t1->source_value ?= t9.
+          t8 ?= t2.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
+      IF t8 IS BOUND.
+        t1->source_value = t8->source( ).
+      ENDIF.
       IF t1->source_value IS NOT BOUND.
-        TRY.
-            t8 ?= t2.
-          CATCH cx_sy_move_cast_error.
-        ENDTRY.
-        IF t8 IS BOUND.
-          t1->source_value = t8->source( ).
-        ENDIF.
-        IF t1->source_value IS NOT BOUND.
-          CREATE OBJECT t1->source_value.
-          t1->source_value->tag = zlnt_runtime_dyna_a429568d5be8=>tag_ref.
-          t1->source_value->oval = t2.
-        ENDIF.
+        CREATE OBJECT t1->source_value.
+        t1->source_value->tag = zlnt_runtime_dyna_a429568d5be8=>tag_ref.
+        t1->source_value->oval = t2.
       ENDIF.
     ENDIF.
     RAISE EXCEPTION t1.
   ENDMETHOD.
 
   METHOD contains_void.
-    DATA(t1) = abap_false.
-    result = t1.
+    result = abap_false.
 
   ENDMETHOD.
 
   METHOD to_cds.
-    DATA(t1) = |abap.TODO_CLIKE|.
-    result = t1.
+    result = |abap.TODO_CLIKE|.
 
   ENDMETHOD.
 
@@ -131,13 +105,10 @@ CLASS zcl_lnt_c_like_type IMPLEMENTATION.
     IF zcl_lnt_c_like_type=>zlnt_builtin_init_6c060cbec4ed = abap_false.
       zcl_lnt_c_like_type=>zlnt_builtin_init_7baed2618343( ).
     ENDIF.
-    DATA t1 TYPE REF TO zcl_lnt_c_like_type.
-    CLEAR t1.
     IF zcl_lnt_c_like_type=>zlnt_builtin_init_6c060cbec4ed = abap_false.
       zcl_lnt_c_like_type=>zlnt_builtin_init_7baed2618343( ).
     ENDIF.
-    t1 = NEW zcl_lnt_c_like_type( ).
-    zcl_lnt_c_like_type=>singleton = t1.
+    zcl_lnt_c_like_type=>singleton = NEW zcl_lnt_c_like_type( ).
   ENDMETHOD.
 
   METHOD zlnt_builtin_nati_72359f490bf2.

@@ -13,25 +13,13 @@ CLASS zcl_lnt_end_function DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_end_function IMPLEMENTATION.
   METHOD get_matcher.
-    DATA t1 TYPE REF TO zif_lnt_statement_runnable.
-    CLEAR t1.
-    DATA(t2) = |KeyUser|.
     DATA t3 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t3.
     DATA t4 TYPE REF TO zif_lnt_statement_runnable.
-    CLEAR t4.
-    DATA(t5) = |ENDFUNCTION|.
-    t4 = zcl_lnt_st_combi_module=>str( i_s = t5 ).
-    CLEAR t3.
+    t4 = zcl_lnt_st_combi_module=>str( i_s = |ENDFUNCTION| ).
     IF t4 IS BOUND.
       DATA t6 TYPE REF TO zlnt_view_storage_74017ca272ac.
-      CLEAR t6.
-      DATA t7 TYPE REF TO object.
-      CLEAR t7.
-      CLEAR t6.
-      t7 = t4.
       TRY.
-          t3 ?= t7.
+          t3 ?= t4.
         CATCH cx_sy_move_cast_error.
       ENDTRY.
       IF t3 IS NOT BOUND.
@@ -49,8 +37,7 @@ CLASS zcl_lnt_end_function IMPLEMENTATION.
         ENDIF.
       ENDIF.
     ENDIF.
-    t1 = zcl_lnt_st_combi_module=>ver_not_lang( i_lang_version = t2 i_first = t3 ).
-    result = t1.
+    result = zcl_lnt_st_combi_module=>ver_not_lang( i_lang_version = |KeyUser| i_first = t3 ).
 
   ENDMETHOD.
 

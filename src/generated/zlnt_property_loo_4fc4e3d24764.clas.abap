@@ -569,10 +569,7 @@ CLASS zlnt_property_loo_4fc4e3d24764 IMPLEMENTATION.
           CLEAR result.
           IF p0->ignore_names IS BOUND.
             DATA t1 TYPE REF TO zlnt_view_storage_74017ca272ac.
-            CLEAR t1.
             DATA t2 TYPE REF TO object.
-            CLEAR t2.
-            CLEAR t1.
             t2 = p0->ignore_names.
             TRY.
                 result ?= t2.
@@ -600,10 +597,7 @@ CLASS zlnt_property_loo_4fc4e3d24764 IMPLEMENTATION.
           CLEAR result.
           IF p0->ignore_patterns IS BOUND.
             DATA t3 TYPE REF TO zlnt_view_storage_74017ca272ac.
-            CLEAR t3.
             DATA t4 TYPE REF TO object.
-            CLEAR t4.
-            CLEAR t3.
             t4 = p0->ignore_patterns.
             TRY.
                 result ?= t4.
@@ -631,10 +625,7 @@ CLASS zlnt_property_loo_4fc4e3d24764 IMPLEMENTATION.
           CLEAR result.
           IF p0->exclude IS BOUND.
             DATA t5 TYPE REF TO zlnt_view_storage_74017ca272ac.
-            CLEAR t5.
             DATA t6 TYPE REF TO object.
-            CLEAR t6.
-            CLEAR t5.
             t6 = p0->exclude.
             TRY.
                 result ?= t6.

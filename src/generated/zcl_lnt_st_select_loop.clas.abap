@@ -13,8 +13,7 @@ CLASS zcl_lnt_st_select_loop DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_st_select_loop IMPLEMENTATION.
   METHOD get_matcher.
-    DATA(t1) = NEW zcl_lnt_st_expres_select( ).
-    result = t1.
+    result = NEW zcl_lnt_st_expres_select( ).
 
   ENDMETHOD.
 

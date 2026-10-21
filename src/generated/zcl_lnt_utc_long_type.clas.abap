@@ -15,38 +15,32 @@ CLASS zcl_lnt_utc_long_type DEFINITION PUBLIC INHERITING FROM zcl_lnt_abstract_t
 ENDCLASS.
 CLASS zcl_lnt_utc_long_type IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = i_input_967e.
-    DATA(t2) = t1.
+    DATA(t2) = i_input_967e.
     super->constructor( i_input_967e = t2 ).
   ENDMETHOD.
 
   METHOD t_t_i_s_a_t_b_u_l_t_t_ut_ln_ty.
-    DATA(t1) = |```utclong```|.
-    result = t1.
+    result = |```utclong```|.
 
   ENDMETHOD.
 
   METHOD is_generic.
-    DATA(t1) = abap_false.
-    result = t1.
+    result = abap_false.
 
   ENDMETHOD.
 
   METHOD to_abap.
-    DATA(t1) = |utclong|.
-    result = t1.
+    result = |utclong|.
 
   ENDMETHOD.
 
   METHOD contains_void.
-    DATA(t1) = abap_false.
-    result = t1.
+    result = abap_false.
 
   ENDMETHOD.
 
   METHOD to_cds.
-    DATA(t1) = |abap.utcl|.
-    result = t1.
+    result = |abap.utcl|.
 
   ENDMETHOD.
 

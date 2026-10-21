@@ -17,20 +17,15 @@ CLASS zcl_lnt_prsd_bhvr_dfntn DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_prsd_bhvr_dfntn IMPLEMENTATION.
   METHOD constructor.
-    DATA(t1) = i_entities.
-    DATA(t2) = t1.
-    me->entities = t2.
+    me->entities = i_entities.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `entities`.
     DATA t3 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t3.
     IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `entities` p1 = t3 ).
     ENDIF.
-    DATA(t4) = |entities|.
     DATA t5 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t5.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
-      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = t4 p1 = t5 ).
+      me->zlnt_json_ownkeys_70e5fd461788->put( p0 = |entities| p1 = t5 ).
     ENDIF.
   ENDMETHOD.
 
@@ -115,10 +110,7 @@ CLASS zcl_lnt_prsd_bhvr_dfntn IMPLEMENTATION.
         CLEAR result.
         IF me->entities IS BOUND.
           DATA t1 TYPE REF TO zlnt_view_storage_74017ca272ac.
-          CLEAR t1.
           DATA t2 TYPE REF TO object.
-          CLEAR t2.
-          CLEAR t1.
           t2 = me->entities.
           TRY.
               result ?= t2.
@@ -168,9 +160,7 @@ CLASS zcl_lnt_prsd_bhvr_dfntn IMPLEMENTATION.
           ENDIF.
           me->entities->load( ).
           DATA t1 TYPE REF TO object.
-          CLEAR t1.
           DATA t2 TYPE REF TO zcl_lnt_shape_9428b3e9.
-          CLEAR t2.
           LOOP AT me->entities->items INTO t1.
             DATA t3 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
             CLEAR t3.
@@ -178,7 +168,6 @@ CLASS zcl_lnt_prsd_bhvr_dfntn IMPLEMENTATION.
             IF t1 IS INSTANCE OF zlnt_runtime_dyna_a429568d5be8.
               t3 ?= t1.
               DATA t4 TYPE REF TO object.
-              CLEAR t4.
               t4 = t3->as_ref( ).
               t2 ?= t4.
             ELSE.
@@ -201,7 +190,6 @@ CLASS zcl_lnt_prsd_bhvr_dfntn IMPLEMENTATION.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = p0 p1 = VALUE #( ) ).
     ENDIF.
     DATA t5 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t5.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       me->zlnt_json_ownkeys_70e5fd461788->put( p0 = p0 p1 = t5 ).
     ENDIF.

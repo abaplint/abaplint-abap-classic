@@ -13,41 +13,24 @@ CLASS zcl_lnt_sr_on_change DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_sr_on_change IMPLEMENTATION.
   METHOD get_matcher.
-    DATA t1 TYPE REF TO zif_lnt_structure_runnable.
     DATA t2 TYPE REF TO zif_lnt_structure_runnable.
     DATA(t3) = zlnt_runtime_desc_78196487750d=>zlnt_member_d567_45e95d0a1f15.
     t2 = zcl_lnt_sr_combi_module=>sta( i_s = t3 ).
     DATA t4 TYPE REF TO zif_lnt_structure_runnable.
-    DATA t5 TYPE REF TO zif_lnt_structure_runnable.
     DATA t6 TYPE REF TO zif_lnt_structure_runnable.
-    DATA t7 TYPE REF TO zif_lnt_structure_runnable.
     DATA(t8) = zlnt_runtime_desc_78196487750d=>zlnt_member_d704_640ee0c36424.
-    t7 = zcl_lnt_sr_combi_module=>sub( i_s = t8 ).
-    t6 = zcl_lnt_sr_combi_module=>opt( i_o = t7 ).
-    t5 = t6.
+    t6 = zcl_lnt_sr_combi_module=>opt( i_o = zcl_lnt_sr_combi_module=>sub( i_s = t8 ) ).
     DATA t9 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t10 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t10.
-    t9 = t10.
-    DATA(t11) = t9.
+    CREATE OBJECT t9.
     DATA t12 TYPE REF TO zif_lnt_structure_runnable.
-    DATA t13 TYPE REF TO zif_lnt_structure_runnable.
     DATA(t14) = zlnt_runtime_desc_78196487750d=>zlnt_member_d734_f05b24426da6.
-    t13 = zcl_lnt_sr_combi_module=>sub( i_s = t14 ).
-    t12 = zcl_lnt_sr_combi_module=>opt( i_o = t13 ).
-    t11->load( ).
-    APPEND t12 TO t11->items.
-    t11->save( ).
-    DATA t15 TYPE REF TO zif_lnt_structure_runnable.
-    DATA(t16) = t5.
-    DATA(t17) = t9.
-    t15 = zcl_lnt_sr_combi_module=>seq( i_first = t16 i_rest = t17 ).
-    t4 = t15.
-    DATA t18 TYPE REF TO zif_lnt_structure_runnable.
+    t12 = zcl_lnt_sr_combi_module=>opt( i_o = zcl_lnt_sr_combi_module=>sub( i_s = t14 ) ).
+    t9->load( ).
+    APPEND t12 TO t9->items.
+    t9->save( ).
+    t4 = zcl_lnt_sr_combi_module=>seq( i_first = t6 i_rest = t9 ).
     DATA(t19) = zlnt_runtime_desc_78196487750d=>zlnt_member_d479_88e6661c94ca.
-    t18 = zcl_lnt_sr_combi_module=>sta( i_s = t19 ).
-    t1 = zcl_lnt_sr_combi_module=>begin_end( i_begin = t2 i_body = t4 i_end = t18 ).
-    result = t1.
+    result = zcl_lnt_sr_combi_module=>begin_end( i_begin = t2 i_body = t4 i_end = zcl_lnt_sr_combi_module=>sta( i_s = t19 ) ).
 
   ENDMETHOD.
 

@@ -15,13 +15,10 @@ CLASS zcl_lnt_sy_clear IMPLEMENTATION.
     DATA(t1) = i_node.
     DATA(t2) = i_input_967e.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t4) = t1.
     DATA(t5) = zlnt_runtime_desc_78196487750d=>zlnt_member_d210_764baa705494.
-    t3 = t4->find_direct_expressions( i_type_9913 = t5 ).
+    t3 = t1->find_direct_expressions( i_type_9913 = t5 ).
     DATA t6 TYPE REF TO zcl_lnt_expression_node.
-    CLEAR t6.
     DATA t7 TYPE REF TO object.
-    CLEAR t7.
     DATA(t8) = VALUE i( ).
     DO.
       t3->load( ).
@@ -43,18 +40,13 @@ CLASS zcl_lnt_sy_clear IMPLEMENTATION.
         t6 ?= t7.
       ENDIF.
       DATA t11 TYPE REF TO zcl_lnt_abstract_type.
-      DATA(t12) = t6.
-      DATA(t13) = t2.
-      t11 = zcl_lnt_sy_target=>run_syntax( i_node = t12 i_input_967e = t13 ).
+      t11 = zcl_lnt_sy_target=>run_syntax( i_node = t6 i_input_967e = t2 ).
     ENDDO.
     DATA t14 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t15) = t1.
     DATA(t16) = zlnt_runtime_desc_78196487750d=>zlnt_member_d95_8e6c9823a7c185.
-    t14 = t15->find_direct_expressions( i_type_9913 = t16 ).
+    t14 = t1->find_direct_expressions( i_type_9913 = t16 ).
     DATA t17 TYPE REF TO zcl_lnt_expression_node.
-    CLEAR t17.
     DATA t18 TYPE REF TO object.
-    CLEAR t18.
     DATA(t19) = VALUE i( ).
     DO.
       t14->load( ).
@@ -76,19 +68,9 @@ CLASS zcl_lnt_sy_clear IMPLEMENTATION.
         t17 ?= t18.
       ENDIF.
       DATA t22 TYPE REF TO zcl_lnt_abstract_type.
-      CLEAR t22.
       DATA t23 TYPE REF TO zcl_lnt_expression_node.
       CLEAR t23.
-      DATA(t24) = abap_true.
-      IF t24 = abap_true.
-        DATA(t25) = t17.
-        t23 = t25.
-      ELSE.
-        DATA t26 TYPE REF TO zcl_lnt_expression_node.
-        CLEAR t26.
-        t23 = t26.
-      ENDIF.
-      DATA(t27) = t2.
+      t23 = t17.
       DATA t28 TYPE REF TO zcl_lnt_abstract_type.
       CLEAR t28.
       DATA t29 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
@@ -97,7 +79,7 @@ CLASS zcl_lnt_sy_clear IMPLEMENTATION.
       CLEAR t30.
       DATA t31 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
       CLEAR t31.
-      t22 = zcl_lnt_sy_source=>run_syntax( i_node = t23 i_input_967e = t27 i_target_type = t28 i_write_reference = t29 i_allow_generic_deference = t30 i_read_reference = t31 ).
+      t22 = zcl_lnt_sy_source=>run_syntax( i_node = t23 i_input_967e = t2 i_target_type = t28 i_write_reference = t29 i_allow_generic_deference = t30 i_read_reference = t31 ).
     ENDDO.
   ENDMETHOD.
 

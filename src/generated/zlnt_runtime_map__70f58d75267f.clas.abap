@@ -91,7 +91,6 @@ CLASS zlnt_runtime_map__70f58d75267f IMPLEMENTATION.
     ENDIF.
     RAISE EXCEPTION TYPE zlnt_view_refusal_6fcecbe45fbf EXPORTING reason = `live_record_map.go: put: map value has no exact unbox ABI`.
     DATA t1 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-    CLEAR t1.
     DATA(t2) = CAST zlnt_runtime_map__70f58d75267f( set( p0 = p0 p1 = t1 ) ).
   ENDMETHOD.
 ENDCLASS.

@@ -34,18 +34,14 @@ CLASS zcl_lnt_idependency IMPLEMENTATION.
       me->zlnt_view_source_36f3bf68b9b8 = view_source.
       RETURN.
     ENDIF.
-    DATA(t1) = i_url_8ce1.
     DATA(t2) = i_branch.
     DATA(t3) = i_folder_5c67.
     DATA(t4) = i_files.
-    DATA(t5) = t1.
+    DATA(t5) = i_url_8ce1.
     me->zlnt_view_write_s_2136ba3f4cee( p0 = t5 ).
-    DATA(t6) = t2.
-    me->zlnt_view_write_s_07044db726b2( p0 = t6 ).
-    DATA(t7) = t3.
-    me->zlnt_view_write_s_af42215226c0( p0 = t7 ).
-    DATA(t8) = t4.
-    me->zlnt_view_write_s_bd7f5998f3fc( p0 = t8 ).
+    me->zlnt_view_write_s_07044db726b2( p0 = t2 ).
+    me->zlnt_view_write_s_af42215226c0( p0 = t3 ).
+    me->zlnt_view_write_s_bd7f5998f3fc( p0 = t4 ).
   ENDMETHOD.
 
   METHOD zlnt_runtime_desc_e5fe811e0f42~zlnt_builtin_clas_3f891b097658.
@@ -83,10 +79,7 @@ CLASS zcl_lnt_idependency IMPLEMENTATION.
   METHOD zlnt_view_write_s_2136ba3f4cee.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t1.
-      CLEAR t1.
       IF p0 IS BOUND AND p0->has = abap_true.
-        CLEAR t1.
         CREATE OBJECT t1.
         t1->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
         t1->sval = p0->value.
@@ -95,7 +88,6 @@ CLASS zcl_lnt_idependency IMPLEMENTATION.
     ELSE.
       me->url_01ab = p0.
       DATA t2 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t2.
       IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
         me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `url` p1 = t2 ).
       ENDIF.
@@ -120,10 +112,7 @@ CLASS zcl_lnt_idependency IMPLEMENTATION.
   METHOD zlnt_view_write_s_07044db726b2.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t1.
-      CLEAR t1.
       IF p0 IS BOUND AND p0->has = abap_true.
-        CLEAR t1.
         CREATE OBJECT t1.
         t1->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
         t1->sval = p0->value.
@@ -132,7 +121,6 @@ CLASS zcl_lnt_idependency IMPLEMENTATION.
     ELSE.
       me->branch = p0.
       DATA t2 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t2.
       IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
         me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `branch` p1 = t2 ).
       ENDIF.
@@ -157,10 +145,7 @@ CLASS zcl_lnt_idependency IMPLEMENTATION.
   METHOD zlnt_view_write_s_af42215226c0.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t1.
-      CLEAR t1.
       IF p0 IS BOUND AND p0->has = abap_true.
-        CLEAR t1.
         CREATE OBJECT t1.
         t1->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
         t1->sval = p0->value.
@@ -169,7 +154,6 @@ CLASS zcl_lnt_idependency IMPLEMENTATION.
     ELSE.
       me->folder_5143 = p0.
       DATA t2 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t2.
       IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
         me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `folder` p1 = t2 ).
       ENDIF.
@@ -179,8 +163,7 @@ CLASS zcl_lnt_idependency IMPLEMENTATION.
 
   METHOD zlnt_view_read_sr_12a3d7389cfe.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
-      DATA(t1) = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `files` ) ).
-      result = t1->as_string( ).
+      result = CAST zlnt_runtime_dyna_a429568d5be8( me->zlnt_view_source_36f3bf68b9b8->get( `files` ) )->as_string( ).
     ELSE.
       result = me->files.
     ENDIF.
@@ -189,8 +172,6 @@ CLASS zcl_lnt_idependency IMPLEMENTATION.
   METHOD zlnt_view_write_s_bd7f5998f3fc.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t1.
-      CLEAR t1.
       CREATE OBJECT t1.
       t1->tag = zlnt_runtime_dyna_a429568d5be8=>tag_string.
       t1->sval = p0.
@@ -198,7 +179,6 @@ CLASS zcl_lnt_idependency IMPLEMENTATION.
     ELSE.
       me->files = p0.
       DATA t2 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t2.
       IF me->zlnt_view_ownkeys_b0e8086400eb IS BOUND.
         me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = `files` p1 = t2 ).
       ENDIF.
@@ -260,7 +240,6 @@ CLASS zcl_lnt_idependency IMPLEMENTATION.
 
   METHOD zlnt_own_storage_4c72afe8366e~keys.
     DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t1.
     IF me->zlnt_view_source_36f3bf68b9b8 IS BOUND.
       result = zlnt_runtime_ownk_4497b85e405d=>keys( me->zlnt_view_source_36f3bf68b9b8 ).
       RETURN.
@@ -392,7 +371,6 @@ CLASS zcl_lnt_idependency IMPLEMENTATION.
       me->zlnt_view_ownkeys_b0e8086400eb->put( p0 = p0 p1 = VALUE #( ) ).
     ENDIF.
     DATA t1 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-    CLEAR t1.
     IF me->zlnt_json_ownkeys_70e5fd461788 IS BOUND.
       me->zlnt_json_ownkeys_70e5fd461788->put( p0 = p0 p1 = t1 ).
     ENDIF.

@@ -12,16 +12,12 @@ CLASS zcl_lnt_sy_with_loop DEFINITION PUBLIC CREATE PUBLIC.
 ENDCLASS.
 CLASS zcl_lnt_sy_with_loop IMPLEMENTATION.
   METHOD run_syntax.
-    DATA(t1) = i_node.
     DATA(t2) = i_input_967e.
     DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA(t4) = t1.
     DATA(t5) = zlnt_runtime_desc_78196487750d=>zlnt_member_d262_9ca55688cba0.
-    t3 = t4->find_all_expressions( i_type_9913 = t5 ).
+    t3 = i_node->find_all_expressions( i_type_9913 = t5 ).
     DATA t6 TYPE REF TO zcl_lnt_expression_node.
-    CLEAR t6.
     DATA t7 TYPE REF TO object.
-    CLEAR t7.
     DATA(t8) = VALUE i( ).
     DO.
       t3->load( ).
@@ -42,13 +38,11 @@ CLASS zcl_lnt_sy_with_loop IMPLEMENTATION.
       ELSE.
         t6 ?= t7.
       ENDIF.
-      DATA(t11) = t6.
-      DATA(t12) = t2.
       DATA t13 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
       CLEAR t13.
       DATA t14 TYPE REF TO zlnt_runtime_opti_7f2541396f43.
       CLEAR t14.
-      zcl_lnt_sy_expres_select=>run_syntax( i_node = t11 i_input_967e = t12 i_skip_implicit_into = t13 i_select_loop_6767 = t14 ).
+      zcl_lnt_sy_expres_select=>run_syntax( i_node = t6 i_input_967e = t2 i_skip_implicit_into = t13 i_select_loop_6767 = t14 ).
     ENDDO.
   ENDMETHOD.
 

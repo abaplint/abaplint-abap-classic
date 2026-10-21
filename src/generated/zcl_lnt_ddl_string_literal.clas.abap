@@ -14,14 +14,9 @@ CLASS zcl_lnt_ddl_string_literal IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD get_runnable.
-    DATA t1 TYPE REF TO zif_lnt_statement_runnable.
     DATA t2 TYPE REF TO zlnt_runtime_rege_5a210f82384e.
-    CLEAR t2.
-    DATA(t3) = |^'[^']*'$|.
-    DATA(t4) = ||.
-    CREATE OBJECT t2 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = t3 flags = t4.
-    t1 = zcl_lnt_st_combi_module=>regex( i_r_f634 = t2 ).
-    result = t1.
+    CREATE OBJECT t2 TYPE zlnt_runtime_rege_5a210f82384e EXPORTING pattern = |^'[^']*'$| flags = ||.
+    result = zcl_lnt_st_combi_module=>regex( i_r_f634 = t2 ).
 
   ENDMETHOD.
 

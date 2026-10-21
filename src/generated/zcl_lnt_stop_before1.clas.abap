@@ -22,80 +22,62 @@ ENDCLASS.
 CLASS zcl_lnt_stop_before1 IMPLEMENTATION.
   METHOD constructor.
     DATA(t1) = i_words.
-    DATA t2 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    CLEAR t2.
     DATA t3 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA t4 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    CREATE OBJECT t4.
-    t3 = t4.
-    DATA(t5) = t1.
+    CREATE OBJECT t3.
     DATA(t6) = VALUE string( ).
-    t5->dense( ).
+    t1->dense( ).
     DATA(t7) = VALUE i( ).
     DO.
-      t5->load( ).
-      IF t7 >= lines( t5->items ).
+      t1->load( ).
+      IF t7 >= lines( t1->items ).
         EXIT.
       ENDIF.
       CLEAR t6.
-      READ TABLE t5->items INDEX t7 + 1 INTO t6.
-      IF t5->has( t7 ) = abap_false.
+      READ TABLE t1->items INDEX t7 + 1 INTO t6.
+      IF t1->has( t7 ) = abap_false.
         RAISE EXCEPTION TYPE cx_sy_range_out_of_bounds.
       ENDIF.
       t7 = t7 + 1.
-      DATA(t8) = t3.
       DATA t9 TYPE string.
-      DATA(t10) = t6.
-      DATA(t11) = strlen( t10 ).
-      t9 = t10.
+      DATA(t11) = strlen( t6 ).
+      t9 = t6.
       IF t9 CO ` !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_``abcdefghijklmnopqrstuvwxyz{|}~`.
         TRANSLATE t9 TO UPPER CASE.
       ELSE.
         t9 = zlnt_runtime_uppe_91169605024d=>full( t9 ).
       ENDIF.
-      t8->load( ).
-      APPEND t9 TO t8->items.
-      t8->save( ).
+      t3->load( ).
+      APPEND t9 TO t3->items.
+      t3->save( ).
     ENDDO.
-    DATA(t12) = t3.
-    t2 = t12.
-    me->words = t2.
+    me->words = t3.
     DELETE me->zlnt_record_delet_0597644d88b4 WHERE table_line = `words`.
   ENDMETHOD.
 
   METHOD list_keywords.
-    DATA t1 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    CREATE OBJECT t1.
-    result = t1.
+    CREATE OBJECT result.
 
   ENDMETHOD.
 
   METHOD get_using.
-    DATA t1 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    CREATE OBJECT t1.
-    result = t1.
+    CREATE OBJECT result.
 
   ENDMETHOD.
 
   METHOD run.
     DATA(t1) = i_r_f634.
     DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t3.
-    t2 = t3.
-    DATA(t4) = t1.
+    CREATE OBJECT t2.
     DATA t5 TYPE REF TO zcl_lnt_st_result.
-    CLEAR t5.
     DATA t6 TYPE REF TO object.
-    CLEAR t6.
     DATA(t7) = VALUE i( ).
     DO.
-      t4->load( ).
-      IF t7 >= lines( t4->items ).
+      t1->load( ).
+      IF t7 >= lines( t1->items ).
         EXIT.
       ENDIF.
       CLEAR t6.
-      READ TABLE t4->items INDEX t7 + 1 INTO t6.
+      READ TABLE t1->items INDEX t7 + 1 INTO t6.
       t7 = t7 + 1.
       DATA t8 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
       CLEAR t8.
@@ -110,23 +92,16 @@ CLASS zcl_lnt_stop_before1 IMPLEMENTATION.
       ENDIF.
       DATA t10 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       CLEAR t10.
-      DATA t11 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      CLEAR t11.
       DATA t12 TYPE REF TO zcl_lnt_abstract_token.
       CLEAR t12.
-      DATA t13 TYPE REF TO zcl_lnt_abstract_token.
-      CLEAR t13.
       DATA t14 TYPE REF TO zcl_lnt_st_result.
-      DATA(t15) = t5.
-      t14 = t15.
+      t14 = t5.
       DATA t16 TYPE REF TO zcl_lnt_abstract_token.
       CLEAR t16.
       DATA t17 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-      DATA(t18) = t14.
-      t17 = t18->tokens.
+      t17 = t14->tokens.
       DATA t19 TYPE i.
-      DATA(t20) = t14.
-      t19 = t20->token_index.
+      t19 = t14->token_index.
       t19 = t19 + 1.
       DATA t21 TYPE REF TO object.
       CLEAR t21.
@@ -144,152 +119,100 @@ CLASS zcl_lnt_stop_before1 IMPLEMENTATION.
       ELSE.
         t16 ?= t21.
       ENDIF.
-      t13 = t16.
-      t12 = t13.
+      t12 = t16.
       DATA t24 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
       CLEAR t24.
-      DATA(t25) = VALUE abap_bool( ).
-      DATA(t26) = t12.
-      IF t26 IS INITIAL.
-        t25 = abap_true.
-      ENDIF.
-      IF t25 = abap_true.
-        DATA t27 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-        CLEAR t27.
-        t24 = t27.
+      IF xsdbool( t12 IS INITIAL ) = abap_true.
+        CLEAR t24.
       ELSE.
-        DATA t28 TYPE string.
-        DATA t29 TYPE REF TO zcl_lnt_abstract_token.
-        DATA(t30) = t12.
-        t29 = t30.
         DATA t31 TYPE string.
-        DATA(t32) = t29.
-        t31 = t32->str_upper.
-        t28 = t31.
+        t31 = t12->str_upper.
         DATA(t33) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
         t33->has = abap_true.
-        t33->value = t28.
+        t33->value = t31.
         t24 = t33.
       ENDIF.
-      t11 = t24.
-      t10 = t11.
+      t10 = t24.
       DATA(t34) = VALUE abap_bool( ).
       DATA(t35) = VALUE abap_bool( ).
       DATA t36 TYPE REF TO zlnt_runtime_opti_4ba3bdccd169.
-      DATA(t37) = t10.
-      t36 = t37.
+      t36 = t10.
       DATA t38 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      DATA t39 TYPE REF TO zlnt_runtime_dyna_a429568d5be8.
-      CLEAR t39.
-      t38 = t39.
-      DATA(t40) = VALUE abap_bool( ).
+      CLEAR t38.
       DATA(t41) = VALUE abap_bool( ).
-      DATA(t42) = t36.
-      IF t42 IS INITIAL.
+      IF t36 IS INITIAL.
         t41 = abap_true.
-      ELSEIF t42->has = abap_false.
+      ELSEIF t36->has = abap_false.
         t41 = abap_true.
       ENDIF.
-      t40 = xsdbool( t41 = abap_false ).
-      t35 = t40.
+      t35 = xsdbool( t41 = abap_false ).
       t34 = t35.
       IF t35 = abap_true.
-        DATA t43 TYPE abap_bool.
-        DATA(t44) = me->words.
         DATA t45 TYPE string.
-        DATA(t46) = t10.
-        t45 = t46->value.
-        t43 = t44->includes( p0 = t45 ).
-        t34 = t43.
+        t45 = t10->value.
+        t34 = me->words->includes( p0 = t45 ).
       ENDIF.
       IF t34 = abap_true.
         CONTINUE.
       ENDIF.
-      DATA(t47) = t2.
-      DATA(t48) = t5.
-      t47->load( ).
-      APPEND t48 TO t47->items.
-      t47->save( ).
+      t2->load( ).
+      APPEND t5 TO t2->items.
+      t2->save( ).
     ENDDO.
-    DATA(t49) = t2.
-    result = t49.
+    result = t2.
 
   ENDMETHOD.
 
   METHOD railroad.
-    DATA t1 TYPE string.
     DATA t2 TYPE string.
     DATA(t3) = |Railroad.Terminal('stopBefore(|.
     DATA t4 TYPE string.
     DATA(t5) = me->words.
-    DATA(t6) = |\||.
     DATA(t7) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
     t7->has = abap_true.
-    t7->value = t6.
+    t7->value = |\||.
     t4 = t5->join( p0 = t7 ).
     DATA(t8) = strlen( t3 ).
     t2 = |{ t3 }{ t4 }|.
-    DATA(t9) = |)')|.
     DATA(t10) = strlen( t2 ).
-    t1 = |{ t2 }{ t9 }|.
-    result = t1.
+    result = |{ t2 }{ |)')| }|.
 
   ENDMETHOD.
 
   METHOD to_str.
-    DATA t1 TYPE string.
     DATA t2 TYPE string.
     DATA(t3) = |stopBefore(|.
     DATA t4 TYPE string.
     DATA(t5) = me->words.
-    DATA(t6) = |,|.
     DATA(t7) = NEW zlnt_runtime_opti_4ba3bdccd169( ).
     t7->has = abap_true.
-    t7->value = t6.
+    t7->value = |,|.
     t4 = t5->join( p0 = t7 ).
     DATA(t8) = strlen( t3 ).
     t2 = |{ t3 }{ t4 }|.
-    DATA(t9) = |)|.
     DATA(t10) = strlen( t2 ).
-    t1 = |{ t2 }{ t9 }|.
-    result = t1.
+    result = |{ t2 }{ |)| }|.
 
   ENDMETHOD.
 
   METHOD first.
-    DATA t1 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
     DATA t2 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    DATA t3 TYPE REF TO zlnt_runtime_arra_8ecd6afe19e0.
-    CREATE OBJECT t3.
-    t2 = t3.
-    DATA(t4) = t2.
-    DATA(t5) = ||.
-    t4->load( ).
-    APPEND t5 TO t4->items.
-    t4->save( ).
-    DATA(t6) = t2.
-    t1 = t6.
-    result = t1.
+    CREATE OBJECT t2.
+    t2->load( ).
+    APPEND || TO t2->items.
+    t2->save( ).
+    result = t2.
 
   ENDMETHOD.
 
   METHOD run_one.
     DATA(t1) = i_x.
-    DATA t2 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t3 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
     DATA t4 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    DATA t5 TYPE REF TO zlnt_runtime_arra_c22708faf2e3.
-    CREATE OBJECT t5.
-    t4 = t5.
-    DATA(t6) = t4.
-    DATA(t7) = t1.
-    t6->load( ).
-    APPEND t7 TO t6->items.
-    t6->save( ).
-    DATA(t8) = t4.
-    t3 = t8.
-    t2 = me->run( i_r_f634 = t3 ).
-    result = t2.
+    CREATE OBJECT t4.
+    t4->load( ).
+    APPEND t1 TO t4->items.
+    t4->save( ).
+    result = me->run( i_r_f634 = t4 ).
 
   ENDMETHOD.
 
