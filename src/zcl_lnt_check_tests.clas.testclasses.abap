@@ -12,6 +12,18 @@ CLASS ltd_reader IMPLEMENTATION.
   ENDMETHOD.
 ENDCLASS.
 
+* default syntax settings, without reading the database
+CLASS ltd_config_reader DEFINITION FINAL FOR TESTING.
+  PUBLIC SECTION.
+    INTERFACES zif_lnt_config_reader.
+ENDCLASS.
+
+CLASS ltd_config_reader IMPLEMENTATION.
+  METHOD zif_lnt_config_reader~read.
+    CLEAR rs_syntax.
+  ENDMETHOD.
+ENDCLASS.
+
 * implemented by subclasses of the generated checks, which collect the INFORM calls
 INTERFACE lif_check.
   TYPES:
@@ -347,6 +359,7 @@ CLASS ltcl_checks IMPLEMENTATION.
   METHOD setup.
     mo_reader = NEW ltd_reader( ).
     zcl_lnt_utils=>set_source_reader( mo_reader ).
+    zcl_lnt_utils=>set_config_reader( NEW ltd_config_reader( ) ).
   ENDMETHOD.
 
   METHOD given_prog.

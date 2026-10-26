@@ -46,14 +46,29 @@ CLASS zcl_lnt_utils DEFINITION PUBLIC.
       IMPORTING
         ii_reader TYPE REF TO zif_lnt_source_reader.
 
+    CLASS-METHODS set_config_reader
+      IMPORTING
+        ii_reader TYPE REF TO zif_lnt_config_reader.
+
   PRIVATE SECTION.
     CLASS-DATA gi_reader TYPE REF TO zif_lnt_source_reader.
+    CLASS-DATA gi_config_reader TYPE REF TO zif_lnt_config_reader.
     CLASS-DATA gt_cache_files TYPE zif_lnt_source_reader=>ty_files.
+    CLASS-DATA gs_cache_syntax TYPE zif_lnt_config_reader=>ty_syntax.
     CLASS-DATA go_cache_reg TYPE REF TO zcl_lnt_registry.
 
     CLASS-METHODS get_config
+      IMPORTING
+        is_syntax        TYPE zif_lnt_config_reader=>ty_syntax
       RETURNING
         VALUE(ro_config) TYPE REF TO zcl_lnt_config.
+
+    CLASS-METHODS read_config
+      IMPORTING
+        iv_object_type   TYPE csequence
+        iv_object_name   TYPE csequence
+      RETURNING
+        VALUE(rs_syntax) TYPE zif_lnt_config_reader=>ty_syntax.
 
     CLASS-METHODS read_sources
       IMPORTING
@@ -66,6 +81,7 @@ CLASS zcl_lnt_utils DEFINITION PUBLIC.
     CLASS-METHODS get_registry
       IMPORTING
         it_files      TYPE zif_lnt_source_reader=>ty_files
+        is_syntax     TYPE zif_lnt_config_reader=>ty_syntax
       RETURNING
         VALUE(ro_reg) TYPE REF TO zcl_lnt_registry.
 
@@ -114,6 +130,13 @@ CLASS zcl_lnt_utils IMPLEMENTATION.
   METHOD set_source_reader.
     gi_reader = ii_reader.
     CLEAR gt_cache_files.
+    CLEAR go_cache_reg.
+  ENDMETHOD.
+
+  METHOD set_config_reader.
+    gi_config_reader = ii_reader.
+    CLEAR gt_cache_files.
+    CLEAR gs_cache_syntax.
     CLEAR go_cache_reg.
   ENDMETHOD.
 
@@ -172,7 +195,11 @@ CLASS zcl_lnt_utils IMPLEMENTATION.
           RETURN.
         ENDIF.
 
-        DATA(lo_reg) = get_registry( lt_files ).
+        DATA(lo_reg) = get_registry(
+          it_files  = lt_files
+          is_syntax = read_config(
+            iv_object_type = iv_object_type
+            iv_object_name = iv_object_name ) ).
         DATA(li_obj) = find_object(
           io_reg         = lo_reg
           iv_object_type = iv_object_type
@@ -225,18 +252,29 @@ CLASS zcl_lnt_utils IMPLEMENTATION.
         et_line_map    = et_line_map ).
   ENDMETHOD.
 
+  METHOD read_config.
+    IF gi_config_reader IS NOT BOUND.
+      gi_config_reader = NEW zcl_lnt_config_reader( ).
+    ENDIF.
+
+    rs_syntax = gi_config_reader->read(
+      iv_object_type = iv_object_type
+      iv_object_name = iv_object_name ).
+  ENDMETHOD.
+
   METHOD get_registry.
 * Code Inspector runs all checks on one object before moving on to the next,
 * so keep the last parsed registry, parsing is the expensive part
-    IF go_cache_reg IS BOUND AND gt_cache_files = it_files.
+    IF go_cache_reg IS BOUND AND gt_cache_files = it_files AND gs_cache_syntax = is_syntax.
       ro_reg = go_cache_reg.
       RETURN.
     ENDIF.
 
     CLEAR go_cache_reg.
     CLEAR gt_cache_files.
+    CLEAR gs_cache_syntax.
 
-    ro_reg = NEW zcl_lnt_registry( get_config( ) ).
+    ro_reg = NEW zcl_lnt_registry( get_config( is_syntax ) ).
     LOOP AT it_files INTO DATA(ls_file).
       ro_reg->add_file( NEW zcl_lnt_memory_file(
         i_filename = ls_file-filename
@@ -246,9 +284,17 @@ CLASS zcl_lnt_utils IMPLEMENTATION.
 
     go_cache_reg = ro_reg.
     gt_cache_files = it_files.
+    gs_cache_syntax = is_syntax.
   ENDMETHOD.
 
   METHOD get_config.
+    DATA(lv_version) = COND string(
+      WHEN is_syntax-version IS INITIAL THEN `v758`
+      ELSE is_syntax-version ).
+    DATA(lv_namespace) = COND string(
+      WHEN is_syntax-error_namespace IS INITIAL THEN `^(Z|Y|LCL_|TY_|LIF_)`
+      ELSE is_syntax-error_namespace ).
+
 * the full configuration must be given, as building the default configuration is not supported
 * by the ABAPiti output. Rules keep the default configuration set in their constructors
     ro_config = NEW zcl_lnt_config(
@@ -256,7 +302,9 @@ CLASS zcl_lnt_utils IMPLEMENTATION.
       ` "skipGeneratedGatewayClasses": true, "skipGeneratedPersistentClasses": true,` &&
       ` "skipGeneratedFunctionGroups": true, "useApackDependencies": false, "skipIncludesWithoutMain": false},` &&
       ` "dependencies": [],` &&
-      ` "syntax": {"version": "v758", "errorNamespace": "^(Z|Y|LCL_|TY_|LIF_)", "globalConstants": [], "globalMacros": []},` &&
+      | "syntax": \{"version": "{ escape( val = lv_version format = cl_abap_format=>e_json_string ) }",| &&
+      | "errorNamespace": "{ escape( val = lv_namespace format = cl_abap_format=>e_json_string ) }",| &&
+      ` "globalConstants": [], "globalMacros": []},` &&
       ` "rules": {}}` ).
   ENDMETHOD.
 

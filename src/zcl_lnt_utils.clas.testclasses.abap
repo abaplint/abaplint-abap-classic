@@ -27,6 +27,18 @@ CLASS ltd_reader IMPLEMENTATION.
   ENDMETHOD.
 ENDCLASS.
 
+CLASS ltd_config_reader DEFINITION FINAL FOR TESTING.
+  PUBLIC SECTION.
+    INTERFACES zif_lnt_config_reader.
+    DATA ms_syntax TYPE zif_lnt_config_reader=>ty_syntax.
+ENDCLASS.
+
+CLASS ltd_config_reader IMPLEMENTATION.
+  METHOD zif_lnt_config_reader~read.
+    rs_syntax = ms_syntax.
+  ENDMETHOD.
+ENDCLASS.
+
 * returns fixed issues, or raises
 CLASS ltd_rule DEFINITION FINAL FOR TESTING.
   PUBLIC SECTION.
@@ -100,9 +112,13 @@ ENDCLASS.
 CLASS ltcl_run_rule DEFINITION FINAL FOR TESTING RISK LEVEL HARMLESS DURATION SHORT.
   PRIVATE SECTION.
     DATA mo_reader TYPE REF TO ltd_reader.
+    DATA mo_config_reader TYPE REF TO ltd_config_reader.
 
     METHODS setup.
     METHODS parser_error FOR TESTING RAISING cx_static_check.
+    METHODS config_version FOR TESTING RAISING cx_static_check.
+    METHODS config_change_invalidates FOR TESTING RAISING cx_static_check.
+    METHODS config_namespace_escaped FOR TESTING RAISING cx_static_check.
     METHODS no_issues FOR TESTING RAISING cx_static_check.
     METHODS not_found FOR TESTING RAISING cx_static_check.
     METHODS unknown_object_type FOR TESTING RAISING cx_static_check.
@@ -116,6 +132,7 @@ CLASS ltcl_run_rule DEFINITION FINAL FOR TESTING RISK LEVEL HARMLESS DURATION SH
     METHODS scimessages FOR TESTING RAISING cx_static_check.
 
     METHODS set_broken_prog.
+    METHODS set_add_assign_prog.
     METHODS run
       IMPORTING
         io_rule            TYPE REF TO zif_lnt_rule
@@ -129,6 +146,62 @@ CLASS ltcl_run_rule IMPLEMENTATION.
   METHOD setup.
     mo_reader = NEW ltd_reader( ).
     zcl_lnt_utils=>set_source_reader( mo_reader ).
+    mo_config_reader = NEW ltd_config_reader( ).
+    zcl_lnt_utils=>set_config_reader( mo_config_reader ).
+  ENDMETHOD.
+
+* += does not exist before 754
+  METHOD set_add_assign_prog.
+    mo_reader->set_prog(
+      iv_name   = 'ZTEST'
+      it_source = VALUE #(
+        ( `REPORT ztest.` )
+        ( `DATA lv_foo TYPE i.` )
+        ( `lv_foo += 1.` ) ) ).
+  ENDMETHOD.
+
+  METHOD config_version.
+    set_add_assign_prog( ).
+    cl_abap_unit_assert=>assert_initial( run( NEW zcl_lnt_parser_error( ) ) ).
+
+    mo_config_reader->ms_syntax-version = `v702`.
+    DATA(lt_findings) = run( NEW zcl_lnt_parser_error( ) ).
+
+    cl_abap_unit_assert=>assert_equals(
+      act = lines( lt_findings )
+      exp = 1 ).
+    cl_abap_unit_assert=>assert_equals(
+      act = lt_findings[ 1 ]-line
+      exp = 3 ).
+    cl_abap_unit_assert=>assert_equals(
+      act = lt_findings[ 1 ]-code
+      exp = zcl_lnt_utils=>c_code-issue ).
+  ENDMETHOD.
+
+  METHOD config_change_invalidates.
+    set_add_assign_prog( ).
+    DATA(lo_first) = NEW ltd_rule( ).
+    run( lo_first ).
+
+    mo_config_reader->ms_syntax-version = `v702`.
+    DATA(lo_second) = NEW ltd_rule( ).
+    run( lo_second ).
+
+    cl_abap_unit_assert=>assert_true( xsdbool( lo_second->mi_reg <> lo_first->mi_reg ) ).
+  ENDMETHOD.
+
+  METHOD config_namespace_escaped.
+    set_broken_prog( ).
+    mo_config_reader->ms_syntax-error_namespace = `^(Z|Y|\/FOO\/|"BAR")`.
+
+    DATA(lt_findings) = run( NEW zcl_lnt_parser_error( ) ).
+
+    cl_abap_unit_assert=>assert_equals(
+      act = lines( lt_findings )
+      exp = 1 ).
+    cl_abap_unit_assert=>assert_equals(
+      act = lt_findings[ 1 ]-code
+      exp = zcl_lnt_utils=>c_code-issue ).
   ENDMETHOD.
 
   METHOD set_broken_prog.
@@ -454,6 +527,7 @@ CLASS ltcl_checks IMPLEMENTATION.
         ( `REPORT ztest.` )
         ( `  foo bar moo.` ) ) ).
     zcl_lnt_utils=>set_source_reader( lo_reader ).
+    zcl_lnt_utils=>set_config_reader( NEW ltd_config_reader( ) ).
   ENDMETHOD.
 
   METHOD parser_error.
